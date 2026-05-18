@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSU — US History Course Portal</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0f1a;
+      color: #e8e6e1;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #0f1729 0%, #1a2744 50%, #0f1729 100%);
+      border-bottom: 1px solid #1e293b;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #f8f6f2;
+      margin-bottom: 0.5rem;
+    }
+    header .subtitle {
+      font-size: 1rem;
+      color: #94a3b8;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .semesters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .semesters { grid-template-columns: 1fr; }
+    }
+    .semester h2 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: #cbd5e1;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.06em;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .day-card {
+      position: relative;
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem 1.25rem 1.25rem;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .day-card:not(.live) {
+      opacity: 0.55;
+      background: #0d1117;
+      border-color: #1a2332;
+    }
+    .day-card.live .lock { display: none; }
+    .day-card .lock {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    .day-card .day-num {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.35rem;
+    }
+    .day-card h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      padding-right: 1.5rem;
+    }
+    .day-card .eq {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .day-card.live {
+      opacity: 1;
+      cursor: pointer;
+      border-color: #334155;
+    }
+    .day-card.live:hover {
+      border-color: #475569;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      transform: translateY(-2px);
+    }
+    .day-card.live h3 { color: #f8f6f2; }
+    .day-card.live .eq { color: #cbd5e1; }
+    .day-card .card-link {
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .day-card.live .card-link {
+      pointer-events: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #475569;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="subtitle">SSU Course Portal</p>
+    <h1>US History</h1>
+  </header>
+  <main>
+    <div class="semesters">
+      <section class="semester">
+        <h2>Semester 1</h2>
+        <div class="cards">
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 1</span>
+          <h3>Founding the Nation</h3>
+          <p class="eq">How did Enlightenment ideas shape a new kind of government, and does it still work?</p>
+          <a href="SSU_S1L01.html" class="card-link" aria-label="Open Founding the Nation"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 2</span>
+          <h3>Industrialization and Immigration</h3>
+          <p class="eq">How did industrialization transform who Americans were, where they lived, and what they could demand?</p>
+          <a href="SSU_S1L02.html" class="card-link" aria-label="Open Industrialization and Immigration"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 3</span>
+          <h3>Populism, Progressivism, and Religion</h3>
+          <p class="eq">How did ordinary people and religious movements push America to live up to its own ideals?</p>
+          <a href="SSU_S1L03.html" class="card-link" aria-label="Open Populism, Progressivism, and Religion"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 4</span>
+          <h3>America Becomes a World Power</h3>
+          <p class="eq">What pushed the United States from isolation to empire, and who paid the price?</p>
+          <a href="SSU_S1L04.html" class="card-link" aria-label="Open America Becomes a World Power"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 5</span>
+          <h3>The Roaring Twenties</h3>
+          <p class="eq">How did prosperity, technology, and cultural explosion make the 1920s one of the most contradictory decades in American history?</p>
+          <a href="SSU_S1L05.html" class="card-link" aria-label="Open The Roaring Twenties"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 6</span>
+          <h3>Civil Liberties Under Pressure</h3>
+          <p class="eq">How can a decade of prosperity also be a decade of fear and repression?</p>
+          <a href="SSU_S1L06.html" class="card-link" aria-label="Open Civil Liberties Under Pressure"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 7</span>
+          <h3>The Great Depression</h3>
+          <p class="eq">How did economic collapse devastate American families and shake faith in the system?</p>
+          <a href="SSU_S1L07.html" class="card-link" aria-label="Open The Great Depression"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 8</span>
+          <h3>The New Deal and Labor</h3>
+          <p class="eq">How far should the government go to help people in a crisis, and did the New Deal go far enough?</p>
+          <a href="SSU_S1L08.html" class="card-link" aria-label="Open The New Deal and Labor"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 9</span>
+          <h3>Final Exam</h3>
+          <p class="eq">Comprehensive semester assessment.</p>
+          <a href="SSU_S1L09_Final.html" class="card-link" aria-label="Open Final Exam"></a>
+        </article>
+        </div>
+      </section>
+      <section class="semester">
+        <h2>Semester 2</h2>
+        <div class="cards">
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 1</span>
+          <h3>America in World War II</h3>
+          <p class="eq">How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid?</p>
+          <a href="SSU_S2L01.html" class="card-link" aria-label="Open America in World War II"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 2</span>
+          <h3>The American Home Front and Hard Choices</h3>
+          <p class="eq">How did WWII transform American society at home, and were all the sacrifices equally shared?</p>
+          <a href="SSU_S2L02.html" class="card-link" aria-label="Open The American Home Front and Hard Choices"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 3</span>
+          <h3>Post-War Boom and the New America</h3>
+          <p class="eq">How did WWII change what American life looked like, and who got left out of the new prosperity?</p>
+          <a href="SSU_S2L03.html" class="card-link" aria-label="Open Post-War Boom and the New America"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 4</span>
+          <h3>The Cold War at Home and Abroad</h3>
+          <p class="eq">How did fear of communism reshape American foreign policy and daily American life?</p>
+          <a href="SSU_S2L04.html" class="card-link" aria-label="Open The Cold War at Home and Abroad"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 5</span>
+          <h3>Cuba, Vietnam, and Cold War Escalation</h3>
+          <p class="eq">Why did the United States fight wars in countries most Americans couldn't find on a map?</p>
+          <a href="SSU_S2L05.html" class="card-link" aria-label="Open Cuba, Vietnam, and Cold War Escalation"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 6</span>
+          <h3>The Civil Rights Movement</h3>
+          <p class="eq">How did ordinary Americans use law, protest, and personal sacrifice to change a country not living up to its own promises?</p>
+          <a href="SSU_S2L06.html" class="card-link" aria-label="Open The Civil Rights Movement"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 7</span>
+          <h3>Expanding Civil Rights and Social Movements</h3>
+          <p class="eq">How did the Black civil rights movement inspire other Americans to demand their own equality?</p>
+          <a href="SSU_S2L07.html" class="card-link" aria-label="Open Expanding Civil Rights and Social Movements"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 8</span>
+          <h3>Modern America and Unfinished Business</h3>
+          <p class="eq">What major problems has America still not solved, and why does history matter for solving them?</p>
+          <a href="SSU_S2L08.html" class="card-link" aria-label="Open Modern America and Unfinished Business"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 9</span>
+          <h3>Final Exam</h3>
+          <p class="eq">Comprehensive semester assessment.</p>
+          <a href="SSU_S2L09_Final.html" class="card-link" aria-label="Open Final Exam"></a>
+        </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>US History &mdash; SSU</footer>
+</body>
+</html>
