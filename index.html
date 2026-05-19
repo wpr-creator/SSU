@@ -1,282 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSU — US History Course Portal</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #0a0f1a;
-      color: #e8e6e1;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.5;
-      min-height: 100vh;
-    }
-    header {
-      background: linear-gradient(135deg, #0f1729 0%, #1a2744 50%, #0f1729 100%);
-      border-bottom: 1px solid #1e293b;
-      padding: 3rem 2rem 2.5rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      color: #f8f6f2;
-      margin-bottom: 0.5rem;
-    }
-    header .subtitle {
-      font-size: 1rem;
-      color: #94a3b8;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
-    .semesters {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    @media (max-width: 900px) {
-      .semesters { grid-template-columns: 1fr; }
-    }
-    .semester h2 {
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: #cbd5e1;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 0.75rem;
-      margin-bottom: 1.25rem;
-      letter-spacing: 0.06em;
-    }
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .day-card {
-      position: relative;
-      background: #111827;
-      border: 1px solid #1e293b;
-      border-radius: 6px;
-      padding: 1.25rem 1.5rem 1.25rem 1.25rem;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-    .day-card:not(.live) {
-      opacity: 0.55;
-      background: #0d1117;
-      border-color: #1a2332;
-    }
-    .day-card.live .lock { display: none; }
-    .day-card .lock {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-    .day-card .day-num {
-      display: block;
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 0.35rem;
-    }
-    .day-card h3 {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #f1f5f9;
-      margin-bottom: 0.5rem;
-      padding-right: 1.5rem;
-    }
-    .day-card .eq {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #94a3b8;
-      line-height: 1.5;
-    }
-    .day-card.live {
-      opacity: 1;
-      cursor: pointer;
-      border-color: #334155;
-    }
-    .day-card.live:hover {
-      border-color: #475569;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-      transform: translateY(-2px);
-    }
-    .day-card.live h3 { color: #f8f6f2; }
-    .day-card.live .eq { color: #cbd5e1; }
-    .day-card .card-link {
-      position: absolute;
-      inset: 0;
-      border-radius: 6px;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .day-card.live .card-link {
-      pointer-events: auto;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #475569;
-      font-size: 0.85rem;
-      border-top: 1px solid #1e293b;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. History — Summer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #f8faff;
+    --ice: #edf2fb;
+    --sky: #dce8f7;
+    --blue: #2b5fa6;
+    --blue-mid: #4a7ec7;
+    --blue-light: #7aaee8;
+    --navy: #0f2547;
+    --red: #b03030;
+    --text: #0d1b2e;
+    --text-muted: #5a7096;
+    --card-bg: rgba(248,250,255,0.88);
+    --locked-color: #9bafc8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── ANIMATED BACKGROUND ── */
+  .bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* Stars/dots field */
+  .stars {
+    position: absolute;
+    inset: 0;
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--blue-light);
+    animation: twinkle ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.08; transform: scale(1); }
+    50%       { opacity: 0.35; transform: scale(1.3); }
+  }
+
+  /* Flowing wave lines */
+  .wave-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-path {
+    fill: none;
+    stroke-width: 1;
+    animation: waveDrift linear infinite;
+  }
+
+  .wave-path:nth-child(1) { stroke: rgba(43,95,166,0.07); animation-duration: 30s; }
+  .wave-path:nth-child(2) { stroke: rgba(176,48,48,0.05); animation-duration: 38s; animation-delay: 5s; }
+  .wave-path:nth-child(3) { stroke: rgba(43,95,166,0.06); animation-duration: 25s; animation-delay: 12s; }
+  .wave-path:nth-child(4) { stroke: rgba(74,126,199,0.08); animation-duration: 42s; animation-delay: 8s; }
+
+  @keyframes waveDrift {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Radial glow orbs */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: glowPulse ease-in-out infinite;
+  }
+
+  .glow-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(43,95,166,0.12), transparent); top: -150px; right: -100px; animation-duration: 18s; }
+  .glow-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(176,48,48,0.08), transparent); bottom: -100px; left: -80px; animation-duration: 24s; animation-delay: 8s; }
+  .glow-3 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(122,174,232,0.1), transparent); top: 45%; left: 40%; animation-duration: 20s; animation-delay: 4s; }
+
+  @keyframes glowPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.6; transform: scale(1.15); }
+  }
+
+  /* Fine dot grid */
+  .dot-grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(circle, rgba(43,95,166,0.07) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+
+  /* ── HEADER ── */
+  header {
+    text-align: center;
+    padding: 4rem 0 2.5rem;
+  }
+
+  .course-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+  }
+
+  header h1 span {
+    color: var(--red);
+    font-style: italic;
+  }
+
+  .header-rule {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--red));
+    margin: 1.5rem auto;
+    border: none;
+  }
+
+  .header-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SEMESTER SECTIONS ── */
+  .semester-block {
+    margin-bottom: 4rem;
+  }
+
+  .semester-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .semester-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .semester-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(43,95,166,0.3), transparent);
+  }
+
+  .semester-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  /* ── CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .day-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(43,95,166,0.12);
+    border-radius: 6px;
+    padding: 1.4rem 1.3rem 1.2rem;
+    position: relative;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    overflow: hidden;
+  }
+
+  .day-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--red));
+    opacity: 0;
+    transition: opacity 0.22s ease;
+  }
+
+  .day-card.live {
+    cursor: pointer;
+  }
+
+  .day-card.live:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(15,37,71,0.12);
+    border-color: rgba(43,95,166,0.35);
+  }
+
+  .day-card.live:hover::after {
+    opacity: 1;
+  }
+
+  .day-card.locked {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  .day-num {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .day-card.locked .day-num {
+    color: var(--locked-color);
+  }
+
+  .lock-icon {
+    font-size: 0.68rem;
+  }
+
+  .card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.35;
+    margin-bottom: 0.65rem;
+  }
+
+  .card-eq {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  .card-std {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--locked-color);
+    font-weight: 500;
+  }
+
+  .day-card.live .card-std {
+    color: var(--blue-mid);
+  }
+
+  /* ── DIVIDER ── */
+  .semester-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(43,95,166,0.2), transparent);
+    margin: 0.5rem 0 3.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 0.55s ease forwards;
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.04s; }
+  .fade-in:nth-child(2) { animation-delay: 0.09s; }
+  .fade-in:nth-child(3) { animation-delay: 0.14s; }
+  .fade-in:nth-child(4) { animation-delay: 0.19s; }
+  .fade-in:nth-child(5) { animation-delay: 0.24s; }
+  .fade-in:nth-child(6) { animation-delay: 0.29s; }
+  .fade-in:nth-child(7) { animation-delay: 0.34s; }
+  .fade-in:nth-child(8) { animation-delay: 0.39s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .cards-grid { grid-template-columns: 1fr 1fr; }
+    header h1 { font-size: 2.3rem; }
+  }
+  @media (max-width: 400px) {
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
+
+<!-- Animated background -->
+<div class="bg-canvas">
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
+
+  <!-- Star field -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Wave SVG -->
+  <svg class="wave-wrap" viewBox="0 0 2000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="wave-path" d="M0,200 C300,100 600,300 900,200 S1500,100 2000,200 S2600,300 3000,200"/>
+    <path class="wave-path" d="M0,450 C400,350 700,550 1000,450 S1600,350 2000,450 S2700,550 3000,450"/>
+    <path class="wave-path" d="M0,650 C250,550 550,750 850,650 S1450,550 1850,650 S2500,750 2850,650"/>
+    <path class="wave-path" d="M0,820 C350,720 650,920 950,820 S1550,720 1950,820 S2650,920 2950,820"/>
+  </svg>
+</div>
+
+<div class="dot-grid"></div>
+
+<div class="page-wrap">
+
   <header>
-    <p class="subtitle">SSU Course Portal</p>
-    <h1>US History</h1>
+    <p class="course-label">San Diego Summer School &nbsp;·&nbsp; Social Science</p>
+    <h1>U.S. <span>History</span></h1>
+    <hr class="header-rule">
+    <p class="header-sub">Standards 11.1 – 11.11 &nbsp;·&nbsp; Continuity and Change in the Twentieth Century</p>
   </header>
-  <main>
-    <div class="semesters">
-      <section class="semester">
-        <h2>Semester 1</h2>
-        <div class="cards">
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 1</span>
-          <h3>Founding the Nation</h3>
-          <p class="eq">How did Enlightenment ideas shape a new kind of government, and does it still work?</p>
-          <a href="SSU_S1L01.html" class="card-link" aria-label="Open Founding the Nation"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 2</span>
-          <h3>Industrialization and Immigration</h3>
-          <p class="eq">How did industrialization transform who Americans were, where they lived, and what they could demand?</p>
-          <a href="SSU_S1L02.html" class="card-link" aria-label="Open Industrialization and Immigration"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 3</span>
-          <h3>Populism, Progressivism, and Religion</h3>
-          <p class="eq">How did ordinary people and religious movements push America to live up to its own ideals?</p>
-          <a href="SSU_S1L03.html" class="card-link" aria-label="Open Populism, Progressivism, and Religion"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 4</span>
-          <h3>America Becomes a World Power</h3>
-          <p class="eq">What pushed the United States from isolation to empire, and who paid the price?</p>
-          <a href="SSU_S1L04.html" class="card-link" aria-label="Open America Becomes a World Power"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 5</span>
-          <h3>The Roaring Twenties</h3>
-          <p class="eq">How did prosperity, technology, and cultural explosion make the 1920s one of the most contradictory decades in American history?</p>
-          <a href="SSU_S1L05.html" class="card-link" aria-label="Open The Roaring Twenties"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 6</span>
-          <h3>Civil Liberties Under Pressure</h3>
-          <p class="eq">How can a decade of prosperity also be a decade of fear and repression?</p>
-          <a href="SSU_S1L06.html" class="card-link" aria-label="Open Civil Liberties Under Pressure"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 7</span>
-          <h3>The Great Depression</h3>
-          <p class="eq">How did economic collapse devastate American families and shake faith in the system?</p>
-          <a href="SSU_S1L07.html" class="card-link" aria-label="Open The Great Depression"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 8</span>
-          <h3>The New Deal and Labor</h3>
-          <p class="eq">How far should the government go to help people in a crisis, and did the New Deal go far enough?</p>
-          <a href="SSU_S1L08.html" class="card-link" aria-label="Open The New Deal and Labor"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 9</span>
-          <h3>Final Exam</h3>
-          <p class="eq">Comprehensive semester assessment.</p>
-          <a href="SSU_S1L09_Final.html" class="card-link" aria-label="Open Final Exam"></a>
-        </article>
-        </div>
-      </section>
-      <section class="semester">
-        <h2>Semester 2</h2>
-        <div class="cards">
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 1</span>
-          <h3>America in World War II</h3>
-          <p class="eq">How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid?</p>
-          <a href="SSU_S2L01.html" class="card-link" aria-label="Open America in World War II"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 2</span>
-          <h3>The American Home Front and Hard Choices</h3>
-          <p class="eq">How did WWII transform American society at home, and were all the sacrifices equally shared?</p>
-          <a href="SSU_S2L02.html" class="card-link" aria-label="Open The American Home Front and Hard Choices"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 3</span>
-          <h3>Post-War Boom and the New America</h3>
-          <p class="eq">How did WWII change what American life looked like, and who got left out of the new prosperity?</p>
-          <a href="SSU_S2L03.html" class="card-link" aria-label="Open Post-War Boom and the New America"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 4</span>
-          <h3>The Cold War at Home and Abroad</h3>
-          <p class="eq">How did fear of communism reshape American foreign policy and daily American life?</p>
-          <a href="SSU_S2L04.html" class="card-link" aria-label="Open The Cold War at Home and Abroad"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 5</span>
-          <h3>Cuba, Vietnam, and Cold War Escalation</h3>
-          <p class="eq">Why did the United States fight wars in countries most Americans couldn't find on a map?</p>
-          <a href="SSU_S2L05.html" class="card-link" aria-label="Open Cuba, Vietnam, and Cold War Escalation"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 6</span>
-          <h3>The Civil Rights Movement</h3>
-          <p class="eq">How did ordinary Americans use law, protest, and personal sacrifice to change a country not living up to its own promises?</p>
-          <a href="SSU_S2L06.html" class="card-link" aria-label="Open The Civil Rights Movement"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 7</span>
-          <h3>Expanding Civil Rights and Social Movements</h3>
-          <p class="eq">How did the Black civil rights movement inspire other Americans to demand their own equality?</p>
-          <a href="SSU_S2L07.html" class="card-link" aria-label="Open Expanding Civil Rights and Social Movements"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 8</span>
-          <h3>Modern America and Unfinished Business</h3>
-          <p class="eq">What major problems has America still not solved, and why does history matter for solving them?</p>
-          <a href="SSU_S2L08.html" class="card-link" aria-label="Open Modern America and Unfinished Business"></a>
-        </article>
-        <article class="day-card">
-          <span class="lock" aria-hidden="true">&#128274;</span>
-          <span class="day-num">Day 9</span>
-          <h3>Final Exam</h3>
-          <p class="eq">Comprehensive semester assessment.</p>
-          <a href="SSU_S2L09_Final.html" class="card-link" aria-label="Open Final Exam"></a>
-        </article>
-        </div>
-      </section>
+
+  <!-- SEMESTER 1 -->
+  <section class="semester-block">
+    <div class="semester-header">
+      <h2 class="semester-title">Semester 1</h2>
+      <div class="semester-line"></div>
     </div>
-  </main>
-  <footer>US History &mdash; SSU</footer>
+    <p class="semester-subtitle">Standards 11.1–11.6 &nbsp;·&nbsp; Founding Era Through the Great Depression</p>
+
+    <div class="cards-grid">
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 1</div>
+        <div class="card-title">Founding the Nation</div>
+        <div class="card-eq">How did Enlightenment ideas shape a new kind of government, and does it still work?</div>
+        <div class="card-std">Standards 11.1</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 2</div>
+        <div class="card-title">Industrialization and Immigration</div>
+        <div class="card-eq">How did industrialization transform who Americans were, where they lived, and what they could demand?</div>
+        <div class="card-std">Standards 11.2</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 3</div>
+        <div class="card-title">Populism, Progressivism, and Religion</div>
+        <div class="card-eq">How did ordinary people and religious movements push America to live up to its own ideals?</div>
+        <div class="card-std">Standards 11.2–11.3</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 4</div>
+        <div class="card-title">America Becomes a World Power</div>
+        <div class="card-eq">What pushed the United States from isolation to empire, and who paid the price?</div>
+        <div class="card-std">Standards 11.4</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 5</div>
+        <div class="card-title">The Roaring Twenties</div>
+        <div class="card-eq">How did prosperity, technology, and cultural explosion make the 1920s one of the most contradictory decades in American history?</div>
+        <div class="card-std">Standards 11.5 pt. 1</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 6</div>
+        <div class="card-title">Civil Liberties Under Pressure</div>
+        <div class="card-eq">How can a decade of prosperity also be a decade of fear and repression?</div>
+        <div class="card-std">Standards 11.5 pt. 2</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 7</div>
+        <div class="card-title">The Great Depression</div>
+        <div class="card-eq">How did economic collapse devastate American families and shake faith in the system?</div>
+        <div class="card-std">Standards 11.6 pt. 1</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 8</div>
+        <div class="card-title">The New Deal and Labor</div>
+        <div class="card-eq">How far should the government go to help people in a crisis, and did the New Deal go far enough?</div>
+        <div class="card-std">Standards 11.6 pt. 2</div>
+      </a>
+
+    </div>
+  </section>
+
+  <hr class="semester-divider">
+
+  <!-- SEMESTER 2 -->
+  <section class="semester-block">
+    <div class="semester-header">
+      <h2 class="semester-title">Semester 2</h2>
+      <div class="semester-line"></div>
+    </div>
+    <p class="semester-subtitle">Standards 11.7–11.11 &nbsp;·&nbsp; WWII Through Modern America</p>
+
+    <div class="cards-grid">
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 1</div>
+        <div class="card-title">America in World War II</div>
+        <div class="card-eq">How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid?</div>
+        <div class="card-std">Standards 11.7 pt. 1</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 2</div>
+        <div class="card-title">The American Home Front and Hard Choices</div>
+        <div class="card-eq">How did WWII transform American society at home, and were all the sacrifices equally shared?</div>
+        <div class="card-std">Standards 11.7 pt. 2</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 3</div>
+        <div class="card-title">Post-War Boom and the New America</div>
+        <div class="card-eq">How did WWII change what American life looked like, and who got left out of the new prosperity?</div>
+        <div class="card-std">Standards 11.8</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 4</div>
+        <div class="card-title">The Cold War at Home and Abroad</div>
+        <div class="card-eq">How did fear of communism reshape American foreign policy and daily American life?</div>
+        <div class="card-std">Standards 11.9 pt. 1</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 5</div>
+        <div class="card-title">Cuba, Vietnam, and Cold War Escalation</div>
+        <div class="card-eq">Why did the United States fight wars in countries most Americans couldn't find on a map?</div>
+        <div class="card-std">Standards 11.9 pt. 2</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 6</div>
+        <div class="card-title">The Civil Rights Movement</div>
+        <div class="card-eq">How did ordinary Americans use law, protest, and personal sacrifice to change a country not living up to its own promises?</div>
+        <div class="card-std">Standards 11.10 pt. 1</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 7</div>
+        <div class="card-title">Expanding Civil Rights and Social Movements</div>
+        <div class="card-eq">How did the Black civil rights movement inspire other Americans to demand their own equality?</div>
+        <div class="card-std">Standards 11.10 pt. 2</div>
+      </a>
+
+      <a class="day-card locked fade-in" aria-disabled="true">
+        <div class="day-num"><span class="lock-icon">🔒</span> Day 8</div>
+        <div class="card-title">Modern America and Unfinished Business</div>
+        <div class="card-eq">What major problems has America still not solved, and why does history matter for solving them?</div>
+        <div class="card-std">Standards 11.11</div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>U.S. History &nbsp;·&nbsp; San Diego Summer School &nbsp;·&nbsp; SSU</footer>
+
+</div>
+
+<script>
+  // Generate star field
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 60; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    const size = Math.random() * 3 + 1;
+    star.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      top: ${Math.random() * 100}%;
+      left: ${Math.random() * 100}%;
+      animation-duration: ${Math.random() * 4 + 3}s;
+      animation-delay: ${Math.random() * 5}s;
+    `;
+    starsEl.appendChild(star);
+  }
+</script>
 </body>
 </html>
