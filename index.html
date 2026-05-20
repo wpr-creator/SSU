@@ -3,443 +3,414 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>U.S. History — Summer</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>U.S. HISTORY — OCS SUMMER SCHOOL</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!--
+  HEADER IMAGE
+  FILENAME: header_trumbull.jpg
+  PLACE IN: images/
+  FIND: "Declaration of Independence" painting by John Trumbull, 1819. Wide horizontal view of the full painting showing the Continental Congress chamber. This is the painting that hangs in the US Capitol Rotunda and appears on the back of the $2 bill.
+  WIKIMEDIA: https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg
+  Download the full-size JPG and save as header_trumbull.jpg in your images/ folder.
+-->
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --white: #f8faff;
-    --ice: #edf2fb;
-    --sky: #dce8f7;
-    --blue: #2b5fa6;
-    --blue-mid: #4a7ec7;
-    --blue-light: #7aaee8;
-    --navy: #0f2547;
-    --red: #b03030;
-    --text: #0d1b2e;
-    --text-muted: #5a7096;
-    --card-bg: rgba(248,250,255,0.88);
-    --locked-color: #9bafc8;
-  }
+:root {
+  --navy:      #0a1628;
+  --navy-mid:  #1a2e50;
+  --red:       #b22234;
+  --red-light: #cc3344;
+  --white:     #f8f6f0;
+  --off-white: #ede8df;
+  --gold:      #c8a84b;
+  --text:      #1a1a1a;
+  --text-muted:#5a5a6a;
+  --rule:      rgba(184,34,52,0.25);
+}
 
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-  body {
-    font-family: 'DM Sans', system-ui, sans-serif;
-    background-color: var(--white);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-  /* ── ANIMATED BACKGROUND ── */
-  .bg-canvas {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
+/* ── HERO HEADER ── */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
 
-  /* Stars/dots field */
-  .stars {
-    position: absolute;
-    inset: 0;
-  }
+.hero-img {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0.72) 100%),
+    url('images/header_trumbull.jpg') center center / cover no-repeat;
+  background-color: var(--navy);
+}
 
-  .star {
-    position: absolute;
-    border-radius: 50%;
-    background: var(--blue-light);
-    animation: twinkle ease-in-out infinite;
-  }
+/* Animated stripe overlay — subtle flag rhythm */
+.hero-stripes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.stripe {
+  position: absolute;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(200,168,75,0.18) 40%, rgba(200,168,75,0.18) 60%, transparent 100%);
+  animation: stripeDrift linear infinite;
+}
+.stripe:nth-child(1) { top: 20%; animation-duration: 18s; animation-delay: 0s; }
+.stripe:nth-child(2) { top: 38%; animation-duration: 24s; animation-delay: 3s; }
+.stripe:nth-child(3) { top: 56%; animation-duration: 20s; animation-delay: 7s; }
+.stripe:nth-child(4) { top: 74%; animation-duration: 22s; animation-delay: 2s; }
 
-  @keyframes twinkle {
-    0%, 100% { opacity: 0.08; transform: scale(1); }
-    50%       { opacity: 0.35; transform: scale(1.3); }
-  }
+@keyframes stripeDrift {
+  0%   { opacity: 0; transform: translateX(-100%); }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(100%); }
+}
 
-  /* Flowing wave lines */
-  .wave-wrap {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
+/* Floating particles */
+.particles { position: absolute; inset: 0; pointer-events: none; }
+.particle {
+  position: absolute;
+  width: 2px; height: 2px;
+  border-radius: 50%;
+  background: rgba(200,168,75,0.6);
+  animation: particleFloat ease-in-out infinite;
+}
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50%       { transform: translateY(-20px) scale(1.5); opacity: 0.9; }
+}
 
-  .wave-path {
-    fill: none;
-    stroke-width: 1;
-    animation: waveDrift linear infinite;
-  }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 3.5rem;
+  text-align: center;
+}
 
-  .wave-path:nth-child(1) { stroke: rgba(43,95,166,0.07); animation-duration: 30s; }
-  .wave-path:nth-child(2) { stroke: rgba(176,48,48,0.05); animation-duration: 38s; animation-delay: 5s; }
-  .wave-path:nth-child(3) { stroke: rgba(43,95,166,0.06); animation-duration: 25s; animation-delay: 12s; }
-  .wave-path:nth-child(4) { stroke: rgba(74,126,199,0.08); animation-duration: 42s; animation-delay: 8s; }
+.course-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
 
-  @keyframes waveDrift {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+.hero h1 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.0;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
 
-  /* Radial glow orbs */
-  .glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    animation: glowPulse ease-in-out infinite;
-  }
+.hero h1 span { color: var(--gold); }
 
-  .glow-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(43,95,166,0.12), transparent); top: -150px; right: -100px; animation-duration: 18s; }
-  .glow-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(176,48,48,0.08), transparent); bottom: -100px; left: -80px; animation-duration: 24s; animation-delay: 8s; }
-  .glow-3 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(122,174,232,0.1), transparent); top: 45%; left: 40%; animation-duration: 20s; animation-delay: 4s; }
+.hero-rule {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  margin: 1.2rem auto;
+  border: none;
+}
 
-  @keyframes glowPulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.6; transform: scale(1.15); }
-  }
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
 
-  /* Fine dot grid */
-  .dot-grid {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background-image: radial-gradient(circle, rgba(43,95,166,0.07) 1px, transparent 1px);
-    background-size: 32px 32px;
-    pointer-events: none;
-  }
+/* Red bottom bar on hero */
+.hero-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--red) 35%, var(--white) 50%, var(--red) 65%, var(--navy) 100%);
+}
 
-  /* ── LAYOUT ── */
-  .page-wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem 4rem;
-  }
+/* ── MAIN CONTENT ── */
+.page-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
 
-  /* ── HEADER ── */
-  header {
-    text-align: center;
-    padding: 4rem 0 2.5rem;
-  }
+/* ── SEMESTER BLOCK ── */
+.semester-block { margin-top: 4rem; }
 
-  .course-label {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.2rem;
-  }
+.semester-hdr {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.35rem;
+}
 
-  header h1 {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(2.6rem, 6vw, 4.6rem);
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.1;
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.02em;
-  }
+.semester-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--navy);
+  white-space: nowrap;
+}
 
-  header h1 span {
-    color: var(--red);
-    font-style: italic;
-  }
+.semester-rule {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red) 0%, rgba(184,34,52,0.1) 100%);
+}
 
-  .header-rule {
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--blue), var(--red));
-    margin: 1.5rem auto;
-    border: none;
-  }
+.semester-sub {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  padding-left: 2px;
+}
 
-  .header-sub {
-    font-size: 1rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    letter-spacing: 0.06em;
-  }
+/* ── CARDS ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
 
-  /* ── SEMESTER SECTIONS ── */
-  .semester-block {
-    margin-bottom: 4rem;
-  }
+.day-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #ffffff;
+  border: 1px solid rgba(10,22,40,0.1);
+  border-top: 3px solid var(--navy);
+  padding: 1.5rem 1.4rem 1.3rem;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
+  overflow: hidden;
+}
 
-  .semester-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1.2rem;
-    margin-bottom: 0.4rem;
-  }
+.day-card::after {
+  content: '→';
+  position: absolute;
+  bottom: 1.1rem;
+  right: 1.2rem;
+  font-size: 1rem;
+  color: var(--red);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
 
-  .semester-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: var(--navy);
-    white-space: nowrap;
-  }
+.day-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(10,22,40,0.12);
+  border-top-color: var(--red);
+}
 
-  .semester-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(43,95,166,0.3), transparent);
-  }
+.day-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-  .semester-subtitle {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    font-weight: 400;
-  }
+.day-num {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.7rem;
+}
 
-  /* ── CARDS ── */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.2rem;
-  }
+.card-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
 
-  .day-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(43,95,166,0.12);
-    border-radius: 6px;
-    padding: 1.4rem 1.3rem 1.2rem;
-    position: relative;
-    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    overflow: hidden;
-  }
+.card-eq {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.55;
+}
 
-  .day-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--blue), var(--red));
-    opacity: 0;
-    transition: opacity 0.22s ease;
-  }
+.card-std {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(10,22,40,0.07);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 600;
+  opacity: 0.55;
+}
 
-  .day-card.live {
-    cursor: pointer;
-  }
+/* ── SEMESTER DIVIDER ── */
+.semester-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,34,52,0.2), transparent);
+  margin: 1rem 0 0;
+}
 
-  .day-card.live:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 36px rgba(15,37,71,0.12);
-    border-color: rgba(43,95,166,0.35);
-  }
+/* ── FOOTER ── */
+footer {
+  border-top: 2px solid var(--navy);
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
 
-  .day-card.live:hover::after {
-    opacity: 1;
-  }
+/* ── FADE IN ON LOAD ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.5s ease forwards;
+}
+.cards-grid .fade-in:nth-child(1) { animation-delay: 0.03s; }
+.cards-grid .fade-in:nth-child(2) { animation-delay: 0.07s; }
+.cards-grid .fade-in:nth-child(3) { animation-delay: 0.11s; }
+.cards-grid .fade-in:nth-child(4) { animation-delay: 0.15s; }
+.cards-grid .fade-in:nth-child(5) { animation-delay: 0.19s; }
+.cards-grid .fade-in:nth-child(6) { animation-delay: 0.23s; }
+.cards-grid .fade-in:nth-child(7) { animation-delay: 0.27s; }
+.cards-grid .fade-in:nth-child(8) { animation-delay: 0.31s; }
 
-  .day-card.locked {
-    cursor: default;
-    opacity: 0.5;
-  }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-  .day-num {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--blue-mid);
-    margin-bottom: 0.65rem;
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-  }
-
-  .day-card.locked .day-num {
-    color: var(--locked-color);
-  }
-
-  .lock-icon {
-    font-size: 0.68rem;
-  }
-
-  .card-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.35;
-    margin-bottom: 0.65rem;
-  }
-
-  .card-eq {
-    font-size: 0.86rem;
-    color: var(--text-muted);
-    font-style: italic;
-    line-height: 1.55;
-    font-weight: 300;
-  }
-
-  .card-std {
-    margin-top: 1rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--locked-color);
-    font-weight: 500;
-  }
-
-  .day-card.live .card-std {
-    color: var(--blue-mid);
-  }
-
-  /* ── DIVIDER ── */
-  .semester-divider {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(43,95,166,0.2), transparent);
-    margin: 0.5rem 0 3.5rem;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    text-align: center;
-    padding: 2rem 0 1rem;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    opacity: 0.5;
-  }
-
-  /* ── FADE IN ── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: fadeUp 0.55s ease forwards;
-  }
-
-  .fade-in:nth-child(1) { animation-delay: 0.04s; }
-  .fade-in:nth-child(2) { animation-delay: 0.09s; }
-  .fade-in:nth-child(3) { animation-delay: 0.14s; }
-  .fade-in:nth-child(4) { animation-delay: 0.19s; }
-  .fade-in:nth-child(5) { animation-delay: 0.24s; }
-  .fade-in:nth-child(6) { animation-delay: 0.29s; }
-  .fade-in:nth-child(7) { animation-delay: 0.34s; }
-  .fade-in:nth-child(8) { animation-delay: 0.39s; }
-
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (max-width: 600px) {
-    .cards-grid { grid-template-columns: 1fr 1fr; }
-    header h1 { font-size: 2.3rem; }
-  }
-  @media (max-width: 400px) {
-    .cards-grid { grid-template-columns: 1fr; }
-  }
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2.4rem; }
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+  .page-wrap { padding: 0 1rem 3rem; }
+}
+@media (max-width: 420px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-<!-- Animated background -->
-<div class="bg-canvas">
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
-  <div class="glow glow-3"></div>
-
-  <!-- Star field -->
-  <div class="stars" id="stars"></div>
-
-  <!-- Wave SVG -->
-  <svg class="wave-wrap" viewBox="0 0 2000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="wave-path" d="M0,200 C300,100 600,300 900,200 S1500,100 2000,200 S2600,300 3000,200"/>
-    <path class="wave-path" d="M0,450 C400,350 700,550 1000,450 S1600,350 2000,450 S2700,550 3000,450"/>
-    <path class="wave-path" d="M0,650 C250,550 550,750 850,650 S1450,550 1850,650 S2500,750 2850,650"/>
-    <path class="wave-path" d="M0,820 C350,720 650,920 950,820 S1550,720 1950,820 S2650,920 2950,820"/>
-  </svg>
-</div>
-
-<div class="dot-grid"></div>
-
-<div class="page-wrap">
-
-  <header>
-    <p class="course-label">San Diego Summer School &nbsp;·&nbsp; Social Science</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-stripes">
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+  </div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <p class="course-eyebrow">OCS Summer School &nbsp;·&nbsp; Social Science</p>
     <h1>U.S. <span>History</span></h1>
-    <hr class="header-rule">
-    <p class="header-sub">Standards 11.1 – 11.11 &nbsp;·&nbsp; Continuity and Change in the Twentieth Century</p>
-  </header>
+    <hr class="hero-rule">
+    <p class="hero-sub">Standards 11.1 – 11.11 &nbsp;·&nbsp; Continuity and Change in the Twentieth Century</p>
+  </div>
+  <div class="hero-bar"></div>
+</header>
+
+<!-- MAIN -->
+<main class="page-wrap">
 
   <!-- SEMESTER 1 -->
   <section class="semester-block">
-    <div class="semester-header">
+    <div class="semester-hdr">
       <h2 class="semester-title">Semester 1</h2>
-      <div class="semester-line"></div>
+      <div class="semester-rule"></div>
     </div>
-    <p class="semester-subtitle">Standards 11.1–11.6 &nbsp;·&nbsp; Founding Era Through the Great Depression</p>
+    <p class="semester-sub">Standards 11.1–11.6 &nbsp;·&nbsp; Founding Era Through the Great Depression</p>
 
     <div class="cards-grid">
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 1</div>
+      <a class="day-card fade-in" href="SSU_S1L01.html">
+        <div class="day-num">Day 1</div>
         <div class="card-title">Founding the Nation</div>
         <div class="card-eq">How did Enlightenment ideas shape a new kind of government, and does it still work?</div>
         <div class="card-std">Standards 11.1</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 2</div>
+      <a class="day-card fade-in" href="SSU_S1L02.html">
+        <div class="day-num">Day 2</div>
         <div class="card-title">Industrialization and Immigration</div>
         <div class="card-eq">How did industrialization transform who Americans were, where they lived, and what they could demand?</div>
         <div class="card-std">Standards 11.2</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 3</div>
+      <a class="day-card fade-in" href="SSU_S1L03.html">
+        <div class="day-num">Day 3</div>
         <div class="card-title">Populism, Progressivism, and Religion</div>
         <div class="card-eq">How did ordinary people and religious movements push America to live up to its own ideals?</div>
         <div class="card-std">Standards 11.2–11.3</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 4</div>
+      <a class="day-card fade-in" href="SSU_S1L04.html">
+        <div class="day-num">Day 4</div>
         <div class="card-title">America Becomes a World Power</div>
         <div class="card-eq">What pushed the United States from isolation to empire, and who paid the price?</div>
         <div class="card-std">Standards 11.4</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 5</div>
+      <a class="day-card fade-in" href="SSU_S1L05.html">
+        <div class="day-num">Day 5</div>
         <div class="card-title">The Roaring Twenties</div>
         <div class="card-eq">How did prosperity, technology, and cultural explosion make the 1920s one of the most contradictory decades in American history?</div>
         <div class="card-std">Standards 11.5 pt. 1</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 6</div>
+      <a class="day-card fade-in" href="SSU_S1L06.html">
+        <div class="day-num">Day 6</div>
         <div class="card-title">Civil Liberties Under Pressure</div>
         <div class="card-eq">How can a decade of prosperity also be a decade of fear and repression?</div>
         <div class="card-std">Standards 11.5 pt. 2</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 7</div>
+      <a class="day-card fade-in" href="SSU_S1L07.html">
+        <div class="day-num">Day 7</div>
         <div class="card-title">The Great Depression</div>
         <div class="card-eq">How did economic collapse devastate American families and shake faith in the system?</div>
         <div class="card-std">Standards 11.6 pt. 1</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 8</div>
+      <a class="day-card fade-in" href="SSU_S1L08.html">
+        <div class="day-num">Day 8</div>
         <div class="card-title">The New Deal and Labor</div>
         <div class="card-eq">How far should the government go to help people in a crisis, and did the New Deal go far enough?</div>
         <div class="card-std">Standards 11.6 pt. 2</div>
@@ -452,65 +423,65 @@
 
   <!-- SEMESTER 2 -->
   <section class="semester-block">
-    <div class="semester-header">
+    <div class="semester-hdr">
       <h2 class="semester-title">Semester 2</h2>
-      <div class="semester-line"></div>
+      <div class="semester-rule"></div>
     </div>
-    <p class="semester-subtitle">Standards 11.7–11.11 &nbsp;·&nbsp; WWII Through Modern America</p>
+    <p class="semester-sub">Standards 11.7–11.11 &nbsp;·&nbsp; WWII Through Modern America</p>
 
     <div class="cards-grid">
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 1</div>
+      <a class="day-card fade-in" href="SSU_S2L01.html">
+        <div class="day-num">Day 1</div>
         <div class="card-title">America in World War II</div>
         <div class="card-eq">How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid?</div>
         <div class="card-std">Standards 11.7 pt. 1</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 2</div>
+      <a class="day-card fade-in" href="SSU_S2L02.html">
+        <div class="day-num">Day 2</div>
         <div class="card-title">The American Home Front and Hard Choices</div>
         <div class="card-eq">How did WWII transform American society at home, and were all the sacrifices equally shared?</div>
         <div class="card-std">Standards 11.7 pt. 2</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 3</div>
+      <a class="day-card fade-in" href="SSU_S2L03.html">
+        <div class="day-num">Day 3</div>
         <div class="card-title">Post-War Boom and the New America</div>
         <div class="card-eq">How did WWII change what American life looked like, and who got left out of the new prosperity?</div>
         <div class="card-std">Standards 11.8</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 4</div>
+      <a class="day-card fade-in" href="SSU_S2L04.html">
+        <div class="day-num">Day 4</div>
         <div class="card-title">The Cold War at Home and Abroad</div>
         <div class="card-eq">How did fear of communism reshape American foreign policy and daily American life?</div>
         <div class="card-std">Standards 11.9 pt. 1</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 5</div>
+      <a class="day-card fade-in" href="SSU_S2L05.html">
+        <div class="day-num">Day 5</div>
         <div class="card-title">Cuba, Vietnam, and Cold War Escalation</div>
         <div class="card-eq">Why did the United States fight wars in countries most Americans couldn't find on a map?</div>
         <div class="card-std">Standards 11.9 pt. 2</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 6</div>
+      <a class="day-card fade-in" href="SSU_S2L06.html">
+        <div class="day-num">Day 6</div>
         <div class="card-title">The Civil Rights Movement</div>
         <div class="card-eq">How did ordinary Americans use law, protest, and personal sacrifice to change a country not living up to its own promises?</div>
         <div class="card-std">Standards 11.10 pt. 1</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 7</div>
+      <a class="day-card fade-in" href="SSU_S2L07.html">
+        <div class="day-num">Day 7</div>
         <div class="card-title">Expanding Civil Rights and Social Movements</div>
         <div class="card-eq">How did the Black civil rights movement inspire other Americans to demand their own equality?</div>
         <div class="card-std">Standards 11.10 pt. 2</div>
       </a>
 
-      <a class="day-card locked fade-in" aria-disabled="true">
-        <div class="day-num"><span class="lock-icon">🔒</span> Day 8</div>
+      <a class="day-card fade-in" href="SSU_S2L08.html">
+        <div class="day-num">Day 8</div>
         <div class="card-title">Modern America and Unfinished Business</div>
         <div class="card-eq">What major problems has America still not solved, and why does history matter for solving them?</div>
         <div class="card-std">Standards 11.11</div>
@@ -519,26 +490,26 @@
     </div>
   </section>
 
-  <footer>U.S. History &nbsp;·&nbsp; San Diego Summer School &nbsp;·&nbsp; SSU</footer>
+</main>
 
-</div>
+<footer>
+  U.S. History &nbsp;·&nbsp; OCS Summer School &nbsp;·&nbsp; SSU
+</footer>
 
 <script>
-  // Generate star field
-  const starsEl = document.getElementById('stars');
-  for (let i = 0; i < 60; i++) {
-    const star = document.createElement('div');
-    star.classList.add('star');
-    const size = Math.random() * 3 + 1;
-    star.style.cssText = `
-      width: ${size}px;
-      height: ${size}px;
-      top: ${Math.random() * 100}%;
+  // Generate floating particles in hero
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `
       left: ${Math.random() * 100}%;
-      animation-duration: ${Math.random() * 4 + 3}s;
-      animation-delay: ${Math.random() * 5}s;
+      top: ${Math.random() * 100}%;
+      animation-duration: ${3 + Math.random() * 5}s;
+      animation-delay: ${Math.random() * 6}s;
+      opacity: ${0.2 + Math.random() * 0.5};
     `;
-    starsEl.appendChild(star);
+    container.appendChild(p);
   }
 </script>
 </body>
