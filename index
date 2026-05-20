@@ -8,11 +8,11 @@
 
 <!--
   HEADER IMAGE
-  FILENAME: header_trumbull.jpg
+  FILENAME: header_US.jpg
   PLACE IN: images/
-  FIND: "Declaration of Independence" painting by John Trumbull, 1819. Wide horizontal view of the full painting showing the Continental Congress chamber. This is the painting that hangs in the US Capitol Rotunda and appears on the back of the $2 bill.
-  WIKIMEDIA: https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg
-  Download the full-size JPG and save as header_trumbull.jpg in your images/ folder.
+  FIND: "Declaration of Independence" painting by John US, 1819. Wide horizontal view of the full painting showing the Continental Congress chamber. This is the painting that hangs in the US Capitol Rotunda and appears on the back of the $2 bill.
+  WIKIMEDIA: https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_US.jpg
+  Download the full-size JPG and save as header_US.jpg in your images/ folder.
 -->
 
 <style>
