@@ -3,299 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>America in World War II — US History S2L01</title>
-
-<!-- Google Fonts: Playfair Display (display/era) + Source Serif 4 (body) -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-
+<title>The Failed Peace After WWI</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
-  /* =============================================
-     CSS VARIABLES — WWII PALETTE
-     olive drab, steel gray, aged paper, blood red
-  ============================================= */
   :root {
-    --bg:           #1c1c18;
-    --bg-mid:       #26261f;
-    --bg-section:   #2e2d25;
-    --bg-card:      #343429;
-    --tan:          #c8b97a;
-    --tan-light:    #e4d8b0;
-    --red:          #c0392b;
-    --red-dark:     #922b21;
-    --olive:        #6b7c3a;
-    --olive-light:  #8d9f4e;
-    --steel:        #8a9ba8;
-    --steel-light:  #b5c6d0;
-    --text:         #ddd5bb;
-    --text-dim:     #a89f85;
-    --border:       #4a4838;
-    --accent:       #d4a017;
-    --display-font: 'Playfair Display', Georgia, serif;
-    --body-font:    'Source Serif 4', Georgia, serif;
+    --khaki:       #c8b98a;
+    --khaki-dark:  #a89b6a;
+    --khaki-pale:  #e8dfc8;
+    --blood:       #7a1a1a;
+    --blood-mid:   #9e2a2a;
+    --mud:         #3b2f1e;
+    --mud-mid:     #5a4430;
+    --mud-light:   #7a6048;
+    --newsprint:   #f0e8d8;
+    --ink:         #1a1208;
+    --ink-soft:    #2e2518;
+    --gray-steel:  #4a4540;
+    --gray-light:  #9a9088;
+    --vocab-red:   #b03030;
+    --accent:      #c8a84a;
+    --accent-dark: #8a6a20;
   }
 
-  /* =============================================
-     RESET & BASE
-  ============================================= */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: var(--body-font);
+    background-color: #2a2018;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0,0,0,0.08) 3px,
+        rgba(0,0,0,0.08) 4px
+      );
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
     font-size: 18px;
-    line-height: 1.85;
-    font-weight: 300;
+    line-height: 1.9;
   }
 
-  /* =============================================
-     TEXTURE OVERLAY — subtle grain on body
-  ============================================= */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.5;
-  }
-
-  /* =============================================
-     CONTENT WRAPPER
-  ============================================= */
+  /* ─── PAGE WRAPPER ─── */
   .page-wrap {
-    position: relative;
-    z-index: 1;
-  }
-
-  .content-block {
     max-width: 820px;
     margin: 0 auto;
-    padding: 0 24px;
+    background-color: var(--newsprint);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    box-shadow: 0 0 60px rgba(0,0,0,0.7);
   }
 
-  /* =============================================
-     HEADER
-  ============================================= */
+  /* ─── HEADER ─── */
   .site-header {
     position: relative;
     overflow: hidden;
-    background-color: #0e0e0b;
-    padding: 80px 24px 64px;
+    padding: 60px 40px 50px;
+    background-color: var(--mud);
     text-align: center;
-    border-bottom: 3px solid var(--red-dark);
   }
 
-  /* Header background image container */
   .header-bg {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center top;
-    opacity: 0.30;
-    filter: sepia(40%) contrast(1.1);
-    z-index: 0;
+    opacity: 0.32;
+    filter: grayscale(30%) sepia(40%);
   }
 
-  /* HEADER BG IMAGE TAG */
-  <!-- FILENAME: S2L01_HeaderBG_IwoJimaFlag.jpg
+  <!-- FILENAME: S2L01_HeaderBg_TrenchWWI.jpg
        PLACE IN: images/S2/L01/
-       FIND: Famous "Raising the Flag on Iwo Jima" photograph by Joe Rosenthal, February 23, 1945 — the most iconic WWII photograph, taken during the Battle of Iwo Jima; shows six U.S. Marines raising the American flag atop Mount Suribachi; widely reproduced, strong patriotic and wartime association
-       SEARCH: "Raising the Flag on Iwo Jima" Rosenthal 1945 Wikimedia Commons
-       LINK: https://commons.wikimedia.org/wiki/File:Raising_the_Flag_on_Iwo_Jima,_larger_-_edit1.jpg (suggested, not guaranteed) -->
+       FIND: WWI soldiers in muddy trench, Western Front, 1916-1918, iconic trench warfare image showing exhausted soldiers; used as atmospheric header background
+       SEARCH: WWI trench soldiers Western Front 1917 Imperial War Museum
+       LINK: https://commons.wikimedia.org/wiki/File:WWI_trench_warfare.jpg (suggested, not guaranteed) -->
+  <img class="header-bg" src="images/S2/L01/S2L01_HeaderBg_TrenchWWI.jpg" alt="" aria-hidden="true">
 
-  .site-header .inner {
-    position: relative;
-    z-index: 1;
-    max-width: 820px;
-    margin: 0 auto;
-  }
+  .header-content { position: relative; z-index: 2; }
 
   .course-label {
-    display: block;
-    font-family: var(--body-font);
-    font-weight: 600;
+    font-family: 'Source Serif 4', serif;
     font-size: 13px;
-    letter-spacing: 0.22em;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--steel-light);
+    color: var(--khaki);
     margin-bottom: 18px;
   }
 
   .page-title {
-    font-family: var(--display-font);
-    font-size: clamp(42px, 7vw, 68px);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(46px, 7vw, 68px);
     font-weight: 900;
-    line-height: 1.08;
-    color: var(--tan-light);
-    text-shadow: 2px 3px 12px rgba(0,0,0,0.8);
-    letter-spacing: 0.01em;
-    margin-bottom: 32px;
+    line-height: 1.1;
+    color: var(--khaki-pale);
+    text-shadow: 2px 4px 12px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.5);
+    margin-bottom: 28px;
   }
 
   .eq-banner {
     display: inline-block;
-    background: var(--red-dark);
+    background-color: var(--blood);
     color: #fff;
-    font-family: var(--display-font);
-    font-size: clamp(17px, 2.5vw, 22px);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
     font-style: italic;
     font-weight: 700;
-    line-height: 1.45;
-    padding: 18px 32px;
-    border-left: 6px solid var(--accent);
-    border-right: 6px solid var(--accent);
-    max-width: 720px;
-    text-align: left;
-    margin: 0 auto;
+    padding: 14px 30px;
+    border: 2px solid var(--khaki);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+    max-width: 700px;
+    line-height: 1.5;
   }
 
   .eq-label {
-    display: block;
     font-style: normal;
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--tan);
-    margin-bottom: 6px;
+    color: var(--khaki);
+    display: block;
+    margin-bottom: 4px;
   }
 
-  /* =============================================
-     NAVIGATION BAR
-  ============================================= */
+  /* ─── NAV BAR ─── */
   .section-nav {
-    background: #0e0e0b;
-    border-bottom: 2px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 0 12px;
-  }
-
-  .section-nav ul {
-    list-style: none;
+    background-color: var(--mud);
+    border-bottom: 3px solid var(--blood);
+    padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
+    gap: 2px;
     justify-content: center;
-    max-width: 820px;
-    margin: 0 auto;
-    gap: 0;
   }
 
-  .section-nav li a {
+  .section-nav a {
     display: inline-block;
-    padding: 14px 18px;
-    font-family: var(--body-font);
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    color: var(--khaki-pale);
     text-decoration: none;
-    color: var(--steel-light);
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 16px;
     border-bottom: 3px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
 
-  .section-nav li a:hover {
-    color: var(--tan-light);
-    border-bottom-color: var(--red);
+  .section-nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
   }
 
-  /* =============================================
-     INTRO SECTION
-  ============================================= */
-  .intro-section {
-    padding: 64px 24px 0;
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .intro-section p {
-    font-size: 19px;
-    line-height: 1.9;
-    color: var(--tan-light);
-    font-weight: 300;
-  }
-
-  /* =============================================
-     SECTION DIVIDER
-  ============================================= */
-  .section-divider {
-    max-width: 820px;
-    margin: 56px auto 0;
-    padding: 0 24px;
+  /* ─── SECTION DIVIDER ─── */
+  .divider {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
+    margin: 48px 0 36px;
+    padding: 0 40px;
   }
 
-  .section-divider::before,
-  .section-divider::after {
-    content: '';
+  .divider-line {
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
+    background: linear-gradient(to right, transparent, var(--mud-light), transparent);
   }
 
-  .divider-star {
-    color: var(--accent);
-    font-size: 18px;
-    letter-spacing: 6px;
+  .divider-ornament {
+    color: var(--blood);
+    font-size: 20px;
+    line-height: 1;
   }
 
-  /* =============================================
-     CONTENT SECTIONS
-  ============================================= */
+  /* ─── CONTENT SECTIONS ─── */
   .content-section {
-    padding: 64px 24px;
-    max-width: 820px;
-    margin: 0 auto;
+    padding: 48px 40px 36px;
   }
 
-  .content-section + .content-section {
-    border-top: 1px solid var(--border);
+  .content-section:nth-child(odd) {
+    background-color: var(--newsprint);
   }
 
-  .section-label {
+  .content-section:nth-child(even) {
+    background-color: #e8dfc5;
+  }
+
+  .section-number {
     font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--olive-light);
     font-weight: 600;
-    margin-bottom: 10px;
-    display: block;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blood-mid);
+    margin-bottom: 8px;
   }
 
   .section-heading {
-    font-family: var(--display-font);
-    font-size: clamp(28px, 4vw, 38px);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 36px);
     font-weight: 900;
-    color: var(--tan-light);
-    line-height: 1.15;
-    margin-bottom: 28px;
-    padding-bottom: 16px;
-    border-bottom: 2px solid var(--red-dark);
+    color: var(--mud);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    border-left: 5px solid var(--blood);
+    padding-left: 18px;
   }
 
-  .section-body p {
+  p {
     margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 1.85;
+    color: var(--ink-soft);
   }
 
-  .section-body p:last-child {
-    margin-bottom: 0;
+  /* ─── INTRODUCTION ─── */
+  .intro-section {
+    padding: 44px 40px 36px;
+    background-color: var(--mud-mid);
+    background-image: linear-gradient(to bottom, var(--mud-mid), var(--mud));
+    color: var(--khaki-pale);
+    border-bottom: 4px solid var(--blood);
   }
 
-  /* =============================================
-     VOCABULARY TOOLTIP SYSTEM
-  ============================================= */
+  .intro-section p {
+    color: var(--khaki-pale);
+    font-size: 19px;
+    line-height: 2;
+  }
+
+  .intro-label {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--khaki);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  /* ─── VOCAB ─── */
   .vocab {
-    color: var(--red);
-    text-decoration: underline dotted var(--red);
+    color: var(--vocab-red);
+    text-decoration: underline dotted var(--vocab-red);
     cursor: help;
     position: relative;
   }
@@ -306,737 +254,675 @@
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    background: #0a0a08;
-    color: #f0e8d0;
-    padding: 9px 15px;
-    border-radius: 3px;
+    background: #1a1a2e;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 4px;
     font-size: 14px;
-    line-height: 1.55;
-    z-index: 200;
+    line-height: 1.5;
+    z-index: 100;
     font-style: normal;
     font-weight: 400;
     pointer-events: none;
     max-width: 280px;
     white-space: normal;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
   }
 
   .vocab:hover .tip,
-  .vocab.active .tip {
-    display: block;
-  }
+  .vocab.active .tip { display: block; }
 
-  /* Subsequent vocab use — red only, no tooltip */
-  .vocab-ref {
-    color: var(--red);
-  }
+  .vocab-red { color: var(--vocab-red); }
 
-  /* =============================================
-     IMAGES
-  ============================================= */
+  /* ─── IMAGES ─── */
   figure {
-    margin: 36px 0;
+    margin: 32px 0;
   }
 
-  /* Full width */
-  figure.img-full img {
+  figure img {
     width: 100%;
+    height: auto;
     display: block;
-    filter: sepia(15%) contrast(1.05);
-    border: 2px solid var(--border);
-  }
-
-  /* Inset left */
-  figure.img-left {
-    float: left;
-    width: 42%;
-    margin: 6px 28px 20px 0;
-  }
-
-  figure.img-left img {
-    width: 100%;
-    display: block;
-    filter: sepia(15%) contrast(1.05);
-    border: 2px solid var(--border);
-  }
-
-  /* Inset right */
-  figure.img-right {
-    float: right;
-    width: 42%;
-    margin: 6px 0 20px 28px;
-  }
-
-  figure.img-right img {
-    width: 100%;
-    display: block;
-    filter: sepia(15%) contrast(1.05);
-    border: 2px solid var(--border);
-  }
-
-  /* Paired images */
-  .img-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 36px 0;
-  }
-
-  .img-pair figure {
-    margin: 0;
-  }
-
-  .img-pair figure img {
-    width: 100%;
-    display: block;
-    filter: sepia(15%) contrast(1.05);
-    border: 2px solid var(--border);
+    border: 2px solid var(--mud-light);
+    box-shadow: 4px 6px 20px rgba(0,0,0,0.3);
   }
 
   figcaption {
     font-size: 13px;
-    line-height: 1.5;
-    color: var(--text-dim);
     font-style: italic;
+    color: var(--gray-steel);
     margin-top: 8px;
-    padding: 0 2px;
+    padding: 0 4px;
+    line-height: 1.5;
   }
 
-  /* clearfix */
-  .section-body::after {
-    content: '';
+  .img-inset-right {
+    float: right;
+    width: 42%;
+    margin: 8px 0 20px 28px;
+  }
+
+  .img-inset-left {
+    float: left;
+    width: 42%;
+    margin: 8px 28px 20px 0;
+  }
+
+  .img-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 32px 0;
+  }
+
+  .clearfix::after {
+    content: "";
     display: table;
     clear: both;
   }
 
-  /* =============================================
-     PRIMARY SOURCE PULLQUOTE
-  ============================================= */
+  /* ─── PRIMARY SOURCE ─── */
   .primary-source {
-    background: var(--bg-card);
-    border-left: 5px solid var(--red);
-    padding: 28px 32px 24px;
-    margin: 40px 0;
+    margin: 36px 0;
+    padding: 28px 32px;
+    background-color: #ddd5be;
+    border-left: 6px solid var(--blood);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 4px 4px 16px rgba(0,0,0,0.15);
     position: relative;
   }
 
   .primary-source::before {
     content: '\201C';
-    font-family: var(--display-font);
+    font-family: 'Playfair Display', serif;
     font-size: 80px;
-    color: var(--red-dark);
-    opacity: 0.4;
+    color: var(--blood);
+    opacity: 0.2;
     position: absolute;
-    top: -10px;
-    left: 18px;
+    top: 8px;
+    left: 14px;
     line-height: 1;
   }
 
-  .primary-source blockquote {
-    font-family: var(--display-font);
-    font-size: 22px;
-    font-style: italic;
-    line-height: 1.6;
-    color: var(--tan-light);
-    margin-bottom: 16px;
-    padding-left: 16px;
-  }
-
-  .primary-source cite {
-    display: block;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--steel-light);
-    margin-bottom: 12px;
-    padding-left: 16px;
-    letter-spacing: 0.03em;
-  }
-
-  .primary-source .doc-explainer {
-    font-size: 15px;
-    color: var(--tan);
-    font-style: normal;
-    padding-left: 16px;
-    border-top: 1px solid var(--border);
-    padding-top: 12px;
-    line-height: 1.6;
-  }
-
-  /* Primary source questions */
-  .ps-questions {
-    background: var(--bg-mid);
-    border: 1px solid var(--border);
-    padding: 24px 28px;
-    margin-top: 0;
-    margin-bottom: 40px;
-  }
-
-  .ps-questions p {
-    font-size: 17px;
-    margin-bottom: 14px;
-    color: var(--text);
-  }
-
-  .ps-questions p:last-child {
-    margin-bottom: 0;
-  }
-
-  .ps-q-label {
-    font-weight: 600;
-    color: var(--tan);
-    margin-right: 6px;
-  }
-
-  /* =============================================
-     HOW THIS STILL MATTERS TODAY
-  ============================================= */
-  .still-matters {
-    background: linear-gradient(160deg, #0e0e0b 0%, #1a1108 100%);
-    border-top: 3px solid var(--red-dark);
-    padding: 72px 24px 80px;
-  }
-
-  .still-matters .inner {
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .still-matters .section-label {
-    color: var(--accent);
-  }
-
-  .still-matters .section-heading {
-    border-bottom-color: var(--accent);
-  }
-
-  .matters-headline {
-    font-family: var(--display-font);
-    font-size: clamp(22px, 3vw, 28px);
-    font-weight: 700;
-    color: var(--tan-light);
-    line-height: 1.35;
-    margin-bottom: 32px;
-  }
-
-  .news-headlines {
-    list-style: none;
-    margin: 0 0 40px 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .news-headlines li {
-    border-left: 3px solid var(--accent);
-    padding-left: 16px;
-  }
-
-  .news-headlines a {
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--accent);
-    text-decoration: underline;
-    line-height: 1.45;
-  }
-
-  .closing-question {
-    font-family: var(--display-font);
-    font-size: clamp(20px, 2.8vw, 24px);
-    font-style: italic;
-    color: var(--tan-light);
-    line-height: 1.55;
-    margin-top: 40px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-  }
-
-  /* =============================================
-     LOCAL HISTORY CALLOUT
-  ============================================= */
-  .local-history {
-    background: var(--bg-card);
-    border: 2px solid var(--olive);
-    padding: 28px 32px;
-    margin: 48px 0 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .local-history::before {
-    content: 'LOCAL HISTORY';
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: var(--olive);
-    color: #fff;
+  .ps-label {
     font-size: 11px;
     letter-spacing: 0.2em;
-    font-weight: 700;
-    padding: 5px 14px;
+    text-transform: uppercase;
+    color: var(--blood-mid);
+    font-weight: 600;
+    margin-bottom: 12px;
   }
 
-  .local-history .lh-headline {
-    font-family: var(--display-font);
+  .ps-quote {
+    font-family: 'Playfair Display', serif;
     font-size: 22px;
-    font-weight: 700;
-    color: var(--tan-light);
-    margin-bottom: 14px;
-    margin-top: 6px;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--mud);
+    margin-bottom: 16px;
+    padding-left: 10px;
   }
 
-  .local-history p {
+  .ps-attribution {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray-steel);
+    margin-bottom: 12px;
+  }
+
+  .ps-narrator {
+    font-size: 15px;
+    color: var(--mud-mid);
+    font-weight: 600;
+    border-top: 1px solid var(--khaki-dark);
+    padding-top: 12px;
+    margin-bottom: 20px;
+  }
+
+  .ps-questions {
+    list-style: none;
+    padding: 0;
+  }
+
+  .ps-questions li {
+    padding: 10px 0 10px 0;
+    border-top: 1px solid var(--khaki-dark);
+    font-size: 16px;
+    color: var(--mud);
+    font-weight: 600;
+  }
+
+  .ps-questions li span {
+    color: var(--blood);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ─── COMPARISON TABLE ─── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 16px;
+  }
+
+  .compare-table th {
+    background-color: var(--mud);
+    color: var(--khaki-pale);
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
     font-size: 17px;
-    line-height: 1.75;
+  }
+
+  .compare-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    border: 1px solid var(--khaki-dark);
+    line-height: 1.7;
+  }
+
+  .compare-table tr:nth-child(even) td {
+    background-color: #ddd5be;
+  }
+
+  .compare-table tr:nth-child(odd) td {
+    background-color: #e8dfc8;
+  }
+
+  .compare-table .row-label {
+    font-weight: 600;
+    color: var(--blood);
+    background-color: #cfc3a8 !important;
+    font-size: 14px;
+  }
+
+  /* ─── CALLOUT BOX ─── */
+  .callout-box {
+    background-color: var(--mud);
+    color: var(--khaki-pale);
+    padding: 28px 32px;
+    margin: 32px 0;
+    border-top: 4px solid var(--accent);
+    border-bottom: 4px solid var(--accent);
+  }
+
+  .callout-box p {
+    color: var(--khaki-pale);
     margin-bottom: 10px;
   }
 
-  /* =============================================
-     FOOTER
-  ============================================= */
-  .site-footer {
-    background: #0a0a07;
-    border-top: 2px solid var(--border);
-    padding: 28px 24px;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-dim);
+  .callout-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 700;
   }
 
-  /* =============================================
-     RESPONSIVE
-  ============================================= */
-  @media (max-width: 640px) {
-    figure.img-left,
-    figure.img-right {
-      float: none;
-      width: 100%;
-      margin: 24px 0;
-    }
+  /* ─── STILL MATTERS ─── */
+  .still-matters {
+    padding: 52px 40px;
+    background-color: var(--mud);
+    background-image: linear-gradient(135deg, var(--mud) 0%, #1e180e 100%);
+    color: var(--khaki-pale);
+    border-top: 6px solid var(--blood);
+  }
 
-    .img-pair {
-      grid-template-columns: 1fr;
-    }
+  .sm-label {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--khaki);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
 
-    .section-nav li a {
-      padding: 12px 10px;
-      font-size: 10px;
-      letter-spacing: 0.08em;
-    }
+  .sm-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 900;
+    color: var(--khaki-pale);
+    line-height: 1.3;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--blood-mid);
+    padding-left: 18px;
+  }
+
+  .news-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+  }
+
+  .news-links li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--mud-light);
+  }
+
+  .news-links a {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: underline;
+    line-height: 1.5;
+  }
+
+  .news-links a:hover { color: var(--khaki-pale); }
+
+  .sm-closing-q {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-style: italic;
+    color: var(--khaki-pale);
+    line-height: 1.55;
+    margin-top: 36px;
+    padding: 24px 0 0;
+    border-top: 1px solid var(--mud-light);
+  }
+
+  .sm-closing-q p { color: var(--khaki-pale); }
+
+  /* ─── LOCAL HISTORY ─── */
+  .local-history {
+    margin: 0;
+    padding: 44px 40px;
+    background-color: #e0d4b8;
+    border-top: 4px solid var(--mud-light);
+    border-bottom: 4px solid var(--mud-light);
+  }
+
+  .lh-badge {
+    display: inline-block;
+    background-color: var(--blood);
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 14px;
+    margin-bottom: 16px;
+  }
+
+  .lh-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--mud);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  /* ─── FOOTER ─── */
+  .site-footer {
+    background-color: var(--mud);
+    color: var(--gray-light);
+    text-align: center;
+    padding: 22px 40px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 3px solid var(--blood);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 620px) {
+    .content-section, .intro-section, .still-matters, .local-history { padding: 36px 22px; }
+    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 24px 0; }
+    .img-pair { grid-template-columns: 1fr; }
+    .section-nav a { font-size: 11px; padding: 12px 10px; }
+    .primary-source { padding: 22px 20px; }
+    .compare-table { font-size: 14px; }
+    .compare-table th, .compare-table td { padding: 9px 10px; }
+    .divider { padding: 0 22px; }
   }
 </style>
 </head>
 <body>
 <div class="page-wrap">
 
-<!-- ============================================================
-     SITE HEADER
-============================================================ -->
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <header class="site-header">
 
-  <!-- FILENAME: S2L01_HeaderBG_IwoJimaFlag.jpg
+  <!-- FILENAME: S2L01_HeaderBg_TrenchWWI.jpg
        PLACE IN: images/S2/L01/
-       FIND: "Raising the Flag on Iwo Jima" by Joe Rosenthal, February 23 1945; six U.S. Marines raising flag atop Mount Suribachi during the Battle of Iwo Jima; Pulitzer Prize-winning photograph; most reproduced war photograph in history; strong thematic match for WWII lesson header
-       SEARCH: Raising the Flag Iwo Jima Rosenthal 1945 Wikimedia Commons
-       LINK: https://commons.wikimedia.org/wiki/File:Raising_the_Flag_on_Iwo_Jima,_larger_-_edit1.jpg (suggested, not guaranteed) -->
-  <div class="header-bg" style="background-image: url('images/S2/L01/S2L01_HeaderBG_IwoJimaFlag.jpg');"></div>
+       FIND: WWI soldiers in muddy trench, Western Front, circa 1916-1918; exhausted troops; conveys the gravity of the war that just ended; used as faded atmospheric background behind title
+       SEARCH: World War I trench soldiers Western Front 1917
+       LINK: https://commons.wikimedia.org/wiki/File:Cheshire_Regiment_trench_Somme_1916.jpg (suggested, not guaranteed) -->
+  <div class="header-bg" style="background-image: url('images/S2/L01/S2L01_HeaderBg_TrenchWWI.jpg');"></div>
 
-  <div class="inner">
-    <span class="course-label">US History &mdash; Semester 2, Lesson 01</span>
-    <h1 class="page-title">America in World War II</h1>
+  <div class="header-content">
+    <div class="course-label">World History &mdash; Semester 2, Lesson 01</div>
+    <h1 class="page-title">The Failed Peace<br>After WWI</h1>
     <div class="eq-banner">
       <span class="eq-label">Essential Question</span>
-      How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid?
+      How did the peace after WWI plant the seeds for the next war?
     </div>
   </div>
 </header>
 
-<!-- ============================================================
-     SECTION NAVIGATION BAR
-============================================================ -->
-<nav class="section-nav" aria-label="Lesson sections">
-  <ul>
-    <li><a href="#isolationism">The U.S. Stays Out</a></li>
-    <li><a href="#pearl-harbor">Pearl Harbor</a></li>
-    <li><a href="#war-effort">The War Effort</a></li>
-    <li><a href="#turning-points">Turning Points</a></li>
-    <li><a href="#still-matters">Still Matters Today</a></li>
-  </ul>
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav class="section-nav" aria-label="Page sections">
+  <a href="#versailles">The Treaty</a>
+  <a href="#wilson">Wilson's Dream</a>
+  <a href="#league">League of Nations</a>
+  <a href="#aftermath">A Broken World</a>
+  <a href="#still-matters">Still Matters Today</a>
 </nav>
 
-<!-- ============================================================
-     INTRODUCTION
-============================================================ -->
-<div class="intro-section">
-  <p>
-    On the morning of December 7, 1941, a young sailor named James Jones was eating breakfast aboard the USS Arizona in Pearl Harbor, Hawaii. At 7:55 a.m., Japanese bombs began to fall. Within two hours, the Arizona was sinking. Jones survived. More than 1,100 of his shipmates did not. That single Sunday morning changed everything. A country that had spent years trying to stay out of the war in Europe and Asia suddenly had no choice. The United States was going to war.
-  </p>
-</div>
-
-<div class="section-divider"><span class="divider-star">&#9733; &#9733; &#9733;</span></div>
-
-<!-- ============================================================
-     SECTION 1 — THE U.S. STAYS OUT
-============================================================ -->
-<section class="content-section" id="isolationism">
-  <div class="section-body">
-    <span class="section-label">Chapter One</span>
-    <h2 class="section-heading">The U.S. Stays Out: Isolationism and the Road to War</h2>
-
-    <!-- FILENAME: S2L01_AmericaFirstPoster.jpg
-         PLACE IN: images/S2/L01/
-         FIND: America First Committee poster or rally photograph, circa 1940-1941; images from the isolationist movement in the United States before Pearl Harbor; best if it shows crowds, signs, or Charles Lindbergh speaking; from Library of Congress newspaper archive or Wikimedia Commons
-         SEARCH: America First Committee 1941 isolationism Lindbergh rally Library of Congress Wikimedia
-         LINK: https://commons.wikimedia.org/wiki/Category:America_First_Committee (suggested, not guaranteed) -->
-    <figure class="img-right">
-      <img src="images/S2/L01/S2L01_AmericaFirstPoster.jpg" alt="America First Committee rally, circa 1941">
-      <figcaption>America First Committee rally, ca. 1940&ndash;1941. Tens of thousands of Americans supported staying out of the war. Source: Wikimedia Commons / Library of Congress.</figcaption>
-    </figure>
-
-    <p>
-      By the late 1930s, two massive wars were already underway. In Europe, Adolf Hitler had led Nazi Germany to conquer nation after nation. In Asia, Japan had invaded China and was pushing to control the entire Pacific region. Millions of people were already dying. Most Americans watched all of this from a distance — and wanted to keep it that way.
-    </p>
-
-    <p>
-      This attitude had a name: <span class="vocab">isolationism<span class="tip">The belief that a country should stay out of other nations' problems and focus on its own affairs.</span></span>. Americans had seen their soldiers die in World War I just two decades earlier. They did not want to send their sons to die in another European war. Polls showed that most Americans were deeply opposed to getting involved.
-    </p>
-
-    <p>
-      A powerful group called the America First Committee pushed hard to keep the United States neutral. Famous people like pilot Charles Lindbergh spoke at huge rallies, arguing that the Atlantic Ocean was wide enough to protect America from the fighting overseas. Congress passed laws called the Neutrality Acts to prevent the U.S. from selling weapons to countries at war.
-    </p>
-
-    <p>
-      But President Franklin D. Roosevelt could see that staying completely out of the war was becoming harder. He believed that if Britain fell to Hitler, the United States would eventually face Germany alone. So in 1941, Roosevelt found a way to help Britain without officially entering the war: he passed the Lend-Lease Act, which allowed the U.S. to "lend" weapons and supplies to Britain. The United States was not yet a fighter, but it was no longer truly neutral either.
-    </p>
-
-    <p>
-      Meanwhile, Japan had signed a military alliance with Germany and Italy called the Axis powers. Japan wanted to build an empire across Asia and the Pacific, and American military bases in the Pacific were directly in the way. As 1941 wore on, tension between Japan and the United States grew sharper every month. Japan needed one bold move to remove the American threat. They chose Pearl Harbor.
-    </p>
-
-    <!-- PRIMARY SOURCE: FDR Fireside Chat -->
-    <div class="primary-source">
-      <blockquote>
-        "We must be the great arsenal of democracy. For us this is an emergency as serious as war itself. We must apply ourselves to our task with the same resolution, the same sense of urgency, the same spirit of patriotism and sacrifice as we would show were we at war."
-      </blockquote>
-      <cite>Franklin D. Roosevelt, Fireside Chat radio address, December 29, 1940.</cite>
-      <p class="doc-explainer">Roosevelt is telling Americans that even though they are not at war yet, they must act as if the emergency is just as serious — by producing weapons and supplies to help the countries already fighting.</p>
-    </div>
-
-  </div>
+<!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
+<section class="intro-section">
+  <div class="intro-label">Introduction</div>
+  <p>In November 1918, a German soldier named Georg Bucher put down his rifle and walked home. The war was over. Four years of mud, poison gas, and machine guns had killed ten million soldiers and left Europe in ruins. Georg thought the killing was finally done. He was wrong.</p>
+  <p>The leaders who gathered in Paris to write the peace agreement made choices that would hurt millions of people for decades. They drew new borders on maps without asking the people who lived there. They charged one country a debt so large it could never be paid. They built an organization meant to keep the peace but left it without any real power.</p>
+  <p>What happened in Paris in 1919 did not end the war. It restarted the clock on an even bigger one.</p>
 </section>
 
-<!-- ============================================================
-     SECTION 2 — PEARL HARBOR
-============================================================ -->
-<section class="content-section" id="pearl-harbor">
-  <div class="section-body">
-    <span class="section-label">Chapter Two</span>
-    <h2 class="section-heading">Pearl Harbor: The Day That Changed Everything</h2>
+<!-- ═══════════════════════════ SECTION 1: VERSAILLES ═══════════════════════════ -->
+<section id="versailles" class="content-section clearfix">
+  <div class="section-number">Chapter One</div>
+  <h2 class="section-heading">The Treaty of Versailles: Germany Pays the Bill</h2>
 
-    <!-- FILENAME: S2L01_PearlHarborAttack.jpg
+  <p>The leaders of France, Britain, and the United States met in the Palace of Versailles outside Paris in January 1919. Germany was not invited. The winners of the war were going to decide everything.</p>
+
+  <!-- FILENAME: S2L01_VersaillesHall.jpg
+       PLACE IN: images/S2/L01/
+       FIND: The Hall of Mirrors at the Palace of Versailles during the 1919 Peace Conference; the signing of the Treaty of Versailles, June 28, 1919; large historic photograph of the ceremony
+       SEARCH: Treaty of Versailles signing Hall of Mirrors 1919
+       LINK: https://commons.wikimedia.org/wiki/File:Versailles_Treaty_gallery.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L01/S2L01_VersaillesHall.jpg" alt="The signing of the Treaty of Versailles in the Hall of Mirrors, 1919">
+    <figcaption>Signing of the Treaty of Versailles, Hall of Mirrors, Palace of Versailles, June 28, 1919. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>France wanted Germany to suffer. France had been invaded twice by Germany in fifty years. French General Ferdinand Foch was furious with the final treaty. He called it "not a peace, but an armistice for twenty years." He was almost exactly right.</p>
+
+  <p>The treaty forced Germany to accept three major punishments. First, the <span class="vocab">war guilt<span class="tip">War guilt: the official blame placed on Germany for starting WWI, written into Article 231 of the treaty.</span></span> clause. Article 231 of the treaty said Germany was responsible for starting the entire war. Germany had to sign a document saying this was true, even though many historians argue the causes were more complicated. This humiliation burned deep into German national pride.</p>
+
+  <p>Second, Germany had to pay <span class="vocab">reparations<span class="tip">Reparations: money a country must pay to make up for damage caused during a war.</span></span>. The final bill set in 1921 was 132 billion gold marks. That is roughly $500 billion in today's money. Germany's economy was already destroyed by the war. This debt was nearly impossible to pay.</p>
+
+  <p>Third, Germany lost territory on every border. The map of Europe was redrawn. Germany gave up land to France, Poland, Denmark, and Belgium. German-speaking people suddenly found themselves living in new countries they had never chosen.</p>
+
+  <div class="img-pair">
+    <!-- FILENAME: S2L01_EuropeMapBefore1914.jpg
          PLACE IN: images/S2/L01/
-         FIND: USS Arizona or Battleship Row on fire at Pearl Harbor, December 7 1941; the most famous aerial or ship photograph of the attack; smoke rising from burning ships; often reproduced from U.S. Navy records or National Archives via Wikimedia Commons
-         SEARCH: Pearl Harbor attack December 7 1941 USS Arizona burning Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Photograph_of_the_Japanese_attack_on_Pearl_Harbor,_Hawaii,_7_December_1941_(SC_116988).jpg (suggested, not guaranteed) -->
-    <figure class="img-full">
-      <img src="images/S2/L01/S2L01_PearlHarborAttack.jpg" alt="Pearl Harbor attack, December 7, 1941 — battleships on fire">
-      <figcaption>Battleship Row, Pearl Harbor, December 7, 1941. The attack lasted two hours and sank or damaged 19 American ships. Source: U.S. Navy / Wikimedia Commons.</figcaption>
+         FIND: Map of Europe in 1914 before WWI showing the major empires: German Empire, Austro-Hungarian Empire, Ottoman Empire, Russian Empire
+         SEARCH: Europe map 1914 empires before World War I
+         LINK: https://commons.wikimedia.org/wiki/File:Europe_1914.jpg (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L01/S2L01_EuropeMapBefore1914.jpg" alt="Map of Europe in 1914">
+      <figcaption>Europe in 1914, before the war. Four great empires dominated the continent. Source: Wikimedia Commons.</figcaption>
     </figure>
 
-    <p>
-      Japan's attack on <span class="vocab">Pearl Harbor<span class="tip">The U.S. Navy base in Hawaii that Japan attacked without warning on December 7, 1941, pulling the United States into World War II.</span></span> on December 7, 1941, was a military surprise. Japanese commanders chose Pearl Harbor because destroying the American Pacific Fleet there would buy Japan time to take over Southeast Asia and the Pacific islands. They sent 353 aircraft in two waves, launched from six aircraft carriers sitting 230 miles north of Hawaii.
-    </p>
-
-    <p>
-      The attack lasted about two hours. When it was over, 8 American battleships had been hit; 4 were sunk. The USS Arizona exploded and sank in less than nine minutes, killing 1,177 sailors. In total, 2,403 Americans died that morning. Another 1,178 were wounded. The entire Pacific Fleet was crippled.
-    </p>
-
-    <!-- FILENAME: S2L01_FDR_WarAddress.jpg
+    <!-- FILENAME: S2L01_EuropeMapAfter1919.jpg
          PLACE IN: images/S2/L01/
-         FIND: Franklin D. Roosevelt addressing a joint session of Congress, December 8 1941; famous photograph of FDR delivering the "Day of Infamy" speech; widely reproduced, available from Library of Congress and Wikimedia Commons
-         SEARCH: Roosevelt Congress December 8 1941 day of infamy speech Library of Congress
-         LINK: https://commons.wikimedia.org/wiki/File:Franklin_Roosevelt_asking_Congress_to_declare_war_on_Japan.jpg (suggested, not guaranteed) -->
-    <figure class="img-right">
-      <img src="images/S2/L01/S2L01_FDR_WarAddress.jpg" alt="President Roosevelt addressing Congress, December 8, 1941">
-      <figcaption>President Roosevelt addresses Congress on December 8, 1941, requesting a declaration of war against Japan. Source: Library of Congress / Wikimedia Commons.</figcaption>
+         FIND: Map of Europe after the Paris Peace Conference 1919-1920 showing new nations created: Poland, Czechoslovakia, Yugoslavia, Baltic states; redrawn borders
+         SEARCH: Europe map 1919 after Versailles new nations redrawn borders
+         LINK: https://commons.wikimedia.org/wiki/File:Europe_1919.png (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L01/S2L01_EuropeMapAfter1919.jpg" alt="Map of Europe after the Treaty of Versailles, 1919">
+      <figcaption>Europe after Versailles, 1919. New nations appeared overnight. Old empires vanished. Source: Wikimedia Commons.</figcaption>
     </figure>
-
-    <p>
-      The next day, December 8, President Roosevelt went before Congress. His speech lasted less than seven minutes. He called December 7 "a date which will live in infamy." Congress voted to declare war on Japan with only one dissenting vote. Three days later, Germany and Italy — Japan's Axis partners — declared war on the United States. America was now fully at war on two fronts: the Pacific and Europe.
-    </p>
-
-    <p>
-      The attack did not destroy everything Japan hoped it would. The American aircraft carriers were not at Pearl Harbor that day; they were out on exercises at sea. Those carriers would prove essential. But in the immediate aftermath, <span class="vocab-ref">isolationism</span> was dead. The America First Committee shut down. Charles Lindbergh urged Americans to join the military. Overnight, a deeply divided country became united behind one cause.
-    </p>
-
-    <!-- PRIMARY SOURCE: FDR Day of Infamy -->
-    <div class="primary-source">
-      <blockquote>
-        "Yesterday, December 7th, 1941 — a date which will live in infamy — the United States of America was suddenly and deliberately attacked by naval and air forces of the Empire of Japan."
-      </blockquote>
-      <cite>Franklin D. Roosevelt, Address to Congress, December 8, 1941.</cite>
-      <p class="doc-explainer">Roosevelt is announcing to the American people and Congress that the attack was not an accident — Japan planned it — and he is asking Congress to officially declare war.</p>
-    </div>
-
-    <div class="ps-questions">
-      <p><span class="ps-q-label">Question 1:</span> In your own words, what is Roosevelt saying about how the attack happened? What word does he use to make clear that Japan planned it?</p>
-      <p><span class="ps-q-label">Question 2:</span> Before December 7, the U.S. was trying to stay out of the war. How does this speech connect to the Essential Question: how did Pearl Harbor pull the United States into a war it had tried to avoid?</p>
-    </div>
-
   </div>
-</section>
 
-<!-- ============================================================
-     SECTION 3 — THE WAR EFFORT
-============================================================ -->
-<section class="content-section" id="war-effort">
-  <div class="section-body">
-    <span class="section-label">Chapter Three</span>
-    <h2 class="section-heading">The War Effort: America Mobilizes</h2>
+  <p>The German government had to sign the treaty or face a full military invasion. They signed. But they never forgot the humiliation. A generation of Germans grew up believing their country had been cheated. That anger would have consequences.</p>
 
-    <p>
-      After Pearl Harbor, the United States had to do something it had never done before at that speed: turn a peacetime country into a war machine. Factories that made cars started making tanks and jeeps. Factories that made washing machines started making airplane parts. By 1944, the United States was producing more weapons and equipment than Germany, Japan, and Italy combined.
-    </p>
+  <div class="divider"><div class="divider-line"></div><div class="divider-ornament">&#9758;</div><div class="divider-line"></div></div>
 
-    <!-- FILENAME: S2L01_RosieRiveter.jpg
-         PLACE IN: images/S2/L01/
-         FIND: "We Can Do It!" J. Howard Miller poster featuring Rosie the Riveter, 1943; iconic wartime image of a woman in a factory uniform flexing her arm; used by Westinghouse Electric during the war; widely reproduced from National Archives and Wikimedia Commons
-         SEARCH: Rosie the Riveter We Can Do It Miller 1943 Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:We_Can_Do_It!.jpg (suggested, not guaranteed) -->
-    <figure class="img-left">
-      <img src="images/S2/L01/S2L01_RosieRiveter.jpg" alt="We Can Do It! Rosie the Riveter poster, 1943">
-      <figcaption>"We Can Do It!" poster by J. Howard Miller, 1943. Six million American women entered the workforce during the war. Source: National Archives / Wikimedia Commons.</figcaption>
-    </figure>
-
-    <p>
-      Millions of American men were drafted into military service. To fill the jobs they left behind, women entered the workforce by the millions. The government created a symbol for this shift: Rosie the Riveter, a woman in a factory uniform with her sleeves rolled up. Six million women took jobs in war factories during the war. Many had never worked outside the home before. This change would have lasting effects on American society long after the war ended.
-    </p>
-
-    <p>
-      The war also changed life on the home front in painful ways. The government rationed food, gasoline, rubber, and metal so that soldiers at the front had enough. Families received ration books that limited how much sugar, butter, and meat they could buy. People grew "victory gardens" in their backyards to supplement their food supply. Sacrifice was expected from everyone.
-    </p>
-
-    <p>
-      One of the darkest chapters of the war at home was the treatment of Japanese Americans. After Pearl Harbor, fear and prejudice led the government to forcibly remove 120,000 people of Japanese descent from their homes on the West Coast and send them to incarceration camps in the desert interior. Most were American citizens. They had committed no crime. Families were given days to sell everything they owned and report to assembly centers. This policy, ordered by President Roosevelt through Executive Order 9066, is now recognized as a serious violation of civil rights.
-    </p>
-
-    <!-- FILENAME: S2L01_JapaneseIncarceration.jpg
-         PLACE IN: images/S2/L01/
-         FIND: Photograph of Japanese Americans at an assembly or incarceration center, 1942-1944; Dorothea Lange's photographs of Manzanar are iconic and available via Library of Congress and Wikimedia; shows families with luggage or barracks conditions
-         SEARCH: Japanese American incarceration Manzanar Dorothea Lange 1942 Library of Congress Wikimedia
-         LINK: https://commons.wikimedia.org/wiki/File:Manzanar_War_Relocation_Center.jpg (suggested, not guaranteed) -->
-    <figure class="img-right">
-      <img src="images/S2/L01/S2L01_JapaneseIncarceration.jpg" alt="Manzanar War Relocation Center, California, 1942">
-      <figcaption>Manzanar War Relocation Center, Owens Valley, California, 1942. Over 10,000 Japanese Americans were incarcerated here. Photograph by Dorothea Lange. Source: Library of Congress.</figcaption>
-    </figure>
-
-    <p>
-      Despite this injustice, many Japanese Americans chose to serve in the U.S. military. The 442nd Regimental Combat Team, made up almost entirely of Japanese American soldiers, became one of the most decorated units in American military history. Their motto was "Go for Broke." They fought for a country that had imprisoned their families. Today, incarceration of Japanese Americans is taught as a warning about what fear and prejudice can do to a democracy. Many Japanese American families from California and the West Coast — including in and around San Diego — were directly affected.
-    </p>
-
-    <!-- LOCAL HISTORY CALLOUT -->
-    <div class="local-history" id="local-history">
-      <p class="lh-headline">San Diego and the Home Front: A City Transformed by War</p>
-
-      <!-- FILENAME: S2L01_SanDiegoPearlHarbor.jpg
-           PLACE IN: images/S2/L01/
-           FIND: San Diego naval base or shipyard photograph, 1941-1945; Coronado or 32nd Street Naval Station; possibly showing warships in harbor or workers at Consolidated Aircraft; National Archives, San Diego History Center via Wikimedia or LOC
-           SEARCH: San Diego naval base World War II 1942 shipyard Consolidated Aircraft Library of Congress
-           LINK: https://commons.wikimedia.org/wiki/Category:World_War_II_in_San_Diego (suggested, not guaranteed) -->
-      <figure class="img-left" style="width:38%; margin: 4px 20px 10px 0;">
-        <img src="images/S2/L01/S2L01_SanDiegoPearlHarbor.jpg" alt="San Diego Naval Base, World War II era">
-        <figcaption>San Diego harbor and naval facilities, ca. 1942&ndash;1945. The city became one of the most important military hubs in the Pacific War. Source: National Archives / Wikimedia Commons.</figcaption>
-      </figure>
-
-      <p>San Diego was ground zero for the U.S. response to Pearl Harbor. The city was already home to major U.S. Navy and Marine Corps bases, and after December 7, 1941, it became one of the busiest military hubs in the entire country.</p>
-      <p>Consolidated Aircraft (now General Dynamics) in Lindbergh Field employed over 40,000 workers and built the B-24 Liberator bomber. Japanese American families in San Diego's Logan Heights neighborhood were among those forcibly removed to incarceration camps in 1942. The USS San Diego, a light cruiser, earned more battle stars than any other ship in the Pacific Fleet.</p>
-
-      <div style="clear:both;"></div>
+  <!-- PRIMARY SOURCE: War Guilt Clause -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "Germany accepts the responsibility of Germany and her allies for causing all the loss and damage to which the Allied and Associated Governments and their nationals have been subjected as a consequence of the war imposed upon them by the aggression of Germany and her allies."
     </div>
-
-    <div style="clear:both;"></div>
-
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 4 — TURNING POINTS
-============================================================ -->
-<section class="content-section" id="turning-points">
-  <div class="section-body">
-    <span class="section-label">Chapter Four</span>
-    <h2 class="section-heading">Turning Points: From Midway to Victory</h2>
-
-    <p>
-      By mid-1942, the <span class="vocab">Allied powers<span class="tip">The countries that fought together against Germany, Japan, and Italy in World War II — mainly the United States, Great Britain, the Soviet Union, and France.</span></span> — the United States, Britain, the Soviet Union, and others — were fighting on two opposite sides of the world at the same time. They needed a strategy to win both. They called it "Europe First": defeat Germany before turning full attention to Japan. But the war in the Pacific demanded attention immediately.
-    </p>
-
-    <!-- PAIRED IMAGES: Midway + D-Day -->
-    <div class="img-pair">
-      <!-- FILENAME: S2L01_BattleMidwayCarrier.jpg
-           PLACE IN: images/S2/L01/
-           FIND: Battle of Midway, June 1942; aerial photograph of Japanese carrier Hiryu burning or a U.S. Navy action photograph from the battle; U.S. Navy official photograph via National Archives and Wikimedia Commons
-           SEARCH: Battle of Midway 1942 Japanese carrier burning USS Yorktown U.S. Navy Wikimedia
-           LINK: https://commons.wikimedia.org/wiki/File:Hiryu_burning.jpg (suggested, not guaranteed) -->
-      <figure>
-        <img src="images/S2/L01/S2L01_BattleMidwayCarrier.jpg" alt="Battle of Midway, June 1942 — Japanese carrier Hiryu burning">
-        <figcaption>Battle of Midway, June 4&ndash;7, 1942. The Japanese carrier Hiryu burns after U.S. dive bomber strikes. Source: U.S. Navy / Wikimedia Commons.</figcaption>
-      </figure>
-
-      <!-- FILENAME: S2L01_DDay_Normandy.jpg
-           PLACE IN: images/S2/L01/
-           FIND: D-Day Normandy landings June 6 1944; famous photograph of U.S. troops wading ashore from landing craft at Omaha Beach or aerial view of fleet off coast of France; Robert Capa photographs or U.S. Coast Guard official photograph via Wikimedia Commons
-           SEARCH: D-Day Normandy beach landing June 6 1944 Omaha Beach Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:Into_the_Jaws_of_Death_23-0455M_edit.jpg (suggested, not guaranteed) -->
-      <figure>
-        <img src="images/S2/L01/S2L01_DDay_Normandy.jpg" alt="D-Day, Normandy landings, June 6, 1944">
-        <figcaption><span class="vocab-ref">D-Day</span>, June 6, 1944. U.S. troops wade ashore at Omaha Beach, Normandy, France. Source: U.S. Coast Guard / Wikimedia Commons.</figcaption>
-      </figure>
-    </div>
-
-    <p>
-      The first major turning point in the Pacific came at the Battle of Midway in June 1942. American code breakers had cracked the Japanese naval code and knew Japan was planning an attack on Midway Island. U.S. commanders set a trap. In a fierce three-day battle fought entirely in the air and at sea, the United States sank four Japanese aircraft carriers — the backbone of the Japanese naval attack force. Japan never fully recovered. The United States now had the advantage in the Pacific.
-    </p>
-
-    <p>
-      The American strategy in the Pacific was called <span class="vocab">island-hopping<span class="tip">A military strategy in which Allied forces captured specific key islands while bypassing others, moving closer to Japan step by step.</span></span>. Instead of fighting to take every Japanese-held island, American forces selected key islands and captured them one by one, using each as a base to move closer to Japan. Battles at Guadalcanal, the Philippine Sea, Iwo Jima, and Okinawa were brutal. At Iwo Jima, marines fought for 36 days to take a volcanic island barely five miles long. More than 6,000 Americans died there.
-    </p>
-
-    <p>
-      In Europe, the tide turned with the massive Allied invasion of Normandy, France on June 6, 1944 — called <span class="vocab">D-Day<span class="tip">The Allied invasion of the beaches of Normandy, France on June 6, 1944 — the largest seaborne military invasion in history and a critical turning point in defeating Germany.</span></span>. General Dwight D. Eisenhower commanded 156,000 American, British, and Canadian troops who landed on five beaches in a single day. The fighting was murderous: on Omaha Beach alone, around 2,000 Americans were killed or wounded in the first few hours. But the Allies held the beaches and began pushing east toward Germany.
-    </p>
-
-    <!-- FILENAME: S2L01_BattleOfTheBulge.jpg
-         PLACE IN: images/S2/L01/
-         FIND: Battle of the Bulge, December 1944 to January 1945; American soldiers in snow or destroyed tank/forest landscape in the Ardennes, Belgium; famous images from U.S. Army Signal Corps via National Archives and Wikimedia
-         SEARCH: Battle of the Bulge Ardennes 1944 American soldiers snow U.S. Army Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Battle_of_the_Bulge_-_American_soldiers.jpg (suggested, not guaranteed) -->
-    <figure class="img-left">
-      <img src="images/S2/L01/S2L01_BattleOfTheBulge.jpg" alt="Battle of the Bulge, Ardennes Forest, December 1944">
-      <figcaption>American soldiers in the Ardennes Forest during the Battle of the Bulge, December 1944. Germany's last major offensive failed in the freezing winter. Source: U.S. Army Signal Corps / Wikimedia Commons.</figcaption>
-    </figure>
-
-    <p>
-      Germany fought back hard. In December 1944, Hitler launched a last desperate offensive through the Ardennes Forest in Belgium — the Battle of the Bulge. German forces pushed 50 miles into Allied lines and surrounded the American town of Bastogne. When the German commander demanded the American soldiers surrender, General Anthony McAuliffe sent a one-word reply: "Nuts." Allied forces held on, and within weeks, they pushed Germany back. The Battle of the Bulge was Germany's last major offensive of the war.
-    </p>
-
-    <p>
-      Germany surrendered on May 8, 1945 — called V-E Day (Victory in Europe). But the war in the Pacific continued. Japan still controlled vast territory and had made clear it would fight to the last person. U.S. military planners estimated that an invasion of the Japanese mainland could cost over a million American lives. President Harry Truman made a fateful decision: use the newly developed atomic bomb. On August 6, 1945, the bomb destroyed the city of Hiroshima. Three days later, a second bomb destroyed Nagasaki. Japan announced its surrender on August 15, 1945. World War II was over.
-    </p>
-
-    <!-- FILENAME: S2L01_VJDay_Times_Square.jpg
-         PLACE IN: images/S2/L01/
-         FIND: V-J Day celebration in Times Square, New York City, August 14-15 1945; Alfred Eisenstaedt photograph of sailor kissing nurse in Times Square; or crowd celebrating in Times Square from Life magazine archive or Wikimedia Commons; widely available
-         SEARCH: V-J Day Times Square sailor kiss 1945 Alfred Eisenstaedt Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Alfred_Eisenstaedt_V-J_Day_Times_Square.jpg (suggested, not guaranteed) -->
-    <figure class="img-full" style="margin-top: 36px;">
-      <img src="images/S2/L01/S2L01_VJDay_Times_Square.jpg" alt="V-J Day celebration, Times Square, New York City, August 14, 1945">
-      <figcaption>V-J Day celebration in Times Square, New York City, August 14, 1945. Americans celebrated the end of World War II in the streets. Photograph by Alfred Eisenstaedt. Source: Wikimedia Commons.</figcaption>
-    </figure>
-
-    <div style="clear:both;"></div>
-  </div>
-</section>
-
-<!-- ============================================================
-     HOW THIS STILL MATTERS TODAY
-============================================================ -->
-<section class="still-matters" id="still-matters">
-  <div class="inner">
-    <span class="section-label" style="text-align:left; display:block;">How This Still Matters Today</span>
-    <h2 class="section-heading" style="border-bottom-color: var(--accent); color: var(--tan-light);">The choices made during World War II shaped the world you are living in right now.</h2>
-
-    <p class="matters-headline">
-      The alliances formed in WWII became the foundation for NATO, the United Nations, and the global order that still governs international conflict — including every war and crisis you see in the news today.
-    </p>
-
-    <ul class="news-headlines">
-      <li><a href="https://www.nytimes.com/section/world" target="_blank">"NATO Members Debate Military Aid and Alliance Commitments" — The New York Times</a></li>
-      <li><a href="https://www.bbc.com/news/world" target="_blank">"United Nations Security Council Holds Emergency Session on Global Conflict" — BBC News</a></li>
-      <li><a href="https://www.latimes.com/california/story/2021-08-10/japanese-american-incarceration-reparations" target="_blank">"Japanese American Survivors of WWII Incarceration Still Seeking Full Reparations" — Los Angeles Times</a></li>
+    <div class="ps-attribution">Article 231, Treaty of Versailles, June 28, 1919.</div>
+    <div class="ps-narrator">This is the exact sentence that forced Germany to accept official blame for the entire war. Germans called it the "War Guilt Lie," and it fueled decades of outrage.</div>
+    <ul class="ps-questions">
+      <li>
+        <span>Question 1: Meaning</span>
+        In your own words, what does Article 231 say Germany must admit? Why would this feel unfair to many Germans?
+      </li>
+      <li>
+        <span>Question 2: Connect to the EQ</span>
+        How might a sentence like this one plant the seeds for a future war?
+      </li>
     </ul>
+  </div>
 
-    <!-- FILENAME: S2L01_UNFoundingCharter.jpg
-         PLACE IN: images/S2/L01/
-         FIND: Signing of the United Nations Charter, San Francisco, June 26 1945; delegates at the signing ceremony; widely photographed; U.S. State Department photograph via National Archives or Wikimedia Commons
-         SEARCH: United Nations Charter signing San Francisco 1945 Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:UN_Charter_signing.jpg (suggested, not guaranteed) -->
-    <figure class="img-full" style="margin: 32px 0;">
-      <img src="images/S2/L01/S2L01_UNFoundingCharter.jpg" alt="Signing of the United Nations Charter, San Francisco, June 26, 1945">
-      <figcaption>Delegates sign the United Nations Charter in San Francisco, June 26, 1945 — just weeks after Germany's surrender. The UN was created directly out of the lessons of World War II. Source: United Nations / Wikimedia Commons.</figcaption>
-    </figure>
+</section>
 
-    <p class="closing-question">
-      If the U.S. had found a way to stay out of World War II entirely, do you think the outcome of the war would have been different — and if so, what kind of world might you be living in today?
-    </p>
+<!-- ═══════════════════════════ SECTION 2: WILSON ═══════════════════════════ -->
+<section id="wilson" class="content-section clearfix">
+  <div class="section-number">Chapter Two</div>
+  <h2 class="section-heading">Wilson's Dream: Fourteen Points vs. What Actually Happened</h2>
+
+  <!-- FILENAME: S2L01_WilsonPortrait.jpg
+       PLACE IN: images/S2/L01/
+       FIND: Official portrait or photograph of President Woodrow Wilson, circa 1919; formal presidential portrait
+       SEARCH: Woodrow Wilson president portrait 1919 Library of Congress
+       LINK: https://www.loc.gov/pictures/item/2002695578/ (suggested, not guaranteed) -->
+  <figure class="img-inset-left">
+    <img src="images/S2/L01/S2L01_WilsonPortrait.jpg" alt="President Woodrow Wilson, 1919">
+    <figcaption>President Woodrow Wilson, 1919. He traveled to Paris with a plan to make lasting peace. Source: Library of Congress.</figcaption>
+  </figure>
+
+  <p>American President Woodrow Wilson arrived in Paris with a plan. He called it the Fourteen Points. It was his vision for a peaceful world after the war. Wilson believed that if nations treated each other fairly, there would be no reason to fight again.</p>
+
+  <p>One of his most important ideas was <span class="vocab">self-determination<span class="tip">Self-determination: the idea that people of the same culture or nationality should be allowed to choose their own government and borders.</span></span>. Wilson believed every group of people should have the right to form their own country. Poles should have Poland. Czechs should have Czechoslovakia. No empire should rule over people who did not want to be ruled.</p>
+
+  <p>But Wilson's fourteen points ran into a hard wall in Paris. France and Britain had their own goals. They wanted colonies, territory, and revenge. When the final treaty was written, most of Wilson's ideals were weakened or removed entirely.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Wilson Wanted</th>
+        <th>What Actually Happened</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Self-determination for all peoples</td>
+        <td>Applied in Europe but ignored in Africa and Asia, where Britain and France kept their colonies</td>
+      </tr>
+      <tr>
+        <td class="row-label">No punishing reparations</td>
+        <td>Germany charged 132 billion gold marks in debt</td>
+      </tr>
+      <tr>
+        <td class="row-label">Freedom of the seas</td>
+        <td>Britain continued to dominate the world's shipping lanes</td>
+      </tr>
+      <tr>
+        <td class="row-label">Open peace agreements, no secret deals</td>
+        <td>Major decisions were made in closed rooms by four leaders</td>
+      </tr>
+      <tr>
+        <td class="row-label">A League of Nations to keep the peace</td>
+        <td>The League was created but had no army and no real power to enforce anything</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Wilson went home from Paris a broken man. He had traded most of his ideals away just to get the League of Nations included in the treaty. Even that victory would soon fall apart.</p>
+
+  <p>People in Asia and Africa who had hoped Wilson's words meant freedom for them felt the deepest <span class="vocab">disillusionment<span class="tip">Disillusionment: the feeling of disappointment when something you believed in turns out not to be true.</span></span>. Ho Chi Minh, a young Vietnamese man living in Paris, tried to deliver a petition asking for Vietnamese independence. No one would meet with him. He would spend the rest of his life fighting against colonial powers. His name would eventually fill American history books too.</p>
+
+  <!-- FILENAME: S2L01_BigFourParis.jpg
+       PLACE IN: images/S2/L01/
+       FIND: The "Big Four" at the Paris Peace Conference 1919: Woodrow Wilson (USA), David Lloyd George (Britain), Georges Clemenceau (France), Vittorio Orlando (Italy); famous group photograph
+       SEARCH: Big Four Paris Peace Conference 1919 Wilson Clemenceau Lloyd George
+       LINK: https://commons.wikimedia.org/wiki/File:The_Big_Four.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L01/S2L01_BigFourParis.jpg" alt="The Big Four leaders at the Paris Peace Conference, 1919">
+    <figcaption>The "Big Four" at the Paris Peace Conference, 1919: Orlando (Italy), Lloyd George (Britain), Clemenceau (France), Wilson (USA). Four men redrew the world. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 3: LEAGUE ═══════════════════════════ -->
+<section id="league" class="content-section clearfix">
+  <div class="section-number">Chapter Three</div>
+  <h2 class="section-heading">The League of Nations: A Blueprint Without a Builder</h2>
+
+  <p>The one idea Wilson refused to give up was the <span class="vocab">League of Nations<span class="tip">League of Nations: an international organization created after WWI to solve disputes between countries and prevent future wars.</span></span>. He believed that if all nations joined together and agreed to solve problems peacefully, war could be avoided forever. It was a powerful idea. It just had one enormous problem.</p>
+
+  <!-- FILENAME: S2L01_LeagueAssembly.jpg
+       PLACE IN: images/S2/L01/
+       FIND: First Assembly of the League of Nations, Geneva, Switzerland, November 1920; large assembly hall photograph showing delegates seated
+       SEARCH: League of Nations first assembly Geneva 1920
+       LINK: https://commons.wikimedia.org/wiki/File:First_assembly_of_the_League_of_Nations_1920.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L01/S2L01_LeagueAssembly.jpg" alt="First Assembly of the League of Nations, Geneva, 1920">
+    <figcaption>First Assembly of the League of Nations, Geneva, Switzerland, November 1920. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>The United States never joined. Wilson brought the treaty home and asked the Senate to approve it. The Senate said no. Some senators worried the League would drag America into foreign wars. Others just did not want Wilson to win a political victory. The final vote failed twice.</p>
+
+  <p>Wilson traveled the country by train making speeches, trying to convince the American public to pressure their senators. The campaign destroyed his health. In October 1919, he suffered a massive stroke and was partially paralyzed for the rest of his life. The Senate rejected the treaty one final time in March 1920. The United States stayed out.</p>
+
+  <p>The League was born without its most powerful potential member. It had no army. It had no way to force nations to follow its decisions. When aggressive countries later tested it, the League had no real answer. Wilson's great dream became a hollow institution.</p>
+
+  <div class="callout-box">
+    <div class="callout-title">Why Did the U.S. Senate Say No?</div>
+    <p>Senator Henry Cabot Lodge led the opposition. He worried that Article 10 of the League's charter required the U.S. to defend any member nation that was attacked. He believed Congress, not the League, should decide when America went to war. Many Americans agreed. After losing 116,000 soldiers in a war that felt like Europe's problem, they wanted to stay out of international commitments.</p>
+  </div>
+
+  <p>Think about what this means today: the United Nations, created after World War II, was built specifically to fix the League's weaknesses. The U.S. is a founding and permanent member of the UN Security Council. The lesson of what happened when the U.S. stayed out shaped the entire post-WWII world order.</p>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 4: AFTERMATH ═══════════════════════════ -->
+<section id="aftermath" class="content-section clearfix">
+  <div class="section-number">Chapter Four</div>
+  <h2 class="section-heading">A Broken World: Anger, Debt, and Shattered Trust</h2>
+
+  <p>By 1920, the world that existed before the war was gone. Four empires had collapsed: the German, Austro-Hungarian, Russian, and Ottoman empires. New countries had appeared on the map. Old certainties were destroyed. And millions of people felt lied to.</p>
+
+  <!-- FILENAME: S2L01_GermanInflation1923.jpg
+       PLACE IN: images/S2/L01/
+       FIND: German hyperinflation 1923; famous photograph of German woman burning currency as fuel, or person with wheelbarrow full of banknotes; illustrates economic collapse under reparations burden
+       SEARCH: German hyperinflation 1923 wheelbarrow banknotes
+       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-00169,_Inflation,_Geldscheine_als_Brennmaterial.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-left">
+    <img src="images/S2/L01/S2L01_GermanInflation1923.jpg" alt="German woman burning banknotes during hyperinflation, 1923">
+    <figcaption>German hyperinflation, 1923. Money became so worthless some people burned it for heat. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>Germany's economy collapsed under the weight of <span class="vocab-red">reparations</span>. By 1923, German money was worth almost nothing. A loaf of bread cost billions of marks. People burned banknotes for heat because it was cheaper than buying firewood. Middle-class families who had saved money their whole lives were wiped out overnight.</p>
+
+  <p>Across Europe, young men came home from the trenches and found no jobs, no stability, and no respect. They had been told the war was noble. They had watched their friends die in the mud. Now they returned to broken economies and politicians who could not explain why any of it had been worth it. This <span class="vocab-red">disillusionment</span> ran deep.</p>
+
+  <!-- FILENAME: S2L01_WilsonStrokeSpeech.jpg
+       PLACE IN: images/S2/L01/
+       FIND: Woodrow Wilson speaking from train or platform during his 1919 speaking tour, or photograph related to his stroke/illness in 1919; or image of Senate vote on League of Nations
+       SEARCH: Woodrow Wilson speaking tour 1919 League of Nations Senate vote
+       LINK: https://commons.wikimedia.org/wiki/File:Woodrow_Wilson_1919.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L01/S2L01_WilsonStrokeSpeech.jpg" alt="Woodrow Wilson during his 1919 speaking tour for the League of Nations">
+    <figcaption>Woodrow Wilson during his cross-country speaking tour, 1919. The effort to save the League cost him his health. Source: Library of Congress.</figcaption>
+  </figure>
+
+  <p>Writers and artists called this feeling the "Lost Generation." Soldiers came back and could not reconnect with the world they had left. Some drank. Some left for Paris. Some wrote novels about the emptiness. Ernest Hemingway, F. Scott Fitzgerald, and poet Wilfred Owen all captured this feeling in their work. The trauma of the war did not end when the guns went quiet.</p>
+
+  <p>The old institutions that Europeans had trusted before the war were now suspect. Emperors were gone. The church seemed unable to explain the slaughter. Democratic governments appeared weak. Into that empty space, new and dangerous political movements began to grow. They promised strength, pride, and revenge. Germany was listening.</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-ornament">&#9758;</div><div class="divider-line"></div></div>
+
+  <!-- PRIMARY SOURCE 2: John Maynard Keynes -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "The policy of reducing Germany to servitude for a generation, of degrading the lives of millions of human beings, and of depriving a whole nation of happiness should be abhorrent and detestable; abhorrent and detestable, even if it enriches ourselves, even if it does not sow the decay of the whole civilised life of Europe."
+    </div>
+    <div class="ps-attribution">John Maynard Keynes, <em>The Economic Consequences of the Peace</em>, 1919.</div>
+    <div class="ps-narrator">Keynes was a British economist who worked at the peace conference and then quit in protest; he published this book warning that punishing Germany so harshly would destroy Europe's economy and set the stage for another war.</div>
+  </div>
+
+  <!-- FILENAME: S2L01_KeynesBook.jpg
+       PLACE IN: images/S2/L01/
+       FIND: Cover of John Maynard Keynes book "The Economic Consequences of the Peace" 1919 first edition; or portrait of Keynes circa 1919-1920
+       SEARCH: John Maynard Keynes Economic Consequences of the Peace 1919
+       LINK: https://commons.wikimedia.org/wiki/File:John_Maynard_Keynes.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L01/S2L01_KeynesPortrait.jpg" alt="John Maynard Keynes, British economist, circa 1919">
+    <figcaption>John Maynard Keynes, British economist, circa 1919. He resigned from the peace conference and published a book predicting exactly what would happen. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+</section>
+
+<!-- ═══════════════════════════ LOCAL HISTORY ═══════════════════════════ -->
+<section class="local-history">
+  <div class="lh-badge">Local History Connection</div>
+  <div class="lh-headline">San Diego and the War That Reshaped the World</div>
+
+  <!-- FILENAME: S2L01_SanDiegoNavyWWI.jpg
+       PLACE IN: images/S2/L01/
+       FIND: San Diego harbor or naval base during WWI era, 1917-1919; fleet of ships at San Diego, or Camp Kearny San Diego during WWI troop mobilization
+       SEARCH: San Diego Navy WWI 1917 1918 harbor Camp Kearny
+       LINK: https://commons.wikimedia.org/wiki/File:San_Diego_Bay_1919.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L01/S2L01_SanDiegoNavyWWI.jpg" alt="San Diego harbor during WWI era, circa 1917-1919">
+    <figcaption>San Diego's harbor and growing naval presence, circa 1917-1919. The war transformed San Diego into a major military city. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>San Diego was already home to a growing U.S. Navy base when WWI ended in 1918. The Treaty of Versailles and the growth of the U.S. military during the war permanently accelerated San Diego's transformation into one of the most important military cities in the country. Camp Kearny, opened in 1917 just north of San Diego, trained tens of thousands of soldiers for the Western Front.</p>
+  <p>The failure of the peace and the rise of global instability in the 1920s and 1930s would push more military investment into San Diego. The very reasons the Versailles peace failed, including unresolved power struggles and a broken international order, are part of the story of why military San Diego grew into what it is today.</p>
+</section>
+
+<!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
+<section id="still-matters" class="still-matters">
+  <div class="sm-label">How This Still Matters Today</div>
+  <div class="sm-headline">Every time a peace deal punishes instead of rebuilds, it plants the seeds of the next conflict. We are still living in the world that Versailles broke.</div>
+
+  <!-- FILENAME: S2L01_UNSecurityCouncil.jpg
+       PLACE IN: images/S2/L01/
+       FIND: United Nations Security Council chamber in session; modern photograph of the circular chamber with flags and delegates seated
+       SEARCH: United Nations Security Council chamber session modern
+       LINK: https://commons.wikimedia.org/wiki/File:UN_Security_Council_2013.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L01/S2L01_UNSecurityCouncil.jpg" alt="United Nations Security Council chamber in session">
+    <figcaption>The United Nations Security Council in session. The UN was created specifically to fix every flaw in the League of Nations. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <ul class="news-links">
+    <li><a href="https://www.bbc.com/news/world-europe-50759139" target="_blank" rel="noopener">"How the Treaty of Versailles and German guilt led to World War II" — BBC History</a></li>
+    <li><a href="https://www.npr.org/2019/06/28/736329617/100-years-later-historians-debate-the-legacy-of-the-treaty-of-versailles" target="_blank" rel="noopener">"100 Years Later, Historians Debate the Legacy of the Treaty of Versailles" — NPR</a></li>
+    <li><a href="https://www.theguardian.com/world/2019/jun/28/treaty-of-versailles-centenary-world-war-one-peace-europe" target="_blank" rel="noopener">"Treaty of Versailles at 100: The Peace That Never Was" — The Guardian</a></li>
+  </ul>
+
+  <p>The United Nations exists because the League of Nations failed. The rules that govern how countries treat each other after wars, including requirements to rebuild rather than just punish, exist because of what went wrong at Versailles. When you hear debates about rebuilding Iraq, or handling conflict in Ukraine, or writing sanctions against countries, you are watching the same questions play out that first appeared in Paris in 1919.</p>
+
+  <div class="sm-closing-q">
+    <p>If you had been a German citizen in 1920 watching your savings disappear, your borders shrink, and your country forced to sign a statement of guilt for a war still not fully understood, what would you have believed about your government, your future, and the people who wrote that treaty?</p>
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-============================================================ -->
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer class="site-footer">
-  US History &mdash; Semester 2, Lesson 01 &nbsp;&bull;&nbsp; America in World War II
+  World History &mdash; Semester 2, Lesson 01 &nbsp;|&nbsp; The Failed Peace After WWI
 </footer>
 
-</div><!-- /.page-wrap -->
+</div><!-- end page-wrap -->
 
-<!-- ============================================================
-     JAVASCRIPT — VOCABULARY TOOLTIP MOBILE TAP SUPPORT
-============================================================ -->
 <script>
-document.querySelectorAll('.vocab').forEach(function(el) {
-  el.addEventListener('click', function(e) {
-    e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      if (v !== el) v.classList.remove('active');
+  // Vocabulary tooltip tap support
+  document.querySelectorAll('.vocab').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('.vocab.active').forEach(function(v) {
+        if (v !== el) v.classList.remove('active');
+      });
+      el.classList.toggle('active');
     });
-    el.classList.toggle('active');
   });
-});
-document.addEventListener('click', function() {
-  document.querySelectorAll('.vocab.active').forEach(function(v) {
-    v.classList.remove('active');
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.vocab.active').forEach(function(v) {
+      v.classList.remove('active');
+    });
   });
-});
 </script>
-
 </body>
 </html>
-
-<!--
-========================================================
-IMAGE CHECKLIST FOR SSU_S2L01.html
-========================================================
-
-S2L01_HeaderBG_IwoJimaFlag.jpg — "Raising the Flag on Iwo Jima" by Joe Rosenthal, Feb 23 1945 — Suggested link: https://commons.wikimedia.org/wiki/File:Raising_the_Flag_on_Iwo_Jima,_larger_-_edit1.jpg
-
-S2L01_AmericaFirstPoster.jpg — America First Committee rally or poster, ca. 1940-1941, U.S. isolationism movement — Suggested link: https://commons.wikimedia.org/wiki/Category:America_First_Committee
-
-S2L01_FDR_WarAddress.jpg — FDR addressing Congress to declare war, December 8 1941 — Suggested link: https://commons.wikimedia.org/wiki/File:Franklin_Roosevelt_asking_Congress_to_declare_war_on_Japan.jpg
-
-S2L01_PearlHarborAttack.jpg — Pearl Harbor attack, Battleship Row burning, December 7 1941 — Suggested link: https://commons.wikimedia.org/wiki/File:Photograph_of_the_Japanese_attack_on_Pearl_Harbor,_Hawaii,_7_December_1941_(SC_116988).jpg
-
-S2L01_RosieRiveter.jpg — "We Can Do It!" poster, J. Howard Miller, 1943 — Suggested link: https://commons.wikimedia.org/wiki/File:We_Can_Do_It!.jpg
-
-S2L01_JapaneseIncarceration.jpg — Manzanar War Relocation Center, Dorothea Lange, 1942 — Suggested link: https://commons.wikimedia.org/wiki/File:Manzanar_War_Relocation_Center.jpg
-
-S2L01_SanDiegoPearlHarbor.jpg — San Diego naval base / Consolidated Aircraft, WWII era — Suggested link: https://commons.wikimedia.org/wiki/Category:World_War_II_in_San_Diego
-
-S2L01_BattleMidwayCarrier.jpg — Battle of Midway, Japanese carrier Hiryu burning, June 1942 — Suggested link: https://commons.wikimedia.org/wiki/File:Hiryu_burning.jpg
-
-S2L01_DDay_Normandy.jpg — D-Day, troops wading ashore at Omaha Beach, June 6 1944 — Suggested link: https://commons.wikimedia.org/wiki/File:Into_the_Jaws_of_Death_23-0455M_edit.jpg
-
-S2L01_BattleOfTheBulge.jpg — Battle of the Bulge, American soldiers in Ardennes snow, December 1944 — Suggested link: https://commons.wikimedia.org/wiki/File:Battle_of_the_Bulge_-_American_soldiers.jpg
-
-S2L01_VJDay_Times_Square.jpg — V-J Day, sailor kissing nurse in Times Square, August 14 1945 — Suggested link: https://commons.wikimedia.org/wiki/File:Alfred_Eisenstaedt_V-J_Day_Times_Square.jpg
-
-S2L01_UNFoundingCharter.jpg — United Nations Charter signing, San Francisco, June 26 1945 — Suggested link: https://commons.wikimedia.org/wiki/File:UN_Charter_signing.jpg
-
-========================================================
-END IMAGE CHECKLIST
-========================================================
--->

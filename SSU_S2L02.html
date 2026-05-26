@@ -1,74 +1,1145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSU — S2 L02: The American Home Front and Hard Choices</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The American Home Front and Hard Choices — US History S2L02</title>
+
+<!-- Google Fonts: Oswald (military stencil display) + Lora (readable body) -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  /* =============================================
+     CSS VARIABLES — WWII HOME FRONT PALETTE
+     olive canvas, steel gray, worn khaki, red alert
+  ============================================= */
+  :root {
+    --bg:           #1f1e18;
+    --bg-mid:       #28271f;
+    --bg-section:   #2f2e25;
+    --bg-card:      #35342a;
+    --bg-alt:       #232219;
+    --khaki:        #c4b483;
+    --khaki-light:  #ddd0a8;
+    --khaki-pale:   #ede4c4;
+    --red:          #b03030;
+    --red-dark:     #8a2020;
+    --olive:        #5c6b2e;
+    --olive-light:  #7a8f3c;
+    --steel:        #7a8e9a;
+    --steel-light:  #a8bcc6;
+    --gold:         #c8960c;
+    --gold-light:   #dba820;
+    --text:         #d8cead;
+    --text-dim:     #9e9070;
+    --border:       #46432e;
+    --display-font: 'Oswald', 'Impact', sans-serif;
+    --body-font:    'Lora', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: 18px;
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  /* Subtle canvas texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-wrap { position: relative; z-index: 1; }
+
+  /* =============================================
+     HEADER
+  ============================================= */
+  .site-header {
+    position: relative;
+    overflow: hidden;
+    background-color: #0d0d09;
+    padding: 72px 24px 60px;
+    text-align: center;
+    border-bottom: 4px solid var(--red-dark);
+  }
+
+  .header-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.28;
+    filter: sepia(50%) contrast(1.15);
+    z-index: 0;
+  }
+
+  .site-header .inner {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .course-label {
+    display: block;
+    font-family: var(--display-font);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--steel-light);
+    margin-bottom: 16px;
+  }
+
+  .page-title {
+    font-family: var(--display-font);
+    font-size: clamp(38px, 6.5vw, 64px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--khaki-pale);
+    text-shadow: 2px 3px 14px rgba(0,0,0,0.9);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .eq-banner {
+    display: inline-block;
+    background: rgba(138, 32, 32, 0.92);
+    color: #fff;
+    font-family: var(--body-font);
+    font-size: clamp(16px, 2.3vw, 20px);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 16px 30px;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .eq-label {
+    display: block;
+    font-style: normal;
+    font-family: var(--display-font);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+
+  /* =============================================
+     NAV BAR
+  ============================================= */
+  .section-nav {
+    background: #0d0d09;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 8px;
+  }
+
+  .section-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .section-nav li a {
+    display: inline-block;
+    padding: 13px 15px;
+    font-family: var(--display-font);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--steel-light);
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .section-nav li a:hover {
+    color: var(--khaki-pale);
+    border-bottom-color: var(--gold);
+  }
+
+  /* =============================================
+     INTRO
+  ============================================= */
+  .intro-section {
+    padding: 60px 24px 0;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .intro-section p {
+    font-size: 19px;
+    line-height: 1.9;
+    color: var(--khaki-light);
+  }
+
+  /* =============================================
+     SECTION DIVIDER
+  ============================================= */
+  .section-divider {
+    max-width: 820px;
+    margin: 52px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+  }
+
+  .divider-mark {
+    font-family: var(--display-font);
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* =============================================
+     CONTENT SECTIONS
+  ============================================= */
+  .content-section {
+    padding: 60px 24px;
+    max-width: 820px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border);
+  }
+
+  .content-section:first-of-type {
+    border-top: none;
+  }
+
+  .section-label {
+    font-family: var(--display-font);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--olive-light);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .section-heading {
+    font-family: var(--display-font);
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700;
+    color: var(--khaki-pale);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 26px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--red-dark);
+  }
+
+  .section-body p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.85;
+  }
+
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .section-body::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  /* =============================================
+     VOCABULARY
+  ============================================= */
+  .vocab {
+    color: var(--red);
+    text-decoration: underline dotted var(--red);
+    cursor: help;
+    position: relative;
+  }
+
+  .vocab .tip {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #080807;
+    color: #f0e8ce;
+    padding: 9px 15px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 1.55;
+    z-index: 200;
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    max-width: 280px;
+    white-space: normal;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    font-family: var(--body-font);
+  }
+
+  .vocab:hover .tip,
+  .vocab.active .tip { display: block; }
+
+  .vocab-ref { color: var(--red); }
+
+  /* =============================================
+     IMAGES
+  ============================================= */
+  figure { margin: 32px 0; }
+
+  figure.img-full img {
+    width: 100%;
+    display: block;
+    filter: sepia(20%) contrast(1.05);
+    border: 2px solid var(--border);
+  }
+
+  figure.img-left {
+    float: left;
+    width: 41%;
+    margin: 4px 26px 18px 0;
+  }
+
+  figure.img-left img {
+    width: 100%;
+    display: block;
+    filter: sepia(20%) contrast(1.05);
+    border: 2px solid var(--border);
+  }
+
+  figure.img-right {
+    float: right;
+    width: 41%;
+    margin: 4px 0 18px 26px;
+  }
+
+  figure.img-right img {
+    width: 100%;
+    display: block;
+    filter: sepia(20%) contrast(1.05);
+    border: 2px solid var(--border);
+  }
+
+  .img-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 32px 0;
+  }
+
+  .img-pair figure { margin: 0; }
+
+  .img-pair figure img {
+    width: 100%;
+    display: block;
+    filter: sepia(20%) contrast(1.05);
+    border: 2px solid var(--border);
+  }
+
+  figcaption {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 7px;
+    padding: 0 2px;
+    font-family: var(--body-font);
+  }
+
+  /* =============================================
+     PROFILES GRID — special units
+  ============================================= */
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .profile-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 16px;
+  }
+
+  .profile-card .profile-name {
+    font-family: var(--display-font);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .profile-card p {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    color: var(--text) !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* =============================================
+     PRIMARY SOURCE
+  ============================================= */
+  .primary-source {
+    background: var(--bg-card);
+    border-left: 5px solid var(--gold);
+    padding: 26px 30px 22px;
+    margin: 38px 0;
+    position: relative;
+  }
+
+  .primary-source::before {
+    content: '\201C';
+    font-family: var(--display-font);
+    font-size: 90px;
+    color: var(--gold);
+    opacity: 0.25;
+    position: absolute;
+    top: -8px;
+    left: 14px;
+    line-height: 1;
+  }
+
+  .primary-source blockquote {
+    font-family: var(--body-font);
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.62;
+    color: var(--khaki-light);
+    margin-bottom: 14px;
+    padding-left: 14px;
+  }
+
+  .primary-source cite {
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--steel-light);
+    margin-bottom: 12px;
+    padding-left: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .primary-source .doc-explainer {
+    font-size: 15px;
+    color: var(--khaki);
+    font-style: normal;
+    padding-left: 14px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    line-height: 1.6;
+  }
+
+  .ps-questions {
+    background: var(--bg-mid);
+    border: 1px solid var(--border);
+    padding: 22px 26px;
+    margin-bottom: 38px;
+  }
+
+  .ps-questions p {
+    font-size: 17px;
+    margin-bottom: 13px;
+    color: var(--text);
+  }
+
+  .ps-questions p:last-child { margin-bottom: 0; }
+
+  .ps-q-label {
+    font-family: var(--display-font);
+    font-weight: 600;
+    color: var(--khaki-light);
+    margin-right: 6px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+  }
+
+  /* =============================================
+     DEBATE CARD — atomic bomb argument block
+  ============================================= */
+  .debate-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 32px 0;
+    border: 2px solid var(--border);
+  }
+
+  .debate-side {
+    padding: 20px 22px;
+  }
+
+  .debate-side.yes {
+    background: #1a2a1a;
+    border-right: 1px solid var(--border);
+  }
+
+  .debate-side.no {
+    background: #2a1a1a;
+  }
+
+  .debate-side .debate-label {
+    font-family: var(--display-font);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .debate-side.yes .debate-label { color: var(--olive-light); }
+  .debate-side.no .debate-label { color: var(--red); }
+
+  .debate-side ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .debate-side ul li {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    position: relative;
+    color: var(--text);
+  }
+
+  .debate-side ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  /* =============================================
+     LOCAL HISTORY CALLOUT
+  ============================================= */
+  .local-history {
+    background: var(--bg-card);
+    border: 2px solid var(--olive);
+    padding: 26px 30px;
+    margin: 44px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .local-history::before {
+    content: 'LOCAL HISTORY';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--olive);
+    color: #fff;
+    font-family: var(--display-font);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    padding: 5px 13px;
+  }
+
+  .local-history .lh-headline {
+    font-family: var(--display-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--khaki-pale);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 13px;
+    margin-top: 4px;
+  }
+
+  .local-history p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+
+  /* =============================================
+     HOW THIS STILL MATTERS TODAY
+  ============================================= */
+  .still-matters {
+    background: linear-gradient(160deg, #0d0d09 0%, #1a1209 100%);
+    border-top: 3px solid var(--gold);
+    padding: 68px 24px 76px;
+  }
+
+  .still-matters .inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .still-matters .section-label { color: var(--gold-light); }
+
+  .still-matters .section-heading {
+    border-bottom-color: var(--gold);
+  }
+
+  .matters-headline {
+    font-family: var(--body-font);
+    font-size: clamp(20px, 2.8vw, 26px);
+    font-weight: 600;
+    color: var(--khaki-light);
+    line-height: 1.4;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+
+  .news-headlines {
+    list-style: none;
+    margin: 0 0 36px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .news-headlines li {
+    border-left: 3px solid var(--gold);
+    padding-left: 14px;
+  }
+
+  .news-headlines a {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--gold-light);
+    text-decoration: underline;
+    line-height: 1.45;
+  }
+
+  .closing-question {
+    font-family: var(--body-font);
+    font-size: clamp(19px, 2.6vw, 23px);
+    font-style: italic;
+    color: var(--khaki-light);
+    line-height: 1.6;
+    margin-top: 38px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* =============================================
+     FOOTER
+  ============================================= */
+  .site-footer {
+    background: #090906;
+    border-top: 2px solid var(--border);
+    padding: 26px 24px;
+    text-align: center;
+    font-family: var(--display-font);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* =============================================
+     RESPONSIVE
+  ============================================= */
+  @media (max-width: 640px) {
+    figure.img-left,
+    figure.img-right {
+      float: none;
+      width: 100%;
+      margin: 20px 0;
     }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
+
+    .img-pair,
+    .profiles-grid,
+    .debate-block {
+      grid-template-columns: 1fr;
     }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
+
+    .debate-side.yes { border-right: none; border-bottom: 1px solid var(--border); }
+
+    .section-nav li a {
+      padding: 10px 8px;
+      font-size: 9px;
     }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">US History · Semester 2 · Day 2</p>
-  <h1>The American Home Front and Hard Choices</h1>
-  <p class="eq">How did WWII transform American society at home, and were all the sacrifices equally shared?</p>
-  <div class="banner">Coming Soon</div>
+<div class="page-wrap">
+
+<!-- ============================================================
+     SITE HEADER
+============================================================ -->
+<header class="site-header">
+
+  <!-- FILENAME: S2L02_HeaderBG_HomeFront.jpg
+       PLACE IN: images/S2/L02/
+       FIND: WWII home front factory scene, women working on aircraft or munitions assembly line, ca. 1942-1944; iconic image of wartime industrial production in the United States; strongly associated with the "Arsenal of Democracy" transformation; available via Library of Congress or National Archives on Wikimedia
+       SEARCH: World War II women factory workers aircraft production 1942 Library of Congress Wikimedia
+       LINK: https://commons.wikimedia.org/wiki/File:Wwii_women_workers.jpg (suggested, not guaranteed) -->
+  <div class="header-bg" style="background-image: url('images/S2/L02/S2L02_HeaderBG_HomeFront.jpg');"></div>
+
+  <div class="inner">
+    <span class="course-label">US History &mdash; Semester 2, Lesson 02</span>
+    <h1 class="page-title">The American Home Front<br>and Hard Choices</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      How did WWII transform American society at home — and were all the sacrifices equally shared?
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECTION NAV
+============================================================ -->
+<nav class="section-nav" aria-label="Lesson sections">
+  <ul>
+    <li><a href="#women-workers">Women at War</a></li>
+    <li><a href="#fighting-for-freedom">Fighting for Freedom</a></li>
+    <li><a href="#internment">Internment</a></li>
+    <li><a href="#hard-choices">Hard Choices</a></li>
+    <li><a href="#still-matters">Still Matters Today</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================================
+     INTRODUCTION
+============================================================ -->
+<div class="intro-section">
+  <p>
+    In 1942, a 19-year-old woman named Sybil Lewis left her home in Sapulpa, Oklahoma and took a bus to Los Angeles. She had heard that war factories were hiring. She had never worked with machines before. Within weeks, she was riveting the fuselage panels of Lockheed aircraft at a plant in Burbank, California. She was one of six million American women who stepped into the workforce to keep the country running while the men were away. But as the war went on, a harder question emerged: the United States was fighting for freedom and democracy overseas, so why were some Americans still denied those things at home?
+  </p>
+</div>
+
+<div class="section-divider"><span class="divider-mark">&#9670; &#9670; &#9670;</span></div>
+
+<!-- ============================================================
+     SECTION 1 — WOMEN AT WAR
+============================================================ -->
+<section class="content-section" id="women-workers">
+  <div class="section-body">
+    <span class="section-label">Chapter One</span>
+    <h2 class="section-heading">Women at War: The Home Front Workforce</h2>
+
+    <!-- FILENAME: S2L02_WomenRiveters_Vultee.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Women workers at Vultee Aircraft or similar WWII defense plant, ca. 1942-1943; women on assembly line riveting or drilling aircraft fuselage panels; Library of Congress Alfred Palmer or David Bransby photographs preferred; strong color photograph if available
+         SEARCH: Vultee Aircraft women workers 1942 Alfred Palmer Library of Congress Wikimedia
+         LINK: https://commons.wikimedia.org/wiki/File:Vultee_aircraft_women_workers.jpg (suggested, not guaranteed) -->
+    <figure class="img-right">
+      <img src="images/S2/L02/S2L02_WomenRiveters_Vultee.jpg" alt="Women workers riveting aircraft at a wartime defense plant, ca. 1942">
+      <figcaption>Women riveting aircraft fuselage panels at Vultee Aircraft, Nashville, Tennessee, ca. 1943. Photographs like this were used to recruit women into defense work. Source: Library of Congress.</figcaption>
+    </figure>
+
+    <p>
+      When the United States entered World War II, factories across the country faced a crisis. Millions of men were leaving for military service, and someone had to build the ships, planes, tanks, and ammunition needed to fight a two-front war. The government launched a massive campaign to recruit women into industrial work — jobs that had almost exclusively been held by men before the war.
+    </p>
+
+    <p>
+      The <span class="vocab">home front<span class="tip">The civilian side of the war effort — all the factories, farms, and communities inside the United States that supported the military by producing weapons, food, and supplies.</span></span> became its own kind of battlefield. Women welded ships at Kaiser Shipyards in Richmond, California. They assembled bombers at Boeing plants in Seattle. They loaded artillery shells in ammunition depots across the Midwest. Their labor was not optional; it was essential.
+    </p>
+
+    <p>
+      The government understood that recruiting women required a cultural shift. Posters and magazine ads created the image of "Rosie the Riveter" — a woman in factory clothes with her sleeves rolled up and her fist raised. The message was clear: working in a factory was patriotic, strong, and modern. The campaign worked. By 1944, women made up 37 percent of the entire American workforce.
+    </p>
+
+    <p>
+      For many women — especially Black women and women from poor families — the war created the first real chance to earn a living wage. Before the war, most well-paying factory jobs were closed to them entirely. After the war, many were forced out of those jobs when the men returned. But the experience changed what women believed was possible. The movement for women's equal rights that grew in the 1960s and 1970s was partly built on the ground these women broke during the war.
+    </p>
+
+    <!-- PRIMARY SOURCE: Eleanor Roosevelt on women workers -->
+    <div class="primary-source">
+      <blockquote>
+        "Women must learn to play the game as men do. I am happy that women are being called upon for service in so many lines. What we need now is to be sure that women's contribution to this war effort is recognized, valued, and made permanent."
+      </blockquote>
+      <cite>Eleanor Roosevelt, address to the National Conference on Women in War Industries, 1942.</cite>
+      <p class="doc-explainer">The First Lady is arguing that women's wartime work should not disappear after the war ends — she wants women to be seen as permanent, valued members of the workforce, not just emergency replacements.</p>
+    </div>
+
+    <div class="ps-questions">
+      <p><span class="ps-q-label">Question 1:</span> What is Eleanor Roosevelt asking for on behalf of women workers? Use her own words to explain what she means by "permanent."</p>
+      <p><span class="ps-q-label">Question 2:</span> The EQ asks whether all sacrifices were equally shared during WWII. Based on this source and what you have read, what does Roosevelt suggest about how women were being treated?</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2 — FIGHTING FOR FREEDOM
+============================================================ -->
+<section class="content-section" id="fighting-for-freedom">
+  <div class="section-body">
+    <span class="section-label">Chapter Two</span>
+    <h2 class="section-heading">Fighting for Freedom: Black Americans, the 442nd, and the Code Talkers</h2>
+
+    <p>
+      As American soldiers fought Nazi racism in Europe, millions of Black Americans, Japanese Americans, and Native Americans were serving in a segregated military. The United States Army was officially segregated until 1948, meaning Black soldiers trained separately, ate separately, and often received worse equipment than white units. Despite this, Black Americans enlisted and were drafted by the hundreds of thousands. They fought for a country that denied them basic civil rights at home. Many asked a painful question: why are we fighting for freedom overseas when we do not have it here?
+    </p>
+
+    <!-- FILENAME: S2L02_TuskegeeAirmen_Group.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Tuskegee Airmen group photograph, ca. 1942-1945; official U.S. Army Air Forces photograph of pilots or trainees at Tuskegee Army Air Field, Alabama; widely available through National Archives and Wikimedia Commons; most famous is the group photograph of pilots in flight gear in front of a P-51 Mustang
+         SEARCH: Tuskegee Airmen pilots group photograph 1944 National Archives Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Tuskegee_Airmen_Walterboro_1944.jpg (suggested, not guaranteed) -->
+    <figure class="img-left">
+      <img src="images/S2/L02/S2L02_TuskegeeAirmen_Group.jpg" alt="Tuskegee Airmen pilots, ca. 1944">
+      <figcaption><span class="vocab-ref">Tuskegee Airmen</span> pilots at Walterboro Army Air Field, South Carolina, ca. 1944. The 332nd Fighter Group flew over 1,500 missions in Europe. Source: National Archives / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      The <span class="vocab">Tuskegee Airmen<span class="tip">The first Black military pilots in the U.S. Army Air Forces, trained at Tuskegee, Alabama during WWII; they flew over 1,500 missions and proved that Black Americans could fly combat aircraft at the highest level.</span></span> were the first Black military aviators in American history. They trained at Tuskegee Army Air Field in Alabama — a state where segregation was law in every part of daily life. By 1945, the 332nd Fighter Group had flown more than 1,500 combat missions in Europe and North Africa. They escorted American bombers deep into Germany. Their bomber groups reported some of the lowest loss rates in the entire Eighth Air Force. Their success forced the military to reconsider what Black Americans could do — though it did not end segregation overnight.
+    </p>
+
+    <p>
+      Meanwhile, Japanese Americans faced a cruel contradiction. Even as the U.S. government was locking up Japanese American families in incarceration camps, Japanese American men were volunteering to fight for the United States. The <span class="vocab">442nd Regimental Combat Team<span class="tip">A U.S. Army unit made up almost entirely of Japanese American soldiers who became one of the most decorated units in American military history.</span></span> was made up almost entirely of Nisei soldiers — American-born citizens whose parents had come from Japan. Their motto was "Go for Broke." They fought in Italy and France. By the end of the war, the 442nd had earned more combat decorations per soldier than any other unit in U.S. military history.
+    </p>
+
+    <p>
+      Native American soldiers made a different kind of contribution. During the brutal island campaigns in the Pacific, the U.S. Marines recruited Navajo men to serve as radio operators. Their job was to transmit battlefield messages using a code based on the Navajo language. The Navajo Code Talkers sent messages so complex that Japanese code breakers never cracked a single one. Without their work, some military historians believe the Battle of Iwo Jima could not have been won. Major Howard Connor of the Marines said it directly: "Were it not for the Navajos, the Marines would never have taken Iwo Jima."
+    </p>
+
+    <!-- PROFILES GRID -->
+    <div class="profiles-grid">
+      <div class="profile-card">
+        <p class="profile-name">Tuskegee Airmen</p>
+        <p>Over 1,000 Black pilots trained at Tuskegee, Alabama. They flew P-51 Mustangs over Europe and North Africa. Their painted red tail fins earned them the nickname "Red Tails."</p>
+      </div>
+      <div class="profile-card">
+        <p class="profile-name">442nd Regiment</p>
+        <p>Japanese American soldiers whose families were often imprisoned in camps while they fought. They rescued the "Lost Battalion" in France in October 1944 and suffered severe casualties doing it.</p>
+      </div>
+      <div class="profile-card">
+        <p class="profile-name">Navajo Code Talkers</p>
+        <p>Over 400 Navajo men served as Marine radio operators. Their code was never broken. The U.S. government kept their contribution classified until 1968, more than 20 years after the war.</p>
+      </div>
+    </div>
+
+    <!-- FILENAME: S2L02_NavajoCodTalkers.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Navajo Code Talkers in the Pacific, ca. 1943-1945; official USMC photograph of Navajo marines using radio equipment in the field; Corporal Henry Bake Jr. and Private First Class George H. Kirk are the most famous photograph pair; widely available from National Archives and Wikimedia
+         SEARCH: Navajo Code Talkers Marines Pacific 1943 Henry Bake Kirk National Archives Wikimedia
+         LINK: https://commons.wikimedia.org/wiki/File:Navajo_Code_Talkers.jpg (suggested, not guaranteed) -->
+    <figure class="img-right">
+      <img src="images/S2/L02/S2L02_NavajoCodTalkers.jpg" alt="Navajo Code Talkers, U.S. Marines, Pacific theater, ca. 1943">
+      <figcaption>Navajo Code Talkers Cpl. Henry Bake Jr. and Pvt. George H. Kirk operating a radio in the Pacific, December 1943. Source: U.S. Marine Corps / National Archives / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      The story of these three groups raises a sharp question that Americans are still working through today. If someone is willing to die for a country, do they deserve equal rights in that country? For Black Americans, the answer at home was still no in 1945. Japanese Americans came home from the war to find their families still behind barbed wire. Navajo Code Talkers were forbidden to even talk about their service until 1968. The gap between what America said it stood for and how it treated its own people was impossible to ignore. That gap became the fuel for the Civil Rights Movement that followed.
+    </p>
+
+    <div style="clear:both;"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 — INTERNMENT
+============================================================ -->
+<section class="content-section" id="internment">
+  <div class="section-body">
+    <span class="section-label">Chapter Three</span>
+    <h2 class="section-heading">Internment: Fear, Prejudice, and Executive Order 9066</h2>
+
+    <!-- FILENAME: S2L02_MinidokaChildren.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Japanese American children or families at Minidoka or Topaz incarceration camp, ca. 1942-1944; Dorothea Lange or Ansel Adams photographs preferred; shows children at school desks in barracks or family with identification tags; conveys the human cost of internment; available through Library of Congress or Wikimedia
+         SEARCH: Japanese American internment children Minidoka 1943 Ansel Adams Dorothea Lange Library of Congress
+         LINK: https://www.loc.gov/pictures/search/?q=japanese+american+internment+children (suggested, not guaranteed) -->
+    <figure class="img-full">
+      <img src="images/S2/L02/S2L02_MinidokaChildren.jpg" alt="Japanese American children at a WWII incarceration camp, ca. 1943">
+      <figcaption>Japanese American children at a War Relocation Authority incarceration camp, ca. 1942&ndash;1943. Two-thirds of those incarcerated were American citizens. Source: Library of Congress / Dorothea Lange.</figcaption>
+    </figure>
+
+    <p>
+      After the attack on Pearl Harbor, fear and anti-Japanese prejudice spread rapidly across the West Coast. Many Americans assumed that Japanese Americans — even those who had been born in the United States — might secretly be loyal to Japan. There was no evidence for this fear. But fear, combined with existing racism toward Asian Americans, pushed the government to act.
+    </p>
+
+    <p>
+      On February 19, 1942, President Roosevelt signed Executive Order 9066. It gave the military the power to remove anyone from military zones — which meant the entire West Coast. Over the following months, more than 120,000 people of Japanese descent were forced to leave their homes and report to assembly centers. They had days to sell their property, businesses, and belongings. Most sold at a fraction of what things were worth; some lost everything. They were then transferred to one of ten <span class="vocab">internment<span class="tip">The forced imprisonment of a group of people — especially during wartime — based on their identity rather than any individual crime.</span></span> camps in remote desert locations in California, Idaho, Utah, Arizona, Wyoming, Colorado, and Arkansas.
+    </p>
+
+    <p>
+      Two-thirds of those incarcerated were Nisei: American citizens by birth. They had committed no crime. No charges were ever filed. No trials were ever held. Families lived in crowded wooden barracks behind barbed wire, watched by armed guards in watchtowers. Temperatures reached over 100 degrees in summer and dropped below freezing in winter. Schools were set up inside the camps. Children learned the Pledge of Allegiance — a pledge about liberty and justice for all — behind a fence.
+    </p>
+
+    <!-- FILENAME: S2L02_KorematsuMugshot.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Fred Korematsu photograph, FBI arrest photograph or portrait, ca. 1942-1945; young Japanese American man who refused to report to an internment camp and took his case to the Supreme Court; widely available through Wikimedia Commons and civil rights archives
+         SEARCH: Fred Korematsu FBI arrest photograph 1942 Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Fred_Korematsu.jpg (suggested, not guaranteed) -->
+    <figure class="img-right">
+      <img src="images/S2/L02/S2L02_KorematsuMugshot.jpg" alt="Fred Korematsu, ca. 1942">
+      <figcaption>Fred Korematsu, photographed ca. 1942, after his arrest for refusing to report to an internment camp. His Supreme Court case shaped civil liberties law for decades. Source: Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      One man refused to go. Fred Korematsu was a 23-year-old welder from Oakland, California. He had been born in the United States and had never set foot in Japan. He had already tried to enlist in the Navy but was rejected because of his Japanese ancestry. When internment orders came, he did not report. He was arrested, convicted, and sent to a camp. His lawyers took the case to the Supreme Court.
+    </p>
+
+    <p>
+      In 1944, the Supreme Court ruled in <em>Korematsu v. United States</em> that the internment was constitutional — that military necessity could override civil rights during wartime. It was a 6-3 decision and one of the most criticized rulings in Supreme Court history. In a famous dissent, Justice Robert Jackson warned that the decision placed a loaded weapon in the hands of any future government that wanted to use military necessity as an excuse to imprison Americans. He was right to worry. The <em>Korematsu</em> ruling was not formally overturned until 2018.
+    </p>
+
+    <p>
+      In 1988, Congress passed the Civil Liberties Act, which formally apologized to Japanese Americans and paid $20,000 to each surviving person who had been incarcerated. President Reagan signed it into law. The United States admitted that internment had been driven by "race prejudice, war hysteria, and a failure of political leadership." But for the more than 120,000 people who lost homes, businesses, and years of their lives, that apology came more than four decades too late.
+    </p>
+
+    <!-- LOCAL HISTORY CALLOUT -->
+    <div class="local-history">
+      <p class="lh-headline">San Diego's Japanese American Community and the Camps</p>
+
+      <!-- FILENAME: S2L02_SanDiegoJA_Community.jpg
+           PLACE IN: images/S2/L02/
+           FIND: Japanese American community in San Diego or Southern California, pre-war photograph ca. 1935-1941; families, businesses, or farming operations in the National City, Logan Heights, or Chula Vista area; available through San Diego History Center archives or Library of Congress
+           SEARCH: Japanese American San Diego community prewar 1940 California Library of Congress Wikimedia
+           LINK: https://commons.wikimedia.org/wiki/Category:Japanese_Americans_in_California (suggested, not guaranteed) -->
+      <figure class="img-right" style="width:36%; margin: 4px 0 10px 20px;">
+        <img src="images/S2/L02/S2L02_SanDiegoJA_Community.jpg" alt="Japanese American community, Southern California, ca. 1940">
+        <figcaption>Japanese American farming and community life in Southern California, ca. 1940. Source: Library of Congress / Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p>San Diego had a significant Japanese American community before the war, concentrated in the Logan Heights and National City neighborhoods and in farming communities in the Chula Vista and El Cajon valleys, where Japanese American families grew flowers, strawberries, and celery.</p>
+      <p>When Executive Order 9066 took effect, these families were among those forced to report to the Santa Anita Assembly Center near Los Angeles before being transferred to camps. Many lost their farms and businesses permanently. After the war, some returned; many did not. The Chula Vista Japanese Flower Growers Association, one of the most productive flower-growing cooperatives in California before 1942, never fully recovered.</p>
+      <div style="clear:both;"></div>
+    </div>
+
+    <div style="clear:both;"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4 — HARD CHOICES
+============================================================ -->
+<section class="content-section" id="hard-choices">
+  <div class="section-body">
+    <span class="section-label">Chapter Four</span>
+    <h2 class="section-heading">Hard Choices: The Atomic Bomb, the Holocaust, and the End of the War</h2>
+
+    <p>
+      By the spring of 1945, Germany had surrendered and the war in Europe was over. But Japan fought on. American military planners estimated that an invasion of the Japanese home islands could cost between 250,000 and one million American lives, along with millions of Japanese military and civilian casualties. The war had already killed more than 400,000 Americans. Something had to end it — and fast.
+    </p>
+
+    <!-- FILENAME: S2L02_ManhattanProject_Trinity.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Trinity nuclear test explosion, July 16 1945, New Mexico; the first atomic bomb test in history; famous mushroom cloud photograph taken from a distance by U.S. Army photographers; widely available through National Archives, Department of Energy, and Wikimedia Commons
+         SEARCH: Trinity nuclear test 1945 New Mexico mushroom cloud National Archives Wikimedia
+         LINK: https://commons.wikimedia.org/wiki/File:Trinity_Test_Fireball_25ms.jpg (suggested, not guaranteed) -->
+    <figure class="img-left">
+      <img src="images/S2/L02/S2L02_ManhattanProject_Trinity.jpg" alt="Trinity nuclear test, New Mexico, July 16, 1945">
+      <figcaption>The Trinity test, Alamogordo, New Mexico, July 16, 1945 — the world's first nuclear explosion, code-named "The Gadget." The blast was visible 160 miles away. Source: U.S. Army / National Archives / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      The United States had been secretly building an <span class="vocab">atomic bomb<span class="tip">A weapon that uses nuclear fission — the splitting of atoms — to create a massive explosion with devastating heat, blast, and radiation.</span></span> since 1942, under a secret program called the Manhattan Project. Scientists in Los Alamos, New Mexico, led by physicist J. Robert Oppenheimer, tested the first device on July 16, 1945. When it detonated, Oppenheimer later recalled a line from Hindu scripture: "Now I am become Death, the destroyer of worlds." The weapon worked. President Harry Truman now had a choice to make.
+    </p>
+
+    <p>
+      On August 6, 1945, an American B-29 bomber named the <em>Enola Gay</em> dropped an atomic bomb on the Japanese city of Hiroshima. An estimated 80,000 people died instantly. The heat was so intense that shadows of vaporized human beings were burned into stone walls. Three days later, a second bomb destroyed Nagasaki, killing an estimated 40,000 more. Japan announced its <span class="vocab">unconditional surrender<span class="tip">A surrender in which the losing side agrees to all terms set by the winner, giving up completely without any conditions or negotiations.</span></span> on August 15, 1945. World War II was over.
+    </p>
+
+    <!-- DEBATE CARD: Was dropping the bomb justified? -->
+    <div class="debate-block">
+      <div class="debate-side yes">
+        <span class="debate-label">Arguments For Dropping the Bomb</span>
+        <ul>
+          <li>An invasion of Japan could have killed over one million Americans and millions of Japanese.</li>
+          <li>Japan showed no sign of surrendering; soldiers and civilians were prepared to fight to the last person.</li>
+          <li>Ending the war quickly saved lives on both sides, including Allied prisoners of war dying in Japanese camps.</li>
+          <li>The bomb brought a swift end to a war that had already killed tens of millions of people worldwide.</li>
+        </ul>
+      </div>
+      <div class="debate-side no">
+        <span class="debate-label">Arguments Against Dropping the Bomb</span>
+        <ul>
+          <li>The bombs deliberately targeted civilian cities, not military bases — most victims were ordinary people.</li>
+          <li>Japan was already economically strangled by naval blockades; some historians argue it was close to surrender anyway.</li>
+          <li>No warning was given to civilians; there was no opportunity to evacuate.</li>
+          <li>Using atomic weapons set a precedent for nuclear warfare that still threatens the entire world today.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PAIRED IMAGES: Hiroshima before/after -->
+    <div class="img-pair">
+      <!-- FILENAME: S2L02_HiroshimaBefore.jpg
+           PLACE IN: images/S2/L02/
+           FIND: Aerial photograph of Hiroshima before the atomic bomb, ca. 1945; shows the city's urban landscape before August 6; U.S. Army Air Forces reconnaissance photograph; available through National Archives and Wikimedia Commons
+           SEARCH: Hiroshima before atomic bomb aerial photograph 1945 Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/File:Hiroshima_before_and_after_the_bombing.jpg (suggested, not guaranteed) -->
+      <figure>
+        <img src="images/S2/L02/S2L02_HiroshimaBefore.jpg" alt="Hiroshima, Japan before the atomic bomb, 1945">
+        <figcaption>Hiroshima before August 6, 1945. A city of approximately 350,000 people. Source: U.S. Army Air Forces / Wikimedia Commons.</figcaption>
+      </figure>
+
+      <!-- FILENAME: S2L02_HiroshimaAfter.jpg
+           PLACE IN: images/S2/L02/
+           FIND: Hiroshima after the atomic bomb, August 1945; aerial photograph showing total destruction of the city center leaving only a few concrete structures standing; also available as ground-level photograph of ruins; widely available from National Archives and Wikimedia Commons
+           SEARCH: Hiroshima after atomic bomb ruins 1945 aerial photograph Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/File:Hiroshima_aftermath.jpg (suggested, not guaranteed) -->
+      <figure>
+        <img src="images/S2/L02/S2L02_HiroshimaAfter.jpg" alt="Hiroshima, Japan after the atomic bomb, August 1945">
+        <figcaption>Hiroshima after August 6, 1945. An estimated 80,000 people died instantly; tens of thousands more died from radiation in the following months. Source: U.S. Army / Wikimedia Commons.</figcaption>
+      </figure>
+    </div>
+
+    <p>
+      While the war raged in the Pacific, a different catastrophe was unfolding in Europe. The Holocaust was the systematic murder of six million Jewish people and millions of others — including Roma, people with disabilities, gay people, and political prisoners — by the Nazi German government. The Nazis built an industrial system of death camps, including Auschwitz, where over one million people were killed. American military forces liberated many of these camps in 1945 and were shocked by what they found.
+    </p>
+
+    <!-- FILENAME: S2L02_HolocaustLiberation.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Liberation of a Nazi concentration camp by U.S. forces, April-May 1945; soldiers of the 4th Armored Division at Ohrdruf, or Dachau liberation photographs; American soldiers viewing conditions inside the camp; widely reproduced from U.S. Army Signal Corps via National Archives and Wikimedia Commons
+         SEARCH: Dachau liberation 1945 American soldiers U.S. Army Signal Corps Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Dachau_liberated_prisoners_cheer.jpg (suggested, not guaranteed) -->
+    <figure class="img-full">
+      <img src="images/S2/L02/S2L02_HolocaustLiberation.jpg" alt="Liberation of Dachau concentration camp by U.S. forces, April 29, 1945">
+      <figcaption>Survivors of Dachau concentration camp cheer American soldiers upon liberation, April 29, 1945. U.S. troops were unprepared for what they found inside. Source: U.S. Army Signal Corps / National Archives / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      The question of American responsibility for the Holocaust is painful. By 1942, the U.S. government had reliable information that Nazi Germany was systematically murdering Jews across Europe. Yet the United States refused to bomb the railroad lines leading to Auschwitz, even when it had the air power to do so. It turned away ships carrying Jewish refugees from Europe, including the MS St. Louis in 1939, whose passengers were forced to return to Europe; hundreds of them later died in the Holocaust. The reasons given were bureaucratic and political; the consequences were measured in lives.
+    </p>
+
+    <!-- PRIMARY SOURCE: Eisenhower on the camps -->
+    <div class="primary-source">
+      <blockquote>
+        "I have never felt able to describe my emotional reactions when I first came face to face with indisputable evidence of Nazi brutality and ruthless disregard of every shred of decency. I visited every nook and cranny of the camp because I felt it my duty to be in a position from then on to testify at first hand about these things in case there ever grew up at home the belief or assumption that 'the stories were propaganda.'"
+      </blockquote>
+      <cite>General Dwight D. Eisenhower, letter to General George Marshall, April 15, 1945, after visiting Ohrdruf concentration camp.</cite>
+      <p class="doc-explainer">Eisenhower walked through the camp himself and deliberately looked at every part of it because he was already worried that people back home would not believe what had been done there — and he wanted to be a witness who could prove it was real.</p>
+    </div>
+
+    <div class="ps-questions">
+      <p><span class="ps-q-label">Question 1:</span> Why did Eisenhower make a point of visiting "every nook and cranny" of the camp? What was he afraid people back home might say?</p>
+      <p><span class="ps-q-label">Question 2:</span> This lesson asks whether all sacrifices during WWII were equally shared. Whose suffering does Eisenhower's letter reveal, and what does it suggest about what the United States was actually fighting against?</p>
+    </div>
+
+    <div style="clear:both;"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW THIS STILL MATTERS TODAY
+============================================================ -->
+<section class="still-matters" id="still-matters">
+  <div class="inner">
+    <span class="section-label">How This Still Matters Today</span>
+    <h2 class="section-heading">The hard questions raised on the American home front in 1942 are still unanswered in 2024.</h2>
+
+    <p class="matters-headline">
+      Every major debate from this lesson — who gets treated fairly during a national emergency, who pays the price for decisions made in fear, and what a government owes its own people — is still being argued in courts, in Congress, and in the streets right now.
+    </p>
+
+    <ul class="news-headlines">
+      <li><a href="https://www.nytimes.com/2018/06/26/us/politics/supreme-court-travel-ban-trump.html" target="_blank">"Supreme Court Upholds Trump Travel Ban, Citing National Security — and Formally Repudiates Korematsu Ruling" — The New York Times, 2018</a></li>
+      <li><a href="https://www.smithsonianmag.com/history/442nd-congressional-gold-medal-180975495/" target="_blank">"The 442nd Regimental Combat Team Was Awarded the Congressional Gold Medal — 70 Years After the War Ended" — Smithsonian Magazine</a></li>
+      <li><a href="https://www.bbc.com/news/world-us-canada-57012523" target="_blank">"The Debate Over Nuclear Weapons Has Never Gone Away" — BBC News</a></li>
+    </ul>
+
+    <!-- FILENAME: S2L02_KorematsuMuseum.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Fred Korematsu Day commemoration or Korematsu Institute event, recent photograph; OR photograph of a Japanese American National Museum exhibit; connects the WWII internment story to present-day civil rights; available through Wikimedia Commons or news photo archives
+         SEARCH: Fred Korematsu Day commemoration civil rights recent Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Fred_Korematsu_Day.jpg (suggested, not guaranteed) -->
+    <figure class="img-full" style="margin: 30px 0;">
+      <img src="images/S2/L02/S2L02_KorematsuMuseum.jpg" alt="Fred Korematsu Day commemoration, recent">
+      <figcaption>Fred Korematsu Day is now observed annually in several U.S. states, including California, on January 30. His case remains a landmark in civil liberties law. Source: Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p class="closing-question">
+      If your country asked you to sacrifice everything — your home, your business, your freedom — in the name of national security, and you had done nothing wrong, what would you want the country to owe you in return?
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+  US History &mdash; Semester 2, Lesson 02 &nbsp;&bull;&nbsp; The American Home Front and Hard Choices
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<script>
+document.querySelectorAll('.vocab').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v) {
+      if (v !== el) v.classList.remove('active');
+    });
+    el.classList.toggle('active');
+  });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.vocab.active').forEach(function(v) {
+    v.classList.remove('active');
+  });
+});
+</script>
+
 </body>
 </html>
+
+<!--
+========================================================
+IMAGE CHECKLIST FOR SSU_S2L02.html
+========================================================
+
+S2L02_HeaderBG_HomeFront.jpg — WWII women factory workers, wartime industrial production, ca. 1942-1944 — Suggested link: https://commons.wikimedia.org/wiki/File:Wwii_women_workers.jpg
+
+S2L02_WomenRiveters_Vultee.jpg — Women workers riveting aircraft at Vultee Aircraft, Nashville, ca. 1943 — Suggested link: https://commons.wikimedia.org/wiki/File:Vultee_aircraft_women_workers.jpg
+
+S2L02_TuskegeeAirmen_Group.jpg — Tuskegee Airmen pilots group photograph, ca. 1944, Walterboro Army Air Field — Suggested link: https://commons.wikimedia.org/wiki/File:Tuskegee_Airmen_Walterboro_1944.jpg
+
+S2L02_NavajoCodTalkers.jpg — Navajo Code Talkers Cpl. Henry Bake Jr. and Pvt. George Kirk, Pacific, December 1943 — Suggested link: https://commons.wikimedia.org/wiki/File:Navajo_Code_Talkers.jpg
+
+S2L02_MinidokaChildren.jpg — Japanese American children at internment camp, ca. 1942-1943, Dorothea Lange photograph — Suggested link: https://www.loc.gov/pictures/search/?q=japanese+american+internment+children
+
+S2L02_KorematsuMugshot.jpg — Fred Korematsu photograph, ca. 1942, arrested for defying internment order — Suggested link: https://commons.wikimedia.org/wiki/File:Fred_Korematsu.jpg
+
+S2L02_SanDiegoJA_Community.jpg — Japanese American community, Southern California, ca. 1940, farming or community life — Suggested link: https://commons.wikimedia.org/wiki/Category:Japanese_Americans_in_California
+
+S2L02_ManhattanProject_Trinity.jpg — Trinity atomic test, New Mexico, July 16 1945, mushroom cloud — Suggested link: https://commons.wikimedia.org/wiki/File:Trinity_Test_Fireball_25ms.jpg
+
+S2L02_HiroshimaBefore.jpg — Hiroshima aerial photograph before bomb, 1945 — Suggested link: https://commons.wikimedia.org/wiki/File:Hiroshima_before_and_after_the_bombing.jpg
+
+S2L02_HiroshimaAfter.jpg — Hiroshima after atomic bomb, August 1945, total destruction — Suggested link: https://commons.wikimedia.org/wiki/File:Hiroshima_aftermath.jpg
+
+S2L02_HolocaustLiberation.jpg — Liberation of Dachau, American soldiers and survivors, April 29 1945 — Suggested link: https://commons.wikimedia.org/wiki/File:Dachau_liberated_prisoners_cheer.jpg
+
+S2L02_KorematsuMuseum.jpg — Fred Korematsu Day commemoration or museum exhibit, recent — Suggested link: https://commons.wikimedia.org/wiki/File:Fred_Korematsu_Day.jpg
+
+========================================================
+END IMAGE CHECKLIST
+========================================================
+-->
