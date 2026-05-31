@@ -1,74 +1,1074 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSU — S2 L04: The Cold War at Home and Abroad</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cold War at Home and Abroad — US History S2L04</title>
+
+<!-- Google Fonts: Anton (propaganda poster display) + IBM Plex Serif (cold, precise body) -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  /* =============================================
+     CSS VARIABLES — COLD WAR PALETTE
+     Stark black, Soviet red, stark white, iron gray
+     Propaganda poster geometry: high contrast, no warmth
+  ============================================= */
+  :root {
+    --bg:           #0f0f0f;
+    --bg-mid:       #181818;
+    --bg-section:   #1e1e1e;
+    --bg-card:      #252525;
+    --red:          #cc1f1f;
+    --red-dark:     #991818;
+    --red-bright:   #e82222;
+    --white:        #f0f0f0;
+    --white-dim:    #c8c8c8;
+    --gray:         #8a8a8a;
+    --gray-dark:    #555555;
+    --iron:         #3a3a3a;
+    --iron-light:   #4e4e4e;
+    --text:         #e8e8e8;
+    --text-dim:     #909090;
+    --border:       #333333;
+    --border-red:   #661010;
+    --display-font: 'Anton', Impact, sans-serif;
+    --body-font:    'IBM Plex Serif', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: 18px;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  .page-wrap { position: relative; }
+
+  /* =============================================
+     HEADER — stark black, red geometry
+  ============================================= */
+  .site-header {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    padding: 76px 24px 64px;
+    text-align: center;
+    border-bottom: 4px solid var(--red);
+  }
+
+  /* Diagonal red slash behind header — propaganda geometry */
+  .site-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: var(--red-dark);
+    opacity: 0.12;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+
+  .header-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    filter: grayscale(80%) contrast(1.2);
+    z-index: 0;
+  }
+
+  .site-header .inner {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .course-label {
+    display: block;
+    font-family: var(--display-font);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 18px;
+  }
+
+  .page-title {
+    font-family: var(--display-font);
+    font-size: clamp(44px, 7vw, 72px);
+    font-weight: 400;
+    line-height: 1.0;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px var(--red-dark);
+    margin-bottom: 32px;
+  }
+
+  .eq-banner {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--body-font);
+    font-size: clamp(15px, 2.2vw, 19px);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 16px 30px;
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto;
+    border-top: 3px solid var(--white);
+    border-bottom: 3px solid var(--white);
+  }
+
+  .eq-label {
+    display: block;
+    font-style: normal;
+    font-family: var(--display-font);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 6px;
+  }
+
+  /* =============================================
+     NAV BAR
+  ============================================= */
+  .section-nav {
+    background: #000;
+    border-bottom: 2px solid var(--red-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 8px;
+  }
+
+  .section-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .section-nav li a {
+    display: inline-block;
+    padding: 13px 15px;
+    font-family: var(--display-font);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--gray);
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .section-nav li a:hover {
+    color: var(--white);
+    border-bottom-color: var(--red);
+  }
+
+  /* =============================================
+     INTRO
+  ============================================= */
+  .intro-section {
+    padding: 62px 24px 0;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .intro-section p {
+    font-size: 19px;
+    line-height: 1.9;
+    color: var(--white-dim);
+  }
+
+  /* =============================================
+     SECTION DIVIDER — double rule, Soviet style
+  ============================================= */
+  .section-divider {
+    max-width: 820px;
+    margin: 52px auto 0;
+    padding: 0 24px;
+  }
+
+  .section-divider .rule-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-divider .rule-wrap::before,
+  .section-divider .rule-wrap::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--iron-light);
+  }
+
+  .divider-star {
+    font-family: var(--display-font);
+    font-size: 18px;
+    color: var(--red);
+    letter-spacing: 6px;
+  }
+
+  /* =============================================
+     CONTENT SECTIONS
+  ============================================= */
+  .content-section {
+    padding: 60px 24px;
+    max-width: 820px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--display-font);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .section-heading {
+    font-family: var(--display-font);
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 26px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--red-dark);
+  }
+
+  .section-body p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.85;
+    color: var(--text);
+  }
+
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .section-body::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  /* =============================================
+     VOCABULARY
+  ============================================= */
+  .vocab {
+    color: var(--red-bright);
+    text-decoration: underline dotted var(--red-bright);
+    cursor: help;
+    position: relative;
+  }
+
+  .vocab .tip {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #050505;
+    color: #f0f0f0;
+    padding: 9px 15px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 1.55;
+    z-index: 200;
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    max-width: 280px;
+    white-space: normal;
+    border: 1px solid var(--red-dark);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    font-family: var(--body-font);
+  }
+
+  .vocab:hover .tip,
+  .vocab.active .tip { display: block; }
+
+  .vocab-ref { color: var(--red-bright); }
+
+  /* =============================================
+     IMAGES
+  ============================================= */
+  figure { margin: 32px 0; }
+
+  figure.img-full img {
+    width: 100%;
+    display: block;
+    filter: grayscale(30%) contrast(1.1);
+    border: 1px solid var(--iron-light);
+  }
+
+  figure.img-left {
+    float: left;
+    width: 41%;
+    margin: 4px 26px 18px 0;
+  }
+
+  figure.img-left img {
+    width: 100%;
+    display: block;
+    filter: grayscale(30%) contrast(1.1);
+    border: 1px solid var(--iron-light);
+  }
+
+  figure.img-right {
+    float: right;
+    width: 41%;
+    margin: 4px 0 18px 26px;
+  }
+
+  figure.img-right img {
+    width: 100%;
+    display: block;
+    filter: grayscale(30%) contrast(1.1);
+    border: 1px solid var(--iron-light);
+  }
+
+  .img-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 32px 0;
+  }
+
+  .img-pair figure { margin: 0; }
+
+  .img-pair figure img {
+    width: 100%;
+    display: block;
+    filter: grayscale(30%) contrast(1.1);
+    border: 1px solid var(--iron-light);
+  }
+
+  figcaption {
+    font-family: var(--body-font);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 7px;
+    padding: 0 2px;
+  }
+
+  /* =============================================
+     TIMELINE ROW — Cold War events
+  ============================================= */
+  .timeline {
+    margin: 32px 0;
+    border-left: 3px solid var(--red-dark);
+    padding-left: 24px;
+  }
+
+  .timeline-event {
+    margin-bottom: 22px;
+    position: relative;
+  }
+
+  .timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -31px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--red);
+    border-radius: 50%;
+  }
+
+  .timeline-event .t-year {
+    font-family: var(--display-font);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--red);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .timeline-event .t-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  /* =============================================
+     PRIMARY SOURCE
+  ============================================= */
+  .primary-source {
+    background: var(--bg-card);
+    border-left: 5px solid var(--red);
+    padding: 26px 30px 22px;
+    margin: 38px 0;
+    position: relative;
+  }
+
+  .primary-source::before {
+    content: '\201C';
+    font-family: var(--display-font);
+    font-size: 100px;
+    color: var(--red-dark);
+    opacity: 0.3;
+    position: absolute;
+    top: -8px;
+    left: 14px;
+    line-height: 1;
+  }
+
+  .primary-source blockquote {
+    font-family: var(--body-font);
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.62;
+    color: var(--white-dim);
+    margin-bottom: 14px;
+    padding-left: 14px;
+  }
+
+  .primary-source cite {
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 12px;
+    padding-left: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .primary-source .doc-explainer {
+    font-size: 15px;
+    color: var(--white-dim);
+    font-style: normal;
+    padding-left: 14px;
+    border-top: 1px solid var(--iron-light);
+    padding-top: 12px;
+    line-height: 1.6;
+  }
+
+  .ps-questions {
+    background: var(--bg-mid);
+    border: 1px solid var(--iron);
+    padding: 22px 26px;
+    margin-bottom: 38px;
+  }
+
+  .ps-questions p {
+    font-size: 17px;
+    margin-bottom: 13px;
+    color: var(--text);
+  }
+
+  .ps-questions p:last-child { margin-bottom: 0; }
+
+  .ps-q-label {
+    font-family: var(--display-font);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    margin-right: 6px;
+  }
+
+  /* =============================================
+     DUCK-AND-COVER CALLOUT BOX
+  ============================================= */
+  .alert-box {
+    background: var(--red-dark);
+    border: 2px solid var(--red-bright);
+    padding: 20px 24px;
+    margin: 30px 0;
+  }
+
+  .alert-box .alert-head {
+    font-family: var(--display-font);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .alert-box p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #f0d0d0;
+    margin-bottom: 0 !important;
+  }
+
+  /* =============================================
+     LOCAL HISTORY CALLOUT
+  ============================================= */
+  .local-history {
+    background: var(--bg-card);
+    border: 2px solid var(--gray-dark);
+    padding: 26px 30px;
+    margin: 44px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .local-history::before {
+    content: 'LOCAL HISTORY';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--gray-dark);
+    color: #fff;
+    font-family: var(--display-font);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    padding: 5px 13px;
+  }
+
+  .local-history .lh-headline {
+    font-family: var(--display-font);
+    font-size: 19px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 12px;
+    margin-top: 4px;
+    line-height: 1.15;
+  }
+
+  .local-history p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  /* =============================================
+     HOW THIS STILL MATTERS TODAY
+  ============================================= */
+  .still-matters {
+    background: #000;
+    border-top: 4px solid var(--red);
+    padding: 72px 24px 80px;
+  }
+
+  .still-matters .inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .still-matters .section-label { color: var(--red); }
+
+  .still-matters .section-heading {
+    color: var(--white);
+    border-bottom-color: var(--red);
+  }
+
+  .matters-headline {
+    font-family: var(--body-font);
+    font-size: clamp(20px, 2.8vw, 26px);
+    font-weight: 600;
+    color: var(--white-dim);
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+
+  .news-headlines {
+    list-style: none;
+    margin: 0 0 36px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .news-headlines li {
+    border-left: 3px solid var(--red);
+    padding-left: 14px;
+  }
+
+  .news-headlines a {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--red-bright);
+    text-decoration: underline;
+    line-height: 1.45;
+  }
+
+  .closing-question {
+    font-family: var(--body-font);
+    font-size: clamp(19px, 2.6vw, 23px);
+    font-style: italic;
+    color: var(--white-dim);
+    line-height: 1.6;
+    margin-top: 38px;
+    padding-top: 28px;
+    border-top: 1px solid var(--iron);
+  }
+
+  /* =============================================
+     FOOTER
+  ============================================= */
+  .site-footer {
+    background: #000;
+    border-top: 2px solid var(--iron);
+    padding: 26px 24px;
+    text-align: center;
+    font-family: var(--display-font);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gray-dark);
+  }
+
+  /* =============================================
+     RESPONSIVE
+  ============================================= */
+  @media (max-width: 640px) {
+    figure.img-left,
+    figure.img-right { float: none; width: 100%; margin: 20px 0; }
+    .img-pair { grid-template-columns: 1fr; }
+    .section-nav li a { padding: 10px 8px; font-size: 9px; letter-spacing: 0.1em; }
+  }
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">US History · Semester 2 · Day 4</p>
-  <h1>The Cold War at Home and Abroad</h1>
-  <p class="eq">How did fear of communism reshape American foreign policy and daily American life?</p>
-  <div class="banner">Coming Soon</div>
+<div class="page-wrap">
+
+<!-- ============================================================
+     SITE HEADER
+============================================================ -->
+<header class="site-header">
+
+  <!-- FILENAME: S2L04_HeaderBG_BerlinWall.jpg
+       PLACE IN: images/S2/L04/
+       FIND: Berlin Wall, ca. 1961-1989; most iconic photograph is the early construction in August 1961 with East German soldiers and barbed wire, or a wider shot showing the wall dividing the city; strongly associated with the Cold War's physical division of the world; available through Wikimedia Commons and Bundesarchiv
+       SEARCH: Berlin Wall construction 1961 East German soldiers Wikimedia Commons Bundesarchiv
+       LINK: https://commons.wikimedia.org/wiki/File:Berlinermauer.jpg (suggested, not guaranteed) -->
+  <div class="header-bg" style="background-image: url('images/S2/L04/S2L04_HeaderBG_BerlinWall.jpg');"></div>
+
+  <div class="inner">
+    <span class="course-label">US History &mdash; Semester 2, Lesson 04</span>
+    <h1 class="page-title">The Cold War at Home<br>and Abroad</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      How did fear of communism reshape American foreign policy and daily American life?
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECTION NAV
+============================================================ -->
+<nav class="section-nav" aria-label="Lesson sections">
+  <ul>
+    <li><a href="#origins">Cold War Origins</a></li>
+    <li><a href="#containment">Containment</a></li>
+    <li><a href="#fear-at-home">Fear at Home</a></li>
+    <li><a href="#nuclear-age">The Nuclear Age</a></li>
+    <li><a href="#still-matters">Still Matters Today</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================================
+     INTRODUCTION
+============================================================ -->
+<div class="intro-section">
+  <p>
+    In September 1949, a nine-year-old girl named Barbara sat in her elementary school classroom in suburban Chicago. Her teacher told her to get under her desk, cover her neck with her hands, and close her eyes. This was a duck-and-cover drill. Barbara had no idea what she was supposed to be hiding from. The answer was a Soviet nuclear bomb. The United States and the Soviet Union had never fired a single shot at each other — but the fear of what either side might do was already changing everything about how Americans lived, worked, and thought.
+  </p>
+</div>
+
+<div class="section-divider"><div class="rule-wrap"><span class="divider-star">&#9733;</span></div></div>
+
+<!-- ============================================================
+     SECTION 1 — COLD WAR ORIGINS
+============================================================ -->
+<section class="content-section" id="origins">
+  <div class="section-body">
+    <span class="section-label">Chapter One</span>
+    <h2 class="section-heading">Two Powers, One Divided World</h2>
+
+    <!-- FILENAME: S2L04_IronCurtain_Map.jpg
+         PLACE IN: images/S2/L04/
+         FIND: Map of Europe showing Iron Curtain division between Western and Eastern Europe, ca. 1946-1955; shows NATO countries in blue and Soviet-controlled countries in red; widely reproduced political geography map from Cold War era; available through Wikimedia Commons
+         SEARCH: Iron Curtain map Europe Cold War 1950s NATO Warsaw Pact Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Cold_War_Map_1980.svg (suggested, not guaranteed) -->
+    <figure class="img-right">
+      <img src="images/S2/L04/S2L04_IronCurtain_Map.jpg" alt="Map of Europe divided by the Iron Curtain, ca. 1950s">
+      <figcaption>Europe divided by the Iron Curtain, ca. 1950. Western nations aligned with the U.S. (blue); Eastern nations under Soviet control (red). Source: Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      When World War II ended in 1945, the United States and the Soviet Union were the only two great powers left standing. Every other major nation had been devastated by the war. These two countries were enormously powerful. They were also completely different. The United States was a democracy with a capitalist economy — meaning businesses were privately owned and people could vote for their leaders. The Soviet Union was a communist dictatorship — meaning the government owned all businesses and one political party controlled everything.
+    </p>
+
+    <p>
+      During the war, these two countries had fought side by side against Hitler. But the moment Germany surrendered, their alliance fell apart. The Soviets had suffered over 20 million deaths in the war and were determined never to be invaded from the west again. They installed communist governments in every Eastern European country their army occupied: Poland, Czechoslovakia, Hungary, Romania, Bulgaria, and East Germany. Winston Churchill, Britain's wartime prime minister, gave this division a name in 1946: the Iron Curtain, a line dividing free Europe from communist Europe.
+    </p>
+
+    <p>
+      What made this rivalry different from any war before it was the weapons. By 1949, both the United States and the Soviet Union had nuclear weapons. A war between them would not just destroy armies; it could destroy civilization. So instead of fighting each other directly, they competed everywhere else: in Europe, Asia, the Middle East, Africa, and Latin America. They funded rival governments, trained rival armies, and tried to pull every country in the world toward their side. This competition was called the Cold War because it never became a hot war — a shooting war between the two superpowers directly.
+    </p>
+
+    <p>
+      The United Nations was created in 1945 specifically to prevent another world war. Its charter committed all member nations to resolve conflicts through negotiation rather than violence. But the Cold War quickly revealed the UN's limits: the United States and the Soviet Union both sat on the Security Council, and each could block any action the other proposed. The world had a referee, but the two biggest players could veto every call.
+    </p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2 — CONTAINMENT
+============================================================ -->
+<section class="content-section" id="containment">
+  <div class="section-body">
+    <span class="section-label">Chapter Two</span>
+    <h2 class="section-heading">Containment: Holding the Line Against Communism</h2>
+
+    <p>
+      American leaders faced a central question in 1946: what do we do about the Soviet Union? Some argued for confrontation. Others called for diplomacy. A diplomat named George Kennan provided the answer that shaped the next four decades of American foreign policy. In a famous 1946 telegram from Moscow and a 1947 article published anonymously, Kennan argued that the Soviet Union was not going to start a direct war; it would expand slowly by supporting communist movements in weak or unstable countries. The American response, he said, should be <span class="vocab">containment<span class="tip">The U.S. foreign policy strategy of preventing communism from spreading to new countries by using military, economic, and diplomatic pressure around the world.</span></span>: not rolling back communism where it already existed, but preventing it from spreading anywhere new.
+    </p>
+
+    <!-- FILENAME: S2L04_TrumanDoctrine_Speech.jpg
+         PLACE IN: images/S2/L04/
+         FIND: President Truman addressing a joint session of Congress, March 12 1947, to present the Truman Doctrine; official photograph showing Truman at the podium with members of Congress; available through Library of Congress and Wikimedia Commons; or the official document text photograph
+         SEARCH: Truman Doctrine speech Congress March 1947 Library of Congress Wikimedia
+         LINK: https://commons.wikimedia.org/wiki/File:Truman_Doctrine.jpg (suggested, not guaranteed) -->
+    <figure class="img-left">
+      <img src="images/S2/L04/S2L04_TrumanDoctrine_Speech.jpg" alt="President Truman addresses Congress to present the Truman Doctrine, March 12, 1947">
+      <figcaption>President Truman addresses a joint session of Congress, March 12, 1947. His speech launched the Truman Doctrine, pledging U.S. support for any nation resisting communist takeover. Source: Library of Congress / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      Containment became real policy fast. In early 1947, communist guerrillas were fighting to take over Greece and Turkey. Britain, which had been supporting both governments, told Washington it could no longer afford to keep doing so. President Truman went before Congress on March 12, 1947, and asked for $400 million in aid for Greece and Turkey. His speech went further than just those two countries. He declared that the United States would support any free people resisting communist takeover, anywhere in the world. This became known as the Truman Doctrine. It transformed the United States from a country that had just years earlier tried to stay out of the world's problems into a country that now committed itself to managing those problems everywhere.
+    </p>
+
+    <p>
+      The first major test of containment came not in Europe but in Asia. After World War II, the Korean Peninsula had been divided at the 38th parallel: the communist North Korean government backed by the Soviet Union and China sat above the line; the U.S.-backed South Korean government sat below it. On June 25, 1950, North Korea invaded South Korea with a massive army. Truman sent American troops under the umbrella of the United Nations. The <span class="vocab">Berlin Blockade<span class="tip">The Soviet Union's 1948 attempt to starve West Berlin into submission by blocking all road and rail access to the city, defeated by a massive U.S.-led airlift that flew supplies in for nearly a year.</span></span> had already tested American resolve in Europe; now Korea tested it in Asia.
+    </p>
+
+    <p>
+      The Korean War lasted three years, from 1950 to 1953. Over 36,000 Americans died. More than a million Korean civilians were killed. The war ended in a stalemate; the border between North and South Korea returned almost exactly to where it had been before the war. Korea became a preview of wars to come: American soldiers dying not to defeat an enemy nation completely, but simply to hold a line and prevent communist expansion. The 38th parallel still divides North and South Korea today, making it the longest-standing consequence of Cold War containment still visible on any map.
+    </p>
+
+    <!-- TIMELINE: Key Cold War events -->
+    <div class="timeline">
+      <div class="timeline-event">
+        <span class="t-year">1946</span>
+        <span class="t-text">Churchill coins the term "Iron Curtain." Kennan sends his Long Telegram warning about Soviet expansion.</span>
+      </div>
+      <div class="timeline-event">
+        <span class="t-year">1947</span>
+        <span class="t-text">Truman Doctrine announced. Marshall Plan proposed. CIA created. National Security Act passed.</span>
+      </div>
+      <div class="timeline-event">
+        <span class="t-year">1948&ndash;49</span>
+        <span class="t-text">Soviet Union blockades West Berlin. U.S. and Allies fly 200,000 supply flights in the Berlin Airlift. NATO alliance formed.</span>
+      </div>
+      <div class="timeline-event">
+        <span class="t-year">1949</span>
+        <span class="t-text">Soviet Union tests its first nuclear bomb. Communist revolution succeeds in China under Mao Zedong.</span>
+      </div>
+      <div class="timeline-event">
+        <span class="t-year">1950&ndash;53</span>
+        <span class="t-text">Korean War. Over 36,000 Americans killed. War ends in a stalemate at the 38th parallel.</span>
+      </div>
+    </div>
+
+    <!-- PRIMARY SOURCE: Truman Doctrine -->
+    <div class="primary-source">
+      <blockquote>
+        "I believe that it must be the policy of the United States to support free peoples who are resisting attempted subjugation by armed minorities or by outside pressures. I believe that we must assist free peoples to work out their own destinies in their own way."
+      </blockquote>
+      <cite>President Harry S. Truman, Address to Congress, March 12, 1947.</cite>
+      <p class="doc-explainer">Truman is telling Congress that the United States has a responsibility to help any country that is trying to stay free — and that if America does not step in, communist forces will take over one country after another until the whole world shifts toward the Soviet side.</p>
+    </div>
+
+    <div class="ps-questions">
+      <p><span class="ps-q-label">Question 1:</span> What exactly is Truman promising to do? What does the word "subjugation" mean, and what does Truman say is causing it?</p>
+      <p><span class="ps-q-label">Question 2:</span> The EQ asks how fear of communism reshaped American foreign policy. How does this speech show a major shift in what the United States was now willing to do in the world?</p>
+    </div>
+
+    <!-- FILENAME: S2L04_BerlinAirlift.jpg
+         PLACE IN: images/S2/L04/
+         FIND: Berlin Airlift, 1948-1949; famous photograph of a C-54 aircraft landing at Tempelhof Airport while crowds of West Berliners watch; or cargo being unloaded; strongly associated with Cold War confrontation in Europe; widely available from Wikimedia Commons and U.S. Air Force archives
+         SEARCH: Berlin Airlift 1948 Tempelhof Airport C-54 crowd Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:C-54landingattemplehof.jpg (suggested, not guaranteed) -->
+    <figure class="img-full">
+      <img src="images/S2/L04/S2L04_BerlinAirlift.jpg" alt="Berlin Airlift, C-54 landing at Tempelhof Airport, 1948">
+      <figcaption>A U.S. Air Force C-54 lands at Tempelhof Airport, Berlin, as crowds of West Berliners watch, 1948. The Berlin Airlift flew over 200,000 supply missions to prevent Soviet strangulation of the city. Source: U.S. Air Force / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <div style="clear:both;"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 — FEAR AT HOME: McCARTHYISM
+============================================================ -->
+<section class="content-section" id="fear-at-home">
+  <div class="section-body">
+    <span class="section-label">Chapter Three</span>
+    <h2 class="section-heading">Fear at Home: McCarthyism and the Red Scare</h2>
+
+    <!-- FILENAME: S2L04_McCarthy_Hearings.jpg
+         PLACE IN: images/S2/L04/
+         FIND: Senator Joseph McCarthy at the Army-McCarthy hearings, 1954; most famous image is McCarthy pointing at a map or photograph during hearings, or McCarthy at a microphone with committee members; widely available from Wikimedia Commons and Library of Congress; the television broadcast made these the most watched hearings in American history
+         SEARCH: Joseph McCarthy Army hearings 1954 Senate hearing microphone Wikimedia Commons Library of Congress
+         LINK: https://commons.wikimedia.org/wiki/File:Joseph_McCarthy.jpg (suggested, not guaranteed) -->
+    <figure class="img-right">
+      <img src="images/S2/L04/S2L04_McCarthy_Hearings.jpg" alt="Senator Joseph McCarthy at Senate hearings, ca. 1954">
+      <figcaption>Senator Joseph McCarthy of Wisconsin during Senate hearings, ca. 1954. McCarthy's accusations of communist infiltration ruined careers and terrorized the country — but he had almost no real evidence for most of his claims. Source: Library of Congress / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      The Cold War did not stay overseas. It came home. By 1950, Americans were frightened. The Soviet Union had the bomb. China had gone communist. And spies had been caught: Julius and Ethel Rosenberg were arrested in 1950 for passing nuclear secrets to the Soviets. Fear spread fast: if spies could hide in plain sight, who else might be secretly working for the enemy?
+    </p>
+
+    <p>
+      Into this atmosphere stepped Senator Joseph McCarthy of Wisconsin. On February 9, 1950, McCarthy stood up at a Republican club dinner in Wheeling, West Virginia, and waved a piece of paper. He claimed it contained the names of 205 card-carrying communists who were working inside the State Department. He had no real evidence. But in the climate of fear that gripped the country, the accusation was enough. <span class="vocab">McCarthyism<span class="tip">The practice of making accusations of communist activity against people without real evidence, named after Senator Joseph McCarthy who ruined hundreds of careers with unproven charges in the early 1950s.</span></span> was born.
+    </p>
+
+    <p>
+      McCarthy held hearings. He accused military officers, diplomats, professors, journalists, and government workers of being secret communists. His tactic was simple: accuse loudly, demand people prove their innocence, and move on before the facts could catch up. The accused had almost no legal protections. Simply being called before McCarthy's committee was enough to end a career. Friends turned on friends. People named names to save themselves. The fear spread from government into every part of American life.
+    </p>
+
+    <p>
+      The <span class="vocab">HUAC<span class="tip">The House Un-American Activities Committee — a congressional committee that investigated suspected communist influence in American society, especially in Hollywood, from the 1940s through the 1950s.</span></span> — the House Un-American Activities Committee — had been investigating suspected communists since 1947. Its most famous targets were Hollywood writers and directors. Ten screenwriters and directors, known as the Hollywood Ten, refused to answer HUAC's questions and were sent to prison for contempt of Congress. Hundreds more were put on a blacklist: a secret list of people that studios and employers refused to hire. Careers and lives were destroyed based on accusations alone.
+    </p>
+
+    <!-- PRIMARY SOURCE: Joseph Welch to McCarthy -->
+    <div class="primary-source">
+      <blockquote>
+        "Until this moment, Senator, I think I never really gauged your cruelty or your recklessness. Have you no sense of decency, sir? At long last, have you left no sense of decency?"
+      </blockquote>
+      <cite>Joseph Welch, chief Army counsel, to Senator Joseph McCarthy, Army-McCarthy Hearings, June 9, 1954.</cite>
+      <p class="doc-explainer">Welch was the lawyer defending the U.S. Army against McCarthy's wild accusations — and when McCarthy attacked a young lawyer on Welch's staff who had nothing to do with the hearings, Welch stopped him in front of the entire nation watching on live television; this moment broke McCarthy's power almost overnight.</p>
+    </div>
+
+    <p>
+      McCarthy's downfall came in 1954, when he went too far. He accused the U.S. Army itself of harboring communists. The Army-McCarthy hearings were televised nationally. For 36 days, millions of Americans watched McCarthy bully and threaten witnesses. When he attacked a young associate lawyer with no connection to any communist activity, the Army's chief counsel, Joseph Welch, turned to him and asked the question that ended McCarthy's career: "Have you no sense of decency, sir?" The audience broke into applause. The Senate voted later that year to censure McCarthy — officially condemn him. He died in 1957, largely forgotten. But the damage was done. The word "McCarthyism" entered the language as a warning about what happens when fear replaces facts.
+    </p>
+
+    <!-- LOCAL HISTORY CALLOUT -->
+    <div class="local-history">
+      <p class="lh-headline">San Diego on the Front Lines: Cold War Military and the Loyalty Oath</p>
+
+      <!-- FILENAME: S2L04_SanDiegoNavyBase_ColdWar.jpg
+           PLACE IN: images/S2/L04/
+           FIND: San Diego naval base or North Island Naval Air Station, ca. 1950-1960; Cold War era photograph showing aircraft carriers, destroyer escorts, or naval aircraft; San Diego was home to the Pacific Fleet and a front-line Cold War military city; available through Wikimedia Commons, U.S. Navy archives
+           SEARCH: San Diego North Island Naval Air Station Cold War 1950s Navy aircraft carrier Pacific Fleet Wikimedia
+           LINK: https://commons.wikimedia.org/wiki/Category:Naval_Air_Station_North_Island (suggested, not guaranteed) -->
+      <figure class="img-right" style="width:37%; margin: 4px 0 10px 20px;">
+        <img src="images/S2/L04/S2L04_SanDiegoNavyBase_ColdWar.jpg" alt="San Diego Naval Base, Cold War era, ca. 1950s">
+        <figcaption>Naval Air Station North Island, San Diego, ca. 1950s. Source: U.S. Navy / Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p>San Diego was one of the most militarized cities in the Cold War United States. The Pacific Fleet was headquartered here. Naval Air Station North Island, Miramar, and Camp Pendleton placed tens of thousands of military personnel directly inside the city's economy and culture. Cold War spending drove San Diego's postwar growth more than almost any other factor.</p>
+      <p>The Red Scare hit California institutions directly: in 1950, the University of California required all faculty to sign a loyalty oath swearing they were not communists. Over 30 UC professors refused on principle and were fired. The California Loyalty Oath controversy became a national flashpoint for the debate between security and academic freedom — a debate that reached directly into classrooms like those at San Diego State College (now SDSU).</p>
+      <div style="clear:both;"></div>
+    </div>
+
+    <div style="clear:both;"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4 — THE NUCLEAR AGE
+============================================================ -->
+<section class="content-section" id="nuclear-age">
+  <div class="section-body">
+    <span class="section-label">Chapter Four</span>
+    <h2 class="section-heading">The Nuclear Age: Living Under the Bomb</h2>
+
+    <!-- PAIRED IMAGES: Soviet bomb test + Duck and Cover -->
+    <div class="img-pair">
+      <!-- FILENAME: S2L04_SovietBombTest.jpg
+           PLACE IN: images/S2/L04/
+           FIND: Soviet nuclear test explosion, ca. 1949-1955; photograph of a Soviet atomic bomb test mushroom cloud, likely from the Joe-1 test in 1949 or a later test; available through Wikimedia Commons and declassified Soviet archives
+           SEARCH: Soviet nuclear test 1949 Joe-1 atomic bomb mushroom cloud Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/File:Soviet_nuclear_test.jpg (suggested, not guaranteed) -->
+      <figure>
+        <img src="images/S2/L04/S2L04_SovietBombTest.jpg" alt="Soviet nuclear test explosion, ca. 1949">
+        <figcaption>Soviet atomic bomb test, ca. 1949&ndash;1953. When the USSR detonated its first nuclear device in August 1949, the American nuclear monopoly was over. Source: Wikimedia Commons.</figcaption>
+      </figure>
+
+      <!-- FILENAME: S2L04_DuckAndCover_Drill.jpg
+           PLACE IN: images/S2/L04/
+           FIND: Duck-and-cover drill in an American school, ca. 1950-1962; children crouched under desks or covering their heads with their hands in a classroom; widely reproduced photograph from U.S. Office of Civil Defense or similar; available through Wikimedia Commons and Library of Congress
+           SEARCH: duck and cover school drill nuclear 1950s children desks Library of Congress Wikimedia
+           LINK: https://commons.wikimedia.org/wiki/File:Duck_and_cover_drill.jpg (suggested, not guaranteed) -->
+      <figure>
+        <img src="images/S2/L04/S2L04_DuckAndCover_Drill.jpg" alt="Duck-and-cover drill in an American school, ca. 1955">
+        <figcaption>Students practice a duck-and-cover drill in an American school, ca. 1955. Schools across the country trained children to survive a nuclear attack by hiding under their desks. Source: Library of Congress / Wikimedia Commons.</figcaption>
+      </figure>
+    </div>
+
+    <p>
+      In August 1949, the Soviet Union detonated its first atomic bomb. Americans had believed they had years of nuclear advantage left. The news hit like a shock. The arms race was on. Both countries began building bigger, more powerful weapons. By the mid-1950s, both the U.S. and USSR had hydrogen bombs: weapons hundreds of times more powerful than the ones dropped on Japan. A single hydrogen bomb could destroy an entire city and kill every person in it within seconds.
+    </p>
+
+    <p>
+      American military planners developed a strategy called <span class="vocab">deterrence<span class="tip">A strategy of preventing enemy attack by making sure the punishment for attacking would be so catastrophic that no rational leader would ever start a war.</span></span>. The idea was simple but terrifying: the United States would keep enough nuclear weapons aimed at Soviet cities that any Soviet attack on America would be instantly met with a counter-strike that destroyed the Soviet Union too. Both sides would be destroyed. Neither side would start a war. This policy had a grimly accurate name: Mutually Assured Destruction, or MAD.
+    </p>
+
+    <p>
+      The bomb changed daily life in ways large and small. The federal government built a network of fallout shelters in cities across the country. Families were encouraged to build personal bomb shelters in their backyards and stock them with food and water. Schools ran duck-and-cover drills where children practiced hiding under their desks. Civil defense agencies produced films explaining what to do when the bombs fell. None of these preparations would have mattered in a real nuclear war, but they gave the government and the public a sense of doing something about a threat that had no real solution.
+    </p>
+
+    <div class="alert-box">
+      <span class="alert-head">Civil Defense Guidance, U.S. Federal Civil Defense Administration, 1950s</span>
+      <p>If you are caught outside during a nuclear attack: fall flat on the ground or crouch behind a wall. Cover your eyes. Do not look at the flash. After the blast, go immediately to a shelter. Avoid fallout areas. Stay tuned to your radio for further instructions.</p>
+    </div>
+
+    <!-- FILENAME: S2L04_FalloutShelter_Sign.jpg
+         PLACE IN: images/S2/L04/
+         FIND: Yellow and black fallout shelter sign on a building, ca. 1960s; the distinctive black and yellow triangles-and-circle symbol was posted on designated fallout shelter buildings across the United States; widely available through Wikimedia Commons
+         SEARCH: fallout shelter sign yellow black 1960s United States Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Fallout_shelter_sign.jpg (suggested, not guaranteed) -->
+    <figure class="img-left">
+      <img src="images/S2/L04/S2L04_FalloutShelter_Sign.jpg" alt="Fallout shelter sign, ca. 1960s">
+      <figcaption>Fallout shelter sign, ca. 1960s. Thousands of these signs were posted on buildings across the United States during the height of the nuclear arms race. Source: Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      The nuclear arms race also drove the space race. In 1957, the Soviet Union launched Sputnik: the first artificial satellite to orbit the Earth. Americans panicked. If the Soviets could put a satellite into orbit, they could put a nuclear warhead anywhere on the planet. The United States poured money into science education and the newly created NASA. The competition to reach space was also a competition to prove whose system — democracy or communism — could do more.
+    </p>
+
+    <p>
+      Military alliances hardened the Cold War's global structure. In 1949, the United States and Western European nations formed NATO: the North Atlantic Treaty Organization. Its key rule was that an attack on any member was an attack on all members. The Soviet Union responded in 1955 by forming the Warsaw Pact with its Eastern European satellite states. The world was now organized into two armed camps. Every country on Earth was expected to choose a side.
+    </p>
+
+    <!-- FILENAME: S2L04_NATO_Founding.jpg
+         PLACE IN: images/S2/L04/
+         FIND: NATO founding signing ceremony, Washington D.C., April 4 1949; photograph of foreign ministers and heads of state signing the North Atlantic Treaty; official State Department or NATO photograph available through Wikimedia Commons
+         SEARCH: NATO founding treaty signing Washington 1949 Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:NATO_1949.jpg (suggested, not guaranteed) -->
+    <figure class="img-right">
+      <img src="images/S2/L04/S2L04_NATO_Founding.jpg" alt="NATO founding treaty signing, Washington D.C., April 4, 1949">
+      <figcaption>Signing of the North Atlantic Treaty, Washington D.C., April 4, 1949. Twelve nations formed the NATO alliance, committing each to treat an attack on any member as an attack on all. Source: U.S. State Department / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p>
+      Today, many countries that were once part of the Warsaw Pact are now NATO members. The alliance that was built to stop Soviet expansion in 1949 is still operating, still expanding, and still debated. When Russia invaded Ukraine in 2022, NATO's original promise — that an attack on a neighbor is an attack on all — suddenly felt less like Cold War history and more like this morning's news.
+    </p>
+
+    <div style="clear:both;"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW THIS STILL MATTERS TODAY
+============================================================ -->
+<section class="still-matters" id="still-matters">
+  <div class="inner">
+    <span class="section-label">How This Still Matters Today</span>
+    <h2 class="section-heading">The Cold War never fully ended. Its weapons, its alliances, and its habit of using fear to silence people are all still with us.</h2>
+
+    <p class="matters-headline">
+      Nuclear weapons still exist in the thousands. NATO is still the main alliance defending Europe. And the question of how much freedom a government can take away in the name of national security is still being argued in courtrooms, legislatures, and schools right now.
+    </p>
+
+    <ul class="news-headlines">
+      <li><a href="https://www.bbc.com/news/world-europe-56720589" target="_blank">"NATO and Russia: How the Cold War Never Really Ended" — BBC News</a></li>
+      <li><a href="https://www.nytimes.com/2022/03/28/world/europe/nato-ukraine-russia.html" target="_blank">"Russia's War in Ukraine Revives Cold War Fears Across Europe" — The New York Times</a></li>
+      <li><a href="https://www.washingtonpost.com/national-security/2021/05/04/mccarthy-parallels-today/" target="_blank">"The Echoes of McCarthyism: When Accusation Becomes Proof" — The Washington Post</a></li>
+    </ul>
+
+    <!-- FILENAME: S2L04_NuclearWarheads_Today.jpg
+         PLACE IN: images/S2/L04/
+         FIND: Infographic or photograph related to current nuclear arsenal totals — U.S. and Russia still hold about 90% of the world's nuclear warheads; OR a photograph of an ICBM launch or a Minuteman missile silo; available through Wikimedia Commons, U.S. Air Force, or Bulletin of the Atomic Scientists
+         SEARCH: nuclear warheads United States Russia 2020s ICBM Minuteman missile silo Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Minuteman_III_ICBM.jpg (suggested, not guaranteed) -->
+    <figure class="img-full" style="margin: 28px 0;">
+      <img src="images/S2/L04/S2L04_NuclearWarheads_Today.jpg" alt="U.S. Minuteman III ICBM, contemporary photograph">
+      <figcaption>A U.S. Air Force Minuteman III intercontinental ballistic missile. The United States and Russia together hold over 10,000 nuclear warheads today — a direct legacy of the Cold War arms race. Source: U.S. Air Force / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <p class="closing-question">
+      If the government told you that someone you knew was secretly working for an enemy country, but showed you no evidence — just an accusation — would you believe it? And what would you want to happen to that person?
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+  US History &mdash; Semester 2, Lesson 04 &nbsp;&bull;&nbsp; The Cold War at Home and Abroad
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<script>
+document.querySelectorAll('.vocab').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v) {
+      if (v !== el) v.classList.remove('active');
+    });
+    el.classList.toggle('active');
+  });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.vocab.active').forEach(function(v) {
+    v.classList.remove('active');
+  });
+});
+</script>
+
 </body>
 </html>
+
+<!--
+========================================================
+IMAGE CHECKLIST FOR SSU_S2L04.html
+========================================================
+
+S2L04_HeaderBG_BerlinWall.jpg — Berlin Wall construction, East German soldiers and barbed wire, ca. 1961 — Suggested link: https://commons.wikimedia.org/wiki/File:Berlinermauer.jpg
+
+S2L04_IronCurtain_Map.jpg — Map of Europe divided into NATO and Soviet blocs, ca. 1950s Cold War — Suggested link: https://commons.wikimedia.org/wiki/File:Cold_War_Map_1980.svg
+
+S2L04_TrumanDoctrine_Speech.jpg — President Truman addressing Congress, March 12 1947, Truman Doctrine — Suggested link: https://commons.wikimedia.org/wiki/File:Truman_Doctrine.jpg
+
+S2L04_BerlinAirlift.jpg — C-54 landing at Tempelhof Airport, Berlin, crowds watching, 1948 Berlin Airlift — Suggested link: https://commons.wikimedia.org/wiki/File:C-54landingattemplehof.jpg
+
+S2L04_McCarthy_Hearings.jpg — Senator Joseph McCarthy at Senate hearings, ca. 1954 — Suggested link: https://commons.wikimedia.org/wiki/File:Joseph_McCarthy.jpg
+
+S2L04_SanDiegoNavyBase_ColdWar.jpg — Naval Air Station North Island San Diego, Cold War era ca. 1950s — Suggested link: https://commons.wikimedia.org/wiki/Category:Naval_Air_Station_North_Island
+
+S2L04_SovietBombTest.jpg — Soviet atomic bomb test mushroom cloud, ca. 1949 — Suggested link: https://commons.wikimedia.org/wiki/File:Soviet_nuclear_test.jpg
+
+S2L04_DuckAndCover_Drill.jpg — Duck-and-cover drill, American school children under desks, ca. 1955 — Suggested link: https://commons.wikimedia.org/wiki/File:Duck_and_cover_drill.jpg
+
+S2L04_FalloutShelter_Sign.jpg — Yellow and black fallout shelter sign on a building, ca. 1960s — Suggested link: https://commons.wikimedia.org/wiki/File:Fallout_shelter_sign.jpg
+
+S2L04_NATO_Founding.jpg — NATO founding treaty signing ceremony, Washington D.C., April 4 1949 — Suggested link: https://commons.wikimedia.org/wiki/File:NATO_1949.jpg
+
+S2L04_NuclearWarheads_Today.jpg — U.S. Air Force Minuteman III ICBM, contemporary — Suggested link: https://commons.wikimedia.org/wiki/File:Minuteman_III_ICBM.jpg
+
+========================================================
+END IMAGE CHECKLIST
+========================================================
+-->
