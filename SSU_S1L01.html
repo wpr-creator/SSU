@@ -3,1008 +3,269 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSU S1L01 — Founding the Nation</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<title>SSU S1L01 | FOUNDING THE NATION</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <style>
-  /* ─── DESIGN TOKENS ─── */
-  :root {
-    --parchment:       #f2e8d0;
-    --parchment-mid:   #e4d5b0;
-    --parchment-dark:  #c8b48a;
-    --ink:             #1a1005;
-    --ink-mid:         #2e1f0a;
-    --navy:            #1a2744;
-    --navy-light:      #243560;
-    --gold:            #9a7820;
-    --gold-light:      #c4a040;
-    --accent:          #8b2020;
-    --accent-light:    #b03030;
-    --rule:            #7a5c2e;
-    --vocab-color:     #b03030;
-    --shadow:          rgba(26,16,5,0.30);
-    --section-bg:      #ede0c4;
-  }
-
-  /* ─── RESET ─── */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  /* ─── BODY ─── */
-  body {
-    background: #a89070;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Crect width='6' height='6' fill='%23a89070'/%3E%3Ccircle cx='1' cy='1' r='0.8' fill='%23987f60' opacity='0.4'/%3E%3Ccircle cx='4' cy='4' r='0.8' fill='%23987f60' opacity='0.4'/%3E%3C/svg%3E");
-    font-family: 'Spectral', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.85;
-    color: var(--ink);
-  }
-
-  /* ─── PAGE WRAPPER ─── */
-  .page-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    background: var(--parchment);
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent 0px, transparent 29px,
-        rgba(122,92,46,0.06) 29px, rgba(122,92,46,0.06) 30px
-      );
-    box-shadow: 0 0 80px rgba(0,0,0,0.55), inset 0 0 120px rgba(154,120,32,0.06);
-  }
-
-  /* ════════════════════════════════
-     HEADER
-  ════════════════════════════════ */
-  .site-header {
-    position: relative;
-    overflow: hidden;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0;
-  }
-
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('images/S1/L01/S1L01_HeaderBg.jpg');
-    background-size: cover;
-    background-position: center top;
-    opacity: 0.32;
-    filter: sepia(40%);
-  }
-
-  .header-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(26,39,68,0.15) 0%,
-      rgba(26,39,68,0.55) 60%,
-      rgba(26,16,5,0.85) 100%
-    );
-  }
-
-  .header-content {
-    position: relative;
-    z-index: 2;
-    padding: 40px 50px 38px;
-  }
-
-  .course-label {
-    font-family: 'Spectral', serif;
-    font-size: 12px;
-    letter-spacing: 0.45em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    display: block;
-    margin-bottom: 14px;
-  }
-
-  .page-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 58px;
-    font-weight: 900;
-    color: var(--parchment);
-    line-height: 1.05;
-    margin-bottom: 6px;
-    text-shadow: 2px 3px 12px rgba(0,0,0,0.6);
-  }
-
-  .page-dates {
-    font-family: 'Spectral', serif;
-    font-style: italic;
-    font-size: 19px;
-    color: var(--parchment-dark);
-    margin-bottom: 28px;
-    opacity: 0.9;
-  }
-
-  .eq-banner {
-    background: rgba(26,39,68,0.88);
-    border-left: 5px solid var(--gold-light);
-    border-right: 5px solid var(--gold-light);
-    padding: 18px 28px;
-    display: inline-block;
-    width: 100%;
-  }
-
-  .eq-label {
-    font-size: 10px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .eq-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: var(--parchment);
-    line-height: 1.4;
-  }
-
-  /* ════════════════════════════════
-     SECTION NAV BAR
-  ════════════════════════════════ */
-  .section-nav {
-    background: var(--navy);
-    padding: 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-    border-bottom: 3px solid var(--gold);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .section-nav a {
-    display: inline-block;
-    padding: 13px 16px;
-    font-family: 'Spectral', serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--parchment-dark);
-    text-decoration: none;
-    text-transform: uppercase;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -3px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .section-nav a:hover {
-    color: var(--gold-light);
-    border-bottom-color: var(--gold-light);
-  }
-
-  /* ════════════════════════════════
-     BODY CONTENT
-  ════════════════════════════════ */
-  .content {
-    padding: 0 50px;
-  }
-
-  /* ─── DIVIDER ─── */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 32px 50px;
-  }
-  .divider-line { flex: 1; height: 1px; background: var(--rule); opacity: 0.45; }
-  .divider-ornament {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--gold);
-    opacity: 0.75;
-  }
-
-  /* ─── INTRO ─── */
-  .intro-block {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 21px;
-    line-height: 1.7;
-    color: var(--ink-mid);
-    border-left: 4px solid var(--gold);
-    padding: 4px 0 4px 24px;
-    margin-bottom: 8px;
-  }
-
-  /* ─── SECTION WRAPPER ─── */
-  .section {
-    scroll-margin-top: 60px;
-    padding-top: 8px;
-  }
-
-  /* ─── SECTION HEADING ─── */
-  h2.ch {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    font-weight: 900;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 12px;
-  }
-
-  p { margin-bottom: 20px; }
-  p:last-child { margin-bottom: 0; }
-
-  /* ─── VOCAB TOOLTIP ─── */
-  .vocab {
-    color: var(--vocab-color);
-    text-decoration: underline dotted var(--vocab-color);
-    cursor: help;
-    position: relative;
-    font-weight: 600;
-  }
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--navy);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 3px;
-    font-size: 14px;
-    line-height: 1.4;
-    white-space: nowrap;
-    z-index: 50;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    border-left: 3px solid var(--gold-light);
-    max-width: 300px;
-    white-space: normal;
-    width: max-content;
-    max-width: 280px;
-  }
-  .vocab:hover .tip { display: block; }
-  .vocab-plain {
-    color: var(--vocab-color);
-    font-weight: 600;
-  }
-
-  /* ─── IMAGES ─── */
-
-  /* Full-width */
-  .img-full {
-    margin: 32px 0;
-  }
-  .img-full img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 5px 5px 22px var(--shadow);
-  }
-
-  /* Inset left */
-  .img-inset-left {
-    float: left;
-    width: 46%;
-    margin: 6px 28px 18px 0;
-  }
-  .img-inset-left img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 4px 4px 18px var(--shadow);
-  }
-
-  /* Inset right */
-  .img-inset-right {
-    float: right;
-    width: 44%;
-    margin: 6px 0 18px 28px;
-  }
-  .img-inset-right img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 4px 4px 18px var(--shadow);
-  }
-
-  /* Side-by-side pair */
-  .img-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 32px 0;
-  }
-  .img-pair img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 4px 4px 18px var(--shadow);
-  }
-
-  .clearfix::after { content: ''; display: table; clear: both; }
-
-  figcaption {
-    font-family: 'Spectral', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: var(--ink-mid);
-    margin-top: 8px;
-    line-height: 1.4;
-    opacity: 0.8;
-  }
-
-  .img-pair figcaption { font-size: 13px; }
-
-  /* ─── PULLQUOTE ─── */
-  .pullquote {
-    background: var(--navy);
-    color: var(--parchment);
-    margin: 36px -10px;
-    padding: 36px 44px 30px;
-    border-left: 6px solid var(--gold);
-    position: relative;
-  }
-  .pullquote::before {
-    content: '\201C';
-    font-family: 'Playfair Display', serif;
-    font-size: 110px;
-    color: var(--gold);
-    position: absolute;
-    top: -18px;
-    left: 16px;
-    line-height: 1;
-    opacity: 0.3;
-    pointer-events: none;
-  }
-  .pullquote-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    position: relative;
-  }
-  .pullquote-attr {
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 16px;
-  }
-  .pullquote-narrator {
-    font-size: 16px;
-    color: #d4c4a0;
-    border-top: 1px solid rgba(154,120,32,0.35);
-    padding-top: 14px;
-    font-style: italic;
-    line-height: 1.6;
-  }
-  .pullquote-questions {
-    border-top: 1px solid rgba(154,120,32,0.35);
-    padding-top: 16px;
-    margin-top: 16px;
-  }
-  .pullquote-questions p {
-    font-size: 16px;
-    color: #e0d0b0;
-    margin-bottom: 10px;
-    line-height: 1.55;
-  }
-  .pullquote-questions strong { color: var(--gold-light); }
-
-  /* ─── HOW THIS STILL MATTERS ─── */
-  #still-matters {
-    scroll-margin-top: 60px;
-  }
-  .still-matters-block {
-    background: var(--navy);
-    background-image: linear-gradient(160deg, #1a2744 0%, #0e1a30 100%);
-    color: var(--parchment);
-    margin: 36px -10px;
-    padding: 44px 50px;
-    border-top: 4px solid var(--accent);
-    border-bottom: 4px solid var(--accent);
-  }
-  .still-matters-block h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    color: var(--gold-light);
-    margin-bottom: 22px;
-  }
-  .still-now-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    font-weight: 700;
-    color: var(--parchment);
-    margin-bottom: 26px;
-    line-height: 1.35;
-  }
-  .news-list {
-    list-style: none;
-    margin-bottom: 28px;
-    border-top: 1px solid rgba(154,120,32,0.3);
-  }
-  .news-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(154,120,32,0.3);
-    font-size: 17px;
-    line-height: 1.5;
-  }
-  .news-list li a {
-    color: var(--gold-light);
-    text-decoration: underline;
-    font-weight: 600;
-    cursor: default;
-  }
-  .still-closing-q {
-    font-family: 'Playfair Display', serif;
-    font-size: 23px;
-    font-style: italic;
-    color: var(--parchment);
-    margin-top: 30px;
-    line-height: 1.5;
-    border-left: 4px solid var(--accent);
-    padding-left: 22px;
-  }
-
-  /* ─── SAN DIEGO CARD ─── */
-  .sd-card {
-    background: var(--parchment-mid);
-    border: 2px solid var(--rule);
-    margin: 36px 0;
-    padding: 28px 34px;
-  }
-  .sd-card::before {
-    content: '★  SAN DIEGO CONNECTION';
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.35em;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .sd-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--ink);
-    margin-bottom: 14px;
-    line-height: 1.3;
-  }
-
-  /* ─── BILL OF RIGHTS LIST ─── */
-  .bor-list {
-    list-style: none;
-    margin: 0 0 20px 0;
-    border: 1px solid var(--parchment-dark);
-  }
-  .bor-list li {
-    display: flex;
-    gap: 16px;
-    padding: 11px 16px;
-    border-bottom: 1px solid var(--parchment-dark);
-    font-size: 17px;
-    line-height: 1.55;
-  }
-  .bor-list li:last-child { border-bottom: none; }
-  .bor-list li:nth-child(even) { background: rgba(122,92,46,0.06); }
-  .bor-num {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--navy);
-    min-width: 32px;
-    font-size: 16px;
-    padding-top: 1px;
-  }
-
-  /* ─── RECONSTRUCTION AMENDMENTS ─── */
-  .amend-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 20px 0;
-  }
-  .amend-card {
-    background: var(--navy);
-    color: var(--parchment);
-    padding: 18px 16px;
-    text-align: center;
-  }
-  .amend-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 900;
-    color: var(--gold-light);
-    display: block;
-    margin-bottom: 4px;
-  }
-  .amend-year {
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    color: var(--parchment-dark);
-    display: block;
-    margin-bottom: 8px;
-  }
-  .amend-desc {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  /* ─── SPACER ─── */
-  .spacer { height: 8px; }
-
-  /* ─── FOOTER ─── */
-  .page-footer {
-    background: var(--navy);
-    color: var(--parchment-dark);
-    text-align: center;
-    padding: 18px;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    border-top: 3px solid var(--gold);
-  }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 600px) {
-    .content { padding: 0 22px; }
-    .page-title { font-size: 38px; }
-    .header-content { padding: 30px 22px 28px; }
-    .section-nav { padding: 0 10px; }
-    .section-nav a { font-size: 11px; padding: 10px 9px; }
-    .img-inset-left, .img-inset-right { float: none; width: 100%; margin: 0 0 18px 0; }
-    .img-pair { grid-template-columns: 1fr; }
-    .amend-grid { grid-template-columns: 1fr; }
-    .pullquote, .still-matters-block { margin: 28px 0; padding: 28px 22px; }
-  }
+:root{--parchment:#f2e8d0;--parchment-mid:#e4d5b0;--parchment-dark:#c8b48a;--ink:#1a1005;--ink-mid:#2e1f0a;--navy:#1a2744;--navy-light:#243560;--gold:#9a7820;--gold-light:#c4a040;--accent:#8b2020;--accent-light:#b03030;--rule:#7a5c2e;--vocab-color:#b03030;--shadow:rgba(26,16,5,.30);--section-bg:#ede0c4;--break-bg:#102a36;--break-gold:#f2c14e;--break-orange:#d95f32;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:#a89070;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Crect width='6' height='6' fill='%23a89070'/%3E%3Ccircle cx='1' cy='1' r='0.8' fill='%23987f60' opacity='0.4'/%3E%3Ccircle cx='4' cy='4' r='0.8' fill='%23987f60' opacity='0.4'/%3E%3C/svg%3E");font-family:'Spectral',Georgia,serif;font-size:18px;line-height:1.85;color:var(--ink)}.page-wrap{max-width:820px;margin:0 auto;background:var(--parchment);background-image:repeating-linear-gradient(0deg,transparent 0,transparent 29px,rgba(122,92,46,.06) 29px,rgba(122,92,46,.06) 30px);box-shadow:0 0 80px rgba(0,0,0,.55),inset 0 0 120px rgba(154,120,32,.06)}
+.site-header{position:relative;overflow:hidden;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end}.header-bg{position:absolute;inset:0;background-image:url('images/S1/L01/S1L01_HeaderBg.jpg');background-size:cover;background-position:center top;opacity:.36;filter:sepia(35%)}.header-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,39,68,.12) 0%,rgba(26,39,68,.55) 58%,rgba(26,16,5,.88) 100%)}.header-content{position:relative;z-index:2;padding:42px 50px 38px}.course-label{font-size:12px;letter-spacing:.45em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:14px}.page-title{font-family:'Playfair Display',serif;font-size:58px;font-weight:900;color:var(--parchment);line-height:1.05;margin-bottom:6px;text-shadow:2px 3px 12px rgba(0,0,0,.6);text-transform:uppercase}.page-dates{font-style:italic;font-size:19px;color:var(--parchment-dark);margin-bottom:28px}.eq-banner{background:rgba(26,39,68,.9);border-left:5px solid var(--gold-light);border-right:5px solid var(--gold-light);padding:18px 28px;display:inline-block;width:100%}.eq-label{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:6px}.eq-text{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--parchment);line-height:1.4}
+.section-nav{background:var(--navy);padding:0 50px;display:flex;flex-wrap:wrap;gap:2px;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:100}.section-nav a{display:inline-block;padding:13px 14px;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--parchment-dark);text-decoration:none;text-transform:uppercase;border-bottom:3px solid transparent;margin-bottom:-3px;transition:color .2s,border-color .2s}.section-nav a:hover{color:var(--gold-light);border-bottom-color:var(--gold-light)}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--accent);background:transparent;color:var(--accent);font-family:'Spectral',serif;font-weight:700;transition:background .2s,color .2s}#lexile-toggle:hover{background:var(--accent);color:var(--parchment)}.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;right:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-size:12px;line-height:1.7;z-index:50;background:rgba(26,39,68,.84);border-left:2px solid rgba(196,160,64,.3)}.toc-sidebar .toc-label{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:10px}.toc-sidebar a{display:block;color:var(--parchment-dark);text-decoration:none;padding:3px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold-light);font-weight:600}@media(max-width:1100px){.toc-sidebar{display:none}}
+.content{padding:0 50px}.divider{display:flex;align-items:center;gap:18px;padding:32px 50px}.divider-line{flex:1;height:1px;background:var(--rule);opacity:.45}.divider-ornament{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);opacity:.75}.intro-block{font-family:'Playfair Display',serif;font-style:italic;font-size:21px;line-height:1.7;color:var(--ink-mid);border-left:4px solid var(--gold);padding:4px 0 4px 24px;margin-bottom:18px}.section{scroll-margin-top:70px;padding-top:8px}h2.ch,.still-matters-block h2,.local-card h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:20px;border-bottom:2px solid var(--gold);padding-bottom:12px;text-transform:uppercase}p{margin-bottom:20px}.vocab{color:var(--vocab-color);text-decoration:underline dotted var(--vocab-color);cursor:help;position:relative;font-weight:600}.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;width:max-content}.vocab:hover .tip,.vocab.active .tip{display:block}.vocab-plain{color:var(--vocab-color);font-weight:600}.img-full{margin:32px 0}.img-full img{width:100%;display:block;border:3px solid var(--rule);box-shadow:5px 5px 22px var(--shadow)}.img-inset-left{float:left;width:46%;margin:6px 28px 18px 0}.img-inset-right{float:right;width:44%;margin:6px 0 18px 28px}.img-inset-left img,.img-inset-right img{width:100%;display:block;border:3px solid var(--rule);box-shadow:4px 4px 18px var(--shadow)}.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}.img-pair img{width:100%;display:block;border:3px solid var(--rule);box-shadow:4px 4px 18px var(--shadow)}.clearfix::after{content:'';display:table;clear:both}figcaption{font-style:italic;font-size:14px;color:var(--ink-mid);margin-top:8px;line-height:1.4;opacity:.82}.img-pair figcaption{font-size:13px}
+.pullquote{background:var(--navy);color:var(--parchment);margin:36px -10px;padding:36px 44px 30px;border-left:6px solid var(--gold);position:relative}.pullquote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:110px;color:var(--gold);position:absolute;top:-18px;left:16px;line-height:1;opacity:.3;pointer-events:none}.pullquote-text{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;line-height:1.6;margin-bottom:16px;position:relative}.pullquote-attr{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}.pullquote-narrator{font-size:16px;color:#d4c4a0;border-top:1px solid rgba(154,120,32,.35);padding-top:14px;font-style:italic;line-height:1.6}.pullquote-questions{border-top:1px solid rgba(154,120,32,.35);padding-top:16px;margin-top:16px}.pullquote-questions p{font-size:16px;color:#e0d0b0;margin-bottom:10px;line-height:1.55}.pullquote-questions strong{color:var(--gold-light)}
+.bor-list{list-style:none;margin:0 0 20px;border:1px solid var(--parchment-dark)}.bor-list li{display:flex;gap:16px;padding:11px 16px;border-bottom:1px solid var(--parchment-dark);font-size:17px;line-height:1.55}.bor-list li:last-child{border-bottom:none}.bor-list li:nth-child(even){background:rgba(122,92,46,.06)}.bor-num{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);min-width:32px;font-size:16px;padding-top:1px}.amend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}.amend-card{background:var(--navy);color:var(--parchment);padding:18px 16px;text-align:center}.amend-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--gold-light);display:block;margin-bottom:4px}.amend-year{font-size:12px;letter-spacing:.15em;color:var(--parchment-dark);display:block;margin-bottom:8px;text-transform:uppercase}.amend-desc{font-size:15px;line-height:1.5;margin:0}
+.brain-break{font-family:'Barlow Condensed',sans-serif;margin:44px -10px;padding:36px 44px;position:relative;overflow:hidden}.bb-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.8}.bb-text{font-family:'Barlow Condensed',sans-serif;font-size:23px;font-weight:500;line-height:1.65;margin:0}.dyk-break{background:#12313d;color:#fff3ce;border-left:6px solid var(--break-gold)}.dyk-break .bb-label{color:var(--break-gold)}.ff-break{background:#151923;color:#f4ead4;padding:36px 40px;margin:0 -10px 44px;border-top:3px solid var(--break-orange);border-bottom:3px solid var(--break-orange);text-align:center}.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--break-orange)}.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}.ff-item{text-align:center;padding:8px 12px}.ff-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:58px;font-weight:900;color:var(--break-orange);line-height:1;margin-bottom:8px}.ff-desc{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#d7c9ad;max-width:130px;margin:0 auto;line-height:1.4}.as-break{background:#111b2d;color:#f4ead4;padding:44px 50px;margin:44px -10px;border-top:3px solid var(--break-gold);border-bottom:3px solid var(--break-gold);text-align:center}.as-break .bb-label{color:var(--break-gold)}.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(242,193,78,.5);box-shadow:0 8px 32px rgba(0,0,0,.5)}.as-caption{font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:13px;color:#d7c9ad;line-height:1.5;margin-bottom:28px;display:block}.as-question{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-style:italic;font-weight:500;color:#f4ead4;line-height:1.55;max-width:580px;margin:0 auto}.tn-break{background:#102a36;color:#f4ead4;padding:36px 44px;margin:30px 0 28px}.tn-break .bb-label{color:var(--break-gold);text-align:center;display:block;margin-bottom:20px}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--break-gold);margin-bottom:10px;font-weight:700}.tn-item img{width:100%;display:block;border:2px solid rgba(242,193,78,.4)}.tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:#d7c9ad;margin-top:8px;line-height:1.4}.tn-question{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-style:italic;font-weight:500;text-align:center;color:#f4ead4;margin-top:16px;line-height:1.5}
+.still-matters-block{background:linear-gradient(160deg,#1a2744 0%,#0e1a30 100%);color:var(--parchment);margin:36px -10px;padding:44px 50px;border-top:4px solid var(--accent);border-bottom:4px solid var(--accent)}.still-matters-block h2{color:var(--gold-light);border-bottom:2px solid rgba(196,160,64,.55)}.still-now-headline{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--parchment);margin-bottom:26px;line-height:1.35}.still-closing-q{font-family:'Playfair Display',serif;font-size:23px;font-style:italic;color:var(--parchment);margin-top:30px;line-height:1.5;border-left:4px solid var(--accent);padding-left:22px}.local-card{background:var(--parchment-mid);border:2px solid var(--rule);margin:36px 0;padding:28px 34px}.local-card h2{font-size:30px;margin-bottom:16px}.local-headline{font-weight:700;font-size:20px;color:var(--accent);line-height:1.45}.spacer{height:8px}.page-footer{background:var(--navy);color:var(--parchment-dark);text-align:center;padding:18px;font-size:13px;letter-spacing:.1em;border-top:3px solid var(--gold);text-transform:uppercase}
+.choice-break{background:#7a2e0e;color:#fff4d8;border-left:6px solid #ffd166}.choice-break .bb-label{color:#ffd166}.as-break{background:#3a1744;color:#fff4e6;border-top:3px solid #ffcc66;border-bottom:3px solid #ffcc66}.as-break .bb-label{color:#ffcc66}.as-question{color:#fff4e6}.tn-break{background:#1f3f2b;color:#fff4d8}.tn-break .bb-label,.tn-era-label{color:#ffd166}.tn-item img{border:2px solid rgba(255,209,102,.45)}
+@media(max-width:600px){.content{padding:0 22px}.page-title{font-size:42px}.header-content{padding:30px 22px 28px}.section-nav{padding:0 10px}.section-nav a{font-size:11px;padding:10px 9px}.img-inset-left,.img-inset-right{float:none;width:100%;margin:0 0 18px}.img-pair,.amend-grid,.tn-pair{grid-template-columns:1fr}.pullquote,.still-matters-block,.brain-break{margin:28px 0;padding:28px 22px}.as-break{padding:32px 22px}.as-question{font-size:20px}.brain-break{margin:36px 0}.ff-number{font-size:48px}}
 </style>
 </head>
 <body>
+<nav class="toc-sidebar" aria-label="ON THIS PAGE">
+ <span class="toc-label">ON THIS PAGE</span>
+ <a href="#enlightenment">THE IDEAS</a>
+ <a href="#documents">THE DOCUMENTS</a>
+ <a href="#bor">BILL OF RIGHTS</a>
+ <a href="#reconstruction">CIVIL WAR AND AFTER</a>
+ <a href="#source-moment">PRIMARY SOURCE</a>
+ <a href="#still-matters">STILL MATTERS TODAY</a>
+ <a href="#local-history">LOCAL HISTORY</a>
+</nav>
 <div class="page-wrap">
-
-<!-- ════════════════════════════════
-     HEADER
-════════════════════════════════ -->
 <header class="site-header">
-
   <!--
     FILENAME: S1L01_HeaderBg.jpg
     PLACE IN: images/S1/L01/
-    FIND: The Constitutional Convention, Philadelphia 1787 — ideally the Howard Chandler Christy painting "Scene at the Signing of the Constitution of the United States" — wide crop showing the full room
-    SEARCH: Wikimedia Commons — "Scene at the Signing of the Constitution of the United States Christy"
-    LINK (suggested): https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
+    FIND: The Constitutional Convention, Philadelphia 1787, ideally Howard Chandler Christy's painting "Scene at the Signing of the Constitution of the United States," wide crop showing the full room
+    SEARCH: Wikimedia Commons "Scene at the Signing of the Constitution of the United States Christy"
+    LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
   -->
-  <div class="header-bg"></div>
-  <div class="header-overlay"></div>
-
+  <div class="header-bg"></div><div class="header-overlay"></div>
   <div class="header-content">
-    <span class="course-label">US History — Summer School &nbsp;|&nbsp; Semester 1, Lesson 01</span>
-    <h1 class="page-title">Founding the Nation</h1>
-    <p class="page-dates">1776 – 1870</p>
-    <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      <div class="eq-text">How did Enlightenment ideas shape a new kind of government — and does it still work?</div>
-    </div>
+    <span class="course-label">US HISTORY | SEMESTER 1, LESSON 01</span>
+    <h1 class="page-title">FOUNDING THE NATION</h1>
+    <p class="page-dates">1776 TO 1870</p>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span><div class="eq-text">How did Enlightenment ideas shape a new kind of government, and does it still work?</div></div>
   </div>
 </header>
-
-<!-- ════════════════════════════════
-     SECTION NAV BAR
-════════════════════════════════ -->
 <nav class="section-nav">
-  <a href="#enlightenment">The Ideas</a>
-  <a href="#documents">The Documents</a>
-  <a href="#bor">Bill of Rights</a>
-  <a href="#reconstruction">Civil War &amp; After</a>
-  <a href="#still-matters">Still Matters Today</a>
-  <a href="#sd-connection">San Diego</a>
+  <a href="#enlightenment">THE IDEAS</a><a href="#documents">THE DOCUMENTS</a><a href="#bor">BILL OF RIGHTS</a><a href="#reconstruction">CIVIL WAR AND AFTER</a><a href="#source-moment">PRIMARY SOURCE</a><a href="#still-matters">STILL MATTERS TODAY</a><a href="#local-history">LOCAL HISTORY</a>
 </nav>
-
-<!-- ════════════════════════════════
-     INTRODUCTION
-════════════════════════════════ -->
+<button id="lexile-toggle">SIMPLIFY TEXT</button>
 <div class="divider"><div class="divider-line"></div><div class="divider-ornament">❧</div><div class="divider-line"></div></div>
-
 <div class="content">
-  <p class="intro-block">Philadelphia, Pennsylvania. Summer, 1787. The windows are nailed shut so no one outside can hear the arguments. Fifty-five men in wool coats are sweating through a heat wave — and trying to build a country that has never existed before.</p>
-
-  <p>They did not agree on much. They argued about power, about slavery, about who deserved a voice. But they kept going — because they knew that if they walked away, the American experiment was finished. What came out of that locked room became the foundation of the government you live under today.</p>
+ <p class="intro-block para-standard">Philadelphia, Pennsylvania. Summer, 1787. The windows are nailed shut so no one outside can hear the arguments. Fifty-five men in wool coats are sweating through a heat wave; they are trying to build a country that has never existed before.</p>
+ <p class="intro-block para-simple">Philadelphia, Pennsylvania. Summer, 1787. The windows are shut tight. Fifty-five men sit in a hot room and argue about how to build a new country.</p>
+ <p class="para-standard">They did not agree on much. They argued about power, slavery, and who deserved a voice. But they kept going because they knew the American experiment might fail if they walked away. What came out of that locked room became the foundation of the government you live under today.</p>
+ <p class="para-simple">They did not agree on much. They argued about power, slavery, and rights. They kept working because the new country could fall apart. The plan they wrote still shapes your life today.</p>
 </div>
-
-<!-- ════════════════════════════════
-     SECTION 1 — ENLIGHTENMENT IDEAS
-════════════════════════════════ -->
 <div class="divider"><div class="divider-line"></div><div class="divider-ornament">✦</div><div class="divider-line"></div></div>
-
-<div class="content section" id="enlightenment">
-  <h2 class="ch">Chapter 1 — The Ideas That Started Everything</h2>
-
-  <div class="clearfix">
-
-    <!--
+<section class="content section" id="enlightenment"><h2 class="ch">CHAPTER 1: THE IDEAS THAT STARTED EVERYTHING</h2><div class="clearfix">
+ <!--
       FILENAME: S1L01_JohnLocke.jpg
       PLACE IN: images/S1/L01/
-      FIND: Portrait of John Locke by Godfrey Kneller, 1697 — the standard three-quarter view portrait
-      SEARCH: Wikimedia Commons — "John Locke by Herman Verelst" or "John Locke Godfrey Kneller"
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:JohnLocke.png
+      FIND: Portrait of John Locke by Godfrey Kneller, 1697, the standard three-quarter view portrait
+      SEARCH: Wikimedia Commons "John Locke Godfrey Kneller"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:JohnLocke.png
     -->
-    <figure class="img-inset-right">
-      <img src="images/S1/L01/S1L01_JohnLocke.jpg" alt="Portrait of John Locke">
-      <figcaption>John Locke, English philosopher, c. 1697. His ideas about natural rights shaped Thomas Jefferson's writing. | Wikimedia Commons</figcaption>
-    </figure>
-
-    <p>Before there was a Constitution, there were ideas. And those ideas came from a group of thinkers in Europe called the philosophers of the Enlightenment. The Enlightenment was a movement in the 1600s and 1700s when thinkers started asking a dangerous question: What if kings don't actually have the right to rule over everyone?</p>
-
-    <p>One of the most important thinkers was an Englishman named John Locke. Locke said that every person is born with rights that no government can take away. He called them <span class="vocab">unalienable rights<span class="tip">Rights every person is born with that no government can legally take away — they belong to you just for being human.</span></span> — rights attached to you as a human being, not given to you by a king. Locke said people had the right to life, liberty, and property. If a government refused to protect those rights, the people had the right to replace it.</p>
-
-    <p>Thomas Jefferson read Locke carefully. When Jefferson wrote the Declaration of Independence in 1776, Locke's ideas were all over it. Jefferson changed "property" to "the pursuit of happiness" — but the argument was the same. Governments exist to protect the rights of the people. When they stop doing that, the people can tear them down and start over.</p>
-
-    <p>A French thinker named Montesquieu added another idea: <span class="vocab">separation of powers<span class="tip">The idea that government should be split into three separate parts so no single person or group can control everything.</span></span>. He said government should be split into separate parts — one to make laws, one to carry them out, one to judge whether they are fair — so no single person could ever control everything. The American Founders built that exact structure into the Constitution. Students in San Diego who have seen local, state, and federal government argue over things like immigration policy are watching that exact system in action every day.</p>
-  </div>
-
-</div>
-
-<!-- FULL-WIDTH IMAGE — Signing of the Constitution -->
-<div class="content">
-
-  <!--
+ <figure class="img-inset-right"><img src="images/S1/L01/S1L01_JohnLocke.jpg" alt="Portrait of John Locke"><figcaption>John Locke, English philosopher, c. 1697. His ideas about natural rights shaped Thomas Jefferson's writing. Source: Wikimedia Commons.</figcaption></figure>
+ <p class="para-standard">Before there was a Constitution, there were ideas. Many of those ideas came from European thinkers in a movement called the Enlightenment. The Enlightenment asked a dangerous question for the time: what if kings did not have the natural right to rule everyone?</p>
+ <p class="para-simple">Before Americans wrote the Constitution, they needed ideas. Many ideas came from the Enlightenment. These thinkers asked a risky question: what if kings did not have the right to rule everyone?</p>
+ <p class="para-standard">One of the most important thinkers was John Locke. Locke said every person is born with rights that no government can take away. He called them <span class="vocab">unalienable rights<span class="tip">Rights every person is born with that no government can legally take away.</span></span>; they belong to you because you are human, not because a king gives them to you.</p>
+ <p class="para-simple">John Locke was one of the most important thinkers. He said people are born with rights. He called them <span class="vocab-plain">unalienable rights</span>. These rights belong to you because you are human.</p>
+ <p class="para-standard">Thomas Jefferson read Locke carefully. When Jefferson wrote the Declaration of Independence in 1776, Locke's ideas were all over it. Jefferson changed Locke's word "property" to "the pursuit of happiness," but the argument stayed the same: governments exist to protect the rights of the people.</p>
+ <p class="para-simple">Thomas Jefferson read Locke's ideas. Jefferson used those ideas in the Declaration of Independence. He said governments should protect people's rights. If a government does not do that, people can change it.</p>
+ <p class="para-standard">A French thinker named Montesquieu added another idea: <span class="vocab">separation of powers<span class="tip">The idea that government should be split into separate parts so no one person or group controls everything.</span></span>. He said government should be split into parts: one to make laws, one to carry them out, and one to judge if they are fair. The American Founders built that structure into the Constitution.</p>
+ <p class="para-simple">A French thinker named Montesquieu added another idea: <span class="vocab-plain">separation of powers</span>. He said government should have different parts. One part makes laws. One part carries them out. One part judges if they are fair.</p>
+ <p class="para-standard">That idea still matters when one part of government says no to another part. It keeps power from sitting in only one set of hands.</p>
+ <p class="para-simple">That idea still matters today. It helps stop one person or group from having all the power.</p>
+ </div></section>
+<div class="content"><figure class="img-full">
+ <!--
     FILENAME: S1L01_ConventionSigning.jpg
     PLACE IN: images/S1/L01/
-    FIND: "Scene at the Signing of the Constitution of the United States" by Howard Chandler Christy, 1940 — the large oil painting showing delegates gathered in Independence Hall
-    SEARCH: Wikimedia Commons — "Scene at the Signing of the Constitution of the United States"
-    LINK (suggested): https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
+    FIND: "Scene at the Signing of the Constitution of the United States" by Howard Chandler Christy, 1940, large oil painting showing delegates gathered in Independence Hall
+    SEARCH: Wikimedia Commons "Scene at the Signing of the Constitution of the United States"
+    LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
   -->
-  <figure class="img-full">
-    <img src="images/S1/L01/S1L01_ConventionSigning.jpg" alt="Scene at the Signing of the Constitution of the United States">
-    <figcaption><em>Scene at the Signing of the Constitution of the United States</em>, painted by Howard Chandler Christy, 1940. Fifty-five delegates met in Philadelphia in 1787 to write the new government's rulebook. | Wikimedia Commons</figcaption>
-  </figure>
-
+ <img src="images/S1/L01/S1L01_ConventionSigning.jpg" alt="Scene at the Signing of the Constitution of the United States"><figcaption><em>Scene at the Signing of the Constitution of the United States</em>, painted by Howard Chandler Christy, 1940. Delegates met in Philadelphia in 1787 to write the new government's rulebook. Source: Wikimedia Commons.</figcaption></figure>
+ <div class="brain-break dyk-break"><span class="bb-label">DID YOU KNOW</span><p class="bb-text">Thomas Jefferson drafted the Declaration on a small portable writing desk that could fold up like a laptop. He kept that desk for the rest of his life.</p></div>
 </div>
-
-<!-- ════════════════════════════════
-     SECTION 2 — THE DOCUMENTS
-════════════════════════════════ -->
+</div>
 <div class="divider"><div class="divider-line"></div><div class="divider-ornament">❧</div><div class="divider-line"></div></div>
-
-<div class="content section" id="documents">
-  <h2 class="ch">Chapter 2 — The Declaration and the Constitution</h2>
-
-  <p>The Declaration of Independence — signed on July 4, 1776 — was not a law. It was a breakup letter to England. It told the world why the colonies were leaving British rule. Its most famous sentence begins: <em>"We hold these truths to be self-evident, that all men are created equal..."</em> In 1776, those words were revolutionary. No government in history had ever been built on that idea.</p>
-
-  <p>But the Declaration didn't tell anyone how to actually run a country. That took eleven more years. In 1787, the Founders met in Philadelphia to write the Constitution — the actual rulebook for the new government. They had already tried one version called the Articles of Confederation, and it had failed badly. The government under those Articles was so weak it couldn't even collect taxes or protect the borders.</p>
-
-  <div class="clearfix">
-
-    <!--
+<section class="content section" id="documents"><h2 class="ch">CHAPTER 2: THE DECLARATION AND THE CONSTITUTION</h2>
+ <p class="para-standard">The Declaration of Independence, signed on July 4, 1776, was not a law. It was a breakup letter to England. It told the world why the colonies were leaving British rule. Its most famous line said that "all men are created equal," even though the country did not yet live up to those words.</p>
+ <p class="para-simple">The Declaration of Independence was signed on July 4, 1776. It was not a law. It was a breakup letter to England. It said the colonies were leaving British rule.</p>
+ <p class="para-standard">The Declaration did not explain how to run a country. That took eleven more years. In 1787, the Founders met in Philadelphia to write the Constitution, the rulebook for the new government. They had already tried a weak first plan called the Articles of Confederation, and it had failed badly.</p>
+ <p class="para-simple">The Declaration did not say how to run a country. That took eleven more years. In 1787, leaders met again. They wrote the Constitution, which became the government's rulebook.</p>
+ <div class="clearfix">
+  <!--
       FILENAME: S1L01_ConstitutionPage1.jpg
       PLACE IN: images/S1/L01/
-      FIND: First page of the United States Constitution — the original document showing "We the People" in large calligraphy script
-      SEARCH: Wikimedia Commons — "Constitution of the United States page 1" or National Archives direct
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg
+      FIND: First page of the United States Constitution, original document showing "We the People" in large calligraphy script
+      SEARCH: Wikimedia Commons "Constitution of the United States page 1"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg
     -->
-    <figure class="img-inset-left">
-      <img src="images/S1/L01/S1L01_ConstitutionPage1.jpg" alt="First page of the United States Constitution">
-      <figcaption>First page of the U.S. Constitution, signed September 17, 1787. The words "We the People" appear at the top in large script. | National Archives / Wikimedia Commons</figcaption>
-    </figure>
-
-    <p>The Constitution fixed the problem of weak government by creating three branches and giving each one different powers. The idea was simple: no single branch could ever get too powerful because the other two could stop it. That system is called <span class="vocab">checks and balances<span class="tip">A system where each branch of government can limit the power of the other two branches, so no one branch can do whatever it wants.</span></span>. If one branch tries something extreme, the others can say no.</p>
-
-    <p>The Constitution also divided power between the national government and the state governments. That system is called <span class="vocab">federalism<span class="tip">A system that divides government power between the national government and the state governments, giving each group different responsibilities.</span></span>. Some things — like printing money and declaring war — only the national government could do. Other things were left to the states. This compromise kept both sides in the room long enough to finish the document.</p>
-
-    <p>The Constitution was ratified — officially approved by the states — in 1788. It became the law of the land. But as soon as the ink dried, a large group of people said it wasn't enough.</p>
-
-  </div>
-
-</div>
-
-<!-- PRIMARY SOURCE #1 — Declaration of Independence -->
-<div class="content">
-  <div class="pullquote">
-    <div class="pullquote-text">
-      "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed."
-    </div>
-    <div class="pullquote-attr">— Thomas Jefferson, Declaration of Independence, July 4, 1776</div>
-    <div class="pullquote-narrator">Jefferson is telling the King of England — and the whole world — that the American colonies are done being ruled by a government they never chose. This sentence became the most famous argument for human rights in history.</div>
-    <div class="pullquote-questions">
-      <p><strong>Question 1:</strong> Jefferson says governments get their power from "the consent of the governed." In plain language — who gives the government its power to rule?</p>
-      <p><strong>Question 2:</strong> Jefferson calls these rights "unalienable." Based on what you read in Chapter 1, explain what that word means and why it was a revolutionary idea in 1776.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ════════════════════════════════
-     SECTION 3 — BILL OF RIGHTS
-════════════════════════════════ -->
+  <figure class="img-inset-left"><img src="images/S1/L01/S1L01_ConstitutionPage1.jpg" alt="First page of the United States Constitution"><figcaption>First page of the U.S. Constitution, signed September 17, 1787. The words "We the People" appear at the top. Source: National Archives / Wikimedia Commons.</figcaption></figure>
+  <p class="para-standard">The Constitution fixed the problem of weak government by creating three branches and giving each branch different powers. This system is called <span class="vocab">checks and balances<span class="tip">A system where each branch of government can limit the power of the other branches.</span></span>. If one branch tries something extreme, the other branches can stop it.</p>
+  <p class="para-simple">The Constitution created three branches of government. Each branch has different powers. This is called <span class="vocab-plain">checks and balances</span>. One branch can stop another branch from going too far.</p>
+  <p class="para-standard">The Constitution also divided power between the national government and the state governments. That system is called <span class="vocab">federalism<span class="tip">A system that divides government power between the national government and the state governments.</span></span>. Some powers belong to the national government, and others belong to the states.</p>
+  <p class="para-simple">The Constitution also splits power between the national government and the states. This is called <span class="vocab-plain">federalism</span>. The national government has some powers. States have other powers.</p>
+  <p class="para-standard">The Constitution was ratified, or officially approved, in 1788. But as soon as the ink dried, many people said it still was not enough.</p>
+  <p class="para-simple">The Constitution was approved in 1788. But many people still thought it needed something more.</p>
+ </div></section>
+<div class="content"><div class="pullquote"><div class="pullquote-text">"We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness."</div><div class="pullquote-attr">THOMAS JEFFERSON, DECLARATION OF INDEPENDENCE, JULY 4, 1776</div><div class="pullquote-narrator">Jefferson is telling the king and the world that government power should come from the people, not from birth or royal command.</div></div></div>
+<div class="content"><div class="brain-break ff-break"><span class="bb-label">FAST FACTS</span><div class="ff-grid"><div class="ff-item"><span class="ff-number">116</span><span class="ff-desc">DAYS IN SECRET</span></div><div class="ff-item"><span class="ff-number">4</span><span class="ff-desc">PARCHMENT PAGES</span></div><div class="ff-item"><span class="ff-number">27</span><span class="ff-desc">TOTAL AMENDMENTS</span></div><div class="ff-item"><span class="ff-number">1</span><span class="ff-desc">OLDEST WRITTEN CHARTER</span></div></div></div>
+<div class="content"><div class="brain-break choice-break"><span class="bb-label">YOU DECIDE</span><p class="bb-text">The new Constitution is finished, but people are nervous. You can demand only one right before you agree to support it: free speech, freedom of religion, trial by jury, the right to protest, or privacy from government searches. Which one do you protect first?</p></div></div>
 <div class="divider"><div class="divider-line"></div><div class="divider-ornament">✦</div><div class="divider-line"></div></div>
-
-<div class="content section" id="bor">
-  <h2 class="ch">Chapter 3 — The Bill of Rights: "Not Enough"</h2>
-
-  <div class="clearfix">
-
-    <!--
+<section class="content section" id="bor"><h2 class="ch">CHAPTER 3: THE BILL OF RIGHTS: NOT ENOUGH</h2><div class="clearfix">
+ <!--
       FILENAME: S1L01_JamesMadison.jpg
       PLACE IN: images/S1/L01/
-      FIND: Portrait of James Madison — the Gilbert Stuart portrait is the most famous, showing Madison in a dark coat with white cravat
-      SEARCH: Wikimedia Commons — "James Madison Gilbert Stuart portrait"
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:James_Madison.jpg
+      FIND: Portrait of James Madison, the Gilbert Stuart portrait showing Madison in a dark coat with white cravat
+      SEARCH: Wikimedia Commons "James Madison Gilbert Stuart portrait"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:James_Madison.jpg
     -->
-    <figure class="img-inset-right">
-      <img src="images/S1/L01/S1L01_JamesMadison.jpg" alt="Portrait of James Madison">
-      <figcaption>James Madison, "Father of the Constitution" and author of the Bill of Rights, c. 1821. | Wikimedia Commons</figcaption>
-    </figure>
-
-    <p>When the Constitution was finished in 1787, not everyone was happy. A large group called the Anti-Federalists said the Constitution was dangerous. It gave the national government too much power — and it said nothing about the rights of ordinary people. They refused to support it unless something was added.</p>
-
-    <p>So the Founders made a deal. If the states would ratify the Constitution, James Madison would write a list of specific rights that the government could never take away from individuals. He wrote twelve amendments. Ten were approved in 1791. That list became the <span class="vocab">Bill of Rights<span class="tip">The first ten amendments to the Constitution, listing specific rights the government can never take away from individual citizens.</span></span>.</p>
-
-    <p>Here is what those ten amendments protect, in plain language:</p>
-
-  </div>
-
-  <ul class="bor-list">
-    <li><span class="bor-num">1st</span><span>Freedom of speech, religion, press, and the right to protest the government.</span></li>
-    <li><span class="bor-num">2nd</span><span>The right to own weapons.</span></li>
-    <li><span class="bor-num">3rd</span><span>Soldiers cannot be forced into your home without your permission.</span></li>
-    <li><span class="bor-num">4th</span><span>Police need a warrant to search your home or your belongings.</span></li>
-    <li><span class="bor-num">5th</span><span>You do not have to testify against yourself in court.</span></li>
-    <li><span class="bor-num">6th</span><span>You have the right to a speedy and fair trial.</span></li>
-    <li><span class="bor-num">7th</span><span>You have the right to a jury trial in civil cases.</span></li>
-    <li><span class="bor-num">8th</span><span>No cruel or unusual punishment.</span></li>
-    <li><span class="bor-num">9th</span><span>People have rights that are not listed here, too.</span></li>
-    <li><span class="bor-num">10th</span><span>Powers not given to the federal government belong to the states.</span></li>
-  </ul>
-
-  <!-- PAIRED IMAGES — Bill of Rights document + Anti-Federalist Papers -->
-  <div class="img-pair">
-
-    <!--
+ <figure class="img-inset-right"><img src="images/S1/L01/S1L01_JamesMadison.jpg" alt="Portrait of James Madison"><figcaption>James Madison, often called the Father of the Constitution and author of the Bill of Rights, c. 1821. Source: Wikimedia Commons.</figcaption></figure>
+ <p class="para-standard">When the Constitution was finished in 1787, not everyone was happy. A group called the Anti-Federalists said the Constitution gave the national government too much power. They worried that ordinary people would not be protected.</p>
+ <p class="para-simple">When the Constitution was done, many people were worried. They thought the national government had too much power. They wanted clear rights written down.</p>
+ <p class="para-standard">The Founders made a deal. If the states approved the Constitution, James Madison would write a list of rights the government could never take away. He wrote twelve amendments, and ten were approved in 1791. That list became the <span class="vocab">Bill of Rights<span class="tip">The first ten amendments to the Constitution, which list rights the government must protect.</span></span>.</p>
+ <p class="para-simple">The Founders made a deal. James Madison would write a list of rights. Ten of those rights were approved in 1791. They became the <span class="vocab-plain">Bill of Rights</span>.</p>
+ <p class="para-standard">Here is what those ten amendments protect, in plain language:</p><p class="para-simple">Here is what those ten amendments protect:</p>
+ </div>
+ <ul class="bor-list"><li><span class="bor-num">1ST</span><span>Freedom of speech, religion, press, and protest.</span></li><li><span class="bor-num">2ND</span><span>The right to own weapons.</span></li><li><span class="bor-num">3RD</span><span>Soldiers cannot be forced into your home without permission.</span></li><li><span class="bor-num">4TH</span><span>Police need a warrant to search your home or belongings.</span></li><li><span class="bor-num">5TH</span><span>You do not have to testify against yourself in court.</span></li><li><span class="bor-num">6TH</span><span>You have the right to a speedy and fair trial.</span></li><li><span class="bor-num">7TH</span><span>You have the right to a jury trial in civil cases.</span></li><li><span class="bor-num">8TH</span><span>No cruel or unusual punishment.</span></li><li><span class="bor-num">9TH</span><span>People have rights that are not listed here, too.</span></li><li><span class="bor-num">10TH</span><span>Powers not given to the federal government belong to the states.</span></li></ul>
+ <div class="img-pair">
+  <!--
       FILENAME: S1L01_BillOfRights.jpg
       PLACE IN: images/S1/L01/
-      FIND: The original enrolled Bill of Rights — the parchment document showing all twelve proposed amendments, 1789
-      SEARCH: Wikimedia Commons — "United States Bill of Rights" or National Archives
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg
+      FIND: The original enrolled Bill of Rights, parchment document showing all twelve proposed amendments, 1789
+      SEARCH: Wikimedia Commons "United States Bill of Rights"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg
     -->
-    <figure>
-      <img src="images/S1/L01/S1L01_BillOfRights.jpg" alt="Original Bill of Rights parchment document">
-      <figcaption>The original Bill of Rights, 1789. Congress proposed twelve amendments; ten were ratified. | National Archives / Wikimedia Commons</figcaption>
-    </figure>
-
-    <!--
-      FILENAME: S1L01_GeorgeMason.jpg
+  <figure><img src="images/S1/L01/S1L01_BillOfRights.jpg" alt="Original Bill of Rights parchment document"><figcaption>The original Bill of Rights, 1789. Congress proposed twelve amendments; ten were ratified. Source: National Archives / Wikimedia Commons.</figcaption></figure>
+ </div>
+ <p class="para-standard">These ten amendments became the floor: the minimum protection every American was guaranteed. Every debate about rights since 1791 has started with these ten. When people argue about police searches, free speech online, or the right to protest, they are arguing over the Bill of Rights.</p>
+ <p class="para-simple">These ten amendments became a starting point. They protect basic rights. When people argue about searches, free speech, or protest, they are still arguing about the Bill of Rights.</p>
+</section>
+<div class="content"><div class="brain-break as-break"><span class="bb-label">ART SPOTLIGHT</span><figure>
+ <!--
+      FILENAME: S1L01_FederalPillarsCartoon.jpg
       PLACE IN: images/S1/L01/
-      FIND: Portrait of George Mason of Virginia — the most prominent Anti-Federalist who refused to sign the Constitution because it lacked a bill of rights
-      SEARCH: Wikimedia Commons — "George Mason portrait"
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:George_Mason.jpg
+      FIND: The Federal Pillars political cartoon from the Massachusetts Centinel, 1788, showing states as pillars supporting the Constitution
+      SEARCH: Library of Congress or Wikimedia Commons "Federal Pillars Massachusetts Centinel 1788"
+      LINK: suggested, not guaranteed: https://www.loc.gov/pictures/item/2008661778/
     -->
-    <figure>
-      <img src="images/S1/L01/S1L01_GeorgeMason.jpg" alt="Portrait of George Mason">
-      <figcaption>George Mason of Virginia refused to sign the Constitution because it had no Bill of Rights. His stand forced the Founders to add one. | Wikimedia Commons</figcaption>
-    </figure>
-
-  </div>
-
-  <p>These ten amendments became the floor — the minimum protection every American was guaranteed. Every debate about rights in this country since 1791 has started with these ten. The next time a San Diego student sees a story about police searches, free speech on social media, or the right to protest — they are watching the Bill of Rights at work.</p>
-
-</div>
-
-<!-- ════════════════════════════════
-     SECTION 4 — CIVIL WAR + RECONSTRUCTION
-════════════════════════════════ -->
+ <img src="images/S1/L01/S1L01_FederalPillarsCartoon.jpg" alt="Political cartoon showing state pillars supporting the Constitution" class="as-image"><figcaption class="as-caption">The Federal Pillars, Massachusetts Centinel, 1788. A political cartoon shows states as pillars holding up the new Constitution.</figcaption></figure><p class="as-question">If this cartoon were a group chat, which state looks like it is typing the longest message?</p></div></div>
 <div class="divider"><div class="divider-line"></div><div class="divider-ornament">❧</div><div class="divider-line"></div></div>
-
-<div class="content section" id="reconstruction">
-  <h2 class="ch">Chapter 4 — The Civil War and Reconstruction: Rewriting the Rules</h2>
-
-  <p>The original Constitution had a massive contradiction buried inside it. It spoke about liberty and equality — but it also allowed slavery. The Founders could not agree on how to handle slavery in 1787, so they left it in and hoped the problem would solve itself. It did not.</p>
-
-  <p>By 1861, the contradiction exploded. Eleven Southern states left the Union rather than give up slavery. The Civil War lasted four years and killed over 620,000 Americans — more than in any other war in U.S. history. When the North won in 1865, Congress had to decide: What do we do now?</p>
-
-  <!--
+<section class="content section" id="reconstruction"><h2 class="ch">CHAPTER 4: THE CIVIL WAR AND RECONSTRUCTION: REWRITING THE RULES</h2>
+ <p class="para-standard">The original Constitution had a massive contradiction inside it. It spoke about liberty and equality, but it also allowed slavery. The Founders did not solve that problem in 1787, and the problem grew more dangerous every decade.</p>
+ <p class="para-simple">The original Constitution had a huge problem. It talked about liberty and equality, but it allowed slavery. The Founders did not fix that problem in 1787.</p>
+ <p class="para-standard">By 1861, the contradiction exploded. Eleven Southern states left the Union rather than give up slavery. The Civil War lasted four years and killed more than 620,000 Americans. When the North won in 1865, Congress had to decide what freedom would mean after slavery.</p>
+ <p class="para-simple">By 1861, the problem led to war. Eleven Southern states left the Union to protect slavery. The Civil War lasted four years. More than 620,000 Americans died.</p>
+ <!--
     FILENAME: S1L01_EmancipationProclamation.jpg
     PLACE IN: images/S1/L01/
-    FIND: Reading of the Emancipation Proclamation — the 1864 engraving by H.W. Herrick showing enslaved people hearing the proclamation read aloud, or the official printed Emancipation Proclamation document
-    SEARCH: Wikimedia Commons — "Emancipation Proclamation reading engraving" or "Emancipation Proclamation document"
-    LINK (suggested): https://commons.wikimedia.org/wiki/File:Reading_the_Emancipation_Proclamation.jpg
+    FIND: Reading of the Emancipation Proclamation, 1864 engraving by H.W. Herrick showing enslaved people hearing the proclamation read aloud, or the official printed Emancipation Proclamation document
+    SEARCH: Wikimedia Commons "Emancipation Proclamation reading engraving"
+    LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:Reading_the_Emancipation_Proclamation.jpg
   -->
-  <figure class="img-full">
-    <img src="images/S1/L01/S1L01_EmancipationProclamation.jpg" alt="Reading of the Emancipation Proclamation, 1864 engraving">
-    <figcaption>An 1864 engraving depicting the reading of the Emancipation Proclamation to enslaved people in the South. Lincoln issued the Proclamation on January 1, 1863. | Library of Congress / Wikimedia Commons</figcaption>
-  </figure>
-
-  <p>The answer was Reconstruction — a period from 1865 to 1877 when Congress tried to rebuild the South and extend full rights to formerly enslaved people. To do that, they had to change the Constitution itself. Three new amendments were added in just five years:</p>
-
-  <div class="amend-grid">
-    <div class="amend-card">
-      <span class="amend-num">13th</span>
-      <span class="amend-year">Ratified 1865</span>
-      <p class="amend-desc">Slavery is abolished everywhere in the United States. Forever.</p>
-    </div>
-    <div class="amend-card">
-      <span class="amend-num">14th</span>
-      <span class="amend-year">Ratified 1868</span>
-      <p class="amend-desc">Anyone born in the U.S. is a citizen. All citizens get equal protection under the law.</p>
-    </div>
-    <div class="amend-card">
-      <span class="amend-num">15th</span>
-      <span class="amend-year">Ratified 1870</span>
-      <p class="amend-desc">No one can be denied the right to vote because of their race.</p>
-    </div>
-  </div>
-
-  <div class="clearfix">
-
-    <!--
+ <figure class="img-full"><img src="images/S1/L01/S1L01_EmancipationProclamation.jpg" alt="Reading of the Emancipation Proclamation, 1864 engraving"><figcaption>An 1864 engraving depicting the reading of the Emancipation Proclamation to enslaved people in the South. Lincoln issued the Proclamation on January 1, 1863. Source: Library of Congress / Wikimedia Commons.</figcaption></figure>
+ <p class="para-standard">The answer was Reconstruction, a period from 1865 to 1877 when Congress tried to rebuild the South and extend rights to formerly enslaved people. To do that, leaders had to change the Constitution itself. Three amendments were added in just five years.</p>
+ <p class="para-simple">After the war came Reconstruction. This was a time when Congress tried to rebuild the South. Congress also tried to protect the rights of formerly enslaved people. Leaders changed the Constitution three times.</p>
+ <div class="amend-grid"><div class="amend-card"><span class="amend-num">13TH</span><span class="amend-year">RATIFIED 1865</span><p class="amend-desc">Slavery is abolished everywhere in the United States.</p></div><div class="amend-card"><span class="amend-num">14TH</span><span class="amend-year">RATIFIED 1868</span><p class="amend-desc">Anyone born in the U.S. is a citizen and gets equal protection under law.</p></div><div class="amend-card"><span class="amend-num">15TH</span><span class="amend-year">RATIFIED 1870</span><p class="amend-desc">The right to vote cannot be denied because of race.</p></div></div>
+ <div class="clearfix">
+  <!--
       FILENAME: S1L01_FreedmenVoting.jpg
       PLACE IN: images/S1/L01/
-      FIND: "The First Vote" — Alfred Waud's 1867 illustration from Harper's Weekly showing Black men voting for the first time in the South
-      SEARCH: Wikimedia Commons — "First Vote Harper's Weekly Alfred Waud 1867"
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:The_First_Vote_-_Harpers_Weekly_Nov_16_1867.jpg
+      FIND: "The First Vote," Alfred Waud's 1867 illustration from Harper's Weekly showing Black men voting for the first time in the South
+      SEARCH: Wikimedia Commons "First Vote Harper's Weekly Alfred Waud 1867"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:The_First_Vote_-_Harpers_Weekly_Nov_16_1867.jpg
     -->
-    <figure class="img-inset-left">
-      <img src="images/S1/L01/S1L01_FreedmenVoting.jpg" alt="The First Vote, Harper's Weekly, 1867">
-      <figcaption>"The First Vote," Harper's Weekly, November 16, 1867. Black men in the South vote for the first time after the 15th Amendment. | Library of Congress / Wikimedia Commons</figcaption>
-    </figure>
-
-    <p>These three amendments completely rewrote what the Constitution meant. The <span class="vocab-plain">14th Amendment</span> in particular became the most powerful amendment ever added. Almost every major civil rights ruling since — school desegregation, voting rights, women's rights, LGBTQ rights, immigration rights — rested on its promise of equal protection.</p>
-
-    <p>But changing the words did not change reality overnight. After Reconstruction ended in 1877, Southern states found ways around the amendments. Black Americans still faced legal discrimination, violence, and voter suppression for nearly a hundred more years. The Constitution had been updated — but the fight to make it real was just beginning.</p>
-
-    <p>For students in San Diego whose families came from Mexico, Central America, or Southeast Asia, the 14th Amendment is personal. It is the reason that being born on U.S. soil — anywhere on U.S. soil — automatically makes a person a citizen, no matter where their parents came from.</p>
-
-  </div>
-
-</div>
-
-<!-- PRIMARY SOURCE #2 — 14th Amendment -->
-<div class="content">
-  <div class="pullquote">
-    <div class="pullquote-text">
-      "All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws."
-    </div>
-    <div class="pullquote-attr">— 14th Amendment to the U.S. Constitution, Section 1, ratified July 9, 1868</div>
-    <div class="pullquote-narrator">Congress wrote this amendment to make sure states could never create a second class of citizens — but this exact sentence is still being argued in courts today, about immigration, voting rights, and who counts as fully American.</div>
-  </div>
-</div>
-
-<!-- ════════════════════════════════
-     HOW THIS STILL MATTERS TODAY
-════════════════════════════════ -->
-<div class="content" id="still-matters">
-  <div class="still-matters-block">
-    <h2>How This Still Matters Today</h2>
-
-    <p class="still-now-headline">The document written in a locked room in 1787 is still the law you live under — and people are still fighting in court over what it means right now.</p>
-
-    <ul class="news-list">
-      <li><a>"Supreme Court Takes Up Case on 14th Amendment and Birthright Citizenship" — Los Angeles Times</a></li>
-      <li><a>"States Challenge Federal Government on Gun Laws, Citing 10th Amendment Limits" — Washington Post</a></li>
-      <li><a>"Free Speech Online: Tech Companies and the First Amendment Battle Heading to the Supreme Court" — New York Times</a></li>
-    </ul>
-
-    <!--
-      FILENAME: S1L01_SupremeCourt.jpg
+  <figure class="img-inset-left"><img src="images/S1/L01/S1L01_FreedmenVoting.jpg" alt="The First Vote, Harper's Weekly, 1867"><figcaption>"The First Vote," Harper's Weekly, November 16, 1867. Black men in the South vote during Reconstruction. Source: Library of Congress / Wikimedia Commons.</figcaption></figure>
+  <p class="para-standard">These three amendments changed the meaning of the Constitution. The <span class="vocab-plain">14th Amendment</span> became especially powerful because it promised citizenship and equal protection. Many later civil rights cases used that promise.</p>
+  <p class="para-simple">These three amendments changed the Constitution. The <span class="vocab-plain">14th Amendment</span> became very important. It promised citizenship and equal protection.</p>
+  <p class="para-standard">But changing words on paper did not change reality overnight. After Reconstruction ended, Southern states created new ways to limit Black freedom and voting rights. The Constitution had been updated, but the fight to make it real was just beginning.</p>
+  <p class="para-simple">Words on paper did not change everything right away. After Reconstruction, many Southern states took rights away again. The Constitution changed, but the struggle continued.</p>
+ </div>
+</section>
+<div class="divider"><div class="divider-line"></div><div class="divider-ornament">✦</div><div class="divider-line"></div></div>
+<section class="content section" id="source-moment"><h2 class="ch">PRIMARY SOURCE MOMENT</h2><div class="pullquote"><div class="pullquote-text">"All persons born or naturalized in the United States... are citizens of the United States... nor shall any State... deny to any person within its jurisdiction the equal protection of the laws."</div><div class="pullquote-attr">14TH AMENDMENT TO THE U.S. CONSTITUTION, SECTION 1, RATIFIED JULY 9, 1868</div><div class="pullquote-narrator">Congress wrote this amendment after the Civil War to make sure states could not create a second class of citizens.</div><div class="pullquote-questions"><p><strong>QUESTION 1:</strong> In your own words, what does this amendment promise to people born or naturalized in the United States?</p><p><strong>QUESTION 2:</strong> How does this amendment connect back to the essential question about whether the system still works?</p></div></div></section>
+<div class="content section" id="still-matters"><div class="still-matters-block"><h2>HOW THIS STILL MATTERS TODAY</h2><p class="still-now-headline">THE ARGUMENTS FROM 1787 STILL SHOW UP WHEN AMERICANS ASK WHO HAS POWER, WHO HAS RIGHTS, AND WHO GETS PROTECTED BY THE LAW.</p><div class="brain-break tn-break"><span class="bb-label">THEN AND NOW</span><div class="tn-pair"><div class="tn-item"><span class="tn-era-label">1867</span>
+ <!--
+      FILENAME: S1L01_FreedmenVoting.jpg
       PLACE IN: images/S1/L01/
-      FIND: The United States Supreme Court building, Washington D.C. — exterior facade showing the columns and steps, daylight
-      SEARCH: Wikimedia Commons — "United States Supreme Court building"
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:US_Supreme_Court_building_daylight.jpg
+      FIND: "The First Vote," Alfred Waud's 1867 illustration from Harper's Weekly showing Black men voting for the first time in the South
+      SEARCH: Wikimedia Commons "First Vote Harper's Weekly Alfred Waud 1867"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:The_First_Vote_-_Harpers_Weekly_Nov_16_1867.jpg
     -->
-    <figure class="img-full" style="margin: 0 0 22px 0;">
-      <img src="images/S1/L01/S1L01_SupremeCourt.jpg" alt="United States Supreme Court building" style="border-color: #3a5080;">
-      <figcaption style="color: #b8a880;">The United States Supreme Court building, Washington D.C. Every major rights debate in America eventually ends up here — argued using the same Constitution written in 1787. | Wikimedia Commons</figcaption>
-    </figure>
-
-    <p class="still-closing-q">If you could add one amendment to the Constitution right now — one right that isn't protected yet — what would it be, and who would it protect?</p>
-  </div>
-</div>
-
-<!-- ════════════════════════════════
-     SAN DIEGO CONNECTION
-════════════════════════════════ -->
-<div class="content" id="sd-connection">
-  <div class="sd-card">
-    <h3>San Diego Was Not American Land When the Constitution Was Signed — And That Changed Everything in 1848</h3>
-
-    <!--
+ <img src="images/S1/L01/S1L01_FreedmenVoting.jpg" alt="Black men voting during Reconstruction"><p class="tn-caption">Black men vote during Reconstruction after the Constitution was changed.</p></div><div class="tn-item"><span class="tn-era-label">TODAY</span>
+ <!--
+      FILENAME: S1L01_ModernVotingLine.jpg
+      PLACE IN: images/S1/L01/
+      FIND: Modern voters waiting in line at a polling place in the United States, documentary photograph with visible line of voters
+      SEARCH: Wikimedia Commons "voters waiting in line polling place United States"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/Category:Voters_in_the_United_States
+    -->
+ <img src="images/S1/L01/S1L01_ModernVotingLine.jpg" alt="Modern voters waiting in line at a polling place"><p class="tn-caption">Modern voters still wait to use a right that has been fought over for generations.</p></div></div><p class="tn-question">Which person in these two images would have the most surprising reaction if they could step into the other picture?</p></div><p class="still-closing-q">If you could add one right to the Constitution today, who would need that protection most?</p></div></div>
+<section class="content section" id="local-history"><div class="local-card"><h2>LOCAL HISTORY CONNECTION</h2><p class="local-headline para-standard">SAN DIEGO BECAME PART OF THE UNITED STATES LONG AFTER THE CONSTITUTION WAS WRITTEN.</p><p class="local-headline para-simple">SAN DIEGO WAS NOT PART OF THE UNITED STATES WHEN THE CONSTITUTION WAS WRITTEN.</p>
+ <!--
       FILENAME: S1L01_OldTownSanDiego.jpg
       PLACE IN: images/S1/L01/
-      FIND: Old Town San Diego State Historic Park — historical photograph showing the early settlement, or the San Diego Presidio / Mission San Diego de Alcalá circa 1800s
-      SEARCH: Wikimedia Commons — "Old Town San Diego historic" or "San Diego Presidio" or San Diego History Center digital archive
-      LINK (suggested): https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_SHP_1962.jpg
+      FIND: Old Town San Diego State Historic Park, historical photograph showing early settlement, or San Diego Presidio / Mission San Diego de Alcalá in the 1800s
+      SEARCH: Wikimedia Commons "Old Town San Diego historic" or "San Diego Presidio"
+      LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_SHP_1962.jpg
     -->
-    <figure class="img-full" style="margin: 0 0 18px 0;">
-      <img src="images/S1/L01/S1L01_OldTownSanDiego.jpg" alt="Old Town San Diego State Historic Park">
-      <figcaption>Old Town San Diego, the site of the first European settlement in California. When the U.S. Constitution was ratified in 1788, this land belonged to New Spain. | Wikimedia Commons</figcaption>
-    </figure>
+ <figure class="img-full" style="margin:0 0 18px 0"><img src="images/S1/L01/S1L01_OldTownSanDiego.jpg" alt="Old Town San Diego State Historic Park"><figcaption>Old Town San Diego, connected to the first European settlement in California. Source: Wikimedia Commons.</figcaption></figure><p class="para-standard">When the Constitution was ratified in 1788, San Diego was part of New Spain, and later Mexico. After the Treaty of Guadalupe Hidalgo in 1848, San Diego became part of the United States and came under the Constitution.</p><p class="para-simple">When the Constitution was approved in 1788, San Diego was not in the United States. It became part of the United States after the Treaty of Guadalupe Hidalgo in 1848.</p><p class="para-standard">That treaty promised rights to many Mexican residents who stayed, but those promises were often broken. This makes the Constitution a local story, not just a Philadelphia story.</p><p class="para-simple">The treaty promised rights to many Mexican residents who stayed. Many promises were broken. That makes the Constitution part of local history, too.</p></div></section>
 
-    <p>When the U.S. Constitution was ratified in 1788, San Diego was not American land. It was part of New Spain — and later, Mexico. The people living here lived under entirely different laws. It wasn't until the Treaty of Guadalupe Hidalgo in 1848 that San Diego officially became part of the United States, and residents here became subject to the Constitution for the first time.</p>
-    <p>That treaty promised to protect the property rights and citizenship of Mexicans who stayed — but many of those promises were broken. The question of who the Constitution actually protects has been San Diego's question since 1848, and it is still being asked along the border today.</p>
-  </div>
-</div>
-
-<div class="spacer"></div>
-
-<!-- ════════════════════════════════
-     FOOTER
-════════════════════════════════ -->
-<footer class="page-footer">
-  US History Summer School &nbsp;|&nbsp; Semester 1, Lesson 01 &nbsp;|&nbsp; Founding the Nation &nbsp;|&nbsp; Standards 11.1
-</footer>
-
-</div><!-- end .page-wrap -->
+<!-- ORIGINAL IMAGE ASSET RETAINED, NOT DISPLAYED IN CURRENT LESSON FLOW
+ FILENAME: S1L01_GeorgeMason.jpg
+ PLACE IN: images/S1/L01/
+ FIND: Portrait of George Mason of Virginia, Anti-Federalist who refused to sign the Constitution because it lacked a bill of rights
+ SEARCH: Wikimedia Commons "George Mason portrait"
+ LINK: suggested, not guaranteed: https://commons.wikimedia.org/wiki/File:George_Mason.jpg
+-->
+<div class="spacer"></div><footer class="page-footer">US HISTORY | SEMESTER 1, LESSON 01 | FOUNDING THE NATION | STANDARDS 11.1</footer></div>
+<script>
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
+document.querySelectorAll('.vocab').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');});});document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');if(link){if(entry.isIntersecting)link.classList.add('active');else link.classList.remove('active');}});},{threshold:.25});document.querySelectorAll('.section[id]').forEach(el=>tocObserver.observe(el));
+</script>
 </body>
 </html>
 <!--
+IMAGE CHECKLIST FOR SSU_S1L01.html
+1. S1L01_HeaderBg.jpg - Scene at the Signing of the Constitution, header background - Suggested link: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
+2. S1L01_JohnLocke.jpg - Portrait of John Locke - Suggested link: https://commons.wikimedia.org/wiki/File:JohnLocke.png
+3. S1L01_ConventionSigning.jpg - Scene at the Signing of the Constitution, full-width image and Art Spotlight - Suggested link: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
+4. S1L01_ConstitutionPage1.jpg - First page of the U.S. Constitution - Suggested link: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg
+5. S1L01_JamesMadison.jpg - Portrait of James Madison - Suggested link: https://commons.wikimedia.org/wiki/File:James_Madison.jpg
+6. S1L01_BillOfRights.jpg - Original Bill of Rights parchment - Suggested link: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg
+7. S1L01_EmancipationProclamation.jpg - Reading of the Emancipation Proclamation - Suggested link: https://commons.wikimedia.org/wiki/File:Reading_the_Emancipation_Proclamation.jpg
+8. S1L01_FreedmenVoting.jpg - The First Vote, Harper's Weekly, 1867 - Suggested link: https://commons.wikimedia.org/wiki/File:The_First_Vote_-_Harpers_Weekly_Nov_16_1867.jpg
+9. S1L01_SupremeCourt.jpg - United States Supreme Court building - Suggested link: https://commons.wikimedia.org/wiki/File:US_Supreme_Court_building_daylight.jpg
+10. S1L01_OldTownSanDiego.jpg - Old Town San Diego State Historic Park - Suggested link: https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_SHP_1962.jpg
+TOTAL IMAGES: 10 unique image files including header background.
+-->
+<!--
 ════════════════════════════════════════════════════════════════
 IMAGE CHECKLIST FOR SSU_S1L01.html
-Download each image, rename it exactly as shown, and place it in the correct folder.
+Download each image, rename it exactly as shown, and place it in images/S1/L01/.
 ════════════════════════════════════════════════════════════════
-
-1.  S1L01_HeaderBg.jpg
-    WHAT: Scene at the Signing of the Constitution — Howard Chandler Christy painting, 1940
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
-
-2.  S1L01_JohnLocke.jpg
-    WHAT: Portrait of John Locke by Godfrey Kneller, c. 1697
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:JohnLocke.png
-
-3.  S1L01_ConventionSigning.jpg
-    WHAT: Scene at the Signing of the Constitution — Christy painting, full room view
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
-    NOTE: This and the header use the same source image. Crop differently for the header vs. the full-width body image, or use a second Convention painting such as Junius Brutus Stearns "Washington at Constitutional Convention."
-    Alternate link: https://commons.wikimedia.org/wiki/File:Junius_Brutus_Stearns-Washington_at_Constitutional_Convention_of_1787.jpg
-
-4.  S1L01_ConstitutionPage1.jpg
-    WHAT: First page of the U.S. Constitution — original parchment, "We the People"
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg
-
-5.  S1L01_JamesMadison.jpg
-    WHAT: Portrait of James Madison, Father of the Constitution
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:James_Madison.jpg
-
-6.  S1L01_BillOfRights.jpg
-    WHAT: Original enrolled Bill of Rights parchment, 1789
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg
-
-7.  S1L01_GeorgeMason.jpg
-    WHAT: Portrait of George Mason of Virginia — Anti-Federalist who forced the Bill of Rights
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:George_Mason.jpg
-
-8.  S1L01_EmancipationProclamation.jpg
-    WHAT: 1864 engraving depicting reading of the Emancipation Proclamation
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:Reading_the_Emancipation_Proclamation.jpg
-
-9.  S1L01_FreedmenVoting.jpg
-    WHAT: "The First Vote" — Alfred Waud illustration, Harper's Weekly, November 1867
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:The_First_Vote_-_Harpers_Weekly_Nov_16_1867.jpg
-
-10. S1L01_SupremeCourt.jpg
-    WHAT: United States Supreme Court building exterior, Washington D.C.
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:US_Supreme_Court_building_daylight.jpg
-
-11. S1L01_OldTownSanDiego.jpg
-    WHAT: Old Town San Diego historical photograph
-    PLACE IN: images/S1/L01/
-    Suggested link: https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_SHP_1962.jpg
-
+1. S1L01_HeaderBg.jpg — Constitutional Convention signing scene — Suggested link: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
+2. S1L01_JohnLocke.jpg — Portrait of John Locke — Suggested link: https://commons.wikimedia.org/wiki/File:JohnLocke.png
+3. S1L01_ConventionSigning.jpg — Scene at the Signing of the Constitution — Suggested link: https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg
+4. S1L01_ConstitutionPage1.jpg — First page of the Constitution — Suggested link: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg
+5. S1L01_JamesMadison.jpg — Portrait of James Madison — Suggested link: https://commons.wikimedia.org/wiki/File:James_Madison.jpg
+6. S1L01_BillOfRights.jpg — Original Bill of Rights parchment — Suggested link: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg
+7. S1L01_GeorgeMason.jpg — Original retained asset, not displayed in current lesson flow — Suggested link: https://commons.wikimedia.org/wiki/File:George_Mason.jpg
+8. S1L01_FederalPillarsCartoon.jpg — NEW: Federal Pillars ratification cartoon, 1788 — Suggested link: https://www.loc.gov/pictures/item/2008661778/
+9. S1L01_EmancipationProclamation.jpg — Reading of the Emancipation Proclamation — Suggested link: https://commons.wikimedia.org/wiki/File:Reading_the_Emancipation_Proclamation.jpg
+10. S1L01_FreedmenVoting.jpg — The First Vote, 1867 — Suggested link: https://commons.wikimedia.org/wiki/File:The_First_Vote_-_Harpers_Weekly_Nov_16_1867.jpg
+11. S1L01_ModernVotingLine.jpg — NEW: Modern U.S. voters waiting in line — Suggested link: https://commons.wikimedia.org/wiki/Category:Voters_in_the_United_States
+12. S1L01_SupremeCourt.jpg — Original retained asset, not displayed in current lesson flow — Suggested link: https://commons.wikimedia.org/wiki/File:US_Supreme_Court_building_daylight.jpg
+13. S1L01_OldTownSanDiego.jpg — Old Town San Diego historical image — Suggested link: https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_SHP_1962.jpg
 ════════════════════════════════════════════════════════════════
-TOTAL IMAGES: 11 (including header background)
-All sourced from Wikimedia Commons or Library of Congress.
-Links are suggested — verify before downloading.
+TOTAL IMAGE ASSETS: 13 including original retained assets and new additions.
 ════════════════════════════════════════════════════════════════
 -->
