@@ -3,467 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Populism, Progressivism, and Religion — US History S1L03</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>SSU S1L03 — POPULISM, PROGRESSIVISM, AND RELIGION</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --coal: #1c1a18;
-    --steel: #2e3035;
-    --steel-mid: #3d4048;
-    --newsprint: #e8e0d0;
-    --newsprint-dark: #d8cfba;
-    --newsprint-mid: #ede6d8;
-    --rust: #8b2500;
-    --rust-light: #b03a10;
-    --brass: #9a7b2a;
-    --brass-light: #c4a040;
-    --ink-black: #0e0c0a;
-    --vocab-red: #b03030;
-    --text-body: #1a1510;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background-color: var(--newsprint);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.85;
-    color: var(--text-body);
-  }
-
-  /* ===== HEADER ===== */
-  .page-header {
-    position: relative;
-    background-color: var(--coal);
-    overflow: hidden;
-    padding: 60px 24px 52px;
-    text-align: center;
-  }
-
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.28;
-    filter: sepia(40%);
-  }
-
-  .header-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .course-label {
-    font-family: 'Source Serif 4', serif;
-    font-size: 12px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--brass-light);
-    margin-bottom: 14px;
-  }
-
-  .page-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
-    font-weight: 900;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 28px;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.8);
-  }
-
-  .eq-banner {
-    background: var(--rust);
-    color: #fff;
-    padding: 18px 30px;
-    border-radius: 2px;
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    font-style: italic;
-    line-height: 1.5;
-    display: inline-block;
-    max-width: 720px;
-    border: 2px solid var(--brass-light);
-  }
-
-  /* ===== NAV BAR ===== */
-  .section-nav {
-    background: var(--steel);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-bottom: 3px solid var(--brass);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .section-nav a {
-    font-family: 'Source Serif 4', serif;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--brass-light);
-    text-decoration: none;
-    padding: 13px 16px;
-    border-right: 1px solid rgba(154,123,42,0.25);
-    transition: background 0.2s, color 0.2s;
-    display: block;
-  }
-
-  .section-nav a:last-child { border-right: none; }
-  .section-nav a:hover { background: var(--rust); color: #fff; }
-
-  /* ===== CONTENT WRAPPER ===== */
-  .content-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 0 24px 60px;
-  }
-
-  /* ===== INTRO ===== */
-  .intro-section {
-    padding: 48px 0 28px;
-  }
-
-  .intro-section p {
-    font-size: 19px;
-    line-height: 1.9;
-    color: var(--ink-black);
-    margin-bottom: 18px;
-  }
-
-  /* ===== DIVIDER ===== */
-  .divider {
-    text-align: center;
-    margin: 44px 0 36px;
-    color: var(--brass);
-    font-size: 20px;
-    letter-spacing: 0.3em;
-  }
-
-  .divider::before,
-  .divider::after {
-    content: '';
-    display: inline-block;
-    width: 90px;
-    height: 1px;
-    background: var(--brass);
-    vertical-align: middle;
-    margin: 0 14px;
-    opacity: 0.65;
-  }
-
-  /* ===== CONTENT SECTIONS ===== */
-  .content-section { padding: 44px 0 20px; }
-
-  .section-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--coal);
-    margin-bottom: 22px;
-    line-height: 1.2;
-    border-left: 5px solid var(--rust);
-    padding-left: 18px;
-  }
-
-  .content-section p {
-    margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 1.85;
-  }
-
-  /* ===== VOCAB ===== */
-  .vocab {
-    color: var(--vocab-red);
-    text-decoration: underline dotted var(--vocab-red);
-    cursor: help;
-    position: relative;
-  }
-
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1a1a2e;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.5;
-    z-index: 10;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    max-width: 280px;
-    white-space: normal;
-    font-family: 'Source Serif 4', serif;
-  }
-
-  .vocab:hover .tip,
-  .vocab.active .tip { display: block; }
-
-  .vocab-only { color: var(--vocab-red); }
-
-  /* ===== IMAGES ===== */
-  .img-full {
-    width: 100%;
-    margin: 32px 0 8px;
-    border: 2px solid var(--brass);
-    display: block;
-    filter: sepia(15%);
-  }
-
-  .img-inset-right {
-    float: right;
-    width: 42%;
-    margin: 4px 0 20px 28px;
-    border: 2px solid var(--brass);
-    filter: sepia(15%);
-  }
-
-  .img-inset-left {
-    float: left;
-    width: 42%;
-    margin: 4px 28px 20px 0;
-    border: 2px solid var(--brass);
-    filter: sepia(15%);
-  }
-
-  .img-pair {
-    display: flex;
-    gap: 16px;
-    margin: 32px 0 8px;
-  }
-
-  .img-pair img {
-    width: 50%;
-    border: 2px solid var(--brass);
-    filter: sepia(15%);
-  }
-
-  .img-caption {
-    font-size: 13px;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 24px;
-    clear: both;
-    line-height: 1.4;
-  }
-
-  .clearfix::after { content: ''; display: table; clear: both; }
-
-  /* ===== PULLQUOTE ===== */
-  .pullquote {
-    background: var(--coal);
-    border-left: 6px solid var(--rust);
-    padding: 32px 36px;
-    margin: 40px 0 12px;
-    border-radius: 0 3px 3px 0;
-  }
-
-  .pullquote blockquote {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-style: italic;
-    color: var(--newsprint);
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
-  .pullquote .attribution {
-    font-size: 14px;
-    font-style: italic;
-    color: var(--brass-light);
-    margin-bottom: 10px;
-  }
-
-  .pullquote .narrator {
-    font-size: 15px;
-    color: #b0b8c4;
-    font-style: normal;
-    line-height: 1.6;
-  }
-
-  .pullquote-questions {
-    background: var(--newsprint-dark);
-    border-left: 4px solid var(--steel-mid);
-    padding: 22px 28px;
-    margin-bottom: 36px;
-  }
-
-  .pullquote-questions p {
-    font-size: 17px;
-    margin-bottom: 10px;
-    font-style: italic;
-    color: var(--coal);
-  }
-
-  .pullquote-questions p:last-child { margin-bottom: 0; }
-
-  /* ===== CONTRAST BOX ===== */
-  .contrast-box {
-    display: flex;
-    gap: 0;
-    margin: 28px 0 32px;
-    border: 2px solid var(--brass);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .contrast-col {
-    flex: 1;
-    padding: 22px 22px;
-  }
-
-  .contrast-col:first-child {
-    background: var(--steel);
-    color: var(--newsprint);
-    border-right: 2px solid var(--brass);
-  }
-
-  .contrast-col:last-child {
-    background: var(--newsprint-mid);
-    color: var(--coal);
-  }
-
-  .contrast-col h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .contrast-col:first-child h3 { color: var(--brass-light); }
-  .contrast-col:last-child h3 { color: var(--rust); }
-
-  .contrast-col p {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 0;
-  }
-
-  /* ===== LOCAL CARD ===== */
-  .local-card {
-    background: var(--coal);
-    border: 2px solid var(--brass);
-    border-radius: 4px;
-    padding: 32px 36px;
-    margin: 48px 0 24px;
-  }
-
-  .local-card-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: var(--brass-light);
-    margin-bottom: 18px;
-  }
-
-  .local-card p {
-    color: var(--newsprint);
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-
-  .local-card p:last-child { margin-bottom: 0; }
-
-  .local-anchor {
-    color: var(--brass-light);
-    font-weight: 700;
-    font-style: italic;
-  }
-
-  /* ===== HOW THIS STILL MATTERS ===== */
-  .still-matters {
-    background: var(--coal);
-    padding: 48px 36px;
-    margin: 48px 0 0;
-    border-top: 4px solid var(--rust);
-  }
-
-  .still-matters-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: 27px;
-    font-weight: 700;
-    color: var(--brass-light);
-    margin-bottom: 24px;
-    line-height: 1.3;
-  }
-
-  .news-links {
-    list-style: none;
-    margin: 0 0 28px;
-    padding: 0;
-  }
-
-  .news-links li { margin-bottom: 10px; }
-
-  .news-links a {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    color: var(--brass-light);
-    text-decoration: underline;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  }
-
-  .news-links a:hover { color: #fff; }
-
-  .closing-question {
-    font-size: 23px;
-    font-style: italic;
-    color: var(--newsprint);
-    margin-top: 28px;
-    line-height: 1.6;
-    border-top: 1px solid rgba(154,123,42,0.4);
-    padding-top: 24px;
-  }
-
-  /* ===== FOOTER ===== */
-  .page-footer {
-    background: var(--coal);
-    border-top: 3px solid var(--brass);
-    padding: 20px 24px;
-    text-align: center;
-    font-family: 'Source Serif 4', serif;
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--brass-light);
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 600px) {
-    .page-title { font-size: 38px; }
-    .section-heading { font-size: 28px; }
-    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 16px 0; }
-    .img-pair { flex-direction: column; }
-    .img-pair img { width: 100%; }
-    .section-nav a { font-size: 10px; padding: 9px 9px; }
-    .pullquote blockquote { font-size: 18px; }
-    .still-matters { padding: 32px 20px; }
-    .local-card { padding: 24px 20px; }
-    .contrast-box { flex-direction: column; }
-    .contrast-col:first-child { border-right: none; border-bottom: 2px solid var(--brass); }
-  }
+:root{
+  --coal:#1c1a18; --steel:#2e3035; --steel-mid:#3d4048; --newsprint:#e8e0d0; --newsprint-dark:#d8cfba; --newsprint-mid:#ede6d8;
+  --rust:#8b2500; --rust-light:#b03a10; --brass:#9a7b2a; --brass-light:#c4a040; --ink:#0e0c0a; --vocab-red:#b03030;
+  --teal:#006f73; --orange:#d35400; --navy:#102f4f; --purple:#3b1f5f; --forest:#193d2b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--newsprint);font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.85;color:#17120e}
+.page-header{position:relative;background:var(--coal);overflow:hidden;padding:64px 24px 54px;text-align:center}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;filter:sepia(35%) contrast(1.05)}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:auto}
+.course-label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-light);margin-bottom:14px}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(44px,7vw,64px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:28px;text-transform:uppercase;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.eq-banner{background:rgba(139,37,0,.96);color:#fff;padding:18px 30px;border-radius:2px;font-family:'Source Serif 4',serif;font-size:20px;font-weight:700;line-height:1.45;display:inline-block;max-width:750px;border:2px solid var(--brass-light)}
+.eq-label{display:block;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#f5d985;margin-bottom:7px}
+.section-nav{background:var(--steel);display:flex;flex-wrap:wrap;justify-content:center;border-bottom:3px solid var(--brass);position:sticky;top:0;z-index:100}
+.section-nav a{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f4dfa4;text-decoration:none;padding:13px 14px;border-right:1px solid rgba(154,123,42,.25);transition:.2s;display:block}
+.section-nav a:hover{background:var(--rust);color:#fff}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--rust);background:transparent;color:var(--rust);transition:.2s}
+#lexile-toggle:hover{background:var(--rust);color:var(--newsprint)}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;right:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-size:12px;line-height:1.7;z-index:50;background:rgba(28,26,24,.88);border-left:2px solid rgba(196,160,64,.45);font-family:'Oswald',sans-serif}
+.toc-label{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--brass-light);display:block;margin-bottom:10px}
+.toc-sidebar a{display:block;color:#e8d8ad;text-decoration:none;padding:3px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+.content-wrap{max-width:820px;margin:0 auto;padding:0 24px 60px;background:var(--newsprint)}
+.intro-section{padding:48px 0 28px}.intro-section p{font-size:19px;line-height:1.9;color:var(--ink);margin-bottom:18px}
+.divider{text-align:center;margin:44px 0 36px;color:var(--brass);font-size:20px;letter-spacing:.3em}.divider:before,.divider:after{content:'';display:inline-block;width:90px;height:1px;background:var(--brass);vertical-align:middle;margin:0 14px;opacity:.65}
+.content-section{padding:44px 0 20px}.section-heading{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,40px);font-weight:900;color:var(--coal);margin-bottom:22px;line-height:1.18;border-left:6px solid var(--rust);padding-left:18px;text-transform:uppercase}
+.content-section p{margin-bottom:20px;font-size:18px;line-height:1.85;color:#17120e}
+.vocab{color:var(--vocab-red);text-decoration:underline dotted var(--vocab-red);cursor:help;position:relative;font-weight:700}.vocab-red,.vocab-only{color:var(--vocab-red);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Source Serif 4',serif}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+.img-full{width:100%;margin:32px 0 8px;border:2px solid var(--brass);display:block;filter:sepia(12%)}.img-inset-right{float:right;width:42%;margin:4px 0 20px 28px;border:2px solid var(--brass);filter:sepia(12%)}.img-inset-left{float:left;width:42%;margin:4px 28px 20px 0;border:2px solid var(--brass);filter:sepia(12%)}.img-pair{display:flex;gap:16px;margin:32px 0 8px}.img-pair img{width:50%;border:2px solid var(--brass);filter:sepia(12%)}.img-caption{font-size:13px;font-style:italic;color:#5d5140;margin-bottom:24px;clear:both;line-height:1.4}.clearfix:after{content:'';display:table;clear:both}
+.pullquote{background:var(--coal);border-left:6px solid var(--rust);padding:32px 36px;margin:40px 0 12px;border-radius:0 3px 3px 0}.pullquote blockquote{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--newsprint);line-height:1.7;margin-bottom:16px}.pullquote .attribution{font-size:14px;font-style:italic;color:var(--brass-light);margin-bottom:10px}.pullquote .narrator{font-size:15px;color:#d8d0c0;font-style:normal;line-height:1.6}
+.pullquote-questions{background:var(--newsprint-dark);border-left:4px solid var(--steel-mid);padding:22px 28px;margin-bottom:36px}.pullquote-questions p{font-size:17px;margin-bottom:10px;font-style:italic;color:var(--coal)}
+.contrast-box{display:flex;gap:0;margin:28px 0 32px;border:2px solid var(--brass);border-radius:3px;overflow:hidden}.contrast-col{flex:1;padding:22px}.contrast-col:first-child{background:var(--steel);color:var(--newsprint);border-right:2px solid var(--brass)}.contrast-col:last-child{background:var(--newsprint-mid);color:var(--coal)}.contrast-col h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;margin-bottom:12px;letter-spacing:.04em;text-transform:uppercase}.contrast-col:first-child h3{color:var(--brass-light)}.contrast-col:last-child h3{color:var(--rust)}.contrast-col p{font-size:15px;line-height:1.7;margin-bottom:0;color:inherit}
+.brain-break{font-family:'Oswald',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden}.bb-label{display:block;font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.85}.bb-text{font-family:'Oswald',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:var(--teal);color:#fff;border-left:7px solid #ffcf33}.dyk-break .bb-label{color:#ffcf33}.dyk-break p{color:#fff}
+.ff-break{background:#17120d;color:#fff4d6;text-align:center;border-top:4px solid var(--brass-light);border-bottom:4px solid var(--brass-light);padding:36px 40px;margin:0 -50px 44px}.ff-break .bb-label{color:var(--brass-light);text-align:center;margin-bottom:24px}.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px}.ff-item{text-align:center;padding:8px 10px;flex:1 1 105px}.ff-number{display:block;font-size:56px;font-weight:900;color:var(--brass-light);line-height:1;margin-bottom:8px}.ff-desc{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#fff4d6;max-width:125px;margin:0 auto;line-height:1.35}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:4px solid #ffcf33;border-bottom:4px solid #ffcf33;text-align:center}.as-break .bb-label{color:#ffcf33}.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,207,51,.65);box-shadow:0 8px 32px rgba(0,0,0,.5)}.as-caption{font-family:'Oswald',sans-serif;font-style:normal;font-size:13px;color:#f7e8bf;line-height:1.5;margin-bottom:28px;display:block}.as-fact{font-family:'Oswald',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.6;max-width:650px;margin:0 auto;text-align:center}
+.tn-break{background:var(--forest);color:#fff;padding:36px 50px;margin:30px -50px 0}.tn-break .bb-label{color:#ffcf33;text-align:center;display:block;margin-bottom:20px}.tn-payoff{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:#ffcf33;margin-bottom:28px;max-width:680px;margin-left:auto;margin-right:auto}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-era-label{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:#ffcf33;margin-bottom:10px;font-weight:700}.tn-item img{width:100%;display:block;border:2px solid rgba(255,207,51,.55)}.tn-caption{font-family:'Oswald',sans-serif;font-size:12px;font-style:italic;color:#f7e8bf;margin-top:8px;line-height:1.4}.tn-closing{font-family:'Oswald',sans-serif;font-size:20px;font-weight:500;text-align:center;color:#fff;margin-top:24px;line-height:1.5;border-top:1px solid rgba(255,207,51,.35);padding-top:20px}
+.page-footer{background:var(--coal);border-top:3px solid var(--brass);padding:20px 24px;text-align:center;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light)}
+@media(max-width:880px){.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.page-title{font-size:38px}.section-heading{font-size:28px}.img-inset-right,.img-inset-left{float:none;width:100%;margin:16px 0}.img-pair{flex-direction:column}.img-pair img{width:100%}.section-nav a{font-size:10px;padding:9px}.pullquote blockquote{font-size:18px}.contrast-box{flex-direction:column}.contrast-col:first-child{border-right:none;border-bottom:2px solid var(--brass)}.tn-pair{grid-template-columns:1fr}.tn-break{padding:28px 22px;margin:30px 0 0}.as-fact{font-size:18px}}
 </style>
 </head>
 <body>
-
-<!-- ===== HEADER ===== -->
 <header class="page-header">
   <!-- FILENAME: S1L03_ChildLaborMinesHeader.jpg
        PLACE IN: images/S1/L03/
@@ -471,322 +61,287 @@
        SEARCH: Lewis Hine child labor photograph coal mine 1910 Library of Congress
        LINK: https://www.loc.gov/pictures/collection/nclc/ (suggested, not guaranteed) -->
   <img class="header-bg" src="images/S1/L03/S1L03_ChildLaborMinesHeader.jpg" alt="Lewis Hine photograph of child laborers, circa 1910">
-
   <div class="header-inner">
-    <div class="course-label">US History &mdash; Semester 1, Lesson 03</div>
-    <h1 class="page-title">Populism, Progressivism,<br>and Religion</h1>
-    <div class="eq-banner">Essential Question: How did ordinary people and religious movements push America to live up to its own ideals?</div>
+    <div class="course-label">US HISTORY — SEMESTER 1, LESSON 03</div>
+    <h1 class="page-title">POPULISM, PROGRESSIVISM,<br>AND RELIGION</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did ordinary people and religious movements push America to live up to its own ideals?</div>
   </div>
 </header>
-
-<!-- ===== NAV BAR ===== -->
 <nav class="section-nav" aria-label="Section navigation">
-  <a href="#populists">The Populists</a>
-  <a href="#progressives">The Progressives</a>
-  <a href="#gospel-darwin">Social Gospel vs. Social Darwinism</a>
-  <a href="#great-awakenings">The Great Awakenings</a>
-  <a href="#local-history">Local History</a>
-  <a href="#still-matters">How This Still Matters</a>
+  <a href="#populists">THE POPULISTS</a>
+  <a href="#progressives">THE PROGRESSIVES</a>
+  <a href="#gospel-darwin">SOCIAL GOSPEL VS. SOCIAL DARWINISM</a>
+  <a href="#great-awakenings">THE GREAT AWAKENINGS</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
 </nav>
-
-<!-- ===== CONTENT ===== -->
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+<aside class="toc-sidebar"><span class="toc-label">ON THIS PAGE</span><a href="#populists">THE POPULISTS</a><a href="#progressives">THE PROGRESSIVES</a><a href="#gospel-darwin">SOCIAL GOSPEL</a><a href="#great-awakenings">AWAKENINGS</a><a href="#primary-source-moment">PRIMARY SOURCE</a><a href="#then-now">THEN AND NOW</a></aside>
 <div class="content-wrap">
 
-  <!-- INTRO -->
-  <section class="intro-section">
-    <p>In 1892, a Kansas farmer named Mary Elizabeth Lease stepped onto a stage in front of thousands of people and delivered one of the most famous lines in American political history. She told the crowd that farmers needed to "raise less corn and more hell." The audience exploded. She was not a politician. She was not wealthy. She was a mother of four who had watched her neighbors lose their farms to railroad companies and banks while politicians in Washington did nothing.</p>
-    <p>Between 1880 and 1920, millions of Americans decided that doing nothing was no longer an option. Farmers, factory workers, religious leaders, and women reformers all demanded that America actually live up to the promises it had made. They called themselves Populists. They called themselves Progressives. And they changed the country permanently.</p>
-  </section>
+<section class="intro-section">
+  <p class="para-standard">In 1892, a Kansas farmer named Mary Elizabeth Lease stepped onto a stage and told a crowd that farmers needed to "raise less corn and more hell." The audience exploded. She was a mother of four who had watched neighbors lose farms to railroad companies and banks while politicians did little.</p>
+  <p class="para-simple">In 1892, Mary Elizabeth Lease spoke to a large crowd. She was a Kansas farmer and a mother. She said farmers should "raise less corn and more hell." People cheered because many farmers felt ignored by banks, railroads, and politicians.</p>
+  <p class="para-standard">Between 1880 and 1920, millions of Americans decided that doing nothing was no longer an option. Farmers, factory workers, religious leaders, and women reformers demanded that America live up to its promises. Some called themselves Populists. Others called themselves Progressives. Together, they changed the country.</p>
+  <p class="para-simple">From 1880 to 1920, many Americans wanted change. Farmers, workers, religious leaders, and women reformers pushed the country to act. Some were Populists. Some were Progressives. Their work changed American life.</p>
+</section>
 
-  <div class="divider">&#9670; &#9670; &#9670;</div>
+<div class="divider">◆ ◆ ◆</div>
 
-  <!-- SECTION 1 — THE POPULISTS -->
-  <section class="content-section" id="populists">
-    <h2 class="section-heading">The Farmers Fight Back: The Populist Movement</h2>
+<section class="content-section clearfix" id="populists">
+  <h2 class="section-heading">THE FARMERS FIGHT BACK: THE POPULIST MOVEMENT</h2>
+  <!-- FILENAME: S1L03_MaryLeaseSpeaking.jpg
+       PLACE IN: images/S1/L03/
+       FIND: Mary Elizabeth Lease portrait or photograph — Kansas Populist orator, circa 1890s
+       SEARCH: Mary Elizabeth Lease portrait photograph Kansas Populist Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Mary_Elizabeth_Lease.jpg (suggested, not guaranteed) -->
+  <img class="img-inset-right" src="images/S1/L03/S1L03_MaryLeaseSpeaking.jpg" alt="Mary Elizabeth Lease, Kansas Populist orator, circa 1890s">
+  <p class="img-caption" style="float:right;width:42%;margin-left:28px;margin-top:-18px;">Mary Elizabeth Lease, Kansas Populist orator, circa 1890s. Wikimedia Commons.</p>
 
-    <!-- FILENAME: S1L03_MaryLeaseSpeaking.jpg
-         PLACE IN: images/S1/L03/
-         FIND: Mary Elizabeth Lease portrait or photograph — Kansas Populist orator, circa 1890s
-         SEARCH: Mary Elizabeth Lease portrait photograph Kansas Populist Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Mary_Elizabeth_Lease.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-right" src="images/S1/L03/S1L03_MaryLeaseSpeaking.jpg" alt="Mary Elizabeth Lease, Kansas Populist orator, circa 1890s">
-    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">Mary Elizabeth Lease, Kansas Populist orator, circa 1890s. <em>Wikimedia Commons.</em></p>
+  <p class="para-standard">After the Civil War, American farmers seemed like they should have been thriving. The country was growing fast, and cities needed food. But many farmers were going broke because the system was stacked against them.</p>
+  <p class="para-simple">After the Civil War, farmers seemed like they should do well. Cities needed food. But many farmers were losing money. The system worked against them.</p>
+  <p class="para-standard">Railroads charged high prices to ship crops. Banks charged punishing interest on loans for seeds and equipment. When crops were good, prices dropped. When crops failed, banks foreclosed. Farm families worked harder every year and still fell behind.</p>
+  <p class="para-simple">Railroads charged farmers too much to ship crops. Banks charged high interest. Good crops made prices fall. Bad crops made debt worse. Many families lost their farms.</p>
+  <p class="para-standard">By the late 1880s, farmers began organizing. They formed the Farmers' Alliance, a network of cooperatives and political clubs across the South and Midwest. By 1892, they launched the <span class="vocab">Populist<span class="tip">A movement that fought for ordinary farmers and workers.</span></span> Party, also called the People's Party.</p>
+  <p class="para-simple">By the late 1880s, farmers organized. They formed the Farmers' Alliance. In 1892, they started the <span class="vocab-red">Populist</span> Party. It was also called the People's Party.</p>
 
-    <p>After the Civil War, American farmers seemed like they should have been thriving. The country was growing fast. Cities were hungry for food. But farmers were not getting rich. They were going broke. The reason was a system that was rigged against them at every turn.</p>
+  <!-- FILENAME: S1L03_PopulistPlatform1892.jpg
+       PLACE IN: images/S1/L03/
+       FIND: 1892 People's Party / Populist Party campaign poster or document — Omaha Platform illustration or campaign broadside
+       SEARCH: Populist Party 1892 Omaha Platform poster campaign Wikimedia Commons Library of Congress
+       LINK: https://commons.wikimedia.org/wiki/Category:Populist_Party_(United_States) (suggested, not guaranteed) -->
+  <img class="img-inset-left" src="images/S1/L03/S1L03_PopulistPlatform1892.jpg" alt="Populist Party campaign material, 1892">
+  <p class="img-caption" style="float:left;width:42%;margin-right:28px;margin-top:-18px;">Populist Party campaign material, 1892. Wikimedia Commons / Library of Congress.</p>
 
-    <p>Railroads charged whatever they wanted to ship a farmer's crop to market. Banks charged punishing interest rates on the loans farmers needed to buy seeds and equipment. When crops were good, prices dropped so low that farmers barely broke even. When crops failed, banks foreclosed. Millions of farm families lost land their parents had broken their backs to buy. They were working harder than ever and falling further behind every year.</p>
+  <p class="para-standard">The Populist platform was bold for its time. Populists wanted government ownership of railroads, a graduated income tax, direct election of senators, and more paper money backed by silver. These ideas challenged powerful banks, railroads, and political elites.</p>
+  <p class="para-simple">The Populists wanted big changes. They wanted the government to control railroads. They wanted rich people to pay higher taxes. They wanted voters to choose senators directly. They also wanted more money in circulation.</p>
+  <p class="para-standard">The Populists lost the 1896 presidential election. But many of their ideas survived. Over the next twenty years, several major reforms they demanded became law. Their party faded, but their arguments kept moving.</p>
+  <p class="para-simple">The Populists lost the 1896 election. But their ideas did not disappear. Many of their reforms later became law. Their party lost power, but their message lasted.</p>
+</section>
 
-    <p>By the late 1880s, farmers began organizing. They formed the Farmers' Alliance, a network of cooperatives and political clubs that spread across the South and Midwest like wildfire. By 1892, they had launched a new political party: the <span class="vocab">Populist<span class="tip">A political movement in the 1880s and 1890s that fought for the rights of ordinary farmers and workers against powerful banks, railroads, and wealthy elites.</span></span> Party, also called the People's Party.</p>
-
-    <!-- FILENAME: S1L03_PopulistPlatform1892.jpg
-         PLACE IN: images/S1/L03/
-         FIND: 1892 People's Party / Populist Party campaign poster or document — Omaha Platform illustration or campaign broadside
-         SEARCH: Populist Party 1892 Omaha Platform poster campaign Wikimedia Commons Library of Congress
-         LINK: https://commons.wikimedia.org/wiki/Category:Populist_Party_(United_States) (suggested, not guaranteed) -->
-    <img class="img-inset-left" src="images/S1/L03/S1L03_PopulistPlatform1892.jpg" alt="Populist Party campaign material, 1892">
-    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Populist Party campaign material, 1892. The People's Party demanded government ownership of railroads and a graduated income tax. <em>Wikimedia Commons / Library of Congress.</em></p>
-
-    <p>The Populist platform, written in Omaha, Nebraska in 1892, was radical for its time. Populists demanded that the federal government take ownership of the railroads so no private company could gouge farmers on shipping rates. They demanded a graduated income tax: a system where wealthy people would pay a higher percentage of their income than poor people. They demanded that U.S. senators be elected directly by voters instead of chosen by state legislatures. They demanded that workers be paid in paper money backed by silver, not just gold, so there would be more money in circulation and crop prices would rise.</p>
-
-    <p>The Populists lost the 1896 presidential election to Republican William McKinley. But they did not lose everything. Over the next twenty years, nearly every major reform the Populists demanded became law. Their ideas were ahead of their time; the country just needed a generation to catch up.</p>
-
-    <p>Today, when politicians talk about taxing the rich at higher rates, regulating corporations, or protecting family farmers from big agribusiness, they are using arguments that Kansas farmers made in dusty meeting halls in 1892.</p>
-
-    <div class="clearfix"></div>
-  </section>
-
-  <div class="divider">&#9670; &#9670; &#9670;</div>
-
-  <!-- PRIMARY SOURCE 1 — OMAHA PLATFORM -->
-  <div class="pullquote">
-    <blockquote>"We meet in the midst of a nation brought to the verge of moral, political, and material ruin. Corruption dominates the ballot-box, the Legislatures, the Congress, and touches even the ermine of the bench. The newspapers are largely subsidized or muzzled, public opinion silenced, business prostrated, homes covered with mortgages, labor impoverished, and the land concentrating in the hands of capitalists."</blockquote>
-    <p class="attribution">Ignatius Donnelly, <em>Preamble to the Omaha Platform, People's Party</em>, July 4, 1892</p>
-    <p class="narrator">This was the opening shot of the Populist movement — written on the Fourth of July to make clear that the farmers believed American democracy itself was broken, not just their bank accounts.</p>
+<div class="brain-break dyk-break">
+  <span class="bb-label">DID YOU KNOW</span>
+  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <!-- FILENAME: S1L03_DYK_MaryLeasePortrait.jpg
+           PLACE IN: images/S1/L03/
+           FIND: Mary Elizabeth Lease portrait, Kansas Populist speaker; use with Did You Know fact about her famous "raise less corn and more hell" line.
+           SEARCH: Mary Elizabeth Lease portrait photograph Kansas Populist Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/File:Mary_Elizabeth_Lease.jpg (suggested, not guaranteed) -->
+      <img src="images/S1/L03/S1L03_DYK_MaryLeasePortrait.jpg" alt="Mary Elizabeth Lease portrait" style="width:100%;display:block;border:3px solid #ffcf33;box-shadow:0 4px 18px rgba(0,0,0,.4);">
+      <p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Oswald',sans-serif;color:#fff;">Mary Elizabeth Lease, Populist speaker. Wikimedia Commons.</p>
+    </div>
+    <p class="bb-text" style="flex:1;min-width:200px;">Mary Elizabeth Lease became famous for the line "raise less corn and more hell," but she later said reporters may have twisted what she actually said. The sentence stuck anyway because it sounded exactly like the anger farmers felt: polite speeches had failed, so the countryside needed to get loud.</p>
   </div>
-  <div class="pullquote-questions">
-    <p>1. According to this document, what specific problems are destroying the country? List at least three things the author names.</p>
-    <p>2. How does this connect to our Essential Question? What does this document tell us about why ordinary people decided they had to act?</p>
+</div>
+
+<div class="brain-break ff-break">
+  <span class="bb-label">FAST FACTS</span>
+  <div class="ff-grid">
+    <div class="ff-item"><span class="ff-number">4</span><span class="ff-desc">AMENDMENTS IN 8 YEARS</span></div>
+    <div class="ff-item"><span class="ff-number">6</span><span class="ff-desc">YEAR OLD WORKERS</span></div>
+    <div class="ff-item"><span class="ff-number">1892</span><span class="ff-desc">OMAHA PLATFORM</span></div>
+    <div class="ff-item"><span class="ff-number">1%</span><span class="ff-desc">OWNED MOST WEALTH</span></div>
+    <div class="ff-item"><span class="ff-number">1913</span><span class="ff-desc">SENATORS BY VOTERS</span></div>
   </div>
+</div>
 
-  <div class="divider">&#9670; &#9670; &#9670;</div>
+<div class="pullquote">
+  <blockquote>"We meet in the midst of a nation brought to the verge of moral, political, and material ruin."</blockquote>
+  <p class="attribution">Ignatius Donnelly, Preamble to the Omaha Platform, People's Party, July 4, 1892</p>
+  <p class="narrator">The Populists chose the Fourth of July to say that American democracy itself was broken, not just farmers' bank accounts.</p>
+</div>
 
-  <!-- SECTION 2 — THE PROGRESSIVES -->
-  <section class="content-section" id="progressives">
-    <h2 class="section-heading">The Progressive Era: When Reformers Changed Everything</h2>
+<div class="divider">◆ ◆ ◆</div>
 
-    <!-- FILENAME: S1L03_Upton_Sinclair_Jungle.jpg
-         PLACE IN: images/S1/L03/
-         FIND: First edition cover of "The Jungle" by Upton Sinclair, 1906 — the muckraking novel that exposed meatpacking industry conditions and led to the Pure Food and Drug Act
-         SEARCH: Upton Sinclair The Jungle 1906 first edition cover Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:The_Jungle_book_cover.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-right" src="images/S1/L03/S1L03_Upton_Sinclair_Jungle.jpg" alt="First edition of The Jungle by Upton Sinclair, 1906">
-    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">First edition of <em>The Jungle</em> by Upton Sinclair, 1906. His descriptions of Chicago meatpacking plants triggered a national scandal. <em>Wikimedia Commons.</em></p>
+<section class="content-section clearfix" id="progressives">
+  <h2 class="section-heading">THE PROGRESSIVE ERA: WHEN REFORMERS CHANGED EVERYTHING</h2>
+  <!-- FILENAME: S1L03_Upton_Sinclair_Jungle.jpg
+       PLACE IN: images/S1/L03/
+       FIND: First edition cover of "The Jungle" by Upton Sinclair, 1906 — the muckraking novel that exposed meatpacking industry conditions and led to the Pure Food and Drug Act
+       SEARCH: Upton Sinclair The Jungle 1906 first edition cover Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:The_Jungle_book_cover.jpg (suggested, not guaranteed) -->
+  <img class="img-inset-right" src="images/S1/L03/S1L03_Upton_Sinclair_Jungle.jpg" alt="First edition of The Jungle by Upton Sinclair, 1906">
+  <p class="img-caption" style="float:right;width:42%;margin-left:28px;margin-top:-18px;">First edition of The Jungle by Upton Sinclair, 1906. Wikimedia Commons.</p>
 
-    <p>By 1900, the Populist Party was finished. But the problems that had created it were not. Millions of Americans were now crammed into filthy factory tenements in cities like Chicago, New York, and Pittsburgh. Children as young as six worked in coal mines and textile mills. Meat packing plants sold food contaminated with rat droppings, spoiled meat, and worse. Standard Oil controlled nearly all of America's oil supply and crushed any competitor that got in its way. The richest 1 percent of Americans owned more wealth than the bottom 99 percent combined.</p>
+  <p class="para-standard">By 1900, the Populist Party was finished. But the problems that created it were not. Millions lived in crowded tenements. Children worked in mines and textile mills. Meatpacking plants sold unsafe food. Large companies crushed competitors and workers had little power.</p>
+  <p class="para-simple">By 1900, the Populist Party was gone. But the problems remained. Many people lived in crowded housing. Children worked in mines and mills. Some food was unsafe. Big companies had too much power.</p>
+  <p class="para-standard">A new generation of activists called themselves <span class="vocab">Progressive<span class="tip">A reformer who wanted government to fix industrial problems.</span></span>s. They believed government had the power and responsibility to fix problems caused by industrialization. Progressives came from cities, universities, churches, newspapers, and settlement houses.</p>
+  <p class="para-simple">New activists called themselves <span class="vocab-red">Progressive</span>s. They believed government should fix problems caused by industry. Many came from cities, churches, schools, newspapers, and settlement houses.</p>
+  <p class="para-standard">Progressives used investigative journalism. Writers called muckrakers exposed unsafe food, corrupt politics, child labor, and monopolies. Upton Sinclair's novel The Jungle described Chicago meatpacking in shocking detail. Congress soon passed food safety laws.</p>
+  <p class="para-simple">Progressives used journalism. Muckrakers wrote about unsafe food, corruption, child labor, and monopolies. Upton Sinclair wrote The Jungle. His book helped lead to food safety laws.</p>
 
-    <p>A new generation of activists called themselves <span class="vocab">Progressive<span class="tip">A reformer in the early 1900s who believed government should fix the problems caused by industrialization, such as child labor, unsafe food, and corporate monopolies.</span></span>s. They believed that the government had both the power and the responsibility to fix these problems. And unlike the Populists, who were mostly rural and Southern, Progressives came from cities, universities, churches, and newspapers. They were middle-class professionals who had the education and the connections to make things happen in Washington.</p>
+  <!-- FILENAME: S1L03_ChildLaborLewinHine.jpg
+       PLACE IN: images/S1/L03/
+       FIND: Lewis Hine photograph of child workers in a textile mill or cotton mill, circa 1908-1910 — one of his most iconic images showing children at looms or spindles
+       SEARCH: Lewis Hine child labor textile mill spinners 1908 Library of Congress NCLC
+       LINK: https://www.loc.gov/pictures/item/ncl2004001033/PP/ (suggested, not guaranteed) -->
+  <img class="img-full" src="images/S1/L03/S1L03_ChildLaborLewinHine.jpg" alt="Lewis Hine photograph of child workers in a textile mill, circa 1908-1910">
+  <p class="img-caption">Lewis Hine, child workers in a textile mill, circa 1908-1910. Library of Congress.</p>
 
-    <p>The Progressives used a new weapon: investigative journalism. Writers called muckrakers dug into the ugliest corners of American industry and published what they found. Upton Sinclair's 1906 novel <em>The Jungle</em> described the Chicago meatpacking industry in nauseating detail. When President Theodore Roosevelt read it, he reportedly threw his breakfast sausage across the room. Within months, Congress had passed the Pure Food and Drug Act and the Meat Inspection Act. Words had become law.</p>
+  <p class="para-standard">One of the most powerful Progressive tools was the camera. Lewis Hine traveled the country documenting child labor for the National Child Labor Committee. His photographs showed children beside huge machines and in dangerous workplaces. The images made child labor impossible to ignore.</p>
+  <p class="para-simple">The camera became a reform tool. Lewis Hine photographed child workers. His pictures showed children near dangerous machines. The images helped people see the problem clearly.</p>
+  <!-- FILENAME: S1L03_WomenSuffrageParade.jpg
+       PLACE IN: images/S1/L03/
+       FIND: Women's suffrage parade, Washington D.C. 1913 — the famous march down Pennsylvania Avenue the day before Woodrow Wilson's inauguration
+       SEARCH: women suffrage parade Washington DC 1913 Library of Congress
+       LINK: https://www.loc.gov/pictures/item/2011660621/ (suggested, not guaranteed) -->
+  <img class="img-inset-left" src="images/S1/L03/S1L03_WomenSuffrageParade.jpg" alt="Women's suffrage parade, Washington D.C., 1913">
+  <p class="img-caption" style="float:left;width:42%;margin-right:28px;margin-top:-18px;">Women's suffrage parade, Washington D.C., March 3, 1913. Library of Congress.</p>
+  <p class="para-standard">Women were at the center of nearly every Progressive Era <span class="vocab">reform<span class="tip">A change made to fix a law, system, or institution.</span></span>. Jane Addams worked with immigrant families at Hull House. Florence Kelley fought child labor. Ida B. Wells exposed lynching. Many of these women could not vote for most of the era, but they changed American law and public life.</p>
+  <p class="para-simple">Women led many Progressive <span class="vocab-red">reform</span>s. Jane Addams helped immigrant families. Florence Kelley fought child labor. Ida B. Wells exposed lynching. Many women could not vote yet, but they changed the country.</p>
+</section>
 
+<div class="divider">◆ ◆ ◆</div>
+
+<section class="content-section clearfix" id="gospel-darwin">
+  <h2 class="section-heading">TWO WAYS OF SEEING POVERTY: SOCIAL GOSPEL VS. SOCIAL DARWINISM</h2>
+  <p class="para-standard">Behind every argument about poverty is a deeper argument about why people are poor. During the Progressive Era, two opposite ideas competed for influence: Social Darwinism and the Social Gospel.</p>
+  <p class="para-simple">Arguments about poverty often start with one question: why are people poor? During the Progressive Era, two ideas fought for influence. One was Social Darwinism. The other was the Social Gospel.</p>
+  <div class="contrast-box">
+    <div class="contrast-col"><h3>SOCIAL DARWINISM</h3><p>Society is a competition where the strongest survive. Poverty shows personal weakness. Government help only interferes with the natural order.</p></div>
+    <div class="contrast-col"><h3>SOCIAL GOSPEL</h3><p>Faith requires action against poverty and injustice. Poverty is often caused by unfair systems. Christians should help change those systems.</p></div>
+  </div>
+  <!-- FILENAME: S1L03_WalterRauschenbusch.jpg
+       PLACE IN: images/S1/L03/
+       FIND: Portrait photograph of Walter Rauschenbusch — Baptist minister and leading Social Gospel theologian, author of "Christianity and the Social Crisis" 1907
+       SEARCH: Walter Rauschenbusch portrait photograph Social Gospel Baptist Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Walter_Rauschenbusch.jpg (suggested, not guaranteed) -->
+  <img class="img-inset-right" src="images/S1/L03/S1L03_WalterRauschenbusch.jpg" alt="Walter Rauschenbusch, Social Gospel theologian, circa 1907">
+  <p class="img-caption" style="float:right;width:42%;margin-left:28px;margin-top:-18px;">Walter Rauschenbusch, Baptist minister and Social Gospel leader, circa 1907. Wikimedia Commons.</p>
+  <p class="para-standard">Social Darwinists misused Charles Darwin's theory of evolution to explain economics. They argued that rich people were naturally stronger and poor people had simply lost the competition. This idea gave wealthy business leaders a moral excuse to oppose labor protections.</p>
+  <p class="para-simple">Social Darwinists used Darwin's ideas in the wrong way. They said rich people were stronger and poor people had lost. This helped wealthy leaders argue against worker protections.</p>
+  <p class="para-standard">The <span class="vocab">Social Gospel<span class="tip">A religious movement that fought poverty and injustice.</span></span> movement pushed back. Walter Rauschenbusch argued that Christian faith required action in this world. Feeding the hungry, housing the poor, and protecting workers were not just political goals. They were moral duties.</p>
+  <p class="para-simple">The <span class="vocab-red">Social Gospel</span> pushed back. Walter Rauschenbusch said faith should lead people to act. Helping the hungry, the poor, and workers was a moral duty.</p>
+  <p class="para-standard">This debate gave the Progressive movement moral energy. It also shaped arguments that still appear whenever Americans debate whether poverty is mainly a personal failure or a system problem.</p>
+  <p class="para-simple">This debate gave reformers moral energy. It still matters when people argue about poverty. Is poverty a personal problem, or is it caused by unfair systems?</p>
+</section>
+
+<div class="brain-break as-break">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
     <!-- FILENAME: S1L03_ChildLaborLewinHine.jpg
          PLACE IN: images/S1/L03/
-         FIND: Lewis Hine photograph of child workers in a textile mill or cotton mill, circa 1908-1910 — one of his most iconic images showing children at looms or spindles
+         FIND: Lewis Hine photograph of child workers in a textile mill or cotton mill, circa 1908-1910; reused as Art Spotlight because it is the strongest documentary image already in the lesson.
          SEARCH: Lewis Hine child labor textile mill spinners 1908 Library of Congress NCLC
          LINK: https://www.loc.gov/pictures/item/ncl2004001033/PP/ (suggested, not guaranteed) -->
-    <img class="img-full" src="images/S1/L03/S1L03_ChildLaborLewinHine.jpg" alt="Lewis Hine photograph of child workers in a textile mill, circa 1908-1910">
-    <p class="img-caption">Lewis Hine, child workers in a textile mill, circa 1908-1910. Hine's photographs for the National Child Labor Committee helped end child labor in American factories. Library of Congress.</p>
+    <img src="images/S1/L03/S1L03_ChildLaborLewinHine.jpg" alt="Lewis Hine photograph of child workers in a textile mill" class="as-image">
+    <figcaption class="as-caption">Lewis Hine, child workers in a textile mill, circa 1908-1910. Library of Congress.</figcaption>
+  </figure>
+  <p class="as-fact">Lewis Hine often wrote down a child's name, age, job, and exact location because he knew people could dismiss a sad picture as sentimental. Details made the photograph harder to ignore. A child in a factory became not just an image, but evidence.</p>
+</div>
 
-    <p>One of the most powerful Progressive weapons was the camera. A photographer named Lewis Hine traveled across the country documenting child labor for the National Child Labor Committee. His photographs showed eight-year-olds with missing fingers operating massive looms; twelve-year-olds crouching in coal mine shafts. The images were impossible to argue with. By 1916, Congress passed the Keating-Owen Child Labor Act; the era of routine child labor in American factories was ending.</p>
+<div class="pullquote">
+  <blockquote>"Whoever sets any bounds for the reconstructive power of the religious life over the social order, limits the redemption of Jesus Christ."</blockquote>
+  <p class="attribution">Walter Rauschenbusch, Christianity and the Social Crisis, 1907</p>
+  <p class="narrator">Rauschenbusch was telling churches that they could not stay silent about poverty and injustice.</p>
+</div>
 
-    <p>The Progressive Era produced an explosion of constitutional change. The 16th Amendment (1913) created the federal income tax: the Populists' old demand, finally law. The 17th Amendment (1913) established direct election of U.S. senators: another Populist demand, finally law. The 18th Amendment (1919) banned alcohol under Prohibition. The 19th Amendment (1920) gave women the right to vote. In less than a decade, the Constitution was amended four times. That had never happened before and has not happened since.</p>
+<div class="divider">◆ ◆ ◆</div>
 
-    <!-- FILENAME: S1L03_WomenSuffrageParade.jpg
+<section class="content-section clearfix" id="great-awakenings">
+  <h2 class="section-heading">AMERICA'S RELIGIOUS EARTHQUAKES: THE GREAT AWAKENINGS</h2>
+  <div class="img-pair">
+    <!-- FILENAME: S1L03_FirstGreatAwakeningWhitefield.jpg
          PLACE IN: images/S1/L03/
-         FIND: Women's suffrage parade, Washington D.C. 1913 — the famous march down Pennsylvania Avenue the day before Woodrow Wilson's inauguration
-         SEARCH: women suffrage parade Washington DC 1913 Library of Congress
-         LINK: https://www.loc.gov/pictures/item/2011660621/ (suggested, not guaranteed) -->
-    <img class="img-inset-left" src="images/S1/L03/S1L03_WomenSuffrageParade.jpg" alt="Women's suffrage parade, Washington D.C., 1913">
-    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Women's suffrage parade, Pennsylvania Avenue, Washington D.C., March 3, 1913. Library of Congress.</p>
-
-    <p>Women were at the center of nearly every Progressive Era <span class="vocab">reform<span class="tip">A change made to fix something wrong with a law, system, or institution — usually by working through government rather than revolution.</span></span>. Jane Addams ran Hull House in Chicago, a settlement house where immigrant families could get English classes, childcare, and legal help. Florence Kelley fought for minimum wage laws and an end to child labor. Ida B. Wells documented the horror of lynching and demanded federal anti-lynching laws. These women could not vote for most of this period; yet they changed the country more than most elected officials did.</p>
-
-    <p>When you see a food safety label on a package, a minimum wage law, or a child labor prohibition, you are looking at the direct result of this era. The Progressives built the regulatory state that still governs American business today.</p>
-
-    <div class="clearfix"></div>
-  </section>
-
-  <div class="divider">&#9670; &#9670; &#9670;</div>
-
-  <!-- SECTION 3 — SOCIAL GOSPEL vs SOCIAL DARWINISM -->
-  <section class="content-section" id="gospel-darwin">
-    <h2 class="section-heading">Two Ways of Seeing Poverty: Social Gospel vs. Social Darwinism</h2>
-
-    <p>Behind every political argument about poverty and government action, there is a deeper argument about why people are poor in the first place. During the Progressive Era, two completely opposite ideas were fighting for the soul of American society.</p>
-
-    <div class="contrast-box">
-      <div class="contrast-col">
-        <h3>Social Darwinism</h3>
-        <p>Argued that society, like nature, is a competition where the strongest survive. If you are poor, it is because you are weak or lazy. Government assistance only helps the weak survive and breed, which makes society weaker overall. The rich are rich because they are naturally superior. Leave the market alone and let the winners win.</p>
-      </div>
-      <div class="contrast-col">
-        <h3>Social Gospel</h3>
-        <p>Argued that Christian duty requires believers to fight poverty and injustice in this world, not just pray for salvation in the next. If people are poor, it is because the system is unjust. Christians are responsible for changing that system. Faith without action to help the suffering is empty.</p>
-      </div>
-    </div>
-
-    <!-- FILENAME: S1L03_WalterRauschenbusch.jpg
+         FIND: Portrait or illustration of George Whitefield preaching — the central evangelist of the First Great Awakening, circa 1740s
+         SEARCH: George Whitefield preaching portrait 1740s Great Awakening Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:George_Whitefield_3.jpg (suggested, not guaranteed) -->
+    <img src="images/S1/L03/S1L03_FirstGreatAwakeningWhitefield.jpg" alt="George Whitefield, evangelist of the First Great Awakening, circa 1740s">
+    <!-- FILENAME: S1L03_SecondGreatAwakeningCampMeeting.jpg
          PLACE IN: images/S1/L03/
-         FIND: Portrait photograph of Walter Rauschenbusch — Baptist minister and leading Social Gospel theologian, author of "Christianity and the Social Crisis" 1907
-         SEARCH: Walter Rauschenbusch portrait photograph Social Gospel Baptist Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Walter_Rauschenbusch.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-right" src="images/S1/L03/S1L03_WalterRauschenbusch.jpg" alt="Walter Rauschenbusch, Social Gospel theologian, circa 1907">
-    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">Walter Rauschenbusch, Baptist minister and Social Gospel leader, circa 1907. <em>Wikimedia Commons.</em></p>
+         FIND: Illustration or painting of a Second Great Awakening camp meeting, circa 1800-1830 — crowds gathered outdoors for revival
+         SEARCH: Second Great Awakening camp meeting illustration 1800s Wikimedia Commons Library of Congress
+         LINK: https://commons.wikimedia.org/wiki/File:Cane_Ridge_Revival.jpg (suggested, not guaranteed) -->
+    <img src="images/S1/L03/S1L03_SecondGreatAwakeningCampMeeting.jpg" alt="Second Great Awakening camp meeting revival, circa 1800-1830">
+  </div>
+  <p class="img-caption">Left: George Whitefield, First Great Awakening preacher. Right: Second Great Awakening camp meeting. Wikimedia Commons.</p>
+  <p class="para-standard">Long before the Populists and Progressives, religious revival movements changed American politics. Historians call these waves the Great Awakenings. They pushed people to think about equality, sin, reform, and personal responsibility in new ways.</p>
+  <p class="para-simple">Long before the Populists and Progressives, religious revivals changed American life. These were called the Great Awakenings. They made people think about equality, sin, reform, and responsibility.</p>
+  <p class="para-standard">The First Great Awakening spread through the colonies in the 1730s and 1740s. Preachers like George Whitefield told crowds that salvation was personal and emotional. If every soul was equal before God, some people began to ask why people were not equal before the law.</p>
+  <p class="para-simple">The First Great Awakening happened in the 1730s and 1740s. Preachers said faith was personal. They said every soul mattered. This helped people ask why people were not equal under the law.</p>
+  <p class="para-standard">The Second Great Awakening spread from about 1800 to 1840. It helped fuel abolition, temperance, education reform, and women's rights. Many reformers believed that if slavery was a sin, Christians had a duty to end it.</p>
+  <p class="para-simple">The Second Great Awakening happened from about 1800 to 1840. It helped inspire the fight against slavery. It also supported temperance, schools, and women's rights.</p>
+  <!-- FILENAME: S1L03_FirstAmendmentDoc.jpg
+       PLACE IN: images/S1/L03/
+       FIND: Photograph of the Bill of Rights original document — focusing on the First Amendment text, National Archives
+       SEARCH: Bill of Rights original document photograph First Amendment National Archives Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg (suggested, not guaranteed) -->
+  <img class="img-inset-right" src="images/S1/L03/S1L03_FirstAmendmentDoc.jpg" alt="Bill of Rights, original document, showing First Amendment">
+  <p class="img-caption" style="float:right;width:42%;margin-left:28px;margin-top:-18px;">The Bill of Rights, original document. Wikimedia Commons.</p>
+  <p class="para-standard">These movements also raised questions about <span class="vocab">religious liberty<span class="tip">The right to practice any religion, or no religion.</span></span>. The First Amendment protects free exercise of religion and blocks the government from creating an official religion. This double protection has shaped American debates ever since.</p>
+  <p class="para-simple">These movements also raised questions about <span class="vocab-red">religious liberty</span>. The First Amendment protects people's faith. It also stops the government from creating an official religion.</p>
+</section>
 
-    <p>Social Darwinism took its name from Charles Darwin's theory of evolution but misapplied it to human society. Darwin's theory described how species evolved through natural selection over millions of years. Social Darwinists, led by thinkers like Herbert Spencer and Andrew Carnegie, applied this to economics: the poor are poor because they lost in a fair competition, and helping them only interferes with the natural order. Carnegie himself wrote a famous essay called "The Gospel of Wealth," arguing that the rich had a duty to spend their money on libraries and universities — but not on wages or labor protections.</p>
+<div class="divider">◆ ◆ ◆</div>
 
-    <p>The <span class="vocab">Social Gospel<span class="tip">A religious movement in the late 1800s and early 1900s that argued Christians had a duty to fight poverty and injustice in society, not just focus on personal salvation.</span></span> movement pushed back hard. A Baptist minister named Walter Rauschenbusch published <em>Christianity and the Social Crisis</em> in 1907. He argued that Jesus's teachings were fundamentally about justice in this world: feeding the hungry, housing the poor, treating workers fairly. He said that an economy that kept millions in poverty while a few grew fabulously rich was a sin, not just a policy problem.</p>
-
-    <p>The Social Gospel gave moral fuel to the Progressive movement. It told reformers that their work was not just politically correct but spiritually required. Settlement houses like Hull House were often run by people whose motivation was religious as much as political. The argument between these two worldviews: whether poverty is a personal failure or a systemic injustice: is still the central debate in American politics today.</p>
-
-    <div class="clearfix"></div>
-  </section>
-
-  <div class="divider">&#9670; &#9670; &#9670;</div>
-
-  <!-- PRIMARY SOURCE 2 — SOCIAL GOSPEL -->
+<section id="primary-source-moment" class="content-section">
+  <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
   <div class="pullquote">
-    <blockquote>"Whoever sets any bounds for the reconstructive power of the religious life over the social order, limits the redemption of Jesus Christ... The gospel, to have power over an age, must be the highest expression of the moral and spiritual truths held by that age."</blockquote>
-    <p class="attribution">Walter Rauschenbusch, <em>Christianity and the Social Crisis</em>, 1907</p>
-    <p class="narrator">Rauschenbusch was telling American churches that they could not stay silent about poverty and injustice; he argued that a Christianity that only worried about individual souls and ignored suffering in the streets had already lost its power.</p>
+    <blockquote>"We meet in the midst of a nation brought to the verge of moral, political, and material ruin."</blockquote>
+    <p class="attribution">Ignatius Donnelly, Preamble to the Omaha Platform, People's Party, July 4, 1892</p>
+    <p class="narrator">The Populists used dramatic language because they believed democracy itself was being damaged by concentrated wealth and power.</p>
   </div>
   <div class="pullquote-questions">
-    <p>1. In your own words, what is Rauschenbusch arguing that the church must do? What does he say happens to religion if it refuses?</p>
-    <p>2. How does this connect to our Essential Question? How did religious ideas like this one push America to change?</p>
+    <p>1. What problem does this source say is harming the country?</p>
+    <p>2. How does this source connect to the essential question about ordinary people pushing America to live up to its ideals?</p>
   </div>
+</section>
 
-  <div class="divider">&#9670; &#9670; &#9670;</div>
-
-  <!-- SECTION 4 — GREAT AWAKENINGS AND RELIGIOUS LIBERTY -->
-  <section class="content-section" id="great-awakenings">
-    <h2 class="section-heading">America's Religious Earthquakes: The Great Awakenings</h2>
-
-    <div class="img-pair">
-      <!-- FILENAME: S1L03_FirstGreatAwakeningWhitefield.jpg
+<div class="brain-break tn-break" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">REFORM MOVEMENTS BEGIN WHEN ORDINARY PEOPLE DECIDE THAT POWERFUL SYSTEMS ARE NOT TOO BIG TO CHALLENGE.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1913</span>
+      <!-- FILENAME: S1L03_WomenSuffrageParade.jpg
            PLACE IN: images/S1/L03/
-           FIND: Portrait or illustration of George Whitefield preaching — the central evangelist of the First Great Awakening, circa 1740s
-           SEARCH: George Whitefield preaching portrait 1740s Great Awakening Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:George_Whitefield_3.jpg (suggested, not guaranteed) -->
-      <img src="images/S1/L03/S1L03_FirstGreatAwakeningWhitefield.jpg" alt="George Whitefield, evangelist of the First Great Awakening, circa 1740s">
-      <!-- FILENAME: S1L03_SecondGreatAwakeningCampMeeting.jpg
-           PLACE IN: images/S1/L03/
-           FIND: Illustration or painting of a Second Great Awakening camp meeting, circa 1800-1830 — crowds gathered outdoors for revival, famous for emotional religious fervor
-           SEARCH: Second Great Awakening camp meeting illustration 1800s Wikimedia Commons Library of Congress
-           LINK: https://commons.wikimedia.org/wiki/File:Cane_Ridge_Revival.jpg (suggested, not guaranteed) -->
-      <img src="images/S1/L03/S1L03_SecondGreatAwakeningCampMeeting.jpg" alt="Second Great Awakening camp meeting revival, circa 1800-1830">
+           FIND: Women's suffrage parade, Washington D.C. 1913; reused for Then and Now because it shows reformers using public protest to demand political rights.
+           SEARCH: women suffrage parade Washington DC 1913 Library of Congress
+           LINK: https://www.loc.gov/pictures/item/2011660621/ (suggested, not guaranteed) -->
+      <img src="images/S1/L03/S1L03_WomenSuffrageParade.jpg" alt="Women's suffrage parade, Washington D.C., 1913">
+      <p class="tn-caption">Women march for voting rights in Washington, D.C., 1913.</p>
     </div>
-    <p class="img-caption">Left: George Whitefield, key preacher of the First Great Awakening, 1740s. Right: Camp meeting revival of the Second Great Awakening, circa 1800-1830. <em>Wikimedia Commons.</em></p>
-
-    <p>Long before the Populists and Progressives, America had another kind of mass movement: waves of religious revival that swept the country and changed its politics just as dramatically. Historians call these waves the Great Awakenings, and there were four of them between the 1730s and the early 1900s.</p>
-
-    <p>The First Great Awakening hit the American colonies in the 1730s and 1740s. Preachers like George Whitefield drew crowds of thousands in open fields. They preached that salvation was a personal, emotional experience: available to everyone, not just the well-born or the educated. This was a radical democratic idea in a society still organized around class and privilege. If every soul was equal before God, why weren't people equal before the law?</p>
-
-    <p>The Second Great Awakening rolled through America between roughly 1800 and 1840. It produced camp meetings where thousands of people gathered outdoors for days of preaching and singing. It also produced the abolition movement. If slavery was a sin, the argument went, then God required Christians to end it. Many of the most committed abolitionists: people who dedicated their lives to destroying slavery: were motivated entirely by religious conviction. The Second Great Awakening made the Civil War possible by convincing millions of Northerners that slavery was not just economically problematic but morally intolerable.</p>
-
-    <!-- FILENAME: S1L03_FirstAmendmentDoc.jpg
-         PLACE IN: images/S1/L03/
-         FIND: Photograph of the Bill of Rights original document — focusing on the First Amendment text, National Archives
-         SEARCH: Bill of Rights original document photograph First Amendment National Archives Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-right" src="images/S1/L03/S1L03_FirstAmendmentDoc.jpg" alt="Bill of Rights, original document, National Archives, showing First Amendment">
-    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">The Bill of Rights, original document, National Archives, Washington D.C. The First Amendment protects both the free exercise of religion and the government's separation from it. <em>Wikimedia Commons.</em></p>
-
-    <p>Running through all of these revivals was a fundamental question about <span class="vocab">religious liberty<span class="tip">The right to practice any religion you choose, or no religion, without the government telling you what to believe or forcing you to support a particular church.</span></span> in America. The First Amendment does two things that seem almost contradictory: it forbids the government from establishing an official religion, AND it protects people's right to practice any religion freely. This double protection was deliberately designed. The founders had seen what happened in Europe when governments picked winners in religious disputes; they wanted no part of it in America.</p>
-
-    <p>But religious liberty has always been contested. The Great Awakenings produced movements that wanted to use the power of government to enforce their religious vision: Prohibition being the clearest example. The argument about where religious freedom ends and government neutrality begins is one of the oldest and most unresolved arguments in American life.</p>
-
-    <p>Today, debates about prayer in public schools, religious exemptions from civil rights laws, and the role of faith in politics all trace directly back to the First Amendment tension the founders built in deliberately.</p>
-
-    <div class="clearfix"></div>
-  </section>
-
-  <div class="divider">&#9670; &#9670; &#9670;</div>
-
-  <!-- LOCAL HISTORY CONNECTION -->
-  <section id="local-history">
-    <div class="local-card">
-      <div class="local-card-headline">&#9670; Local History: San Diego's Free Speech Fight and the Railroad King</div>
-
-      <!-- FILENAME: S1L03_IWWSanDiego1912.jpg
+    <div class="tn-item">
+      <span class="tn-era-label">TODAY</span>
+      <!-- FILENAME: S1L03_Now_WorkersOrganizing.jpg
            PLACE IN: images/S1/L03/
-           FIND: Photograph of IWW free speech fight in San Diego, 1912 — protesters, arrests on 5th Street, or related imagery. If no direct image exists, use a general IWW Wobblies protest photograph circa 1912.
-           SEARCH: IWW Industrial Workers of the World San Diego 1912 free speech fight photograph Wikimedia Commons Library of Congress
-           LINK: https://commons.wikimedia.org/wiki/Category:Industrial_Workers_of_the_World (suggested, not guaranteed) -->
-      <img style="width:100%; margin-bottom:16px; border:2px solid var(--brass-light); filter:sepia(20%);" src="images/S1/L03/S1L03_IWWSanDiego1912.jpg" alt="IWW free speech fight, San Diego, 1912">
-      <p class="img-caption" style="color:#b0b8c4; margin-top:-10px; margin-bottom:16px;">IWW (Industrial Workers of the World) free speech protesters, circa 1912. In San Diego, labor activists were beaten and jailed for speaking publicly against railroad monopolies. <em>Wikimedia Commons / Library of Congress.</em></p>
-
-      <p>In 1912, the Progressive Era came to <span class="local-anchor">Fifth Street in downtown San Diego</span> in the form of a fistfight between workers and hired vigilantes. The Industrial Workers of the World (IWW), known as the Wobblies, had set up a soapbox on a street corner to organize low-wage workers against the streetcar and railroad monopoly of John D. Spreckels. Spreckels controlled San Diego's newspapers, streetcar lines, water company, and ferry service. He was the city's version of Standard Oil: one man, nearly all the power.</p>
-      <p>When San Diego banned public speaking in a large section of downtown to silence the IWW, hundreds of activists flooded into the city from across California to deliberately break the law and get arrested. The jails overflowed. Vigilantes beat protesters with clubs while police watched. The American Civil Liberties Union later called it one of the most violent free speech fights in American history. Emma Goldman came to San Diego to protest and was driven out of the city at gunpoint. The fight put San Diego on the national map of Progressive Era labor battles.</p>
-    </div>
-  </section>
-
-  <div class="divider">&#9670; &#9670; &#9670;</div>
-
-  <!-- HOW THIS STILL MATTERS TODAY -->
-  <section id="still-matters">
-    <div class="still-matters">
-      <div class="still-matters-headline">The same fights over poverty, power, religion, and free speech that defined this era are the fights happening in your lifetime.</div>
-
-      <p style="color:var(--newsprint); font-size:18px; margin-bottom:20px; line-height:1.8;">The minimum wage. Food safety. Child labor laws. The income tax. The right to organize a union. Religious exemptions from anti-discrimination laws. Government surveillance of activists. Every one of these is a live political fight right now. The Populists and Progressives did not settle these arguments; they gave us the vocabulary and the tools to keep having them.</p>
-
-      <ul class="news-links">
-        <li><a href="https://www.npr.org/tags/130607764/labor-unions" target="_blank" rel="noopener">The Return of Organized Labor: Workers Organizing Across the Country — NPR</a></li>
-        <li><a href="https://www.pbs.org/newshour/economy/child-labor-us" target="_blank" rel="noopener">Child Labor Violations on the Rise in the United States — PBS NewsHour</a></li>
-        <li><a href="https://www.nytimes.com/topic/subject/religion-and-belief" target="_blank" rel="noopener">Religion, Government, and the Courts: Where Does Freedom End? — New York Times</a></li>
-      </ul>
-
-      <!-- FILENAME: S1L03_ModernLaborProtest.jpg
-           PLACE IN: images/S1/L03/
-           FIND: Modern labor union protest or workers' strike photograph — recent, showing workers with signs, ideally minimum wage or union organizing context
-           SEARCH: labor union protest workers strike sign minimum wage Wikimedia Commons
+           FIND: Modern workers organizing or labor protest photograph with signs; use as a historical comparison to Populist and Progressive reform tactics.
+           SEARCH: workers organizing labor protest signs Wikimedia Commons
            LINK: https://commons.wikimedia.org/wiki/Category:Labor_strikes_in_the_United_States (suggested, not guaranteed) -->
-      <img style="width:100%; margin:24px 0 10px; border:2px solid var(--brass-light);" src="images/S1/L03/S1L03_ModernLaborProtest.jpg" alt="Modern labor union protest, workers on strike">
-      <p style="font-size:13px; font-style:italic; color:#b0b8c4; margin-bottom:0;">Modern labor protest, United States. The same arguments about corporate power and workers' rights that Populists made in 1892 are still being made today. <em>Wikimedia Commons.</em></p>
-
-      <p class="closing-question">If you were a reformer today, what would be your cause; and what tool from this era: journalism, legislation, protest, or religion: would you use to fight for it?</p>
+      <img src="images/S1/L03/S1L03_Now_WorkersOrganizing.jpg" alt="Modern workers organizing or protesting with signs">
+      <p class="tn-caption">Workers organize publicly for labor rights.</p>
     </div>
-  </section>
+  </div>
+  <p class="tn-closing">The signs look different, but the posture is familiar: people step into public view when private suffering has become a public problem.</p>
+</div>
 
-</div><!-- end content-wrap -->
-
-<!-- ===== FOOTER ===== -->
-<footer class="page-footer">
-  US History &mdash; Semester 1, Lesson 03 &nbsp;|&nbsp; Populism, Progressivism, and Religion
-</footer>
-
-<!-- ===== VOCAB + SMOOTH SCROLL JS ===== -->
+</div>
+<footer class="page-footer">US HISTORY — SEMESTER 1, LESSON 03 — POPULISM, PROGRESSIVISM, AND RELIGION</footer>
 <script>
-  document.querySelectorAll('.vocab').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      e.stopPropagation();
-      document.querySelectorAll('.vocab.active').forEach(function(v) {
-        if (v !== el) v.classList.remove('active');
-      });
-      el.classList.toggle('active');
-    });
+document.getElementById('lexile-toggle').addEventListener('click', function() {
+  document.body.classList.toggle('simplified');
+  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
+document.querySelectorAll('.vocab').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v) { if (v !== el) v.classList.remove('active'); });
+    el.classList.toggle('active');
   });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      v.classList.remove('active');
-    });
+});
+document.addEventListener('click', function() { document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); }); });
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+    if (link) {
+      if (entry.isIntersecting) link.classList.add('active');
+      else link.classList.remove('active');
+    }
   });
-
-  document.querySelectorAll('.section-nav a').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+}, { threshold: 0.25 });
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 </script>
-
 </body>
 </html>
-
-<!--
-IMAGE CHECKLIST FOR SSU_S1L03.html
-
-S1L03_ChildLaborMinesHeader.jpg — Header BG: Lewis Hine child labor photograph, coal mine or factory, circa 1910 — Suggested link: https://www.loc.gov/pictures/collection/nclc/
-S1L03_MaryLeaseSpeaking.jpg — Mary Elizabeth Lease, Kansas Populist orator, circa 1890s — Suggested link: https://commons.wikimedia.org/wiki/File:Mary_Elizabeth_Lease.jpg
-S1L03_PopulistPlatform1892.jpg — Populist Party / People's Party campaign material, 1892 — Suggested link: https://commons.wikimedia.org/wiki/Category:Populist_Party_(United_States)
-S1L03_Upton_Sinclair_Jungle.jpg — First edition cover of The Jungle by Upton Sinclair, 1906 — Suggested link: https://commons.wikimedia.org/wiki/File:The_Jungle_book_cover.jpg
-S1L03_ChildLaborLewinHine.jpg — Lewis Hine photograph of child workers in textile mill, circa 1908-1910 — Suggested link: https://www.loc.gov/pictures/item/ncl2004001033/PP/
-S1L03_WomenSuffrageParade.jpg — Women's suffrage parade, Washington D.C., March 3, 1913 — Suggested link: https://www.loc.gov/pictures/item/2011660621/
-S1L03_WalterRauschenbusch.jpg — Walter Rauschenbusch, Social Gospel theologian, circa 1907 — Suggested link: https://commons.wikimedia.org/wiki/File:Walter_Rauschenbusch.jpg
-S1L03_FirstGreatAwakeningWhitefield.jpg — George Whitefield, First Great Awakening evangelist, 1740s — Suggested link: https://commons.wikimedia.org/wiki/File:George_Whitefield_3.jpg
-S1L03_SecondGreatAwakeningCampMeeting.jpg — Second Great Awakening camp meeting revival illustration, circa 1800-1830 — Suggested link: https://commons.wikimedia.org/wiki/File:Cane_Ridge_Revival.jpg
-S1L03_FirstAmendmentDoc.jpg — Bill of Rights original document, National Archives, First Amendment — Suggested link: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_Pg1of1_AC.jpg
-S1L03_IWWSanDiego1912.jpg — IWW free speech fight, San Diego 1912 / IWW protest circa 1912 — Suggested link: https://commons.wikimedia.org/wiki/Category:Industrial_Workers_of_the_World
-S1L03_ModernLaborProtest.jpg — Modern labor union protest / workers strike with signs — Suggested link: https://commons.wikimedia.org/wiki/Category:Labor_strikes_in_the_United_States
--->
