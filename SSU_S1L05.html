@@ -3,884 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSU S1L05 — The Roaring Twenties</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<title>SSU S1L05 — THE ROARING TWENTIES</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;900&family=Atkinson+Hyperlegible:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  /* ─── DESIGN TOKENS — Harlem Renaissance / Roaring Twenties
-         Warm near-black ground, deep gold, art deco geometry,
-         cream text on dark; parchment panels for reading surface ─── */
-  :root {
-    --black:          #12100e;
-    --near-black:     #1c1810;
-    --charcoal:       #2c2418;
-    --panel:          #f0e6cc;
-    --panel-mid:      #e4d8b8;
-    --panel-dark:     #cbbf9a;
-    --ink:            #160e04;
-    --ink-mid:        #241808;
-    --gold:           #c8900a;
-    --gold-light:     #e4b030;
-    --gold-pale:      #f0d080;
-    --burgundy:       #6a1828;
-    --burgundy-light: #8c2038;
-    --teal:           #1a5048;
-    --rule:           #7a5c20;
-    --vocab-color:    #b03030;
-    --shadow:         rgba(18,16,14,0.40);
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--near-black);
-    background-image:
-      repeating-linear-gradient(
-        45deg,
-        transparent 0px, transparent 28px,
-        rgba(200,144,10,0.03) 28px, rgba(200,144,10,0.03) 29px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        transparent 0px, transparent 28px,
-        rgba(200,144,10,0.03) 28px, rgba(200,144,10,0.03) 29px
-      );
-    font-family: 'Spectral', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.85;
-    color: var(--ink);
-  }
-
-  .page-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    background: var(--panel);
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent 0px, transparent 29px,
-        rgba(122,92,32,0.06) 29px, rgba(122,92,32,0.06) 30px
-      );
-    box-shadow: 0 0 100px rgba(0,0,0,0.80), inset 0 0 80px rgba(200,144,10,0.04);
-  }
-
-  /* ════ HEADER — art deco geometry, gold on near-black ════ */
-  .site-header {
-    position: relative;
-    overflow: hidden;
-    min-height: 440px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0;
-    background: var(--near-black);
-  }
-
-  /* Art deco top border strip */
-  .site-header::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 8px;
-    background: repeating-linear-gradient(
-      90deg,
-      var(--gold) 0px, var(--gold) 16px,
-      var(--near-black) 16px, var(--near-black) 20px,
-      var(--gold-light) 20px, var(--gold-light) 24px,
-      var(--near-black) 24px, var(--near-black) 28px
-    );
-    z-index: 3;
-  }
-
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('images/S1/L05/S1L05_HeaderBg.jpg');
-    background-size: cover;
-    background-position: center 30%;
-    opacity: 0.28;
-    filter: sepia(30%) contrast(1.1);
-  }
-
-  .header-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(18,16,14,0.30) 0%,
-      rgba(18,16,14,0.55) 45%,
-      rgba(18,16,14,0.94) 100%
-    );
-  }
-
-  .header-content {
-    position: relative;
-    z-index: 2;
-    padding: 44px 50px 40px;
-  }
-
-  .course-label {
-    font-family: 'Spectral', serif;
-    font-size: 11px;
-    letter-spacing: 0.55em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    display: block;
-    margin-bottom: 14px;
-  }
-
-  .page-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
-    font-weight: 700;
-    color: var(--gold-pale);
-    line-height: 1.0;
-    margin-bottom: 6px;
-    text-shadow: 2px 3px 18px rgba(0,0,0,0.85);
-    letter-spacing: 0.02em;
-  }
-
-  .page-dates {
-    font-family: 'Spectral', serif;
-    font-style: italic;
-    font-size: 19px;
-    color: var(--panel-dark);
-    margin-bottom: 28px;
-    opacity: 0.85;
-  }
-
-  .eq-banner {
-    background: rgba(18,16,14,0.90);
-    border-left: 5px solid var(--gold);
-    border-right: 5px solid var(--gold);
-    border-top: 1px solid rgba(200,144,10,0.4);
-    border-bottom: 1px solid rgba(200,144,10,0.4);
-    padding: 18px 28px;
-    width: 100%;
-  }
-
-  .eq-label {
-    font-size: 10px;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .eq-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--panel);
-    line-height: 1.4;
-  }
-
-  /* ════ NAV BAR — deep near-black with gold accent ════ */
-  .section-nav {
-    background: var(--charcoal);
-    padding: 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-    border-bottom: 3px solid var(--gold);
-    border-top: 1px solid rgba(200,144,10,0.25);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .section-nav a {
-    display: inline-block;
-    padding: 13px 16px;
-    font-family: 'Spectral', serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: var(--panel-dark);
-    text-decoration: none;
-    text-transform: uppercase;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -3px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .section-nav a:hover {
-    color: var(--gold-light);
-    border-bottom-color: var(--gold-light);
-  }
-
-  /* ════ CONTENT ════ */
-  .content { padding: 0 50px; }
-
-  /* ════ DIVIDER — art deco double rule ════ */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 30px 50px;
-  }
-  .divider-line { flex: 1; height: 1px; background: var(--rule); opacity: 0.5; }
-  .divider-double {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-  .divider-double span {
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.7;
-  }
-  .divider-double span:nth-child(2) { width: 20px; opacity: 0.4; }
-  .divider-ornament {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--gold);
-    opacity: 0.75;
-    margin: 0 6px;
-  }
-
-  /* ════ INTRO ════ */
-  .intro-block {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 22px;
-    line-height: 1.7;
-    color: var(--ink-mid);
-    border-left: 4px solid var(--gold);
-    padding: 4px 0 4px 24px;
-    margin-bottom: 8px;
-  }
-
-  /* ════ SECTION ════ */
-  .section { scroll-margin-top: 60px; padding-top: 8px; }
-
-  h2.ch {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--charcoal);
-    line-height: 1.15;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 12px;
-    letter-spacing: 0.01em;
-  }
-
-  p { margin-bottom: 20px; }
-  p:last-child { margin-bottom: 0; }
-
-  /* ════ VOCAB ════ */
-  .vocab {
-    color: var(--vocab-color);
-    text-decoration: underline dotted var(--vocab-color);
-    cursor: help;
-    position: relative;
-    font-weight: 600;
-  }
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--charcoal);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 3px;
-    font-size: 14px;
-    line-height: 1.4;
-    z-index: 50;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    border-left: 3px solid var(--gold-light);
-    max-width: 280px;
-    white-space: normal;
-    width: max-content;
-  }
-  .vocab:hover .tip,
-  .vocab.active .tip { display: block; }
-
-  .vocab-plain { color: var(--vocab-color); font-weight: 600; }
-
-  /* ════ IMAGES ════ */
-  .img-full { margin: 32px 0; }
-  .img-full img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 5px 5px 22px var(--shadow);
-  }
-
-  .img-inset-left {
-    float: left;
-    width: 45%;
-    margin: 6px 28px 18px 0;
-  }
-  .img-inset-left img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 4px 4px 18px var(--shadow);
-  }
-
-  .img-inset-right {
-    float: right;
-    width: 44%;
-    margin: 6px 0 18px 28px;
-  }
-  .img-inset-right img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 4px 4px 18px var(--shadow);
-  }
-
-  .img-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 32px 0;
-  }
-  .img-pair img {
-    width: 100%;
-    display: block;
-    border: 3px solid var(--rule);
-    box-shadow: 4px 4px 18px var(--shadow);
-  }
-
-  .clearfix::after { content: ''; display: table; clear: both; }
-
-  figcaption {
-    font-family: 'Spectral', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: var(--ink-mid);
-    margin-top: 8px;
-    line-height: 1.4;
-    opacity: 0.8;
-  }
-  .img-pair figcaption { font-size: 13px; }
-
-  /* ════ PULLQUOTE — deep near-black with gold left border ════ */
-  .pullquote {
-    background: var(--near-black);
-    color: var(--panel);
-    margin: 36px -10px;
-    padding: 36px 46px 30px;
-    border-left: 6px solid var(--gold);
-    position: relative;
-  }
-  .pullquote::before {
-    content: '\201C';
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 120px;
-    color: var(--gold);
-    position: absolute;
-    top: -18px;
-    left: 18px;
-    line-height: 1;
-    opacity: 0.22;
-    pointer-events: none;
-  }
-  .pullquote-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    position: relative;
-  }
-  .pullquote-attr {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 14px;
-  }
-  .pullquote-narrator {
-    font-size: 16px;
-    color: #c8b888;
-    border-top: 1px solid rgba(200,144,10,0.35);
-    padding-top: 14px;
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-  .pullquote-questions {
-    border-top: 1px solid rgba(200,144,10,0.35);
-    padding-top: 16px;
-  }
-  .pullquote-questions p {
-    font-size: 16px;
-    color: #d8c8a0;
-    margin-bottom: 10px;
-    line-height: 1.55;
-  }
-  .pullquote-questions strong { color: var(--gold-light); }
-
-  .pullquote-small {
-    background: var(--charcoal);
-    color: var(--panel);
-    margin: 28px 0;
-    padding: 26px 34px;
-    border-left: 5px solid var(--gold);
-  }
-  .pullquote-small .pullquote-text { font-size: 20px; margin-bottom: 10px; }
-  .pullquote-small .pullquote-narrator { font-size: 15px; margin-bottom: 0; }
-
-  /* ════ HARLEM PROFILE CARDS ════ */
-  .profile-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin: 28px 0;
-  }
-  .profile-card {
-    background: var(--near-black);
-    color: var(--panel);
-    padding: 22px 24px;
-    border-top: 4px solid var(--gold);
-    border-bottom: 1px solid rgba(200,144,10,0.2);
-  }
-  .profile-card h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--gold-light);
-    margin-bottom: 6px;
-  }
-  .profile-card .role {
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--panel-dark);
-    margin-bottom: 10px;
-    opacity: 0.75;
-  }
-  .profile-card p { font-size: 15px; line-height: 1.6; color: #d8c8a8; margin-bottom: 0; }
-
-  /* ════ HOW THIS STILL MATTERS ════ */
-  #still-matters { scroll-margin-top: 60px; }
-
-  .still-matters-block {
-    background: var(--near-black);
-    color: var(--panel);
-    margin: 36px -10px;
-    padding: 44px 50px;
-    border-top: 4px solid var(--gold);
-    border-bottom: 4px solid var(--gold);
-  }
-  .still-matters-block h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--gold-light);
-    margin-bottom: 22px;
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .still-now-headline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-weight: 600;
-    color: var(--panel);
-    margin-bottom: 26px;
-    line-height: 1.35;
-  }
-  .news-list {
-    list-style: none;
-    margin-bottom: 28px;
-    border-top: 1px solid rgba(200,144,10,0.3);
-  }
-  .news-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(200,144,10,0.3);
-    font-size: 17px;
-    line-height: 1.5;
-  }
-  .news-list li a {
-    color: var(--gold-light);
-    text-decoration: underline;
-    font-weight: 600;
-    cursor: default;
-  }
-  .still-closing-q {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-style: italic;
-    color: var(--panel);
-    margin-top: 28px;
-    line-height: 1.5;
-    border-left: 4px solid var(--gold);
-    padding-left: 20px;
-  }
-
-  /* ════ FOOTER ════ */
-  .page-footer {
-    background: var(--near-black);
-    color: var(--panel-dark);
-    text-align: center;
-    padding: 18px;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-top: 3px solid var(--gold);
-  }
-
-  /* ════ RESPONSIVE ════ */
-  @media (max-width: 620px) {
-    .content { padding: 0 22px; }
-    .page-title { font-size: 42px; }
-    .header-content { padding: 30px 22px 28px; }
-    .section-nav { padding: 0 10px; }
-    .section-nav a { font-size: 11px; padding: 10px 8px; }
-    .img-inset-left, .img-inset-right { float: none; width: 100%; margin: 0 0 18px 0; }
-    .img-pair, .profile-cards { grid-template-columns: 1fr; }
-    .pullquote, .still-matters-block { margin: 28px 0; padding: 28px 22px; }
-  }
+:root{--black:#15120f;--charcoal:#2a2118;--panel:#f2e7ca;--panel2:#fff6df;--ink:#1b1208;--gold:#b88916;--gold2:#f0c75e;--burgundy:#681827;--teal:#006d68;--purple:#35154f;--cobalt:#123c73;--orange:#ff7a21;--red:#b03030;--muted:#5e4a31}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:radial-gradient(circle at 20% 0,rgba(240,199,94,.16),transparent 28%),repeating-linear-gradient(45deg,rgba(240,199,94,.045) 0 2px,transparent 2px 30px),var(--black);font-family:'Atkinson Hyperlegible',Arial,sans-serif;font-size:18px;line-height:1.85;color:var(--ink)}.page-wrap{max-width:920px;margin:0 auto;background:var(--panel);box-shadow:0 0 90px rgba(0,0,0,.75);border-left:7px solid var(--gold);border-right:7px solid var(--gold)}.site-header{position:relative;min-height:455px;overflow:hidden;background:var(--black);display:flex;align-items:flex-end}.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:sepia(.25) contrast(1.08)}.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(21,18,15,.12),rgba(21,18,15,.7) 62%,rgba(21,18,15,.96))}.site-header:before{content:"";position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,var(--gold) 0 18px,var(--black) 18px 24px,var(--gold2) 24px 30px,var(--black) 30px 36px);z-index:3}.header-inner{position:relative;z-index:4;max-width:820px;margin:0 auto;padding:60px 34px 48px;text-align:center}.course-label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold2);margin-bottom:16px}.page-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,8vw,82px);font-weight:900;line-height:.98;color:#fff3c8;text-transform:uppercase;letter-spacing:.04em;text-shadow:0 5px 24px rgba(0,0,0,.9);margin-bottom:12px}.page-dates{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.28em;color:#dbc28a;text-transform:uppercase;margin-bottom:25px}.eq-banner{display:inline-block;max-width:760px;background:rgba(104,24,39,.95);border:3px solid var(--gold2);border-left-width:8px;border-right-width:8px;color:white;text-align:left;padding:18px 26px;font-size:20px;line-height:1.45;font-weight:700}.eq-label{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold2);margin-bottom:7px}.section-nav{position:sticky;top:0;z-index:100;background:var(--charcoal);border-bottom:4px solid var(--gold);display:flex;justify-content:center;flex-wrap:wrap}.section-nav a{font-family:'Oswald',sans-serif;color:#ead7a8;text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:12px;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px}.section-nav a:hover{color:#fff;border-bottom-color:var(--gold2);background:rgba(255,255,255,.08)}#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--burgundy);background:transparent;color:var(--burgundy);transition:background .2s,color .2s}#lexile-toggle:hover{background:var(--burgundy);color:var(--panel2)}.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}.toc-sidebar{position:fixed;right:calc(50% - 590px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Oswald',sans-serif;z-index:50;background:rgba(42,33,24,.92);border-left:2px solid rgba(240,199,94,.45)}.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px}.toc-sidebar a{display:block;color:#ead7a8;text-decoration:none;padding:3px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase}.toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}main{max-width:820px;margin:0 auto;padding:0 28px 68px}.intro-section{padding:48px 0 28px}.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}.content-section{padding:50px 0 28px;border-top:3px double rgba(104,24,39,.35)}.section-kicker{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--burgundy);margin-bottom:8px}.section-heading{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,5vw,48px);line-height:1.08;font-weight:900;color:var(--charcoal);text-transform:uppercase;border-left:7px solid var(--gold);padding-left:16px;margin-bottom:26px}p{margin-bottom:20px}.real-world{background:#f8dfaa;border-left:5px solid var(--burgundy);padding:17px 21px;margin:30px 0;font-weight:700}.vocab{color:var(--red);text-decoration:underline dotted var(--red);cursor:help;position:relative;font-weight:700}.vocab-red{color:var(--red);font-weight:700}.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.45)}.vocab:hover .tip,.vocab.active .tip{display:block}figure{margin:32px 0}figure img{width:100%;display:block;border:3px solid var(--gold);box-shadow:0 8px 24px rgba(44,33,24,.3)}figcaption{font-size:13px;font-style:italic;color:var(--muted);margin-top:8px;line-height:1.45}.img-right{float:right;width:42%;margin:6px 0 20px 28px}.img-left{float:left;width:42%;margin:6px 28px 20px 0}.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}.img-pair figure{margin:0}.clearfix:after{content:"";display:table;clear:both}.profile-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}.profile-card{background:var(--charcoal);color:#f6e8c4;border-top:4px solid var(--gold);padding:21px 23px}.profile-card h3{font-family:'Oswald',sans-serif;font-size:17px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px}.profile-card p{font-size:15px;line-height:1.65;color:#f1ddb0;margin-bottom:0}.primary-source{background:var(--charcoal);border-left:7px solid var(--gold2);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.25)}.ps-label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}.ps-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-style:italic;line-height:1.55;color:#fff;margin-bottom:14px}.ps-attribution{font-size:13px;font-style:italic;color:#ead7a8;margin-bottom:12px}.ps-narrator{border-top:1px solid rgba(240,199,94,.45);padding-top:12px;font-size:15px;line-height:1.6;color:#f4ead8;font-weight:700}.ps-questions{background:#f1dbac;border:1px solid rgba(104,24,39,.3);padding:22px 26px;margin-bottom:38px}.ps-questions p{font-size:17px;margin-bottom:12px}.brain-break{font-family:'Oswald',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden}.bb-label{display:block;font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.85}.bb-text{font-family:'Oswald',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}.dyk-break{background:var(--teal);color:#fff;border-left:6px solid var(--orange)}.dyk-break .bb-label{color:#ffe56b}.ff-break{background:#17110d;color:#fff;padding:36px 40px;margin:0 -50px 44px;border-top:3px solid var(--gold2);border-bottom:3px solid var(--gold2);text-align:center}.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--gold2)}.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}.ff-item{text-align:center;padding:8px 12px}.ff-number{display:block;font-family:'Oswald',sans-serif;font-size:58px;font-weight:700;color:var(--gold2);line-height:1;margin-bottom:8px}.ff-desc{display:block;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#ffe8b7;max-width:140px;margin:0 auto;line-height:1.4}.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--gold2);border-bottom:3px solid var(--gold2);text-align:center}.as-break .bb-label{color:var(--gold2)}.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(240,199,94,.7);box-shadow:0 8px 32px rgba(0,0,0,.55)}.as-caption{font-family:'Oswald',sans-serif;font-style:normal;font-size:13px;color:#ffe8b7;line-height:1.5;margin-bottom:28px;display:block}.as-fact{font-family:'Oswald',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.6;max-width:700px;margin:0 auto;text-align:center}.tn-break{background:var(--cobalt);color:#fff;padding:36px 50px;margin:30px -50px 0}.tn-break .bb-label{color:var(--gold2);text-align:center;display:block;margin-bottom:20px}.tn-payoff{font-family:'Oswald',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--gold2);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;font-weight:700}.tn-item img{width:100%;display:block;border:2px solid rgba(240,199,94,.65)}.tn-caption{font-family:'Oswald',sans-serif;font-size:12px;font-style:italic;color:#ffe8b7;margin-top:8px;line-height:1.4}.tn-closing{font-family:'Oswald',sans-serif;font-size:20px;font-weight:500;text-align:center;color:#fff;margin-top:24px;line-height:1.5;border-top:1px solid rgba(240,199,94,.35);padding-top:20px}footer{background:var(--black);color:#ead7a8;text-align:center;padding:24px 30px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--gold)}@media(max-width:1100px){.toc-sidebar{display:none}}@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.img-pair,.profile-cards,.tn-pair{grid-template-columns:1fr}.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.tn-break{padding:28px 22px;margin:30px 0 0}.section-nav a{font-size:10px;padding:11px 8px}}@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}}
 </style>
 </head>
 <body>
 <div class="page-wrap">
-
-<!-- ════ HEADER ════ -->
 <header class="site-header">
-  <!-- FILENAME: S1L05_HeaderBg.jpg
-       PLACE IN: images/S1/L05/
-       FIND: A jazz club or ballroom scene from Harlem in the 1920s — the Cotton Club interior, or a famous photograph of jazz musicians performing in Harlem circa 1920-1930. Alternatively a panoramic street scene of Harlem during the Renaissance era.
-       SEARCH: Wikimedia Commons — "Harlem 1920s jazz Cotton Club" or "Harlem Renaissance photograph 1925"
-       LINK (suggested): https://commons.wikimedia.org/wiki/File:CottonClub.jpg -->
-  <div class="header-bg"></div>
-  <div class="header-overlay"></div>
-  <div class="header-content">
-    <span class="course-label">US History — Semester 1, Lesson 05</span>
-    <h1 class="page-title">The Roaring Twenties</h1>
-    <p class="page-dates">1920 – 1929</p>
-    <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      <div class="eq-text">How did prosperity, technology, and cultural explosion make the 1920s one of the most contradictory decades in American history?</div>
-    </div>
+  <!--
+    FILENAME: S1L05_Header_HarlemJazzClub.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Harlem jazz club, Cotton Club, or 1920s Harlem music scene; use as the faded header because jazz captures the decade's cultural energy
+    SEARCH: Harlem 1920s jazz club Cotton Club Wikimedia Commons Library of Congress
+    LINK: https://commons.wikimedia.org/wiki/File:CottonClub.jpg (suggested, not guaranteed)
+  -->
+  <img class="header-bg" src="images/S1/L05/S1L05_Header_HarlemJazzClub.jpg" alt="Harlem jazz club scene from the 1920s">
+  <div class="header-inner">
+    <div class="course-label">US HISTORY — SEMESTER 1, LESSON 05</div>
+    <h1 class="page-title">THE ROARING TWENTIES</h1>
+    <div class="page-dates">1920 TO 1929</div>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did prosperity, technology, and cultural change make the 1920s one of the most contradictory decades in American history?</div>
   </div>
 </header>
-
-<!-- ════ NAV BAR ════ -->
-<nav class="section-nav">
-  <a href="#prosperity">Boom Times</a>
-  <a href="#prohibition">Prohibition</a>
-  <a href="#women">Women and New Roles</a>
-  <a href="#harlem">The Harlem Renaissance</a>
-  <a href="#still-matters">Still Matters Today</a>
-</nav>
-
-<!-- ════ INTRO ════ -->
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-ornament">✦</div>
-  <div class="divider-line"></div>
-</div>
-
-<div class="content">
-  <p class="intro-block">New York City, 1925. Langston Hughes is 23 years old and living in Harlem. He works as a busboy at the Wardman Park Hotel in Washington. One night he sees the poet Vachel Lindsay eating dinner. Hughes puts three of his poems next to Lindsay's plate and walks away. The next morning Lindsay reads them to an audience and calls Hughes a genius. Nobody gave Hughes permission to be great. He just was.</p>
-  <p>The 1920s were a decade of wild contradictions. The economy boomed. Cars became affordable. Women won the right to vote. Black artists created one of the most important cultural movements in American history. And at the same time, the government banned alcohol, nativist movements tried to lock out immigrants, and racial violence surged across the country. The decade was both the best and worst of what America could be — often at the exact same moment.</p>
-</div>
-
-<!-- ════ SECTION 1 — PROSPERITY AND MASS PRODUCTION ════ -->
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-ornament">❧</div>
-  <div class="divider-line"></div>
-</div>
-
-<div class="content section" id="prosperity">
-  <h2 class="ch">Chapter 1 — Boom Times: The Economy Explodes</h2>
-
-  <div class="clearfix">
-    <!-- FILENAME: S1L05_AssemblyLine.jpg
-         PLACE IN: images/S1/L05/
-         FIND: Henry Ford's Model T assembly line at the Highland Park or River Rouge plant, circa 1913-1920 — the famous overhead photograph showing workers along the moving assembly line
-         SEARCH: Wikimedia Commons — "Ford Model T assembly line Highland Park 1913" or "Ford River Rouge assembly line"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Ford_assembly_line_-_1913.jpg -->
-    <figure class="img-inset-right">
-      <img src="images/S1/L05/S1L05_AssemblyLine.jpg" alt="Ford Model T assembly line, Highland Park plant, 1913">
-      <figcaption>Ford Model T assembly line, Highland Park, Michigan, 1913. Ford's moving assembly line cut the time to build a car from 12 hours to 93 minutes. | Library of Congress</figcaption>
-    </figure>
-
-    <p>The 1920s economy grew faster than almost any decade before it. The key was <span class="vocab">mass production<span class="tip">A manufacturing method that uses machines and assembly lines to make large numbers of identical products quickly and cheaply.</span></span>. Henry Ford's automobile factory in Michigan showed the country what was possible. Ford used a moving assembly line to build his Model T. Instead of one worker building a whole car, each worker did one small repeated task as the car moved past them on a conveyor belt. The time it took to build a car dropped from 12 hours to 93 minutes. The price dropped too, and suddenly ordinary workers could afford to buy what they made.</p>
-
-    <p>By 1927, one in five Americans owned a car. That number seems ordinary today; in 1910, almost nobody owned one. Cars changed everything: where people lived, where they shopped, how far they traveled for work. Suburbs grew around cities because people could now commute. Roads were paved. Gas stations appeared on every highway. A whole new economy grew up around the automobile.</p>
-
-    <p>Electricity spread through American homes at the same time. By 1929, two thirds of American homes had electric power. Electric appliances followed: refrigerators replaced ice boxes, washing machines replaced washboards, and vacuum cleaners replaced carpet beaters. Advertising grew into a massive industry telling Americans what they needed to buy next. This culture of buying and spending had a name: <span class="vocab">consumerism<span class="tip">An economic and cultural system where people are encouraged to buy goods and services in large quantities as a way of life.</span></span>. It was new, it was powerful, and it was built on credit; many Americans were buying things they could not yet afford, paying on installment plans that left them dangerously in debt.</p>
-
-    <p>Not everyone shared in the boom. Farmers had been struggling since the end of World War I, when European demand for American food dropped sharply. Black Americans in the South were largely locked out of the new prosperity by segregation and violence. The gap between the very wealthy and everyone else was growing even as the overall economy surged. The prosperity of the 1920s had a narrow floor; it held up the wealthy and much of the white middle class, while leaving others to fall through.</p>
-  </div>
-
-  <!-- FILENAME: S1L05_ModelTCar.jpg
-       PLACE IN: images/S1/L05/
-       FIND: A Ford Model T automobile on an American road or city street, circa 1915-1925 — showing how accessible the car had become to ordinary Americans
-       SEARCH: Wikimedia Commons — "Ford Model T 1920s road" or "Model T automobile street scene"
-       LINK (suggested): https://commons.wikimedia.org/wiki/File:1919_Ford_Model_T_Touring.jpg -->
-  <figure class="img-full">
-    <img src="images/S1/L05/S1L05_ModelTCar.jpg" alt="Ford Model T automobile, c. 1919">
-    <figcaption>A Ford Model T, c. 1919. Ford's affordable car transformed American life: where people lived, how far they traveled, and what they expected from the economy. | Wikimedia Commons</figcaption>
-  </figure>
-
-</div>
-
-<!-- ════ SECTION 2 — PROHIBITION ════ -->
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-ornament">✦</div>
-  <div class="divider-line"></div>
-</div>
-
-<div class="content section" id="prohibition">
-  <h2 class="ch">Chapter 2 — Prohibition: The Law Nobody Followed</h2>
-
-  <div class="clearfix">
-    <!-- FILENAME: S1L05_ProhibitionRaid.jpg
-         PLACE IN: images/S1/L05/
-         FIND: A Prohibition-era raid — federal agents destroying barrels of illegal alcohol or pouring liquor into the street, circa 1920-1933. The famous photographs of agents with axes smashing barrels are the most iconic.
-         SEARCH: Wikimedia Commons — "Prohibition raid agents barrels 1920s" or "bootleg alcohol raid 1920"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Prohibition_agents_destroying_barrels_of_beer.jpg -->
-    <figure class="img-inset-left">
-      <img src="images/S1/L05/S1L05_ProhibitionRaid.jpg" alt="Prohibition agents destroying barrels of alcohol, c. 1920">
-      <figcaption>Federal agents destroying barrels of illegal beer during Prohibition, c. 1920. The 18th Amendment banned the manufacture and sale of alcohol in the United States starting January 1920. | Library of Congress</figcaption>
-    </figure>
-
-    <p>On January 17, 1920, the United States made it illegal to manufacture, sell, or transport alcohol anywhere in the country. The 18th Amendment to the Constitution had been ratified the year before. The movement behind it had been building for decades, pushed by religious groups and social reformers who argued that alcohol destroyed families and communities. They called their campaign <span class="vocab">Prohibition<span class="tip">The period from 1920 to 1933 when the 18th Amendment made it illegal to make, sell, or transport alcohol anywhere in the United States.</span></span>. When it finally became law, they celebrated.</p>
-
-    <p>The celebration did not last long. Within months it was clear that millions of Americans had no intention of obeying the law. Illegal bars called speakeasies opened in basements, back rooms, and abandoned warehouses across the country. By 1925, there were an estimated 30,000 speakeasies in New York City alone. People who had never broken a law in their lives were buying illegal drinks and tipping their bartenders the same as always.</p>
-
-    <p>The real winners were organized crime networks. Bootleggers made fortunes supplying illegal alcohol to a country that refused to go dry. Al Capone ran a criminal empire in Chicago that earned an estimated $60 million a year from illegal alcohol sales. Criminal gangs fought each other for control of the bootlegging business. Violence exploded in cities across the country. The government had created the most profitable illegal market in American history.</p>
-
-    <p>Prohibition was repealed in 1933 with the 21st Amendment, making it the only constitutional amendment ever reversed. But it left a lasting legacy: it proved that trying to outlaw something widely desired often creates more problems than it solves; and it built the organized crime infrastructure that would shape American cities for the rest of the 20th century.</p>
-  </div>
-
-  <!-- Small secondary pullquote -->
-  <div class="pullquote-small">
-    <div class="pullquote-text">"I am like any other man. All I do is supply a demand."</div>
-    <div class="pullquote-attr">— Al Capone, bootlegger and organized crime boss, Chicago, c. 1929</div>
-    <p class="pullquote-narrator">Capone made this remark to justify his illegal alcohol empire; his argument that he was simply meeting a demand the government had wrongly banned captures exactly why Prohibition failed to stop drinking while succeeding only in creating violent criminal organizations.</p>
-  </div>
-
-</div>
-
-<!-- ════ SECTION 3 — WOMEN AND NEW ROLES ════ -->
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-ornament">❧</div>
-  <div class="divider-line"></div>
-</div>
-
-<div class="content section" id="women">
-  <h2 class="ch">Chapter 3 — Women Win the Vote and Rewrite the Rules</h2>
-
-  <div class="clearfix">
-    <!-- FILENAME: S1L05_SuffrageMarch.jpg
-         PLACE IN: images/S1/L05/
-         FIND: Women's suffrage march or parade in Washington D.C. or New York, circa 1913-1920 — the famous 1913 suffrage parade down Pennsylvania Avenue in Washington D.C. is the most iconic
-         SEARCH: Wikimedia Commons — "women suffrage march Washington 1913" or "National Woman Suffrage Association parade"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Suffrage_parade_New_York_City_1912.jpg -->
-    <figure class="img-inset-right">
-      <img src="images/S1/L05/S1L05_SuffrageMarch.jpg" alt="Women's suffrage parade, New York City, 1912">
-      <figcaption>Women's suffrage parade, New York City, 1912. After decades of organizing, marching, and going to prison, American women won the right to vote with the 19th Amendment in 1920. | Library of Congress</figcaption>
-    </figure>
-
-    <p>On August 18, 1920, the <span class="vocab">Nineteenth Amendment<span class="tip">The 1920 amendment to the U.S. Constitution that gave women the right to vote in all elections nationwide.</span></span> was ratified, giving women the right to vote in every election in the United States. Women had been organizing and fighting for this right since 1848, more than 70 years. Suffragists had marched, gone on hunger strikes, been arrested and force-fed in jail, and been ridiculed in newspapers for their entire adult lives. The amendment passed by a single vote in the Tennessee state legislature, the last state needed for ratification.</p>
-
-    <p>The vote was just one part of a broader transformation in women's lives during the 1920s. The iconic image of the decade was the flapper: a young woman who wore short skirts, cut her hair, drove cars, danced in public, and ignored the rules that had confined her mother's generation. Flappers represented something genuinely new: a generation of women who expected freedom as a right, not a gift.</p>
-
-    <p>More women entered the workforce than ever before. They worked as secretaries, teachers, nurses, and factory workers. A small but growing number entered medicine, law, and journalism. Eleanor Roosevelt, who would become First Lady in 1933, was already building a public career as a political organizer in the 1920s. Women's colleges produced a generation of graduates who expected to use their educations. The idea that a woman's only place was in the home was cracking apart, even if it would not fully break for decades more.</p>
-
-    <p>The right to vote did not reach all women equally. Black women in the South were blocked from voting by the same poll taxes, literacy tests, and violence that kept Black men away from the polls. The 19th Amendment was a landmark; it was also incomplete. The full story of women's voting rights in America did not end in 1920. It continued through the Civil Rights Act of 1965 and beyond.</p>
-  </div>
-
-  <!-- PAIRED — Flapper photo / 19th Amendment document -->
+<nav class="section-nav" aria-label="Page sections"><a href="#boom-times">BOOM TIMES</a><a href="#prohibition">PROHIBITION</a><a href="#women">WOMEN</a><a href="#harlem">HARLEM RENAISSANCE</a><a href="#primary-source-moment">PRIMARY SOURCE</a><a href="#then-now">THEN AND NOW</a></nav>
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+<aside class="toc-sidebar"><span class="toc-label">ON THIS PAGE</span><a href="#boom-times">BOOM TIMES</a><a href="#prohibition">PROHIBITION</a><a href="#women">WOMEN</a><a href="#harlem">HARLEM</a><a href="#primary-source-moment">SOURCE</a><a href="#then-now">THEN AND NOW</a></aside>
+<main>
+<section class="intro-section">
+  <p class="para-standard">New York City, 1925. Langston Hughes is still a young writer, and Harlem is becoming the center of Black American art, music, and ideas. Across the country, cars fill roads, radios enter living rooms, and advertisements tell Americans that buying new things is the path to a modern life.</p>
+  <p class="para-simple">New York City, 1925. Langston Hughes is a young writer. Harlem is becoming a center of Black art, music, and ideas. Across the country, cars fill roads. Radios enter homes. Ads tell people to buy new things.</p>
+  <p class="para-standard">The 1920s were full of contradictions. The economy boomed, but many farmers and Black Americans were left out. Women won the vote, but not all women could use it safely. Jazz changed the world, while segregation and racial violence continued. The decade looked bright, but it had shadows everywhere.</p>
+  <p class="para-simple">The 1920s were full of contradictions. The economy grew, but many people were left out. Women won the vote, but many women still faced barriers. Jazz changed the world, while racism continued. The decade looked bright, but it also had shadows.</p>
+</section>
+<section class="content-section clearfix" id="boom-times">
+  <div class="section-kicker">CHAPTER ONE</div><h2 class="section-heading">BOOM TIMES AND MASS PRODUCTION</h2>
+  <!--
+    FILENAME: S1L05_AssemblyLine_Ford.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Ford Model T moving assembly line at Highland Park, 1913; shows mass production changing work and prices
+    SEARCH: Ford Model T assembly line Highland Park 1913 Library of Congress Wikimedia Commons
+    LINK: https://guides.loc.gov/this-month-in-business-history/October/Ford (suggested, not guaranteed)
+  -->
+  <figure class="img-right"><img src="images/S1/L05/S1L05_AssemblyLine_Ford.jpg" alt="Ford Model T assembly line at Highland Park"><figcaption>Ford Model T assembly line, Highland Park, Michigan, 1913. Library of Congress.</figcaption></figure>
+  <p class="para-standard">The 1920s economy grew quickly because businesses learned how to make products faster and cheaper. <span class="vocab">Mass production<span class="tip">Making large numbers of the same product quickly.</span></span> used machines, repeated tasks, and the <span class="vocab">assembly line<span class="tip">A factory system where each worker does one task.</span></span>. Henry Ford's factories made the Model T car faster than older factories could. The price dropped, and more ordinary workers could buy cars.</p>
+  <p class="para-simple">The 1920s economy grew fast. Businesses made products faster and cheaper. <span class="vocab-red">Mass production</span> used machines and repeated tasks. The <span class="vocab-red">assembly line</span> helped Ford build cars quickly. Cars became cheaper, so more workers could buy them.</p>
+  <p class="para-standard">Cars changed daily life. People could live farther from work, shop in new places, and travel on weekends. Roads, gas stations, repair shops, and suburbs grew around the automobile. A new product had changed how Americans used space and time.</p>
+  <p class="para-simple">Cars changed daily life. People could live farther from work. They could shop and travel in new ways. Roads, gas stations, repair shops, and suburbs grew because of cars.</p>
+  <p class="para-standard"><span class="vocab">Consumerism<span class="tip">A culture that encourages people to buy more goods.</span></span> also grew. Radios, refrigerators, washing machines, and vacuum cleaners became symbols of modern life. Many families bought goods on <span class="vocab">installment plans<span class="tip">Paying for something over time in smaller payments.</span></span>. That made life feel exciting, but it also pushed some families into debt.</p>
+  <p class="para-simple"><span class="vocab-red">Consumerism</span> also grew. Radios, refrigerators, washing machines, and vacuum cleaners became signs of modern life. Many families used <span class="vocab-red">installment plans</span>. They paid a little at a time. This helped them buy things, but it could also create debt.</p>
+  <p class="para-standard">The boom did not reach everyone. Farmers struggled after World War I because crop prices fell. Many Black Americans were blocked from better jobs by <span class="vocab">segregation<span class="tip">Separating people by race through law or custom.</span></span> and discrimination. The 1920s were prosperous, but the prosperity was uneven.</p>
+  <p class="para-simple">The boom did not help everyone. Farmers struggled because crop prices fell. Many Black Americans were blocked from better jobs by <span class="vocab-red">segregation</span> and unfair treatment. The 1920s were rich for some people, but not for all.</p>
+</section>
+<div class="brain-break dyk-break"><span class="bb-label">DID YOU KNOW</span><div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;"><div style="flex:1;min-width:200px;">
+  <!--
+    FILENAME: S1L05_DYK_ModelT.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Ford Model T touring car from the 1910s or 1920s; shows the car that became affordable to many Americans
+    SEARCH: Ford Model T 1919 touring car Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:1919_Ford_Model_T_Touring.jpg (suggested, not guaranteed)
+  -->
+  <img src="images/S1/L05/S1L05_DYK_ModelT.jpg" alt="Ford Model T touring car" style="width:100%;display:block;border:3px solid #ffe56b;box-shadow:0 4px 18px rgba(0,0,0,.4);"><p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Oswald',sans-serif;">Ford Model T, c. 1919. Wikimedia Commons.</p></div><p class="bb-text" style="flex:1;min-width:200px;">The Model T was nicknamed the "Tin Lizzie," and it was not fancy. That was the point. Ford wanted a car tough enough for bad roads and cheap enough for regular families. A machine that looked ordinary helped remake the whole country.</p></div></div>
+<div class="brain-break ff-break"><span class="bb-label">FAST FACTS</span><div class="ff-grid"><div class="ff-item"><span class="ff-number">1920</span><span class="ff-desc">PROHIBITION BEGINS</span></div><div class="ff-item"><span class="ff-number">19TH</span><span class="ff-desc">AMENDMENT RATIFIED</span></div><div class="ff-item"><span class="ff-number">1 IN 5</span><span class="ff-desc">AMERICANS OWNED A CAR BY 1927</span></div><div class="ff-item"><span class="ff-number">1933</span><span class="ff-desc">PROHIBITION ENDS</span></div></div></div>
+<section class="content-section clearfix" id="prohibition">
+  <div class="section-kicker">CHAPTER TWO</div><h2 class="section-heading">PROHIBITION AND THE LAW NOBODY FOLLOWED</h2>
+  <!--
+    FILENAME: S1L05_ProhibitionRaid_Agents.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Prohibition agents destroying barrels of alcohol, 1920s; shows government enforcement of the alcohol ban
+    SEARCH: Prohibition agents destroying barrels beer 1920s Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Prohibition_agents_destroying_barrels_of_beer.jpg (suggested, not guaranteed)
+  -->
+  <figure class="img-left"><img src="images/S1/L05/S1L05_ProhibitionRaid_Agents.jpg" alt="Prohibition agents destroying barrels of alcohol"><figcaption>Federal agents destroying illegal alcohol during Prohibition, c. 1920s. Library of Congress.</figcaption></figure>
+  <p class="para-standard">In 1920, the <span class="vocab">Eighteenth Amendment<span class="tip">The amendment that banned making and selling alcohol.</span></span> began the national ban on alcohol. Supporters believed alcohol caused poverty, violence, and broken families. They thought a national law could make the country healthier and more moral.</p>
+  <p class="para-simple">In 1920, the <span class="vocab-red">Eighteenth Amendment</span> banned making and selling alcohol. Supporters believed alcohol hurt families and communities. They thought the law would make the country better.</p>
+  <p class="para-standard">Instead, millions of Americans ignored <span class="vocab">Prohibition<span class="tip">The 1920 to 1933 national ban on alcohol.</span></span>. Illegal bars called <span class="vocab">speakeasies<span class="tip">Secret bars that sold illegal alcohol.</span></span> opened in cities. <span class="vocab">Bootleggers<span class="tip">People who made or sold illegal alcohol.</span></span> made fortunes. Criminal groups fought for control of the illegal alcohol business.</p>
+  <p class="para-simple">Instead, many Americans ignored <span class="vocab-red">Prohibition</span>. Secret bars called <span class="vocab-red">speakeasies</span> opened in cities. <span class="vocab-red">Bootleggers</span> sold illegal alcohol and made huge profits.</p>
+  <p class="para-standard">Al Capone became the most famous example of <span class="vocab">organized crime<span class="tip">Criminal groups that work like businesses.</span></span> during Prohibition. The law was supposed to stop drinking, but it helped create a huge illegal market. In 1933, the <span class="vocab">Twenty-First Amendment<span class="tip">The amendment that ended Prohibition.</span></span> ended Prohibition. It remains the only constitutional amendment that has been fully reversed.</p>
+  <p class="para-simple">Al Capone became the most famous crime boss of Prohibition. The law was supposed to stop drinking. Instead, it created a huge illegal market. In 1933, the <span class="vocab-red">Twenty-First Amendment</span> ended Prohibition.</p>
+  <div class="real-world para-standard">Big idea: When a law tries to ban something many people still want, it can create an illegal economy instead of solving the problem.</div><div class="real-world para-simple">Big idea: A law can fail when many people refuse to follow it.</div>
+</section>
+<section class="content-section clearfix" id="women">
+  <div class="section-kicker">CHAPTER THREE</div><h2 class="section-heading">WOMEN WIN THE VOTE AND REWRITE THE RULES</h2>
+  <!--
+    FILENAME: S1L05_SuffrageParade_1913.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Women's suffrage parade, Washington D.C. or New York, 1913 to 1920; shows decades of organizing before the 19th Amendment
+    SEARCH: women suffrage parade Washington 1913 Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Suffrage_parade_New_York_City_1912.jpg (suggested, not guaranteed)
+  -->
+  <figure class="img-right"><img src="images/S1/L05/S1L05_SuffrageParade_1913.jpg" alt="Women's suffrage parade"><figcaption>Women's suffrage parade, early 1900s. Library of Congress.</figcaption></figure>
+  <p class="para-standard">The <span class="vocab">Nineteenth Amendment<span class="tip">The 1920 amendment that gave women voting rights.</span></span> was ratified in 1920 after more than 70 years of organizing. <span class="vocab">Suffragists<span class="tip">People who fought for women's right to vote.</span></span> marched, wrote speeches, met with politicians, went to jail, and faced public ridicule. The victory was historic.</p>
+  <p class="para-simple">The <span class="vocab-red">Nineteenth Amendment</span> was ratified in 1920. Women had fought for voting rights for more than 70 years. <span class="vocab-red">Suffragists</span> marched, gave speeches, met with leaders, and went to jail. Their victory was historic.</p>
+  <p class="para-standard">The 1920s also brought new ideas about women's public lives. The <span class="vocab">flapper<span class="tip">A young 1920s woman known for modern fashion and independence.</span></span> became a symbol of change. Flappers wore shorter skirts, cut their hair, danced in public, drove cars, and pushed against older rules about how women should act.</p>
+  <p class="para-simple">The 1920s brought new ideas about women's lives. The <span class="vocab-red">flapper</span> became a symbol of change. Flappers wore modern clothes, cut their hair, danced in public, and challenged older rules.</p>
+  <p class="para-standard">But the vote did not reach all women equally. Many Black women in the South still faced <span class="vocab">poll taxes<span class="tip">Fees used to stop poor people from voting.</span></span>, <span class="vocab">literacy tests<span class="tip">Reading tests used to block voters unfairly.</span></span>, and violence. The Nineteenth Amendment was a major step, but the fight for equal voting rights continued.</p>
+  <p class="para-simple">But not all women could vote safely. Many Black women in the South faced <span class="vocab-red">poll taxes</span>, <span class="vocab-red">literacy tests</span>, and violence. The Nineteenth Amendment was a big step, but the fight for voting rights was not over.</p>
   <div class="img-pair">
-    <!-- FILENAME: S1L05_FlapperPhoto.jpg
-         PLACE IN: images/S1/L05/
-         FIND: A photograph of a 1920s flapper or group of young women in flapper fashion — short skirts, bobbed hair, representing the new social freedom of 1920s women
-         SEARCH: Wikimedia Commons — "flapper 1920s photograph women fashion"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Flapper_1920s.jpg -->
-    <figure>
-      <img src="images/S1/L05/S1L05_FlapperPhoto.jpg" alt="Young women in flapper fashion, 1920s">
-      <figcaption>Young women in 1920s flapper fashion. The flapper represented a generation that expected freedom as a right, not a privilege. | Wikimedia Commons</figcaption>
-    </figure>
-    <!-- FILENAME: S1L05_19thAmendment.jpg
-         PLACE IN: images/S1/L05/
-         FIND: The original enrolled 19th Amendment to the U.S. Constitution, 1920 — the official parchment document or the certification of ratification
-         SEARCH: Wikimedia Commons — "19th Amendment United States Constitution 1920" or National Archives
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:19th_Amendment_Pg1of1_AC.jpg -->
-    <figure>
-      <img src="images/S1/L05/S1L05_19thAmendment.jpg" alt="Original 19th Amendment, 1920">
-      <figcaption>The original 19th Amendment to the U.S. Constitution, ratified August 18, 1920. It was the result of more than 70 years of organizing by American women. | National Archives / Wikimedia Commons</figcaption>
-    </figure>
+    <!--
+      FILENAME: S1L05_19thAmendment_Document.jpg
+      PLACE IN: images/S1/L05/
+      FIND: Original 19th Amendment document, 1920; shows the official legal change
+      SEARCH: 19th Amendment United States Constitution 1920 National Archives Wikimedia Commons
+      LINK: https://www.archives.gov/exhibits/featured-documents/amendment-19 (suggested, not guaranteed)
+    -->
+    <figure><img src="images/S1/L05/S1L05_19thAmendment_Document.jpg" alt="Original 19th Amendment document"><figcaption>The 19th Amendment, ratified in 1920. National Archives.</figcaption></figure>
+    <!--
+      FILENAME: S1L05_FlapperFashion.jpg
+      PLACE IN: images/S1/L05/
+      FIND: Young women in 1920s flapper fashion; shows changing social expectations for some women
+      SEARCH: flapper 1920s photograph Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Flapper_1920s.jpg (suggested, not guaranteed)
+    -->
+    <figure><img src="images/S1/L05/S1L05_FlapperFashion.jpg" alt="Young women in 1920s flapper fashion"><figcaption>Young women in 1920s fashion. Wikimedia Commons.</figcaption></figure>
   </div>
-
-</div>
-
-<!-- ════ SECTION 4 — HARLEM RENAISSANCE ════ -->
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-ornament">✦</div>
-  <div class="divider-line"></div>
-</div>
-
-<div class="content section" id="harlem">
-  <h2 class="ch">Chapter 4 — The Harlem Renaissance: A Culture Transforms a Nation</h2>
-
-  <div class="clearfix">
-    <!-- FILENAME: S1L05_HarlemStreet.jpg
-         PLACE IN: images/S1/L05/
-         FIND: Harlem street scene, 125th Street or 7th Avenue, circa 1925-1935 — showing the energy and density of Harlem as the cultural center of Black America
-         SEARCH: Wikimedia Commons — "Harlem 125th Street 1920s" or "Harlem street scene 1930"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Harlem_1930s.jpg -->
-    <figure class="img-inset-left">
-      <img src="images/S1/L05/S1L05_HarlemStreet.jpg" alt="Harlem street scene, 125th Street, c. 1930">
-      <figcaption>Harlem, New York City, c. 1930. By the 1920s, Harlem had become the cultural capital of Black America, drawing artists, writers, musicians, and activists from across the country. | Library of Congress</figcaption>
-    </figure>
-
-    <p>Harlem is a neighborhood in northern Manhattan, New York City. In the 1920s, it became something much larger than a neighborhood. It became the center of the <span class="vocab">Harlem Renaissance<span class="tip">A cultural movement in the 1920s and 1930s centered in Harlem, New York, where Black writers, musicians, and artists created work that transformed American culture and challenged racism.</span></span>: an explosion of Black artistic, literary, and intellectual life that produced some of the most important work in American history. Writers, musicians, painters, and thinkers gathered in Harlem from across the country and the world, drawn by the energy of a community that was creating something entirely new.</p>
-
-    <p>The Harlem Renaissance grew directly out of the Great Migration. Hundreds of thousands of Black Americans had moved north during and after World War I, escaping sharecropping, Jim Crow laws, and racial violence in the South. Many settled in Harlem. They brought with them their music, their stories, their grief, and their genius. They found in Harlem a community that encouraged all of it.</p>
-
-    <p>The music of the Harlem Renaissance was jazz: improvised, complex, joyful, and mournful at the same time. Duke Ellington led his orchestra at the Cotton Club. Louis Armstrong transformed what a trumpet could do. Bessie Smith sang the blues with a power that made audiences weep. Jazz spread out of Harlem into every American city and eventually across the world. It became the first truly American art form to reshape global culture.</p>
-
-    <p>The literature was equally powerful. Langston Hughes wrote poetry that used the rhythms of jazz and blues to tell the truth about Black American life with honesty and beauty. Zora Neale Hurston collected and celebrated the folklore and vernacular speech of Black communities in the South, arguing that Black culture was not a lesser version of white culture; it was its own complete world. Both faced critics who thought they were too honest, too unpolished, or not proper enough. Both were right, and the critics were wrong.</p>
-  </div>
-
-  <!-- PROFILE CARDS — four key figures -->
-  <div class="profile-cards">
-    <div class="profile-card">
-      <h4>Langston Hughes</h4>
-      <div class="role">Poet &amp; Writer</div>
-      <p>Hughes used the rhythms of jazz and blues in his poetry to capture the joy, pain, and dignity of Black American life. His 1926 essay "The Negro Artist and the Racial Mountain" argued that Black artists owed nothing to white approval.</p>
-    </div>
-    <div class="profile-card">
-      <h4>Zora Neale Hurston</h4>
-      <div class="role">Novelist &amp; Folklorist</div>
-      <p>Hurston traveled the South collecting the stories, songs, and language of Black communities. Her 1937 novel <em>Their Eyes Were Watching God</em> is considered one of the greatest American novels ever written.</p>
-    </div>
-    <div class="profile-card">
-      <h4>Duke Ellington</h4>
-      <div class="role">Composer &amp; Bandleader</div>
-      <p>Ellington led his orchestra at Harlem's Cotton Club and composed over 1,000 pieces of music. He turned jazz into a sophisticated art form that blended African American musical traditions with European classical structure.</p>
-    </div>
-    <div class="profile-card">
-      <h4>Marcus Garvey</h4>
-      <div class="role">Activist &amp; Leader</div>
-      <p>Garvey led the Universal Negro Improvement Association, which attracted millions of followers with its message of Black pride, economic self-sufficiency, and Pan-African unity. His movement was the largest Black mass movement in American history to that point.</p>
-    </div>
-  </div>
-
-  <!-- PAIRED — Hughes / Hurston portraits -->
+</section>
+<section class="content-section clearfix" id="harlem">
+  <div class="section-kicker">CHAPTER FOUR</div><h2 class="section-heading">THE HARLEM RENAISSANCE TRANSFORMS AMERICA</h2>
+  <!--
+    FILENAME: S1L05_HarlemStreet_1930.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Harlem street scene, 125th Street or Seventh Avenue, c. 1920s to 1930s; shows Harlem as a living neighborhood and cultural center
+    SEARCH: Harlem street scene 1930 Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Harlem_1930s.jpg (suggested, not guaranteed)
+  -->
+  <figure class="img-left"><img src="images/S1/L05/S1L05_HarlemStreet_1930.jpg" alt="Harlem street scene in New York City"><figcaption>Harlem, New York City, c. 1930. Library of Congress.</figcaption></figure>
+  <p class="para-standard">Harlem is a neighborhood in northern Manhattan, but in the 1920s it became much more than a neighborhood. It became the center of the <span class="vocab">Harlem Renaissance<span class="tip">A Black cultural movement centered in Harlem.</span></span>, a burst of Black art, music, writing, and political thought.</p>
+  <p class="para-simple">Harlem is a neighborhood in New York City. In the 1920s, it became much more. It became the center of the <span class="vocab-red">Harlem Renaissance</span>, a major movement in Black art, music, writing, and ideas.</p>
+  <p class="para-standard">The movement grew from the <span class="vocab">Great Migration<span class="tip">The movement of Black Southerners to Northern cities.</span></span>. Many Black Americans moved north to escape Jim Crow laws, racial violence, and limited jobs in the South. They brought music, stories, faith, anger, humor, and imagination with them.</p>
+  <p class="para-simple">The movement grew from the <span class="vocab-red">Great Migration</span>. Many Black Americans moved north from the South. They wanted to escape racism and find better jobs. They brought music, stories, and ideas with them.</p>
+  <p class="para-standard"><span class="vocab">Jazz<span class="tip">A music style based on rhythm, improvisation, and feeling.</span></span> became the sound of the decade. Duke Ellington, Louis Armstrong, and Bessie Smith helped make Black music central to American culture. Writers like Langston Hughes and Zora Neale Hurston showed that Black life, language, and beauty belonged at the center of American literature.</p>
+  <p class="para-simple"><span class="vocab-red">Jazz</span> became the sound of the 1920s. Duke Ellington, Louis Armstrong, and Bessie Smith helped change American music. Writers like Langston Hughes and Zora Neale Hurston showed the beauty and power of Black life and language.</p>
+  <div class="profile-cards"><div class="profile-card"><h3>LANGSTON HUGHES</h3><p>Poet who used the rhythm of jazz and blues to write about Black life with honesty and pride.</p></div><div class="profile-card"><h3>ZORA NEALE HURSTON</h3><p>Writer and folklorist who collected Black stories, songs, and speech from Southern communities.</p></div><div class="profile-card"><h3>DUKE ELLINGTON</h3><p>Composer and bandleader whose orchestra helped make jazz a respected American art form.</p></div><div class="profile-card"><h3>MARCUS GARVEY</h3><p>Leader who promoted Black pride, economic self-sufficiency, and Pan-African unity.</p></div></div>
   <div class="img-pair">
-    <!-- FILENAME: S1L05_LangstonHughes.jpg
-         PLACE IN: images/S1/L05/
-         FIND: Portrait of Langston Hughes, circa 1930s — the most widely reproduced press photograph, showing him as a young man
-         SEARCH: Wikimedia Commons — "Langston Hughes portrait 1930s"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Langston_Hughes_by_Carl_Van_Vechten_1936.jpg -->
-    <figure>
-      <img src="images/S1/L05/S1L05_LangstonHughes.jpg" alt="Langston Hughes, c. 1936">
-      <figcaption>Langston Hughes, photographed by Carl Van Vechten, 1936. Hughes became the voice of the Harlem Renaissance and one of the most influential American poets of the 20th century. | Library of Congress</figcaption>
-    </figure>
-    <!-- FILENAME: S1L05_ZoraHurston.jpg
-         PLACE IN: images/S1/L05/
-         FIND: Portrait of Zora Neale Hurston, circa 1930s-1940s — the famous Carl Van Vechten photograph or the photograph of her in a wide-brimmed hat
-         SEARCH: Wikimedia Commons — "Zora Neale Hurston portrait Van Vechten"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Zora_Neale_Hurston_by_Carl_Van_Vechten_1938.jpg -->
-    <figure>
-      <img src="images/S1/L05/S1L05_ZoraHurston.jpg" alt="Zora Neale Hurston, c. 1938">
-      <figcaption>Zora Neale Hurston, photographed by Carl Van Vechten, 1938. Hurston's work was largely forgotten after her death in 1960; novelist Alice Walker rediscovered her in the 1970s. | Library of Congress</figcaption>
-    </figure>
+    <!--
+      FILENAME: S1L05_LangstonHughes_VanVechten.jpg
+      PLACE IN: images/S1/L05/
+      FIND: Langston Hughes portrait by Carl Van Vechten, 1936; shows one of the central writers of the Harlem Renaissance
+      SEARCH: Langston Hughes Carl Van Vechten 1936 Wikimedia Commons Library of Congress
+      LINK: https://commons.wikimedia.org/wiki/File:Langston_Hughes_by_Carl_Van_Vechten_1936.jpg (suggested, not guaranteed)
+    -->
+    <figure><img src="images/S1/L05/S1L05_LangstonHughes_VanVechten.jpg" alt="Langston Hughes portrait"><figcaption>Langston Hughes, photographed by Carl Van Vechten, 1936. Library of Congress.</figcaption></figure>
+    <!--
+      FILENAME: S1L05_ZoraHurston_VanVechten.jpg
+      PLACE IN: images/S1/L05/
+      FIND: Zora Neale Hurston portrait by Carl Van Vechten, 1938; shows one of the major writers of the Harlem Renaissance
+      SEARCH: Zora Neale Hurston Carl Van Vechten 1938 Wikimedia Commons Library of Congress
+      LINK: https://commons.wikimedia.org/wiki/File:Zora_Neale_Hurston_by_Carl_Van_Vechten_1938.jpg (suggested, not guaranteed)
+    -->
+    <figure><img src="images/S1/L05/S1L05_ZoraHurston_VanVechten.jpg" alt="Zora Neale Hurston portrait"><figcaption>Zora Neale Hurston, photographed by Carl Van Vechten, 1938. Library of Congress.</figcaption></figure>
   </div>
-
+</section>
+<div class="brain-break as-break"><span class="bb-label">ART SPOTLIGHT</span>
+  <!--
+    FILENAME: S1L05_ArtSpotlight_SongOfTheTowers.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Aaron Douglas, Aspects of Negro Life: Song of the Towers, 1934; a specific Harlem Renaissance mural showing jazz, labor, and the modern city
+    SEARCH: Aaron Douglas Aspects of Negro Life Song of the Towers 1934 Wikimedia Commons NYPL
+    LINK: https://www.nypl.org/events/tours/audio-guides/100-century-collections-community-and-creativity/item/19631 (suggested, not guaranteed)
+  -->
+  <img class="as-image" src="images/S1/L05/S1L05_ArtSpotlight_SongOfTheTowers.jpg" alt="Aaron Douglas mural Aspects of Negro Life Song of the Towers">
+  <span class="as-caption">Aaron Douglas, <em>Aspects of Negro Life: Song of the Towers</em>, 1934. New York Public Library / Schomburg Center.</span>
+  <p class="as-fact">Douglas painted a Black saxophone player caught between a giant industrial gear, a hand reaching for freedom, and the lights of the modern city. It looks like a celebration, but it also asks a sharper question: who gets to enjoy the modern world that Black labor and Black music helped create?</p>
 </div>
-
-<!-- PRIMARY SOURCE — Langston Hughes, "I, Too" -->
-<div class="content">
-  <div class="pullquote">
-    <div class="pullquote-text">
-      "I, too, sing America. I am the darker brother. They send me to eat in the kitchen when company comes, but I laugh, and eat well, and grow strong. Tomorrow, I'll be at the table when company comes. Nobody'll dare say to me, 'Eat in the kitchen,' then. Besides, they'll see how beautiful I am and be ashamed. I, too, am America."
-    </div>
-    <div class="pullquote-attr">— Langston Hughes, "I, Too," 1926</div>
-    <div class="pullquote-narrator">Hughes wrote this poem to answer Walt Whitman's famous line "I sing America" — Hughes is saying that Black Americans are part of America too, and that a day is coming when that will be undeniable; he wrote it during a decade when racial violence and segregation were at their peak.</div>
-    <div class="pullquote-questions">
-      <p><strong>Question 1:</strong> Hughes uses the image of being sent to eat in the kitchen. What does that represent in plain language? What is he really describing about life in America in the 1920s?</p>
-      <p><strong>Question 2:</strong> The Essential Question asks how the 1920s could be both prosperous and deeply contradictory. How does this poem show that contradiction? Who was the prosperity for, and who was left out?</p>
-    </div>
-  </div>
+<section class="content-section" id="primary-source-moment">
+  <div class="section-kicker">PRIMARY SOURCE MOMENT</div><h2 class="section-heading">LANGSTON HUGHES CLAIMS AMERICA</h2>
+  <div class="primary-source"><div class="ps-label">PRIMARY SOURCE</div><div class="ps-quote">"I, too, sing America... Tomorrow, I'll be at the table when company comes."</div><div class="ps-attribution">Langston Hughes, "I, Too," 1926</div><div class="ps-narrator">Hughes wrote during a decade when Black artists were transforming American culture while segregation still pushed Black Americans to the margins. His poem argues that Black Americans were not outside the nation. They were America too.</div></div>
+  <div class="ps-questions"><p><strong>Question 1:</strong> What does the kitchen/table image represent in plain language?</p><p><strong>Question 2:</strong> How does this poem show the contradiction of the 1920s?</p></div>
+</section>
+<div class="brain-break tn-break" id="then-now"><span class="bb-label">THEN AND NOW</span><p class="tn-payoff">The 1920s did not disappear. Its music, cars, advertising, voting-rights debates, and arguments over who belongs are still part of American life.</p><div class="tn-pair"><div class="tn-item"><span class="tn-era-label">THEN</span>
+  <!--
+    FILENAME: S1L05_Then_CottonClub.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Cotton Club or Harlem jazz scene in the 1920s or 1930s; shows Black cultural creativity during the Harlem Renaissance
+    SEARCH: Cotton Club Harlem 1920s photograph Wikimedia Commons Library of Congress
+    LINK: https://commons.wikimedia.org/wiki/File:CottonClub.jpg (suggested, not guaranteed)
+  -->
+  <img src="images/S1/L05/S1L05_Then_CottonClub.jpg" alt="Cotton Club or Harlem jazz scene"><p class="tn-caption">Harlem jazz scene, c. 1920s to 1930s. Wikimedia Commons.</p></div><div class="tn-item"><span class="tn-era-label">NOW</span>
+  <!--
+    FILENAME: S1L05_Now_ApolloTheater.jpg
+    PLACE IN: images/S1/L05/
+    FIND: Apollo Theater on 125th Street, Harlem, modern photograph; shows Harlem's continuing cultural legacy
+    SEARCH: Apollo Theater Harlem 125th Street Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Apollo_Theater_2009.jpg (suggested, not guaranteed)
+  -->
+  <img src="images/S1/L05/S1L05_Now_ApolloTheater.jpg" alt="Apollo Theater in Harlem today"><p class="tn-caption">Apollo Theater, Harlem, New York City. Wikimedia Commons.</p></div></div><p class="tn-closing">Langston Hughes said, "I, too, sing America." How can you tell whether a country has actually listened?</p></div>
+</main>
+<footer>US HISTORY — SEMESTER 1, LESSON 05 — THE ROARING TWENTIES</footer>
 </div>
-
-<!-- ════ HOW THIS STILL MATTERS TODAY ════ -->
-<div class="content" id="still-matters">
-  <div class="still-matters-block">
-    <h2>How This Still Matters Today</h2>
-
-    <p class="still-now-headline">The Harlem Renaissance created the cultural DNA of modern American music, literature, and identity; its artists are still being rediscovered, sampled, and argued over right now.</p>
-
-    <ul class="news-list">
-      <li><a>"Zora Neale Hurston's Long-Lost Play Discovered in a Library Archive. It's Being Staged for the First Time." — New York Times</a></li>
-      <li><a>"A Century After Prohibition, the War on Drugs Repeats the Same Mistakes" — The Atlantic</a></li>
-      <li><a>"The 19th Amendment Turned 100. Many Women Were Still Waiting for Its Promise." — Washington Post</a></li>
-    </ul>
-
-    <!-- FILENAME: S1L05_ModernHarlem.jpg
-         PLACE IN: images/S1/L05/
-         FIND: A contemporary photograph of Harlem today — 125th Street with the Apollo Theater marquee, or a street scene showing the neighborhood's continued cultural vitality, 2015-2024
-         SEARCH: Wikimedia Commons — "Apollo Theater Harlem 125th Street" or "Harlem New York today"
-         LINK (suggested): https://commons.wikimedia.org/wiki/File:Apollo_Theater_2009.jpg -->
-    <figure class="img-full" style="margin: 0 0 22px 0;">
-      <img src="images/S1/L05/S1L05_ModernHarlem.jpg" alt="Apollo Theater, Harlem, New York City" style="border-color: #3a2808;">
-      <figcaption style="color: #c8b880; opacity: 1;">The Apollo Theater on 125th Street, Harlem, New York City. Every major Black American musical artist of the 20th century performed on this stage; the theater opened in 1934 and is still running today. | Wikimedia Commons</figcaption>
-    </figure>
-
-    <p class="still-closing-q">Langston Hughes said "I, too, am America." Seventy years after he wrote that, how do you know whether a country has actually listened?</p>
-  </div>
-</div>
-
-<!-- ════ FOOTER ════ -->
-<footer class="page-footer">
-  US History — Semester 1, Lesson 05 &nbsp;|&nbsp; The Roaring Twenties &nbsp;|&nbsp; Standards 11.5
-</footer>
-
-</div><!-- end .page-wrap -->
-
 <script>
-document.querySelectorAll('.vocab').forEach(function(el) {
-  el.addEventListener('click', function(e) {
-    e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      if (v !== el) v.classList.remove('active');
-    });
-    el.classList.toggle('active');
-  });
-});
-document.addEventListener('click', function() {
-  document.querySelectorAll('.vocab.active').forEach(function(v) {
-    v.classList.remove('active');
-  });
-});
+document.querySelectorAll('.vocab').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active')});el.classList.toggle('active')})});document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active')})});
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT'});
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');if(link){if(entry.isIntersecting)link.classList.add('active');else link.classList.remove('active')}})},{threshold:.25});document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
 </script>
-
 </body>
 </html>
-<!--
-IMAGE CHECKLIST FOR SSU_S1L05.html
-1.  S1L05_HeaderBg.jpg — Harlem jazz club or Cotton Club interior, 1920s — Suggested link: https://commons.wikimedia.org/wiki/File:CottonClub.jpg
-2.  S1L05_AssemblyLine.jpg — Ford Model T assembly line, Highland Park, 1913 — Suggested link: https://commons.wikimedia.org/wiki/File:Ford_assembly_line_-_1913.jpg
-3.  S1L05_ModelTCar.jpg — Ford Model T automobile on road, c. 1919 — Suggested link: https://commons.wikimedia.org/wiki/File:1919_Ford_Model_T_Touring.jpg
-4.  S1L05_ProhibitionRaid.jpg — Federal agents destroying barrels of illegal alcohol, c. 1920 — Suggested link: https://commons.wikimedia.org/wiki/File:Prohibition_agents_destroying_barrels_of_beer.jpg
-5.  S1L05_SuffrageMarch.jpg — Women's suffrage parade, New York City, 1912 — Suggested link: https://commons.wikimedia.org/wiki/File:Suffrage_parade_New_York_City_1912.jpg
-6.  S1L05_FlapperPhoto.jpg — Young women in 1920s flapper fashion — Suggested link: https://commons.wikimedia.org/wiki/File:Flapper_1920s.jpg
-7.  S1L05_19thAmendment.jpg — Original 19th Amendment document, 1920 — Suggested link: https://commons.wikimedia.org/wiki/File:19th_Amendment_Pg1of1_AC.jpg
-8.  S1L05_HarlemStreet.jpg — Harlem street scene, 125th Street, c. 1930 — Suggested link: https://commons.wikimedia.org/wiki/File:Harlem_1930s.jpg
-9.  S1L05_LangstonHughes.jpg — Portrait of Langston Hughes by Carl Van Vechten, 1936 — Suggested link: https://commons.wikimedia.org/wiki/File:Langston_Hughes_by_Carl_Van_Vechten_1936.jpg
-10. S1L05_ZoraHurston.jpg — Portrait of Zora Neale Hurston by Carl Van Vechten, 1938 — Suggested link: https://commons.wikimedia.org/wiki/File:Zora_Neale_Hurston_by_Carl_Van_Vechten_1938.jpg
-11. S1L05_ModernHarlem.jpg — Apollo Theater, 125th Street, Harlem, New York City — Suggested link: https://commons.wikimedia.org/wiki/File:Apollo_Theater_2009.jpg
--->
