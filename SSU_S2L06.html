@@ -1,74 +1,877 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSU — S2 L06: The Civil Rights Movement</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSU S2L06 — THE CIVIL RIGHTS MOVEMENT</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0d0d0d;
+  --brown:#3a2418;
+  --brown-dark:#24150f;
+  --cream:#f4ead2;
+  --paper:#fff7e8;
+  --gold:#d7a83b;
+  --gold-dark:#9a6a15;
+  --red:#9f1d2e;
+  --red-light:#b03030;
+  --ink:#1c1610;
+  --muted:#5c4b39;
+  --vocab:#b03030;
+  --teal:#034f50;
+  --lime:#dfff48;
+  --purple:#35124f;
+  --pink:#ff55d4;
+  --orange:#ff8b21;
+  --navy:#102747;
+  --cyan:#29d4ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:linear-gradient(135deg,#130d0a 0%,#5c321f 50%,#20120c 100%);
+  color:var(--ink);
+  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
+  font-size:18px;
+  line-height:1.85;
+}
+.page-wrap{
+  max-width:920px;
+  margin:0 auto;
+  background:var(--paper);
+  box-shadow:0 0 95px rgba(0,0,0,.85);
+  border-left:6px solid var(--black);
+  border-right:6px solid var(--black);
+}
+.site-header{
+  position:relative;
+  min-height:470px;
+  background:var(--black);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  text-align:center;
+}
+.header-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.36;
+  filter:grayscale(.65) contrast(1.15);
+}
+.site-header:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.72) 55%,rgba(0,0,0,.97));
+}
+.header-inner{
+  position:relative;
+  z-index:2;
+  max-width:820px;
+  margin:0 auto;
+  padding:58px 34px 50px;
+}
+.course-label{
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+.page-title{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(54px,8vw,86px);
+  line-height:1;
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  text-shadow:2px 5px 22px rgba(0,0,0,.9);
+  margin-bottom:30px;
+}
+.eq-banner{
+  display:inline-block;
+  max-width:780px;
+  background:rgba(159,29,46,.96);
+  color:#fff;
+  border:3px solid var(--gold);
+  border-left-width:8px;
+  border-right-width:8px;
+  padding:18px 28px;
+  font-weight:700;
+  font-size:20px;
+  line-height:1.45;
+  text-align:left;
+}
+.eq-label{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#ffe49a;
+  margin-bottom:8px;
+}
+.section-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background:#17110d;
+  border-bottom:4px solid var(--gold);
+}
+.section-nav a{
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:#f4dfad;
+  text-decoration:none;
+  padding:14px 12px;
+  border-bottom:4px solid transparent;
+  margin-bottom:-4px;
+}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--gold);background:rgba(159,29,46,.55)}
+#lexile-toggle{
+  display:block;
+  margin:20px auto 28px;
+  padding:10px 24px;
+  font-family:'Roboto Slab',serif;
+  font-size:13px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  cursor:pointer;
+  border:2px solid var(--red);
+  background:transparent;
+  color:var(--red);
+  transition:background .2s,color .2s;
+}
+#lexile-toggle:hover{background:var(--red);color:#fff}
+.para-simple{display:none}
+body.simplified .para-standard{display:none}
+body.simplified .para-simple{display:block}
+.toc-sidebar{
+  position:fixed;
+  right:calc(50% - 590px);
+  top:50%;
+  transform:translateY(-50%);
+  width:155px;
+  padding:14px 12px;
+  font-family:'Roboto Slab',serif;
+  z-index:50;
+  background:rgba(23,17,13,.92);
+  border-left:2px solid rgba(215,168,59,.45);
+}
+.toc-sidebar .toc-label{
+  display:block;
+  font-size:10px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.toc-sidebar a{
+  display:block;
+  color:#f4dfad;
+  text-decoration:none;
+  padding:3px 0;
+  font-size:11px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}
+main{max-width:820px;margin:0 auto;padding:0 28px 68px}
+.intro-section{padding:48px 0 30px}
+.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
+.content-section{padding:50px 0 28px;border-top:3px double rgba(159,29,46,.32)}
+.section-kicker{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:8px;
+}
+.section-heading{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(36px,5vw,50px);
+  line-height:1.05;
+  color:var(--brown-dark);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  border-left:7px solid var(--red);
+  padding-left:16px;
+  margin-bottom:26px;
+}
+p{margin-bottom:20px;color:var(--ink)}
+.real-world{
+  background:#ecd8a9;
+  border-left:5px solid var(--red);
+  padding:17px 21px;
+  margin:30px 0;
+  font-weight:700;
+}
+.vocab{
+  color:var(--vocab);
+  text-decoration:underline dotted var(--vocab);
+  cursor:help;
+  position:relative;
+  font-weight:700;
+}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{
+  display:none;
+  position:absolute;
+  bottom:125%;
+  left:50%;
+  transform:translateX(-50%);
+  background:#1a1a2e;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:4px;
+  font-size:14px;
+  line-height:1.5;
+  z-index:10;
+  font-style:normal;
+  font-weight:400;
+  pointer-events:none;
+  max-width:280px;
+  white-space:normal;
+  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
+  box-shadow:0 4px 18px rgba(0,0,0,.45);
+}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+figure{margin:32px 0}
+figure img{
+  width:100%;
+  display:block;
+  border:3px solid var(--gold-dark);
+  box-shadow:0 8px 24px rgba(50,25,10,.28);
+  filter:grayscale(.1) contrast(1.05);
+}
+figcaption{
+  font-size:13px;
+  font-style:italic;
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.45;
+}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}
+.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.img-pair figure{margin:0}
+.clearfix:after{content:"";display:table;clear:both}
+.card-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:30px 0;
+}
+.info-card{
+  background:#21170f;
+  color:#fff;
+  border-top:5px solid var(--gold);
+  padding:22px 24px;
+}
+.info-card h3{
+  font-family:'Anton',sans-serif;
+  color:#ffe49a;
+  font-size:24px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.info-card p{color:#f8e8bd;font-size:16px;line-height:1.65;margin:0}
+.timeline{
+  border-left:4px solid var(--red);
+  margin:30px 0 34px 18px;
+  padding-left:28px;
+}
+.timeline-event{margin-bottom:24px;position:relative}
+.timeline-event:before{
+  content:"";
+  position:absolute;
+  left:-38px;
+  top:6px;
+  width:14px;
+  height:14px;
+  background:var(--red);
+  border:2px solid var(--paper);
+  border-radius:50%;
+  box-shadow:0 0 0 2px var(--red);
+}
+.timeline-date{
+  font-family:'Anton',sans-serif;
+  font-size:22px;
+  color:var(--red);
+  letter-spacing:.08em;
+  margin-bottom:4px;
+}
+.timeline-event p{font-size:16px;line-height:1.7;margin-bottom:0}
+.primary-source{
+  background:#ead8ab;
+  border-left:7px solid var(--red);
+  padding:30px 34px;
+  margin:38px 0;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+.ps-label{
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:12px;
+}
+.ps-quote{
+  font-size:22px;
+  font-style:italic;
+  line-height:1.65;
+  color:var(--black);
+  margin-bottom:14px;
+}
+.ps-attribution{font-size:13px;font-style:italic;color:var(--muted);margin-bottom:12px}
+.ps-narrator{
+  border-top:1px solid rgba(159,29,46,.32);
+  padding-top:12px;
+  font-size:15px;
+  line-height:1.6;
+  font-weight:700;
+}
+.ps-questions{
+  background:#f2e2bd;
+  border:1px solid rgba(159,29,46,.28);
+  padding:22px 26px;
+  margin-bottom:38px;
+}
+.ps-questions p{font-size:17px;margin-bottom:12px}
+.brain-break{
+  font-family:'Roboto Slab',serif;
+  margin:44px -50px;
+  padding:36px 50px;
+  position:relative;
+  overflow:hidden;
+}
+.bb-label{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.55em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  opacity:.85;
+}
+.bb-text{
+  font-family:'Roboto Slab',serif;
+  font-size:22px;
+  font-weight:500;
+  line-height:1.65;
+  margin:0;
+}
+.dyk-break{background:var(--teal);color:#fff;border-left:6px solid var(--lime)}
+.dyk-break .bb-label{color:var(--lime)}
+.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{
+  background:#070707;
+  color:#fff;
+  padding:36px 40px;
+  margin:0 -50px 44px;
+  border-top:3px solid var(--orange);
+  border-bottom:3px solid var(--orange);
+  text-align:center;
+}
+.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--orange)}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
+.ff-item{text-align:center;padding:8px 12px}
+.ff-number{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:52px;
+  font-weight:700;
+  color:var(--orange);
+  line-height:1;
+  margin-bottom:8px;
+}
+.ff-desc{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#ffe8b7;
+  max-width:130px;
+  margin:0 auto;
+  line-height:1.4;
+}
+.as-break{
+  background:var(--purple);
+  color:#fff;
+  padding:44px 50px;
+  margin:44px -50px;
+  border-top:3px solid var(--pink);
+  border-bottom:3px solid var(--pink);
+  text-align:center;
+}
+.as-break .bb-label{color:var(--pink)}
+.as-image{
+  max-width:100%;
+  display:block;
+  margin:0 auto 16px;
+  border:3px solid rgba(255,85,212,.75);
+  box-shadow:0 8px 32px rgba(0,0,0,.55);
+  filter:none;
+}
+.as-caption{
+  font-family:'Roboto Slab',serif;
+  font-style:normal;
+  font-size:13px;
+  color:#ffe8fb;
+  line-height:1.5;
+  margin-bottom:28px;
+  display:block;
+}
+.as-fact{
+  font-family:'Roboto Slab',serif;
+  font-size:22px;
+  font-weight:500;
+  color:#fff;
+  line-height:1.6;
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
+}
+.tn-break{
+  background:var(--navy);
+  color:#fff;
+  padding:36px 50px;
+  margin:30px -50px 0;
+}
+.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{
+  font-family:'Roboto Slab',serif;
+  font-size:clamp(22px,3.5vw,30px);
+  font-weight:700;
+  line-height:1.35;
+  text-align:center;
+  color:var(--cyan);
+  margin-bottom:28px;
+  max-width:720px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
+.tn-era-label{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:11px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  margin-bottom:10px;
+  font-weight:700;
+}
+.tn-item img{width:100%;display:block;border:2px solid rgba(41,212,255,.65);filter:none}
+.tn-caption{
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  font-style:italic;
+  color:#d9f7ff;
+  margin-top:8px;
+  line-height:1.4;
+}
+.tn-closing{
+  font-family:'Roboto Slab',serif;
+  font-size:20px;
+  font-weight:500;
+  text-align:center;
+  color:#fff;
+  margin-top:24px;
+  line-height:1.5;
+  border-top:1px solid rgba(41,212,255,.35);
+  padding-top:20px;
+}
+footer{
+  background:#17110d;
+  color:#f4dfad;
+  text-align:center;
+  padding:24px 30px;
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  border-top:5px solid var(--gold);
+}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+@media(max-width:880px){
+  .page-wrap{border:0}
+  main{padding:0 22px 50px}
+  .header-inner{padding:44px 24px 42px}
+  .img-left,.img-right{float:none;width:100%;margin:24px 0}
+  .img-pair,.card-grid,.tn-pair{grid-template-columns:1fr}
+  .brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}
+  .tn-break{padding:28px 22px;margin:30px 0 0}
+  .section-nav a{font-size:11px;padding:11px 8px}
+}
+@media(max-width:600px){
+  .page-title{font-size:42px}
+  .section-heading{font-size:31px}
+  .bb-text,.as-fact{font-size:18px}
+}
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">US History · Semester 2 · Day 6</p>
-  <h1>The Civil Rights Movement</h1>
-  <p class="eq">How did ordinary Americans use law, protest, and personal sacrifice to change a country not living up to its own promises?</p>
-  <div class="banner">Coming Soon</div>
+<div class="page-wrap">
+<header class="site-header">
+  <!--
+    FILENAME: S2L06_Header_SelmaBridge.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Selma to Montgomery marchers crossing Edmund Pettus Bridge, March 1965; header image because it shows ordinary people risking safety for voting rights
+    SEARCH: Selma march Edmund Pettus Bridge 1965 Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Selma_to_Montgomery_marches (suggested, not guaranteed)
+  -->
+  <img class="header-bg" src="images/S2/L06/S2L06_Header_SelmaBridge.jpg" alt="Civil Rights marchers crossing the Edmund Pettus Bridge">
+  <div class="header-inner">
+    <div class="course-label">US HISTORY — SEMESTER 2, LESSON 06</div>
+    <h1 class="page-title">THE CIVIL RIGHTS MOVEMENT</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did ordinary Americans use law, protest, and personal sacrifice to change a country not living up to its own promises?</div>
+  </div>
+</header>
+
+<nav class="section-nav" aria-label="Page sections">
+  <a href="#law">LAW</a>
+  <a href="#direct-action">DIRECT ACTION</a>
+  <a href="#voting">VOTING RIGHTS</a>
+  <a href="#black-power">BLACK POWER</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</nav>
+
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#law">LAW</a>
+  <a href="#direct-action">DIRECT ACTION</a>
+  <a href="#voting">VOTING RIGHTS</a>
+  <a href="#black-power">BLACK POWER</a>
+  <a href="#primary-source-moment">SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</aside>
+
+<main>
+<section class="intro-section">
+  <p class="para-standard">On March 7, 1965, hundreds of people walked across the Edmund Pettus Bridge in Selma, Alabama. They were marching for the right to vote. State troopers waited on the other side with clubs, tear gas, and horses.</p>
+  <p class="para-simple">On March 7, 1965, hundreds of people walked across a bridge in Selma, Alabama. They were marching for voting rights. State troopers waited on the other side. The troopers had clubs, tear gas, and horses.</p>
+  <p class="para-standard">That day became known as Bloody Sunday. But the Civil Rights Movement did not begin or end on that bridge. It grew from decades of organizing, court cases, boycotts, sit-ins, marches, speeches, and sacrifice by ordinary people.</p>
+  <p class="para-simple">That day became known as Bloody Sunday. But the Civil Rights Movement did not begin or end there. It grew from years of organizing, court cases, boycotts, sit-ins, marches, speeches, and sacrifice.</p>
+</section>
+
+<section class="content-section clearfix" id="law">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">THE LONG FIGHT THROUGH LAW</h2>
+  <!--
+    FILENAME: S2L06_APhilipRandolph.jpg
+    PLACE IN: images/S2/L06/
+    FIND: A. Philip Randolph portrait or March on Washington Movement image, 1941; shows labor leader pressuring FDR to desegregate defense industries
+    SEARCH: A Philip Randolph 1941 March on Washington Movement Library of Congress
+    LINK: https://www.loc.gov/pictures/search/?q=A.%20Philip%20Randolph (suggested, not guaranteed)
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L06/S2L06_APhilipRandolph.jpg" alt="A. Philip Randolph">
+    <figcaption>A. Philip Randolph threatened a March on Washington in 1941 to pressure FDR to desegregate defense jobs. Library of Congress.</figcaption>
+  </figure>
+  <p class="para-standard">The modern Civil Rights Movement grew out of World War II. Black Americans fought for democracy overseas while facing <span class="vocab">segregation<span class="tip">Separating people by race by law or custom.</span></span> at home. A. Philip Randolph threatened a March on Washington in 1941. President Franklin Roosevelt responded by banning racial discrimination in defense industries.</p>
+  <p class="para-simple">The modern Civil Rights Movement grew out of World War II. Black Americans fought for democracy overseas. At home, they still faced <span class="vocab-red">segregation</span>. A. Philip Randolph threatened a March on Washington in 1941. FDR then banned racial discrimination in defense jobs.</p>
+  <p class="para-standard">In 1948, President Truman ordered <span class="vocab">desegregation<span class="tip">Ending forced separation by race.</span></span> of the U.S. military. This did not end racism in the armed forces, but it was a major federal step. It showed that national pressure could force the government to act.</p>
+  <p class="para-simple">In 1948, President Truman ordered <span class="vocab-red">desegregation</span> of the U.S. military. This did not end racism in the military. But it was a major federal step. It showed that pressure could force change.</p>
+  <!--
+    FILENAME: S2L06_BrownPlaintiffs.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Brown v. Board of Education plaintiffs or Supreme Court school desegregation image, 1954; shows legal strategy against school segregation
+    SEARCH: Brown v Board of Education plaintiffs 1954 Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Brown_v._Board_of_Education (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_BrownPlaintiffs.jpg" alt="Brown v. Board of Education plaintiffs">
+    <figcaption>Brown v. Board of Education challenged school segregation in the Supreme Court. Wikimedia Commons / Library of Congress.</figcaption>
+  </figure>
+  <p class="para-standard">The <span class="vocab">NAACP<span class="tip">Group fighting for Black civil rights.</span></span> used courts to attack segregation. Its lawyers argued that segregated schools violated <span class="vocab">equal protection<span class="tip">The law must protect people equally.</span></span> under the Fourteenth Amendment. In <span class="vocab">Brown v. Board<span class="tip">1954 case that banned school segregation.</span></span>, the Supreme Court ruled that segregated public schools were unconstitutional.</p>
+  <p class="para-simple">The <span class="vocab-red">NAACP</span> used courts to fight segregation. Its lawyers said segregated schools violated <span class="vocab-red">equal protection</span>. That means the law must protect people equally. In <span class="vocab-red">Brown v. Board</span>, the Supreme Court said segregated public schools were unconstitutional.</p>
+  <p class="real-world para-standard">Real-world connection: Legal victories matter, but they often need public pressure to become real change.</p>
+  <p class="real-world para-simple">Real-world connection: Court wins matter, but people still have to make change happen.</p>
+</section>
+
+<div class="brain-break dyk-break">
+  <span class="bb-label">DID YOU KNOW</span>
+  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <!--
+        FILENAME: S2L06_DYK_MarchOnWashingtonCrowd.jpg
+        PLACE IN: images/S2/L06/
+        FIND: Aerial or wide crowd photograph from the March on Washington, August 28, 1963; shows 250,000 people gathered before social media
+        SEARCH: March on Washington crowd 250000 1963 Library of Congress
+        LINK: https://commons.wikimedia.org/wiki/Category:March_on_Washington_for_Jobs_and_Freedom (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L06/S2L06_DYK_MarchOnWashingtonCrowd.jpg" alt="Crowd at the March on Washington" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,.4);">
+      <p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Roboto Slab',serif;">March on Washington crowd, 1963.</p>
+    </div>
+    <p class="bb-text" style="flex:1;min-width:200px;">About 250,000 people came to the March on Washington without group texts, GPS, or social media. They traveled by bus, train, car, and foot because organizing was already a technology. The movement had built a human network strong enough to fill the National Mall.</p>
+  </div>
+</div>
+
+<div class="brain-break ff-break">
+  <span class="bb-label">FAST FACTS</span>
+  <div class="ff-grid">
+    <div class="ff-item"><span class="ff-number">1954</span><span class="ff-desc">BROWN DECISION</span></div>
+    <div class="ff-item"><span class="ff-number">381</span><span class="ff-desc">BOYCOTT DAYS</span></div>
+    <div class="ff-item"><span class="ff-number">250K</span><span class="ff-desc">MARCH ON WASHINGTON</span></div>
+    <div class="ff-item"><span class="ff-number">1965</span><span class="ff-desc">VOTING RIGHTS ACT</span></div>
+  </div>
+</div>
+
+<section class="content-section clearfix" id="direct-action">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">DIRECT ACTION CHANGES THE STREETS</h2>
+  <!--
+    FILENAME: S2L06_RosaParksBus.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Rosa Parks seated on bus or Montgomery Bus Boycott image, 1955-1956; shows boycott and emergence of MLK
+    SEARCH: Rosa Parks bus Montgomery Bus Boycott Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Montgomery_bus_boycott (suggested, not guaranteed)
+  -->
+  <figure class="img-left">
+    <img src="images/S2/L06/S2L06_RosaParksBus.jpg" alt="Rosa Parks on a bus">
+    <figcaption>Rosa Parks helped spark the Montgomery Bus Boycott in 1955. Wikimedia Commons / Library of Congress.</figcaption>
+  </figure>
+  <p class="para-standard">In 1955, Rosa Parks refused to give up her bus seat in Montgomery, Alabama. Black residents answered with a bus boycott that lasted 381 days. The boycott used <span class="vocab">civil disobedience<span class="tip">Breaking an unjust law peacefully.</span></span>, which means peacefully refusing to obey an unjust rule. It also helped bring Martin Luther King Jr. to national attention.</p>
+  <p class="para-simple">In 1955, Rosa Parks refused to give up her bus seat in Montgomery, Alabama. Black residents started a bus boycott. It lasted 381 days. The boycott used <span class="vocab-red">civil disobedience</span>. That means peacefully refusing to obey an unjust rule.</p>
+  <p class="para-standard">Students then carried the movement into lunch counters, bus stations, and city streets. Sit-ins challenged segregated restaurants. Freedom Riders challenged segregated interstate buses. These actions used <span class="vocab">nonviolent protest<span class="tip">Protest that does not use violence.</span></span> and <span class="vocab">direct action<span class="tip">Public action meant to force change.</span></span> to create a crisis that leaders could not ignore.</p>
+  <p class="para-simple">Students brought the movement into lunch counters, bus stations, and streets. Sit-ins challenged segregated restaurants. Freedom Riders challenged segregated buses. These actions used <span class="vocab-red">nonviolent protest</span> and <span class="vocab-red">direct action</span> to force change.</p>
+  <!--
+    FILENAME: S2L06_SitInStudents.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Civil Rights sit-in students at lunch counter, 1960; shows student direct action
+    SEARCH: Greensboro sit-in students lunch counter 1960 Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Greensboro_sit-ins (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_SitInStudents.jpg" alt="Students at a Civil Rights sit-in">
+    <figcaption>Students used sit-ins to challenge segregated lunch counters, 1960. Wikimedia Commons / Library of Congress.</figcaption>
+  </figure>
+  <p class="para-standard">In Birmingham in 1963, police used dogs and fire hoses against protesters, including children. Television carried the violence into living rooms across the nation. Many Americans who had ignored segregation could no longer look away.</p>
+  <p class="para-simple">In Birmingham in 1963, police used dogs and fire hoses against protesters. Some protesters were children. Television showed the violence across the country. Many Americans could no longer ignore segregation.</p>
+  <!--
+    FILENAME: S2L06_BirminghamPoliceDog.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Birmingham campaign police dog attack photograph, 1963; iconic image showing violence against civil rights protesters
+    SEARCH: Birmingham campaign police dog 1963 Library of Congress
+    LINK: https://www.loc.gov/pictures/search/?q=Birmingham%20police%20dog%201963 (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_BirminghamPoliceDog.jpg" alt="Birmingham police dog attack during Civil Rights protest">
+    <figcaption>Birmingham police used dogs and fire hoses against civil rights protesters in 1963. Library of Congress search suggested.</figcaption>
+  </figure>
+</section>
+
+<section class="content-section clearfix" id="voting">
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">WASHINGTON, MISSISSIPPI, AND SELMA</h2>
+  <p class="para-standard">In August 1963, about 250,000 people gathered for the March on Washington for Jobs and Freedom. King gave his famous "I Have a Dream" speech there. The march demanded both civil rights and economic justice. It showed the movement's size, discipline, and moral force.</p>
+  <p class="para-simple">In August 1963, about 250,000 people joined the March on Washington. King gave his famous "I Have a Dream" speech. The march demanded civil rights and better jobs. It showed how large and organized the movement was.</p>
+  <!--
+    FILENAME: S2L06_MarchOnWashingtonFull.jpg
+    PLACE IN: images/S2/L06/
+    FIND: March on Washington crowd or King speaking at Lincoln Memorial, August 28, 1963
+    SEARCH: March on Washington 1963 Lincoln Memorial crowd Library of Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:March_on_Washington_for_Jobs_and_Freedom (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_MarchOnWashingtonFull.jpg" alt="March on Washington crowd in 1963">
+    <figcaption>March on Washington for Jobs and Freedom, August 28, 1963. Wikimedia Commons / Library of Congress.</figcaption>
+  </figure>
+  <p class="para-standard">The movement also faced deadly violence. In 1964, civil rights workers James Chaney, Andrew Goodman, and Michael Schwerner were murdered in Mississippi. They had been helping register Black voters. Their deaths showed how dangerous voting rights work could be.</p>
+  <p class="para-simple">The movement also faced deadly violence. In 1964, James Chaney, Andrew Goodman, and Michael Schwerner were murdered in Mississippi. They had been helping Black people register to vote. Their deaths showed how dangerous voting rights work could be.</p>
+  <p class="para-standard">In 1965, marchers in Selma tried to walk to Montgomery for voting rights. On Bloody Sunday, state troopers attacked them on the Edmund Pettus Bridge. The images shocked the country. Later that year, Congress passed the <span class="vocab">Voting Rights Act<span class="tip">1965 law protecting Black voting rights.</span></span>, which attacked racist barriers to voting.</p>
+  <p class="para-simple">In 1965, marchers in Selma tried to walk to Montgomery for voting rights. On Bloody Sunday, state troopers attacked them on a bridge. The images shocked the country. Later that year, Congress passed the <span class="vocab-red">Voting Rights Act</span>. It protected Black voting rights.</p>
+  <!--
+    FILENAME: S2L06_BloodySundaySelma.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Bloody Sunday Selma marchers attacked on Edmund Pettus Bridge, March 7, 1965
+    SEARCH: Bloody Sunday Selma Edmund Pettus Bridge 1965 Wikimedia Commons Library of Congress
+    LINK: https://commons.wikimedia.org/wiki/Category:Bloody_Sunday_(1965) (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_BloodySundaySelma.jpg" alt="Bloody Sunday in Selma">
+    <figcaption>On Bloody Sunday, marchers were attacked on the Edmund Pettus Bridge, March 7, 1965. Wikimedia Commons / Library of Congress.</figcaption>
+  </figure>
+</section>
+
+<div class="brain-break as-break">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!--
+      FILENAME: S2L06_ArtSpotlight_RockwellProblem.jpg
+      PLACE IN: images/S2/L06/
+      FIND: Norman Rockwell, "The Problem We All Live With," 1964; painting of Ruby Bridges escorted by federal marshals to desegregate school
+      SEARCH: Norman Rockwell The Problem We All Live With 1964 Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:The_Problem_We_All_Live_With.jpg (suggested, not guaranteed)
+    -->
+    <img src="images/S2/L06/S2L06_ArtSpotlight_RockwellProblem.jpg" alt="Norman Rockwell The Problem We All Live With" class="as-image">
+    <figcaption class="as-caption"><em>The Problem We All Live With</em>, Norman Rockwell, 1964. The painting shows Ruby Bridges walking to school with federal marshals.</figcaption>
+  </figure>
+  <p class="as-fact">Rockwell painted Ruby Bridges small on purpose, but she controls the whole picture. The adults around her have no faces, which makes the child look even more alone. The painting turns school desegregation into one ordinary morning that should never have required federal protection.</p>
+</div>
+
+<section class="content-section clearfix" id="black-power">
+  <span class="section-kicker">CHAPTER FOUR</span>
+  <h2 class="section-heading">BLACK POWER, KING, AND THE UNFINISHED FIGHT</h2>
+  <!--
+    FILENAME: S2L06_MalcolmX.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Malcolm X speaking or portrait, early 1960s; shows parallel vision of Black pride and self-defense
+    SEARCH: Malcolm X 1964 photograph Wikimedia Commons Library of Congress
+    LINK: https://commons.wikimedia.org/wiki/Category:Malcolm_X (suggested, not guaranteed)
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L06/S2L06_MalcolmX.jpg" alt="Malcolm X">
+    <figcaption>Malcolm X challenged racism with a message of Black pride, self-defense, and self-determination. Wikimedia Commons / Library of Congress.</figcaption>
+  </figure>
+  <p class="para-standard">Not everyone agreed about the best path to freedom. Malcolm X criticized slow change and questioned whether nonviolence could protect Black communities from violence. His message helped shape <span class="vocab">Black Power<span class="tip">A movement for Black pride, control, and power.</span></span>, which called for Black pride, self-defense, and control over Black communities.</p>
+  <p class="para-simple">Not everyone agreed on the best path to freedom. Malcolm X criticized slow change. He questioned whether nonviolence could protect Black people from violence. His message helped shape <span class="vocab-red">Black Power</span>. Black Power called for pride, self-defense, and community control.</p>
+  <p class="para-standard">Black Power was sometimes seen as competing with King's nonviolent approach, but both came from anger at racism and a desire for dignity. Many activists wanted more than legal equality. They wanted safer neighborhoods, better schools, jobs, housing, and political power.</p>
+  <p class="para-simple">Black Power was sometimes seen as different from King's nonviolent approach. But both came from anger at racism and a desire for dignity. Many activists wanted more than legal rights. They wanted safety, schools, jobs, housing, and political power.</p>
+  <!--
+    FILENAME: S2L06_KingFuneralMuleCart.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Martin Luther King Jr. funeral mule-drawn wagon, April 1968; shows mourning and the Poor People's Campaign symbolism
+    SEARCH: Martin Luther King funeral mule wagon 1968 Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Funeral_of_Martin_Luther_King_Jr. (suggested, not guaranteed)
+  -->
+  <figure class="img-left">
+    <img src="images/S2/L06/S2L06_KingFuneralMuleCart.jpg" alt="Martin Luther King Jr. funeral mule wagon">
+    <figcaption>Martin Luther King Jr.'s funeral procession in Atlanta, April 1968. Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="para-standard">King was assassinated in 1968 while supporting striking sanitation workers in Memphis. His death shocked the nation and sparked grief and anger. The movement had won major laws, including the Civil Rights Act of 1964 and Voting Rights Act of 1965. But the fight for equality was not finished.</p>
+  <p class="para-simple">King was assassinated in 1968. He was in Memphis supporting sanitation workers. His death shocked the country. The movement had won major laws. But the fight for equality was not finished.</p>
+  <div class="timeline">
+    <div class="timeline-event"><div class="timeline-date">1941</div><p>Randolph pressures FDR to desegregate defense industries.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1954</div><p>Brown v. Board declares school segregation unconstitutional.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1964</div><p>Civil Rights Act bans segregation in public places and job discrimination.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1965</div><p>Voting Rights Act protects voting rights from racist barriers.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1968</div><p>King is assassinated in Memphis.</p></div>
+  </div>
+</section>
+
+<section class="content-section" id="primary-source-moment">
+  <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
+  <h2 class="section-heading">TWO VISIONS OF FREEDOM</h2>
+  <div class="primary-source">
+    <div class="ps-label">PRIMARY SOURCE</div>
+    <div class="ps-quote">"Injustice anywhere is a threat to justice everywhere."</div>
+    <div class="ps-attribution">Martin Luther King Jr., "Letter from Birmingham Jail," 1963</div>
+    <div class="ps-narrator">King argued that people could not wait quietly while unjust laws harmed real lives.</div>
+  </div>
+  <div class="primary-source">
+    <div class="ps-label">PRIMARY SOURCE</div>
+    <div class="ps-quote">"We want freedom by any means necessary."</div>
+    <div class="ps-attribution">Malcolm X, speech in New York City, 1964</div>
+    <div class="ps-narrator">Malcolm X pushed listeners to see freedom as urgent, not something to beg for politely.</div>
+  </div>
+  <div class="ps-questions">
+    <p><strong>Question 1:</strong> What does each speaker say about how urgent freedom is?</p>
+    <p><strong>Question 2:</strong> How do these two sources connect to law, protest, and sacrifice?</p>
+  </div>
+</section>
+
+<div class="brain-break tn-break" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">Voting rights are never just about ballots; they are about power.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1965</span>
+      <!--
+        FILENAME: S2L06_Then_SelmaVotingRights.jpg
+        PLACE IN: images/S2/L06/
+        FIND: Selma to Montgomery marchers crossing Edmund Pettus Bridge, 1965; then image for voting rights comparison
+        SEARCH: Selma to Montgomery march Edmund Pettus Bridge 1965 Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/Category:Selma_to_Montgomery_marches (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L06/S2L06_Then_SelmaVotingRights.jpg" alt="Selma marchers in 1965">
+      <p class="tn-caption">Marchers in Selma risked violence to demand voting rights.</p>
+    </div>
+    <div class="tn-item">
+      <span class="tn-era-label">TODAY</span>
+      <!--
+        FILENAME: S2L06_Now_VotingLine.jpg
+        PLACE IN: images/S2/L06/
+        FIND: Modern voters waiting in line at polling place; shows voting rights as an ongoing civic act
+        SEARCH: voters waiting in line polling place Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/Category:Voters_in_the_United_States (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L06/S2L06_Now_VotingLine.jpg" alt="Modern voters waiting in line">
+      <p class="tn-caption">Modern voting lines show that access to the ballot still depends on time, place, rules, and power.</p>
+    </div>
+  </div>
+  <p class="tn-closing">The bridge and the polling line look different, but both show people waiting in public for a promise the country says it already believes in.</p>
+</div>
+</main>
+
+<footer>US HISTORY — SEMESTER 2, LESSON 06 — THE CIVIL RIGHTS MOVEMENT</footer>
+</div>
+
+<script>
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
+    el.classList.toggle('active');
+  });
+});
+document.addEventListener('click',function(){
+  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
+});
+document.getElementById('lexile-toggle').addEventListener('click',function(){
+  document.body.classList.toggle('simplified');
+  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
+});
+const tocObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const id=entry.target.getAttribute('id');
+    const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    if(link){
+      if(entry.isIntersecting)link.classList.add('active');
+      else link.classList.remove('active');
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
+</script>
 </body>
 </html>
+
+<!--
+IMAGE CHECKLIST FOR SSU_S2L06.html
+1. S2L06_Header_SelmaBridge.jpg — Selma to Montgomery marchers on Edmund Pettus Bridge, 1965 — Suggested link: https://commons.wikimedia.org/wiki/Category:Selma_to_Montgomery_marches
+2. S2L06_APhilipRandolph.jpg — A. Philip Randolph, March on Washington Movement leader — Suggested link: https://www.loc.gov/pictures/search/?q=A.%20Philip%20Randolph
+3. S2L06_BrownPlaintiffs.jpg — Brown v. Board of Education plaintiffs or school desegregation image — Suggested link: https://commons.wikimedia.org/wiki/Category:Brown_v._Board_of_Education
+4. S2L06_DYK_MarchOnWashingtonCrowd.jpg — March on Washington crowd, 1963 — Suggested link: https://commons.wikimedia.org/wiki/Category:March_on_Washington_for_Jobs_and_Freedom
+5. S2L06_RosaParksBus.jpg — Rosa Parks or Montgomery Bus Boycott image — Suggested link: https://commons.wikimedia.org/wiki/Category:Montgomery_bus_boycott
+6. S2L06_SitInStudents.jpg — Greensboro sit-in students, 1960 — Suggested link: https://commons.wikimedia.org/wiki/Category:Greensboro_sit-ins
+7. S2L06_BirminghamPoliceDog.jpg — Birmingham police dog attack photograph, 1963 — Suggested link: https://www.loc.gov/pictures/search/?q=Birmingham%20police%20dog%201963
+8. S2L06_MarchOnWashingtonFull.jpg — March on Washington crowd or King speaking, 1963 — Suggested link: https://commons.wikimedia.org/wiki/Category:March_on_Washington_for_Jobs_and_Freedom
+9. S2L06_BloodySundaySelma.jpg — Bloody Sunday, Selma, 1965 — Suggested link: https://commons.wikimedia.org/wiki/Category:Bloody_Sunday_(1965)
+10. S2L06_ArtSpotlight_RockwellProblem.jpg — Norman Rockwell, "The Problem We All Live With," 1964 — Suggested link: https://commons.wikimedia.org/wiki/File:The_Problem_We_All_Live_With.jpg
+11. S2L06_MalcolmX.jpg — Malcolm X portrait or speech photograph — Suggested link: https://commons.wikimedia.org/wiki/Category:Malcolm_X
+12. S2L06_KingFuneralMuleCart.jpg — Martin Luther King Jr. funeral procession, 1968 — Suggested link: https://commons.wikimedia.org/wiki/Category:Funeral_of_Martin_Luther_King_Jr.
+13. S2L06_Then_SelmaVotingRights.jpg — Selma marchers, 1965 — Suggested link: https://commons.wikimedia.org/wiki/Category:Selma_to_Montgomery_marches
+14. S2L06_Now_VotingLine.jpg — Modern voters waiting in line — Suggested link: https://commons.wikimedia.org/wiki/Category:Voters_in_the_United_States
+-->
