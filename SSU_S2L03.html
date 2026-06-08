@@ -3,986 +3,337 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Post-War Boom and the New America — US History S2L03</title>
-
-<!-- Google Fonts: Raleway (optimistic mid-century display) + Merriweather (readable body) -->
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-
+<title>SSU S2L03 — POSTWAR BOOM AND THE NEW AMERICA</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;900&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-  /* =============================================
-     CSS VARIABLES — 1950s POSTWAR PALETTE
-     powder blue, cream, coral red, chrome silver
-     Mid-century optimism: bright, airy, confident
-  ============================================= */
-  :root {
-    --bg:            #e8eff5;
-    --bg-mid:        #dde6ee;
-    --bg-section:    #f2f7fb;
-    --bg-dark:       #1c2b3a;
-    --bg-card:       #ffffff;
-    --blue:          #2a5f8f;
-    --blue-light:    #4a85b5;
-    --blue-pale:     #c8dcee;
-    --coral:         #c0392b;
-    --coral-dark:    #962d22;
-    --teal:          #1a7a6e;
-    --teal-light:    #2a9e8f;
-    --cream:         #fdf8f0;
-    --cream-dark:    #e8dfc8;
-    --chrome:        #8899aa;
-    --chrome-light:  #b8c8d8;
-    --text:          #1c2b3a;
-    --text-mid:      #3a4f62;
-    --text-dim:      #6a7f92;
-    --border:        #b8ccd8;
-    --border-dark:   #2a5f8f;
-    --gold:          #c8860c;
-    --display-font:  'Raleway', sans-serif;
-    --body-font:     'Merriweather', Georgia, serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: var(--body-font);
-    font-size: 18px;
-    line-height: 1.85;
-    font-weight: 300;
-  }
-
-  .page-wrap { position: relative; }
-
-  /* =============================================
-     HEADER — powder blue sky with faint suburb
-  ============================================= */
-  .site-header {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(170deg, #1c2b3a 0%, #2a5f8f 100%);
-    padding: 80px 24px 68px;
-    text-align: center;
-    border-bottom: 5px solid var(--coral);
-  }
-
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center bottom;
-    opacity: 0.22;
-    filter: sepia(10%) saturate(1.2);
-    z-index: 0;
-  }
-
-  /* Decorative mid-century geometric stripe across top of header */
-  .site-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: repeating-linear-gradient(
-      90deg,
-      var(--coral) 0px,
-      var(--coral) 24px,
-      var(--gold) 24px,
-      var(--gold) 48px,
-      #2a9e8f 48px,
-      #2a9e8f 72px,
-      var(--blue-light) 72px,
-      var(--blue-light) 96px
-    );
-    z-index: 2;
-  }
-
-  .site-header .inner {
-    position: relative;
-    z-index: 1;
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .course-label {
-    display: block;
-    font-family: var(--display-font);
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--chrome-light);
-    margin-bottom: 16px;
-  }
-
-  .page-title {
-    font-family: var(--display-font);
-    font-size: clamp(40px, 6.5vw, 66px);
-    font-weight: 900;
-    line-height: 1.05;
-    color: #ffffff;
-    text-shadow: 1px 2px 12px rgba(0,0,0,0.5);
-    letter-spacing: -0.01em;
-    margin-bottom: 30px;
-  }
-
-  .eq-banner {
-    display: inline-block;
-    background: var(--coral-dark);
-    color: #fff;
-    font-family: var(--body-font);
-    font-size: clamp(15px, 2.2vw, 19px);
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.5;
-    padding: 16px 30px;
-    border-radius: 2px;
-    border-left: 5px solid var(--gold);
-    max-width: 720px;
-    text-align: left;
-    margin: 0 auto;
-  }
-
-  .eq-label {
-    display: block;
-    font-style: normal;
-    font-family: var(--display-font);
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--cream-dark);
-    margin-bottom: 5px;
-  }
-
-  /* =============================================
-     NAV BAR
-  ============================================= */
-  .section-nav {
-    background: var(--bg-dark);
-    border-bottom: 3px solid var(--coral);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 0 8px;
-  }
-
-  .section-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .section-nav li a {
-    display: inline-block;
-    padding: 13px 16px;
-    font-family: var(--display-font);
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--chrome-light);
-    border-bottom: 3px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .section-nav li a:hover {
-    color: #fff;
-    border-bottom-color: var(--coral);
-  }
-
-  /* =============================================
-     INTRO
-  ============================================= */
-  .intro-section {
-    padding: 64px 24px 0;
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .intro-section p {
-    font-size: 19px;
-    line-height: 1.9;
-    color: var(--text);
-  }
-
-  /* =============================================
-     SECTION DIVIDER — mid-century diamond rule
-  ============================================= */
-  .section-divider {
-    max-width: 820px;
-    margin: 52px auto 0;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .section-divider::before,
-  .section-divider::after {
-    content: '';
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--border-dark), transparent);
-  }
-
-  .divider-mark {
-    font-family: var(--display-font);
-    font-size: 20px;
-    color: var(--coral);
-    letter-spacing: 8px;
-  }
-
-  /* =============================================
-     CONTENT SECTIONS
-  ============================================= */
-  .content-section {
-    padding: 60px 24px;
-    max-width: 820px;
-    margin: 0 auto;
-    border-top: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-family: var(--display-font);
-    font-size: 11px;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 8px;
-    display: block;
-    font-weight: 700;
-  }
-
-  .section-heading {
-    font-family: var(--display-font);
-    font-size: clamp(26px, 4vw, 36px);
-    font-weight: 900;
-    color: var(--bg-dark);
-    line-height: 1.12;
-    margin-bottom: 26px;
-    padding-bottom: 14px;
-    border-bottom: 3px solid var(--coral);
-  }
-
-  .section-body p {
-    margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 1.85;
-    color: var(--text);
-  }
-
-  .section-body p:last-child { margin-bottom: 0; }
-
-  .section-body::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  /* =============================================
-     VOCABULARY
-  ============================================= */
-  .vocab {
-    color: var(--coral);
-    text-decoration: underline dotted var(--coral);
-    cursor: help;
-    position: relative;
-  }
-
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-dark);
-    color: #e8f0f8;
-    padding: 9px 15px;
-    border-radius: 3px;
-    font-size: 14px;
-    line-height: 1.55;
-    z-index: 200;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    max-width: 280px;
-    white-space: normal;
-    border: 1px solid var(--blue-light);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.2);
-    font-family: var(--body-font);
-  }
-
-  .vocab:hover .tip,
-  .vocab.active .tip { display: block; }
-
-  .vocab-ref { color: var(--coral); }
-
-  /* =============================================
-     IMAGES
-  ============================================= */
-  figure { margin: 32px 0; }
-
-  figure.img-full img {
-    width: 100%;
-    display: block;
-    border: 2px solid var(--border);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-  }
-
-  figure.img-left {
-    float: left;
-    width: 42%;
-    margin: 4px 26px 18px 0;
-  }
-
-  figure.img-left img {
-    width: 100%;
-    display: block;
-    border: 2px solid var(--border);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  }
-
-  figure.img-right {
-    float: right;
-    width: 42%;
-    margin: 4px 0 18px 26px;
-  }
-
-  figure.img-right img {
-    width: 100%;
-    display: block;
-    border: 2px solid var(--border);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  }
-
-  .img-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 32px 0;
-  }
-
-  .img-pair figure { margin: 0; }
-
-  .img-pair figure img {
-    width: 100%;
-    display: block;
-    border: 2px solid var(--border);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  }
-
-  figcaption {
-    font-family: var(--body-font);
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--text-dim);
-    font-style: italic;
-    margin-top: 7px;
-    padding: 0 2px;
-  }
-
-  /* =============================================
-     STATS CALLOUT ROW
-  ============================================= */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 32px 0;
-  }
-
-  .stat-card {
-    background: var(--bg-dark);
-    color: #fff;
-    padding: 20px 16px;
-    text-align: center;
-  }
-
-  .stat-card .stat-number {
-    font-family: var(--display-font);
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--coral);
-    display: block;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .stat-card .stat-label {
-    font-size: 14px;
-    line-height: 1.4;
-    color: var(--chrome-light);
-    font-family: var(--display-font);
-    letter-spacing: 0.05em;
-  }
-
-  /* =============================================
-     PRIMARY SOURCE
-  ============================================= */
-  .primary-source {
-    background: var(--cream);
-    border-left: 5px solid var(--blue);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    padding: 26px 30px 22px;
-    margin: 38px 0;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-  }
-
-  .primary-source::before {
-    content: '\201C';
-    font-family: var(--display-font);
-    font-size: 100px;
-    color: var(--blue-light);
-    opacity: 0.2;
-    position: absolute;
-    top: -12px;
-    left: 16px;
-    line-height: 1;
-  }
-
-  .primary-source blockquote {
-    font-family: var(--body-font);
-    font-size: 22px;
-    font-style: italic;
-    line-height: 1.62;
-    color: var(--text);
-    margin-bottom: 14px;
-    padding-left: 14px;
-  }
-
-  .primary-source cite {
-    display: block;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--text-dim);
-    margin-bottom: 12px;
-    padding-left: 14px;
-    letter-spacing: 0.02em;
-  }
-
-  .primary-source .doc-explainer {
-    font-size: 15px;
-    color: var(--text-mid);
-    font-style: normal;
-    padding-left: 14px;
-    border-top: 1px solid var(--border);
-    padding-top: 12px;
-    line-height: 1.6;
-  }
-
-  .ps-questions {
-    background: var(--bg-mid);
-    border: 1px solid var(--border);
-    padding: 22px 26px;
-    margin-bottom: 38px;
-  }
-
-  .ps-questions p {
-    font-size: 17px;
-    margin-bottom: 13px;
-    color: var(--text);
-  }
-
-  .ps-questions p:last-child { margin-bottom: 0; }
-
-  .ps-q-label {
-    font-family: var(--display-font);
-    font-weight: 700;
-    color: var(--blue);
-    margin-right: 6px;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-  }
-
-  /* =============================================
-     LOCAL HISTORY CALLOUT
-  ============================================= */
-  .local-history {
-    background: var(--cream);
-    border: 2px solid var(--teal);
-    padding: 26px 30px;
-    margin: 44px 0 0;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-
-  .local-history::before {
-    content: 'LOCAL HISTORY';
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: var(--teal);
-    color: #fff;
-    font-family: var(--display-font);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    font-weight: 700;
-    padding: 5px 13px;
-  }
-
-  .local-history .lh-headline {
-    font-family: var(--display-font);
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--bg-dark);
-    margin-bottom: 13px;
-    margin-top: 4px;
-    line-height: 1.2;
-  }
-
-  .local-history p {
-    font-size: 17px;
-    line-height: 1.75;
-    margin-bottom: 10px;
-    color: var(--text);
-  }
-
-  /* =============================================
-     HOW THIS STILL MATTERS TODAY
-  ============================================= */
-  .still-matters {
-    background: var(--bg-dark);
-    border-top: 4px solid var(--coral);
-    padding: 72px 24px 80px;
-  }
-
-  .still-matters .inner {
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .still-matters .section-label { color: var(--coral); }
-
-  .still-matters .section-heading {
-    color: #fff;
-    border-bottom-color: var(--coral);
-  }
-
-  .matters-headline {
-    font-family: var(--body-font);
-    font-size: clamp(20px, 2.8vw, 26px);
-    font-weight: 700;
-    color: var(--blue-pale);
-    line-height: 1.4;
-    margin-bottom: 30px;
-  }
-
-  .news-headlines {
-    list-style: none;
-    margin: 0 0 36px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .news-headlines li {
-    border-left: 3px solid var(--coral);
-    padding-left: 14px;
-  }
-
-  .news-headlines a {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--coral);
-    text-decoration: underline;
-    line-height: 1.45;
-  }
-
-  .closing-question {
-    font-family: var(--body-font);
-    font-size: clamp(19px, 2.6vw, 23px);
-    font-style: italic;
-    color: var(--blue-pale);
-    line-height: 1.6;
-    margin-top: 38px;
-    padding-top: 28px;
-    border-top: 1px solid #3a5f7a;
-  }
-
-  /* =============================================
-     FOOTER
-  ============================================= */
-  .site-footer {
-    background: #131f2a;
-    border-top: 2px solid var(--border-dark);
-    padding: 26px 24px;
-    text-align: center;
-    font-family: var(--display-font);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--chrome);
-  }
-
-  /* =============================================
-     RESPONSIVE
-  ============================================= */
-  @media (max-width: 640px) {
-    figure.img-left,
-    figure.img-right {
-      float: none;
-      width: 100%;
-      margin: 20px 0;
-    }
-    .img-pair,
-    .stats-row { grid-template-columns: 1fr; }
-    .section-nav li a { padding: 10px 8px; font-size: 9px; }
-  }
+:root{
+  --bg:#e8eff5; --bg-mid:#dde6ee; --section:#f7fbff; --dark:#1c2b3a; --blue:#2a5f8f; --blue-light:#4a85b5;
+  --coral:#c0392b; --coral-dark:#962d22; --teal:#1a7a6e; --cream:#fdf8f0; --chrome:#b8c8d8;
+  --text:#1c2b3a; --dim:#597084; --gold:#c8860c; --red:#b03030; --yellow:#ffd447; --purple:#2b1558;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Merriweather',Georgia,serif;font-size:18px;line-height:1.85}
+.page-header{position:relative;overflow:hidden;background:linear-gradient(170deg,#102033 0%,#2a5f8f 100%);padding:76px 24px 66px;text-align:center;border-bottom:5px solid var(--coral)}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;filter:sepia(10%) saturate(1.2);z-index:0}
+.page-header:before{content:'';position:absolute;top:0;left:0;right:0;height:7px;background:repeating-linear-gradient(90deg,var(--coral) 0 24px,var(--gold) 24px 48px,var(--teal) 48px 72px,var(--blue-light) 72px 96px);z-index:2}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:auto}
+.course-label{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#d7e5f3;margin-bottom:16px}
+.page-title{font-family:'Raleway',sans-serif;font-size:clamp(44px,7vw,66px);line-height:1.05;font-weight:900;color:#fff;text-transform:uppercase;text-shadow:1px 2px 14px rgba(0,0,0,.55);margin-bottom:30px}
+.eq-banner{display:inline-block;background:var(--coral-dark);color:#fff;font-size:clamp(16px,2.2vw,20px);font-weight:700;line-height:1.55;padding:18px 30px;border-left:6px solid var(--gold);max-width:740px;text-align:left}
+.eq-label{display:block;font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#f7dfb5;margin-bottom:6px}
+.section-nav{position:sticky;top:0;z-index:100;background:var(--dark);border-bottom:3px solid var(--coral);display:flex;flex-wrap:wrap;justify-content:center}
+.section-nav a{display:block;padding:13px 15px;font-family:'Raleway',sans-serif;font-weight:800;font-size:11px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;color:var(--chrome);border-bottom:3px solid transparent}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--coral)}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Raleway',sans-serif;font-weight:800;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--coral);background:transparent;color:var(--coral);transition:.2s}
+#lexile-toggle:hover{background:var(--coral);color:#fff}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;right:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;z-index:50;background:rgba(28,43,58,.9);border-left:2px solid rgba(255,212,71,.45);font-family:'Raleway',sans-serif}
+.toc-label{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--yellow);display:block;margin-bottom:10px}
+.toc-sidebar a{display:block;color:#d7e5f3;text-decoration:none;padding:3px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:900}
+.content-wrap{max-width:820px;margin:0 auto;background:var(--section);padding:0 24px 64px}
+.intro-section{padding:48px 0 24px}.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
+.divider{max-width:820px;margin:44px auto 36px;display:flex;align-items:center;gap:16px;color:var(--coral);font-family:'Raleway',sans-serif;letter-spacing:.25em;justify-content:center}
+.divider:before,.divider:after{content:'';flex:1;height:2px;background:linear-gradient(to right,transparent,var(--blue),transparent)}
+.content-section{padding:44px 0 20px;border-top:1px solid #bfd1dd}.section-heading{font-family:'Raleway',sans-serif;font-size:clamp(32px,4vw,40px);font-weight:900;color:var(--dark);line-height:1.12;margin-bottom:26px;padding-bottom:14px;border-bottom:4px solid var(--coral);text-transform:uppercase}
+.content-section p{margin-bottom:20px;font-size:18px;line-height:1.85}.clearfix:after{content:'';display:table;clear:both}
+.vocab{color:var(--red);text-decoration:underline dotted var(--red);cursor:help;position:relative;font-weight:700}.vocab-red{color:var(--red);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Merriweather',Georgia,serif}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+figure{margin:32px 0}.img-full img,.img-left img,.img-right img,.img-pair img{width:100%;display:block;border:2px solid #b8ccd8;box-shadow:0 3px 12px rgba(0,0,0,.13)}
+.img-left{float:left;width:42%;margin:4px 26px 18px 0}.img-right{float:right;width:42%;margin:4px 0 18px 26px}.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}.img-pair figure{margin:0}
+figcaption{font-size:13px;line-height:1.5;color:var(--dim);font-style:italic;margin-top:7px}
+.primary-source{background:var(--cream);border-left:6px solid var(--blue);border-top:1px solid #b8ccd8;border-bottom:1px solid #b8ccd8;border-right:1px solid #b8ccd8;padding:28px 32px;margin:36px 0;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+.primary-source blockquote{font-size:22px;font-style:italic;line-height:1.65;color:var(--text);margin-bottom:14px}.primary-source cite{display:block;font-size:13px;font-style:italic;color:var(--dim);margin-bottom:12px}.doc-explainer{font-size:15px!important;color:#3a4f62!important;border-top:1px solid #b8ccd8;padding-top:12px;line-height:1.6!important}
+.ps-questions{background:var(--bg-mid);border:1px solid #b8ccd8;padding:22px 26px;margin-bottom:38px}.ps-questions p{font-size:17px;margin-bottom:12px}.ps-q-label{font-family:'Raleway',sans-serif;font-weight:900;color:var(--blue);margin-right:6px;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+.brain-break{font-family:'Bebas Neue',Impact,sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden}.bb-label{display:block;font-family:'Bebas Neue',Impact,sans-serif;font-size:15px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:14px;opacity:.88}.bb-text{font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.02em;font-weight:400;line-height:1.55;margin:0}
+.dyk-break{background:#103d5a;color:#fff;border-left:7px solid var(--yellow)}.dyk-break .bb-label{color:var(--yellow)}.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{background:#151515;color:#fff;text-align:center;border-top:4px solid var(--yellow);border-bottom:4px solid var(--yellow);padding:36px 40px;margin:0 -50px 44px}.ff-break .bb-label{color:var(--yellow);text-align:center;margin-bottom:24px}.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px}.ff-item{text-align:center;padding:8px 10px;flex:1 1 105px}.ff-number{display:block;font-size:62px;font-weight:400;color:var(--yellow);line-height:1;margin-bottom:8px}.ff-desc{display:block;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:#fff;max-width:128px;margin:0 auto;line-height:1.15}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:4px solid var(--yellow);border-bottom:4px solid var(--yellow);text-align:center}.as-break .bb-label{color:var(--yellow)}.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,212,71,.65);box-shadow:0 8px 32px rgba(0,0,0,.55)}.as-caption{font-family:'Bebas Neue',Impact,sans-serif;font-style:normal;font-size:18px;letter-spacing:.03em;color:#fff0b3;line-height:1.35;margin-bottom:28px;display:block}.as-fact{font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;font-weight:400;letter-spacing:.02em;color:#fff;line-height:1.45;max-width:680px;margin:0 auto;text-align:center}
+.tn-break{background:#123b2e;color:#fff;padding:36px 50px;margin:30px -50px 0}.tn-break .bb-label{color:var(--yellow);text-align:center;display:block;margin-bottom:20px}.tn-payoff{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(30px,4vw,42px);letter-spacing:.03em;line-height:1.15;text-align:center;color:var(--yellow);margin-bottom:28px;max-width:700px;margin-left:auto;margin-right:auto}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-era-label{display:block;font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin-bottom:10px}.tn-item img{width:100%;display:block;border:2px solid rgba(255,212,71,.55)}.tn-caption{font-family:'Bebas Neue',Impact,sans-serif;font-size:16px;font-style:normal;color:#fff0b3;margin-top:8px;line-height:1.25}.tn-closing{font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;letter-spacing:.02em;text-align:center;color:#fff;margin-top:24px;line-height:1.35;border-top:1px solid rgba(255,212,71,.35);padding-top:20px}
+.page-footer{background:#131f2a;border-top:3px solid var(--coral);padding:24px;text-align:center;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--chrome)}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+@media(max-width:880px){.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.img-left,.img-right{float:none;width:100%;margin:20px 0}.img-pair,.tn-pair{grid-template-columns:1fr}.section-nav a{padding:10px 8px;font-size:9px}.tn-break{padding:28px 22px;margin:30px 0 0}.as-fact,.bb-text{font-size:23px}}
 </style>
 </head>
 <body>
-<div class="page-wrap">
-
-<!-- ============================================================
-     SITE HEADER
-============================================================ -->
-<header class="site-header">
-
+<header class="page-header">
   <!-- FILENAME: S2L03_HeaderBG_LevittownAerial.jpg
        PLACE IN: images/S2/L03/
-       FIND: Aerial photograph of Levittown, New York or a postwar American suburb, ca. 1950-1955; shows rows of identical houses in a planned community; one of the most reproduced images of postwar suburban expansion; available through Wikimedia Commons and Library of Congress
+       FIND: Aerial photograph of Levittown, Pennsylvania or New York, ca. 1950s; rows of identical suburban houses show the scale of postwar suburban growth.
        SEARCH: Levittown aerial photograph 1950s suburb Wikimedia Commons Library of Congress
        LINK: https://commons.wikimedia.org/wiki/File:Levittown_Pennsylvania_aerial_1959.jpg (suggested, not guaranteed) -->
-  <div class="header-bg" style="background-image: url('images/S2/L03/S2L03_HeaderBG_LevittownAerial.jpg');"></div>
-
-  <div class="inner">
-    <span class="course-label">US History &mdash; Semester 2, Lesson 03</span>
-    <h1 class="page-title">Post-War Boom and the New America</h1>
-    <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      How did WWII change what American life looked like — and who got left out of the new prosperity?
-    </div>
+  <img class="header-bg" src="images/S2/L03/S2L03_HeaderBG_LevittownAerial.jpg" alt="Aerial view of Levittown suburb, 1950s">
+  <div class="header-inner">
+    <div class="course-label">US HISTORY — SEMESTER 2, LESSON 03</div>
+    <h1 class="page-title">POSTWAR BOOM AND THE NEW AMERICA</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did WWII change what American life looked like, and who got left out of the new prosperity?</div>
   </div>
 </header>
 
-<!-- ============================================================
-     SECTION NAV
-============================================================ -->
-<nav class="section-nav" aria-label="Lesson sections">
-  <ul>
-    <li><a href="#suburbs-boom">The Suburban Boom</a></li>
-    <li><a href="#marshall-plan">The Marshall Plan</a></li>
-    <li><a href="#left-out">Left Out</a></li>
-    <li><a href="#california-rise">California Rises</a></li>
-    <li><a href="#still-matters">Still Matters Today</a></li>
-  </ul>
+<nav class="section-nav" aria-label="Section navigation">
+  <a href="#suburbs-boom">SUBURBAN BOOM</a>
+  <a href="#marshall-plan">MARSHALL PLAN</a>
+  <a href="#left-out">LEFT OUT</a>
+  <a href="#california-rise">CALIFORNIA RISES</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
 </nav>
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#suburbs-boom">SUBURBS</a>
+  <a href="#marshall-plan">MARSHALL PLAN</a>
+  <a href="#left-out">LEFT OUT</a>
+  <a href="#california-rise">CALIFORNIA</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</aside>
 
-<!-- ============================================================
-     INTRODUCTION
-============================================================ -->
-<div class="intro-section">
-  <p>
-    In the summer of 1947, a 28-year-old Navy veteran named Bill Levitt started bulldozing potato fields on Long Island, New York. Within a year, his construction crews were finishing one new house every 16 minutes. By 1951, more than 17,000 nearly identical houses stood where farmland used to be, and 82,000 people had moved in. They called it Levittown. It was not just a housing development; it was a new way of living that millions of Americans wanted desperately — and that not everyone was allowed to have.
-  </p>
-</div>
+<div class="content-wrap">
+  <section class="intro-section">
+    <p class="para-standard">In the summer of 1947, a Navy veteran named Bill Levitt started bulldozing potato fields on Long Island, New York. His crews finished houses so quickly that one home could be completed about every 16 minutes. By 1951, more than 17,000 nearly identical homes stood where farmland used to be. Levittown became a symbol of a new American dream: a house, a car, a lawn, and a family.</p>
+    <p class="para-simple">In 1947, Bill Levitt began building houses on old potato fields in New York. His crews worked very fast. One house could be finished about every 16 minutes. By 1951, more than 17,000 homes stood there. Levittown became a symbol of the new American dream.</p>
+    <p class="para-standard">But that dream had limits. The postwar boom created jobs, suburbs, highways, colleges, and new consumer goods. It also left many Black families, Mexican American workers, and poor communities outside the door. This lesson is about both stories at once: the boom and the people blocked from it.</p>
+    <p class="para-simple">But the dream was not open to everyone. The postwar boom created jobs, suburbs, highways, colleges, and new products. It also left many Black families, Mexican American workers, and poor communities out. This lesson tells both parts of the story.</p>
+  </section>
 
-<div class="section-divider"><span class="divider-mark">&#9670;</span></div>
+  <div class="divider">◆</div>
 
-<!-- ============================================================
-     SECTION 1 — THE SUBURBAN BOOM
-============================================================ -->
-<section class="content-section" id="suburbs-boom">
-  <div class="section-body">
-    <span class="section-label">Chapter One</span>
-    <h2 class="section-heading">The Suburban Boom: Houses, Cars, and the Baby Boom</h2>
-
+  <section class="content-section clearfix" id="suburbs-boom">
+    <h2 class="section-heading">THE SUBURBAN BOOM: HOUSES, CARS, AND BABIES</h2>
     <!-- FILENAME: S2L03_LevittownStreet.jpg
          PLACE IN: images/S2/L03/
-         FIND: Street-level photograph of Levittown, New York, ca. 1948-1955; shows row of identical cape cod houses with lawns and cars; documents the mass-produced suburban housing style; Library of Congress or Wikimedia Commons
+         FIND: Street-level photograph of Levittown, New York or Pennsylvania, ca. 1950s; shows mass-produced suburban houses, lawns, and cars.
          SEARCH: Levittown New York street houses 1950s Wikimedia Commons Library of Congress
          LINK: https://commons.wikimedia.org/wiki/File:Levittown_houses.jpg (suggested, not guaranteed) -->
     <figure class="img-right">
-      <img src="images/S2/L03/S2L03_LevittownStreet.jpg" alt="Levittown, New York, suburban street, ca. 1950">
-      <figcaption>A street in Levittown, New York, ca. 1950. Levitt &amp; Sons built over 17,000 homes using assembly-line construction techniques. Source: Wikimedia Commons / Library of Congress.</figcaption>
+      <img src="images/S2/L03/S2L03_LevittownStreet.jpg" alt="Levittown suburban street, circa 1950">
+      <figcaption>Levittown suburban street, ca. 1950. Wikimedia Commons / Library of Congress.</figcaption>
     </figure>
 
-    <p>
-      When World War II ended in 1945, millions of American soldiers came home to a country that felt different. The economy was booming. Factories that had built bombs and tanks were now building refrigerators, cars, and washing machines. Wages were rising. And after years of war, rationing, and separation, Americans wanted one thing more than anything else: a home of their own.
-    </p>
+    <p class="para-standard">When World War II ended in 1945, millions of soldiers came home to a country ready to spend. Factories that had built tanks and planes now made refrigerators, cars, and washing machines. Wages rose, and many families wanted a private home after years of war, rationing, and separation.</p>
+    <p class="para-simple">When World War II ended in 1945, millions of soldiers came home. Factories stopped making weapons and started making cars, refrigerators, and washing machines. Wages rose. Many families wanted a home of their own.</p>
+    <p class="para-standard">The federal government helped many veterans buy homes through the <span class="vocab">GI Bill<span class="tip">A law that gave veterans money for college and home loans.</span></span>. Banks offered cheap mortgages. Builders used assembly-line methods to create whole neighborhoods quickly. This growth of communities outside city centers was called <span class="vocab">suburbanization<span class="tip">The fast growth of neighborhoods outside cities.</span></span>.</p>
+    <p class="para-simple">The <span class="vocab-red">GI Bill</span> helped many veterans pay for college and homes. Banks gave cheap loans. Builders made houses quickly. New neighborhoods grew outside cities. This was called <span class="vocab-red">suburbanization</span>.</p>
+    <p class="para-standard">The suburbs grew because cars and highways made them possible. The Interstate Highway System, launched in 1956, connected suburbs to city jobs. A family could live miles away from downtown and still drive to work, stores, schools, and church.</p>
+    <p class="para-simple">Cars and highways helped suburbs grow. The Interstate Highway System began in 1956. It connected suburbs to city jobs. Families could live far from downtown and still drive everywhere.</p>
+    <p class="para-standard">At the same time, the <span class="vocab">baby boom<span class="tip">The big rise in births after World War II.</span></span> reshaped the country. Between 1946 and 1964, about 76 million babies were born in the United States. Schools, toy companies, television programs, and suburbs all grew around young families.</p>
+    <p class="para-simple">The <span class="vocab-red">baby boom</span> also changed America. From 1946 to 1964, about 76 million babies were born. Schools, toys, television, and suburbs grew around children and families.</p>
+    <p class="para-standard">The postwar boom also shifted work. More Americans moved into offices, stores, hospitals, banks, and schools. This was the <span class="vocab">service economy<span class="tip">An economy where most jobs provide services, not goods.</span></span>. For many families, a desk job became a new path into the middle class.</p>
+    <p class="para-simple">Work changed too. More people worked in offices, stores, hospitals, banks, and schools. This was the <span class="vocab-red">service economy</span>. For many families, office work became a path to the middle class.</p>
+    <div class="clearfix"></div>
+  </section>
 
-    <p>
-      The federal government made that dream easier to reach. The GI Bill, signed in 1944, gave veterans low-interest loans to buy houses and attend college. Banks flooded the market with cheap mortgages. Builders like William Levitt figured out how to mass-produce houses the same way Ford mass-produced cars: standardized designs, pre-cut lumber, specialized work crews that moved from house to house doing the same job over and over. A house that once took months to build could now be completed in days.
-    </p>
-
-    <p>
-      The result was <span class="vocab">suburbanization<span class="tip">The rapid growth of residential neighborhoods outside of city centers, made possible by cheap housing, cars, and new highways in the postwar period.</span></span>: millions of Americans leaving cities and moving into brand-new neighborhoods on the outskirts of town. Between 1950 and 1960, the suburban population of the United States nearly doubled. New highways — especially the Interstate Highway System, launched in 1956 — made it possible for workers to drive from a suburb into a city for work and back home in the evening.
-    </p>
-
-    <p>
-      All those new families also had children — lots of them. Between 1946 and 1964, American women gave birth to about 76 million babies. This surge in births became known as the <span class="vocab">baby boom<span class="tip">The dramatic rise in birth rates in the United States from 1946 to 1964, as families reunited after WWII and the postwar economy gave people confidence to have children.</span></span>. The <span class="vocab-ref">baby boom</span> transformed everything: schools were overcrowded, toy companies boomed, and the entire consumer economy started designing itself around young families. Those 76 million babies grew up and became the largest generation in American history; today they are retiring and reshaping the economy all over again.
-    </p>
-
-    <!-- STATS ROW -->
-    <div class="stats-row">
-      <div class="stat-card">
-        <span class="stat-number">17,000+</span>
-        <span class="stat-label">Homes built at Levittown, NY by 1951</span>
+  <div class="brain-break dyk-break">
+    <span class="bb-label">DID YOU KNOW</span>
+    <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+      <div style="flex:1;min-width:200px;">
+        <!-- FILENAME: S2L03_DYK_LevittownKitchen.jpg
+             PLACE IN: images/S2/L03/
+             FIND: 1950s suburban kitchen or Levittown interior photograph showing postwar consumer appliances; use with Did You Know fact about appliances and the new suburban lifestyle.
+             SEARCH: 1950s kitchen appliances Levittown interior Wikimedia Commons
+             LINK: https://commons.wikimedia.org/wiki/Category:Kitchens_in_the_1950s (suggested, not guaranteed) -->
+        <img src="images/S2/L03/S2L03_DYK_LevittownKitchen.jpg" alt="1950s suburban kitchen with appliances" style="width:100%;display:block;border:3px solid #ffd447;box-shadow:0 4px 18px rgba(0,0,0,.4);">
+        <p style="font-size:16px;margin-top:8px;opacity:.9;font-family:'Bebas Neue',Impact,sans-serif;color:#fff;">A 1950s kitchen was part of the postwar sales pitch.</p>
       </div>
-      <div class="stat-card">
-        <span class="stat-number">76M</span>
-        <span class="stat-label">Babies born in the U.S., 1946&ndash;1964</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">2x</span>
-        <span class="stat-label">U.S. suburban population growth, 1950&ndash;1960</span>
-      </div>
+      <p class="bb-text" style="flex:1;min-width:200px;">A new suburban house did not just sell walls and a roof. It sold a whole future: kitchen appliances, a lawn, a car in the driveway, and children riding bikes on quiet streets. The strange part is how quickly that image became treated like the "normal" American life, even though millions of Americans were blocked from buying into it.</p>
     </div>
-
-    <p>
-      The economy shifted just as dramatically as the landscape. Before the war, most American workers worked in factories, farms, or mines. After the war, more and more people worked in offices, stores, hospitals, and schools. This was the rise of the <span class="vocab">service economy<span class="tip">An economy where most people work in jobs that provide services — like banking, healthcare, teaching, or retail — rather than making physical goods in factories or farms.</span></span>. White-collar jobs — meaning office and professional work — became the new path to the middle class. Companies like IBM, General Electric, and a wave of new insurance and finance firms hired hundreds of thousands of workers who wore suits to work, not overalls.
-    </p>
-
-    <p>
-      Today, the suburbs built in the 1950s are still the most common form of American neighborhood. The debates those suburbs started — about housing affordability, racial segregation, car dependency, and who deserves access to the American Dream — are still going on in school board meetings, city councils, and courts across the country, including right here in San Diego County.
-    </p>
-
   </div>
-</section>
 
-<!-- ============================================================
-     SECTION 2 — THE MARSHALL PLAN
-============================================================ -->
-<section class="content-section" id="marshall-plan">
-  <div class="section-body">
-    <span class="section-label">Chapter Two</span>
-    <h2 class="section-heading">The Marshall Plan: Rebuilding Europe and Strengthening America</h2>
+  <div class="brain-break ff-break">
+    <span class="bb-label">FAST FACTS</span>
+    <div class="ff-grid">
+      <div class="ff-item"><span class="ff-number">16</span><span class="ff-desc">MINUTES PER HOUSE</span></div>
+      <div class="ff-item"><span class="ff-number">17K</span><span class="ff-desc">LEVITTOWN HOMES</span></div>
+      <div class="ff-item"><span class="ff-number">76M</span><span class="ff-desc">BABY BOOM BIRTHS</span></div>
+      <div class="ff-item"><span class="ff-number">41K</span><span class="ff-desc">INTERSTATE MILES</span></div>
+      <div class="ff-item"><span class="ff-number">4.5M</span><span class="ff-desc">BRACERO CONTRACTS</span></div>
+    </div>
+  </div>
 
+  <div class="divider">◆</div>
+
+  <section class="content-section clearfix" id="marshall-plan">
+    <h2 class="section-heading">THE MARSHALL PLAN: REBUILDING EUROPE AND PROTECTING AMERICA</h2>
     <!-- FILENAME: S2L03_MarshallPlan_Aid.jpg
          PLACE IN: images/S2/L03/
-         FIND: Marshall Plan aid delivery photograph, ca. 1948-1952; American goods, food, or machinery being unloaded in a European port — Germany, France, or Italy; often shows USAID markings or "Marshall Plan" signs on crates; available through Wikimedia Commons and U.S. National Archives
+         FIND: Marshall Plan aid delivery photograph or poster, ca. 1948-1952; American goods, food, machinery, or European recovery image.
          SEARCH: Marshall Plan aid Europe 1948 food machinery unloading Wikimedia Commons National Archives
          LINK: https://commons.wikimedia.org/wiki/File:Marshall_plan_poster.jpg (suggested, not guaranteed) -->
     <figure class="img-left">
-      <img src="images/S2/L03/S2L03_MarshallPlan_Aid.jpg" alt="Marshall Plan aid delivery in Europe, ca. 1948-1952">
-      <figcaption>Marshall Plan aid arrives in Europe, ca. 1948&ndash;1952. The U.S. sent over $13 billion in food, fuel, and machinery to war-devastated European nations. Source: U.S. National Archives / Wikimedia Commons.</figcaption>
+      <img src="images/S2/L03/S2L03_MarshallPlan_Aid.jpg" alt="Marshall Plan aid delivery in Europe, circa 1948">
+      <figcaption>Marshall Plan aid in Europe, ca. 1948-1952. U.S. National Archives / Wikimedia Commons.</figcaption>
     </figure>
 
-    <p>
-      While Americans were buying houses in the suburbs, Europe was still in ruins. World War II had destroyed cities, farms, factories, and entire economies. In 1947, U.S. Secretary of State George Marshall stood up at Harvard University's commencement ceremony and proposed something bold: the United States would spend billions of dollars rebuilding the economies of Western Europe.
-    </p>
+    <p class="para-standard">While Americans bought houses and cars, much of Europe was still recovering from war. Cities, railroads, farms, ports, and factories had been damaged or destroyed. In 1947, Secretary of State George Marshall proposed a huge American plan to rebuild Western Europe.</p>
+    <p class="para-simple">While Americans bought homes and cars, Europe was still damaged by war. Cities, farms, railroads, ports, and factories needed repair. In 1947, George Marshall proposed a plan to help rebuild Western Europe.</p>
+    <p class="para-standard">The <span class="vocab">Marshall Plan<span class="tip">A U.S. plan that sent aid to rebuild Western Europe.</span></span> sent more than $13 billion to 16 Western European countries between 1948 and 1952. The money helped rebuild roads, ports, factories, and farms. By 1952, the countries that received aid had passed their prewar economic levels.</p>
+    <p class="para-simple">The <span class="vocab-red">Marshall Plan</span> sent more than $13 billion to Western Europe. Sixteen countries received aid. The money helped rebuild roads, ports, factories, and farms. By 1952, their economies were growing again.</p>
+    <p class="para-standard">The plan was generous, but it was also strategic. American leaders feared that poverty and chaos could help communism spread. The Soviet Union already controlled much of Eastern Europe. The United States used prosperity as a Cold War weapon.</p>
+    <p class="para-simple">The plan helped people, but it also served U.S. goals. American leaders feared communism would spread if Europe stayed poor. The Soviet Union controlled much of Eastern Europe. The U.S. used money and trade to fight communism.</p>
+    <p class="para-standard">The Marshall Plan also helped American businesses. European countries used aid money to buy American wheat, steel, machines, and equipment. That kept U.S. factories busy as the country shifted from war production to peacetime production.</p>
+    <p class="para-simple">The plan also helped American businesses. European countries bought American wheat, steel, machines, and equipment. U.S. factories stayed busy after the war ended.</p>
 
-    <p>
-      The <span class="vocab">Marshall Plan<span class="tip">The U.S. program from 1948 to 1952 that sent over $13 billion in aid to rebuild Western European economies after World War II, also preventing the spread of communism.</span></span> sent more than $13 billion — worth roughly $150 billion today — to 16 Western European countries between 1948 and 1952. The money went to rebuild ports, railroads, factories, and farms. By 1952, every country that received Marshall Plan aid had exceeded its prewar levels of economic output.
-    </p>
-
-    <p>
-      Marshall's plan was not purely generous; it was strategic. American leaders feared that a poor, unstable Europe would be vulnerable to communist takeover. The Soviet Union had already taken control of Eastern European countries. If France, Italy, or Germany collapsed economically, their citizens might elect communist governments. The Marshall Plan was a way to fight communism not with weapons but with prosperity.
-    </p>
-
-    <p>
-      And it came back to the United States in a direct way. Much of the money Europe received was spent on American goods: American wheat, American steel, American farm equipment. The Marshall Plan kept American factories running and American workers employed during the critical transition from wartime to peacetime production. It was foreign aid that doubled as economic stimulus at home.
-    </p>
-
-    <!-- PRIMARY SOURCE: Marshall's Harvard Speech -->
     <div class="primary-source">
-      <blockquote>
-        "Our policy is directed not against any country or doctrine but against hunger, poverty, desperation, and chaos. Its purpose should be the revival of a working economy in the world so as to permit the emergence of political and social conditions in which free institutions can exist."
-      </blockquote>
-      <cite>George C. Marshall, Secretary of State, address at Harvard University, June 5, 1947.</cite>
-      <p class="doc-explainer">Marshall is explaining that the United States is not giving this money to hurt any enemy — it is giving it to prevent the conditions (hunger, chaos, desperation) that allow dangerous political movements to take hold and destroy free societies.</p>
+      <blockquote>"Our policy is directed not against any country or doctrine but against hunger, poverty, desperation, and chaos."</blockquote>
+      <cite>George C. Marshall, address at Harvard University, June 5, 1947</cite>
+      <p class="doc-explainer">Marshall argued that the United States could protect democracy by fighting the conditions that made people desperate.</p>
     </div>
+    <div class="clearfix"></div>
+  </section>
 
-    <div class="ps-questions">
-      <p><span class="ps-q-label">Question 1:</span> According to Marshall, what is the real enemy the United States is trying to fight? List the specific words he uses.</p>
-      <p><span class="ps-q-label">Question 2:</span> The EQ asks who got left out of the new American prosperity. The Marshall Plan focused on rebuilding Europe. What does that suggest about whose recovery the U.S. government prioritized — and who might have been left waiting?</p>
-    </div>
+  <div class="divider">◆</div>
 
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 3 — LEFT OUT
-============================================================ -->
-<section class="content-section" id="left-out">
-  <div class="section-body">
-    <span class="section-label">Chapter Three</span>
-    <h2 class="section-heading">Left Out: Who the Boom Left Behind</h2>
-
-    <p>
-      The postwar economic boom was real — but it was not available to everyone equally. The same GI Bill that helped white veterans buy homes and go to college was administered in ways that systematically excluded Black veterans. Southern banks refused GI Bill loans to Black applicants. Universities in the South refused to enroll Black veterans under the GI Bill. The new suburbs were legally off-limits to Black families through a practice called <em>redlining</em>: banks drew red lines on maps around Black neighborhoods and refused to offer mortgages there, while also refusing to sell homes in white suburbs to Black buyers.
-    </p>
+  <section class="content-section clearfix" id="left-out">
+    <h2 class="section-heading">LEFT OUT: WHO THE BOOM LEFT BEHIND</h2>
+    <p class="para-standard">The postwar boom was real, but it was not shared equally. The same GI Bill that helped many white veterans buy homes and attend college often failed Black veterans. Banks denied loans. Colleges refused admission. Federal programs were run through local systems that already practiced segregation.</p>
+    <p class="para-simple">The postwar boom was real, but it was not fair. The GI Bill helped many white veterans buy homes and go to college. Black veterans often did not get the same help. Banks denied loans. Colleges refused them. Segregation shaped the system.</p>
 
     <!-- FILENAME: S2L03_RedliningMap.jpg
          PLACE IN: images/S2/L03/
-         FIND: Home Owners' Loan Corporation redlining map of a U.S. city, ca. 1936-1940; color-coded map showing neighborhoods graded A through D with red zones marking Black neighborhoods as "hazardous"; widely available through Wikimedia Commons and the Mapping Inequality project
+         FIND: Home Owners' Loan Corporation redlining map, ca. 1936-1940; color-coded neighborhood map showing loan risk and red zones.
          SEARCH: HOLC redlining map 1930s 1940s neighborhood grades Wikimedia Commons Mapping Inequality
          LINK: https://commons.wikimedia.org/wiki/File:HOLC_map_Los_Angeles.jpg (suggested, not guaranteed) -->
     <figure class="img-right">
-      <img src="images/S2/L03/S2L03_RedliningMap.jpg" alt="HOLC redlining map, ca. 1940">
-      <figcaption>Home Owners' Loan Corporation (HOLC) map grading neighborhoods by loan risk, ca. 1936&ndash;1940. Red zones marked Black and immigrant neighborhoods as "hazardous" for mortgage lending. Source: National Archives / Wikimedia Commons.</figcaption>
+      <img src="images/S2/L03/S2L03_RedliningMap.jpg" alt="HOLC redlining map, circa 1940">
+      <figcaption>HOLC redlining map, ca. 1936-1940. National Archives / Wikimedia Commons.</figcaption>
     </figure>
 
-    <p>
-      William Levitt himself was direct about his policy. He refused to sell homes in Levittown to Black families. When challenged, he argued that white buyers would leave if Black families moved in, destroying his investment. The federal government's own lending agencies — the FHA and the VA — encouraged these segregated policies and often required them. The result was that the greatest wealth-building tool in American history: homeownership; was handed to white families and withheld from Black families. The racial wealth gap that exists in the United States today was cemented by these policies.
-    </p>
-
-    <p>
-      Mexican American workers, many of them recent immigrants or the children of immigrants, faced their own exclusions. After World War II, millions of Mexican workers were drawn to California and the Southwest by the agricultural industry. The Bracero Program, a government agreement between the United States and Mexico, brought over 4.5 million Mexican workers to American farms between 1942 and 1964. They picked tomatoes, cotton, sugar beets, and grapes under grueling conditions. They lived in labor camps. They were paid less than minimum wage. They had no union protection. Their labor fed American families, but the postwar prosperity those families enjoyed was largely not available to them.
-    </p>
+    <p class="para-standard"><span class="vocab">Redlining<span class="tip">When banks denied loans in Black or immigrant neighborhoods.</span></span> made housing inequality worse. Banks and government agencies marked Black and immigrant neighborhoods as risky. Families in those areas could not get fair mortgages. Meanwhile, many new suburbs refused to sell homes to Black families.</p>
+    <p class="para-simple"><span class="vocab-red">Redlining</span> made housing unfair. Banks marked Black and immigrant neighborhoods as risky. Families there could not get fair loans. Many suburbs also refused to sell homes to Black families.</p>
+    <p class="para-standard">William Levitt refused to sell Levittown homes to Black buyers. He argued that white buyers would leave if Black families moved in. Federal lending agencies often supported these restrictions. Homeownership became one of the greatest wealth-building tools in American history, but many Black families were locked out.</p>
+    <p class="para-simple">William Levitt refused to sell homes to Black buyers. He said white buyers would leave. Federal lending agencies often supported these rules. Homeownership built wealth for many white families, but Black families were blocked.</p>
 
     <!-- FILENAME: S2L03_BraceroWorkers.jpg
          PLACE IN: images/S2/L03/
-         FIND: Bracero Program workers in California fields, ca. 1950-1960; Mexican farm workers picking crops in California — tomatoes, grapes, or cotton; Library of Congress photographs by Leonard Nadel (1956) are the most famous documentary images of the Bracero Program
+         FIND: Bracero Program workers in California fields, ca. 1950-1960; Mexican farm workers harvesting crops, preferably Leonard Nadel photographs from 1956.
          SEARCH: Bracero Program California farm workers 1956 Leonard Nadel Library of Congress Wikimedia
          LINK: https://www.loc.gov/pictures/search/?q=bracero+program+farm+workers (suggested, not guaranteed) -->
     <figure class="img-left">
-      <img src="images/S2/L03/S2L03_BraceroWorkers.jpg" alt="Bracero Program workers in California fields, ca. 1956">
-      <figcaption>Bracero Program workers harvesting crops in California, ca. 1956. Over 4.5 million Mexican workers came to American farms under the program between 1942 and 1964. Photograph by Leonard Nadel. Source: Library of Congress.</figcaption>
+      <img src="images/S2/L03/S2L03_BraceroWorkers.jpg" alt="Bracero Program workers in California fields, circa 1956">
+      <figcaption>Bracero Program workers in California fields, ca. 1956. Library of Congress.</figcaption>
     </figure>
 
-    <p>
-      President Truman tried to address some of these inequalities through labor policy. He desegregated the military in 1948 through Executive Order 9981, ending the official segregation that had forced Black soldiers to serve in separate units during WWII. He also backed the Fair Employment Practices Committee, which tried to prevent discrimination in federal hiring. But Truman faced fierce resistance from Southern Democrats in Congress, and most of his civil rights proposals were blocked. The gap between what the boom promised and what it actually delivered to Black Americans, Mexican Americans, and other marginalized groups would eventually fuel one of the most powerful social movements in American history: the Civil Rights Movement of the 1950s and 1960s.
-    </p>
+    <p class="para-standard">Mexican workers also helped build postwar prosperity without sharing fully in it. The <span class="vocab">Bracero Program<span class="tip">A program that brought Mexican workers to U.S. farms.</span></span> brought millions of Mexican workers to U.S. farms between 1942 and 1964. They picked crops that fed American families, but many lived in poor camps, earned low wages, and lacked union protection.</p>
+    <p class="para-simple">Mexican workers also helped the boom grow. The <span class="vocab-red">Bracero Program</span> brought Mexican workers to U.S. farms. They picked crops that fed American families. Many lived in poor camps, earned low wages, and had few protections.</p>
+    <p class="para-standard">President Harry Truman took some steps toward equality. In 1948, he desegregated the military with Executive Order 9981. He also supported fair employment rules. But Congress blocked many civil rights proposals. The gap between postwar promises and postwar reality helped fuel the Civil Rights Movement.</p>
+    <p class="para-simple">President Truman took some steps toward equality. In 1948, he ended segregation in the military. He also supported fair hiring rules. But Congress blocked many civil rights plans. These failures helped lead to the Civil Rights Movement.</p>
+    <div class="clearfix"></div>
+  </section>
 
-    <!-- LOCAL HISTORY CALLOUT -->
-    <div class="local-history">
-      <p class="lh-headline">San Diego's Postwar Boom: Clairemont, Segregation, and the Bracero Legacy</p>
-
-      <!-- FILENAME: S2L03_Clairemont1950s.jpg
+  <div class="brain-break as-break">
+    <span class="bb-label">ART SPOTLIGHT</span>
+    <figure>
+      <!-- FILENAME: S2L03_ArtSpotlight_LevittownAd.jpg
            PLACE IN: images/S2/L03/
-           FIND: Aerial or street photograph of Clairemont, San Diego, ca. 1950-1958; postwar suburban development in San Diego similar to Levittown; shows tract housing under construction or completed neighborhoods; San Diego History Center or San Diego Air and Space Museum archives
-           SEARCH: Clairemont San Diego 1950s suburb development aerial photograph Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/Category:Clairemont,_San_Diego (suggested, not guaranteed) -->
-      <figure class="img-right" style="width:38%; margin: 4px 0 10px 20px;">
-        <img src="images/S2/L03/S2L03_Clairemont1950s.jpg" alt="Clairemont, San Diego, ca. 1950s suburban development">
-        <figcaption>Clairemont, San Diego, under construction, ca. 1950s. Source: Wikimedia Commons / San Diego History Center.</figcaption>
-      </figure>
-
-      <p>San Diego exploded in the postwar years. Navy and defense industry jobs drew hundreds of thousands of new residents. Neighborhoods like Clairemont, Allied Gardens, and Linda Vista were built almost overnight using the same assembly-line construction methods as Levittown — and the same racial restrictions. Deed restrictions and bank redlining kept Black families out of most new San Diego suburbs well into the 1960s.</p>
-      <p>In the fields of San Diego County and the Imperial Valley, Bracero Program workers harvested the tomatoes, avocados, and flowers that made California agriculture one of the most productive in the world. The labor camps at Miramar and in the Imperial Valley housed thousands of Mexican workers with no rights, no path to citizenship, and no access to the suburban prosperity being built just miles away.</p>
-      <div style="clear:both;"></div>
-    </div>
-
-    <div style="clear:both;"></div>
+           FIND: 1950s Levittown or suburban housing advertisement, brochure, or promotional artwork showing idealized family life and new homes; use as unique Art Spotlight artwork, not reused elsewhere.
+           SEARCH: Levittown advertisement 1950s housing brochure Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/Category:Levittown,_New_York (suggested, not guaranteed) -->
+      <img src="images/S2/L03/S2L03_ArtSpotlight_LevittownAd.jpg" alt="1950s Levittown suburban housing advertisement or brochure artwork" class="as-image">
+      <figcaption class="as-caption">Levittown or postwar suburban housing advertisement, 1950s. Wikimedia Commons.</figcaption>
+    </figure>
+    <p class="as-fact">The artwork in postwar housing ads often made the suburb look like a finished dream: clean lawn, smiling family, bright sky, no conflict anywhere. What the ad did not show was just as important. The perfect house could be sold as a national symbol while the rules quietly decided who was allowed to buy it.</p>
   </div>
-</section>
 
-<!-- ============================================================
-     SECTION 4 — CALIFORNIA RISES
-============================================================ -->
-<section class="content-section" id="california-rise">
-  <div class="section-body">
-    <span class="section-label">Chapter Four</span>
-    <h2 class="section-heading">California Rises: The Master Plan and the New Economy</h2>
+  <div class="divider">◆</div>
 
+  <section class="content-section clearfix" id="california-rise">
+    <h2 class="section-heading">CALIFORNIA RISES: HIGHWAYS, UNIVERSITIES, AND FARMS</h2>
     <!-- FILENAME: S2L03_UCBerkeleyPostwar.jpg
          PLACE IN: images/S2/L03/
-         FIND: UC Berkeley or UCLA campus photograph, ca. 1950-1965; shows students on campus, new buildings under construction, or large lecture hall; reflects postwar growth in California higher education; Wikimedia Commons or Library of Congress
-         SEARCH: UC Berkeley campus 1950s 1960s students postwar California Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:UC_Berkeley_Sather_Gate_1950s.jpg (suggested, not guaranteed) -->
+         FIND: University of California campus or postwar college classroom photograph, ca. 1950s; shows expansion of higher education after WWII and the GI Bill.
+         SEARCH: UC Berkeley 1950s campus students postwar Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/Category:University_of_California,_Berkeley_in_the_1950s (suggested, not guaranteed) -->
     <figure class="img-right">
-      <img src="images/S2/L03/S2L03_UCBerkeleyPostwar.jpg" alt="UC Berkeley campus, ca. 1950s">
-      <figcaption>UC Berkeley campus, ca. 1950s. Postwar enrollment surges forced California to rethink how it would educate an entire generation of new students. Source: Wikimedia Commons.</figcaption>
+      <img src="images/S2/L03/S2L03_UCBerkeleyPostwar.jpg" alt="University of California campus or students, postwar era">
+      <figcaption>University of California campus life, postwar era. Wikimedia Commons.</figcaption>
     </figure>
 
-    <p>
-      California was at the center of the postwar boom. The state's population grew faster than almost any other in the country, fueled by defense industry jobs, agriculture, and the simple fact that California was warm, affordable, and full of opportunity. Between 1945 and 1960, California's population nearly doubled. The state needed hospitals, roads, water systems — and above all, schools.
-    </p>
+    <p class="para-standard">California became one of the clearest examples of postwar growth. Defense jobs, Navy bases, aerospace companies, ports, farms, highways, and universities pulled millions of people west. The state promised sunshine, jobs, college, and a future.</p>
+    <p class="para-simple">California grew quickly after the war. Defense jobs, Navy bases, farms, ports, highways, and colleges pulled people west. The state promised jobs, sunshine, college, and a future.</p>
+    <p class="para-standard">Public universities grew because more students could attend college. The GI Bill helped veterans pay tuition. California also invested in public higher education. College became a ladder into the service economy and the middle class.</p>
+    <p class="para-simple">Public colleges grew. The GI Bill helped veterans pay for school. California also spent money on public higher education. College became a path to better jobs.</p>
 
-    <p>
-      In 1960, California made a decision that would shape the state — and eventually the nation — for generations. The legislature passed the <span class="vocab">California Master Plan<span class="tip">A 1960 state law that organized California's public colleges into three systems — UC, CSU, and community colleges — to make higher education affordable and accessible to all California residents.</span></span> for Higher Education. It organized the state's colleges into three tiers: the University of California (UC) system for research and graduate education; the California State University (CSU) system for professional and undergraduate education; and the community college system, which promised near-free higher education to any California resident who wanted it. The Master Plan was revolutionary: it said that higher education was not a privilege for the wealthy, but a right for every Californian.
-    </p>
-
-    <p>
-      The results were staggering. California's UC and CSU campuses became engines of research, innovation, and economic growth. UC Berkeley developed technologies that launched entire industries. The community college system — which today includes over 115 campuses across the state — became the single most powerful tool for economic mobility in California history. A student who could not afford a four-year university could attend a community college for almost nothing and transfer to a UC or CSU to finish a degree.
-    </p>
-
-    <!-- PAIRED IMAGES: before/after California growth -->
     <div class="img-pair">
-      <!-- FILENAME: S2L03_CaliforniaHighway_1950s.jpg
-           PLACE IN: images/S2/L03/
-           FIND: California freeway or highway construction, ca. 1955-1960; shows new Interstate Highway System construction in California, freeway interchange under construction, or early California freeway; available through Caltrans archives, Wikimedia Commons, or Library of Congress
-           SEARCH: California freeway construction 1950s highway interchange Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/Category:Freeways_in_California (suggested, not guaranteed) -->
       <figure>
-        <img src="images/S2/L03/S2L03_CaliforniaHighway_1950s.jpg" alt="California freeway construction, ca. 1950s">
-        <figcaption>California freeway construction, ca. 1955&ndash;1960. The Interstate Highway System opened the suburbs to millions of new residents. Source: Wikimedia Commons / Caltrans.</figcaption>
+        <!-- FILENAME: S2L03_CaliforniaHighway_1950s.jpg
+             PLACE IN: images/S2/L03/
+             FIND: California freeway or highway construction photograph, ca. 1950s; shows car-centered postwar growth.
+             SEARCH: California freeway construction 1950s Wikimedia Commons Library of Congress
+             LINK: https://commons.wikimedia.org/wiki/Category:Freeways_in_California (suggested, not guaranteed) -->
+        <img src="images/S2/L03/S2L03_CaliforniaHighway_1950s.jpg" alt="California freeway or highway construction, 1950s">
+        <figcaption>California freeway expansion, 1950s. Wikimedia Commons.</figcaption>
       </figure>
-
-      <!-- FILENAME: S2L03_CaliforniaAgriculture.jpg
-           PLACE IN: images/S2/L03/
-           FIND: California agricultural landscape or harvest, ca. 1950-1960; aerial view of farmland in the Central Valley or Imperial Valley, or workers harvesting a crop; shows the scale of California agriculture in the postwar era; Library of Congress or Wikimedia Commons
-           SEARCH: California Central Valley agriculture aerial 1950s farmland Library of Congress Wikimedia
-           LINK: https://commons.wikimedia.org/wiki/Category:Agriculture_in_California (suggested, not guaranteed) -->
       <figure>
-        <img src="images/S2/L03/S2L03_CaliforniaAgriculture.jpg" alt="California agricultural landscape, Central Valley, ca. 1950s">
-        <figcaption>California's Central Valley agricultural landscape, ca. 1950s. California was the most productive agricultural state in the nation, relying heavily on migrant and Bracero labor. Source: Library of Congress / Wikimedia Commons.</figcaption>
+        <!-- FILENAME: S2L03_CaliforniaAgriculture.jpg
+             PLACE IN: images/S2/L03/
+             FIND: California agriculture or farm labor photograph, postwar era; connects food production to migrant and Bracero labor.
+             SEARCH: California agriculture farm workers 1950s Wikimedia Commons Library of Congress
+             LINK: https://commons.wikimedia.org/wiki/Category:Agriculture_in_California (suggested, not guaranteed) -->
+        <img src="images/S2/L03/S2L03_CaliforniaAgriculture.jpg" alt="California agriculture and farm labor, postwar era">
+        <figcaption>California agriculture and farm labor, postwar era. Wikimedia Commons / Library of Congress.</figcaption>
       </figure>
     </div>
 
-    <p>
-      California's postwar rise also revealed early signs of tension between growth and the environment. The same population boom that filled the suburbs also filled the air with smog. Los Angeles became notorious for its thick, choking haze — caused by car exhaust and factory emissions trapped by the mountains surrounding the Los Angeles basin. In 1947, Los Angeles County created the first air pollution control district in the United States. It was a small step, but it marked the beginning of the American environmental movement that would grow enormously in the following decades.
-    </p>
+    <p class="para-standard">Highways changed the shape of California life. They connected suburbs to jobs and made car culture central to daily routines. But they also cut through older neighborhoods and made life harder for people who could not afford cars or suburban homes.</p>
+    <p class="para-simple">Highways changed California life. They connected suburbs to jobs. Cars became part of daily life. But highways also cut through older neighborhoods. They hurt people who could not afford cars or suburban homes.</p>
+    <p class="para-standard">California farms also depended on low-paid labor. Bracero workers and other Mexican and Mexican American laborers harvested crops that made California agriculture powerful. Their work fed the boom, even when the boom did not fully include them.</p>
+    <p class="para-simple">California farms depended on low-paid workers. Bracero workers and Mexican American workers harvested crops. Their work helped California grow. But they often did not share fully in the boom.</p>
+  </section>
 
-    <!-- PRIMARY SOURCE: California Master Plan, 1960 -->
+  <div class="divider">◆</div>
+
+  <section id="primary-source-moment" class="content-section">
+    <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
     <div class="primary-source">
-      <blockquote>
-        "The university, the state colleges, and the junior colleges must be considered as essential parts of an integrated system designed to make higher education available to every Californian who can benefit from it and who is willing to work for it. The needs of the people of California must take precedence over the ambitions of any single institution."
-      </blockquote>
-      <cite>California Master Plan for Higher Education, Joint Committee on Higher Education, 1960.</cite>
-      <p class="doc-explainer">The Master Plan is saying that no single university should be allowed to hoard resources or students — the whole system exists to serve all Californians, not to build prestige for itself.</p>
+      <blockquote>"Our policy is directed not against any country or doctrine but against hunger, poverty, desperation, and chaos."</blockquote>
+      <cite>George C. Marshall, address at Harvard University, June 5, 1947</cite>
+      <p class="doc-explainer">Marshall believed the United States could protect democracy by rebuilding economies before desperation took over.</p>
     </div>
+    <div class="ps-questions">
+      <p><span class="ps-q-label">QUESTION 1:</span> What problems does Marshall name as dangers to free societies?</p>
+      <p><span class="ps-q-label">QUESTION 2:</span> How does this source connect to the essential question about who received help after World War II?</p>
+    </div>
+  </section>
 
-    <div style="clear:both;"></div>
+  <div class="brain-break tn-break" id="then-now">
+    <span class="bb-label">THEN AND NOW</span>
+    <p class="tn-payoff">THE POSTWAR BOOM BUILT THE MODERN AMERICAN DREAM, BUT IT ALSO BUILT THE HOUSING GAP WE STILL LIVE WITH.</p>
+    <div class="tn-pair">
+      <div class="tn-item">
+        <span class="tn-era-label">1950S</span>
+        <!-- FILENAME: S2L03_LevittownStreet.jpg
+             PLACE IN: images/S2/L03/
+             FIND: Levittown suburban street, ca. 1950s; reused for Then and Now left because it shows the postwar suburban ideal.
+             SEARCH: Levittown New York street houses 1950s Wikimedia Commons Library of Congress
+             LINK: https://commons.wikimedia.org/wiki/File:Levittown_houses.jpg (suggested, not guaranteed) -->
+        <img src="images/S2/L03/S2L03_LevittownStreet.jpg" alt="Levittown suburban street, circa 1950">
+        <p class="tn-caption">A postwar suburb promised space, safety, and a path to wealth.</p>
+      </div>
+      <div class="tn-item">
+        <span class="tn-era-label">TODAY</span>
+        <!-- FILENAME: S2L03_HousingCrisis_Today.jpg
+             PLACE IN: images/S2/L03/
+             FIND: Modern housing crisis, apartment construction, or housing affordability image; use as a comparison to postwar housing access and inequality.
+             SEARCH: housing crisis today apartment construction Wikimedia Commons
+             LINK: https://commons.wikimedia.org/wiki/Category:Housing_crises (suggested, not guaranteed) -->
+        <img src="images/S2/L03/S2L03_HousingCrisis_Today.jpg" alt="Modern housing affordability or housing crisis image">
+        <p class="tn-caption">Housing access is still one of the biggest dividing lines in American life.</p>
+      </div>
+    </div>
+    <p class="tn-closing">The first image sells a dream with neat lawns and matching roofs. The second image reminds us that the price of entering that dream did not stay low for everyone.</p>
   </div>
-</section>
+</div>
 
-<!-- ============================================================
-     HOW THIS STILL MATTERS TODAY
-============================================================ -->
-<section class="still-matters" id="still-matters">
-  <div class="inner">
-    <span class="section-label">How This Still Matters Today</span>
-    <h2 class="section-heading">The postwar decisions about housing, education, and who got access to prosperity are still shaping your life right now.</h2>
-
-    <p class="matters-headline">
-      The racial wealth gap, the housing affordability crisis, the fight over community college funding, and the debate about who can afford to live in California — all of it traces back directly to choices made in the late 1940s and 1950s.
-    </p>
-
-    <ul class="news-headlines">
-      <li><a href="https://www.latimes.com/california/story/2021-04-07/california-redlining-homeownership-racial-wealth-gap" target="_blank">"How Redlining in the 1940s and 1950s Is Still Shaping California's Racial Wealth Gap Today" — Los Angeles Times</a></li>
-      <li><a href="https://www.calmatters.org/education/2023/05/community-college-california-transfer/" target="_blank">"California's Community College Transfer Promise: A Lifeline or a Broken Ladder?" — CalMatters</a></li>
-      <li><a href="https://apnews.com/article/housing-affordability-california-2024" target="_blank">"California Housing Crisis: Who Can Still Afford to Live Here?" — Associated Press</a></li>
-    </ul>
-
-    <!-- FILENAME: S2L03_HousingCrisis_Today.jpg
-         PLACE IN: images/S2/L03/
-         FIND: Contemporary photograph of California housing or homelessness, 2020-2024; shows unaffordable housing, a "For Sale" sign with a very high price, a tent encampment near suburban housing, or a community college campus; connects the postwar housing story to the present crisis; Wikimedia Commons preferred
-         SEARCH: California housing unaffordable 2020s homeless suburban Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/Category:Homelessness_in_California (suggested, not guaranteed) -->
-    <figure class="img-full" style="margin: 28px 0;">
-      <img src="images/S2/L03/S2L03_HousingCrisis_Today.jpg" alt="California housing crisis, contemporary photograph">
-      <figcaption>California's housing affordability crisis, 2020s. The median home price in California exceeds $800,000 — a direct consequence of the supply shortages and segregated policies set in motion in the 1950s. Source: Wikimedia Commons.</figcaption>
-    </figure>
-
-    <p class="closing-question">
-      The postwar boom made millions of white families wealthy through homeownership — and used government policy to keep that wealth out of reach for Black and brown families. Is it the government's job to fix that now, decades later? And if so, how?
-    </p>
-  </div>
-</section>
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-<footer class="site-footer">
-  US History &mdash; Semester 2, Lesson 03 &nbsp;&bull;&nbsp; Post-War Boom and the New America
-</footer>
-
-</div><!-- /.page-wrap -->
+<footer class="page-footer">US HISTORY — SEMESTER 2, LESSON 03 — POSTWAR BOOM AND THE NEW AMERICA</footer>
 
 <script>
+document.getElementById('lexile-toggle').addEventListener('click', function() {
+  document.body.classList.toggle('simplified');
+  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
 document.querySelectorAll('.vocab').forEach(function(el) {
   el.addEventListener('click', function(e) {
     e.stopPropagation();
@@ -993,41 +344,19 @@ document.querySelectorAll('.vocab').forEach(function(el) {
   });
 });
 document.addEventListener('click', function() {
-  document.querySelectorAll('.vocab.active').forEach(function(v) {
-    v.classList.remove('active');
-  });
+  document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); });
 });
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+    if (link) {
+      if (entry.isIntersecting) link.classList.add('active');
+      else link.classList.remove('active');
+    }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 </script>
-
 </body>
 </html>
-
-<!--
-========================================================
-IMAGE CHECKLIST FOR SSU_S2L03.html
-========================================================
-
-S2L03_HeaderBG_LevittownAerial.jpg — Aerial photograph of Levittown, NY or postwar suburb, ca. 1950-1955 — Suggested link: https://commons.wikimedia.org/wiki/File:Levittown_Pennsylvania_aerial_1959.jpg
-
-S2L03_LevittownStreet.jpg — Street-level photograph of Levittown houses, ca. 1950 — Suggested link: https://commons.wikimedia.org/wiki/File:Levittown_houses.jpg
-
-S2L03_MarshallPlan_Aid.jpg — Marshall Plan aid delivery in Europe, ca. 1948-1952 — Suggested link: https://commons.wikimedia.org/wiki/File:Marshall_plan_poster.jpg
-
-S2L03_RedliningMap.jpg — HOLC redlining map of U.S. city, ca. 1940, color-coded neighborhood grades — Suggested link: https://commons.wikimedia.org/wiki/File:HOLC_map_Los_Angeles.jpg
-
-S2L03_BraceroWorkers.jpg — Bracero Program workers in California fields, ca. 1956, Leonard Nadel photograph — Suggested link: https://www.loc.gov/pictures/search/?q=bracero+program+farm+workers
-
-S2L03_Clairemont1950s.jpg — Clairemont, San Diego, ca. 1950s suburban development aerial or street — Suggested link: https://commons.wikimedia.org/wiki/Category:Clairemont,_San_Diego
-
-S2L03_UCBerkeleyPostwar.jpg — UC Berkeley campus, ca. 1950s, postwar enrollment growth — Suggested link: https://commons.wikimedia.org/wiki/File:UC_Berkeley_Sather_Gate_1950s.jpg
-
-S2L03_CaliforniaHighway_1950s.jpg — California freeway construction, ca. 1955-1960 — Suggested link: https://commons.wikimedia.org/wiki/Category:Freeways_in_California
-
-S2L03_CaliforniaAgriculture.jpg — California Central Valley agriculture, aerial, ca. 1950s — Suggested link: https://commons.wikimedia.org/wiki/Category:Agriculture_in_California
-
-S2L03_HousingCrisis_Today.jpg — California housing crisis, contemporary 2020s photograph — Suggested link: https://commons.wikimedia.org/wiki/Category:Homelessness_in_California
-
-========================================================
-END IMAGE CHECKLIST
-========================================================
--->
