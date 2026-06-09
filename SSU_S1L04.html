@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSU S1L04 — AMERICA BECOMES A WORLD POWER</title>
+<title>SSU S1L04: AMERICA BECOMES A WORLD POWER</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Atkinson+Hyperlegible:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -185,6 +185,13 @@ body.simplified .para-simple{display:block}
   text-transform:uppercase;
 }
 .toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}
+.timeline-section{max-width:820px;margin:0 auto 20px;padding:0 28px 10px}
+.timeline-box{background:#f6e4bd;border-top:5px solid var(--burgundy);border-bottom:5px solid var(--gold);padding:26px 28px;box-shadow:0 5px 18px rgba(95,48,18,.18)}
+.timeline-title{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--burgundy);margin-bottom:18px}
+.timeline-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.timeline-item{border-left:4px solid var(--gold);padding:0 0 0 12px}
+.timeline-year{display:block;font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--burgundy);line-height:1.1}
+.timeline-text{display:block;font-size:14px;line-height:1.45;color:var(--ink);margin-top:6px}
 main{
   max-width:820px;
   margin:0 auto;
@@ -314,6 +321,10 @@ figcaption{
   font-weight:700;
   color:var(--navy);
 }
+.ps-visual{display:grid;grid-template-columns:minmax(210px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;display:block;border:3px solid var(--rule);box-shadow:0 8px 24px rgba(71,31,15,.28)}
+.ps-visual figcaption{font-size:12px}
 .ps-questions{
   background:#f6e4bd;
   border:1px solid rgba(90,16,32,.35);
@@ -385,7 +396,8 @@ figcaption{
   border-bottom:3px solid var(--yellow);
   text-align:center;
 }
-.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--yellow)}
+.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--yellow)}
+.ff-context{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#ffe8b7;text-align:center;margin-bottom:28px;opacity:.9}
 .ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
 .ff-item{text-align:center;padding:8px 12px}
 .ff-number{
@@ -401,10 +413,10 @@ figcaption{
   display:block;
   font-family:'Oswald',sans-serif;
   font-size:12px;
-  letter-spacing:.2em;
+  letter-spacing:.08em;
   text-transform:uppercase;
   color:#ffe8b7;
-  max-width:126px;
+  max-width:190px;
   margin:0 auto;
   line-height:1.4;
 }
@@ -512,7 +524,7 @@ footer{
   main{padding:0 22px 50px}
   .header-content{padding:38px 24px 34px}
   .img-inset-right,.img-inset-left{float:none;width:100%;margin:22px 0}
-  .img-pair,.tn-pair{grid-template-columns:1fr}
+  .img-pair,.tn-pair,.timeline-grid,.ps-visual{grid-template-columns:1fr}
   .brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}
   .tn-break{padding:28px 22px;margin:30px 0 0}
   .section-nav a{font-size:11px;padding:11px 8px}
@@ -529,14 +541,15 @@ footer{
 <header class="site-header">
   <!--
     FILENAME: S1L04_HeaderBg.jpg
+    PRIORITY: ESSENTIAL
     PLACE IN: images/S1/L04/
-    FIND: <span class="vocab">USS Maine<span class="tip">American battleship that exploded in Cuba.</span></span> in <span class="vocab">Havana Harbor<span class="tip">A port in Cuba where the Maine exploded.</span></span> before the explosion, 1898; use as the faded header background because it introduces the spark for the <span class="vocab">Spanish-American War<span class="tip">1898 war between Spain and the United States.</span></span>
+    FIND: USS Maine in Havana Harbor before the explosion, 1898; use as the faded header background because it introduces the spark for the Spanish-American War
     SEARCH: USS Maine Havana Harbor 1898 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:USS_Maine_(ACR-1)_in_Havana_Harbor.jpg (suggested, not guaranteed)
   -->
   <img class="header-bg" src="images/S1/L04/S1L04_HeaderBg.jpg" alt="USS Maine in Havana Harbor, 1898">
   <div class="header-content">
-    <div class="course-label">US HISTORY — SEMESTER 1, LESSON 04</div>
+    <div class="course-label">US HISTORY: SEMESTER 1, LESSON 04</div>
     <h1 class="page-title">AMERICA BECOMES A WORLD POWER</h1>
     <div class="eq-banner">
       <span class="eq-label">ESSENTIAL QUESTION</span>
@@ -546,6 +559,7 @@ footer{
 </header>
 
 <nav class="section-nav" aria-label="Page sections">
+  <a href="#timeline">TIMELINE</a>
   <a href="#why-empire">WHY EMPIRE?</a>
   <a href="#war-changed">WAR CHANGED EVERYTHING</a>
   <a href="#winning-empire">WINNING AN EMPIRE</a>
@@ -558,6 +572,7 @@ footer{
 
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
+  <a href="#timeline">TIMELINE</a>
   <a href="#why-empire">WHY EMPIRE</a>
   <a href="#war-changed">WAR</a>
   <a href="#winning-empire">EMPIRE</a>
@@ -565,6 +580,19 @@ footer{
   <a href="#primary-source-moment">SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </aside>
+
+<section class="timeline-section" id="timeline" aria-label="Timeline of American expansion">
+  <div class="timeline-box">
+    <div class="timeline-title">TIMELINE</div>
+    <div class="timeline-grid">
+      <div class="timeline-item"><span class="timeline-year">1893</span><span class="timeline-text">American planters help overthrow Queen Liliʻuokalani in Hawaii.</span></div>
+      <div class="timeline-item"><span class="timeline-year">1898</span><span class="timeline-text">The USS Maine explodes, the Spanish-American War begins, and Hawaii is annexed.</span></div>
+      <div class="timeline-item"><span class="timeline-year">1899</span><span class="timeline-text">The United States begins fighting Filipino independence supporters.</span></div>
+      <div class="timeline-item"><span class="timeline-year">1904</span><span class="timeline-text">Roosevelt claims U.S. police power in parts of Latin America.</span></div>
+      <div class="timeline-item"><span class="timeline-year">1914</span><span class="timeline-text">The Panama Canal opens and strengthens U.S. trade and naval power.</span></div>
+    </div>
+  </div>
+</section>
 
 <main>
 <section class="intro-section">
@@ -581,6 +609,7 @@ footer{
   <h2 class="section-heading">WHY AMERICANS WANTED AN EMPIRE</h2>
   <!--
     FILENAME: S1L04_QueenLiliuokalani.jpg
+    PRIORITY: ESSENTIAL
     PLACE IN: images/S1/L04/
     FIND: Queen Liliʻuokalani portrait, late 1800s; shows the Hawaiian monarch overthrown before U.S. annexation
     SEARCH: Queen Liliuokalani portrait Wikimedia Commons 1891
@@ -602,8 +631,9 @@ footer{
 
   <!--
     FILENAME: S1L04_ImperialismMap1898.jpg
+    PRIORITY: SUPPORTING
     PLACE IN: images/S1/L04/
-    FIND: Map of U.S. overseas possessions after 1898, including Hawaii, <span class="vocab">Puerto Rico<span class="tip">Caribbean island gained by the U.S. in 1898.</span></span>, <span class="vocab">Guam<span class="tip">Pacific island gained by the U.S. in 1898.</span></span>, and the <span class="vocab">Philippines<span class="tip">Pacific islands gained by the U.S. in 1898.</span></span>; helps students see the spread of American power
+    FIND: Map of U.S. overseas possessions after 1898, including Hawaii, Puerto Rico, Guam, and the Philippines; helps students see the spread of American power
     SEARCH: United States overseas possessions 1898 map Hawaii Puerto Rico Guam Philippines Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Greater_United_States_Map.jpg (suggested, not guaranteed)
   -->
@@ -612,12 +642,6 @@ footer{
     <figcaption>Map of U.S. overseas possessions after 1898. A country that had expanded across North America now held islands across the Caribbean and Pacific. Wikimedia Commons.</figcaption>
   </figure>
 
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"I yield to the superior force of the United States of America... to avoid any collision of armed forces, and perhaps the loss of life."</div>
-    <div class="ps-attribution">Queen Liliʻuokalani, statement of surrender, January 17, 1893</div>
-    <div class="ps-narrator">Liliʻuokalani did not surrender because she accepted the overthrow; she surrendered because American <span class="vocab">military force<span class="tip">Using armed power to get results.</span></span> made resistance dangerous.</div>
-  </div>
 
   <p class="real-world para-standard">Real-world connection: When a powerful country says it is helping another place, historians ask who benefits, who loses control, and who gets to decide.</p>
   <p class="real-world para-simple">Real-world connection: When a powerful country says it is helping, historians ask who benefits and who loses control.</p>
@@ -630,7 +654,7 @@ footer{
       <!--
         FILENAME: S1L04_DYK_PanamaCanalCemetery.jpg
         PLACE IN: images/S1/L04/
-        FIND: <span class="vocab">Panama Canal<span class="tip">Waterway linking the Atlantic and Pacific Oceans.</span></span> worker cemetery, hospital, or construction death context; visualizes the human cost of building the canal
+        FIND: Panama Canal worker cemetery, hospital, or construction death context; visualizes the human cost of building the canal
         SEARCH: Panama Canal worker cemetery construction deaths Wikimedia Commons Library of Congress
         LINK: https://commons.wikimedia.org/wiki/Category:Panama_Canal_construction (suggested, not guaranteed)
       -->
@@ -643,12 +667,13 @@ footer{
 
 <div class="brain-break ff-break">
   <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE COST AND SCALE OF AMERICAN EMPIRE</p>
   <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">266</span><span class="ff-desc">SAILORS KILLED</span></div>
-    <div class="ff-item"><span class="ff-number">51</span><span class="ff-desc">CANAL MILES</span></div>
-    <div class="ff-item"><span class="ff-number">7K</span><span class="ff-desc">MILES TO MANILA</span></div>
-    <div class="ff-item"><span class="ff-number">200K</span><span class="ff-desc">FILIPINO CIVILIANS</span></div>
-    <div class="ff-item"><span class="ff-number">10</span><span class="ff-desc">YEARS TO DIG</span></div>
+    <div class="ff-item"><span class="ff-number">266</span><span class="ff-desc">AMERICAN SAILORS KILLED WHEN THE USS MAINE EXPLODED IN HAVANA HARBOR IN 1898</span></div>
+    <div class="ff-item"><span class="ff-number">4</span><span class="ff-desc">MONTHS THE SPANISH-AMERICAN WAR LASTED BEFORE THE UNITED STATES DEFEATED SPAIN</span></div>
+    <div class="ff-item"><span class="ff-number">7K</span><span class="ff-desc">APPROXIMATE MILES FROM SAN FRANCISCO TO MANILA, SHOWING HOW FAR U.S. POWER REACHED</span></div>
+    <div class="ff-item"><span class="ff-number">200K</span><span class="ff-desc">ESTIMATED FILIPINO CIVILIANS WHO DIED DURING THE PHILIPPINE-AMERICAN WAR</span></div>
+    <div class="ff-item"><span class="ff-number">51</span><span class="ff-desc">MILES OF CANAL THAT HELPED U.S. SHIPS MOVE BETWEEN THE ATLANTIC AND PACIFIC OCEANS</span></div>
   </div>
 </div>
 
@@ -657,8 +682,9 @@ footer{
   <h2 class="section-heading">THE WAR THAT CHANGED EVERYTHING</h2>
   <!--
     FILENAME: S1L04_RoughRiders.jpg
+    PRIORITY: SUPPORTING
     PLACE IN: images/S1/L04/
-    FIND: <span class="vocab">Theodore Roosevelt<span class="tip">President who expanded U.S. power overseas.</span></span> and the Rough Riders after the Battle of San Juan Heights, Cuba, 1898
+    FIND: Theodore Roosevelt and the Rough Riders after the Battle of San Juan Heights, Cuba, 1898
     SEARCH: Rough Riders San Juan Hill Roosevelt 1898 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Roosevelt_Rough_Riders.jpg (suggested, not guaranteed)
   -->
@@ -675,6 +701,7 @@ footer{
 
   <!--
     FILENAME: S1L04_YellowPressCartoon.jpg
+    PRIORITY: SUPPORTING
     PLACE IN: images/S1/L04/
     FIND: Political cartoon about yellow journalism and the Spanish-American War, 1898; shows newspapers pushing the country toward war
     SEARCH: yellow journalism cartoon 1898 Spanish American War Hearst Pulitzer Wikimedia Commons
@@ -700,8 +727,9 @@ footer{
   <h2 class="section-heading">WHAT HAPPENS WHEN YOU WIN AN EMPIRE?</h2>
   <!--
     FILENAME: S1L04_EmilioAguinaldo.jpg
+    PRIORITY: ESSENTIAL
     PLACE IN: images/S1/L04/
-    FIND: Emilio Aguinaldo portrait, Filipino independence leader during the <span class="vocab">Philippine-American War<span class="tip">War over U.S. control of the Philippines.</span></span>
+    FIND: Emilio Aguinaldo portrait, Filipino independence leader during the Philippine-American War
     SEARCH: Emilio Aguinaldo portrait Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Emilio_Aguinaldo_ca.1919.jpg (suggested, not guaranteed)
   -->
@@ -718,6 +746,7 @@ footer{
 
   <!--
     FILENAME: S1L04_PhilippineAmericanWar.jpg
+    PRIORITY: ESSENTIAL
     PLACE IN: images/S1/L04/
     FIND: U.S. soldiers in the Philippine-American War, 1899-1902; shows occupation and conflict after the Spanish-American War
     SEARCH: Philippine American War U.S. soldiers 1899 Wikimedia Commons
@@ -748,18 +777,18 @@ footer{
 
 <div class="brain-break as-break">
   <span class="bb-label">ART SPOTLIGHT</span>
-  <figure>
-    <!--
-      FILENAME: S1L04_ArtSpotlight_SchoolBegins.jpg
-      PLACE IN: images/S1/L04/
-      FIND: "School Begins" political cartoon from Puck, 1899, showing Uncle Sam as a teacher over newly acquired territories; use as unique Art Spotlight image only
-      SEARCH: School Begins Puck 1899 imperialism cartoon Wikimedia Commons
-      LINK: https://commons.wikimedia.org/wiki/File:School_Begins_(Puck_Magazine_1-25-1899).jpg (suggested, not guaranteed)
-    -->
-    <img src="images/S1/L04/S1L04_ArtSpotlight_SchoolBegins.jpg" alt="School Begins political cartoon, Puck magazine, 1899" class="as-image">
-    <figcaption class="as-caption">SCHOOL BEGINS, PUCK MAGAZINE, 1899. WIKIMEDIA COMMONS.</figcaption>
-  </figure>
-  <p class="as-fact">This cartoon turns empire into a classroom, with Uncle Sam as the teacher and the new territories shown as children. That choice was not accidental. It made conquest look like education, and it taught readers to see millions of people as students who needed American control before they could govern themselves.</p>
+  <!--
+    FILENAME: S1L04_ArtSpotlight_SchoolBegins.jpg
+    PRIORITY: ESSENTIAL
+    PLACE IN: images/S1/L04/
+    PRIORITY: ESSENTIAL
+    FIND: Original Puck magazine political cartoon "School Begins" by Louis Dalrymple, 1899. Uncle Sam should be standing as a teacher at the front of a classroom while Puerto Rico, Guam, Hawaii, and the Philippines sit as new students. Cuba should appear near the doorway. The full classroom scene should be visible, not cropped tightly.
+    SEARCH: School Begins Louis Dalrymple 1899 Puck cartoon Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:School_Begins_(Puck_Magazine,_1899).jpg
+  -->
+  <img src="images/S1/L04/S1L04_ArtSpotlight_SchoolBegins.jpg" alt="School Begins political cartoon, Puck magazine, 1899" class="as-image">
+  <span class="as-caption">"School Begins" by Louis Dalrymple, 1899. This Puck magazine cartoon shows Uncle Sam teaching America’s new territories after the Spanish-American War.</span>
+  <p class="as-fact">The cartoon looks like a classroom, but it is really an argument about empire. It shows how some Americans imagined the United States as a teacher while people in newly controlled territories were treated like students who had not been asked whether they wanted American rule.</p>
 </div>
 
 <section class="content-section clearfix" id="new-power">
@@ -767,6 +796,7 @@ footer{
   <h2 class="section-heading">HOW AMERICA USED ITS NEW POWER</h2>
   <!--
     FILENAME: S1L04_PanamaCanal.jpg
+    PRIORITY: SUPPORTING
     PLACE IN: images/S1/L04/
     FIND: Panama Canal construction at the Culebra Cut, circa 1907-1910; shows engineering and labor behind U.S. power
     SEARCH: Panama Canal construction Culebra Cut 1907 Wikimedia Commons
@@ -783,20 +813,15 @@ footer{
   <p class="para-standard">The canal opened in 1914. It cut the sea route from New York to San Francisco by thousands of miles. It helped trade, but it also helped the navy move quickly between oceans. The canal was a tool of business and military power.</p>
   <p class="para-simple">The canal opened in 1914. It made the sea route from New York to San Francisco much shorter. It helped trade. It also helped the navy move between oceans. The canal was both a business tool and a military tool.</p>
 
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"I took the Isthmus, started the canal, and then left Congress not to debate the canal, but to debate me."</div>
-    <div class="ps-attribution">Theodore Roosevelt, speech at Berkeley, 1911</div>
-    <div class="ps-narrator">Roosevelt openly admitted that he had forced the canal issue before Congress could stop him.</div>
-  </div>
 
   <p class="para-standard">Presidents after Roosevelt used power in different ways. William Howard Taft used <span class="vocab">Dollar Diplomacy<span class="tip">Using business investment to influence countries.</span></span>, which encouraged American banks and businesses to invest overseas. Woodrow Wilson used <span class="vocab">Moral Diplomacy<span class="tip">Claiming U.S. power should support democracy.</span></span>, which claimed America should support democratic governments. In practice, all three approaches allowed the United States to influence or control other countries.</p>
   <p class="para-simple">Presidents after Roosevelt used power in different ways. Taft used <span class="vocab-red">Dollar Diplomacy</span> through banks and business. Wilson used <span class="vocab-red">Moral Diplomacy</span> and said America should support democracy. In practice, all three approaches let the United States influence other countries.</p>
 
   <!--
     FILENAME: S1L04_WWIPoster.jpg
+    PRIORITY: SUPPORTING
     PLACE IN: images/S1/L04/
-    FIND: <span class="vocab">World War I<span class="tip">Global war fought from 1914 to 1918.</span></span> "I Want You" Uncle Sam poster by James Montgomery Flagg, 1917; shows U.S. mobilization as a world power
+    FIND: World War I "I Want You" Uncle Sam poster by James Montgomery Flagg, 1917; shows U.S. mobilization as a world power
     SEARCH: I Want You Uncle Sam poster 1917 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Uncle_Sam_(pointing_finger).jpg (suggested, not guaranteed)
   -->
@@ -817,21 +842,26 @@ footer{
 <section id="primary-source-moment" class="content-section">
   <div class="section-kicker">PRIMARY SOURCE</div>
   <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"The United States cannot, upon any plea, rightfully impose its <span class="vocab">sovereignty<span class="tip">A people’s power to govern themselves.</span></span> upon any people except by their free and voluntary consent."</div>
-    <div class="ps-attribution">Anti-Imperialist League Platform, 1899</div>
-    <div class="ps-narrator">The Anti-Imperialist League argued that ruling other people without consent betrayed America's founding ideals.</div>
-  </div>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"Chronic wrongdoing... may force the United States... to the exercise of an international police power."</div>
-    <div class="ps-attribution">Theodore Roosevelt, <span class="vocab">Roosevelt Corollary<span class="tip">Policy claiming U.S. police power in Latin America.</span></span> to the <span class="vocab">Monroe Doctrine<span class="tip">Policy warning Europe against control in the Americas.</span></span>, 1904</div>
-    <div class="ps-narrator">Roosevelt argued that the United States had the right to act as a police power in the Western Hemisphere.</div>
-  </div>
-  <div class="ps-questions">
-    <p><strong>QUESTION 1:</strong> What disagreement do these two sources show about American power?</p>
-    <p><strong>QUESTION 2:</strong> How do these sources help answer the essential question about who paid the price for American empire?</p>
+  <div class="primary-source ps-visual">
+    <!--
+      FILENAME: S1L04_PrimarySource_AntiImperialistLeaguePlatform.jpg
+      PRIORITY: ESSENTIAL
+      PLACE IN: images/S1/L04/
+      PRIORITY: ESSENTIAL
+      FIND: Anti-Imperialist League platform, broadside, pamphlet, or title page from 1899. Choose a clear document image connected to the Anti-Imperialist League, preferably one that includes the league name or platform title. If a platform page is not available, use a Library of Congress or Wikimedia image of an Anti-Imperialist League publication from the same period.
+      SEARCH: Anti-Imperialist League Platform 1899 pamphlet Wikimedia Commons Library of Congress
+      LINK: https://www.loc.gov/search/?query=Anti-Imperialist+League+Platform+1899
+    -->
+    <figure>
+      <img src="images/S1/L04/S1L04_PrimarySource_AntiImperialistLeaguePlatform.jpg" alt="Anti-Imperialist League platform or pamphlet, 1899">
+      <figcaption>Anti-Imperialist League platform or publication, 1899. Library of Congress / Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <div class="ps-label">PRIMARY SOURCE</div>
+      <div class="ps-quote">"The United States cannot, upon any plea, rightfully impose its <span class="vocab">sovereignty<span class="tip">A people’s power to govern themselves.</span></span> upon any people except by their free and voluntary consent."</div>
+      <div class="ps-attribution">Anti-Imperialist League Platform, 1899</div>
+      <div class="ps-narrator">The Anti-Imperialist League argued that ruling people without their consent betrayed America’s founding ideals. This source directly challenges the idea that the United States could spread freedom by controlling other lands. It helps students see that Americans debated empire at the time, not only later.</div>
+    </div>
   </div>
 </section>
 
@@ -840,35 +870,39 @@ footer{
   <p class="tn-payoff">EMPIRES OFTEN LAST LONG AFTER THE WAR THAT CREATED THEM.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">1898</span>
+      <span class="tn-era-label">THEN</span>
       <!--
         FILENAME: S1L04_ImperialismMap1898.jpg
         PLACE IN: images/S1/L04/
-        FIND: Map of U.S. overseas possessions after 1898; reused for Then and Now left
+        PRIORITY: SUPPORTING
+        FIND: Map of U.S. overseas possessions after 1898 showing Hawaii, Puerto Rico, Guam, and the Philippines; use for Then side of comparison
         SEARCH: United States overseas possessions 1898 map Hawaii Puerto Rico Guam Philippines Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/File:Greater_United_States_Map.jpg (suggested, not guaranteed)
+        LINK: https://commons.wikimedia.org/wiki/File:Greater_United_States_Map.jpg
       -->
       <img src="images/S1/L04/S1L04_ImperialismMap1898.jpg" alt="Map of U.S. overseas possessions after 1898">
       <p class="tn-caption">After 1898, the United States controlled territories far beyond the continent.</p>
     </div>
     <div class="tn-item">
-      <span class="tn-era-label">TODAY</span>
+      <span class="tn-era-label">NOW</span>
       <!--
         FILENAME: S1L04_TodayUSTerritoriesMap.jpg
         PLACE IN: images/S1/L04/
-        FIND: Modern map of United States territories including Puerto Rico, Guam, U.S. Virgin Islands, American Samoa, and Northern Mariana Islands
+        PRIORITY: SUPPORTING
+        FIND: Modern map of United States territories including Puerto Rico, Guam, U.S. Virgin Islands, American Samoa, and Northern Mariana Islands; should clearly show that U.S. territories still exist today
         SEARCH: United States territories map Puerto Rico Guam American Samoa Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/File:US_insular_areas.svg (suggested, not guaranteed)
+        LINK: https://commons.wikimedia.org/wiki/File:US_insular_areas.svg
       -->
       <img src="images/S1/L04/S1L04_TodayUSTerritoriesMap.jpg" alt="Modern map of United States territories">
       <p class="tn-caption">Some U.S. territories remain part of American political life today.</p>
     </div>
   </div>
-  <p class="tn-closing">The maps look calm, but each colored place represents people living with American citizenship, military strategy, trade, identity, and political limits all layered on top of the same land.</p>
+  <p class="tn-closing"><strong>THEN:</strong> In 1898, the United States gained control of islands across the Caribbean and Pacific. Leaders described this as growth, strategy, and responsibility, but people in those places often had little choice in the decision.</p>
+  <p class="tn-closing"><strong>NOW:</strong> U.S. territories still raise questions about citizenship, voting rights, military power, and representation. The issue did not end when the Spanish-American War ended.</p>
+  <p class="tn-closing"><strong>CONNECTION:</strong> The maps look calm, but each colored place represents people living with American citizenship, military strategy, trade, identity, and political limits layered on top of the same land. What should a powerful country owe to people who live under its flag but do not have equal political power?</p>
 </div>
 </main>
 
-<footer>US HISTORY — SEMESTER 1, LESSON 04 — AMERICA BECOMES A WORLD POWER</footer>
+<footer>US HISTORY: SEMESTER 1, LESSON 04: AMERICA BECOMES A WORLD POWER</footer>
 </div>
 
 <script>
@@ -902,5 +936,15 @@ const tocObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.25 });
 document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 </script>
+
+<!--
+IMAGE CONSOLE CHECK SCRIPT
+Run this in the browser console after uploading images:
+[...document.images].forEach(img => {
+  if (!img.complete || img.naturalWidth === 0) {
+    console.warn('Missing image:', img.getAttribute('src'));
+  }
+});
+-->
 </body>
 </html>
