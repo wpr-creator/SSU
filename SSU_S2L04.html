@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSU S2L04 — THE COLD WAR AT HOME AND ABROAD</title>
+<title>SSU S2L04 : THE COLD WAR AT HOME AND ABROAD</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -317,6 +317,42 @@ figcaption{
   margin:38px 0;
   position:relative;
 }
+.ps-visual{
+  display:grid;
+  grid-template-columns:minmax(210px,36%) 1fr;
+  gap:24px;
+  align-items:start;
+}
+.ps-visual figure{margin:0}
+.ps-visual img{
+  width:100%;
+  display:block;
+  border:1px solid var(--iron);
+  filter:grayscale(.18) contrast(1.1);
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
+.tn-text-block{
+  margin-top:24px;
+  border-top:1px solid rgba(255,207,51,.35);
+  padding-top:20px;
+}
+.tn-text-block h3{
+  font-family:'Roboto Slab',serif;
+  color:var(--yellow);
+  font-size:15px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin:18px 0 8px;
+}
+.tn-text-block p{
+  font-family:'Roboto Slab',serif;
+  color:#fff;
+  font-size:17px;
+  line-height:1.65;
+  margin-bottom:12px;
+}
+
 .ps-label{
   font-family:'Anton',Impact,sans-serif;
   font-size:11px;
@@ -388,7 +424,17 @@ figcaption{
   border-bottom:4px solid var(--red);
   text-align:center;
 }
-.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--red)}
+.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--red)}
+.ff-context{
+  font-family:'Roboto Slab',serif;
+  font-size:14px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#111;
+  text-align:center;
+  margin-bottom:26px;
+  font-weight:900;
+}
 .ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
 .ff-item{text-align:center;padding:8px 12px}
 .ff-number{
@@ -407,7 +453,7 @@ figcaption{
   letter-spacing:.16em;
   text-transform:uppercase;
   color:#111;
-  max-width:126px;
+  max-width:190px;
   margin:0 auto;
   line-height:1.4;
 }
@@ -531,13 +577,14 @@ figcaption{
   <!--
     FILENAME: S2L04_HeaderBG_BerlinWall.jpg
     PLACE IN: images/S2/L04/
+    PRIORITY: ESSENTIAL
     FIND: Berlin Wall construction or Berlin Wall division scene, 1961; use as the faded header background because it makes the <span class="vocab">Cold War<span class="tip">Long U.S.-Soviet rivalry without direct war.</span></span> physical
     SEARCH: Berlin Wall construction 1961 East German soldiers Wikimedia Commons Bundesarchiv
     LINK: https://commons.wikimedia.org/wiki/File:Berlinermauer.jpg (suggested, not guaranteed)
   -->
   <img class="header-bg" src="images/S2/L04/S2L04_HeaderBG_BerlinWall.jpg" alt="Berlin Wall construction during the Cold War">
   <div class="header-inner">
-    <div class="course-label">US HISTORY — SEMESTER 2, LESSON 04</div>
+    <div class="course-label">US HISTORY : SEMESTER 2, LESSON 04</div>
     <h1 class="page-title">THE COLD WAR AT HOME AND ABROAD</h1>
     <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did fear of <span class="vocab">communism<span class="tip">System where the state controls the economy.</span></span> reshape American foreign policy and daily American life?</div>
   </div>
@@ -578,6 +625,7 @@ figcaption{
   <!--
     FILENAME: S2L04_IronCurtain_Map.jpg
     PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
     FIND: Map of Europe divided by the Iron Curtain and Cold War alliances; shows the physical division of Europe
     SEARCH: Iron Curtain map Europe Cold War <span class="vocab">NATO<span class="tip">Military alliance led by the United States.</span></span> <span class="vocab">Warsaw Pact<span class="tip">Soviet-led military alliance in Eastern Europe.</span></span> Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Cold_War_Map_1980.svg (suggested, not guaranteed)
@@ -610,6 +658,7 @@ figcaption{
       <!--
         FILENAME: S2L04_DYK_CheckpointCharlie.jpg
         PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
         FIND: Checkpoint Charlie sign or border crossing in Berlin, Cold War era; visual object that makes the divided world feel real
         SEARCH: Checkpoint Charlie sign Cold War Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Checkpoint_Charlie_sign.jpg (suggested, not guaranteed)
@@ -623,12 +672,13 @@ figcaption{
 
 <div class="brain-break ff-break">
   <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE COLD WAR IN NUMBERS</p>
   <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">20M+</span><span class="ff-desc">SOVIET DEAD</span></div>
-    <div class="ff-item"><span class="ff-number">200K</span><span class="ff-desc">AIRLIFT FLIGHTS</span></div>
-    <div class="ff-item"><span class="ff-number">36K</span><span class="ff-desc">AMERICANS IN KOREA</span></div>
-    <div class="ff-item"><span class="ff-number">36</span><span class="ff-desc">DAYS ON TV</span></div>
-    <div class="ff-item"><span class="ff-number">15K+</span><span class="ff-desc">NUCLEAR WARHEADS</span></div>
+    <div class="ff-item"><span class="ff-number">20M+</span><span class="ff-desc">People the Soviet Union lost in World War II, helping explain why Stalin wanted control in Eastern Europe.</span></div>
+    <div class="ff-item"><span class="ff-number">200K</span><span class="ff-desc">Approximate flights that supplied West Berlin during the Berlin Airlift after the Soviet blockade.</span></div>
+    <div class="ff-item"><span class="ff-number">36K</span><span class="ff-desc">American service members killed in the Korean War as containment became a shooting war.</span></div>
+    <div class="ff-item"><span class="ff-number">36</span><span class="ff-desc">Days the Army-McCarthy hearings were televised, letting Americans watch fear and accusation unfold.</span></div>
+    <div class="ff-item"><span class="ff-number">15K+</span><span class="ff-desc">Approximate number of U.S. nuclear warheads at the Cold War peak in the 1960s.</span></div>
   </div>
 </div>
 
@@ -637,19 +687,6 @@ figcaption{
   <h2 class="section-heading">CONTAINMENT: HOLDING THE LINE</h2>
   <p class="para-standard">American leaders needed a plan for dealing with Soviet power. A diplomat named <span class="vocab">George Kennan<span class="tip">Diplomat who helped shape containment policy.</span></span> argued that the Soviet Union would expand slowly by supporting communist movements in weak countries. He said the United States should use <span class="vocab">containment<span class="tip">The policy of stopping communism from spreading to new countries.</span></span>: do not let communism spread farther.</p>
   <p class="para-simple">American leaders needed a plan for Soviet power. George Kennan said the <span class="vocab-red">Soviet Union</span> would spread <span class="vocab-red">communism</span> slowly. It would support weak countries and movements. He said the U.S. should use <span class="vocab-red">containment</span>. That meant stopping communism from spreading.</p>
-
-  <!--
-    FILENAME: S2L04_TrumanDoctrine_Speech.jpg
-    PLACE IN: images/S2/L04/
-    FIND: President Truman addressing Congress on March 12, 1947, for the <span class="vocab">Truman Doctrine<span class="tip">U.S. promise to help resist communism.</span></span>
-    SEARCH: Truman Doctrine speech Congress March 1947 Library of Congress Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/File:Truman_Doctrine.jpg (suggested, not guaranteed)
-  -->
-  <figure class="img-left">
-    <img src="images/S2/L04/S2L04_TrumanDoctrine_Speech.jpg" alt="President Truman addresses Congress for the Truman Doctrine">
-    <figcaption>President Truman addresses Congress, March 12, 1947. His speech launched the Truman Doctrine. Library of Congress / Wikimedia Commons.</figcaption>
-  </figure>
-
   <p class="para-standard">President Harry Truman turned containment into policy in 1947. He asked Congress for aid to <span class="vocab">Greece and Turkey<span class="tip">Countries Truman aided to resist communism.</span></span>, where communist movements were growing. Truman then made a much bigger promise: the United States would support free peoples resisting outside pressure or armed takeover. This became the Truman Doctrine.</p>
   <p class="para-simple">President Truman turned <span class="vocab-red">containment</span> into policy in 1947. He asked Congress to help Greece and Turkey. Communist movements were growing there. Truman made a bigger promise. The United States would support free peoples resisting takeover. This became the <span class="vocab-red">Truman Doctrine</span>.</p>
 
@@ -659,6 +696,7 @@ figcaption{
   <!--
     FILENAME: S2L04_BerlinAirlift.jpg
     PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
     FIND: Berlin Airlift, C-54 landing at Tempelhof Airport, 1948-1949; shows U.S. planes supplying West Berlin
     SEARCH: Berlin Airlift 1948 Tempelhof Airport C-54 crowd Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:C-54landingattemplehof.jpg (suggested, not guaranteed)
@@ -688,6 +726,7 @@ figcaption{
   <!--
     FILENAME: S2L04_McCarthy_Hearings.jpg
     PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
     FIND: Senator Joseph McCarthy at Army-McCarthy hearings, 1954
     SEARCH: Joseph McCarthy Army hearings 1954 Senate hearing microphone Wikimedia Commons Library of Congress
     LINK: https://commons.wikimedia.org/wiki/File:Joseph_McCarthy.jpg (suggested, not guaranteed)
@@ -709,6 +748,7 @@ figcaption{
   <!--
     FILENAME: S2L04_HollywoodTen.jpg
     PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
     FIND: Hollywood Ten or HUAC hearings, 1947; shows accused writers/directors and the entertainment blacklist
     SEARCH: Hollywood Ten HUAC hearings 1947 Wikimedia Commons Library of Congress
     LINK: https://commons.wikimedia.org/wiki/Category:Hollywood_blacklist (suggested, not guaranteed)
@@ -731,6 +771,7 @@ figcaption{
     <!--
       FILENAME: S2L04_ArtSpotlight_IsThisTomorrow.jpg
       PLACE IN: images/S2/L04/
+    PRIORITY: ESSENTIAL
       FIND: "Is This Tomorrow: America Under Communism" comic book cover, 1947; dramatic anti-communist propaganda artwork unique to Art Spotlight
       SEARCH: Is This Tomorrow America Under Communism 1947 comic cover Wikimedia Commons
       LINK: https://commons.wikimedia.org/wiki/File:Is_This_Tomorrow.jpg (suggested, not guaranteed)
@@ -749,6 +790,7 @@ figcaption{
       <!--
         FILENAME: S2L04_SovietBombTest.jpg
         PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
         FIND: Soviet atomic bomb test mushroom cloud, 1949-1953
         SEARCH: Soviet nuclear test 1949 Joe-1 atomic bomb mushroom cloud Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Soviet_nuclear_test.jpg (suggested, not guaranteed)
@@ -760,6 +802,7 @@ figcaption{
       <!--
         FILENAME: S2L04_DuckAndCover_Drill.jpg
         PLACE IN: images/S2/L04/
+    PRIORITY: ESSENTIAL
         FIND: Duck-and-cover drill in an American school, 1950s; children under desks
         SEARCH: duck and cover school drill nuclear 1950s children desks Library of Congress Wikimedia
         LINK: https://commons.wikimedia.org/wiki/File:Duck_and_cover_drill.jpg (suggested, not guaranteed)
@@ -778,6 +821,7 @@ figcaption{
   <!--
     FILENAME: S2L04_FalloutShelter_Sign.jpg
     PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
     FIND: Yellow and black fallout shelter sign, 1960s; shows nuclear fear in everyday buildings
     SEARCH: fallout shelter sign yellow black 1960s United States Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Fallout_shelter_sign.jpg (suggested, not guaranteed)
@@ -796,6 +840,7 @@ figcaption{
   <!--
     FILENAME: S2L04_NATO_Founding.jpg
     PLACE IN: images/S2/L04/
+    PRIORITY: SUPPORTING
     FIND: NATO founding treaty signing ceremony, Washington D.C., April 4, 1949
     SEARCH: NATO founding treaty signing Washington 1949 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:NATO_1949.jpg (suggested, not guaranteed)
@@ -815,21 +860,25 @@ figcaption{
 <section id="primary-source-moment" class="content-section">
   <span class="section-kicker">PRIMARY SOURCE</span>
   <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"I believe that it must be the policy of the United States to support free peoples who are resisting attempted subjugation."</div>
-    <div class="ps-attribution">President Harry S. Truman, Address to Congress, March 12, 1947</div>
-    <div class="ps-narrator">Truman is saying the United States should help countries resist communist pressure, even far from home.</div>
-  </div>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"Have you no sense of decency, sir? At long last, have you left no sense of decency?"</div>
-    <div class="ps-attribution">Joseph Welch to Senator Joseph McCarthy, <span class="vocab">Army-McCarthy Hearings<span class="tip">Televised hearings that weakened McCarthy.</span></span>, June 9, 1954</div>
-    <div class="ps-narrator">Welch's question exposed how far fear and accusation had gone on national television.</div>
-  </div>
-  <div class="ps-questions">
-    <p><strong>QUESTION 1:</strong> What fear is Truman responding to in the first source?</p>
-    <p><strong>QUESTION 2:</strong> How do both sources show the Cold War changing American life at home and abroad?</p>
+  <div class="primary-source ps-visual">
+    <figure>
+      <!--
+        FILENAME: S2L04_TrumanDoctrine_Speech.jpg
+        PLACE IN: images/S2/L04/
+        PRIORITY: ESSENTIAL
+        FIND: President Harry S. Truman addressing Congress on March 12, 1947, during the Truman Doctrine speech; use a congressional speech image that shows Truman making containment official policy
+        SEARCH: Truman Doctrine speech Congress March 12 1947 Library of Congress Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Truman_Doctrine.jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L04/S2L04_TrumanDoctrine_Speech.jpg" alt="President Truman addresses Congress for the Truman Doctrine">
+      <figcaption>President Truman addresses Congress, March 12, 1947. His speech made containment official U.S. policy. Library of Congress / Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <div class="ps-label">PRIMARY SOURCE</div>
+      <div class="ps-quote">"I believe that it must be the policy of the United States to support free peoples who are resisting attempted subjugation."</div>
+      <div class="ps-attribution">President Harry S. Truman, Address to Congress, March 12, 1947</div>
+      <div class="ps-narrator">Truman made fear of communist expansion into official U.S. foreign policy. His words helped launch containment: the idea that the United States should help stop communism from spreading. This source connects to the essential question because it shows how Cold War fear pushed American leaders to act far beyond U.S. borders.</div>
+    </div>
   </div>
 </section>
 
@@ -838,11 +887,12 @@ figcaption{
   <p class="tn-payoff">THE COLD WAR NEVER FULLY DISAPPEARED: IT LEFT BEHIND ALLIANCES, WEAPONS, AND OLD FEARS WITH NEW NAMES.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">1960S</span>
+      <span class="tn-era-label">THEN</span>
       <!--
         FILENAME: S2L04_FalloutShelter_Sign.jpg
         PLACE IN: images/S2/L04/
-        FIND: Fallout shelter sign, 1960s; reused for Then and Now left because it shows everyday nuclear fear
+        PRIORITY: SUPPORTING
+        FIND: Fallout shelter sign, 1960s; shows everyday nuclear fear in American public buildings during the Cold War
         SEARCH: fallout shelter sign yellow black 1960s United States Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Fallout_shelter_sign.jpg (suggested, not guaranteed)
       -->
@@ -850,23 +900,31 @@ figcaption{
       <p class="tn-caption">Cold War Americans passed fallout shelter signs in schools, offices, and public buildings.</p>
     </div>
     <div class="tn-item">
-      <span class="tn-era-label">TODAY</span>
+      <span class="tn-era-label">NOW</span>
       <!--
         FILENAME: S2L04_NuclearWarheads_Today.jpg
         PLACE IN: images/S2/L04/
-        FIND: Modern U.S. Minuteman III ICBM or nuclear missile silo; connects Cold War nuclear legacy to today
-        SEARCH: Minuteman III ICBM U.S. Air Force Wikimedia Commons
+        PRIORITY: SUPPORTING
+        FIND: Modern U.S. Minuteman III ICBM, nuclear missile silo, or military image of a current U.S. nuclear missile system; shows the Cold War nuclear legacy that still exists today
+        SEARCH: Minuteman III ICBM U.S. Air Force Wikimedia Commons nuclear missile silo
         LINK: https://commons.wikimedia.org/wiki/File:Minuteman_III_ICBM.jpg (suggested, not guaranteed)
       -->
       <img src="images/S2/L04/S2L04_NuclearWarheads_Today.jpg" alt="Modern U.S. Minuteman III ICBM">
-      <p class="tn-caption">Modern nuclear missiles are part of the same arms race that began in the Cold War.</p>
+      <p class="tn-caption">Modern nuclear missiles are part of the same arms race legacy that grew during the Cold War.</p>
     </div>
   </div>
-  <p class="tn-closing">One image belongs on a hallway wall and the other belongs underground in a missile system, but both are built around the same human fear: someone might push the world too far.</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>During the Cold War, ordinary Americans lived with signs, sirens, drills, and public warnings about nuclear attack. The fallout shelter sign shows how global conflict entered daily life. Fear was not only in government meetings; it was also in schools, hallways, and city buildings.</p>
+    <h3>NOW</h3>
+    <p>Today, the United States and Russia still hold large nuclear arsenals. The Cold War ended in 1991, but the weapons, alliances, and mistrust did not simply disappear. Modern nuclear systems remind us that old conflicts can leave behind dangerous tools.</p>
+    <h3>CONNECTION</h3>
+    <p>The Cold War changed both foreign policy and daily life because fear became a way of making decisions. Leaders built alliances and weapons abroad while families practiced survival routines at home. What Cold War fear still shapes the world you live in today?</p>
+  </div>
 </div>
 </main>
 
-<footer class="site-footer">US HISTORY — SEMESTER 2, LESSON 04 — THE COLD WAR AT HOME AND ABROAD</footer>
+<footer class="site-footer">US HISTORY : SEMESTER 2, LESSON 04 : THE COLD WAR AT HOME AND ABROAD</footer>
 </div>
 
 <script>
@@ -900,5 +958,17 @@ const tocObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.25 });
 document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 </script>
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to the Console tab, paste and
+  run this to see which images are missing:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
+-->
 </body>
 </html>
