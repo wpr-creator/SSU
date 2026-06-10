@@ -4,56 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SSU S1L06 — CIVIL LIBERTIES UNDER PRESSURE</title>
-<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --black:#111;
-  --charcoal:#26221d;
-  --cream:#f7efd8;
-  --gold:#d8aa3c;
-  --gold-dark:#9b6b12;
-  --burgundy:#6e1626;
-  --burgundy-light:#9f2338;
-  --ink:#1d1710;
-  --muted:#5e4d3a;
-  --vocab:#b03030;
-  --teal:#034f50;
-  --lime:#dfff48;
-  --purple:#35124f;
-  --pink:#ff55d4;
-  --orange:#ff8b21;
-  --navy:#102747;
-  --cyan:#29d4ff;
+  --black:#111;--cream:#f7efd8;--gold:#d8aa3c;--gold-dark:#9b6b12;--burgundy:#6e1626;
+  --ink:#1d1710;--muted:#5e4d3a;--vocab:#b03030;--teal:#034f50;--lime:#dfff48;
+  --purple:#35124f;--pink:#ff55d4;--orange:#ff8b21;--navy:#102747;--cyan:#29d4ff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   background:radial-gradient(circle at 20% 0%,rgba(216,170,60,.34),transparent 25%),linear-gradient(135deg,#17120d 0%,#6e1626 48%,#21170f 100%);
-  color:var(--ink);
-  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
-  font-size:18px;
-  line-height:1.85;
+  color:var(--ink);font-family:'Atkinson Hyperlegible',Arial,sans-serif;font-size:18px;line-height:1.85;
 }
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
 .page-wrap{max-width:920px;margin:0 auto;background:var(--cream);box-shadow:0 0 95px rgba(0,0,0,.8);border-left:6px solid var(--black);border-right:6px solid var(--black)}
 .site-header{position:relative;min-height:455px;background:var(--black);overflow:hidden;display:flex;align-items:center;text-align:center}
 .header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;filter:sepia(.3) contrast(1.12)}
 .site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,14,8,.12),rgba(30,19,13,.68) 55%,rgba(10,8,6,.96))}
 .header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:56px 34px 50px}
 .course-label{font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
-.page-title{font-family:'Limelight',serif;font-size:clamp(50px,8vw,76px);line-height:1.05;color:#fff;text-transform:uppercase;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
+.page-title{font-family:'Limelight',serif;font-size:clamp(52px,8vw,76px);line-height:1.05;color:#fff;text-transform:uppercase;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
 .eq-banner{display:inline-block;background:rgba(110,22,38,.96);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:20px;line-height:1.45;text-align:left}
 .eq-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#ffe49a;margin-bottom:8px}
-.section-nav{position:sticky;top:0;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#17120d;border-bottom:4px solid var(--gold)}
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#17120d;border-bottom:4px solid var(--gold)}
 .section-nav a{font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#f4dfad;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px}
-.section-nav a:hover{color:#fff;border-bottom-color:var(--gold);background:rgba(110,22,38,.55)}
+.section-nav a:hover,.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(110,22,38,.55)}
 #lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--burgundy);background:transparent;color:var(--burgundy);transition:background .2s,color .2s}
 #lexile-toggle:hover{background:var(--burgundy);color:#fff}
 .para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
-.toc-sidebar{position:fixed;right:calc(50% - 590px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Roboto Slab',serif;z-index:50;background:rgba(23,18,13,.92);border-left:2px solid rgba(216,170,60,.45)}
+.toc-sidebar{position:fixed;left:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Roboto Slab',serif;z-index:50;background:rgba(23,18,13,.92);border-right:2px solid rgba(216,170,60,.45)}
 .toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.toc-sidebar a{display:block;color:#f4dfad;text-decoration:none;padding:3px 0;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.toc-sidebar a{display:block;color:#f4dfad;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
 .toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}
 main{max-width:820px;margin:0 auto;padding:0 28px 68px}
+.timeline{margin:8px auto 34px;padding:26px 28px;background:#ead8ab;border-top:4px solid var(--burgundy);border-bottom:4px solid var(--burgundy)}
+.timeline h2{font-family:'Roboto Slab',serif;font-size:18px;letter-spacing:.24em;text-transform:uppercase;color:var(--burgundy);text-align:center;margin-bottom:18px}
+.timeline-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.timeline-node{background:#17120d;color:#f7efd8;border-top:4px solid var(--gold);padding:14px 12px;min-height:145px}
+.timeline-date{display:block;font-family:'Roboto Slab',serif;color:var(--gold);font-weight:900;font-size:15px;margin-bottom:6px}
+.timeline-title{display:block;font-family:'Roboto Slab',serif;text-transform:uppercase;font-weight:900;font-size:12px;line-height:1.35;margin-bottom:6px}
+.timeline-node p{color:#f4dfad;font-size:13px;line-height:1.45;margin:0}
 .intro-section{padding:48px 0 30px}.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
 .content-section{padding:50px 0 28px;border-top:3px double rgba(110,22,38,.3)}
 .section-kicker{display:block;font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--burgundy);margin-bottom:8px}
@@ -63,30 +54,45 @@ p{margin-bottom:20px;color:var(--ink)}
 .vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
 .vocab-red{color:var(--vocab);font-weight:700}
 .vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.45)}
-.vocab:hover .tip,.vocab.active .tip{display:block}
-figure{margin:32px 0}figure img{width:100%;display:block;border:3px solid var(--gold-dark);box-shadow:0 8px 24px rgba(70,35,10,.28);filter:sepia(.18) contrast(1.06)}figcaption{font-size:13px;font-style:italic;color:var(--muted);margin-top:8px;line-height:1.45}
-.img-right{float:right;width:42%;margin:6px 0 20px 28px}.img-left{float:left;width:42%;margin:6px 28px 20px 0}.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}.img-pair figure{margin:0}.clearfix:after{content:"";display:table;clear:both}
+.vocab:hover .tip,.vocab.active .tip{display:block}.vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+figure{margin:32px 0}figure img{width:100%;display:block;border:3px solid var(--gold-dark);box-shadow:0 8px 24px rgba(70,35,10,.28);filter:sepia(.18) contrast(1.06)}
+figcaption{font-size:13px;font-style:italic;color:var(--muted);margin-top:8px;line-height:1.45}
+img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}.img-left{float:left;width:42%;margin:6px 28px 20px 0}.clearfix:after{content:"";display:table;clear:both}
 .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}.info-card{background:#21170f;color:#fff;border-top:5px solid var(--gold);padding:22px 24px}.info-card h3{font-family:'Limelight',serif;color:#ffe49a;font-size:22px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}.info-card p{color:#f8e8bd;font-size:16px;line-height:1.65;margin:0}
-.primary-source{background:#ead8ab;border-left:7px solid var(--burgundy);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}.ps-label{font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--burgundy);margin-bottom:12px}.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}.ps-attribution{font-size:13px;font-style:italic;color:var(--muted);margin-bottom:12px}.ps-narrator{border-top:1px solid rgba(110,22,38,.32);padding-top:12px;font-size:15px;line-height:1.6;font-weight:700}
-.ps-questions{background:#f2e2bd;border:1px solid rgba(110,22,38,.28);padding:22px 26px;margin-bottom:38px}.ps-questions p{font-size:17px;margin-bottom:12px}
+.primary-source{background:#ead8ab;border-left:6px solid var(--burgundy);padding:28px 32px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}.ps-visual figure{margin:0}
+.ps-label{font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--burgundy);margin-bottom:12px}
+.ps-quote{font-size:22px;font-style:italic;line-height:1.6;color:var(--black);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:var(--muted);margin-bottom:12px}
+.ps-narrator{border-top:1px solid rgba(110,22,38,.32);padding-top:12px;font-size:15px;line-height:1.6;font-weight:700}
+.simple-terms{font-size:15px;line-height:1.55;background:#f4e5bf;border-left:4px solid var(--gold-dark);padding:12px 14px;margin-top:12px}
 .brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden}.bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.85}.bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
 .dyk-break{background:var(--teal);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
-.ff-break{background:#070707;color:#fff;padding:36px 40px;margin:0 -50px 44px;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);text-align:center}.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--orange)}.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}.ff-item{text-align:center;padding:8px 12px}.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:700;color:var(--orange);line-height:1;margin-bottom:8px}.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#ffe8b7;max-width:130px;margin:0 auto;line-height:1.4}
-.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}.as-break .bb-label{color:var(--pink)}.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,85,212,.75);box-shadow:0 8px 32px rgba(0,0,0,.55);filter:none}.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:13px;color:#ffe8fb;line-height:1.5;margin-bottom:28px;display:block}.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.6;max-width:700px;margin:0 auto;text-align:center}
-.tn-break{background:var(--navy);color:#fff;padding:36px 50px;margin:30px -50px 0}.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:700}.tn-item img{width:100%;display:block;border:2px solid rgba(41,212,255,.65);filter:none}.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#d9f7ff;margin-top:8px;line-height:1.4}.tn-closing{font-family:'Roboto Slab',serif;font-size:20px;font-weight:500;text-align:center;color:#fff;margin-top:24px;line-height:1.5;border-top:1px solid rgba(41,212,255,.35);padding-top:20px}
+.ff-break{background:#070707;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);text-align:center}.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--orange)}
+.ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#ffe8b7;text-align:center;margin-bottom:28px;opacity:.85;font-weight:700}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}.ff-item{text-align:center;padding:8px 16px;max-width:180px}.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:58px;font-weight:900;color:var(--orange);line-height:1;margin-bottom:10px}.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.08em;color:#ffe8b7;line-height:1.5;margin:0 auto}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}.as-break .bb-label{color:var(--pink)}.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,85,212,.75);box-shadow:0 8px 32px rgba(0,0,0,.55);filter:none}.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:14px;color:#ffe8fb;line-height:1.6;margin-bottom:28px;display:block}.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:620px;margin:0 auto;text-align:center}
+.tn-break{background:var(--navy);color:#fff;padding:36px 50px;margin:30px -50px 0}.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:900}.tn-item img{width:100%;display:block;border:2px solid rgba(41,212,255,.65);filter:none}.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#d9f7ff;margin-top:8px;line-height:1.4}.tn-text-block{margin-top:24px;border-top:1px solid rgba(41,212,255,.35);padding-top:20px}.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}.section-animate.visible{opacity:1;transform:translateY(0)}
 footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-top:5px solid var(--gold)}
-@media(max-width:1100px){.toc-sidebar{display:none}}@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.img-pair,.card-grid,.tn-pair{grid-template-columns:1fr}.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.tn-break{padding:28px 22px;margin:30px 0 0}.section-nav a{font-size:11px;padding:11px 8px}}@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.card-grid,.timeline-grid,.tn-pair{grid-template-columns:1fr}.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.tn-break{padding:28px 22px;margin:30px 0 0}.section-nav a{font-size:11px;padding:11px 8px}.ps-visual{grid-template-columns:1fr}}
+@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}.tn-payoff{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}img{transition:none}}
 </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 <div class="page-wrap">
 <header class="site-header">
   <!--
     FILENAME: S1L06_Header_PalmerRaidNewspaper.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: ESSENTIAL
     FIND: Newspaper headline or image about the Palmer Raids and Red Scare, 1919-1920; sets the mood of fear underneath the 1920s
     SEARCH: Palmer Raids newspaper 1920 Library of Congress
-    LINK: https://www.loc.gov/search/?fo=json&q=Palmer+Raids+1920+newspaper (suggested, not guaranteed)
+    LINK: Suggested: https://www.loc.gov/search/?fo=json&q=Palmer+Raids+1920+newspaper
   -->
   <img class="header-bg" src="images/S1/L06/S1L06_Header_PalmerRaidNewspaper.jpg" alt="Newspaper coverage of the Palmer Raids">
   <div class="header-inner">
@@ -97,63 +103,78 @@ footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font
 </header>
 
 <nav class="section-nav" aria-label="Page sections">
+  <a href="#intro">INTRODUCTION</a>
   <a href="#red-scare">RED SCARE</a>
   <a href="#nativism">NATIVISM</a>
-  <a href="#resistance">ORGANIZED RESPONSES</a>
+  <a href="#resistance">RESPONSES</a>
   <a href="#survived">WHAT SURVIVED</a>
   <a href="#primary-source-moment">PRIMARY SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </nav>
 <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
-<aside class="toc-sidebar"><span class="toc-label">ON THIS PAGE</span><a href="#red-scare">RED SCARE</a><a href="#nativism">NATIVISM</a><a href="#resistance">RESPONSES</a><a href="#survived">SURVIVED</a><a href="#primary-source-moment">SOURCE</a><a href="#then-now">THEN AND NOW</a></aside>
+<aside class="toc-sidebar"><span class="toc-label">ON THIS PAGE</span><a href="#intro">INTRO</a><a href="#red-scare">RED SCARE</a><a href="#nativism">NATIVISM</a><a href="#resistance">RESPONSES</a><a href="#survived">SURVIVED</a><a href="#primary-source-moment">SOURCE</a><a href="#then-now">THEN AND NOW</a></aside>
 
 <main>
-<section class="intro-section">
+<div class="timeline">
+  <h2>1920S PRESSURE POINTS</h2>
+  <div class="timeline-grid">
+    <div class="timeline-node"><span class="timeline-date">1917</span><span class="timeline-title">RUSSIAN REVOLUTION</span><p>Communists take power in Russia, and many Americans begin fearing revolution at home.</p></div>
+    <div class="timeline-node"><span class="timeline-date">1919</span><span class="timeline-title">PALMER RAIDS BEGIN</span><p>Federal agents arrest suspected radicals during a wave of political panic.</p></div>
+    <div class="timeline-node"><span class="timeline-date">1920</span><span class="timeline-title">ACLU FOUNDED</span><p>Civil liberties defenders organize after arrests and deportations shock the country.</p></div>
+    <div class="timeline-node"><span class="timeline-date">1924</span><span class="timeline-title">QUOTAS HARDEN</span><p>Congress sharply limits immigration and favors Northern and Western Europe.</p></div>
+    <div class="timeline-node"><span class="timeline-date">1925</span><span class="timeline-title">KLAN GOES PUBLIC</span><p>The Ku Klux Klan marches openly and shows how mainstream hate had become.</p></div>
+  </div>
+</div>
+
+<section class="intro-section section-animate" id="intro">
   <p class="para-standard">On a cold night in January 1920, federal agents burst into meeting halls, homes, and offices across the country. People were arrested for their politics, their speech, their immigrant background, or the groups they joined. Some were held without lawyers. Some were deported.</p>
   <p class="para-simple">On a cold night in January 1920, federal agents raided homes, offices, and meeting halls. People were arrested because of their politics, speech, immigrant background, or groups. Some had no lawyers. Some were deported.</p>
-  <p class="para-standard">This was the strange side of the 1920s. The decade had jazz, movies, cars, and new money. It also had raids, quotas, the Ku Klux Klan, and fear of people seen as un-American.</p>
-  <p class="para-simple">This was the strange side of the 1920s. The decade had jazz, movies, cars, and new money. It also had raids, immigration limits, the Ku Klux Klan, and fear.</p>
+  <p class="para-standard">This was the strange side of the 1920s. The decade had jazz, movies, cars, and new money. It also had raids, quotas, the Ku Klux Klan, and fear of people seen as un-American. The question was not only whether America was becoming richer; it was whether freedom would still protect unpopular people.</p>
+  <p class="para-simple">This was the strange side of the 1920s. The decade had jazz, movies, cars, and new money. It also had raids, immigration limits, the Ku Klux Klan, and fear. The big question was whether freedom still protected unpopular people.</p>
 </section>
 
-<section class="content-section clearfix" id="red-scare">
-  <span class="section-kicker">CHAPTER ONE</span>
+<section class="content-section clearfix section-animate" id="red-scare">
+  <span class="section-kicker">CONTEXT</span>
   <h2 class="section-heading">THE RED SCARE TURNS FEAR INTO RAIDS</h2>
   <!--
     FILENAME: S1L06_MitchellPalmerPortrait.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: Attorney General A. Mitchell Palmer portrait, 1919-1920; shows the official who ordered the Palmer Raids
     SEARCH: A Mitchell Palmer portrait Library of Congress
-    LINK: https://www.loc.gov/pictures/search/?q=A.%20Mitchell%20Palmer (suggested, not guaranteed)
+    LINK: Suggested: https://www.loc.gov/pictures/search/?q=A.%20Mitchell%20Palmer
   -->
   <figure class="img-right"><img src="images/S1/L06/S1L06_MitchellPalmerPortrait.jpg" alt="Attorney General A. Mitchell Palmer"><figcaption>A. Mitchell Palmer was Attorney General during the first Red Scare. Library of Congress.</figcaption></figure>
-  <p class="para-standard">After World War I, many Americans feared revolution. Russia had become communist in 1917, and some workers in the United States were striking. This panic became the <span class="vocab">Red Scare<span class="tip">Fear that communists or radicals would overthrow society.</span></span>. Many people connected immigrants, labor unions, and radicals with danger.</p>
+  <p class="para-standard">After World War I, many Americans feared revolution. Russia had become communist in 1917, and some workers in the United States were striking. This panic became the <span class="vocab" tabindex="0">Red Scare<span class="tip">Fear that communists or radicals would overthrow society.</span></span>. Many people connected immigrants, labor unions, and radicals with danger.</p>
   <p class="para-simple">After World War I, many Americans feared revolution. Russia had become communist in 1917. Some workers in the U.S. were striking. This panic became the <span class="vocab-red">Red Scare</span>.</p>
-  <p class="para-standard">Attorney General A. Mitchell Palmer ordered the <span class="vocab">Palmer Raids<span class="tip">Mass arrests of suspected radicals in 1919 and 1920.</span></span>. Federal agents arrested thousands of suspected radicals. Many arrests ignored <span class="vocab">due process<span class="tip">Fair legal steps before punishment.</span></span>, which means the government must follow fair legal steps. Some people were jailed without clear evidence.</p>
+  <p class="para-standard">Attorney General A. Mitchell Palmer ordered the <span class="vocab" tabindex="0">Palmer Raids<span class="tip">Mass arrests of suspected radicals in 1919 and 1920.</span></span>. Federal agents arrested thousands of suspected radicals. Many arrests ignored <span class="vocab" tabindex="0">due process<span class="tip">Fair legal steps before punishment.</span></span>, which means the government must follow fair legal steps. Some people were jailed without clear evidence.</p>
   <p class="para-simple">Attorney General Palmer ordered the <span class="vocab-red">Palmer Raids</span>. Federal agents arrested thousands of people accused of being radicals. Many arrests ignored <span class="vocab-red">due process</span>. That means the government did not follow fair legal steps.</p>
   <!--
     FILENAME: S1L06_PalmerRaidArrests.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: ESSENTIAL
     FIND: Palmer Raids arrests or suspected radicals rounded up, 1919-1920; shows mass arrests during the Red Scare
     SEARCH: Palmer Raids arrests 1920 Library of Congress
-    LINK: https://www.loc.gov/search/?q=Palmer+Raids+arrests (suggested, not guaranteed)
+    LINK: Suggested: https://www.loc.gov/search/?q=Palmer+Raids+arrests
   -->
   <figure><img src="images/S1/L06/S1L06_PalmerRaidArrests.jpg" alt="People arrested during Palmer Raids"><figcaption>Suspected radicals were arrested during the Palmer Raids, 1919-1920. Library of Congress search suggested.</figcaption></figure>
-  <p class="para-standard">One famous target was Emma Goldman. Goldman was an immigrant, writer, and radical activist who criticized war, capitalism, and government power. In 1919, she and hundreds of others were forced out of the country through <span class="vocab">deportation<span class="tip">Forcing someone to leave a country.</span></span>. The raids showed how fear could shrink <span class="vocab">civil liberties<span class="tip">Basic freedoms protected from government abuse.</span></span> quickly.</p>
+  <p class="para-standard">One famous target was Emma Goldman. Goldman was an immigrant, writer, and radical activist who criticized war, capitalism, and government power. In 1919, she and hundreds of others were forced out of the country through <span class="vocab" tabindex="0">deportation<span class="tip">Forcing someone to leave a country.</span></span>. The raids showed how fear could shrink <span class="vocab" tabindex="0">civil liberties<span class="tip">Basic freedoms protected from government abuse.</span></span> quickly.</p>
   <p class="para-simple">One famous target was Emma Goldman. She was an immigrant, writer, and radical activist. In 1919, she and hundreds of others faced <span class="vocab-red">deportation</span>. That means they were forced to leave the country. The raids showed how fear can weaken <span class="vocab-red">civil liberties</span>.</p>
   <p class="real-world para-standard">Real-world connection: Rights matter most when the government says fear makes them inconvenient.</p>
   <p class="real-world para-simple">Real-world connection: Rights matter most when people are afraid.</p>
 </section>
 
-<div class="brain-break dyk-break">
+<div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
   <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;">
       <!--
         FILENAME: S1L06_DYK_BufordDeportationShip.jpg
         PLACE IN: images/S1/L06/
+        PRIORITY: SUPPORTING
         FIND: USAT Buford or deportation ship used to deport Emma Goldman and other radicals in 1919; visualizes deportation
         SEARCH: USAT Buford Soviet Ark Emma Goldman deportation Wikimedia Commons Library of Congress
-        LINK: https://commons.wikimedia.org/wiki/Category:USAT_Buford (suggested, not guaranteed)
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:USAT_Buford
       -->
       <img src="images/S1/L06/S1L06_DYK_BufordDeportationShip.jpg" alt="USAT Buford deportation ship" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,.4);">
       <p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Roboto Slab',serif;">The USAT Buford became known as the Soviet Ark.</p>
@@ -162,27 +183,18 @@ footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font
   </div>
 </div>
 
-<div class="brain-break ff-break">
-  <span class="bb-label">FAST FACTS</span>
-  <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">1919</span><span class="ff-desc">RED SCARE BEGINS</span></div>
-    <div class="ff-item"><span class="ff-number">1920</span><span class="ff-desc">MASS RAIDS PEAK</span></div>
-    <div class="ff-item"><span class="ff-number">1924</span><span class="ff-desc">QUOTAS HARDEN</span></div>
-    <div class="ff-item"><span class="ff-number">5M</span><span class="ff-desc">KKK MEMBERS CLAIMED</span></div>
-  </div>
-</div>
-
-<section class="content-section clearfix" id="nativism">
-  <span class="section-kicker">CHAPTER TWO</span>
+<section class="content-section clearfix section-animate" id="nativism">
+  <span class="section-kicker">ESCALATION</span>
   <h2 class="section-heading">NATIVISM GOES MAINSTREAM</h2>
-  <p class="para-standard"><span class="vocab">Nativism<span class="tip">Favoring native-born people over immigrants.</span></span> became a powerful political force in the 1920s. Nativists believed immigrants from Southern and Eastern Europe were dangerous, inferior, or unable to become American. This fear is also called <span class="vocab">xenophobia<span class="tip">Fear or hatred of foreigners.</span></span>.</p>
-  <p class="para-simple"><span class="vocab-red">Nativism</span> became powerful in the 1920s. Nativists favored native-born Americans over immigrants. They feared immigrants from Southern and Eastern Europe. This fear is called <span class="vocab-red">xenophobia</span>.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Nativism<span class="tip">Favoring native-born people over immigrants.</span></span> became a powerful political force in the 1920s. Nativists believed immigrants from Southern and Eastern Europe were dangerous, inferior, or unable to become American. This fear is also called <span class="vocab" tabindex="0">xenophobia<span class="tip">Fear or hatred of foreigners.</span></span>. The fear did not stay in private conversations; it shaped national law.</p>
+  <p class="para-simple"><span class="vocab-red">Nativism</span> became powerful in the 1920s. Nativists favored native-born Americans over immigrants. They feared immigrants from Southern and Eastern Europe. This fear is called <span class="vocab-red">xenophobia</span>. It shaped national law.</p>
   <!--
     FILENAME: S1L06_ImmigrationQuotaCartoon.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: 1920s immigration restriction political cartoon or quota law image; shows nativism and fear of immigrants
     SEARCH: immigration quota political cartoon 1924 Library of Congress
-    LINK: https://www.loc.gov/search/?q=immigration+quota+political+cartoon+1924 (suggested, not guaranteed)
+    LINK: Suggested: https://www.loc.gov/search/?q=immigration+quota+political+cartoon+1924
   -->
   <figure class="img-left"><img src="images/S1/L06/S1L06_ImmigrationQuotaCartoon.jpg" alt="Immigration quota political cartoon"><figcaption>Political cartoons and posters helped spread fear of immigrants in the 1920s. Library of Congress search suggested.</figcaption></figure>
   <p class="para-standard">Congress passed immigration quota laws in 1921 and 1924. These laws sharply limited immigration from Southern and Eastern Europe. They favored immigrants from Northern and Western Europe. The message was clear: the government was choosing which groups it wanted and which groups it feared.</p>
@@ -192,19 +204,31 @@ footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font
   <!--
     FILENAME: S1L06_KlanMarchWashington1925.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: ESSENTIAL
     FIND: Ku Klux Klan march in Washington D.C., 1925; shows Klan becoming public and mainstream
     SEARCH: Ku Klux Klan march Washington 1925 Library of Congress Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/File:Ku_Klux_Klan_parade_Washington,_D.C._1926.jpg (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/File:Ku_Klux_Klan_parade_Washington,_D.C._1926.jpg
   -->
   <figure><img src="images/S1/L06/S1L06_KlanMarchWashington1925.jpg" alt="Ku Klux Klan march in Washington D.C."><figcaption>Ku Klux Klan march in Washington, D.C., 1920s. The Klan became openly public during this decade. Wikimedia Commons / Library of Congress.</figcaption></figure>
 </section>
 
-<section class="content-section clearfix" id="resistance">
-  <span class="section-kicker">CHAPTER THREE</span>
+<div class="brain-break ff-break section-animate">
+  <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">The reach of fear and restriction in the 1920s</p>
+  <div class="ff-grid">
+    <div class="ff-item"><span class="ff-number">33</span><span class="ff-desc">cities were raided on January 2, 1920, when Palmer's agents searched for suspected radicals.</span></div>
+    <div class="ff-item"><span class="ff-number">4,000+</span><span class="ff-desc">alleged communists were arrested and jailed without bond during the peak Palmer Raids.</span></div>
+    <div class="ff-item"><span class="ff-number">1924</span><span class="ff-desc">was the year Congress hardened immigration quotas that favored Northern and Western Europe.</span></div>
+    <div class="ff-item"><span class="ff-number">5M</span><span class="ff-desc">members were claimed by the Ku Klux Klan at its 1920s peak, showing how public hate became.</span></div>
+  </div>
+</div>
+
+<section class="content-section clearfix section-animate" id="resistance">
+  <span class="section-kicker">HUMAN IMPACT</span>
   <h2 class="section-heading">COMMUNITIES ORGANIZE BACK</h2>
-  <p class="para-standard">Fear and repression did not go unanswered. Organizations formed or grew to defend people from violence and government abuse. The <span class="vocab">NAACP<span class="tip">Group fighting for Black civil rights.</span></span> fought lynching, segregation, and racism through courts, newspapers, and public pressure.</p>
+  <p class="para-standard">Fear and repression did not go unanswered. Organizations formed or grew to defend people from violence and government abuse. The <span class="vocab" tabindex="0">NAACP<span class="tip">Group fighting for Black civil rights.</span></span> fought lynching, segregation, and racism through courts, newspapers, and public pressure. These groups proved that civil liberties survive only when people defend them.</p>
   <p class="para-simple">Fear and repression did not go unanswered. Groups formed or grew to protect people. The <span class="vocab-red">NAACP</span> fought racism, segregation, and lynching. It used courts, newspapers, and public pressure.</p>
-  <p class="para-standard">The <span class="vocab">ACLU<span class="tip">Group defending free speech and legal rights.</span></span> was founded in 1920 after the Red Scare. It defended <span class="vocab">free speech<span class="tip">The right to express ideas without punishment.</span></span>, fair trials, and the rights of unpopular groups. The ADL, founded earlier in 1913, fought antisemitism and defended Jewish communities from hate.</p>
+  <p class="para-standard">The <span class="vocab" tabindex="0">ACLU<span class="tip">Group defending free speech and legal rights.</span></span> was founded in 1920 after the Red Scare. It defended <span class="vocab" tabindex="0">free speech<span class="tip">The right to express ideas without punishment.</span></span>, fair trials, and the rights of unpopular groups. The ADL, founded earlier in 1913, fought antisemitism and defended Jewish communities from hate.</p>
   <p class="para-simple">The <span class="vocab-red">ACLU</span> was founded in 1920 after the Red Scare. It defended <span class="vocab-red">free speech</span>, fair trials, and unpopular groups. The ADL fought antisemitism and defended Jewish communities.</p>
   <div class="card-grid">
     <div class="info-card"><h3>NAACP</h3><p>Fought racism, lynching, and segregation through law and public pressure.</p></div>
@@ -215,42 +239,45 @@ footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font
   <!--
     FILENAME: S1L06_MarcusGarveyUNIA.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: Marcus Garvey or UNIA parade, 1920s; shows Black nationalism and organized response to white supremacy
     SEARCH: Marcus Garvey UNIA parade 1920 Library of Congress Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/Category:Marcus_Garvey (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Marcus_Garvey
   -->
   <figure class="img-right"><img src="images/S1/L06/S1L06_MarcusGarveyUNIA.jpg" alt="Marcus Garvey or UNIA parade"><figcaption>Marcus Garvey and the UNIA promoted Black pride, self-determination, and global Black unity. Wikimedia Commons / Library of Congress.</figcaption></figure>
-  <p class="para-standard">Marcus Garvey offered another response to white supremacy: <span class="vocab">Black nationalism<span class="tip">Belief in Black pride and self-determination.</span></span>. Garvey taught pride in African heritage, Black-owned businesses, and global Black unity. Millions of people listened because he spoke to a deep desire for dignity and power.</p>
+  <p class="para-standard">Marcus Garvey offered another response to white supremacy: <span class="vocab" tabindex="0">Black nationalism<span class="tip">Belief in Black pride and self-determination.</span></span>. Garvey taught pride in African heritage, Black-owned businesses, and global Black unity. Millions of people listened because he spoke to a deep desire for dignity and power.</p>
   <p class="para-simple">Marcus Garvey offered another response to white supremacy: <span class="vocab-red">Black nationalism</span>. He taught pride in African heritage. He supported Black-owned businesses and global Black unity. Millions listened because he offered dignity and power.</p>
 </section>
 
-<div class="brain-break as-break">
+<div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
       FILENAME: S1L06_ArtSpotlight_TheOnlyWayToHandleIt.jpg
       PLACE IN: images/S1/L06/
-      FIND: Specific anti-radical or Red Scare political cartoon "The Only Way to Handle It" or similar Palmer-era cartoon; shows public fear of radicals
-      SEARCH: Red Scare political cartoon 1919 Palmer Raids Library of Congress
-      LINK: https://www.loc.gov/search/?q=Red+Scare+political+cartoon+1919 (suggested, not guaranteed)
+      PRIORITY: ESSENTIAL
+      FIND: Political cartoon titled "The Only Way to Handle It," published with "An Alien Anti-Dumping Bill" in The Literary Digest; shows immigration restriction through a funnel image
+      SEARCH: The Only Way to Handle It An Alien Anti-Dumping Bill Library of Congress
+      LINK: Suggested: https://considerthesourceny.org/document/only-way-handle-it
     -->
-    <img src="images/S1/L06/S1L06_ArtSpotlight_TheOnlyWayToHandleIt.jpg" alt="Red Scare political cartoon" class="as-image">
-    <figcaption class="as-caption">Red Scare political cartoon, 1919-1920. Cartoons often turned radicals into threats that looked easy to crush.</figcaption>
+    <img src="images/S1/L06/S1L06_ArtSpotlight_TheOnlyWayToHandleIt.jpg" alt="The Only Way to Handle It immigration restriction political cartoon" class="as-image">
+    <figcaption class="as-caption"><em>The Only Way to Handle It</em> — The Literary Digest, early 1920s.<br>This political cartoon used a funnel to show Uncle Sam allowing only a small number of immigrants into the United States.</figcaption>
   </figure>
-  <p class="as-fact">The cartoon style is doing political work. It makes fear look funny, simple, and obvious. That is what made Red Scare art powerful: it could turn a complex argument about rights into one image of a dangerous enemy.</p>
+  <p class="as-fact">The cartoon turns a human migration story into a machine. That is the disturbing part: people become a stream to control, not families with names, languages, and futures. Art made restriction feel practical instead of cruel.</p>
 </div>
 
-<section class="content-section clearfix" id="survived">
-  <span class="section-kicker">CHAPTER FOUR</span>
+<section class="content-section clearfix section-animate" id="survived">
+  <span class="section-kicker">CONSEQUENCE AND LEGACY</span>
   <h2 class="section-heading">WHAT SURVIVED AND WHAT DID NOT</h2>
   <p class="para-standard">The first Red Scare faded after Palmer's predicted revolution did not happen. Some Americans began to see the raids as extreme and unfair. But the damage was real. People had been arrested, deported, and frightened into silence.</p>
   <p class="para-simple">The first Red Scare faded when Palmer's predicted revolution did not happen. Some Americans saw the raids as unfair. But the damage was real. People were arrested, deported, and scared into silence.</p>
   <!--
     FILENAME: S1L06_EmmaGoldmanPortrait.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: Emma Goldman portrait, early 1900s; shows famous deported radical activist
     SEARCH: Emma Goldman portrait Library of Congress Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/Category:Emma_Goldman (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Emma_Goldman
   -->
   <figure class="img-left"><img src="images/S1/L06/S1L06_EmmaGoldmanPortrait.jpg" alt="Emma Goldman"><figcaption>Emma Goldman was deported in 1919 because of her radical politics. Wikimedia Commons / Library of Congress.</figcaption></figure>
   <p class="para-standard">The immigration quotas lasted much longer. They shaped who could enter the United States for decades. The Klan eventually lost some power after scandals and public criticism, but white supremacy did not disappear. It changed form and survived in laws, violence, and everyday discrimination.</p>
@@ -259,28 +286,35 @@ footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font
   <p class="para-simple">The resistance also survived. The NAACP, ACLU, and ADL kept fighting. They used courts, newspapers, schools, and public debate. The 1920s showed that rights do not protect themselves.</p>
 </section>
 
-<section class="content-section" id="primary-source-moment">
+<section class="content-section section-animate" id="primary-source-moment">
   <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
   <h2 class="section-heading">FEAR AND RIGHTS</h2>
   <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"Like a prairie-fire, the blaze of revolution was sweeping over every American institution of law and order."</div>
-    <div class="ps-attribution">A. Mitchell Palmer, "The Case Against the Reds," 1920</div>
-    <div class="ps-narrator">Palmer used dramatic language to argue that harsh action was necessary.</div>
-  </div>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"Free speech, free press, and free assembly are the foundation stones of democracy."</div>
-    <div class="ps-attribution">American Civil Liberties Union statement, early twentieth century</div>
-    <div class="ps-narrator">Civil liberties groups argued that rights mattered most when unpopular people used them.</div>
-  </div>
-  <div class="ps-questions">
-    <p><strong>Question 1:</strong> How does Palmer describe radicals, and why might that language make people afraid?</p>
-    <p><strong>Question 2:</strong> How do these sources connect to the Essential Question about prosperity and repression?</p>
+    <div class="ps-visual">
+      <figure>
+        <!--
+          FILENAME: S1L06_PrimarySource_CaseAgainstReds.jpg
+          PLACE IN: images/S1/L06/
+          PRIORITY: ESSENTIAL
+          FIND: Image or scan connected to A. Mitchell Palmer's 1920 article "The Case Against the Reds" or Palmer portrait if document scan is unavailable
+          SEARCH: A Mitchell Palmer The Case Against the Reds 1920 The Forum scan
+          LINK: Suggested: https://teachingamericanhistory.org/document/the-case-against-the-reds/
+        -->
+        <img src="images/S1/L06/S1L06_PrimarySource_CaseAgainstReds.jpg" alt="A. Mitchell Palmer source image for The Case Against the Reds">
+        <figcaption>A. Mitchell Palmer defended the raids in his 1920 article, <em>The Case Against the Reds</em>.</figcaption>
+      </figure>
+      <div>
+        <div class="ps-label">PRIMARY SOURCE</div>
+        <div class="ps-quote">"Like a prairie-fire, the blaze of revolution was sweeping over every American institution of law and order a year ago. It was eating its way into the homes of the American workmen, its sharp tongues of revolutionary heat were licking the altars of the churches, leaping into schools, crawling into the sacred corners of American homes, burning up the foundations of society."</div>
+        <div class="ps-attribution">A. Mitchell Palmer, "The Case Against the Reds," 1920</div>
+        <div class="ps-narrator">Palmer used dramatic language to make radicals sound like a spreading fire. His words help explain why fear made harsh government action seem reasonable to many Americans.</div>
+        <div class="simple-terms"><strong>IN SIMPLE TERMS:</strong> Palmer said radical ideas were spreading everywhere and destroying American life. He used fear to defend government raids.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="brain-break tn-break" id="then-now">
+<div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
   <p class="tn-payoff">Fear can make rights look optional.</p>
   <div class="tn-pair">
@@ -289,27 +323,37 @@ footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font
       <!--
         FILENAME: S1L06_Then_PalmerRaidHeadline.jpg
         PLACE IN: images/S1/L06/
+        PRIORITY: ESSENTIAL
         FIND: Palmer Raids or Red Scare newspaper headline, 1919-1920
         SEARCH: Palmer Raids newspaper headline 1920 Library of Congress
-        LINK: https://www.loc.gov/search/?q=Palmer+Raids+newspaper+headline+1920 (suggested, not guaranteed)
+        LINK: Suggested: https://www.loc.gov/search/?q=Palmer+Raids+newspaper+headline+1920
       -->
       <img src="images/S1/L06/S1L06_Then_PalmerRaidHeadline.jpg" alt="Palmer Raids newspaper headline">
       <p class="tn-caption">Red Scare headlines made political fear feel urgent and everywhere.</p>
     </div>
     <div class="tn-item">
-      <span class="tn-era-label">TODAY</span>
+      <span class="tn-era-label">NOW</span>
       <!--
         FILENAME: S1L06_Now_CivilLibertiesProtest.jpg
         PLACE IN: images/S1/L06/
+        PRIORITY: SUPPORTING
         FIND: Modern civil liberties protest or free speech protest image; shows ongoing debates over rights and fear
         SEARCH: civil liberties protest free speech Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/Category:Freedom_of_speech_demonstrations (suggested, not guaranteed)
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Freedom_of_speech_demonstrations
       -->
       <img src="images/S1/L06/S1L06_Now_CivilLibertiesProtest.jpg" alt="Modern civil liberties protest">
       <p class="tn-caption">Civil liberties debates continue whenever people ask how much power the government should have.</p>
     </div>
   </div>
-  <p class="tn-closing">The clothing changes, but the faces do not: people still look most intense when they are arguing over who gets protected and who gets treated as a threat.</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>In the 1920s, Red Scare headlines helped make political fear feel normal. Many Americans accepted raids, deportations, and immigration limits because they believed certain people were threats.</p>
+    <h3>NOW</h3>
+    <p>Today, people still organize, protest, and go to court when they believe civil liberties are being weakened. The issues change, but the basic question stays: how much power should the government have during moments of fear?</p>
+    <h3>CONNECTION</h3>
+    <p>The 1920s show that rights do not disappear all at once. They can shrink when fear makes some people seem less deserving of protection. That is why civil liberties need public defense, especially when the people using them are unpopular.</p>
+    <p>When fear is popular, who is most likely to lose protection first?</p>
+  </div>
 </div>
 </main>
 
@@ -317,41 +361,27 @@ footer{background:#17120d;color:#f4dfad;text-align:center;padding:24px 30px;font
 </div>
 
 <script>
-document.querySelectorAll('.vocab').forEach(function(el){
-  el.addEventListener('click',function(e){
-    e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
-    el.classList.toggle('active');
-  });
-});
+(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var scrollTop=window.scrollY||document.documentElement.scrollTop;var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;var progress=docHeight>0?(scrollTop/docHeight)*100:0;bar.style.width=progress+'%';},{passive:true});})();
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
+function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){var shift=8-rect.left;tip.style.transform='translateX(calc(-50% + '+shift+'px))';}else if(rect.right>window.innerWidth-8){var shift=rect.right-(window.innerWidth-8);tip.style.transform='translateX(calc(-50% - '+shift+'px))';}}
+document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
 document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
-document.getElementById('lexile-toggle').addEventListener('click',function(){
-  document.body.classList.toggle('simplified');
-  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
-});
-const tocObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    const id=entry.target.getAttribute('id');
-    const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
-    if(link){if(entry.isIntersecting)link.classList.add('active');else link.classList.remove('active');}
-  });
-},{threshold:.25});
-document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tocLink)tocLink.classList.add('active');if(navLink)navLink.classList.add('active');}else{if(tocLink)tocLink.classList.remove('active');if(navLink)navLink.classList.remove('active');}});},{threshold:.25});
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+(function(){var animObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');animObserver.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});})();
+document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(0,0,0,0.25)';});}});
 </script>
 </body>
 </html>
 
 <!--
-IMAGE CHECKLIST FOR SSU_S1L06.html
-1. S1L06_Header_PalmerRaidNewspaper.jpg — Palmer Raids or Red Scare newspaper coverage — Suggested link: https://www.loc.gov/search/?fo=json&q=Palmer+Raids+1920+newspaper
-2. S1L06_MitchellPalmerPortrait.jpg — A. Mitchell Palmer portrait — Suggested link: https://www.loc.gov/pictures/search/?q=A.%20Mitchell%20Palmer
-3. S1L06_PalmerRaidArrests.jpg — Palmer Raids arrests, 1919-1920 — Suggested link: https://www.loc.gov/search/?q=Palmer+Raids+arrests
-4. S1L06_DYK_BufordDeportationShip.jpg — USAT Buford deportation ship — Suggested link: https://commons.wikimedia.org/wiki/Category:USAT_Buford
-5. S1L06_ImmigrationQuotaCartoon.jpg — Immigration quota political cartoon — Suggested link: https://www.loc.gov/search/?q=immigration+quota+political+cartoon+1924
-6. S1L06_KlanMarchWashington1925.jpg — Ku Klux Klan march in Washington, D.C., 1920s — Suggested link: https://commons.wikimedia.org/wiki/File:Ku_Klux_Klan_parade_Washington,_D.C._1926.jpg
-7. S1L06_MarcusGarveyUNIA.jpg — Marcus Garvey or UNIA parade — Suggested link: https://commons.wikimedia.org/wiki/Category:Marcus_Garvey
-8. S1L06_ArtSpotlight_TheOnlyWayToHandleIt.jpg — Red Scare political cartoon, 1919-1920 — Suggested link: https://www.loc.gov/search/?q=Red+Scare+political+cartoon+1919
-9. S1L06_EmmaGoldmanPortrait.jpg — Emma Goldman portrait — Suggested link: https://commons.wikimedia.org/wiki/Category:Emma_Goldman
-10. S1L06_Then_PalmerRaidHeadline.jpg — Red Scare or Palmer Raids headline — Suggested link: https://www.loc.gov/search/?q=Palmer+Raids+newspaper+headline+1920
-11. S1L06_Now_CivilLibertiesProtest.jpg — Modern civil liberties or free speech protest — Suggested link: https://commons.wikimedia.org/wiki/Category:Freedom_of_speech_demonstrations
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
 -->
