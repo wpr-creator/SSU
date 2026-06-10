@@ -3,31 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSU S2L05 — CUBA, VIETNAM, AND COLD WAR ESCALATION</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+<title>SSU S2L05 | CUBA, VIETNAM, AND COLD WAR ESCALATION</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --black:#090909;
-  --charcoal:#1d1d1d;
-  --gray:#595959;
-  --paper:#f1ead8;
-  --paper-dark:#dfd2b3;
-  --ink:#181818;
-  --red:#b91515;
-  --red-dark:#7b0d0d;
-  --gold:#d5a51e;
-  --blue:#123a68;
-  --green:#2e4a2f;
-  --olive:#4d5a32;
-  --vocab:#b03030;
-  --bb-blue:#003c78;
-  --bb-yellow:#ffe04d;
-  --bb-purple:#351253;
-  --bb-pink:#ff55d4;
-  --bb-green:#03452f;
-  --bb-lime:#caff3f;
-  --bb-orange:#ff7a1f;
-  --bb-cyan:#25d7ff;
+  --black:#090909; --charcoal:#1d1d1d; --gray:#595959; --paper:#f1ead8; --paper-dark:#dfd2b3;
+  --ink:#181818; --red:#b91515; --red-dark:#7b0d0d; --gold:#d5a51e; --blue:#123a68;
+  --green:#2e4a2f; --olive:#4d5a32; --vocab:#b03030; --bb-blue:#003c78; --bb-yellow:#ffe04d;
+  --bb-purple:#351253; --bb-pink:#ff55d4; --bb-green:#03452f; --bb-lime:#caff3f;
+  --bb-orange:#ff7a1f; --bb-cyan:#25d7ff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -38,496 +22,115 @@ body{
   font-size:18px;
   line-height:1.85;
 }
+#reading-progress{
+  position:fixed;top:0;left:0;height:4px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear;
+}
 .page-wrap{
-  max-width:920px;
-  margin:0 auto;
-  background:var(--paper);
-  box-shadow:0 0 95px rgba(0,0,0,.9);
-  border-left:6px solid var(--black);
-  border-right:6px solid var(--black);
+  max-width:920px;margin:0 auto;background:var(--paper);box-shadow:0 0 95px rgba(0,0,0,.9);
+  border-left:6px solid var(--black);border-right:6px solid var(--black);
 }
 .site-header{
-  position:relative;
-  min-height:470px;
-  background:var(--black);
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  text-align:center;
+  position:relative;min-height:470px;background:var(--black);overflow:hidden;display:flex;align-items:center;text-align:center;
 }
-.header-bg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.35;
-  filter:grayscale(.45) contrast(1.18);
-}
-.site-header:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.18),rgba(0,0,0,.68) 55%,rgba(0,0,0,.97));
-}
-.header-inner{
-  position:relative;
-  z-index:2;
-  max-width:820px;
-  margin:0 auto;
-  padding:58px 34px 50px;
-}
-.course-label{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;
-  letter-spacing:.34em;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:18px;
-}
-.page-title{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(52px,8vw,82px);
-  font-weight:800;
-  line-height:.98;
-  color:#fff;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  text-shadow:2px 5px 22px rgba(0,0,0,.9);
-  margin-bottom:30px;
-}
-.eq-banner{
-  display:inline-block;
-  max-width:760px;
-  background:rgba(185,21,21,.96);
-  color:#fff;
-  border:3px solid var(--gold);
-  border-left-width:8px;
-  border-right-width:8px;
-  padding:18px 28px;
-  font-weight:700;
-  font-size:20px;
-  line-height:1.45;
-}
-.eq-label{
-  display:block;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:11px;
-  letter-spacing:.32em;
-  text-transform:uppercase;
-  color:#ffe58a;
-  margin-bottom:8px;
-}
-.section-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  background:#141414;
-  border-bottom:4px solid var(--red);
-}
-.section-nav a{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:#d0d0d0;
-  text-decoration:none;
-  padding:14px 12px;
-  border-bottom:4px solid transparent;
-  margin-bottom:-4px;
-}
-.section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
-#lexile-toggle{
-  display:block;
-  margin:20px auto 28px;
-  padding:10px 24px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  cursor:pointer;
-  border:2px solid var(--red);
-  background:transparent;
-  color:var(--red);
-  transition:background .2s,color .2s;
-}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:grayscale(.45) contrast(1.18)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18),rgba(0,0,0,.68) 55%,rgba(0,0,0,.97))}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:58px 34px 50px}
+.course-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,82px);font-weight:800;line-height:.98;color:#fff;text-transform:uppercase;letter-spacing:.04em;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
+.eq-banner{display:inline-block;max-width:760px;background:rgba(185,21,21,.96);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;font-weight:700;font-size:20px;line-height:1.45}
+.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#ffe58a;margin-bottom:8px}
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#141414;border-bottom:4px solid var(--red)}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#d0d0d0;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px}
+.section-nav a:hover,.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,.07)}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--red);background:transparent;color:var(--red);transition:background .2s,color .2s}
 #lexile-toggle:hover{background:var(--red);color:#fff}
 .para-simple{display:none}
 body.simplified .para-standard{display:none}
 body.simplified .para-simple{display:block}
-.toc-sidebar{
-  position:fixed;
-  right:calc(50% - 590px);
-  top:50%;
-  transform:translateY(-50%);
-  width:155px;
-  padding:14px 12px;
-  font-family:'Barlow Condensed',sans-serif;
-  z-index:50;
-  background:rgba(10,10,10,.9);
-  border-left:2px solid rgba(213,165,30,.45);
-}
-.toc-sidebar .toc-label{
-  display:block;
-  font-size:10px;
-  letter-spacing:.35em;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:10px;
-}
-.toc-sidebar a{
-  display:block;
-  color:#cfcfcf;
-  text-decoration:none;
-  padding:3px 0;
-  font-size:11px;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-}
+.toc-sidebar{position:fixed;left:calc(50% - 590px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(10,10,10,.9);border-right:2px solid rgba(213,165,30,.45)}
+.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.toc-sidebar a{display:block;color:#cfcfcf;text-decoration:none;padding:3px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
 .toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}
 main{max-width:820px;margin:0 auto;padding:0 28px 68px}
 .intro-section{padding:48px 0 30px}
 .intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
-.content-section{
-  padding:50px 0 28px;
-  border-top:3px double rgba(80,80,80,.4);
-}
-.section-kicker{
-  display:block;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;
-  letter-spacing:.25em;
-  text-transform:uppercase;
-  color:var(--red);
-  margin-bottom:8px;
-}
-.section-heading{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(36px,5vw,48px);
-  line-height:1.05;
-  font-weight:800;
-  color:var(--black);
-  text-transform:uppercase;
-  border-left:7px solid var(--red);
-  padding-left:16px;
-  margin-bottom:26px;
-}
+.content-section{padding:50px 0 28px;border-top:3px double rgba(80,80,80,.4)}
+.section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.section-heading{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,48px);line-height:1.05;font-weight:800;color:var(--black);text-transform:uppercase;border-left:7px solid var(--red);padding-left:16px;margin-bottom:26px}
 p{margin-bottom:20px;color:var(--ink)}
-.real-world{
-  background:#e7d8b9;
-  border-left:5px solid var(--red);
-  padding:17px 21px;
-  margin:30px 0;
-  font-weight:700;
-}
-.vocab{
-  color:var(--vocab);
-  text-decoration:underline dotted var(--vocab);
-  cursor:help;
-  position:relative;
-  font-weight:700;
-}
+.real-world{background:#e7d8b9;border-left:5px solid var(--red);padding:17px 21px;margin:30px 0;font-weight:700}
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
 .vocab-red{color:var(--vocab);font-weight:700}
-.vocab .tip{
-  display:none;
-  position:absolute;
-  bottom:125%;
-  left:50%;
-  transform:translateX(-50%);
-  background:#0a0a1e;
-  color:#fff;
-  padding:8px 14px;
-  border-radius:4px;
-  font-size:14px;
-  line-height:1.5;
-  z-index:10;
-  font-style:normal;
-  font-weight:400;
-  pointer-events:none;
-  max-width:280px;
-  white-space:normal;
-  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
-  box-shadow:0 4px 18px rgba(0,0,0,.45);
-  border-left:3px solid var(--red);
-}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#0a0a1e;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.45);border-left:3px solid var(--red)}
 .vocab:hover .tip,.vocab.active .tip{display:block}
+.vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
 figure{margin:32px 0}
-figure img{
-  width:100%;
-  display:block;
-  border:3px solid var(--gray);
-  box-shadow:0 8px 24px rgba(0,0,0,.28);
-  filter:grayscale(.12) contrast(1.06);
-}
-figcaption{
-  font-size:13px;
-  font-style:italic;
-  color:#555;
-  margin-top:8px;
-  line-height:1.45;
-}
+figure img{width:100%;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28);filter:grayscale(.12) contrast(1.06)}
+figcaption{font-size:13px;font-style:italic;color:#555;margin-top:8px;line-height:1.45}
 .img-right{float:right;width:42%;margin:6px 0 20px 28px}
 .img-left{float:left;width:42%;margin:6px 28px 20px 0}
 .img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
 .img-pair figure{margin:0}
 .clearfix:after{content:"";display:table;clear:both}
-.event-grid,.compare-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin:30px 0;
-}
-.event-card{
-  background:#181818;
-  color:#fff;
-  border-top:5px solid var(--gold);
-  padding:22px 24px;
-}
-.event-card h3{
-  font-family:'Barlow Condensed',sans-serif;
-  color:#ffe58a;
-  font-size:24px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
+.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+.event-card{background:#181818;color:#fff;border-top:5px solid var(--gold);padding:22px 24px}
+.event-card h3{font-family:'Barlow Condensed',sans-serif;color:#ffe58a;font-size:24px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
 .event-card p{color:#fff;font-size:16px;line-height:1.7}
-.timeline{
-  border-left:4px solid var(--red);
-  margin:30px 0 34px 18px;
-  padding-left:28px;
-}
+.timeline{border-left:4px solid var(--red);margin:30px 0 34px 18px;padding-left:28px}
 .timeline-event{margin-bottom:24px;position:relative}
-.timeline-event:before{
-  content:"";
-  position:absolute;
-  left:-38px;
-  top:6px;
-  width:14px;
-  height:14px;
-  background:var(--red);
-  border:2px solid var(--paper);
-  border-radius:50%;
-  box-shadow:0 0 0 2px var(--red);
-}
-.timeline-date{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:22px;
-  font-weight:800;
-  color:var(--red);
-  letter-spacing:.1em;
-}
+.timeline-event:before{content:"";position:absolute;left:-38px;top:6px;width:14px;height:14px;background:var(--red);border:2px solid var(--paper);border-radius:50%;box-shadow:0 0 0 2px var(--red)}
+.timeline-date{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--red);letter-spacing:.1em}
 .timeline-event p{font-size:16px;line-height:1.7;margin-bottom:0}
-.primary-source{
-  background:#ded6c2;
-  border-left:7px solid var(--red);
-  padding:30px 34px;
-  margin:38px 0;
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
-}
-.ps-label{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  color:var(--red);
-  margin-bottom:12px;
-}
-.ps-quote{
-  font-size:22px;
-  font-style:italic;
-  line-height:1.65;
-  color:var(--black);
-  margin-bottom:14px;
-}
-.ps-attribution{
-  font-size:13px;
-  font-style:italic;
-  color:#555;
-  margin-bottom:12px;
-}
-.ps-narrator{
-  border-top:1px solid #b8ac92;
-  padding-top:12px;
-  font-size:15px;
-  line-height:1.6;
-  font-weight:700;
-}
-.ps-questions{
-  background:#e8ddc5;
-  border:1px solid #c7b891;
-  padding:22px 26px;
-  margin-bottom:38px;
-}
-.ps-questions p{font-size:17px;margin-bottom:12px}
-.brain-break{
-  font-family:'Roboto Slab',serif;
-  margin:44px -50px;
-  padding:36px 50px;
-  position:relative;
-  overflow:hidden;
-}
-.bb-label{
-  display:block;
-  font-family:'Roboto Slab',serif;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.55em;
-  text-transform:uppercase;
-  margin-bottom:14px;
-  opacity:.85;
-}
-.bb-text{
-  font-family:'Roboto Slab',serif;
-  font-size:22px;
-  font-weight:500;
-  line-height:1.65;
-  margin:0;
-}
+.primary-source{background:#ded6c2;border-left:7px solid var(--red);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.ps-visual{display:grid;grid-template-columns:minmax(210px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;display:block;border:3px solid var(--red-dark);filter:grayscale(.05) contrast(1.05)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:#555;margin-bottom:12px}
+.ps-narrator{border-top:1px solid #b8ac92;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700}
+.brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden}
+.bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.85}
+.bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
 .dyk-break{background:var(--bb-green);color:#fff;border-left:6px solid var(--bb-lime)}
 .dyk-break .bb-label{color:var(--bb-lime)}
 .dyk-break p,.dyk-break span{color:#fff}
-.ff-break{
-  background:#070707;
-  color:#fff;
-  padding:36px 40px;
-  margin:0 -50px 44px;
-  border-top:3px solid var(--bb-orange);
-  border-bottom:3px solid var(--bb-orange);
-  text-align:center;
-}
-.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--bb-orange)}
+.ff-break{background:#070707;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--bb-orange);border-bottom:3px solid var(--bb-orange);text-align:center}
+.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--bb-orange)}
+.ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#ffe8b7;text-align:center;margin-bottom:26px;opacity:.9;font-weight:700}
 .ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
-.ff-item{text-align:center;padding:8px 12px}
-.ff-number{
-  display:block;
-  font-family:'Roboto Slab',serif;
-  font-size:52px;
-  font-weight:700;
-  color:var(--bb-orange);
-  line-height:1;
-  margin-bottom:8px;
-}
-.ff-desc{
-  display:block;
-  font-family:'Roboto Slab',serif;
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:#ffe8b7;
-  max-width:130px;
-  margin:0 auto;
-  line-height:1.4;
-}
-.as-break{
-  background:var(--bb-purple);
-  color:#fff;
-  padding:44px 50px;
-  margin:44px -50px;
-  border-top:3px solid var(--bb-pink);
-  border-bottom:3px solid var(--bb-pink);
-  text-align:center;
-}
+.ff-item{text-align:center;padding:8px 12px;max-width:185px}
+.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:700;color:var(--bb-orange);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.08em;color:#ffe8b7;max-width:180px;margin:0 auto;line-height:1.45}
+.as-break{background:var(--bb-purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--bb-pink);border-bottom:3px solid var(--bb-pink);text-align:center}
 .as-break .bb-label{color:var(--bb-pink)}
-.as-image{
-  max-width:100%;
-  display:block;
-  margin:0 auto 16px;
-  border:3px solid rgba(255,85,212,.75);
-  box-shadow:0 8px 32px rgba(0,0,0,.55);
-  filter:none;
-}
-.as-caption{
-  font-family:'Roboto Slab',serif;
-  font-style:normal;
-  font-size:13px;
-  color:#ffe8fb;
-  line-height:1.5;
-  margin-bottom:28px;
-  display:block;
-}
-.as-fact{
-  font-family:'Roboto Slab',serif;
-  font-size:22px;
-  font-weight:500;
-  color:#fff;
-  line-height:1.6;
-  max-width:700px;
-  margin:0 auto;
-  text-align:center;
-}
-.tn-break{
-  background:#0d2442;
-  color:#fff;
-  padding:36px 50px;
-  margin:30px -50px 0;
-}
+.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,85,212,.75);box-shadow:0 8px 32px rgba(0,0,0,.55);filter:none}
+.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:13px;color:#ffe8fb;line-height:1.5;margin-bottom:28px;display:block}
+.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.6;max-width:700px;margin:0 auto;text-align:center}
+.tn-break{background:#0d2442;color:#fff;padding:36px 50px;margin:30px -50px 0}
 .tn-break .bb-label{color:var(--bb-cyan);text-align:center;display:block;margin-bottom:20px}
-.tn-payoff{
-  font-family:'Roboto Slab',serif;
-  font-size:clamp(22px,3.5vw,30px);
-  font-weight:700;
-  line-height:1.35;
-  text-align:center;
-  color:var(--bb-cyan);
-  margin-bottom:28px;
-  max-width:720px;
-  margin-left:auto;
-  margin-right:auto;
-}
+.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--bb-cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
 .tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
 .tn-item{text-align:center}
-.tn-era-label{
-  display:block;
-  font-family:'Roboto Slab',serif;
-  font-size:11px;
-  letter-spacing:.35em;
-  text-transform:uppercase;
-  color:var(--bb-cyan);
-  margin-bottom:10px;
-  font-weight:700;
-}
+.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--bb-cyan);margin-bottom:10px;font-weight:700}
 .tn-item img{width:100%;display:block;border:2px solid rgba(37,215,255,.65);filter:none}
-.tn-caption{
-  font-family:'Roboto Slab',serif;
-  font-size:12px;
-  font-style:italic;
-  color:#d9f7ff;
-  margin-top:8px;
-  line-height:1.4;
-}
-.tn-closing{
-  font-family:'Roboto Slab',serif;
-  font-size:20px;
-  font-weight:500;
-  text-align:center;
-  color:#fff;
-  margin-top:24px;
-  line-height:1.5;
-  border-top:1px solid rgba(37,215,255,.35);
-  padding-top:20px;
-}
-footer{
-  background:#050505;
-  color:#aaa;
-  text-align:center;
-  padding:24px 30px;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  border-top:5px solid var(--red);
-}
+.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#d9f7ff;margin-top:8px;line-height:1.4}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(37,215,255,.35);padding-top:20px}
+.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--bb-cyan);margin:18px 0 8px}
+.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;color:#fff;margin-bottom:12px}
+footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--red)}
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
 @media(max-width:1100px){.toc-sidebar{display:none}}
 @media(max-width:880px){
   .page-wrap{border:0}
   main{padding:0 22px 50px}
   .header-inner{padding:44px 24px 42px}
   .img-left,.img-right{float:none;width:100%;margin:24px 0}
-  .img-pair,.event-grid,.compare-grid,.tn-pair{grid-template-columns:1fr}
+  .img-pair,.event-grid,.tn-pair,.ps-visual{grid-template-columns:1fr}
   .brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}
   .tn-break{padding:28px 22px;margin:30px 0 0}
   .section-nav a{font-size:11px;padding:11px 8px}
@@ -540,24 +143,27 @@ footer{
 </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 <div class="page-wrap">
 <header class="site-header">
   <!--
     FILENAME: S2L05_Header_KennedyMissileCrisis.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: ESSENTIAL
     FIND: President John F. Kennedy meets with advisers during the Cuban Missile Crisis, October 1962; shows the tense decision-making behind the closest nuclear crisis
     SEARCH: Kennedy advisers Cuban Missile Crisis October 1962 EXCOMM photograph Wikimedia Commons Library of Congress
-    LINK: https://commons.wikimedia.org/wiki/Category:Cuban_Missile_Crisis (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Cuban_Missile_Crisis
   -->
   <img class="header-bg" src="images/S2/L05/S2L05_Header_KennedyMissileCrisis.jpg" alt="President Kennedy meeting with advisers during the Cuban Missile Crisis">
   <div class="header-inner">
-    <div class="course-label">US HISTORY — SEMESTER 2, LESSON 05</div>
+    <div class="course-label">US HISTORY | SEMESTER 2, LESSON 05</div>
     <h1 class="page-title">CUBA, VIETNAM, AND COLD WAR ESCALATION</h1>
     <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>Why did the United States fight wars in countries most Americans could not find on a map?</div>
   </div>
 </header>
 
 <nav class="section-nav" aria-label="Page sections">
+  <a href="#cold-war-escalation-timeline">TIMELINE</a>
   <a href="#cuba">CUBA</a>
   <a href="#vietnam">VIETNAM</a>
   <a href="#home-front">HOME FRONT</a>
@@ -570,6 +176,8 @@ footer{
 
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">INTRO</a>
+  <a href="#cold-war-escalation-timeline">TIMELINE</a>
   <a href="#cuba">CUBA</a>
   <a href="#vietnam">VIETNAM</a>
   <a href="#home-front">HOME FRONT</a>
@@ -579,60 +187,74 @@ footer{
 </aside>
 
 <main>
-<section class="intro-section">
-  <p class="para-standard">In October 1962, a U.S. spy plane flew over Cuba and took photographs that made the president's room go silent. The pictures showed Soviet nuclear missiles being built only about 90 miles from Florida. President <span class="vocab">John F. Kennedy<span class="tip">U.S. president during the Cuban Missile Crisis.</span></span> now had to choose between doing nothing, attacking Cuba, or risking a nuclear war.</p>
-  <p class="para-simple">In October 1962, a U.S. spy plane took pictures over Cuba. The pictures showed Soviet nuclear missiles. They were only about 90 miles from Florida. President <span class="vocab-red">John F. Kennedy</span> had to make a dangerous choice.</p>
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">In October 1962, a U.S. spy plane flew over Cuba and took photographs that made the president's room go silent. The pictures showed Soviet nuclear missiles being built only about 90 miles from Florida. President <span class="vocab" tabindex="0">John F. Kennedy<span class="tip">U.S. president during the Cuban Missile Crisis.</span></span> now had to choose between doing nothing, attacking Cuba, or risking a nuclear war. A small island suddenly felt like the front line of the entire world.</p>
+  <p class="para-simple">In October 1962, a U.S. spy plane took pictures over Cuba. The pictures showed Soviet nuclear missiles only about 90 miles from Florida. President <span class="vocab-red">John F. Kennedy</span> had to make a dangerous choice. A small island suddenly felt like the front line of the whole world.</p>
   <p class="para-standard">That same Cold War fear also shaped Vietnam. U.S. leaders believed that if one country became communist, nearby countries might fall next. This idea pulled the United States deeper into wars far from home. The result was a long conflict that changed American politics, trust, and lives.</p>
   <p class="para-simple">Cold War fear also shaped Vietnam. U.S. leaders thought one communist country could lead to more. That idea pulled the United States into wars far away. The result changed American politics and many families.</p>
 </section>
 
-<section class="content-section clearfix" id="cuba">
+<section class="content-section section-animate" id="cold-war-escalation-timeline">
+  <span class="section-kicker">TIMELINE</span>
+  <h2 class="section-heading">FROM CRISIS TO ESCALATION</h2>
+  <div class="timeline">
+    <div class="timeline-event"><div class="timeline-date">1954</div><p>France loses control of Vietnam. Vietnam is divided into communist North Vietnam and U.S.-backed South Vietnam.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1959</div><p>Fidel Castro takes power in Cuba and later moves closer to the Soviet Union.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1961</div><p>The Bay of Pigs invasion fails, embarrassing the United States and strengthening Castro's ties with Moscow.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1962</div><p>The Cuban Missile Crisis brings the United States and Soviet Union close to nuclear war.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1964-1965</div><p>The Gulf of Tonkin Resolution helps President Johnson expand the Vietnam War.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1975</div><p>Saigon falls to North Vietnam, ending the war and leaving Americans divided over what the war had meant.</p></div>
+  </div>
+</section>
+
+<section class="content-section clearfix section-animate" id="cuba">
   <span class="section-kicker">CHAPTER ONE</span>
   <h2 class="section-heading">CUBA: FAILURE, FEAR, AND THIRTEEN DAYS</h2>
   <!--
     FILENAME: S2L05_CastroCuba1959.jpg
     PLACE IN: images/S2/L05/
-    FIND: Fidel Castro entering Havana or speaking after the Cuban Revolution, 1959; shows the communist revolution that alarmed U.S. leaders
+    PRIORITY: ESSENTIAL
+    FIND: Fidel Castro entering Havana or speaking after the Cuban Revolution, 1959; shows the communist-friendly revolution that alarmed U.S. leaders
     SEARCH: Fidel Castro Havana 1959 Cuban Revolution Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/Category:Cuban_Revolution (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Cuban_Revolution
   -->
   <figure class="img-right">
     <img src="images/S2/L05/S2L05_CastroCuba1959.jpg" alt="Fidel Castro after the Cuban Revolution">
     <figcaption>Fidel Castro's revolution brought a communist-friendly government to Cuba, 1959. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard">In 1959, <span class="vocab">Fidel Castro<span class="tip">Cuban leader who took power in 1959.</span></span> took power in Cuba. U.S. leaders feared that Cuba would become a Soviet ally so close to Florida. In April 1961, Kennedy approved a CIA plan called the <span class="vocab">Bay of Pigs invasion<span class="tip">Failed U.S.-backed invasion of Cuba in 1961.</span></span>. Cuban exiles trained by the CIA landed in Cuba, hoping to start an uprising against Castro.</p>
+  <p class="para-standard">In 1959, <span class="vocab" tabindex="0">Fidel Castro<span class="tip">Cuban leader who took power in 1959.</span></span> took power in Cuba. U.S. leaders feared that Cuba would become a Soviet ally so close to Florida. In April 1961, Kennedy approved a CIA plan called the <span class="vocab" tabindex="0">Bay of Pigs invasion<span class="tip">Failed U.S.-backed invasion of Cuba in 1961.</span></span>. Cuban exiles trained by the CIA landed in Cuba, hoping to start an uprising against Castro.</p>
   <p class="para-simple">In 1959, <span class="vocab-red">Fidel Castro</span> took power in Cuba. U.S. leaders worried that Cuba would become close to the Soviet Union. In April 1961, Kennedy approved the <span class="vocab-red">Bay of Pigs invasion</span>. Cuban exiles trained by the CIA landed in Cuba to fight Castro.</p>
   <p class="para-standard">The invasion failed quickly. The expected uprising never happened. Castro's forces captured or killed the invaders. The United States looked weak, and Kennedy looked inexperienced. The failure pushed Castro closer to the Soviet Union and made both sides more suspicious.</p>
   <p class="para-simple">The invasion failed fast. People in Cuba did not rise up against Castro. Castro's forces captured or killed the invaders. The United States looked weak. Castro moved closer to the Soviet Union.</p>
   <!--
     FILENAME: S2L05_CubanMissilePhoto.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: ESSENTIAL
     FIND: U-2 spy plane photograph of Soviet missile sites in Cuba, October 1962; shows the evidence that began the Cuban Missile Crisis
     SEARCH: Cuban Missile Crisis U-2 reconnaissance photograph missile site October 1962 Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/Category:Reconnaissance_photographs_of_the_Cuban_Missile_Crisis (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Reconnaissance_photographs_of_the_Cuban_Missile_Crisis
   -->
   <figure>
     <img src="images/S2/L05/S2L05_CubanMissilePhoto.jpg" alt="U-2 photograph of Soviet missile site in Cuba">
     <figcaption>U-2 spy plane photograph of Soviet missile sites in Cuba, October 1962. Wikimedia Commons / National Archives.</figcaption>
   </figure>
-  <p class="para-standard">In October 1962, the U.S. discovered Soviet nuclear missiles in Cuba. This began the <span class="vocab">Cuban Missile Crisis<span class="tip">Thirteen-day nuclear standoff over missiles in Cuba.</span></span>. Kennedy's advisers argued over what to do. Some wanted air strikes. Kennedy chose a naval <span class="vocab">blockade<span class="tip">Using ships to stop supplies from entering.</span></span> around Cuba and demanded that Soviet leader <span class="vocab">Nikita Khrushchev<span class="tip">Soviet leader during the Cuban Missile Crisis.</span></span> remove the missiles.</p>
+  <p class="para-standard">In October 1962, the U.S. discovered Soviet nuclear missiles in Cuba. This began the <span class="vocab" tabindex="0">Cuban Missile Crisis<span class="tip">Thirteen-day nuclear standoff over missiles in Cuba.</span></span>. Kennedy's advisers argued over what to do. Some wanted air strikes. Kennedy chose a naval <span class="vocab" tabindex="0">blockade<span class="tip">Using ships to stop supplies from entering.</span></span> around Cuba and demanded that Soviet leader <span class="vocab" tabindex="0">Nikita Khrushchev<span class="tip">Soviet leader during the Cuban Missile Crisis.</span></span> remove the missiles.</p>
   <p class="para-simple">In October 1962, the U.S. found Soviet nuclear missiles in Cuba. This began the <span class="vocab-red">Cuban Missile Crisis</span>. Some advisers wanted to bomb Cuba. Kennedy chose a naval <span class="vocab-red">blockade</span>. He demanded that <span class="vocab-red">Nikita Khrushchev</span> remove the missiles.</p>
   <p class="para-standard">For thirteen days, the world came closer to nuclear war than ever before. Soviet ships sailed toward the blockade. U.S. forces prepared for war. Finally, Khrushchev agreed to remove the missiles from Cuba. In secret, Kennedy also agreed to remove U.S. missiles from Turkey later. Both leaders stepped back, and the world survived.</p>
   <p class="para-simple">For thirteen days, the world came close to nuclear war. Soviet ships moved toward the blockade. U.S. forces got ready. Khrushchev finally agreed to remove the missiles. Kennedy secretly agreed to remove U.S. missiles from Turkey later.</p>
-  <p class="real-world para-standard">Real-world connection: One bad decision by a leader can matter more when nuclear weapons are involved.</p>
-  <p class="real-world para-simple">Real-world connection: Nuclear weapons make every mistake more dangerous.</p>
 </section>
 
-<div class="brain-break dyk-break">
+<div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
   <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;">
       <!--
         FILENAME: S2L05_DYK_ArkhipovSubmarine.jpg
         PLACE IN: images/S2/L05/
+        PRIORITY: SUPPORTING
         FIND: Soviet submarine B-59 or Vasili Arkhipov portrait; Arkhipov refused to approve a nuclear torpedo launch during the Cuban Missile Crisis
         SEARCH: Vasili Arkhipov B-59 submarine Cuban Missile Crisis Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/Category:Vasili_Arkhipov (suggested, not guaranteed)
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Vasili_Arkhipov
       -->
       <img src="images/S2/L05/S2L05_DYK_ArkhipovSubmarine.jpg" alt="Vasili Arkhipov or Soviet submarine B-59" style="width:100%;display:block;border:3px solid var(--bb-lime);box-shadow:0 4px 18px rgba(0,0,0,.4);">
       <p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Roboto Slab',serif;">Vasili Arkhipov or Soviet submarine B-59, Cuban Missile Crisis.</p>
@@ -641,48 +263,45 @@ footer{
   </div>
 </div>
 
-<div class="brain-break ff-break">
+<div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">HOW COLD WAR ESCALATION REACHED CUBA AND VIETNAM</p>
   <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">90</span><span class="ff-desc">MILES FROM FLORIDA</span></div>
-    <div class="ff-item"><span class="ff-number">13</span><span class="ff-desc">DAYS OF CRISIS</span></div>
-    <div class="ff-item"><span class="ff-number">58K+</span><span class="ff-desc">U.S. DEATHS IN VIETNAM</span></div>
-    <div class="ff-item"><span class="ff-number">1975</span><span class="ff-desc">SAIGON FALLS</span></div>
+    <div class="ff-item"><span class="ff-number">90</span><span class="ff-desc">miles separated Cuba from Florida, making Soviet missiles there feel like a direct threat to the United States</span></div>
+    <div class="ff-item"><span class="ff-number">13</span><span class="ff-desc">days the Cuban Missile Crisis lasted as U.S. and Soviet leaders tried to avoid nuclear war</span></div>
+    <div class="ff-item"><span class="ff-number">58K+</span><span class="ff-desc">U.S. service members died in the Vietnam War, showing the human cost of containment</span></div>
+    <div class="ff-item"><span class="ff-number">1975</span><span class="ff-desc">the year Saigon fell and the long U.S. effort to defend South Vietnam ended in defeat</span></div>
   </div>
 </div>
 
-<section class="content-section clearfix" id="vietnam">
+<section class="content-section clearfix section-animate" id="vietnam">
   <span class="section-kicker">CHAPTER TWO</span>
   <h2 class="section-heading">VIETNAM: FROM ADVISERS TO WAR</h2>
   <!--
     FILENAME: S2L05_VietnamMapColdWar.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: SUPPORTING
     FIND: Map of North Vietnam and South Vietnam during the Vietnam War; shows Cold War division and location in Southeast Asia
     SEARCH: Vietnam War map North Vietnam South Vietnam Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Vietnam_War (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Vietnam_War
   -->
   <figure class="img-left">
     <img src="images/S2/L05/S2L05_VietnamMapColdWar.jpg" alt="Map of North and South Vietnam">
     <figcaption>Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard">Vietnam had been controlled by France as a colony. After World War II, Vietnamese leader <span class="vocab">Ho Chi Minh<span class="tip">Communist leader of North Vietnam.</span></span> fought for independence. France lost in 1954, and Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam.</p>
-  <p class="para-simple">Vietnam had been a French colony. After World War II, <span class="vocab-red">Ho Chi Minh</span> fought for independence. France lost in 1954. Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam.</p>
-  <p class="para-standard">U.S. leaders used <span class="vocab">domino theory<span class="tip">The fear that one communist country could make others fall.</span></span> to explain why Vietnam mattered. They believed that if Vietnam became communist, other countries in Southeast Asia might follow. This belief connected Vietnam to <span class="vocab">containment<span class="tip">Stopping communism from spreading farther.</span></span>, the Cold War policy of stopping communism from spreading.</p>
-  <p class="para-simple">U.S. leaders believed in <span class="vocab-red">domino theory</span>. They thought if Vietnam became communist, nearby countries might follow. This connected Vietnam to <span class="vocab-red">containment</span>, the policy of stopping communism from spreading.</p>
-  <p class="para-standard">President Eisenhower sent military advisers. Kennedy sent more. Then President Lyndon Johnson used the <span class="vocab">Gulf of Tonkin Resolution<span class="tip">1964 law that let Johnson expand the Vietnam War.</span></span> to greatly expand the war. Congress gave Johnson broad power after reports that North Vietnamese boats attacked U.S. ships. Soon, hundreds of thousands of American troops were fighting in Vietnam.</p>
+  <p class="para-standard">Vietnam had been controlled by France as a colony. After World War II, Vietnamese leader <span class="vocab" tabindex="0">Ho Chi Minh<span class="tip">Communist leader of North Vietnam.</span></span> fought for independence. France lost in 1954, and Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. The conflict became part of the larger Cold War because each side had powerful allies.</p>
+  <p class="para-simple">Vietnam had been a French colony. After World War II, <span class="vocab-red">Ho Chi Minh</span> fought for independence. France lost in 1954. Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. The conflict became part of the Cold War.</p>
+  <p class="para-standard">U.S. leaders used <span class="vocab" tabindex="0">domino theory<span class="tip">The fear that one communist country could make others fall.</span></span> to explain why Vietnam mattered. They believed that if Vietnam became communist, other countries in Southeast Asia might follow. This belief connected Vietnam to <span class="vocab" tabindex="0">containment<span class="tip">Stopping communism from spreading farther.</span></span>, the Cold War policy of stopping communism from spreading. A faraway country began to seem important to American safety.</p>
+  <p class="para-simple">U.S. leaders believed in <span class="vocab-red">domino theory</span>. They thought if Vietnam became communist, nearby countries might follow. This connected Vietnam to <span class="vocab-red">containment</span>. A faraway country began to seem important to U.S. safety.</p>
+  <p class="para-standard">President Eisenhower sent military advisers. Kennedy sent more. Then President Lyndon Johnson used the <span class="vocab" tabindex="0">Gulf of Tonkin Resolution<span class="tip">1964 law that let Johnson expand the Vietnam War.</span></span> to greatly expand the war. Congress gave Johnson broad power after reports that North Vietnamese boats attacked U.S. ships. Soon, hundreds of thousands of American troops were fighting in Vietnam.</p>
   <p class="para-simple">President Eisenhower sent advisers. Kennedy sent more. President Johnson used the <span class="vocab-red">Gulf of Tonkin Resolution</span> to expand the war. Congress gave him broad power. Soon, hundreds of thousands of U.S. troops were in Vietnam.</p>
-  <div class="timeline">
-    <div class="timeline-event"><div class="timeline-date">1954</div><p>France loses control of Vietnam. Vietnam is divided into North and South.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1961</div><p>Kennedy increases U.S. advisers in South Vietnam.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1964</div><p>Gulf of Tonkin Resolution gives Johnson power to expand the war.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1965</div><p>U.S. combat troops arrive in large numbers.</p></div>
-  </div>
   <!--
     FILENAME: S2L05_USSoldiersVietnam1965.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: ESSENTIAL
     FIND: U.S. soldiers in Vietnam, 1965 or 1966; shows escalation from advisers to ground war
     SEARCH: U.S. soldiers Vietnam 1965 Wikimedia Commons National Archives
-    LINK: https://commons.wikimedia.org/wiki/Category:United_States_military_people_in_the_Vietnam_War (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:United_States_military_people_in_the_Vietnam_War
   -->
   <figure>
     <img src="images/S2/L05/S2L05_USSoldiersVietnam1965.jpg" alt="U.S. soldiers in Vietnam">
@@ -690,17 +309,18 @@ footer{
   </figure>
 </section>
 
-<section class="content-section clearfix" id="home-front">
+<section class="content-section clearfix section-animate" id="home-front">
   <span class="section-kicker">CHAPTER THREE</span>
   <h2 class="section-heading">THE WAR COMES HOME</h2>
-  <p class="para-standard">The Vietnam War affected families across the United States because of the <span class="vocab">draft<span class="tip">A system that forces people into military service.</span></span>. Young men could be ordered to serve. College students often had deferments, which delayed service. This meant poorer men and men without college options were more likely to fight.</p>
-  <p class="para-simple">The Vietnam War reached many families because of the <span class="vocab-red">draft</span>. Young men could be forced to serve. College students could often delay service. Poorer men were more likely to be sent.</p>
+  <p class="para-standard">The Vietnam War affected families across the United States because of the <span class="vocab" tabindex="0">draft<span class="tip">A system that forces people into military service.</span></span>. Young men could be ordered to serve. College students often had deferments, which delayed service. This meant poorer men and men without college options were more likely to fight. The question of who had to serve made the war feel unfair to many Americans.</p>
+  <p class="para-simple">The Vietnam War reached many families because of the <span class="vocab-red">draft</span>. Young men could be forced to serve. College students could often delay service. Poorer men were more likely to be sent. Many Americans thought this was unfair.</p>
   <!--
     FILENAME: S2L05_DraftLottery1969.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: ESSENTIAL
     FIND: Vietnam War draft lottery, December 1969; shows birth dates being drawn to decide who might be sent to war
     SEARCH: Vietnam draft lottery 1969 photograph Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969) (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969)
   -->
   <figure class="img-right">
     <img src="images/S2/L05/S2L05_DraftLottery1969.jpg" alt="Vietnam War draft lottery">
@@ -708,16 +328,17 @@ footer{
   </figure>
   <p class="para-standard">Television also changed how Americans saw war. News cameras showed fighting, wounded soldiers, burning villages, and body bags. The government said progress was being made, but many Americans saw a war that looked endless. Trust began to break.</p>
   <p class="para-simple">Television changed the war. People saw fighting, wounded soldiers, burning villages, and body bags on the news. The government said the war was going well. Many Americans did not believe it.</p>
-  <p class="para-standard">In 1968, U.S. soldiers killed hundreds of Vietnamese civilians in the <span class="vocab">My Lai massacre<span class="tip">U.S. killing of Vietnamese civilians in 1968.</span></span>. The public learned about it later. My Lai showed that the war could damage not only bodies, but also moral judgment. It forced Americans to ask what the war was doing to the people fighting it.</p>
+  <p class="para-standard">In 1968, U.S. soldiers killed hundreds of Vietnamese civilians in the <span class="vocab" tabindex="0">My Lai massacre<span class="tip">U.S. killing of Vietnamese civilians in 1968.</span></span>. The public learned about it later. My Lai showed that the war could damage not only bodies, but also moral judgment. It forced Americans to ask what the war was doing to the people fighting it.</p>
   <p class="para-simple">In 1968, U.S. soldiers killed hundreds of civilians in the <span class="vocab-red">My Lai massacre</span>. Americans learned about it later. My Lai showed how the war hurt civilians and soldiers' moral choices.</p>
-  <p class="para-standard">The <span class="vocab">antiwar movement<span class="tip">People organizing to oppose a war.</span></span> grew on college campuses and in cities. Students marched, burned draft cards, and demanded that the war end. After National Guard troops killed four students at Kent State University in 1970, protest spread even more. The war overseas had become a crisis at home.</p>
+  <p class="para-standard">The <span class="vocab" tabindex="0">antiwar movement<span class="tip">People organizing to oppose a war.</span></span> grew on college campuses and in cities. Students marched, burned draft cards, and demanded that the war end. After National Guard troops killed four students at Kent State University in 1970, protest spread even more. The war overseas had become a crisis at home.</p>
   <p class="para-simple">The <span class="vocab-red">antiwar movement</span> grew. Students marched and protested the draft. In 1970, National Guard troops killed four students at Kent State. The war far away had become a crisis at home.</p>
   <!--
     FILENAME: S2L05_AntiwarProtest1969.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: ESSENTIAL
     FIND: Vietnam War antiwar protest or Moratorium March, Washington D.C., 1969; shows mass student and public protest
     SEARCH: Vietnam Moratorium March 1969 Washington DC protest Wikimedia Commons Library of Congress
-    LINK: https://commons.wikimedia.org/wiki/Category:Opposition_to_the_Vietnam_War (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Opposition_to_the_Vietnam_War
   -->
   <figure>
     <img src="images/S2/L05/S2L05_AntiwarProtest1969.jpg" alt="Vietnam War antiwar protest">
@@ -725,157 +346,235 @@ footer{
   </figure>
 </section>
 
-<div class="brain-break as-break">
+<div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
       FILENAME: S2L05_ArtSpotlight_AndBabiesPoster.jpg
       PLACE IN: images/S2/L05/
+      PRIORITY: ESSENTIAL
       FIND: Specific antiwar poster "And babies?", Art Workers Coalition, 1969; poster using Ronald Haeberle's My Lai photograph to attack the war
       SEARCH: And babies poster Art Workers Coalition 1969 My Lai Wikimedia Commons
-      LINK: https://commons.wikimedia.org/wiki/File:And_babies_poster.jpg (suggested, not guaranteed)
+      LINK: Suggested: https://commons.wikimedia.org/wiki/File:And_babies_poster.jpg
     -->
     <img src="images/S2/L05/S2L05_ArtSpotlight_AndBabiesPoster.jpg" alt="And babies? antiwar poster" class="as-image">
-    <figcaption class="as-caption"><em>And babies?</em>, Art Workers Coalition poster, 1969. The poster used a My Lai photograph by Ronald Haeberle and added a quote from a military interview.</figcaption>
+    <figcaption class="as-caption"><em>And babies?</em> — Art Workers Coalition, 1969.<br>The poster used a My Lai photograph by Ronald Haeberle and added words from a military interview.</figcaption>
   </figure>
   <p class="as-fact">This poster was so disturbing that a major museum first refused to distribute it. Artists raised money and printed it anyway. It became one of the most famous antiwar images because it refused to let viewers look away from what civilians had suffered.</p>
 </div>
 
-<section class="content-section clearfix" id="widening-war">
+<section class="content-section clearfix section-animate" id="widening-war">
   <span class="section-kicker">CHAPTER FOUR</span>
   <h2 class="section-heading">ENDING ONE WAR, WIDENING ANOTHER</h2>
-  <p class="para-standard">President Richard Nixon promised to end the Vietnam War through <span class="vocab">Vietnamization<span class="tip">Nixon's plan to shift fighting to South Vietnamese troops.</span></span>. This meant training South Vietnamese forces to fight while U.S. troops slowly came home. But Nixon also expanded the war in secret by bombing Cambodia, where North Vietnamese forces used supply routes.</p>
-  <p class="para-simple">President Nixon promised to end the war through <span class="vocab-red">Vietnamization</span>. That meant South Vietnamese troops would fight more while U.S. troops came home. But Nixon also secretly bombed Cambodia.</p>
+  <p class="para-standard">President Richard Nixon promised to end the Vietnam War through <span class="vocab" tabindex="0">Vietnamization<span class="tip">Nixon's plan to shift fighting to South Vietnamese troops.</span></span>. This meant training South Vietnamese forces to fight while U.S. troops slowly came home. But Nixon also expanded the war in secret by bombing Cambodia, where North Vietnamese forces used supply routes. Ending a war became tangled with widening it.</p>
+  <p class="para-simple">President Nixon promised to end the war through <span class="vocab-red">Vietnamization</span>. That meant South Vietnamese troops would fight more while U.S. troops came home. But Nixon also secretly bombed Cambodia. Ending the war became tied to widening it.</p>
   <!--
     FILENAME: S2L05_CambodiaBombingMap.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: SUPPORTING
     FIND: Map of U.S. bombing in Cambodia or Ho Chi Minh Trail, 1969-1973; shows how the Vietnam War spread into nearby countries
     SEARCH: Cambodia bombing map Vietnam War Ho Chi Minh Trail Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/Category:Cambodian_Campaign (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Cambodian_Campaign
   -->
   <figure class="img-left">
     <img src="images/S2/L05/S2L05_CambodiaBombingMap.jpg" alt="Map of Cambodia bombing and Ho Chi Minh Trail">
     <figcaption>The Vietnam War spread into Cambodia and Laos through bombing and supply routes. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard">In 1975, North Vietnamese forces captured Saigon, the capital of South Vietnam. The <span class="vocab">fall of Saigon<span class="tip">The 1975 collapse of South Vietnam.</span></span> ended the war. Images of helicopters lifting people from rooftops became a symbol of American defeat and chaos.</p>
-  <p class="para-simple">In 1975, North Vietnam captured Saigon. The <span class="vocab-red">fall of Saigon</span> ended the war. Pictures of helicopters leaving rooftops became a symbol of defeat and chaos.</p>
+  <p class="para-standard">In 1975, North Vietnamese forces captured Saigon, the capital of South Vietnam. The <span class="vocab" tabindex="0">fall of Saigon<span class="tip">The 1975 collapse of South Vietnam.</span></span> ended the war. Images of helicopters lifting people from rooftops became a symbol of American defeat and chaos. For many Americans, the end of the war raised a painful question: what had all the sacrifice been for?</p>
+  <p class="para-simple">In 1975, North Vietnam captured Saigon. The <span class="vocab-red">fall of Saigon</span> ended the war. Pictures of helicopters leaving rooftops became a symbol of defeat and chaos. Many Americans wondered what the sacrifice had been for.</p>
   <!--
     FILENAME: S2L05_FallOfSaigonHelicopter.jpg
     PLACE IN: images/S2/L05/
+    PRIORITY: ESSENTIAL
     FIND: Fall of Saigon rooftop helicopter evacuation, April 1975; iconic image of people boarding helicopter during evacuation
     SEARCH: Fall of Saigon helicopter evacuation rooftop 1975 Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/File:Saigon-hubert-van-es.jpg (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/File:Saigon-hubert-van-es.jpg
   -->
   <figure>
     <img src="images/S2/L05/S2L05_FallOfSaigonHelicopter.jpg" alt="Fall of Saigon helicopter evacuation">
     <figcaption>Helicopter evacuation during the fall of Saigon, April 1975. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard">Cold War policy did not end with Vietnam. Nixon also tried <span class="vocab">détente<span class="tip">Easing tension between rival countries.</span></span>, which means easing tension. He opened relations with China and signed arms talks with the Soviet Union. Later, President Reagan took a harder line and supported <span class="vocab">proxy war<span class="tip">A war where big powers support other fighters.</span></span> efforts in Latin America, where the U.S. backed anti-communist forces.</p>
+  <p class="para-standard">Cold War policy did not end with Vietnam. Nixon also tried <span class="vocab" tabindex="0">détente<span class="tip">Easing tension between rival countries.</span></span>, which means easing tension. He opened relations with China and signed arms talks with the Soviet Union. Later, President Reagan took a harder line and supported <span class="vocab" tabindex="0">proxy war<span class="tip">A war where big powers support other fighters.</span></span> efforts in Latin America, where the U.S. backed anti-communist forces.</p>
   <p class="para-simple">Cold War policy did not end with Vietnam. Nixon tried <span class="vocab-red">détente</span>, which means lowering tension. He opened relations with China. Later, Reagan supported <span class="vocab-red">proxy wars</span> in Latin America against communism.</p>
-  <p class="para-standard">The <span class="vocab">Iran-Contra affair<span class="tip">A secret Reagan-era plan involving weapons and rebel funding.</span></span> showed how far officials might go in the name of fighting communism. Some officials secretly sold weapons to Iran and used money to support anti-communist rebels in Nicaragua, even though Congress had limited that support. Once again, Cold War fear pushed leaders to work around the normal rules.</p>
+  <p class="para-standard">The <span class="vocab" tabindex="0">Iran-Contra affair<span class="tip">A secret Reagan-era plan involving weapons and rebel funding.</span></span> showed how far officials might go in the name of fighting communism. Some officials secretly sold weapons to Iran and used money to support anti-communist rebels in Nicaragua, even though Congress had limited that support. Once again, Cold War fear pushed leaders to work around the normal rules.</p>
   <p class="para-simple">The <span class="vocab-red">Iran-Contra affair</span> showed how far officials went to fight communism. Some secretly sold weapons to Iran. They used money to support rebels in Nicaragua. Congress had tried to limit that support.</p>
 </section>
 
-<section class="content-section" id="primary-source-moment">
+<section class="content-section section-animate" id="primary-source-moment">
   <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
-  <h2 class="section-heading">TWO VOICES FROM THE WAR</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"We must fight if we are to live in a world where every country can shape its own destiny."</div>
-    <div class="ps-attribution">President Lyndon B. Johnson, speech on Vietnam, 1965</div>
-    <div class="ps-narrator">Johnson framed Vietnam as a fight for freedom, even as the war became harder to explain and harder to win.</div>
+  <h2 class="section-heading">WHY JOHNSON SAID VIETNAM MATTERED</h2>
+  <div class="primary-source section-animate">
+    <div class="ps-visual">
+      <figure>
+        <!--
+          FILENAME: S2L05_LBJJohnsHopkinsSpeech.jpg
+          PLACE IN: images/S2/L05/
+          PRIORITY: ESSENTIAL
+          FIND: President Lyndon B. Johnson delivering his "Peace Without Conquest" speech at Johns Hopkins University, April 7, 1965, or a public-domain LBJ Vietnam speech image
+          SEARCH: Lyndon Johnson Peace Without Conquest Johns Hopkins April 7 1965 Wikimedia Commons
+          LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Lyndon_B._Johnson_in_1965
+        -->
+        <img src="images/S2/L05/S2L05_LBJJohnsHopkinsSpeech.jpg" alt="President Lyndon B. Johnson speaking about Vietnam in 1965">
+        <figcaption>President Lyndon B. Johnson explained why he believed the United States had to fight in Vietnam, 1965. Wikimedia Commons / LBJ Library.</figcaption>
+      </figure>
+      <div>
+        <div class="ps-label">PRIMARY SOURCE</div>
+        <div class="ps-quote">“Why are we in South Viet-Nam? We are there because we have a promise to keep. Since 1954 every American President has offered support to the people of South Viet-Nam. We have helped to build, and we have helped to defend. Thus, over many years, we have made a national pledge to help South Viet-Nam defend its independence.”</div>
+        <div class="ps-attribution">President Lyndon B. Johnson, “Peace Without Conquest,” April 7, 1965.</div>
+        <div class="ps-narrator">Johnson framed Vietnam as a promise, a defense of independence, and part of America's Cold War responsibility. His words help answer the essential question because they show how U.S. leaders made a faraway country sound connected to American credibility and safety.</div>
+      </div>
+    </div>
   </div>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"We were not on the wrong side. We are the wrong side."</div>
-    <div class="ps-attribution">John Kerry, testimony before the Senate Foreign Relations Committee, 1971</div>
-    <div class="ps-narrator">Kerry was a Vietnam veteran arguing that the war had damaged both Vietnam and the soldiers sent to fight there.</div>
-  </div>
-  <div class="ps-questions">
-    <p><strong>Question 1:</strong> How do Johnson and Kerry describe the war differently?</p>
-    <p><strong>Question 2:</strong> How do these two sources connect to the question of why the U.S. fought in faraway countries?</p>
-  </div>
+  <p class="para-standard">This source does not prove that Johnson was right. It shows how he explained the war to Americans. He argued that the United States had made promises and had to defend South Vietnam's independence. Students can use the excerpt as evidence of how Cold War leaders justified fighting in faraway places.</p>
+  <p class="para-simple">This source does not prove Johnson was right. It shows how he explained the war. He said the United States had made a promise. He said America had to defend South Vietnam's independence. This helps explain why leaders sent Americans to fight far away.</p>
 </section>
 
-<div class="brain-break tn-break" id="then-now">
+<div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">Cold War fear made faraway places feel like front doors.</p>
+  <p class="tn-payoff">COLD WAR ESCALATION TURNED FARAWAY PLACES INTO TESTS OF AMERICAN POWER.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">1960S</span>
+      <span class="tn-era-label">1969</span>
       <!--
-        FILENAME: S2L05_Then_VietnamDraftMap.jpg
+        FILENAME: S2L05_Then_DraftLotteryCapsules.jpg
         PLACE IN: images/S2/L05/
-        FIND: Vietnam War era draft lottery or U.S. troop deployment map; shows ordinary Americans pulled into a faraway war
-        SEARCH: Vietnam draft lottery 1969 photograph Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969) (suggested, not guaranteed)
+        PRIORITY: SUPPORTING
+        FIND: Vietnam draft lottery capsules or officials drawing birth dates, December 1969; shows ordinary Americans pulled into a distant Cold War conflict
+        SEARCH: Vietnam draft lottery capsules 1969 Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969)
       -->
-      <img src="images/S2/L05/S2L05_Then_VietnamDraftMap.jpg" alt="Vietnam War draft lottery or deployment map">
-      <p class="tn-caption">A birth date could decide whether a young man might be sent to Vietnam.</p>
+      <img src="images/S2/L05/S2L05_Then_DraftLotteryCapsules.jpg" alt="Vietnam draft lottery capsules in 1969">
+      <p class="tn-caption">During the Vietnam draft lottery, birth dates helped decide who faced the highest chance of being sent to war.</p>
     </div>
     <div class="tn-item">
-      <span class="tn-era-label">TODAY</span>
+      <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S2L05_Now_DroneWarRoom.jpg
+        FILENAME: S2L05_Now_VietnamVeteransMemorial.jpg
         PLACE IN: images/S2/L05/
-        FIND: U.S. military command center, drone operations, or modern overseas military operation image; shows modern distant conflict managed from screens
-        SEARCH: U.S. military command center drone operations Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/Category:Military_command_centers (suggested, not guaranteed)
+        PRIORITY: SUPPORTING
+        FIND: Visitors at the Vietnam Veterans Memorial in Washington, D.C.; shows remembrance, public memory, and the lasting human cost of the war
+        SEARCH: Vietnam Veterans Memorial visitors Washington DC Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Vietnam_Veterans_Memorial
       -->
-      <img src="images/S2/L05/S2L05_Now_DroneWarRoom.jpg" alt="Modern military command center">
-      <p class="tn-caption">Modern conflicts can be watched and directed from screens thousands of miles away.</p>
+      <img src="images/S2/L05/S2L05_Now_VietnamVeteransMemorial.jpg" alt="Visitors at the Vietnam Veterans Memorial">
+      <p class="tn-caption">Visitors at the Vietnam Veterans Memorial continue to confront the human cost of the war.</p>
     </div>
   </div>
-  <p class="tn-closing">The strangest difference is the silence: Vietnam filled living rooms with nightly television images, while many modern conflicts happen through maps, screens, and short clips that feel easier to scroll past.</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>During the Vietnam War, Cold War policy reached into ordinary American homes. A young man's birthday could affect whether he might be drafted and sent across the Pacific. The war showed how decisions made in Washington could reshape families far from the battlefield.</p>
+    <h3>NOW</h3>
+    <p>Today, the Vietnam Veterans Memorial turns the war into names that people can touch, read, and remember. It does not show victory or defeat first. It shows human cost. That kind of public memory helps people ask harder questions about war.</p>
+    <h3>CONNECTION</h3>
+    <p>The past and present connect through the question of responsibility. During the Cold War, leaders argued that faraway conflicts mattered to American security. Today, Americans still debate when their country should use power overseas and how much sacrifice is justified.</p>
+    <p>When should a country decide that a faraway conflict is worth the cost of war?</p>
+  </div>
 </div>
 </main>
 
-<footer>US HISTORY — SEMESTER 2, LESSON 05 — CUBA, VIETNAM, AND COLD WAR ESCALATION</footer>
+<footer>US HISTORY | SEMESTER 2, LESSON 05 | CUBA, VIETNAM, AND COLD WAR ESCALATION</footer>
 </div>
 
 <script>
-document.querySelectorAll('.vocab').forEach(function(el){
-  el.addEventListener('click',function(e){
-    e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
-    el.classList.toggle('active');
-  });
-});
-document.addEventListener('click',function(){
-  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
-});
+(function(){
+  var bar=document.getElementById('reading-progress');
+  window.addEventListener('scroll',function(){
+    var scrollTop=window.scrollY||document.documentElement.scrollTop;
+    var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+    bar.style.width=progress+'%';
+  },{passive:true});
+})();
+
 document.getElementById('lexile-toggle').addEventListener('click',function(){
   document.body.classList.toggle('simplified');
   this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
 });
+
+function repositionTip(el){
+  var tip=el.querySelector('.tip');
+  if(!tip)return;
+  tip.style.left='50%';
+  tip.style.transform='translateX(-50%)';
+  var rect=tip.getBoundingClientRect();
+  if(rect.left<8){
+    var shift=8-rect.left;
+    tip.style.transform='translateX(calc(-50% + '+shift+'px))';
+  }else if(rect.right>window.innerWidth-8){
+    var shift=rect.right-(window.innerWidth-8);
+    tip.style.transform='translateX(calc(-50% - '+shift+'px))';
+  }
+}
+
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
+    el.classList.toggle('active');
+    if(el.classList.contains('active'))repositionTip(el);
+  });
+  el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});
+  el.addEventListener('blur',function(){el.classList.remove('active');});
+  el.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}
+    if(e.key==='Escape')el.classList.remove('active');
+  });
+});
+
+document.addEventListener('click',function(){
+  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
+});
+
 const tocObserver=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     const id=entry.target.getAttribute('id');
-    const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
-    if(link){
-      if(entry.isIntersecting)link.classList.add('active');
-      else link.classList.remove('active');
+    const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');
+    if(entry.isIntersecting){
+      if(tocLink)tocLink.classList.add('active');
+      if(navLink)navLink.classList.add('active');
+    }else{
+      if(tocLink)tocLink.classList.remove('active');
+      if(navLink)navLink.classList.remove('active');
     }
   });
 },{threshold:.25});
-document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
+
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+
+(function(){
+  var animObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
+  document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});
+})();
+
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth>0){
+    img.classList.add('loaded');
+  }else{
+    img.addEventListener('load',function(){img.classList.add('loaded');});
+    img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});
+  }
+});
 </script>
 </body>
-</html>
 
 <!--
-IMAGE CHECKLIST FOR SSU_S2L05.html
-1. S2L05_Header_KennedyMissileCrisis.jpg — Kennedy meeting with advisers during the Cuban Missile Crisis — Suggested link: https://commons.wikimedia.org/wiki/Category:Cuban_Missile_Crisis
-2. S2L05_CastroCuba1959.jpg — Fidel Castro after the Cuban Revolution, 1959 — Suggested link: https://commons.wikimedia.org/wiki/Category:Cuban_Revolution
-3. S2L05_CubanMissilePhoto.jpg — U-2 photograph of Soviet missile sites in Cuba, October 1962 — Suggested link: https://commons.wikimedia.org/wiki/Category:Reconnaissance_photographs_of_the_Cuban_Missile_Crisis
-4. S2L05_DYK_ArkhipovSubmarine.jpg — Vasili Arkhipov or Soviet submarine B-59 during Cuban Missile Crisis — Suggested link: https://commons.wikimedia.org/wiki/Category:Vasili_Arkhipov
-5. S2L05_VietnamMapColdWar.jpg — Map of North and South Vietnam during the Vietnam War — Suggested link: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Vietnam_War
-6. S2L05_USSoldiersVietnam1965.jpg — U.S. soldiers in Vietnam, mid-1960s — Suggested link: https://commons.wikimedia.org/wiki/Category:United_States_military_people_in_the_Vietnam_War
-7. S2L05_DraftLottery1969.jpg — Vietnam War draft lottery, 1969 — Suggested link: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969)
-8. S2L05_AntiwarProtest1969.jpg — Vietnam antiwar protest, late 1960s — Suggested link: https://commons.wikimedia.org/wiki/Category:Opposition_to_the_Vietnam_War
-9. S2L05_ArtSpotlight_AndBabiesPoster.jpg — "And babies?" antiwar poster, Art Workers Coalition, 1969 — Suggested link: https://commons.wikimedia.org/wiki/File:And_babies_poster.jpg
-10. S2L05_CambodiaBombingMap.jpg — Map of U.S. bombing in Cambodia or Ho Chi Minh Trail — Suggested link: https://commons.wikimedia.org/wiki/Category:Cambodian_Campaign
-11. S2L05_FallOfSaigonHelicopter.jpg — Fall of Saigon helicopter evacuation, April 1975 — Suggested link: https://commons.wikimedia.org/wiki/File:Saigon-hubert-van-es.jpg
-12. S2L05_Then_VietnamDraftMap.jpg — Vietnam draft lottery or troop deployment image — Suggested link: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969)
-13. S2L05_Now_DroneWarRoom.jpg — Modern military command center or drone operations image — Suggested link: https://commons.wikimedia.org/wiki/Category:Military_command_centers
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
 -->
+</html>
