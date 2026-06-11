@@ -173,6 +173,17 @@ h1 span { color: var(--red); }
   text-align: right;
 }
 
+.scroll-hint {
+  margin-top: 0.55rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent, var(--red));
+  opacity: 0.72;
+}
+
 .gallery-track {
   position: relative;
   display: grid;
@@ -198,6 +209,8 @@ h1 span { color: var(--red); }
   display: block;
   text-decoration: none;
   color: inherit;
+  flex: 0 0 245px;
+  scroll-snap-align: start;
   min-height: 215px;
   padding: 2.35rem 0.95rem 1rem;
   background: var(--paper);
@@ -310,17 +323,6 @@ footer {
   color: rgba(33,27,22,0.58);
 }
 
-@media (max-width: 1280px) {
-  .gallery-track {
-    display: flex;
-    overflow-x: auto;
-    padding: 0 0.25rem 0.8rem;
-    scroll-snap-type: x proximity;
-  }
-  .gallery-track::before { right: auto; width: 2180px; }
-  .day-card { flex: 0 0 215px; scroll-snap-align: start; }
-}
-
 @media (max-width: 720px) {
   body::before { background-size: auto 100%; background-position: center top; }
   .page-shell { padding: 1.1rem 0.9rem 2.4rem; }
@@ -345,7 +347,7 @@ footer {
     <section class="exhibit-row" style="--accent:var(--red);" aria-label="Semester 1 lessons">
       <div class="semester-hdr">
         <h2 class="semester-title">Semester 1</h2>
-        <p class="semester-sub">Standards 11.1–11.6 · Founding Era Through the Great Depression</p>
+        <div><p class="semester-sub">Standards 11.1–11.6 · Founding Era Through the Great Depression</p><p class="scroll-hint">Scroll sideways to view all 10 days →</p></div>
       </div>
       <div class="gallery-track">
         <a class="day-card" href="SSU_S1L01.html" style="--tilt:-0.7deg;"><div class="day-num">Day 1</div><div class="card-title">Founding the Nation</div><div class="card-eq">How did Enlightenment ideas shape a new kind of government, and does it still work?</div><div class="card-std">Standards 11.1</div></a>
@@ -364,7 +366,7 @@ footer {
     <section class="exhibit-row" style="--accent:var(--navy-mid);" aria-label="Semester 2 lessons">
       <div class="semester-hdr">
         <h2 class="semester-title">Semester 2</h2>
-        <p class="semester-sub">Standards 11.7–11.11 · WWII Through Modern America</p>
+        <div><p class="semester-sub">Standards 11.7–11.11 · WWII Through Modern America</p><p class="scroll-hint">Scroll sideways to view all 10 days →</p></div>
       </div>
       <div class="gallery-track">
         <a class="day-card" href="SSU_S2L01.html" style="--tilt:0.6deg;"><div class="day-num">Day 1</div><div class="card-title">America in World War II</div><div class="card-eq">How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid?</div><div class="card-std">Standards 11.7 pt. 1</div></a>
