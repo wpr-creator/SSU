@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>SSU S2L05 | CUBA, VIETNAM, AND COLD WAR ESCALATION</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Atkinson+Hyperlegible:wght@400;700&amp;family=Roboto+Slab:wght@500;700;900&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --black:#090909; --charcoal:#1d1d1d; --gray:#595959; --paper:#f1ead8; --paper-dark:#dfd2b3;
@@ -140,13 +141,75 @@ img.loaded{opacity:1}
   .section-heading{font-size:31px}
   .bb-text,.as-fact{font-size:18px}
 }
+
+
+/* === v4 FINAL POLISH PATCH: accessibility, mobile reliability, and professional finish === */
+.skip-link {
+  position:absolute;
+  left:-999px;
+  top:10px;
+  z-index:10000;
+  background:#fff;
+  color:#111;
+  padding:10px 14px;
+  border:3px solid currentColor;
+  font-weight:700;
+}
+.skip-link:focus { left:10px; }
+.section-nav a:focus-visible,
+#lexile-toggle:focus-visible,
+.toc-sidebar a:focus-visible {
+  outline:3px solid currentColor;
+  outline-offset:3px;
+}
+main { overflow-wrap:anywhere; }
+figure img, .tn-item img, .as-image, .ps-visual img {
+  background:rgba(255,255,255,.08);
+}
+.img-pair figure, .tn-item, .ps-visual figure {
+  min-width:0;
+}
+@media (max-width: 880px) {
+  body { font-size:17px; }
+  .img-left, .img-right {
+    float:none;
+    width:100%;
+    margin:28px 0;
+  }
+  .img-pair,
+  .profile-cards,
+  .community-grid,
+  .event-grid,
+  .main-grid,
+  .vs-grid,
+  .sphere-grid {
+    grid-template-columns:1fr !important;
+  }
+  .section-nav {
+    overflow-x:auto;
+    justify-content:flex-start;
+    flex-wrap:nowrap;
+    -webkit-overflow-scrolling:touch;
+  }
+  .section-nav a {
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+}
+@media print {
+  #reading-progress, .section-nav, .toc-sidebar, #lexile-toggle, .skip-link { display:none !important; }
+  body { background:#fff !important; color:#111 !important; }
+  .page-wrap, .page-shell { box-shadow:none !important; border:0 !important; max-width:100% !important; }
+  img { opacity:1 !important; }
+}
+
 </style>
 </head>
-<body>
+<body><a class="skip-link" href="#introduction">SKIP TO LESSON</a>
 <div id="reading-progress"></div>
 <div class="page-wrap">
 <header class="site-header">
-  <!--
+<!--
     FILENAME: S2L05_Header_KennedyMissileCrisis.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: ESSENTIAL
@@ -154,63 +217,57 @@ img.loaded{opacity:1}
     SEARCH: Kennedy advisers Cuban Missile Crisis October 1962 EXCOMM photograph Wikimedia Commons Library of Congress
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Cuban_Missile_Crisis
   -->
-  <img class="header-bg" src="images/S2/L05/S2L05_Header_KennedyMissileCrisis.jpg" alt="President Kennedy meeting with advisers during the Cuban Missile Crisis">
-  <div class="header-inner">
-    <div class="course-label">US HISTORY | SEMESTER 2, LESSON 05</div>
-    <h1 class="page-title">CUBA, VIETNAM, AND COLD WAR ESCALATION</h1>
-    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>Why did the United States fight wars in countries most Americans could not find on a map?</div>
-  </div>
+<img alt="President Kennedy meeting with advisers during the Cuban Missile Crisis" class="header-bg" src="images/S2/L05/S2L05_Header_KennedyMissileCrisis.jpg"/>
+<div class="header-inner">
+<div class="course-label">US HISTORY | SEMESTER 2, LESSON 05</div>
+<h1 class="page-title">CUBA, VIETNAM, AND COLD WAR ESCALATION</h1>
+<div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>Why did the United States fight wars in countries most Americans could not find on a map?</div>
+</div>
 </header>
-
-<nav class="section-nav" aria-label="Page sections">
-  <a href="#cold-war-escalation-timeline">TIMELINE</a>
-  <a href="#cuba">CUBA</a>
-  <a href="#vietnam">VIETNAM</a>
-  <a href="#home-front">HOME FRONT</a>
-  <a href="#widening-war">WIDENING WAR</a>
-  <a href="#primary-source-moment">PRIMARY SOURCE</a>
-  <a href="#then-now">THEN AND NOW</a>
+<nav aria-label="Page sections" class="section-nav">
+<a href="#cold-war-escalation-timeline">TIMELINE</a>
+<a href="#cuba">CUBA</a>
+<a href="#vietnam">VIETNAM</a>
+<a href="#home-front">HOME FRONT</a>
+<a href="#widening-war">WIDENING WAR</a>
+<a href="#primary-source-moment">PRIMARY SOURCE</a>
+<a href="#then-now">THEN AND NOW</a>
 </nav>
-
 <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
-
 <aside class="toc-sidebar">
-  <span class="toc-label">ON THIS PAGE</span>
-  <a href="#introduction">INTRO</a>
-  <a href="#cold-war-escalation-timeline">TIMELINE</a>
-  <a href="#cuba">CUBA</a>
-  <a href="#vietnam">VIETNAM</a>
-  <a href="#home-front">HOME FRONT</a>
-  <a href="#widening-war">WIDENING WAR</a>
-  <a href="#primary-source-moment">SOURCE</a>
-  <a href="#then-now">THEN AND NOW</a>
+<span class="toc-label">ON THIS PAGE</span>
+<a href="#introduction">INTRO</a>
+<a href="#cold-war-escalation-timeline">TIMELINE</a>
+<a href="#cuba">CUBA</a>
+<a href="#vietnam">VIETNAM</a>
+<a href="#home-front">HOME FRONT</a>
+<a href="#widening-war">WIDENING WAR</a>
+<a href="#primary-source-moment">SOURCE</a>
+<a href="#then-now">THEN AND NOW</a>
 </aside>
-
 <main>
-<section class="intro-section section-animate" id="introduction">
-  <p class="para-standard">In October 1962, a U.S. spy plane flew over Cuba and took photographs that made the president's room go silent. The pictures showed Soviet nuclear missiles being built only about 90 miles from Florida. President <span class="vocab" tabindex="0">John F. Kennedy<span class="tip">U.S. president during the Cuban Missile Crisis.</span></span> now had to choose between doing nothing, attacking Cuba, or risking a nuclear war. A small island suddenly felt like the front line of the entire world.</p>
-  <p class="para-simple">In October 1962, a U.S. spy plane took pictures over Cuba. The pictures showed Soviet nuclear missiles only about 90 miles from Florida. President <span class="vocab-red">John F. Kennedy</span> had to make a dangerous choice. A small island suddenly felt like the front line of the whole world.</p>
-  <p class="para-standard">That same Cold War fear also shaped Vietnam. U.S. leaders believed that if one country became communist, nearby countries might fall next. This idea pulled the United States deeper into wars far from home. The result was a long conflict that changed American politics, trust, and lives.</p>
-  <p class="para-simple">Cold War fear also shaped Vietnam. U.S. leaders thought one communist country could lead to more. That idea pulled the United States into wars far away. The result changed American politics and many families.</p>
-</section>
-
 <section class="content-section section-animate" id="cold-war-escalation-timeline">
-  <span class="section-kicker">TIMELINE</span>
-  <h2 class="section-heading">FROM CRISIS TO ESCALATION</h2>
-  <div class="timeline">
-    <div class="timeline-event"><div class="timeline-date">1954</div><p>France loses control of Vietnam. Vietnam is divided into communist North Vietnam and U.S.-backed South Vietnam.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1959</div><p>Fidel Castro takes power in Cuba and later moves closer to the Soviet Union.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1961</div><p>The Bay of Pigs invasion fails, embarrassing the United States and strengthening Castro's ties with Moscow.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1962</div><p>The Cuban Missile Crisis brings the United States and Soviet Union close to nuclear war.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1964-1965</div><p>The Gulf of Tonkin Resolution helps President Johnson expand the Vietnam War.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1975</div><p>Saigon falls to North Vietnam, ending the war and leaving Americans divided over what the war had meant.</p></div>
-  </div>
+<span class="section-kicker">TIMELINE</span>
+<h2 class="section-heading">FROM CRISIS TO ESCALATION</h2>
+<div class="timeline">
+<div class="timeline-event"><div class="timeline-date">1954</div><p>France loses control of Vietnam. Vietnam is divided into communist North Vietnam and U.S.-backed South Vietnam.</p></div>
+<div class="timeline-event"><div class="timeline-date">1959</div><p>Fidel Castro takes power in Cuba and later moves closer to the Soviet Union.</p></div>
+<div class="timeline-event"><div class="timeline-date">1961</div><p>The Bay of Pigs invasion fails, embarrassing the United States and strengthening Castro's ties with Moscow.</p></div>
+<div class="timeline-event"><div class="timeline-date">1962</div><p>The Cuban Missile Crisis brings the United States and Soviet Union close to nuclear war.</p></div>
+<div class="timeline-event"><div class="timeline-date">1964-1965</div><p>The Gulf of Tonkin Resolution helps President Johnson expand the Vietnam War.</p></div>
+<div class="timeline-event"><div class="timeline-date">1975</div><p>Saigon falls to North Vietnam, ending the war and leaving Americans divided over what the war had meant.</p></div>
+</div>
+</section><section class="intro-section section-animate" id="introduction">
+<p class="para-standard">In October 1962, a U.S. spy plane flew over Cuba and took photographs that made the president's room go silent. The pictures showed Soviet nuclear missiles being built only about 90 miles from Florida. President <span class="vocab" tabindex="0">John F. Kennedy<span class="tip">U.S. president during the Cuban Missile Crisis.</span></span> now had to choose between doing nothing, attacking Cuba, or risking a nuclear war. A small island suddenly felt like the front line of the entire world.</p>
+<p class="para-simple">In October 1962, a U.S. spy plane took pictures over Cuba. The pictures showed Soviet nuclear missiles only about 90 miles from Florida. President <span class="vocab-red">John F. Kennedy</span> had to make a dangerous choice. A small island suddenly felt like the front line of the whole world.</p>
+<p class="para-standard">That same Cold War fear also shaped Vietnam. U.S. leaders believed that if one country became communist, nearby countries might fall next. This idea pulled the United States deeper into wars far from home. The result was a long conflict that changed American politics, trust, and lives.</p>
+<p class="para-simple">Cold War fear also shaped Vietnam. U.S. leaders thought one communist country could lead to more. That idea pulled the United States into wars far away. The result changed American politics and many families.</p>
 </section>
 
 <section class="content-section clearfix section-animate" id="cuba">
-  <span class="section-kicker">CHAPTER ONE</span>
-  <h2 class="section-heading">CUBA: FAILURE, FEAR, AND THIRTEEN DAYS</h2>
-  <!--
+<span class="section-kicker">CHAPTER ONE</span>
+<h2 class="section-heading">CUBA: FAILURE, FEAR, AND THIRTEEN DAYS</h2>
+<!--
     FILENAME: S2L05_CastroCuba1959.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: ESSENTIAL
@@ -218,15 +275,15 @@ img.loaded{opacity:1}
     SEARCH: Fidel Castro Havana 1959 Cuban Revolution Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Cuban_Revolution
   -->
-  <figure class="img-right">
-    <img src="images/S2/L05/S2L05_CastroCuba1959.jpg" alt="Fidel Castro after the Cuban Revolution">
-    <figcaption>Fidel Castro's revolution brought a communist-friendly government to Cuba, 1959. Wikimedia Commons.</figcaption>
-  </figure>
-  <p class="para-standard">In 1959, <span class="vocab" tabindex="0">Fidel Castro<span class="tip">Cuban leader who took power in 1959.</span></span> took power in Cuba. U.S. leaders feared that Cuba would become a Soviet ally so close to Florida. In April 1961, Kennedy approved a CIA plan called the <span class="vocab" tabindex="0">Bay of Pigs invasion<span class="tip">Failed U.S.-backed invasion of Cuba in 1961.</span></span>. Cuban exiles trained by the CIA landed in Cuba, hoping to start an uprising against Castro.</p>
-  <p class="para-simple">In 1959, <span class="vocab-red">Fidel Castro</span> took power in Cuba. U.S. leaders worried that Cuba would become close to the Soviet Union. In April 1961, Kennedy approved the <span class="vocab-red">Bay of Pigs invasion</span>. Cuban exiles trained by the CIA landed in Cuba to fight Castro.</p>
-  <p class="para-standard">The invasion failed quickly. The expected uprising never happened. Castro's forces captured or killed the invaders. The United States looked weak, and Kennedy looked inexperienced. The failure pushed Castro closer to the Soviet Union and made both sides more suspicious.</p>
-  <p class="para-simple">The invasion failed fast. People in Cuba did not rise up against Castro. Castro's forces captured or killed the invaders. The United States looked weak. Castro moved closer to the Soviet Union.</p>
-  <!--
+<figure class="img-right">
+<img alt="Fidel Castro after the Cuban Revolution" src="images/S2/L05/S2L05_CastroCuba1959.jpg"/>
+<figcaption>Fidel Castro's revolution brought a communist-friendly government to Cuba, 1959. Wikimedia Commons.</figcaption>
+</figure>
+<p class="para-standard">In 1959, <span class="vocab" tabindex="0">Fidel Castro<span class="tip">Cuban leader who took power in 1959.</span></span> took power in Cuba. U.S. leaders feared that Cuba would become a Soviet ally so close to Florida. In April 1961, Kennedy approved a CIA plan called the <span class="vocab" tabindex="0">Bay of Pigs invasion<span class="tip">Failed U.S.-backed invasion of Cuba in 1961.</span></span>. Cuban exiles trained by the CIA landed in Cuba, hoping to start an uprising against Castro.</p>
+<p class="para-simple">In 1959, <span class="vocab-red">Fidel Castro</span> took power in Cuba. U.S. leaders worried that Cuba would become close to the Soviet Union. In April 1961, Kennedy approved the <span class="vocab-red">Bay of Pigs invasion</span>. Cuban exiles trained by the CIA landed in Cuba to fight Castro.</p>
+<p class="para-standard">The invasion failed quickly. The expected uprising never happened. Castro's forces captured or killed the invaders. The United States looked weak, and Kennedy looked inexperienced. The failure pushed Castro closer to the Soviet Union and made both sides more suspicious.</p>
+<p class="para-simple">The invasion failed fast. People in Cuba did not rise up against Castro. Castro's forces captured or killed the invaders. The United States looked weak. Castro moved closer to the Soviet Union.</p>
+<!--
     FILENAME: S2L05_CubanMissilePhoto.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: ESSENTIAL
@@ -234,21 +291,20 @@ img.loaded{opacity:1}
     SEARCH: Cuban Missile Crisis U-2 reconnaissance photograph missile site October 1962 Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Reconnaissance_photographs_of_the_Cuban_Missile_Crisis
   -->
-  <figure>
-    <img src="images/S2/L05/S2L05_CubanMissilePhoto.jpg" alt="U-2 photograph of Soviet missile site in Cuba">
-    <figcaption>U-2 spy plane photograph of Soviet missile sites in Cuba, October 1962. Wikimedia Commons / National Archives.</figcaption>
-  </figure>
-  <p class="para-standard">In October 1962, the U.S. discovered Soviet nuclear missiles in Cuba. This began the <span class="vocab" tabindex="0">Cuban Missile Crisis<span class="tip">Thirteen-day nuclear standoff over missiles in Cuba.</span></span>. Kennedy's advisers argued over what to do. Some wanted air strikes. Kennedy chose a naval <span class="vocab" tabindex="0">blockade<span class="tip">Using ships to stop supplies from entering.</span></span> around Cuba and demanded that Soviet leader <span class="vocab" tabindex="0">Nikita Khrushchev<span class="tip">Soviet leader during the Cuban Missile Crisis.</span></span> remove the missiles.</p>
-  <p class="para-simple">In October 1962, the U.S. found Soviet nuclear missiles in Cuba. This began the <span class="vocab-red">Cuban Missile Crisis</span>. Some advisers wanted to bomb Cuba. Kennedy chose a naval <span class="vocab-red">blockade</span>. He demanded that <span class="vocab-red">Nikita Khrushchev</span> remove the missiles.</p>
-  <p class="para-standard">For thirteen days, the world came closer to nuclear war than ever before. Soviet ships sailed toward the blockade. U.S. forces prepared for war. Finally, Khrushchev agreed to remove the missiles from Cuba. In secret, Kennedy also agreed to remove U.S. missiles from Turkey later. Both leaders stepped back, and the world survived.</p>
-  <p class="para-simple">For thirteen days, the world came close to nuclear war. Soviet ships moved toward the blockade. U.S. forces got ready. Khrushchev finally agreed to remove the missiles. Kennedy secretly agreed to remove U.S. missiles from Turkey later.</p>
+<figure>
+<img alt="U-2 photograph of Soviet missile site in Cuba" src="images/S2/L05/S2L05_CubanMissilePhoto.jpg"/>
+<figcaption>U-2 spy plane photograph of Soviet missile sites in Cuba, October 1962. Wikimedia Commons / National Archives.</figcaption>
+</figure>
+<p class="para-standard">In October 1962, the U.S. discovered Soviet nuclear missiles in Cuba. This began the <span class="vocab" tabindex="0">Cuban Missile Crisis<span class="tip">Thirteen-day nuclear standoff over missiles in Cuba.</span></span>. Kennedy's advisers argued over what to do. Some wanted air strikes. Kennedy chose a naval <span class="vocab" tabindex="0">blockade<span class="tip">Using ships to stop supplies from entering.</span></span> around Cuba and demanded that Soviet leader <span class="vocab" tabindex="0">Nikita Khrushchev<span class="tip">Soviet leader during the Cuban Missile Crisis.</span></span> remove the missiles.</p>
+<p class="para-simple">In October 1962, the U.S. found Soviet nuclear missiles in Cuba. This began the <span class="vocab-red">Cuban Missile Crisis</span>. Some advisers wanted to bomb Cuba. Kennedy chose a naval <span class="vocab-red">blockade</span>. He demanded that <span class="vocab-red">Nikita Khrushchev</span> remove the missiles.</p>
+<p class="para-standard">For thirteen days, the world came closer to nuclear war than ever before. Soviet ships sailed toward the blockade. U.S. forces prepared for war. Finally, Khrushchev agreed to remove the missiles from Cuba. In secret, Kennedy also agreed to remove U.S. missiles from Turkey later. Both leaders stepped back, and the world survived.</p>
+<p class="para-simple">For thirteen days, the world came close to nuclear war. Soviet ships moved toward the blockade. U.S. forces got ready. Khrushchev finally agreed to remove the missiles. Kennedy secretly agreed to remove U.S. missiles from Turkey later.</p>
 </section>
-
 <div class="brain-break dyk-break section-animate">
-  <span class="bb-label">DID YOU KNOW</span>
-  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
-    <div style="flex:1;min-width:200px;">
-      <!--
+<span class="bb-label">DID YOU KNOW</span>
+<div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+<div style="flex:1;min-width:200px;">
+<!--
         FILENAME: S2L05_DYK_ArkhipovSubmarine.jpg
         PLACE IN: images/S2/L05/
         PRIORITY: SUPPORTING
@@ -256,28 +312,17 @@ img.loaded{opacity:1}
         SEARCH: Vasili Arkhipov B-59 submarine Cuban Missile Crisis Wikimedia Commons
         LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Vasili_Arkhipov
       -->
-      <img src="images/S2/L05/S2L05_DYK_ArkhipovSubmarine.jpg" alt="Vasili Arkhipov or Soviet submarine B-59" style="width:100%;display:block;border:3px solid var(--bb-lime);box-shadow:0 4px 18px rgba(0,0,0,.4);">
-      <p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Roboto Slab',serif;">Vasili Arkhipov or Soviet submarine B-59, Cuban Missile Crisis.</p>
-    </div>
-    <p class="bb-text" style="flex:1;min-width:200px;">One Soviet officer may have helped save the world. During the crisis, a Soviet submarine was trapped underwater while U.S. ships dropped practice depth charges. Two officers wanted to launch a nuclear torpedo, but Vasili Arkhipov refused to approve it.</p>
-  </div>
+<img alt="Vasili Arkhipov or Soviet submarine B-59" src="images/S2/L05/S2L05_DYK_ArkhipovSubmarine.jpg" style="width:100%;display:block;border:3px solid var(--bb-lime);box-shadow:0 4px 18px rgba(0,0,0,.4);"/>
+<p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Roboto Slab',serif;">Vasili Arkhipov or Soviet submarine B-59, Cuban Missile Crisis.</p>
 </div>
-
-<div class="brain-break ff-break section-animate">
-  <span class="bb-label">FAST FACTS</span>
-  <p class="ff-context">HOW COLD WAR ESCALATION REACHED CUBA AND VIETNAM</p>
-  <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">90</span><span class="ff-desc">miles separated Cuba from Florida, making Soviet missiles there feel like a direct threat to the United States</span></div>
-    <div class="ff-item"><span class="ff-number">13</span><span class="ff-desc">days the Cuban Missile Crisis lasted as U.S. and Soviet leaders tried to avoid nuclear war</span></div>
-    <div class="ff-item"><span class="ff-number">58K+</span><span class="ff-desc">U.S. service members died in the Vietnam War, showing the human cost of containment</span></div>
-    <div class="ff-item"><span class="ff-number">1975</span><span class="ff-desc">the year Saigon fell and the long U.S. effort to defend South Vietnam ended in defeat</span></div>
-  </div>
+<p class="bb-text" style="flex:1;min-width:200px;">One Soviet officer may have helped save the world. During the crisis, a Soviet submarine was trapped underwater while U.S. ships dropped practice depth charges. Two officers wanted to launch a nuclear torpedo, but Vasili Arkhipov refused to approve it.</p>
+</div>
 </div>
 
 <section class="content-section clearfix section-animate" id="vietnam">
-  <span class="section-kicker">CHAPTER TWO</span>
-  <h2 class="section-heading">VIETNAM: FROM ADVISERS TO WAR</h2>
-  <!--
+<span class="section-kicker">CHAPTER TWO</span>
+<h2 class="section-heading">VIETNAM: FROM ADVISERS TO WAR</h2>
+<!--
     FILENAME: S2L05_VietnamMapColdWar.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: SUPPORTING
@@ -285,17 +330,17 @@ img.loaded{opacity:1}
     SEARCH: Vietnam War map North Vietnam South Vietnam Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Vietnam_War
   -->
-  <figure class="img-left">
-    <img src="images/S2/L05/S2L05_VietnamMapColdWar.jpg" alt="Map of North and South Vietnam">
-    <figcaption>Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. Wikimedia Commons.</figcaption>
-  </figure>
-  <p class="para-standard">Vietnam had been controlled by France as a colony. After World War II, Vietnamese leader <span class="vocab" tabindex="0">Ho Chi Minh<span class="tip">Communist leader of North Vietnam.</span></span> fought for independence. France lost in 1954, and Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. The conflict became part of the larger Cold War because each side had powerful allies.</p>
-  <p class="para-simple">Vietnam had been a French colony. After World War II, <span class="vocab-red">Ho Chi Minh</span> fought for independence. France lost in 1954. Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. The conflict became part of the Cold War.</p>
-  <p class="para-standard">U.S. leaders used <span class="vocab" tabindex="0">domino theory<span class="tip">The fear that one communist country could make others fall.</span></span> to explain why Vietnam mattered. They believed that if Vietnam became communist, other countries in Southeast Asia might follow. This belief connected Vietnam to <span class="vocab" tabindex="0">containment<span class="tip">Stopping communism from spreading farther.</span></span>, the Cold War policy of stopping communism from spreading. A faraway country began to seem important to American safety.</p>
-  <p class="para-simple">U.S. leaders believed in <span class="vocab-red">domino theory</span>. They thought if Vietnam became communist, nearby countries might follow. This connected Vietnam to <span class="vocab-red">containment</span>. A faraway country began to seem important to U.S. safety.</p>
-  <p class="para-standard">President Eisenhower sent military advisers. Kennedy sent more. Then President Lyndon Johnson used the <span class="vocab" tabindex="0">Gulf of Tonkin Resolution<span class="tip">1964 law that let Johnson expand the Vietnam War.</span></span> to greatly expand the war. Congress gave Johnson broad power after reports that North Vietnamese boats attacked U.S. ships. Soon, hundreds of thousands of American troops were fighting in Vietnam.</p>
-  <p class="para-simple">President Eisenhower sent advisers. Kennedy sent more. President Johnson used the <span class="vocab-red">Gulf of Tonkin Resolution</span> to expand the war. Congress gave him broad power. Soon, hundreds of thousands of U.S. troops were in Vietnam.</p>
-  <!--
+<figure class="img-left">
+<img alt="Map of North and South Vietnam" src="images/S2/L05/S2L05_VietnamMapColdWar.jpg"/>
+<figcaption>Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. Wikimedia Commons.</figcaption>
+</figure>
+<p class="para-standard">Vietnam had been controlled by France as a colony. After World War II, Vietnamese leader <span class="vocab" tabindex="0">Ho Chi Minh<span class="tip">Communist leader of North Vietnam.</span></span> fought for independence. France lost in 1954, and Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. The conflict became part of the larger Cold War because each side had powerful allies.</p>
+<p class="para-simple">Vietnam had been a French colony. After World War II, <span class="vocab-red">Ho Chi Minh</span> fought for independence. France lost in 1954. Vietnam was divided into communist North Vietnam and U.S.-backed South Vietnam. The conflict became part of the Cold War.</p>
+<p class="para-standard">U.S. leaders used <span class="vocab" tabindex="0">domino theory<span class="tip">The fear that one communist country could make others fall.</span></span> to explain why Vietnam mattered. They believed that if Vietnam became communist, other countries in Southeast Asia might follow. This belief connected Vietnam to <span class="vocab" tabindex="0">containment<span class="tip">Stopping communism from spreading farther.</span></span>, the Cold War policy of stopping communism from spreading. A faraway country began to seem important to American safety.</p>
+<p class="para-simple">U.S. leaders believed in <span class="vocab-red">domino theory</span>. They thought if Vietnam became communist, nearby countries might follow. This connected Vietnam to <span class="vocab-red">containment</span>. A faraway country began to seem important to U.S. safety.</p>
+<p class="para-standard">President Eisenhower sent military advisers. Kennedy sent more. Then President Lyndon Johnson used the <span class="vocab" tabindex="0">Gulf of Tonkin Resolution<span class="tip">1964 law that let Johnson expand the Vietnam War.</span></span> to greatly expand the war. Congress gave Johnson broad power after reports that North Vietnamese boats attacked U.S. ships. Soon, hundreds of thousands of American troops were fighting in Vietnam.</p>
+<p class="para-simple">President Eisenhower sent advisers. Kennedy sent more. President Johnson used the <span class="vocab-red">Gulf of Tonkin Resolution</span> to expand the war. Congress gave him broad power. Soon, hundreds of thousands of U.S. troops were in Vietnam.</p>
+<!--
     FILENAME: S2L05_USSoldiersVietnam1965.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: ESSENTIAL
@@ -303,18 +348,26 @@ img.loaded{opacity:1}
     SEARCH: U.S. soldiers Vietnam 1965 Wikimedia Commons National Archives
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:United_States_military_people_in_the_Vietnam_War
   -->
-  <figure>
-    <img src="images/S2/L05/S2L05_USSoldiersVietnam1965.jpg" alt="U.S. soldiers in Vietnam">
-    <figcaption>U.S. soldiers in Vietnam, mid-1960s. National Archives / Wikimedia Commons.</figcaption>
-  </figure>
-</section>
-
+<figure>
+<img alt="U.S. soldiers in Vietnam" src="images/S2/L05/S2L05_USSoldiersVietnam1965.jpg"/>
+<figcaption>U.S. soldiers in Vietnam, mid-1960s. National Archives / Wikimedia Commons.</figcaption>
+</figure>
+</section><div class="brain-break ff-break section-animate">
+<span class="bb-label">FAST FACTS</span>
+<p class="ff-context">HOW COLD WAR ESCALATION REACHED CUBA AND VIETNAM</p>
+<div class="ff-grid">
+<div class="ff-item"><span class="ff-number">90</span><span class="ff-desc">miles separated Cuba from Florida, making Soviet missiles there feel like a direct threat to the United States</span></div>
+<div class="ff-item"><span class="ff-number">13</span><span class="ff-desc">days the Cuban Missile Crisis lasted as U.S. and Soviet leaders tried to avoid nuclear war</span></div>
+<div class="ff-item"><span class="ff-number">58K+</span><span class="ff-desc">U.S. service members died in the Vietnam War, showing the human cost of containment</span></div>
+<div class="ff-item"><span class="ff-number">1975</span><span class="ff-desc">the year Saigon fell and the long U.S. effort to defend South Vietnam ended in defeat</span></div>
+</div>
+</div>
 <section class="content-section clearfix section-animate" id="home-front">
-  <span class="section-kicker">CHAPTER THREE</span>
-  <h2 class="section-heading">THE WAR COMES HOME</h2>
-  <p class="para-standard">The Vietnam War affected families across the United States because of the <span class="vocab" tabindex="0">draft<span class="tip">A system that forces people into military service.</span></span>. Young men could be ordered to serve. College students often had deferments, which delayed service. This meant poorer men and men without college options were more likely to fight. The question of who had to serve made the war feel unfair to many Americans.</p>
-  <p class="para-simple">The Vietnam War reached many families because of the <span class="vocab-red">draft</span>. Young men could be forced to serve. College students could often delay service. Poorer men were more likely to be sent. Many Americans thought this was unfair.</p>
-  <!--
+<span class="section-kicker">CHAPTER THREE</span>
+<h2 class="section-heading">THE WAR COMES HOME</h2>
+<p class="para-standard">The Vietnam War affected families across the United States because of the <span class="vocab" tabindex="0">draft<span class="tip">A system that forces people into military service.</span></span>. Young men could be ordered to serve. College students often had deferments, which delayed service. This meant poorer men and men without college options were more likely to fight. The question of who had to serve made the war feel unfair to many Americans.</p>
+<p class="para-simple">The Vietnam War reached many families because of the <span class="vocab-red">draft</span>. Young men could be forced to serve. College students could often delay service. Poorer men were more likely to be sent. Many Americans thought this was unfair.</p>
+<!--
     FILENAME: S2L05_DraftLottery1969.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: ESSENTIAL
@@ -322,17 +375,17 @@ img.loaded{opacity:1}
     SEARCH: Vietnam draft lottery 1969 photograph Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969)
   -->
-  <figure class="img-right">
-    <img src="images/S2/L05/S2L05_DraftLottery1969.jpg" alt="Vietnam War draft lottery">
-    <figcaption>Vietnam draft lottery, 1969. Birth dates were drawn to decide who faced the highest chance of being drafted. Wikimedia Commons.</figcaption>
-  </figure>
-  <p class="para-standard">Television also changed how Americans saw war. News cameras showed fighting, wounded soldiers, burning villages, and body bags. The government said progress was being made, but many Americans saw a war that looked endless. Trust began to break.</p>
-  <p class="para-simple">Television changed the war. People saw fighting, wounded soldiers, burning villages, and body bags on the news. The government said the war was going well. Many Americans did not believe it.</p>
-  <p class="para-standard">In 1968, U.S. soldiers killed hundreds of Vietnamese civilians in the <span class="vocab" tabindex="0">My Lai massacre<span class="tip">U.S. killing of Vietnamese civilians in 1968.</span></span>. The public learned about it later. My Lai showed that the war could damage not only bodies, but also moral judgment. It forced Americans to ask what the war was doing to the people fighting it.</p>
-  <p class="para-simple">In 1968, U.S. soldiers killed hundreds of civilians in the <span class="vocab-red">My Lai massacre</span>. Americans learned about it later. My Lai showed how the war hurt civilians and soldiers' moral choices.</p>
-  <p class="para-standard">The <span class="vocab" tabindex="0">antiwar movement<span class="tip">People organizing to oppose a war.</span></span> grew on college campuses and in cities. Students marched, burned draft cards, and demanded that the war end. After National Guard troops killed four students at Kent State University in 1970, protest spread even more. The war overseas had become a crisis at home.</p>
-  <p class="para-simple">The <span class="vocab-red">antiwar movement</span> grew. Students marched and protested the draft. In 1970, National Guard troops killed four students at Kent State. The war far away had become a crisis at home.</p>
-  <!--
+<figure class="img-right">
+<img alt="Vietnam War draft lottery" src="images/S2/L05/S2L05_DraftLottery1969.jpg"/>
+<figcaption>Vietnam draft lottery, 1969. Birth dates were drawn to decide who faced the highest chance of being drafted. Wikimedia Commons.</figcaption>
+</figure>
+<p class="para-standard">Television also changed how Americans saw war. News cameras showed fighting, wounded soldiers, burning villages, and body bags. The government said progress was being made, but many Americans saw a war that looked endless. Trust began to break.</p>
+<p class="para-simple">Television changed the war. People saw fighting, wounded soldiers, burning villages, and body bags on the news. The government said the war was going well. Many Americans did not believe it.</p>
+<p class="para-standard">In 1968, U.S. soldiers killed hundreds of Vietnamese civilians in the <span class="vocab" tabindex="0">My Lai massacre<span class="tip">U.S. killing of Vietnamese civilians in 1968.</span></span>. The public learned about it later. My Lai showed that the war could damage not only bodies, but also moral judgment. It forced Americans to ask what the war was doing to the people fighting it.</p>
+<p class="para-simple">In 1968, U.S. soldiers killed hundreds of civilians in the <span class="vocab-red">My Lai massacre</span>. Americans learned about it later. My Lai showed how the war hurt civilians and soldiers' moral choices.</p>
+<p class="para-standard">The <span class="vocab" tabindex="0">antiwar movement<span class="tip">People organizing to oppose a war.</span></span> grew on college campuses and in cities. Students marched, burned draft cards, and demanded that the war end. After National Guard troops killed four students at Kent State University in 1970, protest spread even more. The war overseas had become a crisis at home.</p>
+<p class="para-simple">The <span class="vocab-red">antiwar movement</span> grew. Students marched and protested the draft. In 1970, National Guard troops killed four students at Kent State. The war far away had become a crisis at home.</p>
+<!--
     FILENAME: S2L05_AntiwarProtest1969.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: ESSENTIAL
@@ -340,16 +393,15 @@ img.loaded{opacity:1}
     SEARCH: Vietnam Moratorium March 1969 Washington DC protest Wikimedia Commons Library of Congress
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Opposition_to_the_Vietnam_War
   -->
-  <figure>
-    <img src="images/S2/L05/S2L05_AntiwarProtest1969.jpg" alt="Vietnam War antiwar protest">
-    <figcaption>Antiwar protest against the Vietnam War, late 1960s. Wikimedia Commons / Library of Congress.</figcaption>
-  </figure>
+<figure>
+<img alt="Vietnam War antiwar protest" src="images/S2/L05/S2L05_AntiwarProtest1969.jpg"/>
+<figcaption>Antiwar protest against the Vietnam War, late 1960s. Wikimedia Commons / Library of Congress.</figcaption>
+</figure>
 </section>
-
 <div class="brain-break as-break section-animate">
-  <span class="bb-label">ART SPOTLIGHT</span>
-  <figure>
-    <!--
+<span class="bb-label">ART SPOTLIGHT</span>
+<figure>
+<!--
       FILENAME: S2L05_ArtSpotlight_AndBabiesPoster.jpg
       PLACE IN: images/S2/L05/
       PRIORITY: ESSENTIAL
@@ -357,18 +409,17 @@ img.loaded{opacity:1}
       SEARCH: And babies poster Art Workers Coalition 1969 My Lai Wikimedia Commons
       LINK: Suggested: https://commons.wikimedia.org/wiki/File:And_babies_poster.jpg
     -->
-    <img src="images/S2/L05/S2L05_ArtSpotlight_AndBabiesPoster.jpg" alt="And babies? antiwar poster" class="as-image">
-    <figcaption class="as-caption"><em>And babies?</em> — Art Workers Coalition, 1969.<br>The poster used a My Lai photograph by Ronald Haeberle and added words from a military interview.</figcaption>
-  </figure>
-  <p class="as-fact">This poster was so disturbing that a major museum first refused to distribute it. Artists raised money and printed it anyway. It became one of the most famous antiwar images because it refused to let viewers look away from what civilians had suffered.</p>
+<img alt="And babies? antiwar poster" class="as-image" src="images/S2/L05/S2L05_ArtSpotlight_AndBabiesPoster.jpg"/>
+<figcaption class="as-caption"><em>And babies?</em> : Art Workers Coalition, 1969.<br/>The poster used a My Lai photograph by Ronald Haeberle and added words from a military interview.</figcaption>
+</figure>
+<p class="as-fact">This poster was so disturbing that a major museum first refused to distribute it. Artists raised money and printed it anyway. It became one of the most famous antiwar images because it refused to let viewers look away from what civilians had suffered.</p>
 </div>
-
 <section class="content-section clearfix section-animate" id="widening-war">
-  <span class="section-kicker">CHAPTER FOUR</span>
-  <h2 class="section-heading">ENDING ONE WAR, WIDENING ANOTHER</h2>
-  <p class="para-standard">President Richard Nixon promised to end the Vietnam War through <span class="vocab" tabindex="0">Vietnamization<span class="tip">Nixon's plan to shift fighting to South Vietnamese troops.</span></span>. This meant training South Vietnamese forces to fight while U.S. troops slowly came home. But Nixon also expanded the war in secret by bombing Cambodia, where North Vietnamese forces used supply routes. Ending a war became tangled with widening it.</p>
-  <p class="para-simple">President Nixon promised to end the war through <span class="vocab-red">Vietnamization</span>. That meant South Vietnamese troops would fight more while U.S. troops came home. But Nixon also secretly bombed Cambodia. Ending the war became tied to widening it.</p>
-  <!--
+<span class="section-kicker">CHAPTER FOUR</span>
+<h2 class="section-heading">ENDING ONE WAR, WIDENING ANOTHER</h2>
+<p class="para-standard">President Richard Nixon promised to end the Vietnam War through <span class="vocab" tabindex="0">Vietnamization<span class="tip">Nixon's plan to shift fighting to South Vietnamese troops.</span></span>. This meant training South Vietnamese forces to fight while U.S. troops slowly came home. But Nixon also expanded the war in secret by bombing Cambodia, where North Vietnamese forces used supply routes. Ending a war became tangled with widening it.</p>
+<p class="para-simple">President Nixon promised to end the war through <span class="vocab-red">Vietnamization</span>. That meant South Vietnamese troops would fight more while U.S. troops came home. But Nixon also secretly bombed Cambodia. Ending the war became tied to widening it.</p>
+<!--
     FILENAME: S2L05_CambodiaBombingMap.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: SUPPORTING
@@ -376,13 +427,13 @@ img.loaded{opacity:1}
     SEARCH: Cambodia bombing map Vietnam War Ho Chi Minh Trail Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Cambodian_Campaign
   -->
-  <figure class="img-left">
-    <img src="images/S2/L05/S2L05_CambodiaBombingMap.jpg" alt="Map of Cambodia bombing and Ho Chi Minh Trail">
-    <figcaption>The Vietnam War spread into Cambodia and Laos through bombing and supply routes. Wikimedia Commons.</figcaption>
-  </figure>
-  <p class="para-standard">In 1975, North Vietnamese forces captured Saigon, the capital of South Vietnam. The <span class="vocab" tabindex="0">fall of Saigon<span class="tip">The 1975 collapse of South Vietnam.</span></span> ended the war. Images of helicopters lifting people from rooftops became a symbol of American defeat and chaos. For many Americans, the end of the war raised a painful question: what had all the sacrifice been for?</p>
-  <p class="para-simple">In 1975, North Vietnam captured Saigon. The <span class="vocab-red">fall of Saigon</span> ended the war. Pictures of helicopters leaving rooftops became a symbol of defeat and chaos. Many Americans wondered what the sacrifice had been for.</p>
-  <!--
+<figure class="img-left">
+<img alt="Map of Cambodia bombing and Ho Chi Minh Trail" src="images/S2/L05/S2L05_CambodiaBombingMap.jpg"/>
+<figcaption>The Vietnam War spread into Cambodia and Laos through bombing and supply routes. Wikimedia Commons.</figcaption>
+</figure>
+<p class="para-standard">In 1975, North Vietnamese forces captured Saigon, the capital of South Vietnam. The <span class="vocab" tabindex="0">fall of Saigon<span class="tip">The 1975 collapse of South Vietnam.</span></span> ended the war. Images of helicopters lifting people from rooftops became a symbol of American defeat and chaos. For many Americans, the end of the war raised a painful question: what had all the sacrifice been for?</p>
+<p class="para-simple">In 1975, North Vietnam captured Saigon. The <span class="vocab-red">fall of Saigon</span> ended the war. Pictures of helicopters leaving rooftops became a symbol of defeat and chaos. Many Americans wondered what the sacrifice had been for.</p>
+<!--
     FILENAME: S2L05_FallOfSaigonHelicopter.jpg
     PLACE IN: images/S2/L05/
     PRIORITY: ESSENTIAL
@@ -390,23 +441,22 @@ img.loaded{opacity:1}
     SEARCH: Fall of Saigon helicopter evacuation rooftop 1975 Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/File:Saigon-hubert-van-es.jpg
   -->
-  <figure>
-    <img src="images/S2/L05/S2L05_FallOfSaigonHelicopter.jpg" alt="Fall of Saigon helicopter evacuation">
-    <figcaption>Helicopter evacuation during the fall of Saigon, April 1975. Wikimedia Commons.</figcaption>
-  </figure>
-  <p class="para-standard">Cold War policy did not end with Vietnam. Nixon also tried <span class="vocab" tabindex="0">détente<span class="tip">Easing tension between rival countries.</span></span>, which means easing tension. He opened relations with China and signed arms talks with the Soviet Union. Later, President Reagan took a harder line and supported <span class="vocab" tabindex="0">proxy war<span class="tip">A war where big powers support other fighters.</span></span> efforts in Latin America, where the U.S. backed anti-communist forces.</p>
-  <p class="para-simple">Cold War policy did not end with Vietnam. Nixon tried <span class="vocab-red">détente</span>, which means lowering tension. He opened relations with China. Later, Reagan supported <span class="vocab-red">proxy wars</span> in Latin America against communism.</p>
-  <p class="para-standard">The <span class="vocab" tabindex="0">Iran-Contra affair<span class="tip">A secret Reagan-era plan involving weapons and rebel funding.</span></span> showed how far officials might go in the name of fighting communism. Some officials secretly sold weapons to Iran and used money to support anti-communist rebels in Nicaragua, even though Congress had limited that support. Once again, Cold War fear pushed leaders to work around the normal rules.</p>
-  <p class="para-simple">The <span class="vocab-red">Iran-Contra affair</span> showed how far officials went to fight communism. Some secretly sold weapons to Iran. They used money to support rebels in Nicaragua. Congress had tried to limit that support.</p>
+<figure>
+<img alt="Fall of Saigon helicopter evacuation" src="images/S2/L05/S2L05_FallOfSaigonHelicopter.jpg"/>
+<figcaption>Helicopter evacuation during the fall of Saigon, April 1975. Wikimedia Commons.</figcaption>
+</figure>
+<p class="para-standard">Cold War policy did not end with Vietnam. Nixon also tried <span class="vocab" tabindex="0">détente<span class="tip">Easing tension between rival countries.</span></span>, which means easing tension. He opened relations with China and signed arms talks with the Soviet Union. Later, President Reagan took a harder line and supported <span class="vocab" tabindex="0">proxy war<span class="tip">A war where big powers support other fighters.</span></span> efforts in Latin America, where the U.S. backed anti-communist forces.</p>
+<p class="para-simple">Cold War policy did not end with Vietnam. Nixon tried <span class="vocab-red">détente</span>, which means lowering tension. He opened relations with China. Later, Reagan supported <span class="vocab-red">proxy wars</span> in Latin America against communism.</p>
+<p class="para-standard">The <span class="vocab" tabindex="0">Iran-Contra affair<span class="tip">A secret Reagan-era plan involving weapons and rebel funding.</span></span> showed how far officials might go in the name of fighting communism. Some officials secretly sold weapons to Iran and used money to support anti-communist rebels in Nicaragua, even though Congress had limited that support. Once again, Cold War fear pushed leaders to work around the normal rules.</p>
+<p class="para-simple">The <span class="vocab-red">Iran-Contra affair</span> showed how far officials went to fight communism. Some secretly sold weapons to Iran. They used money to support rebels in Nicaragua. Congress had tried to limit that support.</p>
 </section>
-
 <section class="content-section section-animate" id="primary-source-moment">
-  <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
-  <h2 class="section-heading">WHY JOHNSON SAID VIETNAM MATTERED</h2>
-  <div class="primary-source section-animate">
-    <div class="ps-visual">
-      <figure>
-        <!--
+<span class="section-kicker">PRIMARY SOURCE MOMENT</span>
+<h2 class="section-heading">WHY JOHNSON SAID VIETNAM MATTERED</h2>
+<div class="primary-source section-animate">
+<div class="ps-visual">
+<figure>
+<!--
           FILENAME: S2L05_LBJJohnsHopkinsSpeech.jpg
           PLACE IN: images/S2/L05/
           PRIORITY: ESSENTIAL
@@ -414,28 +464,27 @@ img.loaded{opacity:1}
           SEARCH: Lyndon Johnson Peace Without Conquest Johns Hopkins April 7 1965 Wikimedia Commons
           LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Lyndon_B._Johnson_in_1965
         -->
-        <img src="images/S2/L05/S2L05_LBJJohnsHopkinsSpeech.jpg" alt="President Lyndon B. Johnson speaking about Vietnam in 1965">
-        <figcaption>President Lyndon B. Johnson explained why he believed the United States had to fight in Vietnam, 1965. Wikimedia Commons / LBJ Library.</figcaption>
-      </figure>
-      <div>
-        <div class="ps-label">PRIMARY SOURCE</div>
-        <div class="ps-quote">“Why are we in South Viet-Nam? We are there because we have a promise to keep. Since 1954 every American President has offered support to the people of South Viet-Nam. We have helped to build, and we have helped to defend. Thus, over many years, we have made a national pledge to help South Viet-Nam defend its independence.”</div>
-        <div class="ps-attribution">President Lyndon B. Johnson, “Peace Without Conquest,” April 7, 1965.</div>
-        <div class="ps-narrator">Johnson framed Vietnam as a promise, a defense of independence, and part of America's Cold War responsibility. His words help answer the essential question because they show how U.S. leaders made a faraway country sound connected to American credibility and safety.</div>
-      </div>
-    </div>
-  </div>
-  <p class="para-standard">This source does not prove that Johnson was right. It shows how he explained the war to Americans. He argued that the United States had made promises and had to defend South Vietnam's independence. Students can use the excerpt as evidence of how Cold War leaders justified fighting in faraway places.</p>
-  <p class="para-simple">This source does not prove Johnson was right. It shows how he explained the war. He said the United States had made a promise. He said America had to defend South Vietnam's independence. This helps explain why leaders sent Americans to fight far away.</p>
+<img alt="President Lyndon B. Johnson speaking about Vietnam in 1965" src="images/S2/L05/S2L05_LBJJohnsHopkinsSpeech.jpg"/>
+<figcaption>President Lyndon B. Johnson explained why he believed the United States had to fight in Vietnam, 1965. Wikimedia Commons / LBJ Library.</figcaption>
+</figure>
+<div>
+<div class="ps-label">PRIMARY SOURCE</div>
+<div class="ps-quote">“Why are we in South Viet-Nam? We are there because we have a promise to keep. Since 1954 every American President has offered support to the people of South Viet-Nam. We have helped to build, and we have helped to defend. Thus, over many years, we have made a national pledge to help South Viet-Nam defend its independence.”</div>
+<div class="ps-attribution">President Lyndon B. Johnson, “Peace Without Conquest,” April 7, 1965.</div>
+<div class="ps-narrator">Johnson framed Vietnam as a promise, a defense of independence, and part of America's Cold War responsibility. His words help answer the essential question because they show how U.S. leaders made a faraway country sound connected to American credibility and safety.</div>
+</div>
+</div>
+</div>
+<p class="para-standard">This source does not prove that Johnson was right. It shows how he explained the war to Americans. He argued that the United States had made promises and had to defend South Vietnam's independence. Students can use the excerpt as evidence of how Cold War leaders justified fighting in faraway places.</p>
+<p class="para-simple">This source does not prove Johnson was right. It shows how he explained the war. He said the United States had made a promise. He said America had to defend South Vietnam's independence. This helps explain why leaders sent Americans to fight far away.</p>
 </section>
-
 <div class="brain-break tn-break section-animate" id="then-now">
-  <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">COLD WAR ESCALATION TURNED FARAWAY PLACES INTO TESTS OF AMERICAN POWER.</p>
-  <div class="tn-pair">
-    <div class="tn-item">
-      <span class="tn-era-label">1969</span>
-      <!--
+<span class="bb-label">THEN AND NOW</span>
+<p class="tn-payoff">COLD WAR ESCALATION TURNED FARAWAY PLACES INTO TESTS OF AMERICAN POWER.</p>
+<div class="tn-pair">
+<div class="tn-item">
+<span class="tn-era-label">1969</span>
+<!--
         FILENAME: S2L05_Then_DraftLotteryCapsules.jpg
         PLACE IN: images/S2/L05/
         PRIORITY: SUPPORTING
@@ -443,12 +492,12 @@ img.loaded{opacity:1}
         SEARCH: Vietnam draft lottery capsules 1969 Wikimedia Commons
         LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Draft_lottery_(1969)
       -->
-      <img src="images/S2/L05/S2L05_Then_DraftLotteryCapsules.jpg" alt="Vietnam draft lottery capsules in 1969">
-      <p class="tn-caption">During the Vietnam draft lottery, birth dates helped decide who faced the highest chance of being sent to war.</p>
-    </div>
-    <div class="tn-item">
-      <span class="tn-era-label">NOW</span>
-      <!--
+<img alt="Vietnam draft lottery capsules in 1969" src="images/S2/L05/S2L05_Then_DraftLotteryCapsules.jpg"/>
+<p class="tn-caption">During the Vietnam draft lottery, birth dates helped decide who faced the highest chance of being sent to war.</p>
+</div>
+<div class="tn-item">
+<span class="tn-era-label">NOW</span>
+<!--
         FILENAME: S2L05_Now_VietnamVeteransMemorial.jpg
         PLACE IN: images/S2/L05/
         PRIORITY: SUPPORTING
@@ -456,40 +505,48 @@ img.loaded{opacity:1}
         SEARCH: Vietnam Veterans Memorial visitors Washington DC Wikimedia Commons
         LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Vietnam_Veterans_Memorial
       -->
-      <img src="images/S2/L05/S2L05_Now_VietnamVeteransMemorial.jpg" alt="Visitors at the Vietnam Veterans Memorial">
-      <p class="tn-caption">Visitors at the Vietnam Veterans Memorial continue to confront the human cost of the war.</p>
-    </div>
-  </div>
-  <div class="tn-text-block">
-    <h3>THEN</h3>
-    <p>During the Vietnam War, Cold War policy reached into ordinary American homes. A young man's birthday could affect whether he might be drafted and sent across the Pacific. The war showed how decisions made in Washington could reshape families far from the battlefield.</p>
-    <h3>NOW</h3>
-    <p>Today, the Vietnam Veterans Memorial turns the war into names that people can touch, read, and remember. It does not show victory or defeat first. It shows human cost. That kind of public memory helps people ask harder questions about war.</p>
-    <h3>CONNECTION</h3>
-    <p>The past and present connect through the question of responsibility. During the Cold War, leaders argued that faraway conflicts mattered to American security. Today, Americans still debate when their country should use power overseas and how much sacrifice is justified.</p>
-    <p>When should a country decide that a faraway conflict is worth the cost of war?</p>
-  </div>
+<img alt="Visitors at the Vietnam Veterans Memorial" src="images/S2/L05/S2L05_Now_VietnamVeteransMemorial.jpg"/>
+<p class="tn-caption">Visitors at the Vietnam Veterans Memorial continue to confront the human cost of the war.</p>
+</div>
+</div>
+<div class="tn-text-block">
+<h3>THEN</h3>
+<p>During the Vietnam War, Cold War policy reached into ordinary American homes. A young man's birthday could affect whether he might be drafted and sent across the Pacific. The war showed how decisions made in Washington could reshape families far from the battlefield.</p>
+<h3>NOW</h3>
+<p>Today, the Vietnam Veterans Memorial turns the war into names that people can touch, read, and remember. It does not show victory or defeat first. It shows human cost. That kind of public memory helps people ask harder questions about war.</p>
+<h3>CONNECTION</h3>
+<p>The past and present connect through the question of responsibility. During the Cold War, leaders argued that faraway conflicts mattered to American security. Today, Americans still debate when their country should use power overseas and how much sacrifice is justified.</p>
+<p>When should a country decide that a faraway conflict is worth the cost of war?</p>
+</div>
 </div>
 </main>
-
 <footer>US HISTORY | SEMESTER 2, LESSON 05 | CUBA, VIETNAM, AND COLD WAR ESCALATION</footer>
 </div>
-
 <script>
+
 (function(){
   var bar=document.getElementById('reading-progress');
-  window.addEventListener('scroll',function(){
+  if(!bar) return;
+  function updateProgress(){
     var scrollTop=window.scrollY||document.documentElement.scrollTop;
     var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
     var progress=docHeight>0?(scrollTop/docHeight)*100:0;
-    bar.style.width=progress+'%';
-  },{passive:true});
+    bar.style.width=Math.min(100,Math.max(0,progress))+'%';
+  }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  window.addEventListener('resize',updateProgress);
+  updateProgress();
 })();
 
-document.getElementById('lexile-toggle').addEventListener('click',function(){
-  document.body.classList.toggle('simplified');
-  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
-});
+(function(){
+  var toggle=document.getElementById('lexile-toggle');
+  if(!toggle) return;
+  toggle.addEventListener('click',function(){
+    document.body.classList.toggle('simplified');
+    this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
+    this.setAttribute('aria-pressed',document.body.classList.contains('simplified')?'true':'false');
+  });
+})();
 
 function repositionTip(el){
   var tip=el.querySelector('.tip');
@@ -505,43 +562,80 @@ function repositionTip(el){
     tip.style.transform='translateX(calc(-50% - '+shift+'px))';
   }
 }
-
 document.querySelectorAll('.vocab').forEach(function(el){
   el.setAttribute('tabindex','0');
+  el.setAttribute('role','button');
+  el.setAttribute('aria-expanded','false');
   el.addEventListener('click',function(e){
     e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
+    document.querySelectorAll('.vocab.active').forEach(function(v){
+      if(v!==el){v.classList.remove('active');v.setAttribute('aria-expanded','false');}
+    });
     el.classList.toggle('active');
-    if(el.classList.contains('active'))repositionTip(el);
+    el.setAttribute('aria-expanded',el.classList.contains('active')?'true':'false');
+    if(el.classList.contains('active')) repositionTip(el);
   });
-  el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});
-  el.addEventListener('blur',function(){el.classList.remove('active');});
+  el.addEventListener('focus',function(){
+    el.classList.add('active');
+    el.setAttribute('aria-expanded','true');
+    repositionTip(el);
+  });
+  el.addEventListener('blur',function(){
+    el.classList.remove('active');
+    el.setAttribute('aria-expanded','false');
+  });
   el.addEventListener('keydown',function(e){
-    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}
-    if(e.key==='Escape')el.classList.remove('active');
-  });
-});
-
-document.addEventListener('click',function(){
-  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
-});
-
-const tocObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    const id=entry.target.getAttribute('id');
-    const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
-    const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');
-    if(entry.isIntersecting){
-      if(tocLink)tocLink.classList.add('active');
-      if(navLink)navLink.classList.add('active');
-    }else{
-      if(tocLink)tocLink.classList.remove('active');
-      if(navLink)navLink.classList.remove('active');
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      el.classList.toggle('active');
+      el.setAttribute('aria-expanded',el.classList.contains('active')?'true':'false');
+      if(el.classList.contains('active')) repositionTip(el);
+    }
+    if(e.key==='Escape'){
+      el.classList.remove('active');
+      el.setAttribute('aria-expanded','false');
+      el.blur();
     }
   });
-},{threshold:.25});
+});
+document.addEventListener('click',function(){
+  document.querySelectorAll('.vocab.active').forEach(function(v){
+    v.classList.remove('active');
+    v.setAttribute('aria-expanded','false');
+  });
+});
 
-document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+(function(){
+  var tracked=[].slice.call(document.querySelectorAll('main section[id], main div[id="then-now"]'));
+  if(!tracked.length) return;
+  var linkSelector=function(id){
+    return '.toc-sidebar a[href="#'+id+'"], .section-nav a[href="#'+id+'"]';
+  };
+  function setActive(id){
+    document.querySelectorAll('.toc-sidebar a.active,.section-nav a.active').forEach(function(a){
+      a.classList.remove('active');
+    });
+    document.querySelectorAll(linkSelector(id)).forEach(function(a){a.classList.add('active');});
+  }
+  var visible={};
+  var tocObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var id=entry.target.getAttribute('id');
+      if(entry.isIntersecting){ visible[id]=entry.intersectionRatio; }
+      else { delete visible[id]; }
+    });
+    var bestId=null, bestTop=Infinity;
+    tracked.forEach(function(section){
+      var id=section.getAttribute('id');
+      if(visible[id]){
+        var top=Math.abs(section.getBoundingClientRect().top-90);
+        if(top<bestTop){ bestTop=top; bestId=id; }
+      }
+    });
+    if(bestId) setActive(bestId);
+  },{threshold:[0.12,0.25,0.5],rootMargin:'-80px 0px -55% 0px'});
+  tracked.forEach(function(el){tocObserver.observe(el);});
+})();
 
 (function(){
   var animObserver=new IntersectionObserver(function(entries){
@@ -551,21 +645,25 @@ document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObse
         animObserver.unobserve(entry.target);
       }
     });
-  },{threshold:.08});
+  },{threshold:0.08});
   document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});
 })();
 
 document.querySelectorAll('img').forEach(function(img){
-  if(img.complete&&img.naturalWidth>0){
-    img.classList.add('loaded');
-  }else{
-    img.addEventListener('load',function(){img.classList.add('loaded');});
-    img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});
+  function markLoaded(){img.classList.add('loaded');}
+  if(img.complete&&img.naturalWidth>0){markLoaded();}
+  else{
+    img.addEventListener('load',markLoaded);
+    img.addEventListener('error',function(){
+      img.style.opacity='0.15';
+      img.style.border='2px dashed rgba(80,80,80,0.35)';
+      img.setAttribute('data-missing-image','true');
+    });
   }
 });
+
 </script>
 </body>
-
 <!--
   IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
 
