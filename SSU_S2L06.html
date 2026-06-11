@@ -542,6 +542,20 @@ img.loaded{opacity:1}
   .section-heading{font-size:31px}
   .bb-text,.as-fact{font-size:18px}
 }
+
+/* V4 AUDIT PATCH: width, contrast, and mobile safety */
+html, body { max-width: 100%; overflow-x: hidden; }
+.page-wrap { width: min(920px, 100%); overflow-x: hidden; }
+main, .timeline { max-width: 820px; width: 100%; }
+figure, img, .brain-break, .primary-source, .tn-break, .img-pair, .card-grid { max-width: 100%; }
+img { height: auto; }
+.section-nav { overflow-x: auto; }
+.section-nav a { white-space: nowrap; }
+.brain-break p, .brain-break span, .tn-break p, .tn-break span { overflow-wrap: anywhere; }
+@media(max-width:880px){
+  .brain-break, .ff-break, .as-break, .tn-break { width: 100%; margin-left: 0; margin-right: 0; }
+}
+
 </style>
 </head>
 <body>
@@ -646,6 +660,7 @@ img.loaded{opacity:1}
       <!--
         FILENAME: S2L06_DYK_MarchOnWashingtonCrowd.jpg
         PLACE IN: images/S2/L06/
+        PRIORITY: SUPPORTING
         FIND: Aerial or wide crowd photograph from the March on Washington, August 28, 1963; shows 250,000 people gathered before social media
         SEARCH: March on Washington crowd 250000 1963 Library of Congress
         LINK: https://commons.wikimedia.org/wiki/Category:March_on_Washington_for_Jobs_and_Freedom (suggested, not guaranteed)
@@ -756,9 +771,10 @@ img.loaded{opacity:1}
     <!--
       FILENAME: S2L06_ArtSpotlight_RockwellProblem.jpg
       PLACE IN: images/S2/L06/
+      PRIORITY: ESSENTIAL
       FIND: Norman Rockwell, "The Problem We All Live With," 1964; painting of Ruby Bridges escorted by federal marshals to desegregate school
       SEARCH: Norman Rockwell The Problem We All Live With 1964 Wikimedia Commons
-      LINK: https://commons.wikimedia.org/wiki/File:The_Problem_We_All_Live_With.jpg (suggested, not guaranteed)
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Category:The_Problem_We_All_Live_With
     -->
     <img src="images/S2/L06/S2L06_ArtSpotlight_RockwellProblem.jpg" alt="Norman Rockwell The Problem We All Live With" class="as-image">
     <figcaption class="as-caption"><em>The Problem We All Live With</em>, Norman Rockwell, 1964. The painting shows Ruby Bridges walking to school with federal marshals.</figcaption>
@@ -835,15 +851,15 @@ img.loaded{opacity:1}
     <div class="tn-item">
       <span class="tn-era-label">1965</span>
       <!--
-        FILENAME: S2L06_Then_SelmaVotingRights.jpg
+        FILENAME: S2L06_Then_VoterRegistration1965.jpg
         PLACE IN: images/S2/L06/
         PRIORITY: ESSENTIAL
-        FIND: Selma to Montgomery marchers crossing Edmund Pettus Bridge, 1965; then image for voting rights comparison
-        SEARCH: Selma to Montgomery march Edmund Pettus Bridge 1965 Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Selma_to_Montgomery_marches
+        FIND: Black citizens registering to vote or civil rights workers assisting voter registration in the South, 1964-1965; use this instead of another Selma bridge image so Then and Now focuses on ballot access without repeating earlier visuals
+        SEARCH: voter registration civil rights 1965 Library of Congress
+        LINK: Suggested: https://www.loc.gov/search/?q=voter+registration+civil+rights+1965
       -->
-      <img src="images/S2/L06/S2L06_Then_SelmaVotingRights.jpg" alt="Selma marchers in 1965">
-      <p class="tn-caption">Marchers in Selma risked violence to demand voting rights.</p>
+      <img src="images/S2/L06/S2L06_Then_VoterRegistration1965.jpg" alt="Civil rights voter registration work in the 1960s">
+      <p class="tn-caption">Voting rights work also happened at registration tables, courthouses, and county offices where Black citizens demanded access to the ballot.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
@@ -861,7 +877,7 @@ img.loaded{opacity:1}
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>In 1965, Selma marchers walked into danger to demand voting rights. Their courage helped push Congress to pass the Voting Rights Act. The march showed that democracy often expands because ordinary people force the country to face its own promises.</p>
+    <p>In the 1960s, voting rights organizers helped Black citizens register to vote despite intimidation, unfair tests, and local officials who tried to block them. Selma helped push Congress to pass the Voting Rights Act, but the daily work of registration showed what the law had to change. Democracy expanded because ordinary people forced the country to face its own promises.</p>
     <h3>NOW</h3>
     <p>Today, voting remains a public act shaped by rules, access, time, and political power. People still organize, wait in lines, register voters, and challenge barriers. The image is different, but the question of access remains alive.</p>
     <h3>CONNECTION</h3>
