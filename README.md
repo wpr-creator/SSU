@@ -1,67 +1,106 @@
-# SSU — US History
+# U.S. History — OCS Summer School
+### Course Hub · `index.html`
 
-A two-semester United States History course from the founding of the nation through modern America and unfinished business.
+---
 
-## Course Schedule
+## Overview
 
-| Day | Title | Standards | EQ | Status |
-|-----|-------|-----------|-----|--------|
-| Semester 1 Day 1 | Founding the Nation | 11.1 | How did Enlightenment ideas shape a new kind of government, and does it still work? | Coming Soon |
-| Semester 1 Day 2 | Industrialization and Immigration | 11.2 | How did industrialization transform who Americans were, where they lived, and what they could demand? | Coming Soon |
-| Semester 1 Day 3 | Populism, Progressivism, and Religion | 11.2 continued and 11.3 | How did ordinary people and religious movements push America to live up to its own ideals? | Coming Soon |
-| Semester 1 Day 4 | America Becomes a World Power | 11.4 | What pushed the United States from isolation to empire, and who paid the price? | Coming Soon |
-| Semester 1 Day 5 | The Roaring Twenties | 11.5 pt 1 | How did prosperity, technology, and cultural explosion make the 1920s one of the most contradictory decades in American history? | Coming Soon |
-| Semester 1 Day 6 | Civil Liberties Under Pressure | 11.5 pt 2 | How can a decade of prosperity also be a decade of fear and repression? | Coming Soon |
-| Semester 1 Day 7 | The Great Depression | 11.6 pt 1 | How did economic collapse devastate American families and shake faith in the system? | Coming Soon |
-| Semester 1 Day 8 | The New Deal and Labor | 11.6 pt 2 | How far should the government go to help people in a crisis, and did the New Deal go far enough? | Coming Soon |
-| Semester 1 Day 9 | Final Exam | — | — | Coming Soon |
-| Semester 2 Day 1 | America in World War II | 11.7 pt 1 | How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid? | Coming Soon |
-| Semester 2 Day 2 | The American Home Front and Hard Choices | 11.7 pt 2 | How did WWII transform American society at home, and were all the sacrifices equally shared? | Coming Soon |
-| Semester 2 Day 3 | Post-War Boom and the New America | 11.8 | How did WWII change what American life looked like, and who got left out of the new prosperity? | Coming Soon |
-| Semester 2 Day 4 | The Cold War at Home and Abroad | 11.9 pt 1 | How did fear of communism reshape American foreign policy and daily American life? | Coming Soon |
-| Semester 2 Day 5 | Cuba, Vietnam, and Cold War Escalation | 11.9 pt 2 | Why did the United States fight wars in countries most Americans couldn't find on a map? | Coming Soon |
-| Semester 2 Day 6 | The Civil Rights Movement | 11.10 pt 1 | How did ordinary Americans use law, protest, and personal sacrifice to change a country not living up to its own promises? | Coming Soon |
-| Semester 2 Day 7 | Expanding Civil Rights and Social Movements | 11.10 pt 2 | How did the Black civil rights movement inspire other Americans to demand their own equality? | Coming Soon |
-| Semester 2 Day 8 | Modern America and Unfinished Business | 11.11 | What major problems has America still not solved, and why does history matter for solving them? | Coming Soon |
-| Semester 2 Day 9 | Final Exam | — | — | Coming Soon |
+This is the student-facing landing page for the OCS Summer School U.S. History course (Standards 11.1–11.11). It displays all lesson cards for both semesters and is designed to be opened directly in a browser — no server required.
 
-## File Naming Convention
+---
 
-HTML lesson files follow this pattern (zero-padded lesson numbers):
-
-- Regular lessons: `SSU_S1L01.html` through `SSU_S1L08.html`
-- Final exam: `SSU_S1L09_Final.html`
-- Semester 2 uses `S2` instead of `S1` (e.g. `SSU_S2L01.html`, `SSU_S2L09_Final.html`)
-
-## Image Folder and Naming Convention
-
-Lesson images live under `images/` organized by semester and lesson:
+## Structure
 
 ```
-images/
-  S1/
-    L01/
-    L02/
-    ...
-    L08/
-  S2/
-    L01/
-    ...
-    L08/
+/
+├── index.html          ← Main course hub (this file)
+├── README.md           ← This file
+└── images/
+    └── header_US.jpg   ← Hero banner image (see below)
 ```
 
-Name image files: **`{Semester}{Lesson}_DescriptiveName.jpg`**
+---
 
-Example: `images/S1/L01/S1L01_Constitution.jpg`
+## Lesson Files
 
-See [images/README.md](images/README.md) for full details.
+Each card links to a standalone lesson HTML file. Naming convention:
 
-## Flipping a Lesson Live
+| Pattern       | Example        | Meaning                     |
+|---------------|----------------|-----------------------------|
+| `SSU_S1Lxx`   | `SSU_S1L05.html` | Semester 1, Lesson 05     |
+| `SSU_S2Lxx`   | `SSU_S2L09.html` | Semester 2, Lesson 09     |
 
-On `index.html`, each day is a card with class `day-card`. The lesson link is already in place. To publish a lesson:
+### Semester 1 — Founding Era Through the New Deal (Standards 11.1–11.6)
 
-1. Open `index.html`
-2. Find the card for that day
-3. Add the class **`live`** — change `class="day-card"` to `class="day-card live"`
+| Day | File            | Title                                           | Standard(s)         |
+|-----|-----------------|-------------------------------------------------|---------------------|
+| 1   | SSU_S1L01.html  | Founding the Nation                             | 11.1                |
+| 2   | SSU_S1L02.html  | Industrialization and Immigration               | 11.2                |
+| 3   | SSU_S1L03.html  | Populism, Progressivism, and Religion           | 11.2–11.3           |
+| 4   | SSU_S1L04.html  | America Becomes a World Power                  | 11.4                |
+| 5   | SSU_S1L05.html  | The Roaring Twenties                            | 11.5 pt. 1          |
+| 6   | SSU_S1L06.html  | Civil Liberties Under Pressure                 | 11.5 pt. 2          |
+| 7   | SSU_S1L07.html  | The Great Depression                            | 11.6 pt. 1          |
+| 8   | SSU_S1L08.html  | The New Deal and Labor                          | 11.6 pt. 2          |
+| 9   | SSU_S1L09.html  | The New Deal, Labor, and the Legacy of Federal Power | 11.6 continued |
+| 10  | SSU_S1L10.html  | **Semester 1 Final**                            | 11.1–11.6           |
 
-That is the only change required. Locked cards (without `live`) appear grayed out with a lock icon and are not clickable. Live cards use full styling, a hover effect, and link to the lesson HTML file.
+### Semester 2 — WWII Through Modern America (Standards 11.7–11.11)
+
+| Day | File            | Title                                           | Standard(s)         |
+|-----|-----------------|-------------------------------------------------|---------------------|
+| 1   | SSU_S2L01.html  | America in World War II                         | 11.7 pt. 1          |
+| 2   | SSU_S2L02.html  | The American Home Front and Hard Choices        | 11.7 pt. 2          |
+| 3   | SSU_S2L03.html  | Post-War Boom and the New America               | 11.8                |
+| 4   | SSU_S2L04.html  | The Cold War at Home and Abroad                 | 11.9 pt. 1          |
+| 5   | SSU_S2L05.html  | Cuba, Vietnam, and Cold War Escalation          | 11.9 pt. 2          |
+| 6   | SSU_S2L06.html  | The Civil Rights Movement                       | 11.10 pt. 1         |
+| 7   | SSU_S2L07.html  | Expanding Civil Rights and Social Movements     | 11.10 pt. 2         |
+| 8   | SSU_S2L08.html  | Modern America and Unfinished Business          | 11.11               |
+| 9   | SSU_S2L09.html  | America After the Cold War                      | 11.11 continued     |
+| 10  | SSU_S2L10.html  | **Semester 2 Final**                            | 11.7–11.11          |
+
+---
+
+## Card Display Logic
+
+Cards are intentionally **reordered each day** to put the current lesson first:
+
+- **Today's card** (Day 5) appears first with a red `TODAY` badge and a highlighted border glow
+- **Upcoming cards** (Days 6–9) follow in order
+- **Completed cards** (Days 1–4) appear at the end, slightly muted
+- **Day 10 Final** always appears last
+
+To update for a new day, adjust the card order in `index.html` and change the "today" class and progress pip count accordingly.
+
+---
+
+## Header Image
+
+```
+FILENAME:  header_US.jpg
+FOLDER:    images/
+SOURCE:    Wikimedia Commons
+URL:       https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg
+```
+
+"Declaration of Independence" by John Trumbull (1819) — the painting in the U.S. Capitol Rotunda and on the back of the $2 bill. Download the full-size JPG and save as `images/header_US.jpg`.
+
+If the image is missing the hero will fall back to a solid navy background.
+
+---
+
+## Design Notes
+
+- **Fonts**: Barlow Condensed (headings/labels) + Barlow (body) via Google Fonts
+- **Colors**: Pastel red (`#b84040`), navy (`#1c2b45`), and clean white — patriotic without being loud
+- **JS enhancements**:
+  - Scroll-progress bar (top of page)
+  - Session progress pips strip (Day X of 10)
+  - Intersection Observer scroll-reveal on cards
+  - Floating particle animation in hero
+- No build tools or dependencies — open `index.html` directly in any browser
+
+---
+
+*OCS Summer School · Social Science · SSU*
