@@ -173,7 +173,7 @@ h1 span { color: var(--red); }
   text-align: right;
 }
 
-.scroll-hint {
+.layout-note {
   margin-top: 0.55rem;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.72rem;
@@ -187,7 +187,7 @@ h1 span { color: var(--red); }
 .gallery-track {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(10, minmax(205px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.9rem;
   align-items: stretch;
 }
@@ -209,8 +209,6 @@ h1 span { color: var(--red); }
   display: block;
   text-decoration: none;
   color: inherit;
-  flex: 0 0 245px;
-  scroll-snap-align: start;
   min-height: 215px;
   padding: 2.35rem 0.95rem 1rem;
   background: var(--paper);
@@ -329,8 +327,13 @@ footer {
   .mural-wall { padding: 0.75rem; gap: 1rem; border-radius: 24px; }
   .semester-hdr { display: block; }
   .semester-sub { text-align: left; margin-top: 0.25rem; }
-  .day-card { flex-basis: 230px; }
+  .gallery-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .day-card { min-height: 0; }
 }
+@media (max-width: 520px) {
+  .gallery-track { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -347,7 +350,7 @@ footer {
     <section class="exhibit-row" style="--accent:var(--red);" aria-label="Semester 1 lessons">
       <div class="semester-hdr">
         <h2 class="semester-title">Semester 1</h2>
-        <div><p class="semester-sub">Standards 11.1–11.6 · Founding Era Through the Great Depression</p><p class="scroll-hint">Scroll sideways to view all 10 days →</p></div>
+        <div><p class="semester-sub">Standards 11.1–11.6 · Founding Era Through the Great Depression</p><p class="layout-note">Days 1–5 on the first row · Days 6–10 on the second row</p></div>
       </div>
       <div class="gallery-track">
         <a class="day-card" href="SSU_S1L01.html" style="--tilt:-0.7deg;"><div class="day-num">Day 1</div><div class="card-title">Founding the Nation</div><div class="card-eq">How did Enlightenment ideas shape a new kind of government, and does it still work?</div><div class="card-std">Standards 11.1</div></a>
@@ -366,7 +369,7 @@ footer {
     <section class="exhibit-row" style="--accent:var(--navy-mid);" aria-label="Semester 2 lessons">
       <div class="semester-hdr">
         <h2 class="semester-title">Semester 2</h2>
-        <div><p class="semester-sub">Standards 11.7–11.11 · WWII Through Modern America</p><p class="scroll-hint">Scroll sideways to view all 10 days →</p></div>
+        <div><p class="semester-sub">Standards 11.7–11.11 · WWII Through Modern America</p><p class="layout-note">Days 1–5 on the first row · Days 6–10 on the second row</p></div>
       </div>
       <div class="gallery-track">
         <a class="day-card" href="SSU_S2L01.html" style="--tilt:0.6deg;"><div class="day-num">Day 1</div><div class="card-title">America in World War II</div><div class="card-eq">How did the attack on Pearl Harbor pull the United States into a war it had tried to avoid?</div><div class="card-std">Standards 11.7 pt. 1</div></a>
