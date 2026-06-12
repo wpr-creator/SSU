@@ -653,40 +653,7 @@
       line-height: 1.55;
       margin-top: 14px;
     }
-
-    .source-question {
-      margin-top: 16px;
-      padding: 16px 18px;
-      background: rgba(164,67,36,0.10);
-      border: 1px solid rgba(164,67,36,0.26);
-      border-left: 5px solid var(--gold);
-    }
-
-    .source-question h3 {
-      margin-top: 0;
-      color: var(--rust-dark);
-    }
-
-    .source-question textarea {
-      width: 100%;
-      min-height: 90px;
-      resize: vertical;
-      font: inherit;
-      line-height: 1.5;
-      padding: 10px 12px;
-      background: rgba(255,255,255,0.75);
-      border: 1px solid rgba(58,42,31,0.28);
-      color: var(--ink);
-    }
-
-    .source-question small {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .tn-break {
+.tn-break {
       background: #17130f;
       color: #fff3d8;
       padding: 36px 50px;
@@ -847,6 +814,108 @@
       h1 { font-size: 46px; }
       .eq-banner { font-size: 18px; }
     }
+
+/* L6-STYLE LAYOUT SAFEGUARDS AND OVERLAP FIXES */
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+body {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(214,163,60,0.24), transparent 26rem),
+    linear-gradient(135deg, #17120d 0%, #6b2719 46%, #21170f 100%) !important;
+}
+.hero, .section-nav, #lexile-toggle, .timeline, main, footer {
+  width: min(920px, 100%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.hero {
+  min-height: 455px !important;
+  border-left: 6px solid #141210;
+  border-right: 6px solid #141210;
+  border-bottom: 6px solid var(--gold) !important;
+}
+main {
+  background: var(--paper-light);
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+  box-shadow: 0 0 70px rgba(0,0,0,0.45);
+}
+.timeline {
+  margin-top: 0 !important;
+  border-left: 6px solid #141210;
+  border-right: 6px solid #141210;
+}
+.intro-section, .content-section, .primary-source {
+  box-shadow: none !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 3px double rgba(107,39,25,0.28) !important;
+  background: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.intro-section::before, .content-section::before, .intro-section::after, .content-section::after, .primary-source::after {
+  display: none !important;
+}
+figure.lesson-figure {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+.inset-right, .inset-left {
+  max-width: 42% !important;
+}
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ps-visual, .tn-pair, .timeline-grid, .ff-grid {
+  max-width: 100% !important;
+}
+.primary-source {
+  background: #ead8ab !important;
+  border-left: 6px solid var(--rust) !important;
+  padding: 28px 32px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
+}
+.ps-visual figure {
+  overflow: hidden;
+}
+.brain-break, .ff-break, .as-break, .tn-break {
+  max-width: calc(100% + 100px) !important;
+}
+@media (max-width: 980px) {
+  .hero, .timeline {
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+  main {
+    box-shadow: none !important;
+  }
+  .brain-break, .ff-break, .as-break, .tn-break {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+  }
+}
+@media (max-width: 880px) {
+  main {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .inset-right, .inset-left {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 28px 0 !important;
+  }
+  .ps-visual, .tn-pair, .timeline-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
   </style>
 </head>
 
@@ -891,7 +960,7 @@
     <a href="#families">HUMAN COST</a>
     <a href="#dust-bowl">DUST BOWL</a>
     <a href="#hoover">HOOVER'S LIMITS</a>
-    <a href="#primary-source">MIGRANT VOICE</a>
+    <a href="#primary-source">FDR'S VOICE</a>
     <a href="#then-now">SYSTEM TODAY</a>
   </aside>
 
@@ -1184,28 +1253,22 @@
       <div class="ps-visual">
         <figure>
           <!--
-            FILENAME: USH_S1L07_DustBowlOralHistory.jpg
+            FILENAME: USH_S1L07_FDRInauguration1933.jpg
             PLACE IN: images/S1/L07/
             PRIORITY: ESSENTIAL
-            FIND: Farm Security Administration photograph of a Dust Bowl migrant family or worker connected to oral history testimony, California migrant camp, 1930s
-            SEARCH: Dust Bowl migrant worker oral history California camp Library of Congress
-            LINK: Suggested: https://www.loc.gov/pictures/search/?q=migrant%20camp%20California%20Dust%20Bowl
+            FIND: Franklin D. Roosevelt delivering his First Inaugural Address at the U.S. Capitol on March 4, 1933
+            SEARCH: Franklin Roosevelt First Inaugural Address March 4 1933 Library of Congress
+            LINK: Suggested: https://www.loc.gov/pictures/search/?q=Franklin%20Roosevelt%20First%20Inaugural%201933
           -->
-          <img src="images/S1/L07/USH_S1L07_DustBowlOralHistory.jpg" alt="Dust Bowl migrant family or worker in a California migrant camp during the 1930s">
-          <figcaption>A migrant family or worker in a California camp during the Dust Bowl migration. Source: Library of Congress.</figcaption>
+          <img src="images/S1/L07/USH_S1L07_FDRInauguration1933.jpg" alt="Franklin D. Roosevelt delivering his First Inaugural Address in 1933">
+          <figcaption>Franklin D. Roosevelt delivered his First Inaugural Address at the U.S. Capitol on March 4, 1933. Source: Library of Congress or National Archives.</figcaption>
         </figure>
         <div>
           <div class="ps-label">PRIMARY SOURCE</div>
-          <p class="ps-quote">“We loaded what we could in the car and left the rest behind. There was no work, no crop, and no way to pay what we owed. On the road there were families like ours everywhere. Some had mattresses tied to the roof. Some had children sleeping in the back seat. We thought California meant a new start, but when we got there, there were already too many people looking for the same jobs.”</p>
-          <p class="ps-attribution">Composite firsthand-style excerpt based on common Dust Bowl migrant oral histories and Farm Security Administration interviews, 1930s.</p>
-          <p class="ps-narrator">This source helps show why the Depression was more than a financial event. The speaker describes debt, crop failure, migration, overcrowding, and the painful realization that even moving west did not guarantee security.</p>
-          <div class="simple-terms"><strong>IN SIMPLE TERMS:</strong> This migrant family left because staying home no longer seemed possible, but California did not solve every problem.</div>
-          <div class="source-question">
-            <h3>EVIDENCE CHECK</h3>
-            <p>What does this source suggest about how the Depression changed people's trust in hard work and opportunity?</p>
-            <textarea aria-label="Student response to the primary source evidence check" placeholder="Use one detail from the quote..."></textarea>
-            <small>This box is for thinking only. It does not save your writing.</small>
-          </div>
+          <p class="ps-quote">“So, first of all, let me assert my firm belief that the only thing we have to fear is fear itself--nameless, unreasoning, unjustified terror which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life a leadership of frankness and vigor has met with that understanding and support of the people themselves which is essential to victory. I am convinced that you will again give that support to leadership in these critical days.”</p>
+          <p class="ps-attribution">Franklin D. Roosevelt, <em>First Inaugural Address</em>, 1933.</p>
+          <p class="ps-narrator">Roosevelt spoke when banks were failing, unemployment was enormous, and many Americans no longer trusted the economy to repair itself. His words tried to turn panic into public confidence and argued that strong national leadership was necessary in a national emergency.</p>
+          <div class="simple-terms"><strong>IN SIMPLE TERMS:</strong> Roosevelt told Americans that fear itself was making the crisis worse. He asked people to support bold government action during the emergency.</div>
         </div>
       </div>
     </section>

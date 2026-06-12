@@ -590,33 +590,7 @@
       line-height: 1.55;
       margin-top: 14px;
     }
-    .source-question {
-      margin-top: 16px;
-      padding: 16px 18px;
-      background: rgba(191,74,37,0.10);
-      border: 1px solid rgba(191,74,37,0.26);
-      border-left: 5px solid var(--gold);
-    }
-    .source-question h3 { margin-top: 0; color: var(--brown-dark); }
-    .source-question textarea {
-      width: 100%;
-      min-height: 90px;
-      resize: vertical;
-      font: inherit;
-      line-height: 1.5;
-      padding: 10px 12px;
-      background: rgba(255,255,255,0.75);
-      border: 1px solid rgba(36,24,20,0.28);
-      color: var(--ink);
-    }
-    .source-question small {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .tn-break {
+.tn-break {
       background: #17130f;
       color: #fff0d0;
       padding: 36px 50px;
@@ -744,6 +718,60 @@
       h1 { font-size: 40px; }
       .eq-banner { font-size: 18px; }
     }
+  
+
+/* FINAL LAYOUT + OVERLAP SAFEGUARDS */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+main, .timeline, .intro-section, .content-section, .primary-source,
+.brain-break, .ff-break, .as-break, .tn-break, figure, img {
+  max-width: 100%;
+}
+img {
+  height: auto;
+}
+.section-nav {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.section-nav a {
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.ps-visual, .tn-pair {
+  min-width: 0;
+}
+.ps-visual > *, .tn-item {
+  min-width: 0;
+}
+.ps-quote, .ps-narrator, .simple-terms, .tn-caption, .as-caption {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 980px) {
+  .brain-break, .ff-break, .as-break, .tn-break {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+@media (max-width: 880px) {
+  main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .inset-right, .inset-left {
+    float: none !important;
+    width: 100% !important;
+    margin: 28px 0 !important;
+  }
+  .ps-visual, .tn-pair, .timeline-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
   </style>
 </head>
 
@@ -1093,25 +1121,19 @@
             FILENAME: USH_S2L07_JudyHeumann504Speech.jpg
             PLACE IN: images/S2/L07/
             PRIORITY: ESSENTIAL
-            FIND: Judy Heumann speaking or disability rights activists during the 1977 Section 504 sit-in
+            FIND: Judy Heumann speaking to officials or disability rights activists during the 1977 Section 504 sit-in in San Francisco
             SEARCH: Judy Heumann Section 504 sit-in 1977 Wikimedia Commons
             LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Judy_Heumann
           -->
-          <img src="images/S2/L07/USH_S2L07_JudyHeumann504Speech.jpg" alt="Judy Heumann or disability rights activists during the Section 504 sit-in">
-          <figcaption>Judy Heumann and disability rights activists helped make access a civil rights issue. Source: Wikimedia Commons or disability rights archive.</figcaption>
+          <img src="images/S2/L07/USH_S2L07_JudyHeumann504Speech.jpg" alt="Judy Heumann or disability rights activists during the 1977 Section 504 sit-in">
+          <figcaption>Judy Heumann and other disability rights activists during the Section 504 movement, 1977. Source: Wikimedia Commons or disability rights archive.</figcaption>
         </figure>
         <div>
           <div class="ps-label">PRIMARY SOURCE</div>
-          <p class="ps-quote">“We will no longer allow the government to oppress disabled individuals. We want the law enforced. We want no more segregation. And I would appreciate it if you would stop shaking your head in agreement when I don’t think you really understand what we are talking about.”</p>
-          <p class="ps-attribution">Judy Heumann, statement during the Section 504 disability rights sit-in, 1977.</p>
-          <p class="ps-narrator">Heumann's words show how later civil rights movements borrowed the language of equality and applied it to barriers many Americans ignored. She demanded enforcement, dignity, and an end to segregation, not sympathy.</p>
-          <div class="simple-terms"><strong>IN SIMPLE TERMS:</strong> Heumann is saying that disabled people did not want pity. They wanted civil rights laws enforced so they could participate fully.</div>
-          <div class="source-question">
-            <h3>EVIDENCE CHECK</h3>
-            <p>How does this source show that later movements used civil rights language to demand equality?</p>
-            <textarea aria-label="Student response to the primary source evidence check" placeholder="Use one detail from the quote..."></textarea>
-            <small>This box is for thinking only. It does not save your writing.</small>
-          </div>
+          <p class="ps-quote">“It’s very difficult for us to sit here allowing discussions to go on which, in our opinion, really violate the intent of the law. Whether there was a Section 504, whether there was a Public Law 94-142, whether there was a Brown vs. Board of Education, the harassment, the lack of equities that has been provided for disabled individuals ... is so intolerable that I cannot put into words. We will no longer allow the government to oppress disabled individuals. We want the law enforced. We want no more segregation.”</p>
+          <p class="ps-attribution">Judy Heumann, remarks during the Section 504 disability rights sit-in, 1977.</p>
+          <p class="ps-narrator">Heumann connected disability rights to the same civil rights language used in earlier struggles against segregation. She argued that disabled people were not asking for sympathy; they were demanding enforcement of a law that promised equal access and equal treatment.</p>
+          <div class="simple-terms"><strong>IN SIMPLE TERMS:</strong> Heumann is saying that disabled people were tired of waiting. They wanted the government to enforce civil rights protections and end segregation.</div>
         </div>
       </div>
     </section>
