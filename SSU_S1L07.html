@@ -653,7 +653,8 @@
       line-height: 1.55;
       margin-top: 14px;
     }
-.tn-break {
+
+    .tn-break {
       background: #17130f;
       color: #fff3d8;
       padding: 36px 50px;
@@ -913,6 +914,60 @@ figure.lesson-figure {
   }
   .ps-visual, .tn-pair, .timeline-grid {
     grid-template-columns: 1fr !important;
+  }
+}
+
+  
+
+/* PRIMARY SOURCE READABILITY FIX */
+.primary-source {
+  margin: 42px -30px !important;
+  padding: 34px 38px !important;
+}
+
+.ps-visual {
+  grid-template-columns: 260px minmax(0, 1fr) !important;
+  gap: 34px !important;
+  align-items: start !important;
+}
+
+.ps-visual figure {
+  max-width: 260px !important;
+  width: 100% !important;
+}
+
+.ps-quote {
+  font-size: 20px !important;
+  line-height: 1.75 !important;
+  padding: 20px 24px !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.ps-quote::before {
+  margin-bottom: 12px !important;
+}
+
+@media (max-width: 980px) {
+  .primary-source {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .ps-visual {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ps-visual figure {
+    max-width: 100% !important;
+  }
+
+  .ps-quote {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -1265,7 +1320,7 @@ figure.lesson-figure {
         </figure>
         <div>
           <div class="ps-label">PRIMARY SOURCE</div>
-          <p class="ps-quote">“So, first of all, let me assert my firm belief that the only thing we have to fear is fear itself--nameless, unreasoning, unjustified terror which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life a leadership of frankness and vigor has met with that understanding and support of the people themselves which is essential to victory. I am convinced that you will again give that support to leadership in these critical days.”</p>
+          <p class="ps-quote">“So, first of all, let me assert my firm belief that the only thing we have to fear is fear itself: nameless, unreasoning, unjustified terror which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life a leadership of frankness and vigor has met with that understanding and support of the people themselves which is essential to victory. I am convinced that you will again give that support to leadership in these critical days.”</p>
           <p class="ps-attribution">Franklin D. Roosevelt, <em>First Inaugural Address</em>, 1933.</p>
           <p class="ps-narrator">Roosevelt spoke when banks were failing, unemployment was enormous, and many Americans no longer trusted the economy to repair itself. His words tried to turn panic into public confidence and argued that strong national leadership was necessary in a national emergency.</p>
           <div class="simple-terms"><strong>IN SIMPLE TERMS:</strong> Roosevelt told Americans that fear itself was making the crisis worse. He asked people to support bold government action during the emergency.</div>
