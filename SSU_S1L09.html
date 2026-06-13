@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSU S1L09 : THE NEW DEAL LEGACY</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --slate:#1e2a3a;
+  --slate-dark:#0e1620;
+  --gold:#b8922a;
+  --dust:#c8aa78;
+  --red:#8a1c18;
+  --red-light:#b83028;
+  --cream:#f0e8d0;
+  --pale:#e5dac0;
+  --ink:#1c1408;
+  --charcoal:#1e2230;
+  --gray:#5a6070;
+  --vocab:#7a1818;
+  --green:#044d37;
+  --lime:#d7ff3f;
+  --purple:#32134d;
+  --pink:#ff4fd8;
+  --cyan:#1bd6ff;
+  --orange:#c86820;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{background:radial-gradient(ellipse at top,#0e1620 0%,#030508 80%);font-family:'Atkinson Hyperlegible',Georgia,serif;font-size:18px;line-height:1.88;color:var(--charcoal);overflow-x:hidden}
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--red-light);z-index:9999;transition:width .1s linear}
+.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 120px rgba(0,0,0,.98);border-left:6px solid var(--slate-dark);border-right:6px solid var(--slate-dark);overflow-x:hidden}
+.site-header{position:relative;min-height:455px;overflow:hidden;background:var(--slate-dark);display:flex;align-items:center;text-align:center}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.36;filter:sepia(.3) contrast(1.1)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,22,32,.08),rgba(14,22,32,.74) 52%,rgba(14,22,32,.97))}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:56px 34px 50px}
+.course-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.36em;text-transform:uppercase;color:var(--dust);margin-bottom:18px}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(44px,7.5vw,74px);font-weight:900;line-height:1.0;color:#fff;text-transform:uppercase;letter-spacing:.03em;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
+.eq-banner{display:inline-block;background:rgba(30,42,58,.94);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:19px;line-height:1.5;text-align:left}
+.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--dust);margin-bottom:8px}
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:var(--slate-dark);border-bottom:4px solid var(--gold);overflow-x:auto}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,170,120,.65);text-decoration:none;padding:13px 11px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;transition:color .2s,border-color .2s}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(184,146,42,.18)}
+#lexile-toggle{display:block;margin:22px auto 30px;padding:10px 26px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:2px solid var(--red);background:transparent;color:var(--red);transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--red);color:#fff}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;left:calc(50% - 572px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(14,22,32,.93);border-right:2px solid rgba(184,146,42,.4)}
+.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.toc-sidebar a{display:block;color:rgba(200,170,120,.55);text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold);font-weight:700}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+.timeline-wrap{max-width:820px;margin:0 auto;padding:0 28px}
+.timeline-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--slate);text-align:center;margin:0 0 12px}
+.timeline{padding:22px;background:var(--pale);border-top:4px solid var(--slate);border-bottom:4px solid var(--slate);display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tl-node{border-left:3px solid var(--gold);padding-left:12px}
+.tl-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--slate);line-height:1.1;margin-bottom:5px}
+.tl-node p{font-size:14.5px;line-height:1.55;color:var(--charcoal);margin:0}
+@media(max-width:720px){.timeline{grid-template-columns:1fr}.tl-node{padding-bottom:18px}}
+main{max-width:820px;margin:0 auto;padding:0 28px 68px}
+.intro-section{padding:50px 0 30px}
+.intro-section p{font-size:19px;line-height:1.92;margin-bottom:18px}
+.content-section{padding:50px 0 28px;border-top:2px solid rgba(30,42,58,.15)}
+.section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.section-heading{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,44px);font-weight:900;color:var(--slate-dark);text-transform:uppercase;border-left:7px solid var(--gold);padding-left:16px;line-height:1.1;margin-bottom:26px}
+p{margin-bottom:20px;color:var(--charcoal)}
+.real-world{background:var(--pale);border-left:5px solid var(--slate);padding:17px 21px;margin:30px 0;font-weight:700;color:var(--ink)}
+.debate-box{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.debate-side{padding:20px 22px;color:#fff}
+.debate-left{background:var(--slate);border-top:4px solid var(--gold)}
+.debate-right{background:var(--red);border-top:4px solid #f0a080}
+.debate-side h3{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.debate-left h3{color:var(--dust)}.debate-right h3{color:#f0a080}
+.debate-side p{font-size:15px;line-height:1.65;margin:0;color:#fff}
+@media(max-width:640px){.debate-box{grid-template-columns:1fr}}
+figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.3)}
+figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;line-height:1.45}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}
+.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.clearfix:after{content:"";display:table;clear:both}
+@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:20px 0}}
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.85);border:1px solid var(--gold)}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+.vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+.brain-break{font-family:'Barlow Condensed',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
+.bb-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.88}
+.bb-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{background:#050810;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);text-align:center}
+.ff-break .bb-label{color:var(--orange);text-align:center;margin-bottom:8px}
+.ff-context{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(220,160,80,.8);text-align:center;margin-bottom:28px;font-weight:700}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+.ff-item{text-align:center;padding:8px 16px;max-width:185px}
+.ff-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:var(--orange);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(220,160,80,.8);max-width:185px;margin:0 auto;line-height:1.5}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
+.as-break .bb-label{color:var(--pink)}
+.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.65);box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.as-caption{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,232,251,.75);line-height:1.6;margin-bottom:28px;display:block;font-style:normal}
+.as-fact{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:680px;margin:0 auto;text-align:center}
+.primary-source{background:var(--pale);border-left:7px solid var(--red);padding:30px 34px;margin:38px 0;box-shadow:0 6px 20px rgba(0,0,0,.14)}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block}
+.ps-quote{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:var(--gray);margin-bottom:12px}
+.ps-narrator{border-top:1px solid rgba(30,42,58,.22);padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:var(--ink)}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
+.tn-break{background:var(--slate-dark);color:#fff;padding:36px 50px;margin:30px -50px 0}
+.tn-break .bb-label{color:var(--dust);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.32;text-align:center;color:var(--dust);margin:0 auto 28px;max-width:720px}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}
+.tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--dust);margin-bottom:10px;font-weight:900}
+.tn-item img{width:100%;display:block;border:2px solid rgba(184,146,42,.38)}
+.tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:rgba(200,170,120,.7);margin-top:8px;line-height:1.4}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(184,146,42,.25);padding-top:20px}
+.tn-text-block h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--dust);margin:18px 0 8px}
+.tn-text-block p{font-family:'Barlow Condensed',sans-serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
+img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
+footer{background:var(--slate-dark);color:rgba(200,170,120,.45);text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-top:5px solid var(--gold)}
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 22px 42px}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}.debate-box{grid-template-columns:1fr}}
+@media(max-width:600px){.page-title{font-size:40px}.section-heading{font-size:28px}.ff-number{font-size:44px}.as-fact{font-size:18px}.tn-pair{grid-template-columns:1fr}.tn-break{padding:28px 22px;margin:30px 0 0}.bb-text{font-size:18px}}
+@media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
+.dyk-break p,.dyk-break span,.ff-break p,.ff-break span,.as-break p,.as-break span,.tn-break p,.tn-break span{color:#fff}
+.ff-context,.ff-desc{color:rgba(220,160,80,.8)}.as-caption{color:rgba(255,232,251,.75)}.tn-caption{color:rgba(200,170,120,.7)}
+</style>
+</head>
+<body>
+<div id="reading-progress"></div>
+<div class="page-wrap">
+
+<header class="site-header">
+  <!--
+    FILENAME: S1L09_ReaganSpeech.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: ESSENTIAL
+    FIND: Ronald Reagan speaking at a campaign rally or political event — an image representing the conservative movement's challenge to New Deal philosophy; energetic crowd scene preferred
+    SEARCH: Ronald Reagan campaign speech rally 1980 presidential photograph Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Ronald_Reagan
+  -->
+  <img src="images/S1/L09/S1L09_ReaganSpeech.jpg" alt="Ronald Reagan at a campaign rally, 1980 — representing the conservative challenge to the New Deal legacy" class="header-bg">
+  <div class="header-inner">
+    <p class="course-label">U.S. History &mdash; Semester 1 &mdash; Lesson 09 &mdash; Standard 11.6</p>
+    <h1 class="page-title">The New Deal,<br>Labor, and the<br>Legacy of Federal Power</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      Did the New Deal save American democracy or change it forever?
+    </div>
+  </div>
+</header>
+
+<nav class="section-nav">
+  <a href="#introduction">INTRODUCTION</a>
+  <a href="#what-survived">WHAT SURVIVED</a>
+  <a href="#labor-legacy">LABOR'S LONG FIGHT</a>
+  <a href="#opposition">THE OPPOSITION</a>
+  <a href="#debate-never-ends">THE DEBATE</a>
+  <a href="#primary-source-moment">SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</nav>
+
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">Introduction</a>
+  <a href="#what-survived">What Survived</a>
+  <a href="#labor-legacy">Labor's Long Fight</a>
+  <a href="#opposition">The Opposition</a>
+  <a href="#debate-never-ends">The Debate</a>
+  <a href="#primary-source-moment">Source</a>
+  <a href="#then-now">Then &amp; Now</a>
+</aside>
+
+<main>
+
+<div class="timeline-wrap">
+  <p class="timeline-label">THE NEW DEAL'S LONG SHADOW &mdash; 1938 TO TODAY</p>
+  <div class="timeline">
+    <div class="tl-node"><div class="tl-date">1938</div><p>Fair Labor Standards Act — 40-hour work week and minimum wage. The New Deal's final major legislation.</p></div>
+    <div class="tl-node"><div class="tl-date">1945–65</div><p>New Deal coalition dominates American politics. Union membership peaks at 35% of the workforce.</p></div>
+    <div class="tl-node"><div class="tl-date">1964</div><p>Barry Goldwater runs against the welfare state — losing in a landslide but building the modern conservative movement.</p></div>
+    <div class="tl-node"><div class="tl-date">1980</div><p>Ronald Reagan wins on a platform of reducing government, cutting taxes, and rolling back the New Deal's regulatory framework.</p></div>
+    <div class="tl-node"><div class="tl-date">Today</div><p>Social Security, FDIC, SEC, minimum wage, and unemployment insurance are still the law. The argument about their size is still ongoing.</p></div>
+  </div>
+</div>
+
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<!-- INTRODUCTION -->
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">In 1964, a senator from Arizona named Barry Goldwater ran for president on a platform that included challenging the constitutionality of Social Security. He lost to Lyndon Johnson in one of the largest landslides in American history — winning only 52 electoral votes to Johnson's 486. The American people, it seemed, had decisively answered the question of whether the New Deal's safety net should exist. But Goldwater's campaign was not the end of the argument. It was the beginning of a new phase of it. The ideas he articulated — that the federal government had grown too large, that individual liberty was being sacrificed to collective security, that the market could provide what government was trying to mandate — did not disappear with his defeat. They regrouped, organized, and came back. Sixteen years later, Ronald Reagan won the presidency on essentially the same arguments. The debate that FDR opened in 1933 has never fully closed.</p>
+  <p class="para-simple">In 1964, Senator Barry Goldwater ran for president partly on challenging Social Security. He lost one of the biggest landslides in American history. It seemed like the question had been answered: Americans wanted the New Deal's safety net. But Goldwater's loss wasn't the end of the argument. The ideas he raised — that government was too large, that individual liberty was being lost, that markets could do what government was trying to do — regrouped and came back. Sixteen years later, Ronald Reagan won the presidency on essentially the same arguments. The debate FDR started in 1933 has never fully closed.</p>
+</section>
+
+<!-- SECTION 1: WHAT SURVIVED -->
+<section class="content-section clearfix section-animate" id="what-survived">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">WHAT THE NEW DEAL LEFT BEHIND</h2>
+
+  <!--
+    FILENAME: S1L09_SocialSecurityCard.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: SUPPORTING
+    FIND: Original Social Security card or Social Security Administration office from the 1930s — an early SSA document or citizens receiving their first cards
+    SEARCH: Social Security Administration 1930s card original first recipients Wikimedia Commons Library of Congress
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Social_Security_(United_States)
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L09/S1L09_SocialSecurityCard.jpg" alt="Early Social Security card or Social Security Administration, 1930s">
+    <figcaption>An early Social Security card, 1930s. When the Social Security Act passed in 1935, it created the first federal retirement system in American history — a program that now covers virtually every American worker. Library of Congress.</figcaption>
+  </figure>
+
+  <p class="para-standard">The programs that survived from the New Deal became so embedded in American life that most Americans cannot imagine the country without them. <span class="vocab" tabindex="0">Social Security<span class="tip">A federal program created in 1935 that provides retirement income to older Americans, funded by payroll taxes on workers and employers — now covering virtually all American workers.</span></span> now covers nearly every American worker and their family, providing retirement income, disability benefits, and survivor benefits. The FDIC insures every bank deposit up to $250,000, making bank runs like those of 1929-1933 essentially impossible. The SEC requires public companies to disclose their finances and prohibits the kind of stock market manipulation that contributed to the 1929 crash. Unemployment insurance provides temporary income when workers lose their jobs. The 40-hour work week and overtime pay protect workers from mandatory overwork. The federal minimum wage — however contested its level — establishes that workers have a floor below which their compensation cannot fall.</p>
+  <p class="para-simple">The New Deal programs that survived became so embedded in American life that most Americans take them for granted. Social Security provides retirement income, disability benefits, and survivor benefits to nearly every American worker. The FDIC insures bank deposits up to $250,000, making the bank runs of 1929 essentially impossible today. The SEC regulates the stock market to prevent the manipulation that helped cause the crash. Unemployment insurance provides income between jobs. The 40-hour work week, overtime pay, and the federal minimum wage protect workers' basic rights. These programs have been part of American life for nearly 90 years.</p>
+
+  <p class="para-standard">FDR's second and third terms — he was elected to an unprecedented four terms, dying in office in April 1945 — normalized the idea of an active federal government. The <span class="vocab" tabindex="0">New Deal coalition<span class="tip">The political alliance that supported FDR and Democratic Party leadership from the 1930s through the 1960s — including labor unions, urban ethnic communities, Southern whites, and African Americans in Northern cities.</span></span> of labor unions, urban ethnic communities, and Southern whites dominated American politics for a generation. Union membership peaked at about 35 percent of the American workforce in the mid-1950s — meaning more than one in three American workers belonged to a union. The <span class="vocab" tabindex="0">welfare state<span class="tip">A government system that takes responsibility for protecting citizens from economic hardship through programs like Social Security, unemployment insurance, healthcare, and food assistance.</span></span> that FDR built had become the baseline expectation of what American government was for.</p>
+  <p class="para-simple">FDR was elected to an unprecedented four terms and died in office in April 1945. His New Deal coalition — labor unions, urban communities, and Southern whites — dominated American politics for a generation. Union membership peaked around 35 percent of American workers in the 1950s — more than one in three workers belonged to a union. The welfare state FDR built — the network of programs protecting citizens from economic hardship — became the expected baseline of what American government was supposed to do.</p>
+</section>
+
+<!-- DID YOU KNOW -->
+<div class="brain-break dyk-break section-animate">
+  <span class="bb-label">DID YOU KNOW</span>
+  <p class="bb-text">Ronald Reagan, who spent his presidency arguing that the federal government had grown too large, was himself a union member and served as president of the Screen Actors Guild from 1947 to 1952. He was a New Deal Democrat who voted for FDR four times. His shift toward conservatism happened gradually over two decades — driven partly by his experiences fighting what he saw as communist infiltration in Hollywood. The most famous opponent of the New Deal's legacy spent his early career as one of its enthusiastic supporters.</p>
+</div>
+
+<!-- SECTION 2: LABOR'S LONG FIGHT -->
+<section class="content-section clearfix section-animate" id="labor-legacy">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">LABOR'S LONG FIGHT</h2>
+
+  <!--
+    FILENAME: S1L09_CIOSteelworkers.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: ESSENTIAL
+    FIND: CIO steelworkers organizing or striking in the 1930s-1940s — union members at a steel plant, a CIO organizing drive, or a steelworker rally; showing industrial labor organizing
+    SEARCH: CIO steelworkers union organizing 1930s 1940s industrial workers Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Congress_of_Industrial_Organizations
+  -->
+  <figure class="img-left">
+    <img src="images/S1/L09/S1L09_CIOSteelworkers.jpg" alt="CIO steelworkers at a union rally or organizing drive, 1930s-1940s">
+    <figcaption>CIO steelworkers at a union rally, 1930s–1940s. The CIO organized millions of industrial workers in steel, auto, and rubber — winning the 40-hour work week, overtime pay, and workplace safety protections. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">The CIO's organizing drives of the late 1930s built the industrial <span class="vocab" tabindex="0">labor union<span class="tip">An organized group of workers who bargain together with their employer for better wages, hours, and working conditions.</span></span> movement into one of the most powerful forces in American politics. Steel, auto, rubber, electrical, and meatpacking workers organized into unions that won not just wages but vacation time, health benefits, pensions, grievance procedures, and protections against arbitrary firing. The union contract became the mechanism by which millions of American workers built middle-class lives. The AFL and CIO merged in 1955 to form the AFL-CIO, representing about 15 million workers at its founding. By the postwar era, the union contract — not just individual negotiation — was how most industrial workers' wages and conditions were set.</p>
+  <p class="para-simple">The CIO's organizing drives built industrial unions into one of the most powerful forces in American politics. Steel, auto, rubber, and other industrial workers organized into unions that won not just wages but vacation time, health benefits, pensions, and protections against being fired unfairly. The union contract became the way millions of American workers built middle-class lives. The AFL and CIO merged in 1955 into the AFL-CIO, representing 15 million workers. The union contract — not individual negotiation — was how most industrial workers' wages and conditions were determined.</p>
+
+  <p class="para-standard">The <span class="vocab" tabindex="0">United Farm Workers<span class="tip">A labor union co-founded by César Chávez and Dolores Huerta in California in 1962 to organize farmworkers who had been excluded from the New Deal's labor protections.</span></span> in California, co-founded by César Chávez and Dolores Huerta in 1962, was the direct extension of New Deal labor values to the workers the New Deal had explicitly excluded. The UFW's grape and lettuce boycotts forced the California agricultural industry to the bargaining table and won union contracts for farmworkers who had never had them. The movement drew on exactly the same arguments as the CIO: that workers have dignity, that collective bargaining produces better outcomes than individual negotiation, and that the government has an obligation to protect the right to organize. The California Agricultural Labor Relations Act of 1975 provided state-level protections the federal Wagner Act had withheld — but only because decades of organizing had made those protections politically possible.</p>
+  <p class="para-simple">The United Farm Workers in California, co-founded by César Chávez and Dolores Huerta in 1962, extended New Deal labor values to the workers the New Deal had left out. The UFW's grape and lettuce boycotts forced the California agricultural industry to negotiate. The movement used exactly the same arguments as the CIO: workers have dignity, collective bargaining works better than individual negotiation, and the government must protect the right to organize. California's Agricultural Labor Relations Act of 1975 gave farmworkers state-level protections only because decades of organizing had made them politically possible.</p>
+</section>
+
+<!-- FAST FACTS -->
+<div class="brain-break ff-break section-animate">
+  <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE NEW DEAL COALITION AND ITS UNRAVELING</p>
+  <div class="ff-grid">
+    <div class="ff-item">
+      <span class="ff-number">35%</span>
+      <span class="ff-desc">of the American workforce in unions at the peak of labor movement power in the mid-1950s — today that number is about 10%</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">4</span>
+      <span class="ff-desc">presidential terms FDR served — more than any president before or since; he died in office in April 1945 at the start of his fourth term</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">52</span>
+      <span class="ff-desc">electoral votes Barry Goldwater won in 1964 running against the New Deal — Johnson won 486; yet Goldwater's ideas came back to dominate politics 16 years later</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">90</span>
+      <span class="ff-desc">years Social Security has been in operation — it is the most successful anti-poverty program in American history, lifting tens of millions of elderly Americans out of poverty</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: THE OPPOSITION -->
+<section class="content-section clearfix section-animate" id="opposition">
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">THE OPPOSITION THAT NEVER STOPPED</h2>
+
+  <p class="para-standard">From the moment the New Deal began, organized opposition to it also began. The American Liberty League, funded by major corporations and wealthy families, argued that the New Deal was unconstitutional, socialist, and dangerous to individual freedom. These were not fringe arguments: they were made by former Democratic presidential candidates, prominent lawyers, and major business leaders. The Supreme Court agreed with some of them, striking down several New Deal programs in 1935 and 1936. The core argument of the opposition was that the federal government had no legitimate power to regulate the economy, redistribute income, or protect workers' rights to organize — that these were matters for the market, not the state.</p>
+  <p class="para-simple">From the beginning, organized opposition to the New Deal also began. The American Liberty League, funded by major corporations and wealthy families, argued the New Deal was unconstitutional and socialist. Former Democratic presidential candidates and prominent lawyers made these same arguments. The Supreme Court agreed with some of them, striking down several New Deal programs. The core argument: the federal government had no right to regulate the economy, redistribute income, or protect union organizing — these were matters for the market to decide, not the government.</p>
+
+  <div class="debate-box">
+    <div class="debate-side debate-left">
+      <h3>THE NEW DEAL ARGUMENT</h3>
+      <p>The market alone cannot protect workers or prevent economic catastrophe. The Depression proved it. Government has an obligation to provide a floor under economic life — retirement security, unemployment insurance, regulated banking, a minimum wage. Liberty is not meaningful without economic security.</p>
+    </div>
+    <div class="debate-side debate-right">
+      <h3>THE CONSERVATIVE ARGUMENT</h3>
+      <p>Government programs grow beyond their original purpose, create dependency, reduce individual initiative, and require ever-increasing taxation. True liberty means freedom from government interference. Markets, if allowed to function freely, will produce better outcomes than government programs can mandate.</p>
+    </div>
+  </div>
+
+  <!--
+    FILENAME: S1L09_GoldwaterCampaign.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: SUPPORTING
+    FIND: Barry Goldwater 1964 presidential campaign — rally, campaign poster, or Goldwater speaking to a crowd; representing the conservative challenge to the New Deal
+    SEARCH: Barry Goldwater 1964 presidential campaign rally photograph Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Barry_Goldwater
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L09/S1L09_GoldwaterCampaign.jpg" alt="Barry Goldwater during the 1964 presidential campaign">
+    <figcaption>Barry Goldwater during the 1964 presidential campaign. He lost in a landslide — but his arguments about limited government, individual liberty, and market economics became the foundation of the modern Republican Party. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">Barry Goldwater's 1964 campaign lost the election but built a movement. The <span class="vocab" tabindex="0">conservatism<span class="tip">A political philosophy that generally favors limited government, individual liberty, free markets, and traditional values — in the American context, often including opposition to the New Deal's expansion of federal power.</span></span> he articulated — limited government, free markets, individual liberty, skepticism of the welfare state — became the organizing philosophy of the Republican Party over the following decades. Ronald Reagan made Goldwater's arguments more optimistic and more broadly appealing and won two landslide elections on them in 1980 and 1984. Reagan's presidency cut taxes, reduced federal regulation, and began the long decline of union membership through policies like the firing of striking air traffic controllers in 1981. The <span class="vocab" tabindex="0">federal regulation<span class="tip">Rules set by federal agencies — like the SEC, NLRB, or EPA — that govern how businesses can operate, how workers must be treated, and what products can be sold.</span></span> framework the New Deal built was not dismantled, but its growth was slowed and its power to protect workers was reduced.</p>
+  <p class="para-simple">Goldwater lost the 1964 election but built a movement. The conservatism he articulated — limited government, free markets, individual liberty, skepticism of government programs — became the organizing philosophy of the Republican Party. Ronald Reagan made those arguments more appealing and won two landslide elections in 1980 and 1984. Reagan cut taxes, reduced federal regulation, and contributed to the decline of union membership — most dramatically by firing striking air traffic controllers in 1981. The New Deal's framework was not dismantled, but its growth was slowed and workers' protections were reduced.</p>
+</section>
+
+<!-- ART SPOTLIGHT -->
+<div class="brain-break as-break section-animate">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!--
+      FILENAME: S1L09_DiegoRiveraMural.jpg
+      PLACE IN: images/S1/L09/
+      PRIORITY: ENHANCEMENT
+      FIND: Diego Rivera "Detroit Industry Murals" — any panel from the 1932-33 murals at the Detroit Institute of Arts showing auto workers, machines, and industrial labor; commissioned during the Depression to document American workers
+      SEARCH: Diego Rivera Detroit Industry Murals 1932 1933 Detroit Institute of Arts Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Detroit_Industry_Murals
+    -->
+    <img src="images/S1/L09/S1L09_DiegoRiveraMural.jpg" alt="Detroit Industry Murals — Diego Rivera, 1932-33, Detroit Institute of Arts" class="as-image">
+    <figcaption class="as-caption">
+      Detroit Industry Murals (panel detail) &mdash; Diego Rivera, 1932&ndash;33<br>
+      Mexican muralist Diego Rivera painted these 27-panel murals at the Detroit Institute of Arts on commission from Edsel Ford — depicting auto workers, assembly lines, and industrial labor in monumental scale. The murals were completed as the Depression devastated the automotive industry.
+    </figcaption>
+  </figure>
+  <p class="as-fact">When the murals were unveiled in 1933, they caused an immediate controversy: critics said Rivera had included communist imagery in the panels, including a scene they claimed depicted the Holy Trinity as auto workers. A campaign to whitewash the murals began. Edsel Ford refused, saying the murals depicted American workers honestly and deserved to stand. The murals survived and are considered one of the great achievements of American public art — a monument to industrial labor paid for by the family that owned the largest automotive company in the world. Rivera was a communist. Ford was a capitalist. The murals exist because they agreed on one thing: that workers deserved to be seen.</p>
+</div>
+
+<!-- SECTION 4: THE DEBATE NEVER ENDS -->
+<section class="content-section clearfix section-animate" id="debate-never-ends">
+  <span class="section-kicker">CHAPTER FOUR</span>
+  <h2 class="section-heading">THE DEBATE THAT NEVER ENDED</h2>
+
+  <p class="para-standard">The debate about the New Deal's <span class="vocab" tabindex="0">legacy<span class="tip">The lasting effect or impact of a person, event, or era on the world that came after it.</span></span> is not a historical argument about the 1930s. It is a live political argument happening right now about the size of the federal government, the role of unions, the level of the minimum wage, the funding of Social Security, and the extent of federal regulation of the economy. Every debate about those issues in Congress, every presidential campaign, and every state budget negotiation is a continuation of the argument that FDR started in 1933 when he said the federal government had a responsibility to the economic welfare of its citizens.</p>
+  <p class="para-simple">The debate about the New Deal is not just history. It is a live political argument happening right now — about the size of government, the role of unions, what the minimum wage should be, how Social Security should be funded, and how much the federal government should regulate businesses. Every budget debate in Congress, every election, and every argument about workers' rights is a continuation of the argument FDR started in 1933 when he said the federal government had a responsibility to its citizens' economic welfare.</p>
+
+  <p class="para-standard">What the New Deal permanently settled was narrower than its supporters sometimes claim and broader than its opponents acknowledge. It settled that some floor existed: that old people who worked their whole lives deserved retirement income, that workers deserved some protection from arbitrary firing, that bank deposits deserved protection, that the stock market needed oversight. It did not settle how high that floor should be, who should be covered, how it should be paid for, or how much regulation was appropriate. Those questions remain open. The specific level of the minimum wage is debated every decade. The solvency of Social Security is debated every few years. The appropriate scope of federal labor law has been contested in every Congress since 1935.</p>
+  <p class="para-simple">What the New Deal permanently settled was narrower than its supporters claim and broader than its opponents admit. It settled that some floor existed: retired workers deserve income, deposits deserve protection, the stock market needs oversight, workers have some rights. It did not settle how high that floor should be, who should be covered, or how it should be paid for. Those questions remain open. The level of the minimum wage is debated every decade. Social Security's funding is debated every few years. Labor law has been contested in every Congress since 1935.</p>
+
+  <p class="real-world para-standard">Real-world connection: The political debates students hear today about Social Security, the minimum wage, union rights, and government regulation are the same debates — with updated numbers and different people — that began when FDR signed the first New Deal bills in 1933.</p>
+  <p class="real-world para-simple">Real-world connection: When students hear debates today about Social Security, the minimum wage, unions, or government regulation, they are hearing the same argument — with updated numbers and different people — that started when FDR signed the first New Deal bills in 1933.</p>
+</section>
+
+<!-- PRIMARY SOURCE -->
+<div class="primary-source section-animate" id="primary-source-moment">
+  <span class="ps-label">PRIMARY SOURCE MOMENT</span>
+  <div class="ps-visual">
+    <figure>
+      <!--
+        FILENAME: S1L09_ReaganPortrait.jpg
+        PLACE IN: images/S1/L09/
+        PRIORITY: ESSENTIAL
+        FIND: Ronald Reagan official presidential portrait or press photograph, circa 1980-1988 — formal portrait or speaking at a press conference
+        SEARCH: Ronald Reagan presidential portrait photograph 1980 1981 Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Ronald_Reagan
+      -->
+      <img src="images/S1/L09/S1L09_ReaganPortrait.jpg" alt="Ronald Reagan, President of the United States, circa 1980-1988">
+      <figcaption>Ronald Reagan, circa 1980–1988. Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <p class="ps-quote">"Government is not the solution to our problem; government is the problem... It is no coincidence that our present troubles parallel and are proportionate to the intervention and intrusion in our lives that result from unnecessary and excessive growth of government... In the days ahead I will propose removing the government's smothering hand from where it does not belong."</p>
+      <p class="ps-attribution">&mdash; Ronald Reagan, First Inaugural Address, January 20, 1981</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Reagan is giving a direct answer to FDR's argument that government had a responsibility to protect Americans from economic catastrophe. FDR said the problem was the market failing and the solution was government action. Reagan says the problem is government itself. He is inaugurated 48 years after FDR's first New Deal programs — and the programs FDR built are still in place. Notice what Reagan is promising to do: not eliminate those programs, but reduce the "growth" of government. As you read this, ask: is Reagan arguing against the New Deal, or against the expansion of it after FDR?</p>
+    </div>
+  </div>
+</div>
+
+<!-- THEN AND NOW -->
+<div class="brain-break tn-break section-animate" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">THE NEW DEAL CHANGED WHAT AMERICANS EXPECT FROM THEIR GOVERNMENT — AND THE ARGUMENT ABOUT WHETHER THAT CHANGE WAS RIGHT IS STILL GOING.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1933</span>
+      <!--
+        FILENAME: S1L09_ThenFDRSigning.jpg
+        PLACE IN: images/S1/L09/
+        PRIORITY: ESSENTIAL
+        FIND: FDR signing New Deal legislation — Roosevelt at his desk signing a bill into law, with advisors and congressional leaders around him, 1933-1935
+        SEARCH: FDR Roosevelt signing New Deal legislation bill law 1933 1934 1935 Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Franklin_D._Roosevelt
+      -->
+      <img src="images/S1/L09/S1L09_ThenFDRSigning.jpg" alt="FDR signs New Deal legislation, 1933-1935">
+      <p class="tn-caption">FDR signs New Deal legislation, 1933–1935. The stroke of a pen created programs that are still the law 90 years later. Wikimedia Commons.</p>
+    </div>
+    <div class="tn-item">
+      <span class="tn-era-label">NOW</span>
+      <!--
+        FILENAME: S1L09_NowSocialSecurityOffice.jpg
+        PLACE IN: images/S1/L09/
+        PRIORITY: ESSENTIAL
+        FIND: Modern Social Security Administration office or people receiving Social Security benefits — elderly Americans at an SSA office, or a Social Security card and check; showing the program's ongoing role
+        SEARCH: Social Security Administration office benefits recipients modern Wikimedia Commons CC license
+        LINK: Suggested: CC-licensed photography acceptable.
+        LICENSE: CC license acceptable.
+      -->
+      <img src="images/S1/L09/S1L09_NowSocialSecurityOffice.jpg" alt="Modern Social Security Administration office, present day">
+      <p class="tn-caption">A Social Security Administration office today — the program FDR created in 1935 now serves over 70 million Americans. CC license.</p>
+    </div>
+  </div>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>In 1933, FDR signed into law programs that had never existed in the United States: federal retirement income, deposit insurance, stock market regulation, unemployment insurance, and worker protections. He did it because the Depression had proven that markets alone could not prevent catastrophic economic failure, and that the government had to act. He also did it imperfectly, with exclusions that left millions of Americans outside the protection he was building.</p>
+    <h3>NOW</h3>
+    <p>Today, Social Security serves over 70 million Americans — retirees, disabled workers, and survivors of workers who have died. The FDIC insures every bank deposit. The SEC oversees the stock market. The minimum wage and 40-hour work week are federal law. These programs outlasted every president since FDR who tried to reduce or eliminate them — including Reagan, who campaigned on reducing government but left Social Security essentially intact.</p>
+    <h3>CONNECTION</h3>
+    <p>The New Deal did not save American democracy in the sense of rescuing a fragile system from collapse — the democratic system itself survived the Depression, however battered. What it did was permanently change what Americans believe government is for. Before 1933, most Americans assumed the federal government had no role in protecting individuals from economic catastrophe. After 1938, that assumption was replaced by a different one: that some protection is owed. The argument today — about how much protection, who pays for it, and who deserves it — is the direct descendant of the argument FDR and his opponents had in the 1930s.</p>
+    <p>Reagan said "government is the problem." FDR said government was the solution. Both men were responding to real failures — FDR to the failure of markets, Reagan to the failure of government programs to deliver everything they promised. Which argument do you think better describes the role government should play in economic life — and what evidence would you use?</p>
+  </div>
+</div>
+
+</main>
+<footer>U.S. HISTORY &mdash; SEMESTER 1, LESSON 09 &mdash; THE NEW DEAL, LABOR, AND THE LEGACY OF FEDERAL POWER &mdash; STANDARD 11.6</footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
+function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
+document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
+document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
+document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
+document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+</script>
+</body>
+</html>
+<!--IMAGE CHECK: document.querySelectorAll('img').forEach(img=>{if(!img.complete||img.naturalWidth===0){console.warn('MISSING:',img.src);}else{console.log('OK:',img.src);}});-->
