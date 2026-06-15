@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSU S2L09 : AMERICA AFTER THE COLD WAR</title>
+<title>SSU S2L09 : THE TRUST COLLAPSE</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -20,12 +20,9 @@
   --vocab:#8a1818;
   --green:#044d37;
   --lime:#d7ff3f;
-  --purple:#32134d;
-  --pink:#ff4fd8;
-  --cyan:#22d4ff;
   --orange:#e07820;
-  --electric:#00e5ff;
-  --dark:#080c10;
+  --amber:#c8960a;
+  --rust:#8a3010;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
@@ -46,7 +43,9 @@ body{background:radial-gradient(ellipse at top,#0a1218 0%,#020408 80%);font-fami
 .section-nav a.active{color:#fff;border-bottom-color:var(--silver);background:rgba(160,24,24,.22)}
 #lexile-toggle{display:block;margin:22px auto 30px;padding:10px 26px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:2px solid var(--red);background:transparent;color:var(--red);transition:background .2s,color .2s}
 #lexile-toggle:hover{background:var(--red);color:#fff}
-.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.para-simple{display:none}
+body.simplified .para-standard{display:none}
+body.simplified .para-simple{display:block}
 .toc-sidebar{position:fixed;left:calc(50% - 572px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(10,18,24,.93);border-right:2px solid rgba(200,32,32,.35)}
 .toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--silver);margin-bottom:12px}
 .toc-sidebar a{display:block;color:rgba(180,195,210,.55);text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
@@ -66,8 +65,8 @@ main{max-width:820px;margin:0 auto;padding:0 28px 68px}
 .section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
 .section-heading{font-family:'Oswald',sans-serif;font-size:clamp(32px,5vw,46px);font-weight:700;color:var(--steel-dark);text-transform:uppercase;border-left:7px solid var(--red);padding-left:16px;line-height:1.08;margin-bottom:26px}
 p{margin-bottom:20px;color:var(--charcoal)}
-.real-world{background:var(--pale);border-left:5px solid var(--steel);padding:17px 21px;margin:30px 0;font-weight:700;color:var(--ink)}
-figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.3)}
+figure{margin:32px 0}
+figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.3)}
 figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;line-height:1.45}
 .img-right{float:right;width:42%;margin:6px 0 20px 28px}
 .img-left{float:left;width:42%;margin:6px 28px 20px 0}
@@ -82,7 +81,9 @@ figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;lin
 .brain-break{font-family:'Barlow Condensed',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
 .bb-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.88}
 .bb-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
-.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.dyk-break{background:linear-gradient(135deg,#1a3a20,#0c2210);color:#fff;border-left:6px solid var(--lime)}
+.dyk-break .bb-label{color:var(--lime)}
+.dyk-break p,.dyk-break span{color:#fff}
 .ff-break{background:#040608;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--red-light);border-bottom:3px solid var(--red-light);text-align:center}
 .ff-break .bb-label{color:var(--red-light);text-align:center;margin-bottom:8px}
 .ff-context{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(200,100,100,.85);text-align:center;margin-bottom:28px;font-weight:700}
@@ -90,14 +91,15 @@ figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;lin
 .ff-item{text-align:center;padding:8px 16px;max-width:185px}
 .ff-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:var(--red-light);line-height:1;margin-bottom:8px}
 .ff-desc{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(200,100,100,.85);max-width:185px;margin:0 auto;line-height:1.5}
-.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
-.as-break .bb-label{color:var(--pink)}
-.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.65);box-shadow:0 8px 32px rgba(0,0,0,.6)}
-.as-caption{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,232,251,.75);line-height:1.6;margin-bottom:28px;display:block;font-style:normal}
+.as-break{background:linear-gradient(135deg,#1c1008,#2a1800);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--amber);border-bottom:3px solid var(--amber);text-align:center}
+.as-break .bb-label{color:var(--amber)}
+.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(200,150,10,.55);box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.as-caption{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(240,210,140,.8);line-height:1.6;margin-bottom:28px;display:block;font-style:normal}
 .as-fact{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:680px;margin:0 auto;text-align:center}
 .primary-source{background:var(--pale);border-left:7px solid var(--red);padding:30px 34px;margin:38px 0;box-shadow:0 6px 20px rgba(0,0,0,.15)}
 .ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
-.ps-visual figure{margin:0}.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .ps-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block}
 .ps-quote{font-size:20px;font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:14px}
 .ps-attribution{font-size:13px;font-style:italic;color:var(--gray);margin-bottom:12px}
@@ -106,14 +108,16 @@ figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;lin
 .tn-break{background:var(--steel-dark);color:#fff;padding:36px 50px;margin:30px -50px 0}
 .tn-break .bb-label{color:var(--silver);text-align:center;display:block;margin-bottom:20px}
 .tn-payoff{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.32;text-align:center;color:var(--silver);margin:0 auto 28px;max-width:720px}
-.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
 .tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--silver);margin-bottom:10px;font-weight:900}
 .tn-item img{width:100%;display:block;border:2px solid rgba(138,154,170,.38)}
 .tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:rgba(180,195,210,.7);margin-top:8px;line-height:1.4}
 .tn-text-block{margin-top:24px;border-top:1px solid rgba(138,154,170,.25);padding-top:20px}
 .tn-text-block h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--silver);margin:18px 0 8px}
 .tn-text-block p{font-family:'Barlow Condensed',sans-serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
-img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
 .section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
 .section-animate.visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
@@ -121,40 +125,40 @@ footer{background:var(--steel-dark);color:rgba(180,195,210,.45);text-align:cente
 @media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 22px 42px}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
 @media(max-width:600px){.page-title{font-size:40px}.section-heading{font-size:30px}.ff-number{font-size:44px}.as-fact{font-size:18px}.tn-pair{grid-template-columns:1fr}.tn-break{padding:28px 22px;margin:30px 0 0}.bb-text{font-size:18px}}
 @media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
-.dyk-break p,.dyk-break span,.ff-break p,.ff-break span,.as-break p,.as-break span,.tn-break p,.tn-break span{color:#fff}
-.ff-context,.ff-desc{color:rgba(200,100,100,.85)}.as-caption{color:rgba(255,232,251,.75)}.tn-caption{color:rgba(180,195,210,.7)}
 </style>
 </head>
 <body>
 <div id="reading-progress"></div>
 <div class="page-wrap">
 
+<!-- HEADER -->
 <header class="site-header">
   <!--
     FILENAME: S2L09_September11Towers.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: September 11 2001 — smoke rising from the World Trade Center towers after the attacks; documentary photojournalism register, not sensational; the defining image of the era
-    SEARCH: September 11 2001 World Trade Center smoke towers attack documentary photograph Wikimedia Commons
+    FIND: September 11, 2001 — smoke rising from the World Trade Center towers after the attacks; documentary photojournalism register, serious and respectful, not sensational
+    SEARCH: September 11 2001 World Trade Center smoke towers attack Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/September_11_attacks
   -->
   <img src="images/S2/L09/S2L09_September11Towers.jpg" alt="Smoke rising from the World Trade Center towers, September 11, 2001" class="header-bg">
   <div class="header-inner">
-    <p class="course-label">U.S. History &mdash; Semester 2 &mdash; Lesson 09 &mdash; Standard 11.11</p>
-    <h1 class="page-title">America After<br>the Cold War</h1>
+    <p class="course-label">U.S. HISTORY &bull; SEMESTER 2 &bull; LESSON 09 &bull; STANDARD 11.11</p>
+    <h1 class="page-title">THE TRUST<br>COLLAPSE</h1>
     <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      What does America look like when the biggest external threat disappears?
+      <span class="eq-label">ESSENTIAL QUESTION</span>
+      How did the promises made after September 11 turn into the anger that reshaped American politics by 2016?
     </div>
   </div>
 </header>
 
+<!-- NAV -->
 <nav class="section-nav">
-  <a href="#introduction">INTRODUCTION</a>
-  <a href="#unipolar-moment">UNIPOLAR MOMENT</a>
+  <a href="#introduction">INTRO</a>
   <a href="#september-11">SEPTEMBER 11</a>
-  <a href="#katrina-crisis">KATRINA AND CRISIS</a>
-  <a href="#polarization">POLARIZATION</a>
+  <a href="#the-war">THE WAR</a>
+  <a href="#left-behind">LEFT BEHIND</a>
+  <a href="#road-to-2016">ROAD TO 2016</a>
   <a href="#primary-source-moment">SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </nav>
@@ -162,24 +166,40 @@ footer{background:var(--steel-dark);color:rgba(180,195,210,.45);text-align:cente
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
   <a href="#introduction">Introduction</a>
-  <a href="#unipolar-moment">Unipolar Moment</a>
   <a href="#september-11">September 11</a>
-  <a href="#katrina-crisis">Katrina and Crisis</a>
-  <a href="#polarization">Polarization</a>
+  <a href="#the-war">The War</a>
+  <a href="#left-behind">Left Behind</a>
+  <a href="#road-to-2016">Road to 2016</a>
   <a href="#primary-source-moment">Source</a>
   <a href="#then-now">Then &amp; Now</a>
 </aside>
 
 <main>
 
+<!-- TIMELINE -->
 <div class="timeline-wrap">
-  <p class="timeline-label">AMERICA AFTER THE COLD WAR &mdash; 1991 TO 2012</p>
+  <p class="timeline-label">FROM UNITY TO ANGER &bull; 2001 TO 2016</p>
   <div class="timeline">
-    <div class="tl-node"><div class="tl-date">1991</div><p>Soviet Union dissolves. United States becomes the world's only superpower. The "unipolar moment" begins.</p></div>
-    <div class="tl-node"><div class="tl-date">1990s</div><p>Clinton economic boom. Culture wars over race, gender, and religion intensify. Internet transforms the economy.</p></div>
-    <div class="tl-node"><div class="tl-date">Sept 11, 2001</div><p>Terrorist attacks on the World Trade Center and Pentagon kill nearly 3,000 people. The War on Terror begins.</p></div>
-    <div class="tl-node"><div class="tl-date">2003–10</div><p>Iraq and Afghanistan wars. Hurricane Katrina exposes race and government failure. 2008 financial crisis — banks bailed out, millions lose homes.</p></div>
-    <div class="tl-node"><div class="tl-date">2008–12</div><p>Political polarization accelerates. Tea Party rises. Bipartisan governing essentially collapses.</p></div>
+    <div class="tl-node">
+      <div class="tl-date">2001</div>
+      <p>September 11 attacks. Congress passes the Patriot Act in 45 days. The country unifies around a War on Terror.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">2003</div>
+      <p>U.S. invades Iraq citing weapons of mass destruction. None are ever found. The war lasts eight years and costs over $2 trillion.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">2005</div>
+      <p>Hurricane Katrina floods New Orleans. The federal government's slow response leaves thousands stranded. Trust in government falls sharply.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">2008</div>
+      <p>Financial crisis. The government bails out banks with $700 billion. Ten million families lose their homes. No executives go to prison.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">2016</div>
+      <p>Donald Trump wins the presidency running against the political establishment, promising to drain "the swamp" in Washington.</p>
+    </div>
   </div>
 </div>
 
@@ -187,198 +207,216 @@ footer{background:var(--steel-dark);color:rgba(180,195,210,.45);text-align:cente
 
 <!-- INTRODUCTION -->
 <section class="intro-section section-animate" id="introduction">
-  <p class="para-standard">On Christmas Day 1991, the Soviet flag came down over the Kremlin for the last time and was replaced by the Russian flag. The superpower that had faced the United States across every crisis of the Cold War — Korea, Cuba, Vietnam, the Berlin Wall — had ceased to exist. For the first time in forty-five years, there was no external threat organizing American politics, no enemy that both parties agreed was the primary danger to the country, no Cold War framework to justify foreign policy decisions or domestic tradeoffs. What the United States chose to do with that moment — how it spent its peace dividend, who it prioritized, what kind of country it tried to be — is the story of the next thirty years. The short answer is that the country had more trouble agreeing on anything when the threat that had kept it nominally unified disappeared.</p>
-  <p class="para-simple">On Christmas Day 1991, the Soviet flag came down over the Kremlin and was replaced by the Russian flag. The superpower that had faced the United States across forty-five years of Cold War had ceased to exist. For the first time since World War II, there was no single external enemy organizing American politics, no common threat that both parties agreed was the primary danger. What America did with that moment — how it spent the peace, who it prioritized, what it tried to become — is the story of the next thirty years. The short answer: the country had a much harder time agreeing on anything once the threat that had kept it nominally unified was gone.</p>
+
+  <p class="para-standard">On the morning of September 12, 2001, the day after the deadliest attack on American soil in history, something remarkable happened. Republicans and Democrats stood together on the steps of the Capitol and sang "God Bless America." Congress gave President Bush a 98 percent approval rating. Countries that had argued with the United States for years offered their sympathy, their intelligence, and their soldiers. For a brief moment, almost everyone in the world was on America's side.</p>
+  <p class="para-simple">On September 12, 2001, the day after the deadliest attack on American soil in history, something remarkable happened. Republicans and Democrats stood together on the Capitol steps and sang "God Bless America." President Bush received a 98 percent approval rating. Countries that had fought with the United States for years offered their help. For a moment, almost the entire world stood with America.</p>
+
+  <p class="para-standard">Fifteen years later, a reality television star and real-estate developer who had never held political office won the presidency by telling Americans that their government was corrupt, incompetent, and working against them. He called it a "swamp." Millions of Americans agreed. The question this lesson asks is simple: what happened in between? The answer is a story about promises made and broken, wars launched on false information, disasters mishandled, and a financial system that collapsed and was rescued in ways that protected the powerful and abandoned everyone else.</p>
+  <p class="para-simple">Fifteen years later, a man who had never held political office won the presidency by telling Americans that their government was corrupt and working against them. Millions of Americans agreed. The question this lesson asks is simple: what happened in between? The answer is a story about broken promises, wars launched on false information, disasters mishandled, and a financial system that collapsed and was rescued in a way that helped the powerful while millions of ordinary Americans lost their homes.</p>
+
 </section>
 
-<!-- SECTION 1: THE UNIPOLAR MOMENT -->
-<section class="content-section clearfix section-animate" id="unipolar-moment">
-  <span class="section-kicker">CHAPTER ONE</span>
-  <h2 class="section-heading">THE UNIPOLAR MOMENT AND ITS SQUANDERED PROMISE</h2>
-
-  <!--
-    FILENAME: S2L09_ClintonGreenspan.jpg
-    PLACE IN: images/S2/L09/
-    PRIORITY: SUPPORTING
-    FIND: Bill Clinton at a press conference or signing ceremony, or Clinton with economic advisors during the 1990s boom — showing the prosperity of the 1990s
-    SEARCH: Bill Clinton press conference 1990s economic policy signing photograph Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Bill_Clinton
-  -->
-  <figure class="img-right">
-    <img src="images/S2/L09/S2L09_ClintonEconomy.jpg" alt="Bill Clinton during the economic boom of the 1990s">
-    <figcaption>President Clinton during the economic boom of the 1990s — the longest peacetime economic expansion in American history. By the end of his presidency, the federal government was running a budget surplus. Wikimedia Commons.</figcaption>
-  </figure>
-
-  <p class="para-standard">The 1990s produced the longest peacetime economic expansion in American history. The internet transformed commerce, communication, and daily life. Unemployment fell to 4 percent. The federal government ran a budget surplus. <span class="vocab" tabindex="0">Globalization<span class="tip">The increasing economic and cultural connection of countries around the world through trade, technology, and movement of people and capital.</span></span> brought cheaper consumer goods and integrated America's economy with the world's in ways that produced enormous wealth — distributed, as always, unevenly. President Clinton signed welfare reform legislation in 1996 that ended the federal guarantee of cash assistance to poor families and replaced it with time-limited, work-requirement programs managed by states. Defenders argued it reduced dependency and encouraged work. Critics argued it pushed vulnerable families into poverty when jobs were unavailable — which became apparent when the 2001 recession hit.</p>
-  <p class="para-simple">The 1990s brought the longest peacetime economic expansion in American history. The internet transformed commerce and daily life. Unemployment fell to 4 percent. The government ran a budget surplus. President Clinton signed welfare reform in 1996 that ended the federal guarantee of cash assistance to poor families, replacing it with time-limited work requirements. Supporters said it reduced dependency and encouraged work. Critics said it pushed families into poverty when jobs disappeared — which became clear when the recession hit in 2001.</p>
-
-  <p class="para-standard">The 1990s were also the decade of <span class="vocab" tabindex="0">culture wars<span class="tip">Intense political and social conflicts over values — including disputes about race, gender, religion, sexuality, and the definition of American identity.</span></span>. Disputes over abortion, affirmative action, gay rights, immigration, and the role of religion in public life intensified even as the economy boomed. These conflicts revealed that the end of the Cold War had not produced consensus about what America stood for — it had revealed that Americans had been arguing about those questions all along, and that the Cold War had simply crowded out the argument. <span class="vocab" tabindex="0">Bipartisanship<span class="tip">When members of two different political parties work together to pass laws or make decisions.</span></span> — working across party lines — still existed on some issues. But the trend lines were moving toward a politics organized around cultural identity rather than economic interest, and those lines were hardening.</p>
-  <p class="para-simple">The 1990s were also a decade of culture wars — intense political fights over abortion, affirmative action, gay rights, immigration, and the role of religion in public life. These conflicts showed that the end of the Cold War had not produced agreement about what America stood for. Americans had been arguing about those questions all along. The Cold War had just crowded out the argument. Bipartisanship — working across party lines — still existed on some issues. But politics was increasingly organized around cultural identity rather than economic interest, and the divide between the parties was growing.</p>
-</section>
-
-<!-- DID YOU KNOW -->
-<div class="brain-break dyk-break section-animate">
-  <span class="bb-label">DID YOU KNOW</span>
-  <p class="bb-text">The 2008 financial crisis — which resulted in the federal government bailing out major banks with $700 billion of taxpayer money — was caused in part by the same deregulation of financial markets that had been building since the 1980s. Phil Gramm, the senator who co-authored the Gramm-Leach-Bliley Act repealing Depression-era banking regulations in 1999, later called Americans who suffered in the financial crisis "a nation of whiners." The banks that had lobbied for the deregulation were bailed out. The families who lost their homes to foreclosure were not.</p>
-</div>
-
-<!-- SECTION 2: SEPTEMBER 11 -->
+<!-- SECTION 1: SEPTEMBER 11 -->
 <section class="content-section clearfix section-animate" id="september-11">
-  <span class="section-kicker">CHAPTER TWO</span>
-  <h2 class="section-heading">SEPTEMBER 11 AND THE WAR ON TERROR</h2>
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">SEPTEMBER 11: UNITY, FEAR, AND THE TRADE-OFF</h2>
 
   <!--
     FILENAME: S2L09_GroundZeroRescue.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: Rescue workers at Ground Zero, September 2001 — firefighters, rescue crews, or the aftermath at the World Trade Center site; documentary photojournalism register, serious and respectful
+    FIND: Rescue workers and firefighters at Ground Zero, New York City, September 2001; showing the aftermath and rescue effort at the World Trade Center site; documentary and respectful in register
     SEARCH: September 11 Ground Zero rescue workers firefighters aftermath 2001 Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/September_11_attacks
   -->
   <figure class="img-left">
-    <img src="images/S2/L09/S2L09_GroundZeroRescue.jpg" alt="Rescue workers at Ground Zero, September 2001">
-    <figcaption>Rescue workers at Ground Zero, New York City, September 2001. The attacks killed 2,977 people — the deadliest terrorist attack in American history. Wikimedia Commons.</figcaption>
+    <img src="images/S2/L09/S2L09_GroundZeroRescue.jpg" alt="Rescue workers and firefighters at Ground Zero, New York City, September 2001">
+    <figcaption>Rescue workers at Ground Zero, September 2001. The attacks killed 2,977 people. In the days that followed, the country unified behind a demand for justice. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">On September 11, 2001, nineteen hijackers affiliated with al-Qaeda flew commercial airplanes into the World Trade Center in New York, the Pentagon in Virginia, and a field in Shanksville, Pennsylvania. Nearly 3,000 people were killed. The attacks produced a moment of national unity unlike anything since Pearl Harbor — and a government response that raised fundamental questions about civil liberties that are still being argued. The <span class="vocab" tabindex="0">Patriot Act<span class="tip">A law passed six weeks after September 11 that dramatically expanded the government's authority to conduct surveillance, monitor communications, and detain suspects in terrorism investigations.</span></span>, passed six weeks after the attacks with almost no opposition, dramatically expanded government surveillance powers. It allowed the NSA to collect phone records of millions of Americans who had no connection to terrorism, created secret courts for approving surveillance warrants, and enabled the monitoring of Muslim communities and mosques. What Americans were willing to trade for security — and who bore the cost of that trade — was not equally distributed.</p>
-  <p class="para-simple">On September 11, 2001, nineteen hijackers flew airplanes into the World Trade Center, the Pentagon, and a Pennsylvania field. Nearly 3,000 people died. The attacks produced a moment of national unity unlike anything since Pearl Harbor — and a government response that raised serious questions about civil liberties. The Patriot Act, passed six weeks later with almost no opposition, dramatically expanded government surveillance. It allowed the NSA to collect phone records of millions of Americans who had no connection to terrorism and enabled surveillance of Muslim communities. What Americans traded for security — and who paid the price of that trade — was not equally shared.</p>
+  <p class="para-standard">On September 11, 2001, nineteen hijackers affiliated with <span class="vocab" tabindex="0">al-Qaeda<span class="tip">An extremist terrorist organization founded by Osama bin Laden that planned and carried out the September 11 attacks.</span></span> flew commercial airplanes into the World Trade Center in New York City, the Pentagon in Virginia, and a field in Shanksville, Pennsylvania. Nearly 3,000 people were killed in a matter of hours. It was the deadliest attack on American soil since Pearl Harbor. The emotional shock was unlike anything most living Americans had experienced.</p>
+  <p class="para-simple">On September 11, 2001, nineteen hijackers connected to <span class="vocab" tabindex="0">al-Qaeda<span class="tip">An extremist terrorist organization founded by Osama bin Laden that planned and carried out the September 11 attacks.</span></span> flew planes into the World Trade Center, the Pentagon, and a field in Pennsylvania. Nearly 3,000 people died in a matter of hours. It was the deadliest attack on American soil since Pearl Harbor. The shock was unlike anything most Americans had ever experienced.</p>
 
-  <p class="para-standard">The <span class="vocab" tabindex="0">War on Terror<span class="tip">The U.S. military and political campaign launched after September 11, 2001 to defeat terrorist organizations and governments that supported them — including military operations in Afghanistan and Iraq.</span></span> produced two wars that lasted far longer and cost far more than anyone predicted. The invasion of Afghanistan in October 2001 to destroy al-Qaeda and remove the Taliban government was broadly supported. The invasion of Iraq in March 2003, justified by claims that Saddam Hussein possessed weapons of mass destruction, was more contested — and the weapons were never found. The Iraq war destabilized the region, enabled the rise of ISIS, created a refugee crisis, cost over $2 trillion and more than 4,400 American lives, and killed an estimated 200,000 or more Iraqi civilians. The Afghanistan war lasted 20 years — the longest in American history — and ended in 2021 with the Taliban back in power.</p>
-  <p class="para-simple">The War on Terror produced two wars that lasted far longer than anyone predicted. The invasion of Afghanistan in 2001 to destroy al-Qaeda was broadly supported. The invasion of Iraq in 2003 — justified by claims about weapons of mass destruction that were never found — was far more controversial. The Iraq war cost over $2 trillion, more than 4,400 American lives, and an estimated 200,000 or more Iraqi civilian deaths. It destabilized the region and helped create ISIS. The Afghanistan war lasted 20 years — the longest in American history — and ended in 2021 with the Taliban back in power.</p>
+  <p class="para-standard">The government's response was fast and enormous. Congress passed the <span class="vocab" tabindex="0">Patriot Act<span class="tip">A law passed 45 days after September 11 that greatly expanded the government's power to surveil citizens, monitor communications, and detain suspects in terrorism cases.</span></span> just 45 days after the attacks, with almost no public debate. The law gave the government broad new powers to monitor phone calls, emails, and financial records — not just of terrorism suspects, but of ordinary American citizens. The <span class="vocab" tabindex="0">NSA<span class="tip">The National Security Agency, a U.S. intelligence agency that collected and analyzed massive amounts of communication data, including from American citizens, after September 11.</span></span> secretly collected the phone records of millions of Americans who had no connection to terrorism. The people most targeted for surveillance were Muslim Americans, Arab Americans, and South Asian Americans.</p>
+  <p class="para-simple">Congress passed the <span class="vocab" tabindex="0">Patriot Act<span class="tip">A law passed 45 days after September 11 that greatly expanded the government's power to surveil citizens, monitor communications, and detain suspects in terrorism cases.</span></span> only 45 days after the attacks, with almost no public debate. The law gave the government new powers to monitor phone calls, emails, and financial records of American citizens. The government secretly collected phone records from millions of Americans who had nothing to do with terrorism. Muslim Americans, Arab Americans, and South Asian Americans were the most heavily targeted communities.</p>
+
+  <p class="para-standard">Most Americans accepted the trade-off at the time: give the government more power, gain more safety. The problem was that nobody had agreed on where the trade-off ended. How much <span class="vocab" tabindex="0">civil liberties<span class="tip">The basic rights and freedoms that protect individuals from government overreach, such as freedom of speech, privacy, and protection from unlawful searches.</span></span> could be exchanged for how much security? Who would decide? And who would bear the cost when the new powers were used not on terrorists, but on ordinary people who happened to share a religion or ethnicity with the attackers? These questions were not answered in the fall of 2001. They are still not fully answered today.</p>
+  <p class="para-simple">Most Americans accepted this trade-off at the time: give the government more power, gain more safety. But nobody agreed on where that trade-off would end. How much of your <span class="vocab" tabindex="0">civil liberties<span class="tip">The basic rights and freedoms that protect individuals from government overreach, such as freedom of speech, privacy, and protection from unlawful searches.</span></span> should you give up for safety? Who pays the cost when those new powers are used not on terrorists but on innocent people? These questions were not answered in 2001. They are still not fully answered today.</p>
+
 </section>
 
-<!-- FAST FACTS -->
+<!-- DID YOU KNOW — placed after the civil liberties trade-off lands -->
+<div class="brain-break dyk-break section-animate">
+  <span class="bb-label">DID YOU KNOW</span>
+  <p class="bb-text">In 2013, a government contractor named Edward Snowden revealed that the NSA had secretly collected phone and internet data from hundreds of millions of ordinary Americans for years after September 11. The program had been approved by secret courts, never debated publicly, and kept hidden from most of Congress. When Snowden leaked the documents, the government charged him with espionage. He has lived in exile in Russia ever since. The surveillance he exposed was ruled unconstitutional by a federal court in 2020 — nearly two decades after it began.</p>
+</div>
+
+<!-- SECTION 2: THE WAR -->
+<section class="content-section clearfix section-animate" id="the-war">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">THE WAR: PROMISES, LIES, AND COSTS</h2>
+
+  <!--
+    FILENAME: S2L09_MissionAccomplished.jpg
+    PLACE IN: images/S2/L09/
+    PRIORITY: ESSENTIAL
+    FIND: President Bush on the USS Abraham Lincoln aircraft carrier with the "Mission Accomplished" banner behind him, May 1, 2003; the famous speech declaring major combat operations in Iraq over — one of the most criticized moments of the war
+    SEARCH: Bush Mission Accomplished USS Abraham Lincoln banner May 2003 Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/File:Mission_Accomplished_05_01_03.jpg
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L09/S2L09_MissionAccomplished.jpg" alt="President Bush on the USS Abraham Lincoln with the Mission Accomplished banner, May 1, 2003">
+    <figcaption>President Bush on the USS Abraham Lincoln, May 1, 2003. The "Mission Accomplished" banner became a symbol of how badly the government misread the war. The fighting in Iraq continued for eight more years. Source: Wikimedia Commons / U.S. Navy.</figcaption>
+  </figure>
+
+  <p class="para-standard">The war that followed September 11 had two phases that told very different stories. The first was the invasion of Afghanistan in October 2001 to destroy al-Qaeda and remove the <span class="vocab" tabindex="0">Taliban<span class="tip">The extremist political and religious group that governed Afghanistan and provided shelter to al-Qaeda before the 2001 U.S. invasion.</span></span> government that had sheltered them. It was widely supported and achieved its initial military goals quickly. The second phase was something else entirely.</p>
+  <p class="para-simple">The war that followed September 11 had two parts. The first was the invasion of Afghanistan in October 2001 to destroy al-Qaeda and remove the <span class="vocab" tabindex="0">Taliban<span class="tip">The extremist political and religious group that governed Afghanistan and provided shelter to al-Qaeda before the 2001 U.S. invasion.</span></span> government that had protected them. Most Americans supported it. The second part was a very different story.</p>
+
+  <p class="para-standard">In March 2003, the United States invaded Iraq. The Bush administration told Congress, the American public, and the United Nations that Saddam Hussein possessed <span class="vocab" tabindex="0">weapons of mass destruction<span class="tip">Nuclear, chemical, or biological weapons capable of killing large numbers of people; the claimed justification for the 2003 invasion of Iraq.</span></span> that posed an immediate threat to the United States. Secretary of State Colin Powell presented this intelligence to the United Nations in a speech that was later described as one of the most consequential mistakes in diplomatic history. The weapons were never found, because they did not exist.</p>
+  <p class="para-simple">In March 2003, the United States invaded Iraq. The Bush administration told Congress, the public, and the United Nations that Iraq had <span class="vocab" tabindex="0">weapons of mass destruction<span class="tip">Nuclear, chemical, or biological weapons capable of killing large numbers of people; the claimed justification for the 2003 invasion of Iraq.</span></span> that threatened the United States. Secretary of State Colin Powell made this case to the United Nations in a famous speech. The weapons were never found. They did not exist.</p>
+
+  <p class="para-standard">The Iraq war lasted eight years and produced consequences that are still unfolding today. More than 4,400 American soldiers died. Estimates of Iraqi civilian deaths range from 150,000 to over 600,000. The war cost over $2 trillion, much of it borrowed. It destabilized the Middle East, created a power vacuum that helped give rise to <span class="vocab" tabindex="0">ISIS<span class="tip">The Islamic State, an extremist organization that filled the power vacuum left after the Iraq war and seized large parts of Iraq and Syria.</span></span>, and produced a refugee crisis that spread across the region. On May 1, 2003 — before most of the dying had even begun — President Bush stood on an aircraft carrier under a banner that read "Mission Accomplished." It became the most scorned image of the war.</p>
+  <p class="para-simple">The Iraq war lasted eight years. More than 4,400 American soldiers died. Hundreds of thousands of Iraqi civilians died. The war cost over $2 trillion, much of it borrowed. It destabilized the region and helped create <span class="vocab" tabindex="0">ISIS<span class="tip">The Islamic State, an extremist organization that filled the power vacuum left after the Iraq war and seized large parts of Iraq and Syria.</span></span>. On May 1, 2003, before most of the dying had even begun, President Bush stood on an aircraft carrier under a banner that read "Mission Accomplished." It became the most mocked image of the entire war.</p>
+
+  <p class="para-standard">The gap between what the government had promised and what actually happened was enormous. Americans had been told the war would be short, the weapons would be found, and the region would be stabilized. None of it was true. For millions of Americans, the Iraq War was the first major crack in the idea that their government told them the truth about things that mattered.</p>
+  <p class="para-simple">The gap between what the government promised and what actually happened was huge. Americans had been told the war would be short, the weapons would be found, and the region would stabilize. None of it was true. For millions of Americans, the Iraq War was the first major crack in the idea that their government was honest with them.</p>
+
+</section>
+
+<!-- FAST FACTS — placed after the war costs have been established -->
 <div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
-  <p class="ff-context">AMERICA AFTER THE COLD WAR — THE COSTS</p>
+  <p class="ff-context">THE COSTS THAT BUILT THE ANGER</p>
   <div class="ff-grid">
     <div class="ff-item">
       <span class="ff-number">$6T</span>
-      <span class="ff-desc">estimated total cost of the wars in Iraq and Afghanistan when interest payments on borrowed war funding are included — $20,000 for every American</span>
+      <span class="ff-desc">total estimated cost of the Iraq and Afghanistan wars including interest on borrowed money — roughly $20,000 for every single American</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">$700B</span>
-      <span class="ff-desc">the bank bailout passed in 2008 — the Troubled Asset Relief Program that rescued financial institutions whose risky decisions had caused the crisis</span>
+      <span class="ff-number">4,431</span>
+      <span class="ff-desc">U.S. soldiers killed in Iraq between 2003 and 2011, after a war justified by weapons that were never found</span>
     </div>
     <div class="ff-item">
       <span class="ff-number">10M</span>
-      <span class="ff-desc">American homeowners who lost their homes to foreclosure in the years following the 2008 financial crisis — no comparable bailout was offered to them</span>
+      <span class="ff-desc">American households that lost their homes to foreclosure after the 2008 financial crisis — while the banks that caused the crisis were bailed out</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">20</span>
-      <span class="ff-desc">years the Afghanistan war lasted — from October 2001 to August 2021 — making it the longest war in American history</span>
+      <span class="ff-number">0</span>
+      <span class="ff-desc">major Wall Street executives who went to prison following the 2008 financial crisis, despite investigations finding widespread fraud</span>
     </div>
   </div>
 </div>
 
-<!-- SECTION 3: KATRINA AND CRISIS -->
-<section class="content-section clearfix section-animate" id="katrina-crisis">
+<!-- SECTION 3: LEFT BEHIND -->
+<section class="content-section clearfix section-animate" id="left-behind">
   <span class="section-kicker">CHAPTER THREE</span>
-  <h2 class="section-heading">KATRINA, CRISIS, AND WHAT AMERICA REVEALED</h2>
+  <h2 class="section-heading">LEFT BEHIND: KATRINA, THE CRASH, AND WHO THE GOVERNMENT HELPED</h2>
 
   <div class="two-col">
     <!--
       FILENAME: S2L09_KatrinaConvention.jpg
       PLACE IN: images/S2/L09/
       PRIORITY: ESSENTIAL
-      FIND: Hurricane Katrina aftermath — people stranded on rooftops, at the Superdome, or the Convention Center in New Orleans, 2005; documentary photojournalism register
-      SEARCH: Hurricane Katrina 2005 New Orleans Superdome Convention Center stranded aftermath Wikimedia Commons
+      FIND: Hurricane Katrina aftermath — survivors stranded at the New Orleans Superdome or Convention Center, 2005; people waiting for rescue that was slow to arrive
+      SEARCH: Hurricane Katrina 2005 New Orleans Superdome Convention Center stranded survivors Wikimedia Commons
       LINK: Suggested: https://commons.wikimedia.org/wiki/Hurricane_Katrina
     -->
     <figure>
-      <img src="images/S2/L09/S2L09_KatrinaConvention.jpg" alt="Survivors stranded at the New Orleans Convention Center or Superdome during Hurricane Katrina, 2005">
-      <figcaption>Survivors stranded in New Orleans during Hurricane Katrina, August-September 2005. The majority were elderly, disabled, or did not have cars. The majority were Black. Wikimedia Commons.</figcaption>
+      <img src="images/S2/L09/S2L09_KatrinaConvention.jpg" alt="Survivors stranded in New Orleans during Hurricane Katrina, August-September 2005">
+      <figcaption>Survivors stranded in New Orleans, August 2005. The majority were elderly, poor, or did not have cars. The vast majority were Black. Help took days to arrive. Source: Wikimedia Commons.</figcaption>
     </figure>
     <!--
       FILENAME: S2L09_2008Foreclosure.jpg
       PLACE IN: images/S2/L09/
       PRIORITY: ESSENTIAL
-      FIND: 2008 financial crisis foreclosure — a foreclosed home with a sign, or people outside a bank or courthouse during the financial crisis; documentary register
-      SEARCH: 2008 financial crisis foreclosure sign home bank 2009 2010 Wikimedia Commons
+      FIND: 2008 financial crisis foreclosure — a home with a foreclosure notice or for-sale sign, or families outside a bank during the crisis; documentary register showing the human cost
+      SEARCH: 2008 financial crisis foreclosure home sign 2009 2010 Wikimedia Commons
       LINK: Suggested: https://commons.wikimedia.org/wiki/Financial_crisis_of_2007%E2%80%9308
     -->
     <figure>
       <img src="images/S2/L09/S2L09_2008Foreclosure.jpg" alt="A foreclosed home during the 2008 financial crisis">
-      <figcaption>A foreclosed home during the 2008 financial crisis. Approximately 10 million American households lost their homes to foreclosure between 2008 and 2012. Wikimedia Commons.</figcaption>
+      <figcaption>A foreclosed home during the 2008 financial crisis. Approximately 10 million American households lost their homes while the banks that caused the crisis received a $700 billion government bailout. Source: Wikimedia Commons.</figcaption>
     </figure>
   </div>
 
-  <p class="para-standard">Hurricane Katrina made landfall on August 29, 2005 and flooded 80 percent of New Orleans, killing approximately 1,800 people. What the storm revealed was not just a failure of flood protection — it revealed who the government protected and who it did not. The people stranded on rooftops for days, waiting for rescue that didn't come, waiting at the Convention Center with no food or water, dying in nursing homes — the majority were elderly, disabled, or without cars. The vast majority were Black. The Federal Emergency Management Agency's response was so slow and disorganized that President Bush's FEMA director Michael Brown was widely praised sarcastically — "Heckuva job, Brownie" became a catchphrase for government incompetence. Katrina made visible the relationship between race, poverty, and government response that had been structured into New Orleans for centuries.</p>
-  <p class="para-simple">Hurricane Katrina hit New Orleans on August 29, 2005 and flooded 80 percent of the city, killing about 1,800 people. What the storm revealed was who the government prioritized and who it did not. The people stranded for days on rooftops and at the Convention Center without food or water — the majority were elderly, disabled, or did not own cars. The vast majority were Black. The federal government's response was so slow and disorganized that it became a symbol of government failure. Katrina made visible a relationship between race, poverty, and government protection that had been built into New Orleans for generations.</p>
+  <p class="para-standard">Hurricane Katrina made landfall on August 29, 2005 and flooded 80 percent of New Orleans, killing approximately 1,800 people. What the storm revealed was not a natural disaster in isolation: it revealed which Americans the government would prioritize when a crisis hit. The people stranded on rooftops for days, waiting at the Convention Center without food or water, dying in nursing homes — the majority were elderly, poor, or did not own cars. The vast majority were Black. The <span class="vocab" tabindex="0">FEMA<span class="tip">The Federal Emergency Management Agency, the government agency responsible for coordinating disaster response — widely criticized for its slow and disorganized response to Hurricane Katrina.</span></span> response was so slow and disorganized that the agency became a symbol of government failure. Katrina made visible something that Black Americans had long known: the question of who the government protected depended heavily on who you were.</p>
+  <p class="para-simple">Hurricane Katrina hit New Orleans on August 29, 2005 and flooded 80 percent of the city, killing about 1,800 people. The storm revealed something about who the government prioritized. The people stranded on rooftops for days, waiting at the Convention Center with no food or water — the majority were elderly, poor, or did not own cars. The vast majority were Black. <span class="vocab" tabindex="0">FEMA<span class="tip">The Federal Emergency Management Agency, the government agency responsible for coordinating disaster response — widely criticized for its slow and disorganized response to Hurricane Katrina.</span></span>'s response was so slow and disorganized it became a symbol of government failure. Katrina made something visible that Black Americans had long known: who the government protected depended on who you were.</p>
 
-  <p class="para-standard">The 2008 <span class="vocab" tabindex="0">financial crisis<span class="tip">The collapse of the U.S. housing and financial markets in 2008, triggered by risky mortgage lending and financial speculation, which caused the worst recession since the Great Depression.</span></span> followed from decades of deregulation that allowed financial institutions to take enormous risks with other people's money. When the housing bubble collapsed, the federal government bailed out the banks that had caused the crisis with $700 billion of taxpayer money while approximately 10 million American households lost their homes to foreclosure. The contrast — Wall Street rescued, Main Street abandoned — produced a generation of political anger on both the left and the right that is still reshaping American politics. The Tea Party movement on the right and Occupy Wall Street on the left were different expressions of the same fury: that the rules of the economy were written for the people who owned it, not the people who worked in it.</p>
-  <p class="para-simple">The 2008 financial crisis followed from decades of deregulation that let financial institutions take enormous risks with other people's money. When the housing market collapsed, the federal government bailed out the banks that had caused the crisis while approximately 10 million households lost their homes to foreclosure. The contrast — banks rescued, homeowners abandoned — produced lasting political anger on both the left and the right. The Tea Party and Occupy Wall Street were different expressions of the same fury: that the rules of the economy were written for people who owned it, not people who worked in it.</p>
+  <p class="para-standard">Three years later, in 2008, the <span class="vocab" tabindex="0">financial crisis<span class="tip">The collapse of the U.S. housing and financial markets in 2008, triggered by risky mortgage lending and financial speculation that caused the worst recession since the Great Depression.</span></span> handed Americans a second lesson in the same subject. The collapse had been caused by years of risky and often fraudulent lending by major banks and financial institutions. When the system collapsed, Congress approved a $700 billion taxpayer-funded bailout to rescue those institutions. The banks that had caused the crisis were saved. The 10 million American families who lost their homes to foreclosure were not. Not a single major Wall Street executive went to prison. The contrast was not subtle, and it was not forgotten.</p>
+  <p class="para-simple">Three years later, in 2008, the <span class="vocab" tabindex="0">financial crisis<span class="tip">The collapse of the U.S. housing and financial markets in 2008, triggered by risky mortgage lending and financial speculation that caused the worst recession since the Great Depression.</span></span> taught Americans the same lesson again. The collapse was caused by risky and often fraudulent behavior by major banks. When the system failed, the government gave those banks a $700 billion bailout. The banks that caused the crisis were saved. The 10 million families who lost their homes were not. Not one major Wall Street executive went to prison. This contrast was not subtle, and millions of Americans did not forget it.</p>
+
 </section>
 
-<!-- ART SPOTLIGHT -->
+<!-- ART SPOTLIGHT — after the "left behind" human moment, before the political consequence -->
 <div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
-      FILENAME: S2L09_ShepardFaireyObama.jpg
+      FILENAME: S2L09_KaraWalkerSilhouette.jpg
       PLACE IN: images/S2/L09/
-      PRIORITY: ENHANCEMENT
-      FIND: Shepard Fairey "HOPE" poster — the iconic 2008 Obama campaign poster showing Obama's face in red, white, and blue with "HOPE" at the bottom; one of the most recognized political artworks of the 21st century
-      SEARCH: Shepard Fairey Hope Obama 2008 poster screen print Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Barack_Obama_Hope_poster.jpg
+      PRIORITY: ESSENTIAL
+      FIND: Kara Walker — "A Subtlety, or the Marvelous Sugar Baby" (2014) or a major silhouette installation work; Walker is known for large-scale cut-paper silhouette works addressing race, history, and power in America
+      SEARCH: Kara Walker "A Subtlety" sugar baby 2014 Domino Refinery Brooklyn Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Kara_Walker
     -->
-    <img src="images/S2/L09/S2L09_ShepardFaireyHope.jpg" alt="HOPE poster — Shepard Fairey, 2008, the iconic Barack Obama campaign image" class="as-image">
+    <img src="images/S2/L09/S2L09_KaraWalkerSilhouette.jpg" alt="Kara Walker, A Subtlety or the Marvelous Sugar Baby, 2014, large sphinx sculpture at Domino Sugar Refinery" class="as-image">
     <figcaption class="as-caption">
-      HOPE &mdash; Shepard Fairey, 2008<br>
-      Street artist Shepard Fairey created this image of Barack Obama using a photograph from the Associated Press and distributed it as a grassroots campaign poster during the 2008 presidential election. It became one of the most widely reproduced political artworks in American history.
+      "A Subtlety, or the Marvelous Sugar Baby" &mdash; Kara Walker, 2014<br>
+      Walker created this 75-foot sugar sphinx inside the soon-to-be-demolished Domino Sugar Refinery in Brooklyn, New York, addressing the history of slavery, sugar, and the labor of Black Americans.
     </figcaption>
   </figure>
-  <p class="as-fact">Fairey created the poster without authorization from the Obama campaign and gave away hundreds of thousands of copies for free before the campaign adopted it. The Associated Press later sued Fairey for using their photograph without permission — a lawsuit that dragged on for years and raised fundamental questions about copyright, fair use, and the relationship between commercial art and political speech that are still unresolved. The most famous political artwork of the 21st century existed in legal limbo for most of its life.</p>
+  <p class="as-fact">Walker installed the massive sugar sphinx inside the Domino Refinery for only seven weeks before the building was torn down. Hundreds of thousands of people lined up to see it. Walker has said she chose sugar deliberately because the sugar trade was one of the primary economic engines of American slavery — and because sugar dissolves. The entire structure was melted down after the exhibition closed, leaving nothing behind except photographs and the questions it raised about what American history preserves and what it destroys.</p>
 </div>
 
-<!-- SECTION 4: POLARIZATION -->
-<section class="content-section clearfix section-animate" id="polarization">
+<!-- SECTION 4: ROAD TO 2016 -->
+<section class="content-section clearfix section-animate" id="road-to-2016">
   <span class="section-kicker">CHAPTER FOUR</span>
-  <h2 class="section-heading">POLARIZATION AND THE QUESTION AMERICA CAN'T ANSWER</h2>
+  <h2 class="section-heading">THE ROAD TO 2016: WHEN ANGER BECAME A CANDIDATE</h2>
 
   <!--
-    FILENAME: S2L09_PolarizationChart.jpg
+    FILENAME: S2L09_TrumpRally2016.jpg
     PLACE IN: images/S2/L09/
-    PRIORITY: SUPPORTING
-    FIND: Political polarization visualization or divided Congress — Republicans on one side, Democrats on other, showing party sorting; or split screen of two political rallies representing opposing views
-    SEARCH: political polarization United States Congress divided 2010s Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/United_States_Congress
+    PRIORITY: ESSENTIAL
+    FIND: Donald Trump campaign rally, 2015-2016 — large crowd at an arena or outdoor venue during the 2016 presidential campaign; showing the scale and energy of the political movement
+    SEARCH: Donald Trump campaign rally 2016 presidential crowd Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Donald_Trump
   -->
   <figure class="img-right">
-    <img src="images/S2/L09/S2L09_PolarizationCongress.jpg" alt="Illustration of political polarization in the United States Congress, showing the sorting of parties">
-    <figcaption>The sorting of American political parties into opposing camps — ideologically consistent, geographically separate, and increasingly unable to find common ground on almost any major policy question. Wikimedia Commons.</figcaption>
+    <img src="images/S2/L09/S2L09_TrumpRally2016.jpg" alt="Donald Trump campaign rally, 2015-2016, showing large enthusiastic crowds">
+    <figcaption>A Donald Trump campaign rally, 2015-2016. Trump drew enormous crowds by promising to challenge the political establishment that many Americans blamed for the failures of the previous fifteen years. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard"><span class="vocab" tabindex="0">Polarization<span class="tip">The division of a group — in this case, American voters and politicians — into two opposed camps with little overlap or middle ground.</span></span> — the sorting of Americans into two increasingly hostile political camps with no middle ground — accelerated dramatically after 2000. The 2000 presidential election, decided by 537 votes in Florida after a Supreme Court ruling that stopped the recount, produced a legitimacy crisis that neither side fully accepted. The Iraq war divided the country on partisan lines. The Obama presidency — the first Black president in American history — produced both enormous pride and a backlash that organized itself into the Tea Party movement, which channeled genuine economic anxiety about the recession and genuine ideological opposition to government expansion into something that also, unmistakably, responded to the race of the president.</p>
-  <p class="para-simple">Polarization — the sorting of Americans into two opposing camps with no middle ground — accelerated sharply after 2000. The 2000 presidential election, decided by 537 votes in Florida after the Supreme Court stopped a recount, produced a legitimacy crisis that neither side fully accepted. The Iraq war divided the country along party lines. The Obama presidency — the first Black president — produced both enormous pride and a backlash organized into the Tea Party movement, which channeled economic anxiety, ideological opposition to government, and something that also, unmistakably, responded to the race of the president.</p>
+  <p class="para-standard">By 2015, fifteen years of accumulated grievances had no political outlet that felt real to a large portion of the American public. The political establishment — both Republican and Democratic — had supported the Iraq War, passed the bank bailout, expanded government surveillance, and presided over an economy that had largely recovered for the wealthy and left everyone else further behind. <span class="vocab" tabindex="0">Wage stagnation<span class="tip">A long period during which workers' paychecks stopped growing even as the economy expanded — meaning the benefits of growth went to the wealthy while working-class incomes stayed flat.</span></span> had hollowed out the middle class for decades. Manufacturing jobs that had supported working-class communities had moved overseas through globalization. The communities left behind did not feel like their concerns were taken seriously by either party in Washington.</p>
+  <p class="para-simple">By 2015, fifteen years of disappointments had no real political outlet for many Americans. Both political parties had supported the Iraq War, passed the bank bailout, and expanded surveillance. The economy had recovered for wealthy Americans but left working-class families further behind. <span class="vocab" tabindex="0">Wage stagnation<span class="tip">A long period during which workers' paychecks stopped growing even as the economy expanded — meaning the benefits of growth went to the wealthy while working-class incomes stayed flat.</span></span> had hurt the middle class for decades. Manufacturing jobs had moved overseas. Many communities felt ignored by both parties in Washington.</p>
 
-  <p class="para-standard">The question the Essential Question asks — "What does America look like when the biggest external threat disappears?" — turns out to have a complicated answer. Without the Cold War to organize its politics around a common enemy, America discovered that it contained genuine, deep, and largely unresolved disagreements about race, inequality, the role of government, immigration, and the meaning of its own history. The Cold War had not resolved those disagreements — it had suppressed them. The three decades after the Soviet collapse have been, in significant part, those suppressed disagreements working themselves out in the open, loudly, and without the tools of <span class="vocab" tabindex="0">bipartisanship<span class="tip">When members of two different political parties cooperate to pass laws — a practice that has become increasingly rare in American politics since the 1990s.</span></span> that might have managed them more constructively.</p>
-  <p class="para-simple">The question this lesson asks — "What does America look like when the biggest external threat disappears?" — has a complicated answer. Without the Cold War to organize politics around a common enemy, America discovered it contained deep, unresolved disagreements about race, inequality, government's role, immigration, and the meaning of its own history. The Cold War hadn't resolved those disagreements. It had suppressed them. The three decades after the Soviet collapse have been, in large part, those suppressed disagreements finally breaking into the open — loudly, and without the tools of bipartisan cooperation that might have managed them better.</p>
+  <p class="para-standard">Donald Trump named what many people already felt. He called Washington a "swamp" populated by corrupt politicians who worked for donors and lobbyists, not ordinary Americans. He described the trade deals that had moved manufacturing overseas as disasters for American workers. He attacked the Iraq War as a fraud — which, on the matter of weapons of mass destruction, it had been. He promised to put America first and to make the country feel powerful again for people who felt it had stopped working for them. The message resonated not because it was new, but because the grievances underneath it were real.</p>
+  <p class="para-simple">Donald Trump gave a name to what many people already felt. He called Washington a "swamp" of corrupt politicians working for donors, not ordinary Americans. He said the trade deals that moved jobs overseas were disasters for workers. He attacked the Iraq War as a fraud — and on the question of weapons of mass destruction, he was right. He promised to put America first and to make the country work again for people who felt it had stopped working for them. His message resonated because the anger underneath it was real.</p>
 
-  <p class="real-world para-standard">Real-world connection: Every major political dispute students see in today's news — about immigration, health care, guns, climate change, voting rights, and the economy — is rooted in the divisions that became visible after the Cold War ended and have intensified every decade since.</p>
-  <p class="real-world para-simple">Real-world connection: Every political dispute students see today — about immigration, health care, guns, climate change, voting rights, and the economy — is rooted in the divisions that became visible after the Cold War ended and have deepened every decade since.</p>
+  <p class="para-standard">Trump lost the popular vote by nearly 3 million votes but won the Electoral College and the presidency. His victory was not a single cause — it reflected economic anxiety, racial resentment, cultural backlash, and distrust of institutions all at once. But the thread running through it was something that had been building since 2001: a deep, accumulated conviction that the people in charge were not honest, not competent, and not working in the interests of ordinary Americans. That conviction had evidence behind it. The question 2016 raised — and still has not resolved — is what a democracy does when large numbers of its citizens stop trusting its institutions.</p>
+  <p class="para-simple">Trump lost the popular vote by nearly 3 million votes but won the presidency through the Electoral College. His victory came from many causes at once: economic anxiety, racial resentment, cultural backlash, and distrust of government. But the thread running through all of it was something built up since 2001: a deep conviction that the people in charge were not honest, not competent, and not working for ordinary Americans. That conviction had real evidence behind it. The question 2016 raised — and has not resolved — is what a democracy does when many of its citizens stop trusting its institutions.</p>
+
 </section>
 
-<!-- PRIMARY SOURCE -->
+<!-- PRIMARY SOURCE MOMENT -->
 <div class="primary-source section-animate" id="primary-source-moment">
   <span class="ps-label">PRIMARY SOURCE MOMENT</span>
   <div class="ps-visual">
     <figure>
       <!--
-        FILENAME: S2L09_GeorgeWBush911.jpg
+        FILENAME: S2L09_ColinPowell_UN.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: George W. Bush at a September 11 site or address — at Ground Zero with a bullhorn, or addressing the nation after the attacks; the defining public moment of the early War on Terror
-        SEARCH: George W Bush Ground Zero bullhorn September 11 2001 firefighters photograph Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/George_W._Bush
+        FIND: Colin Powell presenting Iraq weapons intelligence to the United Nations Security Council, February 5, 2003; Powell at the UN podium or holding up the vial of anthrax powder, making the case for the Iraq invasion
+        SEARCH: Colin Powell United Nations Security Council Iraq weapons 2003 presentation Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Colin_Powell
       -->
-      <img src="images/S2/L09/S2L09_BushGroundZero.jpg" alt="President Bush at Ground Zero with a bullhorn, September 14, 2001">
-      <figcaption>President Bush at Ground Zero, September 14, 2001. Wikimedia Commons.</figcaption>
+      <img src="images/S2/L09/S2L09_ColinPowell_UN.jpg" alt="Secretary of State Colin Powell presenting Iraq intelligence to the United Nations Security Council, February 5, 2003">
+      <figcaption>Secretary of State Colin Powell presents intelligence to the UN Security Council, February 5, 2003. He later called the speech a "blot" on his record. Source: Wikimedia Commons / U.S. State Department.</figcaption>
     </figure>
     <div>
-      <p class="ps-quote">"Tonight we are a country awakened to danger and called to defend freedom. Our grief has turned to anger and anger to resolution. Whether we bring our enemies to justice or bring justice to our enemies, justice will be done... Americans should not expect one battle but a lengthy campaign unlike any other we have ever seen... Every nation in every region now has a decision to make: either you are with us or you are with the terrorists."</p>
-      <p class="ps-attribution">&mdash; President George W. Bush, Address to a Joint Session of Congress, September 20, 2001</p>
-      <p class="ps-narrator">WHY THIS MATTERS: Bush is speaking nine days after September 11. Notice his framing: this will be a "lengthy campaign unlike any other" — he is preparing the country for something open-ended and unprecedented. Notice also the binary choice he offers to other nations: "either you are with us or you are with the terrorists." That framework — no neutrality, no complexity, every country must choose — shaped American foreign policy for the next two decades and created international conflicts that outlasted both the wars he started. As you read this, ask: what commitments is Bush making that the country will be held to, and what is he not saying about the costs?</p>
+      <p class="ps-quote">"My colleagues, every statement I make today is backed up by sources, solid sources. These are not assertions. What we're giving you are facts and conclusions based on solid intelligence... The gravity of this moment is matched by the gravity of the threat that Iraq's weapons of mass destruction pose to the world."</p>
+      <p class="ps-attribution">&mdash; Secretary of State Colin Powell, Address to the United Nations Security Council, February 5, 2003</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Powell is making the case to the world that invading Iraq is necessary because of weapons that, as we now know, did not exist. Notice his language: he is not saying "we believe" or "intelligence suggests" — he is saying "facts." He is staking his reputation and America's credibility on information that was wrong. Powell later said this speech was "a blot" on his record and the biggest mistake of his career. When you read this, ask: what happens to a government's credibility when it presents false information as certain fact to justify a war that kills hundreds of thousands of people?</p>
     </div>
   </div>
 </div>
@@ -386,7 +424,7 @@ footer{background:var(--steel-dark);color:rgba(180,195,210,.45);text-align:cente
 <!-- THEN AND NOW -->
 <div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">AMERICA AFTER THE COLD WAR DISCOVERED THAT THE ENEMY KEEPING IT TOGETHER HAD BEEN HIDING THE ARGUMENTS IT COULDN'T RESOLVE.</p>
+  <p class="tn-payoff">THE TRUST LOST BETWEEN 2001 AND 2016 DID NOT DISAPPEAR AFTER 2016. IT BECAME THE WATER AMERICAN POLITICS SWIMS IN.</p>
   <div class="tn-pair">
     <div class="tn-item">
       <span class="tn-era-label">2001</span>
@@ -394,54 +432,148 @@ footer{background:var(--steel-dark);color:rgba(180,195,210,.45);text-align:cente
         FILENAME: S2L09_ThenSept11Memorial.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: National September 11 Memorial pools in New York City — the two reflecting pools built at the World Trade Center site, showing the names inscribed around the edges; showing remembrance and presence
-        SEARCH: National September 11 Memorial reflecting pools New York Wikimedia Commons
+        FIND: National September 11 Memorial reflecting pools in New York City — the two pools built at the World Trade Center site, with names inscribed around the edges; showing remembrance
+        SEARCH: National September 11 Memorial reflecting pools New York names Wikimedia Commons
         LINK: Suggested: https://commons.wikimedia.org/wiki/National_September_11_Memorial_%26_Museum
       -->
-      <img src="images/S2/L09/S2L09_ThenSept11Memorial.jpg" alt="The National September 11 Memorial reflecting pools at the World Trade Center site, New York City">
-      <p class="tn-caption">The 9/11 Memorial reflecting pools at the former World Trade Center site — where the attacks that reshaped American politics occurred. Wikimedia Commons.</p>
+      <img src="images/S2/L09/S2L09_ThenSept11Memorial.jpg" alt="The National September 11 Memorial reflecting pools at the former World Trade Center site">
+      <p class="tn-caption">The 9/11 Memorial reflecting pools, New York City. The site where unity began — and where the questions that followed were never fully answered. Source: Wikimedia Commons.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S2L09_NowPolarizedVoters.jpg
+        FILENAME: S2L09_NowAmericanVoters.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: American voters at a polling place or civic engagement — people voting, waiting in line at a polling place, or participating in a civic event; showing democratic participation and agency
-        SEARCH: American voters polling place election day Wikimedia Commons CC license
+        FIND: American voters at a polling place — people in line to vote or casting ballots at a polling station; showing democratic participation and civic agency, recent years
+        SEARCH: American voters polling place election day line Wikimedia Commons CC license
         LINK: Suggested: https://commons.wikimedia.org/wiki/Elections_in_the_United_States
-        LICENSE: CC-licensed photography acceptable.
+        LICENSE: CC license acceptable.
       -->
       <img src="images/S2/L09/S2L09_NowAmericanVoters.jpg" alt="American voters at a polling place, present day">
-      <p class="tn-caption">American voters at a polling place — participating in the democratic system that September 11, the financial crisis, and polarization have all tested. CC license.</p>
+      <p class="tn-caption">Americans voting in a recent election. The democratic system that 9/11, the Iraq War, Katrina, and the financial crisis all tested is still the mechanism through which Americans make their most consequential decisions. Source: CC license.</p>
     </div>
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>In the days after September 11, 2001, Americans experienced a moment of unity that had not existed since World War II. Congress gave the president a standing ovation. Flags appeared on every house. Republicans and Democrats stood together on the Capitol steps. The unity was real — but it was also fragile, and it lasted less than two years before the Iraq war fractured it along partisan lines that have never fully healed.</p>
+    <p>On September 12, 2001, the United States had more goodwill, more unity, and more international support than at almost any other moment in its modern history. The country had just been attacked. It had a clear enemy. Both parties agreed on the response. The question was what the government would do with that unity — and whether the decisions made in the next fifteen years would justify the trust Americans placed in their institutions at that moment.</p>
     <h3>NOW</h3>
-    <p>Today, the United States is the most politically polarized it has been since the Civil War by most measurable standards. The two parties disagree not just on policy but on basic facts, on the legitimacy of elections, and on what the country's history means. The institutions — Congress, the courts, the presidency, the press — that the Founders designed to manage disagreement are under strain from that polarization in ways that do not have obvious solutions.</p>
+    <p>Today, trust in the federal government sits near historic lows. Fewer than 20 percent of Americans say they trust the government to do what is right most of the time — a number that has fallen steadily since 2001. Americans still vote, still organize, and still fight for change through democratic institutions. But they do so inside a political environment shaped by the accumulated failures of those institutions over fifteen years: the surveillance, the weapons that were never found, the people left on rooftops, the banks that were bailed out, and the executives who faced no consequences.</p>
     <h3>CONNECTION</h3>
-    <p>The three decades after the Cold War's end revealed that external threat is not a substitute for internal agreement about what a country is for. America's Cold War unity was partly genuine and partly maintained by the need to present a unified front against a common enemy. When that enemy disappeared, the unresolved questions about race, inequality, immigration, and the meaning of freedom that the Cold War had suppressed came back — and the institutions designed to manage those disagreements were tested in ways they had not been prepared for. The question this era raises is not a historical one. It is the question students are living inside.</p>
-    <p>Bush said after September 11 that "either you are with us or you are with the terrorists." The same binary thinking — you're with us or against us — now shapes domestic politics, with each party treating the other as an existential threat. Do you think that framing made America safer, or did it make the country harder to govern at home?</p>
+    <p>The through-line from September 11 to 2016 is not complicated. Each chapter of this lesson added one more layer of evidence for the same conclusion: that the government was willing to use its power to protect itself and its allies, and less willing to use that power to protect ordinary Americans. That conclusion was not invented by Donald Trump. He recognized it, named it, and ran on it. The anger was real before he arrived. The question this era leaves open is whether democratic institutions can rebuild trust once it has been lost at this scale.</p>
+    <p>If you had lived through all four of these events — the Patriot Act, the Iraq War, Katrina, and the financial crisis — do you think your trust in government would be higher or lower than your grandparents' generation? What would it take to earn that trust back?</p>
   </div>
 </div>
 
 </main>
-<footer>U.S. HISTORY &mdash; SEMESTER 2, LESSON 09 &mdash; AMERICA AFTER THE COLD WAR &mdash; STANDARD 11.11</footer>
+<footer>U.S. HISTORY &bull; SEMESTER 2, LESSON 09 &bull; THE TRUST COLLAPSE: FROM SEPTEMBER 11 TO 2016 &bull; STANDARD 11.11</footer>
 </div>
 
 <script>
-(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
-document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
-function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
-document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
-document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
-const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
-document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
-(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
-document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+// 1. READING PROGRESS BAR
+(function(){
+  var bar = document.getElementById('reading-progress');
+  window.addEventListener('scroll', function(){
+    var s = window.scrollY || document.documentElement.scrollTop;
+    var d = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = (d > 0 ? (s / d) * 100 : 0) + '%';
+  }, {passive: true});
+})();
+
+// 2. LEXILE TOGGLE
+document.getElementById('lexile-toggle').addEventListener('click', function(){
+  document.body.classList.toggle('simplified');
+  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
+
+// 3. VOCABULARY TOOLTIPS
+function repositionTip(el) {
+  var tip = el.querySelector('.tip');
+  if (!tip) return;
+  tip.style.left = '50%';
+  tip.style.transform = 'translateX(-50%)';
+  var rect = tip.getBoundingClientRect();
+  if (rect.left < 8) {
+    var shift = 8 - rect.left;
+    tip.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+  } else if (rect.right > window.innerWidth - 8) {
+    var shift = rect.right - (window.innerWidth - 8);
+    tip.style.transform = 'translateX(calc(-50% - ' + shift + 'px))';
+  }
+}
+document.querySelectorAll('.vocab').forEach(function(el) {
+  el.setAttribute('tabindex', '0');
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v) { if (v !== el) v.classList.remove('active'); });
+    el.classList.toggle('active');
+    if (el.classList.contains('active')) repositionTip(el);
+  });
+  el.addEventListener('focus', function() { el.classList.add('active'); repositionTip(el); });
+  el.addEventListener('blur', function() { el.classList.remove('active'); });
+  el.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.classList.toggle('active'); if (el.classList.contains('active')) repositionTip(el); }
+    if (e.key === 'Escape') el.classList.remove('active');
+  });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); });
+});
+
+// 4. INTERSECTION OBSERVER — TOC + NAV
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const tl = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+    const nl = document.querySelector('.section-nav a[href="#' + id + '"]');
+    if (entry.isIntersecting) {
+      if (tl) tl.classList.add('active');
+      if (nl) nl.classList.add('active');
+    } else {
+      if (tl) tl.classList.remove('active');
+      if (nl) nl.classList.remove('active');
+    }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
+
+// 5. SECTION ENTRANCE ANIMATION
+(function(){
+  var ao = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        ao.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section-animate').forEach(function(el) { ao.observe(el); });
+})();
+
+// 6. IMAGE FADE-IN
+document.querySelectorAll('img').forEach(function(img) {
+  if (img.complete && img.naturalWidth > 0) {
+    img.classList.add('loaded');
+  } else {
+    img.addEventListener('load', function() { img.classList.add('loaded'); });
+    img.addEventListener('error', function() {
+      img.style.opacity = '0.15';
+      img.style.border = '2px dashed rgba(255,255,255,0.2)';
+    });
+  }
+});
 </script>
+
 </body>
 </html>
-<!--IMAGE CHECK: document.querySelectorAll('img').forEach(img=>{if(!img.complete||img.naturalWidth===0){console.warn('MISSING:',img.src);}else{console.log('OK:',img.src);}});-->
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
+-->
