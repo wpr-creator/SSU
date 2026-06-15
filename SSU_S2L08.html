@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSU S2L08 : MODERN AMERICA AND UNFINISHED BUSINESS</title>
+<title>SSU S2L08 : THE BROKEN PROMISE</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -22,9 +22,9 @@
   --lime:#d7ff3f;
   --purple:#32134d;
   --pink:#ff4fd8;
-  --cyan:#1bd6ff;
   --orange:#c87018;
   --brown:#2a1a08;
+  --amber:#c89030;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
@@ -45,7 +45,9 @@ body{background:radial-gradient(ellipse at top,#1a0e04 0%,#060402 80%);font-fami
 .section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(138,48,16,.25)}
 #lexile-toggle{display:block;margin:22px auto 30px;padding:10px 26px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:2px solid var(--rust);background:transparent;color:var(--rust);transition:background .2s,color .2s}
 #lexile-toggle:hover{background:var(--rust);color:#fff}
-.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.para-simple{display:none}
+body.simplified .para-standard{display:none}
+body.simplified .para-simple{display:block}
 .toc-sidebar{position:fixed;left:calc(50% - 572px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(42,26,8,.93);border-right:2px solid rgba(184,132,32,.4)}
 .toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .toc-sidebar a{display:block;color:rgba(210,185,130,.55);text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
@@ -65,8 +67,8 @@ main{max-width:820px;margin:0 auto;padding:0 28px 68px}
 .section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
 .section-heading{font-family:'Oswald',sans-serif;font-size:clamp(32px,5vw,46px);font-weight:700;color:var(--brown);text-transform:uppercase;border-left:7px solid var(--rust);padding-left:16px;line-height:1.08;margin-bottom:26px}
 p{margin-bottom:20px;color:var(--charcoal)}
-.real-world{background:var(--pale);border-left:5px solid var(--rust);padding:17px 21px;margin:30px 0;font-weight:700;color:var(--ink)}
-figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.3)}
+figure{margin:32px 0}
+figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.3)}
 figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;line-height:1.45}
 .img-right{float:right;width:42%;margin:6px 0 20px 28px}
 .img-left{float:left;width:42%;margin:6px 28px 20px 0}
@@ -81,7 +83,9 @@ figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;lin
 .brain-break{font-family:'Barlow Condensed',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
 .bb-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.88}
 .bb-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
-.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.dyk-break{background:linear-gradient(135deg,#1a3a10,#0c2008);color:#fff;border-left:6px solid var(--lime)}
+.dyk-break .bb-label{color:var(--lime)}
+.dyk-break p,.dyk-break span{color:#fff}
 .ff-break{background:#0c0802;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);text-align:center}
 .ff-break .bb-label{color:var(--orange);text-align:center;margin-bottom:8px}
 .ff-context{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(220,165,80,.8);text-align:center;margin-bottom:28px;font-weight:700}
@@ -96,7 +100,8 @@ figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;lin
 .as-fact{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:680px;margin:0 auto;text-align:center}
 .primary-source{background:var(--pale);border-left:7px solid var(--rust);padding:30px 34px;margin:38px 0;box-shadow:0 6px 20px rgba(0,0,0,.15)}
 .ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
-.ps-visual figure{margin:0}.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .ps-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--rust);margin-bottom:12px;display:block}
 .ps-quote{font-size:20px;font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:14px}
 .ps-attribution{font-size:13px;font-style:italic;color:var(--gray);margin-bottom:12px}
@@ -105,14 +110,16 @@ figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;lin
 .tn-break{background:var(--brown);color:#fff;padding:36px 50px;margin:30px -50px 0}
 .tn-break .bb-label{color:var(--gold);text-align:center;display:block;margin-bottom:20px}
 .tn-payoff{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.32;text-align:center;color:var(--gold);margin:0 auto 28px;max-width:720px}
-.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
 .tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:900}
 .tn-item img{width:100%;display:block;border:2px solid rgba(184,132,32,.38)}
 .tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:rgba(210,185,130,.7);margin-top:8px;line-height:1.4}
 .tn-text-block{margin-top:24px;border-top:1px solid rgba(184,132,32,.25);padding-top:20px}
 .tn-text-block h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin:18px 0 8px}
 .tn-text-block p{font-family:'Barlow Condensed',sans-serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
-img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
 .section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
 .section-animate.visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
@@ -128,32 +135,38 @@ footer{background:var(--brown);color:rgba(210,185,130,.45);text-align:center;pad
 <div id="reading-progress"></div>
 <div class="page-wrap">
 
+<!-- HEADER -->
 <header class="site-header">
   <!--
-    FILENAME: S2L08_NixonResignation.jpg
+    FILENAME: S2L08_NixonHelicopter.jpg
     PLACE IN: images/S2/L08/
     PRIORITY: ESSENTIAL
-    FIND: Richard Nixon waving goodbye from helicopter doorway, August 9 1974, White House south lawn: the iconic photograph of Nixon departing after his resignation
-    SEARCH: Nixon resignation helicopter White House August 1974 wave goodbye photograph Wikimedia Commons
+    FIND: Richard Nixon waving from the doorway of Marine One helicopter on
+          the White House south lawn, August 9, 1974 — the iconic image of
+          his departure after resigning the presidency; the emotional center
+          of this lesson
+    SEARCH: Nixon resignation helicopter White House August 1974 wave
+            goodbye photograph Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Richard_Nixon
   -->
-  <img src="images/S2/L08/S2L08_NixonResignation.jpg" alt="President Nixon waves from the doorway of Marine One as he departs the White House after his resignation, August 9, 1974" class="header-bg">
+  <img src="images/S2/L08/S2L08_NixonHelicopter.jpg" alt="President Nixon waves from the doorway of Marine One as he departs the White House after resigning, August 9, 1974" class="header-bg">
   <div class="header-inner">
-    <p class="course-label">U.S. HISTORY • SEMESTER 2 • LESSON 08 • STANDARD 11.11</p>
-    <h1 class="page-title">Modern America<br>&amp; Unfinished<br>Business</h1>
+    <p class="course-label">U.S. HISTORY &bull; SEMESTER 2 &bull; LESSON 08 &bull; STANDARD 11.11</p>
+    <h1 class="page-title">THE BROKEN<br>PROMISE</h1>
     <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      What major problems has America still not solved, and why does history matter for solving them?
+      <span class="eq-label">ESSENTIAL QUESTION</span>
+      How did the 1970s and 1980s break the promise that a better America was coming?
     </div>
   </div>
 </header>
 
+<!-- NAV -->
 <nav class="section-nav">
-  <a href="#introduction">INTRODUCTION</a>
-  <a href="#watergate-limits">WATERGATE</a>
-  <a href="#transformation">TRANSFORMATION</a>
-  <a href="#cracks-in-cities">CRACKS IN CITIES</a>
-  <a href="#reagan-redefines">REAGAN REDEFINES</a>
+  <a href="#introduction">INTRO</a>
+  <a href="#watergate">WATERGATE</a>
+  <a href="#deindustrialization">CITIES HOLLOWED OUT</a>
+  <a href="#crack-war-on-drugs">CRACK AND THE WAR ON DRUGS</a>
+  <a href="#reagan">REAGAN REDEFINES AMERICA</a>
   <a href="#primary-source-moment">SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </nav>
@@ -161,24 +174,40 @@ footer{background:var(--brown);color:rgba(210,185,130,.45);text-align:center;pad
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
   <a href="#introduction">Introduction</a>
-  <a href="#watergate-limits">Watergate</a>
-  <a href="#transformation">Transformation</a>
-  <a href="#cracks-in-cities">Cracks in Cities</a>
-  <a href="#reagan-redefines">Reagan Redefines</a>
+  <a href="#watergate">Watergate</a>
+  <a href="#deindustrialization">Cities Hollowed Out</a>
+  <a href="#crack-war-on-drugs">Crack and the War on Drugs</a>
+  <a href="#reagan">Reagan Redefines America</a>
   <a href="#primary-source-moment">Source</a>
   <a href="#then-now">Then &amp; Now</a>
 </aside>
 
 <main>
 
+<!-- TIMELINE -->
 <div class="timeline-wrap">
-  <p class="timeline-label">MODERN AMERICA: 1965 TO 1992</p>
+  <p class="timeline-label">THE BROKEN PROMISE &bull; 1965 TO 1992</p>
   <div class="timeline">
-    <div class="tl-node"><div class="tl-date">1965</div><p>The Immigration Act changes who can come to America. Medicare and Medicaid begin.</p></div>
-    <div class="tl-node"><div class="tl-date">1972–74</div><p>Watergate begins with a break-in and grows into a cover-up. Nixon resigns on August 9, 1974.</p></div>
-    <div class="tl-node"><div class="tl-date">1970–80</div><p>The environmental movement wins new protections. Many Midwest factory cities lose jobs and people.</p></div>
-    <div class="tl-node"><div class="tl-date">1980s</div><p>The crack epidemic harms many urban communities. The War on Drugs increases incarceration while Sunbelt cities grow.</p></div>
-    <div class="tl-node"><div class="tl-date">1980–88</div><p>The Reagan Revolution changes debates over taxes, government, military spending, and inequality.</p></div>
+    <div class="tl-node">
+      <div class="tl-date">1965</div>
+      <p>Civil Rights Act and Voting Rights Act pass. Legal equality is won. The question of economic equality is left unanswered.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">1972–74</div>
+      <p>Watergate: Nixon's campaign breaks into Democratic offices and covers it up. Nixon resigns August 9, 1974. Trust in government collapses.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">1970–80</div>
+      <p>Factories close across the industrial Midwest. Detroit, Cleveland, and Pittsburgh lose hundreds of thousands of jobs and residents.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">Mid-1980s</div>
+      <p>Crack cocaine arrives in deindustrialized cities. Congress responds with the Anti-Drug Abuse Act, creating harsh mandatory prison sentences.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">1980–88</div>
+      <p>Reagan wins the presidency twice by arguing government is the problem. Tax cuts, military spending, and reduced social programs reshape America.</p>
+    </div>
   </div>
 </div>
 
@@ -186,198 +215,230 @@ footer{background:var(--brown);color:rgba(210,185,130,.45);text-align:center;pad
 
 <!-- INTRODUCTION -->
 <section class="intro-section section-animate" id="introduction">
-  <p class="para-standard">On the night of June 17, 1972, five men in business suits and surgical gloves were arrested inside the Democratic National Committee headquarters at the Watergate hotel complex in Washington DC. They were carrying bugging equipment, cash, and address books linked to the Committee to Re-Elect the President. What followed over the next two years: the coverup, the Senate hearings, the Saturday Night Massacre, the secret tape recordings, and finally the resignation of President Richard Nixon: was a constitutional crisis unlike anything the country had experienced since the Civil War. But Watergate was only one of many ways that the 1960s, 1970s, and 1980s reshaped the country Americans thought they knew. The America that emerged from those decades looked different, believed different things, and was still arguing about all of it.</p>
-  <p class="para-simple">On the night of June 17, 1972, five men in business suits were arrested inside the Democratic National Committee headquarters at the Watergate hotel in Washington DC. They were carrying bugging equipment and address books linked to the president's re-election campaign. What followed over the next two years: the cover-up, the Senate hearings, the secret tape recordings, and finally the resignation of President Nixon: was the worst constitutional crisis since the Civil War. But Watergate was just one of many ways the 1960s, 1970s, and 1980s changed the country. The America that came out the other side looked different: and was still fighting about all of it.</p>
+
+  <p class="para-standard">In the summer of 1965, two of the most important laws in American history were signed within weeks of each other. The Voting Rights Act guaranteed Black Americans the right to vote without intimidation or barriers. Medicare and Medicaid guaranteed health coverage for the elderly and the poor. It felt like the country was finally delivering on promises it had made but never kept. It felt like the arc of history was bending toward something better.</p>
+  <p class="para-simple">In the summer of 1965, two landmark laws were signed within weeks of each other. The Voting Rights Act guaranteed Black Americans the right to vote. Medicare and Medicaid guaranteed health care for the elderly and the poor. It felt like the country was finally making good on its promises.</p>
+
+  <p class="para-standard">What followed over the next twenty-five years told a more complicated story. A president committed crimes and resigned in disgrace. Factories shut down and entire cities lost their economic foundations. Crack cocaine arrived into communities that had already lost everything else, and the government's response was to imprison people rather than help them. Then a president won two elections by arguing that government itself was the enemy. By 1992, the America that had seemed so close in 1965 felt very far away for millions of people who had been waiting for it.</p>
+  <p class="para-simple">What followed over the next twenty-five years was a different kind of story. A president committed crimes and resigned. Factories closed and cities fell apart. Crack cocaine arrived in communities that had already lost everything, and the government responded by sending people to prison. Then a president won by arguing that government itself was the problem. By 1992, the promise of 1965 felt very far away for millions of Americans.</p>
+
 </section>
 
 <!-- SECTION 1: WATERGATE -->
-<section class="content-section clearfix section-animate" id="watergate-limits">
+<section class="content-section clearfix section-animate" id="watergate">
   <span class="section-kicker">CHAPTER ONE</span>
-  <h2 class="section-heading">WATERGATE AND THE LIMITS OF POWER</h2>
+  <h2 class="section-heading">WATERGATE: THE FIRST CRACK</h2>
 
   <!--
     FILENAME: S2L08_WatergateHearings.jpg
     PLACE IN: images/S2/L08/
     PRIORITY: ESSENTIAL
-    FIND: Senate Watergate Committee hearings, 1973: the televised Senate hearing room with senators at the long curved table and witnesses; Sam Ervin presiding or key witness testifying
-    SEARCH: Senate Watergate Committee hearings 1973 televised Sam Ervin Wikimedia Commons
+    FIND: Senate Watergate Committee televised hearings, 1973; the hearing
+          room with senators at the long curved table and witnesses testifying;
+          Senator Sam Ervin presiding or John Dean testifying; showing the
+          constitutional process at work
+    SEARCH: Senate Watergate Committee hearings 1973 televised Sam Ervin
+            John Dean Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Watergate_scandal
   -->
   <figure class="img-right">
     <img src="images/S2/L08/S2L08_WatergateHearings.jpg" alt="The Senate Watergate Committee hearings, 1973, broadcast live on national television">
-    <figcaption>The Senate Watergate Committee hearings, 1973: broadcast live on national television. Millions of Americans watched a president's aides testify about crimes committed by his administration. Wikimedia Commons.</figcaption>
+    <figcaption>The Senate Watergate Committee hearings, 1973, broadcast live on national television. Millions of Americans watched as White House aides testified about crimes committed by the president's campaign. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard"><span class="vocab" tabindex="0">Watergate<span class="tip">The 1972-1974 political scandal in which President Nixon's campaign broke into Democratic Party offices and Nixon's administration covered it up: leading to Nixon's resignation.</span></span> did not begin as a constitutional crisis. It began as a third-rate burglary: a clumsy attempt to bug the phones and photograph documents at the Democratic National Committee. What turned it into a <span class="vocab" tabindex="0">constitutional crisis<span class="tip">A situation where the government is so divided or the rules are so violated that the normal functioning of government is threatened.</span></span> was the cover-up. Nixon used the CIA, the FBI, and his own staff to obstruct the investigation, paid hush money to the burglars, and fired the special prosecutor: Archibald Cox: when Cox demanded the secret White House tape recordings in what became known as the Saturday Night Massacre. When the tapes were finally released, they confirmed Nixon had ordered the cover-up within days of the break-in. He resigned on August 9, 1974: the only president in American history to do so.</p>
-  <p class="para-simple">Watergate started as a clumsy burglary. What turned it into a constitutional crisis was the cover-up. Nixon used the CIA, the FBI, and his own staff to block the investigation. He paid hush money to the burglars. When special prosecutor Archibald Cox demanded the secret White House tape recordings, Nixon fired him: an event called the Saturday Night Massacre. When the tapes were finally released, they proved Nixon had ordered the cover-up within days of the break-in. He resigned on August 9, 1974: the only president in American history to do so.</p>
+  <p class="para-standard">On the night of June 17, 1972, five men in business suits were arrested inside the Democratic National Committee headquarters at the Watergate hotel in Washington DC. They were carrying bugging equipment and address books linked to the Committee to Re-Elect the President. The burglary itself was clumsy and minor. What turned it into a <span class="vocab" tabindex="0">constitutional crisis<span class="tip">A situation in which the government breaks down or the rules are violated so severely that the normal functioning of democracy is threatened.</span></span> was what came next: the cover-up.</p>
+  <p class="para-simple">On the night of June 17, 1972, five men were arrested inside the Democratic Party's headquarters at the Watergate hotel in Washington DC. They were carrying bugging equipment connected to President Nixon's re-election campaign. The break-in itself was clumsy. What made it a crisis was what Nixon did next: the cover-up.</p>
 
-  <p class="para-standard">What Watergate revealed about presidential power was not that a president had committed crimes: presidents had done that before. What it revealed was how much power the executive branch had quietly accumulated since Franklin Roosevelt's New Deal and how few structural limits remained on a president willing to abuse it. The aftermath produced the War Powers Act of 1973, the Foreign Intelligence Surveillance Act, and significant reforms to campaign finance law. It also produced a generation-long collapse in public trust in government. Polls measuring trust in the federal government fell from about 75 percent in 1958 to under 30 percent by 1980: and never fully recovered.</p>
-  <p class="para-simple">Watergate revealed how much power the executive branch had quietly accumulated: and how few limits remained on a president willing to abuse it. The aftermath produced new laws restricting presidential war powers and surveillance. It also produced a lasting collapse in public trust in government. About 75 percent of Americans trusted the federal government in 1958. By 1980, that number was under 30 percent: and it never fully recovered.</p>
+  <p class="para-standard">President Nixon used the CIA, the FBI, and members of his own staff to block the investigation. He paid hush money to keep the burglars silent. When special prosecutor Archibald Cox demanded the secret White House tape recordings, Nixon fired him in what became known as the <span class="vocab" tabindex="0">Saturday Night Massacre<span class="tip">The October 1973 night when Nixon ordered the firing of special prosecutor Archibald Cox, leading two top Justice Department officials to resign in protest.</span></span>. When the tapes were finally released, they proved Nixon had ordered the cover-up himself just days after the break-in. He resigned on August 9, 1974: the only president in American history to do so.</p>
+  <p class="para-simple">Nixon used the CIA and FBI to block the investigation. He paid people to stay quiet. When a special prosecutor demanded secret White House tape recordings, Nixon fired him. When the tapes were finally released, they proved Nixon had ordered the cover-up himself. He resigned on August 9, 1974: the only president in American history ever to resign.</p>
+
+  <p class="para-standard">Watergate did not just remove a president. It permanently damaged Americans' trust in their government. Polls measuring trust in the federal government fell from about 75 percent in 1958 to under 30 percent by 1980. Vietnam had already shaken that trust; Watergate finished the job. The country's confidence that government told the truth and operated honestly never fully recovered. That collapse of trust is the first broken piece of the promise this lesson is about.</p>
+  <p class="para-simple">Watergate did not just remove a president. It permanently damaged trust in government. Trust in the federal government fell from about 75 percent in 1958 to under 30 percent by 1980. Vietnam had already hurt that trust. Watergate finished the job. Americans' confidence that their government told the truth never fully came back.</p>
+
 </section>
 
-<!-- DID YOU KNOW -->
+<!-- DID YOU KNOW — after Watergate lands, before deindustrialization -->
 <div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
-  <p class="bb-text">Nixon was already headed for a landslide victory in 1972: he carried 49 of 50 states. Historians still debate what the Watergate burglars expected to find because the break-in probably could not have changed the election. One burglar was even carrying his own business card when he was arrested.</p>
+  <p class="bb-text">The most famous evidence in the Watergate investigation was a set of tape recordings Nixon had secretly made of his own White House conversations. When investigators discovered that one tape had an 18.5-minute gap right in the middle of a critical conversation about the break-in, Nixon's secretary Rose Mary Woods claimed she had accidentally erased it while transcribing. She demonstrated how it could have happened by holding a phone with one hand and reaching for a foot pedal with the other — a stretch so physically implausible it became known as "the Rose Mary Stretch." Prosecutors never believed her. Nobody ever explained what was on those 18.5 minutes.</p>
 </div>
 
-<!-- SECTION 2: TRANSFORMATION -->
-<section class="content-section clearfix section-animate" id="transformation">
+<!-- SECTION 2: DEINDUSTRIALIZATION -->
+<section class="content-section clearfix section-animate" id="deindustrialization">
   <span class="section-kicker">CHAPTER TWO</span>
-  <h2 class="section-heading">AMERICA TRANSFORMS</h2>
+  <h2 class="section-heading">CITIES HOLLOWED OUT</h2>
 
-  <div class="two-col">
-    <!--
-      FILENAME: S2L08_ImmigrationAct1965.jpg
-      PLACE IN: images/S2/L08/
-      PRIORITY: ESSENTIAL
-      FIND: Immigration Act of 1965 signing ceremony: LBJ signing the act at the Statue of Liberty with senators and officials present; or the ceremony at Liberty Island
-      SEARCH: Immigration Act 1965 signing LBJ Statue of Liberty ceremony Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Immigration_and_Nationality_Act_of_1965
-    -->
-    <figure>
-      <img src="images/S2/L08/S2L08_ImmigrationAct1965.jpg" alt="President Johnson signs the Immigration Act of 1965 at the Statue of Liberty">
-      <figcaption>LBJ signs the Immigration and Nationality Act of 1965 at the Statue of Liberty. Almost no one predicted how dramatically it would transform America's ethnic composition over the next fifty years. Wikimedia Commons.</figcaption>
-    </figure>
-    <!--
-      FILENAME: S2L08_EarthDayProtest.jpg
-      PLACE IN: images/S2/L08/
-      PRIORITY: ESSENTIAL
-      FIND: First Earth Day, April 22 1970: large crowd at a rally in New York City or Washington DC, people carrying environmental signs
-      SEARCH: Earth Day 1970 first rally protest crowd New York Washington Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Earth_Day
-    -->
-    <figure>
-      <img src="images/S2/L08/S2L08_EarthDayProtest.jpg" alt="First Earth Day rally, April 22, 1970">
-      <figcaption>The first Earth Day rally, April 22, 1970. An estimated 20 million Americans participated. The environmental movement it helped launch produced the EPA, the Clean Air Act, and the Clean Water Act within two years. Wikimedia Commons.</figcaption>
-    </figure>
-  </div>
+  <!--
+    FILENAME: S2L08_RustBeltFactory.jpg
+    PLACE IN: images/S2/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Abandoned or shuttered steel mill, auto plant, or factory in a
+          Rust Belt city such as Detroit, Pittsburgh, Cleveland, or Gary;
+          showing the physical remains of deindustrialization; 1970s-1980s
+          documentary register
+    SEARCH: Rust Belt abandoned factory steel mill Detroit Pittsburgh
+            Cleveland deindustrialization 1970s 1980s Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Rust_Belt
+  -->
+  <figure class="img-left clearfix">
+    <img src="images/S2/L08/S2L08_RustBeltFactory.jpg" alt="An abandoned factory in a Rust Belt city, showing the physical impact of deindustrialization, 1970s-1980s">
+    <figcaption>An abandoned factory in a Rust Belt city. Through the 1970s and 1980s, steel mills, auto plants, and rubber factories across the industrial Midwest closed as companies moved production to lower-wage regions and countries. Source: Wikimedia Commons.</figcaption>
+  </figure>
 
-  <p class="para-standard">The Immigration Act of 1965 is one of the most consequential laws in American history: and almost no one who voted for it predicted what it would do. The old immigration system had favored Western European countries. The new law replaced national origin quotas with a preference for family reunification and needed skills. The sponsors of the bill expected modest increases from Southern and Eastern Europe. What actually happened was a massive wave of immigration from Asia, Latin America, and Africa. By 2015, the foreign-born population of the United States had grown from 5 percent to nearly 14 percent: and the country's racial and ethnic composition had been transformed. The <span class="vocab" tabindex="0">demographic shift<span class="tip">A major change in the racial, ethnic, or age composition of a population over time.</span></span> that is reshaping American politics today was largely set in motion by a law passed in 1965.</p>
-  <p class="para-simple">The Immigration Act of 1965 is one of the most consequential laws in American history: and almost no one predicted what it would do. The old immigration system favored Western Europe. The new law prioritized family reunification and skilled workers instead. Supporters expected modest changes. What actually happened was massive immigration from Asia, Latin America, and Africa. By 2015, the foreign-born population had grown from 5 percent to nearly 14 percent of the United States. The dramatic changes in America's racial and ethnic composition that are reshaping politics today were largely set in motion by that 1965 law.</p>
+  <p class="para-standard">While Watergate played out in Washington, something quieter but just as damaging was happening to American cities. Factories that had employed hundreds of thousands of workers began to close. Steel mills in Pittsburgh, auto plants in Detroit, rubber factories in Akron, and meatpacking houses across the Midwest shut down or moved to lower-wage regions and countries. Cities that had been the economic backbone of working-class America began to hollow out.</p>
+  <p class="para-simple">While Watergate played out in Washington, something quieter but just as damaging was happening to American cities. Factories began to close. Steel mills, auto plants, and rubber factories across the Midwest shut down or moved to places with lower wages. Cities that had been the heart of working-class America started to fall apart.</p>
 
-  <p class="para-standard">The environmental movement produced a parallel transformation in the role of government. Rachel Carson's 1962 book "Silent Spring" documented how pesticides: particularly DDT: were contaminating the food chain and killing birds, fish, and wildlife across America. The book sold half a million copies in six months and directly launched the modern environmental movement. By 1970, the <span class="vocab" tabindex="0">EPA<span class="tip">Environmental Protection Agency: a federal agency created in 1970 to enforce environmental laws and protect air, water, and land from pollution.</span></span> had been established, Earth Day had drawn 20 million participants, and Congress had passed the Clean Air Act. The Clean Water Act followed in 1972. For the first time, the federal government accepted responsibility for the quality of the air Americans breathed and the water they drank: a responsibility that private markets had consistently failed to provide.</p>
-  <p class="para-simple">The environmental movement transformed what government did. Rachel Carson's 1962 book "Silent Spring" documented how pesticides were poisoning the food chain and killing wildlife. It sold half a million copies in six months and launched the modern environmental movement. By 1970, the EPA had been created, Earth Day had drawn 20 million participants, and Congress had passed the Clean Air Act. The Clean Water Act followed in 1972. For the first time, the federal government accepted responsibility for the quality of the air and water Americans depended on: something private markets had consistently failed to protect.</p>
+  <p class="para-standard">The workers hit hardest were <span class="vocab" tabindex="0">disproportionately<span class="tip">Affecting one group much more than others, out of proportion to their share of the population.</span></span> Black. Black Americans had migrated north in the Great Migration specifically for these manufacturing jobs. They had built their families, their neighborhoods, and their futures around stable factory work. When the factories closed, the tax base that funded schools, parks, and city services collapsed with them. Middle-class white residents with more options left for growing <span class="vocab" tabindex="0">Sunbelt<span class="tip">The southern and southwestern United States, including cities like Houston, Phoenix, Atlanta, and Las Vegas, which grew rapidly as northern industrial cities declined.</span></span> cities like Houston and Phoenix, taking their tax dollars with them.</p>
+  <p class="para-simple">The workers hurt most were Black. Black Americans had moved north specifically for factory jobs. When the factories closed, the money that funded schools and city services collapsed too. White residents with more options moved to growing cities in the South and Southwest. The communities left behind had fewer resources and fewer ways out.</p>
+
+  <p class="para-standard">The civil rights movement had won legal equality. But legal equality could not fix a city where the jobs were gone, the schools were underfunded, and the people with resources had left. By 1980, the gap between what the law promised and what life actually delivered in cities like Detroit and Cleveland was enormous. The second broken piece of the promise was economic: freedom on paper meant very little without opportunity in practice.</p>
+  <p class="para-simple">The civil rights movement had won legal equality. But legal equality could not fix a city where all the jobs were gone and the schools had no money. The gap between what the law promised and what daily life looked like in cities like Detroit was enormous. Legal freedom without economic opportunity was a promise only halfway kept.</p>
+
 </section>
 
-<!-- FAST FACTS -->
+<!-- FAST FACTS — after deindustrialization scope is understood -->
 <div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
-  <p class="ff-context">AMERICA CHANGING, 1965-1990</p>
+  <p class="ff-context">THE BROKEN PROMISE IN NUMBERS</p>
   <div class="ff-grid">
     <div class="ff-item">
-      <span class="ff-number">20M</span>
-      <span class="ff-desc">Americans who participated in the first Earth Day, April 22, 1970: one of the largest civic demonstrations in American history</span>
+      <span class="ff-number">75%</span>
+      <span class="ff-desc">of Americans who trusted the federal government in 1958 — fallen to under 30 percent by 1980, largely because of Vietnam and Watergate</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">30%</span>
-      <span class="ff-desc">of Americans who trusted the federal government by 1980: down from 75% in 1958, largely because of Vietnam and Watergate</span>
+      <span class="ff-number">1M+</span>
+      <span class="ff-desc">manufacturing jobs lost in the American Midwest between 1969 and 1979 as factories closed or moved to lower-wage regions</span>
     </div>
     <div class="ff-item">
       <span class="ff-number">500%</span>
-      <span class="ff-desc">increase in the incarceration rate between 1970 and 2000: driven primarily by the War on Drugs and mandatory minimum sentencing laws</span>
+      <span class="ff-desc">increase in the U.S. incarceration rate between 1970 and 2000, driven primarily by the War on Drugs — falling most heavily on Black men in deindustrialized cities</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">1965</span>
-      <span class="ff-desc">the year both the Immigration Act and Medicare and Medicaid were signed into law: a single legislative year that permanently changed who was American and who the government protected</span>
+      <span class="ff-number">100:1</span>
+      <span class="ff-desc">the sentencing disparity between crack and powder cocaine under the 1986 Anti-Drug Abuse Act — 5 grams of crack carried the same sentence as 500 grams of powder cocaine</span>
     </div>
   </div>
 </div>
 
-<!-- SECTION 3: CRACKS IN CITIES -->
-<section class="content-section clearfix section-animate" id="cracks-in-cities">
+<!-- SECTION 3: CRACK AND WAR ON DRUGS -->
+<section class="content-section clearfix section-animate" id="crack-war-on-drugs">
   <span class="section-kicker">CHAPTER THREE</span>
-  <h2 class="section-heading">CRACKS IN THE CITIES</h2>
+  <h2 class="section-heading">CRACK AND THE WAR ON DRUGS</h2>
 
   <!--
-    FILENAME: S2L08_RustBeltDetroit.jpg
+    FILENAME: S2L08_CrackEraUrban.jpg
     PLACE IN: images/S2/L08/
     PRIORITY: ESSENTIAL
-    FIND: Deindustrialization in a Rust Belt city: an abandoned factory in Detroit, Pittsburgh, or Cleveland; or an aerial view of industrial decline in a Midwest city; 1970s-1980s
-    SEARCH: Rust Belt deindustrialization abandoned factory Detroit 1970s 1980s Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Rust_Belt
+    FIND: An urban street scene from New York, Chicago, Los Angeles, or
+          another major city during the mid-to-late 1980s crack era;
+          showing the economic devastation of a neighborhood during this
+          period; documentary photojournalism register, serious not
+          sensational — abandoned buildings, boarded storefronts, or
+          community members in a struggling neighborhood
+    SEARCH: 1980s urban neighborhood poverty crack era New York Bronx
+            Chicago documentary photograph Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:1980s_in_the_United_States
   -->
-  <figure class="img-left">
-    <img src="images/S2/L08/S2L08_RustBeltDetroit.jpg" alt="Abandoned factory in a Rust Belt city, showing deindustrialization, 1970s-1980s">
-    <figcaption>An abandoned factory in a Rust Belt city: as manufacturing jobs moved to lower-wage regions and countries, Midwest industrial cities like Detroit, Cleveland, and Pittsburgh lost hundreds of thousands of residents between 1960 and 1990. Wikimedia Commons.</figcaption>
+  <figure class="img-right clearfix">
+    <img src="images/S2/L08/S2L08_CrackEraUrban.jpg" alt="An urban neighborhood during the crack epidemic era, mid-to-late 1980s, showing economic devastation">
+    <figcaption>An urban neighborhood during the 1980s crack era. Communities that had already lost their manufacturing base faced an additional crisis as cheap crack cocaine spread rapidly through economically devastated areas. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard"><span class="vocab" tabindex="0">Deindustrialization<span class="tip">The decline of manufacturing jobs in a region as factories close or move to areas with lower wages, leaving behind unemployment and urban poverty.</span></span> hollowed out the cities of the industrial Midwest and Northeast. Detroit, Cleveland, Pittsburgh, Buffalo, and dozens of other cities lost manufacturing plants to the South, to Mexico, and to Asia through the 1970s and 1980s. Steel mills, auto plants, rubber factories, and meatpacking houses closed. The workers they had employed: disproportionately Black workers who had migrated North in the Great Migration for exactly those factory jobs: were left in cities whose tax base, schools, and services were collapsing along with their economies. The Frostbelt-to-Sunbelt migration pulled middle-class white residents and tax revenue toward Phoenix, Houston, Las Vegas, and Atlanta. The cities left behind faced a compounding crisis that their remaining residents experienced as abandonment.</p>
-  <p class="para-simple">Deindustrialization gutted American industrial cities. Detroit, Cleveland, Pittsburgh, and dozens of other cities lost factories to the South, Mexico, and Asia through the 1970s and 1980s. The workers left behind: disproportionately Black workers who had come North in the Great Migration for exactly those manufacturing jobs: were in cities whose tax bases, schools, and services were collapsing. Meanwhile, middle-class white residents moved to Sun Belt cities like Phoenix, Houston, and Atlanta. The cities left behind faced a crisis their residents experienced as abandonment by everyone who could afford to leave.</p>
+  <p class="para-standard">Beginning in the mid-1980s, <span class="vocab" tabindex="0">crack cocaine<span class="tip">A cheap, smokable form of cocaine that spread rapidly through economically devastated urban communities in the 1980s, triggering a public health and law enforcement crisis.</span></span> spread rapidly through the deindustrialized cities that had already lost their economic foundations. Crack was cheap enough for people with almost no money to afford. It moved quickly through communities where unemployment was high, hope was low, and the normal structures of economic life had already collapsed. The public health emergency was real and urgent.</p>
+  <p class="para-simple">Starting in the mid-1980s, crack cocaine spread rapidly through cities that had already lost their jobs and economic foundations. Crack was cheap enough for people with almost nothing to afford. It spread through communities where unemployment was high and hope was low. It was a real public health emergency.</p>
 
-  <p class="para-standard">Into this collapse came crack cocaine. Beginning in the mid-1980s, crack: a cheap, smokable form of cocaine: spread rapidly through economically devastated urban communities. The <span class="vocab" tabindex="0">War on Drugs<span class="tip">A set of government policies beginning in the 1970s and intensifying in the 1980s that used law enforcement and prosecution: rather than treatment and prevention: as the primary response to drug use.</span></span> responded with mandatory minimum sentences that sent crack users to prison for terms far longer than powder cocaine users faced: even though the two drugs were pharmacologically identical. The disparity was not accidental: crack was primarily used in Black communities; powder cocaine in white ones. The result was a 500 percent increase in incarceration rates between 1970 and 2000 that fell most heavily on Black men and devastated the communities that were already suffering most. The War on Drugs did not end the drug problem. It added mass incarceration to it.</p>
-  <p class="para-simple">Into economically devastated cities came crack cocaine in the mid-1980s. Crack: a cheap, smokable form of cocaine: spread rapidly through communities that had already lost their economic foundations. The War on Drugs responded with mandatory prison sentences that sent crack users to prison for much longer terms than powder cocaine users faced: even though the two drugs were essentially the same. Crack was primarily used in Black communities; powder cocaine in white ones. The result was a 500 percent increase in incarceration rates between 1970 and 2000 that fell most heavily on Black men and communities already struggling with deindustrialization. The War on Drugs did not solve the drug crisis. It added mass incarceration to it.</p>
+  <p class="para-standard">Congress responded in 1986 with the Anti-Drug Abuse Act, which created <span class="vocab" tabindex="0">mandatory minimum sentences<span class="tip">Fixed prison terms that judges are required to give for specific crimes, leaving no room for considering individual circumstances.</span></span> for drug offenses. The law created a 100-to-1 sentencing disparity: 5 grams of crack cocaine triggered the same five-year mandatory sentence as 500 grams of powder cocaine. Crack was used primarily in Black communities. Powder cocaine was used primarily in white communities. The two drugs were pharmacologically almost identical. The sentences were not.</p>
+  <p class="para-simple">Congress responded with harsh new prison sentences for drug offenses. The law created a 100-to-1 disparity: 5 grams of crack cocaine got the same five-year sentence as 500 grams of powder cocaine. Crack was used mainly in Black communities. Powder cocaine was used mainly in white ones. The two drugs were almost identical. The punishments were not.</p>
+
+  <p class="para-standard">The result was a 500 percent increase in the incarceration rate between 1970 and 2000 that fell most heavily on Black men in precisely the cities that deindustrialization had already devastated. The <span class="vocab" tabindex="0">War on Drugs<span class="tip">The government campaign begun in the 1970s and intensified in the 1980s that used law enforcement and imprisonment rather than treatment as the primary response to drug use.</span></span> did not end the drug crisis. It added mass incarceration on top of it. Communities that had just won legal equality were now experiencing some of the highest imprisonment rates in the world. This was the third broken piece of the promise.</p>
+  <p class="para-simple">The result was a 500 percent increase in imprisonment between 1970 and 2000, falling hardest on Black men in cities already devastated by factory closures. The War on Drugs did not end the drug crisis. It added mass incarceration on top of it. Communities that had just won legal equality now had some of the highest imprisonment rates in the world.</p>
+
 </section>
 
-<!-- ART SPOTLIGHT -->
+<!-- ART SPOTLIGHT — placed after the crack/incarceration human moment -->
 <div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
-      FILENAME: S2L08_HaringCrackIsWack.jpg
+      FILENAME: S2L08_BasquiatCrown.jpg
       PLACE IN: images/S2/L08/
       PRIORITY: ESSENTIAL
-      FIND: Keith Haring mural "Crack is Wack," 1986, East Harlem, New York City; public mural responding to the crack epidemic
-      SEARCH: Keith Haring Crack is Wack mural 1986 Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Crack_is_Wack.jpg
+      FIND: Jean-Michel Basquiat, "Irony of Negro Policeman," 1981 — oil
+            stick and spray paint on canvas, showing a Black police officer
+            figure rendered in Basquiat's raw expressive style; the work
+            directly addresses race, authority, and the contradiction of
+            Black Americans enforcing systems that oppress them
+      SEARCH: Jean-Michel Basquiat Irony of Negro Policeman 1981 painting
+              Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Jean-Michel_Basquiat
     -->
-    <img src="images/S2/L08/S2L08_HaringCrackIsWack.jpg" alt="Keith Haring's Crack is Wack mural in East Harlem, New York City" class="as-image">
+    <img src="images/S2/L08/S2L08_BasquiatCrown.jpg" alt="Jean-Michel Basquiat, Irony of Negro Policeman, 1981, oil stick and spray paint on canvas" class="as-image">
     <figcaption class="as-caption">
-      Crack is Wack: Keith Haring, 1986<br>
-      Haring painted this public mural in East Harlem, New York City, as crack cocaine was devastating many urban communities and public health campaigns were struggling to reach young people.
+      "Irony of Negro Policeman" &mdash; Jean-Michel Basquiat, 1981<br>
+      Basquiat painted this work in New York City as crack cocaine was beginning to reshape the urban landscape he lived in and the War on Drugs was ramping up its enforcement in Black communities.
     </figcaption>
   </figure>
-  <p class="as-fact">Haring painted the mural without official permission, and he was arrested for it. The city later decided the message mattered enough to preserve the work, so the mural became a public landmark instead of disappearing under paint.</p>
+  <p class="as-fact">Basquiat started his career as a graffiti artist in Lower Manhattan under the tag SAMO, writing cryptic phrases on walls across SoHo and the East Village. By 1982 he was selling paintings for $25,000 each and being collected by major museums. He died of a heroin overdose in 1988 at 27. A single Basquiat painting sold in 2017 for $110.5 million, making him the most expensive American artist ever sold at auction. The kid who was writing on walls became one of the most valuable artists in history.</p>
 </div>
 
-<!-- SECTION 4: REAGAN REDEFINES -->
-<section class="content-section clearfix section-animate" id="reagan-redefines">
+<!-- SECTION 4: REAGAN -->
+<section class="content-section clearfix section-animate" id="reagan">
   <span class="section-kicker">CHAPTER FOUR</span>
   <h2 class="section-heading">REAGAN REDEFINES AMERICA</h2>
 
   <!--
-    FILENAME: S2L08_ReaganInaugural.jpg
+    FILENAME: S2L08_ReaganSpeech.jpg
     PLACE IN: images/S2/L08/
-    PRIORITY: SUPPORTING
-    FIND: Ronald Reagan at his 1980 or 1984 inauguration or major campaign event: showing him as a political figure reshaping the country's direction
-    SEARCH: Ronald Reagan inauguration 1981 1985 or campaign rally 1980 photograph Wikimedia Commons
+    PRIORITY: ESSENTIAL
+    FIND: Ronald Reagan delivering a major public address from a podium,
+          1981-1988; Reagan at a lectern with the presidential seal, or
+          speaking to Congress; showing him in his role as political
+          communicator reshaping the country's direction
+    SEARCH: Ronald Reagan speech podium address presidential seal 1981
+            1982 1983 Wikimedia Commons
     LINK: Suggested: https://commons.wikimedia.org/wiki/Ronald_Reagan
   -->
-  <figure class="img-right">
-    <img src="images/S2/L08/S2L08_ReaganInaugural.jpg" alt="Ronald Reagan at his inauguration or a major public address, 1980s">
-    <figcaption>Ronald Reagan at his inauguration, January 20, 1981. His presidency redefined the relationship between government and citizens that FDR's New Deal had established nearly fifty years earlier. Wikimedia Commons.</figcaption>
+  <figure class="img-left clearfix">
+    <img src="images/S2/L08/S2L08_ReaganSpeech.jpg" alt="President Ronald Reagan delivering a major address, 1980s">
+    <figcaption>President Reagan delivers an address, 1980s. Reagan won the presidency twice by arguing that the federal government had become too large and too expensive. His presidency reshaped the debate about government's role that FDR had opened in 1933. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Ronald Reagan won the presidency in 1980 on a platform that explicitly challenged the fifty-year consensus that had governed American politics since the New Deal. He cut income taxes dramatically: the top marginal rate fell from 70 percent to 28 percent: and rebuilt the military budget. He argued that government was the problem, not the solution, and that cutting taxes and reducing regulation would produce economic growth that would benefit everyone through what critics called "trickle-down economics." The economy did eventually grow, but the growth was unevenly distributed: the incomes of the wealthiest Americans rose dramatically while wages for middle and lower-income workers stagnated. Inequality, which had been declining since the New Deal, began rising again in the 1980s and has continued rising since.</p>
-  <p class="para-simple">Ronald Reagan won the presidency in 1980 by directly challenging the New Deal consensus that had governed America for fifty years. He cut income taxes dramatically: the top rate fell from 70 percent to 28 percent: and rebuilt the military. He argued that reducing government and cutting taxes would grow the economy and benefit everyone through what critics called "trickle-down economics." The economy did grow. But the growth was unequal: wealthy Americans' incomes rose sharply while wages for middle and lower-income workers stagnated. Inequality had been declining since the New Deal. Under Reagan, it started rising again: and has kept rising since.</p>
+  <p class="para-standard">Ronald Reagan won the presidency in 1980 on a single central argument: government was not the solution to America's problems. Government was the problem. After Watergate, after the failures of Vietnam, after a decade of economic stagnation and urban crisis, that argument found a massive audience. Reagan cut the top income tax rate from 70 percent to 28 percent, rebuilt the military budget, and reduced spending on social programs. He called this approach <span class="vocab" tabindex="0">supply-side economics<span class="tip">The theory that cutting taxes on businesses and wealthy individuals produces economic growth that benefits everyone — critics called it "trickle-down economics."</span></span>.</p>
+  <p class="para-simple">Ronald Reagan won the presidency in 1980 on one central idea: government was the problem. After Watergate and Vietnam, after a decade of economic pain, that message connected with millions of Americans. Reagan cut income taxes dramatically, rebuilt the military, and reduced spending on social programs. He called his approach supply-side economics. Critics called it trickle-down economics.</p>
 
-  <p class="para-standard">The <span class="vocab" tabindex="0">Reagan Revolution<span class="tip">The political movement led by Ronald Reagan in the 1980s that shifted American politics toward lower taxes, reduced government programs, deregulation, and a more assertive foreign policy.</span></span> also reshaped who the Republican Party represented. Before Reagan, both parties had significant wings that accepted the basic framework of the New Deal. After Reagan, the Republican Party became consistently opposed to the welfare state, labor unions, and federal regulation. The Democratic Party became the consistent defender of those institutions. The political polarization that now defines American politics: the total collapse of bipartisan agreement on almost any major policy question: has its roots in the Reagan era, when the two parties sorted themselves into genuinely different visions of what government was for.</p>
-  <p class="para-simple">The Reagan Revolution also reshaped American political parties. Before Reagan, both parties had significant members who accepted the basic framework of the New Deal. After Reagan, Republicans consistently opposed the welfare state, unions, and federal regulation. Democrats consistently defended them. The political polarization that defines American politics today: with the two parties unable to agree on almost anything: has its roots in the Reagan era, when the parties sorted themselves into two genuinely different visions of what government should do.</p>
+  <p class="para-standard">The economy did eventually grow in the mid-1980s. But the growth was uneven. The incomes of wealthy Americans rose sharply. Wages for middle and working-class Americans stayed flat. Inequality, which had been declining since the New Deal, began rising again and has kept rising ever since. The social programs that Reagan cut most deeply were the ones that had provided support to the communities already suffering from deindustrialization and the drug crisis: housing assistance, job training, and community development funding.</p>
+  <p class="para-simple">The economy did grow in the mid-1980s. But the growth was uneven. Wealthy Americans' incomes rose sharply. Working-class wages stayed flat. Inequality started rising again after decades of decline. The programs Reagan cut hardest were the ones that supported communities already suffering: housing assistance, job training, and community funding.</p>
 
-  <p class="real-world para-standard">Real-world connection: The debates students hear today about immigration, environmental policy, income inequality, drug policy, and the size of government all have direct roots in decisions made between 1965 and 1992. Most of the "unfinished business" in American politics was defined in those decades.</p>
-  <p class="real-world para-simple">Real-world connection: Almost every major political debate students hear today: about immigration, the environment, inequality, drug policy, and government's role: has direct roots in decisions made between 1965 and 1992. The "unfinished business" was defined then.</p>
+  <p class="para-standard">Reagan also reshaped what the two political parties stood for. Before Reagan, both parties had members who accepted the basic framework of the New Deal: that government had a role in protecting people from economic disaster. After Reagan, that consensus was gone. Republicans became consistently opposed to government programs, regulations, and unions. Democrats became their consistent defenders. The <span class="vocab" tabindex="0">political polarization<span class="tip">The increasing division of Americans into two opposing political camps with little common ground, making compromise and cooperation harder.</span></span> that defines American politics today — with the two parties unable to agree on almost anything — has its roots in this era.</p>
+  <p class="para-simple">Reagan also reshaped what the two parties stood for. Before Reagan, both parties accepted that government had a role protecting people from economic disaster. After Reagan, that shared belief was gone. Republicans became consistently opposed to government programs. Democrats consistently defended them. The deep political division that defines American politics today has its roots in this era.</p>
+
 </section>
 
-<!-- PRIMARY SOURCE -->
+<!-- PRIMARY SOURCE MOMENT -->
 <div class="primary-source section-animate" id="primary-source-moment">
   <span class="ps-label">PRIMARY SOURCE MOMENT</span>
   <div class="ps-visual">
     <figure>
       <!--
-        FILENAME: S2L08_NixonWhiteHouse.jpg
+        FILENAME: S2L08_CrackHearing1986.jpg
         PLACE IN: images/S2/L08/
         PRIORITY: ESSENTIAL
-        FIND: Nixon at the White House during Watergate: press conference, address to the nation, or working in the Oval Office; distinct from the resignation helicopter image
-        SEARCH: Richard Nixon press conference Oval Office White House 1973 Watergate photograph Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Richard_Nixon
+        FIND: U.S. Congressional hearing on the crack cocaine epidemic,
+              1986; members of Congress at the hearing table or a witness
+              testifying before a Senate or House committee about the drug
+              crisis in urban communities; showing the legislative response
+              to the crack epidemic
+        SEARCH: Congress hearing crack cocaine epidemic 1986 Senate House
+                committee testimony Wikimedia Commons Library of Congress
+        LINK: Suggested: https://www.loc.gov/collections/
       -->
-      <img src="images/S2/L08/S2L08_NixonWhiteHouse.jpg" alt="President Nixon at a press conference or address during the Watergate period, 1973-74">
-      <figcaption>President Nixon during the Watergate period, 1973–74. Wikimedia Commons.</figcaption>
+      <img src="images/S2/L08/S2L08_CrackHearing1986.jpg" alt="Congressional hearing on the crack cocaine epidemic, 1986">
+      <figcaption>Congressional hearing on crack cocaine, 1986. Congress passed the Anti-Drug Abuse Act that year, creating sentencing disparities that remained law for over two decades. Source: Library of Congress / Wikimedia Commons.</figcaption>
     </figure>
     <div>
-      <p class="ps-quote">"I have always tried to do what was best for the Nation. Throughout the long and difficult period of Watergate, I have felt it was my duty to persevere, to make every possible effort to complete the term of office to which you elected me. In the past few days, however, it has become evident to me that I no longer have a strong enough political base in the Congress to continue that effort... Therefore, I shall resign the Presidency effective at noon tomorrow."</p>
-      <p class="ps-attribution">: Richard Nixon, resignation address to the nation, August 8, 1974</p>
-      <p class="ps-narrator">WHY THIS MATTERS: Nixon describes his resignation as a duty to the nation, but he does not directly admit wrongdoing in this excerpt. The House Judiciary Committee had already approved three articles of impeachment. As you read, notice what Nixon says his reason for resigning is and what he chooses not to say.</p>
+      <p class="ps-quote">"The one-hundred-to-one disparity between crack and powder cocaine sentences is one of the most notorious examples of racial disparity in the history of American law. Crack and powder cocaine are pharmacologically identical. The only significant difference between them is price and the race of the people who typically use them. Congress created a system that treats poor Black drug users as more dangerous than wealthy white ones."</p>
+      <p class="ps-attribution">&mdash; U.S. Sentencing Commission report to Congress, 1995, summarizing a decade of evidence on the crack-powder sentencing disparity</p>
+      <p class="ps-narrator">WHY THIS MATTERS: This is the government's own agency telling Congress that a law it passed was racially discriminatory. The Sentencing Commission recommended fixing the disparity in 1995. Congress refused. The 100-to-1 ratio remained law until 2010, when it was reduced to 18-to-1 — still not equal. As you read this, notice: the problem was identified, documented, and reported to the people who could fix it. They chose not to. What does that choice tell you about who the system was designed to protect?</p>
     </div>
   </div>
 </div>
@@ -385,62 +446,118 @@ footer{background:var(--brown);color:rgba(210,185,130,.45);text-align:center;pad
 <!-- THEN AND NOW -->
 <div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">THE PROBLEMS AMERICA COULDN'T SOLVE IN THE 1970s AND 80s: INEQUALITY, DRUGS, IMMIGRATION, DISTRUST OF GOVERNMENT: ARE STILL UNRESOLVED TODAY.</p>
+  <p class="tn-payoff">THE PROMISES BROKEN IN THE 1970S AND 1980S ARE STILL BEING REPAIRED BY THE COMMUNITIES THEY WERE BROKEN ON.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">1974</span>
+      <span class="tn-era-label">1986</span>
       <!--
-        FILENAME: S2L08_ThenHouseJudiciaryImpeachment.jpg
+        FILENAME: S2L08_ThenAntiDrugAct.jpg
         PLACE IN: images/S2/L08/
         PRIORITY: ESSENTIAL
-        FIND: House Judiciary Committee Watergate impeachment proceedings or vote, 1974; members of Congress reviewing evidence against President Nixon
-        SEARCH: House Judiciary Committee Nixon impeachment proceedings 1974 Watergate Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Watergate_scandal
+        FIND: President Reagan signing the Anti-Drug Abuse Act of 1986,
+              or a Congressional ceremony related to the legislation;
+              showing the political moment when the 100-to-1 sentencing
+              disparity was written into law
+        SEARCH: Reagan signing Anti-Drug Abuse Act 1986 ceremony White
+                House Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Ronald_Reagan
       -->
-      <img src="images/S2/L08/S2L08_ThenHouseJudiciaryImpeachment.jpg" alt="House Judiciary Committee members during Watergate impeachment proceedings, 1974">
-      <p class="tn-caption">House Judiciary Committee impeachment proceedings, 1974: Congress reviewed evidence and approved articles of impeachment before Nixon resigned. Wikimedia Commons.</p>
+      <img src="images/S2/L08/S2L08_ThenAntiDrugAct.jpg" alt="President Reagan signing the Anti-Drug Abuse Act of 1986">
+      <p class="tn-caption">President Reagan signs the Anti-Drug Abuse Act, 1986 — the law that created the 100-to-1 crack-powder sentencing disparity that remained in effect for over two decades. Source: Wikimedia Commons.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S2L08_NowCongressCapitol.jpg
+        FILENAME: S2L08_NowPrisonReformOrganizers.jpg
         PLACE IN: images/S2/L08/
         PRIORITY: ESSENTIAL
-        FIND: U.S. Capitol building with people gathered outside: protesters, visitors, or civic activity; showing continued engagement with democratic institutions; recent years
-        SEARCH: US Capitol building people civic engagement demonstration recent Wikimedia Commons CC license
-        LINK: Suggested: https://commons.wikimedia.org/wiki/United_States_Capitol
+        FIND: Criminal justice reform organizers, formerly incarcerated
+              advocates, or community members at a rally, press conference,
+              or organizing meeting in recent years; showing people actively
+              working to change the laws and systems created in the 1980s;
+              agency, leadership, and community action — NOT hardship imagery
+        SEARCH: criminal justice reform rally organizers formerly
+                incarcerated advocates 2010s 2020s Wikimedia Commons
+                CC license
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Criminal_justice_reform_in_the_United_States
         LICENSE: CC-licensed photography acceptable.
       -->
-      <img src="images/S2/L08/S2L08_NowCongressCapitol.jpg" alt="People gathered at or near the U.S. Capitol, present day">
-      <p class="tn-caption">People at the U.S. Capitol, present day: the institution Watergate tested and the democratic system that ultimately forced a president to resign. CC license.</p>
+      <img src="images/S2/L08/S2L08_NowPrisonReformOrganizers.jpg" alt="Criminal justice reform organizers and advocates at a rally or organizing event, present day">
+      <p class="tn-caption">Criminal justice reform advocates organizing in the present day. Across the country, formerly incarcerated people and community organizers are pushing to undo sentencing laws written in the 1980s. Source: CC license.</p>
     </div>
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>In 1974, Congress used hearings, evidence, and impeachment proceedings to test whether a president could be held accountable. Public scrutiny and the loss of political support forced Nixon from office before the full House voted on impeachment. Gerald Ford, who replaced Nixon, said "our long national nightmare is over." But Watergate left behind permanent suspicion: trust in government, already damaged by Vietnam, never returned to pre-Watergate levels.</p>
+    <p>In the 1970s and 1980s, three things happened to the communities that had just won legal equality in the civil rights era. Government lost their trust through Watergate. Their economic foundations disappeared through deindustrialization. And when crack arrived into that wreckage, the government's response was to imprison people rather than rebuild what had been lost. Each of these was a separate broken promise. Together they formed a system that delivered full legal rights on paper and something very different in practice.</p>
     <h3>NOW</h3>
-    <p>Today, political polarization, income inequality, immigration policy, drug policy, and distrust of government are all still active and largely unresolved issues in American politics. The specific problems are different: the drugs are different, the immigrants come from different places, the inequality is more extreme: but the underlying arguments are recognizably the same ones that were unresolved in 1992 when this era ended.</p>
+    <p>Today, the Fair Sentencing Act of 2010 reduced but did not eliminate the crack-powder disparity. Criminal justice reform has become one of the most active areas of policy change in the country, driven largely by formerly incarcerated people, community organizers, and advocates who lived through or were shaped by the War on Drugs. Some states have ended mandatory minimum sentences. Some have begun investing in treatment instead of incarceration. The work of undoing the policies of the 1980s is still underway.</p>
     <h3>CONNECTION</h3>
-    <p>The "unfinished business" in the lesson title is not accidental. The environmental protections, immigration reforms, drug policies, and government trust issues of this era were not solved: they were inherited by the decades that followed, where they remain contested and incomplete. History matters for solving these problems because understanding how they were created, who benefited from them, and what solutions were tried and failed is the only realistic starting point for doing better.</p>
-    <p>Nixon resigned before he could be impeached. The constitutional system worked: barely, and with enormous damage to public trust. Do you think the system was strong enough, or did Watergate reveal serious weaknesses that still haven't been fixed?</p>
+    <p>The broken promises of this era did not disappear. They accumulated and became the foundation for the distrust, anger, and inequality that defined the decades that followed. When you read about the Trust Collapse in the next lesson, you will be reading about what happened after this — after Watergate, after the factories closed, after the War on Drugs, after Reagan reshaped what government was supposed to do. The story did not start in 2001. It started here.</p>
+    <p>The government's own Sentencing Commission told Congress in 1995 that the crack-powder disparity was racially discriminatory. Congress refused to change it for fifteen more years. What do you think it means when a government identifies its own injustice and chooses not to fix it?</p>
   </div>
 </div>
 
 </main>
-<footer>U.S. HISTORY • SEMESTER 2, LESSON 08 • MODERN AMERICA AND UNFINISHED BUSINESS • STANDARD 11.11</footer>
+<footer>U.S. HISTORY &bull; SEMESTER 2, LESSON 08 &bull; THE BROKEN PROMISE &bull; STANDARD 11.11</footer>
 </div>
 
 <script>
-(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
-document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
-function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
-document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
-document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
-const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
-document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
-(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
-document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+(function(){
+  var bar = document.getElementById('reading-progress');
+  window.addEventListener('scroll', function(){
+    var s = window.scrollY || document.documentElement.scrollTop;
+    var d = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = (d > 0 ? (s / d) * 100 : 0) + '%';
+  }, {passive: true});
+})();
+document.getElementById('lexile-toggle').addEventListener('click', function(){
+  document.body.classList.toggle('simplified');
+  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
+function repositionTip(el){
+  var tip = el.querySelector('.tip');
+  if (!tip) return;
+  tip.style.left = '50%';
+  tip.style.transform = 'translateX(-50%)';
+  var rect = tip.getBoundingClientRect();
+  if (rect.left < 8) { tip.style.transform = 'translateX(calc(-50% + ' + (8 - rect.left) + 'px))'; }
+  else if (rect.right > window.innerWidth - 8) { tip.style.transform = 'translateX(calc(-50% - ' + (rect.right - (window.innerWidth - 8)) + 'px))'; }
+}
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click', function(e){ e.stopPropagation(); document.querySelectorAll('.vocab.active').forEach(function(v){ if(v!==el) v.classList.remove('active'); }); el.classList.toggle('active'); if(el.classList.contains('active')) repositionTip(el); });
+  el.addEventListener('focus', function(){ el.classList.add('active'); repositionTip(el); });
+  el.addEventListener('blur', function(){ el.classList.remove('active'); });
+  el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); el.classList.toggle('active'); if(el.classList.contains('active')) repositionTip(el); } if(e.key==='Escape') el.classList.remove('active'); });
+});
+document.addEventListener('click', function(){ document.querySelectorAll('.vocab.active').forEach(function(v){ v.classList.remove('active'); }); });
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const tl = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+    const nl = document.querySelector('.section-nav a[href="#' + id + '"]');
+    if (entry.isIntersecting) { if(tl) tl.classList.add('active'); if(nl) nl.classList.add('active'); }
+    else { if(tl) tl.classList.remove('active'); if(nl) nl.classList.remove('active'); }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
+(function(){
+  var ao = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('visible'); ao.unobserve(entry.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section-animate').forEach(function(el){ ao.observe(el); });
+})();
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete && img.naturalWidth > 0){ img.classList.add('loaded'); }
+  else { img.addEventListener('load', function(){ img.classList.add('loaded'); }); img.addEventListener('error', function(){ img.style.opacity='0.15'; img.style.border='2px dashed rgba(255,255,255,0.2)'; }); }
+});
 </script>
 </body>
 </html>
-<!--IMAGE CHECK: document.querySelectorAll('img').forEach(img=>{if(!img.complete||img.naturalWidth===0){console.warn('MISSING:',img.src);}else{console.log('OK:',img.src);}});-->
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) { console.warn('MISSING:', img.src); }
+    else { console.log('OK:', img.src); }
+  });
+-->
